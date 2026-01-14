@@ -89,27 +89,28 @@ All three axes intersect at **FLOW** — the Zero Point center.
    • Visual Stuns          • Figma Spec              • Vector Search
 ```
 
-### AXIS 3: FOUNDATION → RENEWAL (Bottom-Top)
-**Status: FUTURE PHASE (Planned)**
+### AXIS 3: AUTOMATION → PRODUCTION (Bottom-Top)
+**Status: CORE FOUNDATION (Active)**
 
 ```
-   FOUNDATION                  FLOW                    RENEWAL
+   AUTOMATION                  FLOW                   PRODUCTION
+   (Body)                       │                      (Heart)
         │                       │                         │
         │                       │                         │
    ┌────▼────┐            ┌─────▼─────┐            ┌──────▼──────┐
-   │  CORE   │            │  HEALING  │            │ TRANSFORM   │
-   │         │            │  SYSTEMS  │            │             │
-   │• Auth   │            │• Agentic  │            │• Emotional  │
-   │• Data   │            │  Renewal  │            │  Healing    │
-   │• Infra  │            │• Self-    │            │• Bio-       │
-   │• Schema │            │  Correct  │            │  logical    │
+   │ SYSTEMS │            │ ORCHESTR- │            │  ASSETS     │
+   │         │            │   ATION   │            │             │
+   │• Workflow│           │• Coord    │            │• Strategic  │
+   │  Optim  │            │• Sequence │            │  Planning   │
+   │• Process│            │• Routing  │            │• Building   │
+   │• Auto   │            │• ECR Runs │            │• Creating   │
    └─────────┘            └───────────┘            └─────────────┘
         │                       │                         │
-   SYSTEMS:                SYSTEMS:                  OUTCOMES:
-   • PostgreSQL            • Error Recovery          • Nervous System
-   • Real-time DB          • Performance Opt         • Identity Shift
-   • Vector Store          • Memory Cleanup          • Belief Upgrade
-   • Edge Functions        • Pattern Refine          • Physical Restore
+   FUNCTIONS:              FUNCTIONS:                OUTPUTS:
+   • Streamline Flow       • Team Coord              • Revenue Assets
+   • Reusable Systems      • Workflow Seq            • Deliverables
+   • Efficiency Opt        • Transitions             • Published Content
+   • Foundation Layer      • Recursion Mgmt          • High-Value Output
 ```
 
 ---
@@ -252,66 +253,83 @@ VISUAL PRINCIPLES:
 
 ---
 
-## DUAL HEALING MODEL
+## END CYCLE RECURSION (ECR) MODEL
 
-### Agentic Healing (System Level)
+### Agentic Learning & Repair (System Level)
 ```
-SELF-CORRECTION:
-├── Error detection and recovery
-├── Performance optimization
-├── Memory cleanup and pruning
-├── Pattern refinement
-├── Alignment drift correction
-└── Capability expansion
-```
+LEARNING (Post-Project Review):
+├── Performance analysis
+├── SIP extraction (Self-Identified Patterns)
+├── Bottleneck identification
+├── Quality gate failure analysis
+├── Success pattern capture
+└── Human-Corrected Events logging
 
-### Human Healing (User Level)
-```
-EMOTIONAL HEALING:
-├── Psychological transformation
-├── Identity reconstruction
-├── Belief system upgrade
-├── Trauma integration
-├── Meaning restoration
-└── Connection repair
-
-BIO-LOGICAL RENEWAL:
-├── Nervous system regulation
-├── Sleep architecture repair
-├── Energy restoration
-├── Hormonal rebalancing
-├── Cellular regeneration
-└── Vitality amplification
+REPAIR (System Upgrade):
+├── Rate identified issues
+├── Generate patches & fixes
+├── Enhance methods & frameworks
+├── Update SSOT schemas
+├── Upgrade skill definitions
+└── Prepare for next cycle
 ```
 
-### The Integration
+### The ECR Cycle
 ```
         ┌─────────────────────┐
-        │   AGENTIC HEALING   │
-        │   (System renews)   │
+        │  PROJECT COMPLETE   │
+        │   (Asset shipped)   │
         └──────────┬──────────┘
                    │
-                   │ enables
+                   │ triggers
                    ▼
         ┌─────────────────────┐
-        │    USER HEALING     │
-        │  (Human transforms) │
+        │   LEARNING Phase    │
+        │ (Reflect & Extract) │
         └──────────┬──────────┘
                    │
-                   │ feeds back
+                   │ identifies
                    ▼
         ┌─────────────────────┐
-        │  SYSTEM LEARNING    │
-        │ (Patterns compound) │
+        │ SIPs + HCEs Logged  │
+        │  (Pattern capture)  │
         └──────────┬──────────┘
                    │
-                   │ improves
+                   │ feeds into
                    ▼
         ┌─────────────────────┐
-        │   AGENTIC HEALING   │
-        │   (Better system)   │
+        │    REPAIR Phase     │
+        │ (Patch & Upgrade)   │
+        └──────────┬──────────┘
+                   │
+                   │ produces
+                   ▼
+        ┌─────────────────────┐
+        │  ENHANCED SYSTEM    │
+        │   (Ready for next)  │
         └─────────────────────┘
-              ↺ LOOP
+              ↺ RECURSIVE LOOP
+```
+
+### SIP Categories (Self-Identified Patterns)
+```
+WORKFLOW PATTERNS:
+├── Bottlenecks in production flow
+├── Context bloat triggers
+├── Tool usage inefficiencies
+└── Successful optimization discoveries
+
+QUALITY PATTERNS:
+├── MMA dimension recurring failures
+├── Proof grounding weaknesses
+├── Voice consistency drift
+└── Compliance risk patterns
+
+HUMAN PATTERNS:
+├── Manual interventions required
+├── Quality gate override events
+├── Strategic mid-project pivots
+└── User preference corrections
 ```
 
 ---
@@ -357,38 +375,60 @@ USER ENTERS
 
 ---
 
-## THE COMPLETE VISION
+## THE COMPLETE AGENTIC VISION
 
 ```
-                         RENEWAL (Healing)
+                       PRODUCTION (Heart)
+                    Strategic Planning & Assets
                               ▲
                               │
                               │
                          ┌────┴────┐
                          │         │
-         DESIGN ◄────────┤  FLOW   ├────────► DEVELOP
-         (Visual)        │ CENTER  │          (Technical)
+         DESIGN ◄────────┤  SOUL   ├────────► DEVELOP
+      (Conscience)       │ORCHESTR │        (Psych)
+       Frontend          │  ATION  │         Backend
                          │         │
                          └────┬────┘
                               │
                               │
        RESONANCE ◄────────────┼────────────► PERSUASION
-       (Attract)              │              (Convert)
+         (Mind)               │              (Spirit)
+      Viral Content           │         Compelling Copy
                               │
                               │
                               ▼
-                         FOUNDATION
-                           (Core)
+                      AUTOMATION (Body)
+                  Streamlining Workflows & Systems
 
 
 All six endpoints. Three axes.
-One center: FLOW.
+One center: SOUL (Orchestration).
 Self-correcting geometry.
 Fractal scaling.
-Human + Agent integration.
-Healing at every level.
+End Cycle Recursion (Learning & Repair).
+Pure agentic business system.
+
+META-CYCLE:
+└─► LEARNING (Review & Reflect)
+    └─► REPAIR (Rate & Repair)
+        └─► NEXT PROJECT ↺
 ```
+
+### The 9 Agentic Functions Summary
+
+1. **Agentic AUTOMATION** (Body) - Workflow systems
+2. **Agentic PRODUCTION** (Heart) - Asset creation
+3. **Agentic RESONANCE** (Mind) - Viral content
+4. **Agentic PERSUASION** (Spirit) - Compelling copy
+5. **Agentic DEVELOPMENT** (Psych) - Backend builds
+6. **Agentic DESIGN** (Conscience) - Frontend UI/UX
+7. **Agentic ORCHESTRATION** (Soul) - Coordination & routing
+8. **Agentic LEARNING** (ECR-1) - Performance review
+9. **Agentic REPAIR** (ECR-2) - System upgrades
 
 ---
 
 *"At the heart of infinitely intelligent adaptive systems is radical simplicity."*
+
+*"What we build is not human healing—it's business automation with neuro-persuasion at its core."*

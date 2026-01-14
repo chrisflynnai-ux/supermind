@@ -67,3 +67,30 @@ outputs/*/
 ~$*.docx
 ~$*.xlsx
 ~$*.pptx
+
+# --- SYSTEM FILES (Always Ignore) ---
+node_modules/
+dist/
+build/
+.env
+tmpclaude-*
+.DS_Store
+
+# --- HEAVY ASSETS (Ignore global video/image/audio) ---
+*.mp4
+*.mov
+*.avi
+*.mp3
+*.wav
+*.zip
+*.tar
+*.iso
+
+# --- PROJECT SPECIFIC RULES ---
+# Ignore all project assets by default...
+qrx-project/assets/
+
+# ...BUT specifically allow your high-value Brand Kits and VSL suites
+!qrx-project/assets/QRX Brand Kit/
+!qrx-project/assets/QRX VSLs JAN/
+!qrx-project/assets/QRX COPY DOCS/
