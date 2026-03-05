@@ -1,8 +1,129 @@
-# ULTRAMIND TOOL INDEX v1.0.0
+# ULTRAMIND TOOL INDEX v2.0.0
 # Registry of callable Python/script tools (not loaded into context)
 # Philosophy: Skills + Scripts > MCPs | Tools run OUTSIDE context window
-tool_index_version: "1.0.0"
-updated: "2026-02-07"
+tool_index_version: "2.0.0"
+updated: "2026-03-04"
+
+# ============================================================
+# SUPERMIND HARNESS TOOLS (Terminal Enhancement)
+# ============================================================
+
+harness_tools:
+  skill_loader:
+    name: "Skill Loader"
+    version: "1.0.0"
+    location: "tools/scripts/skill_loader.py"
+    runtime: "python"
+    description: "Load XML skills with progressive disclosure (L1-L4 layers)"
+    entry_points:
+      load:
+        command: "python tools/scripts/skill_loader.py"
+        args: "<skill_id> [--layer 2] [--format markdown|xml|json]"
+        description: "Load skill by ID with specified layers"
+      list:
+        command: "python tools/scripts/skill_loader.py --list"
+        description: "List all available skills"
+      manifest:
+        command: "python tools/scripts/skill_loader.py --manifest"
+        description: "Show skills manifest"
+
+  session_state:
+    name: "Session State Manager"
+    version: "1.0.0"
+    location: "tools/scripts/session_state.py"
+    runtime: "python"
+    description: "Manage SESSION_STATE.json for workflow tracking"
+    entry_points:
+      show:
+        command: "python tools/scripts/session_state.py show"
+        description: "Display current session state"
+      set:
+        command: "python tools/scripts/session_state.py set <key> <value>"
+        description: "Set a state value"
+      load_skill:
+        command: "python tools/scripts/session_state.py load_skill <skill_id>"
+        description: "Mark skill as loaded"
+      gc:
+        command: "python tools/scripts/session_state.py gc"
+        description: "Run garbage collection"
+      reset:
+        command: "python tools/scripts/session_state.py reset"
+        description: "Reset to fresh state"
+
+  cmux:
+    name: "CMUX - Claude Multiplexer"
+    version: "1.0.0"
+    location: "tools/scripts/cmux.py"
+    runtime: "python"
+    description: "Parallel sub-agent dispatch for 4-Track workflow"
+    entry_points:
+      dispatch:
+        command: "python tools/scripts/cmux.py dispatch <T1|T2|T3|T4> '<task>'"
+        description: "Single track dispatch"
+      parallel:
+        command: "python tools/scripts/cmux.py parallel T2 T3 --task '<task>'"
+        description: "Parallel multi-track dispatch"
+      chain:
+        command: "python tools/scripts/cmux.py chain '<task>'"
+        description: "Full T1->T2->T3->T4 chain"
+      status:
+        command: "python tools/scripts/cmux.py status"
+        description: "Show CMUX status and tracks"
+
+  canvas:
+    name: "SUPERMIND Canvas"
+    version: "1.0.0"
+    location: "tools/scripts/canvas.py"
+    runtime: "python"
+    description: "Terminal visual rendering for workflow state"
+    entry_points:
+      state:
+        command: "python tools/scripts/canvas.py state"
+        description: "Visual workflow state"
+      skills:
+        command: "python tools/scripts/canvas.py skills"
+        description: "Skills inventory map"
+      neurobox:
+        command: "python tools/scripts/canvas.py neurobox"
+        description: "6D Neuro-Box visualization"
+      track:
+        command: "python tools/scripts/canvas.py track <T1|T2|T3|T4>"
+        description: "Track detail view"
+      mma:
+        command: "python tools/scripts/canvas.py mma"
+        description: "MMA scorecard template"
+
+  tmux_setup:
+    name: "TMUX Layout"
+    version: "1.0.0"
+    location: "tools/scripts/tmux_setup.sh"
+    runtime: "bash (via WSL)"
+    description: "Multi-pane terminal layout for SUPERMIND workflow"
+    entry_points:
+      start:
+        command: "wsl bash tools/scripts/tmux_setup.sh"
+        description: "Start SUPERMIND TMUX session"
+
+  conductor:
+    name: "SUPERMIND Conductor"
+    version: "1.0.0"
+    location: "tools/scripts/conductor.py"
+    runtime: "python"
+    description: "Master agent for 4-phase delegation"
+    entry_points:
+      run:
+        command: "python tools/scripts/conductor.py run"
+        description: "Process next pending task"
+      status:
+        command: "python tools/scripts/conductor.py status"
+        description: "Show kanban status"
+      teams:
+        command: "python tools/scripts/conductor.py teams"
+        description: "Show team compositions"
+
+# ============================================================
+# DESIGN INTELLIGENCE TOOLS
+# ============================================================
 
 tools:
   ui_ux_pro_max:

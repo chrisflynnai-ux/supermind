@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0",
+  "created": "2026-03-04T18:51:07.597170",
+  "updated": "2026-03-04T18:51:58.370773",
+  "columns": {
+    "backlog": [
+      "TASK-0001"
+    ],
+    "T1_research": [],
+    "T2_drafts": [],
+    "T3_production": [],
+    "T4_perfecting": [],
+    "done": [],
+    "blocked": []
+  },
+  "tasks": {
+    "TASK-0001": {
+      "id": "TASK-0001",
+      "title": "Sleep for Life VSL",
+      "description": "16-minute documentary VSL for Sleep Energy product",
+      "asset_type": "vsl",
+      "priority": "high",
+      "status": "backlog",
+      "current_track": null,
+      "created": "2026-03-04T18:51:58.370730",
+      "updated": "2026-03-04T18:51:58.370764",
+      "history": [
+        {
+          "action": "created",
+          "timestamp": "2026-03-04T18:51:58.370766"
+        }
+      ],
+      "mma_scores": {},
+      "artifacts": [],
+      "notes": []
+    }
+  }
+}
