@@ -1,0 +1,34 @@
+domain: designer
+family: design
+description: Design / Producer family — layout patterns, color systems, components
+siblings:
+  brother: developer
+  sister: strategist
+track: design
+progression:
+  analysis: strategist
+  synthesis: designer
+  genesis: developer
+sub_domains:
+  - name: layout_patterns
+    file: layout_patterns.jsonl
+    record_count: 0
+    golden_count: 0
+  - name: color_systems
+    file: color_systems.jsonl
+    record_count: 0
+    golden_count: 0
+  - name: component_library
+    file: component_library.jsonl
+    record_count: 0
+    golden_count: 0
+pattern_counts:
+  observed: 0
+  validated: 0
+  candidate: 0
+  golden: 0
+  contested: 0
+  deprecated: 0
+  forbidden: 0
+created_at: 2026-03-15
+last_updated: 2026-03-15

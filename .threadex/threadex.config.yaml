@@ -1,0 +1,20 @@
+threadex:
+  version: 1.0
+  decay:
+    alpha: 0.15
+    lambda_: 0.01
+    forbidden_threshold: 0.3
+    golden_review_days: 180
+    episodic_archive_days: 30
+  compaction:
+    max_records_per_file: 10000
+    soft_context_warning: 0.5
+    hard_context_flush: 0.7
+    emergency_flush: 0.85
+  slicing:
+    method: action_boundaries
+    fallback: token_chunks
+    max_chunk_tokens: 4000
+  synch_pulse:
+    interval_turns: 5
+    enabled: false

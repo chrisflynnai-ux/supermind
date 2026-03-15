@@ -1,0 +1,38 @@
+domain: writer
+family: copywriting
+description: Writer / Copywriter family — headlines, hooks, CTAs, voice
+siblings:
+  brother: researcher
+  sister: editor
+track: resonance
+progression:
+  analysis: researcher
+  synthesis: strategist
+  genesis: writer
+sub_domains:
+  - name: headlines
+    file: headlines.jsonl
+    record_count: 3
+    golden_count: 0
+  - name: hooks
+    file: hooks.jsonl
+    record_count: 0
+    golden_count: 0
+  - name: ctas
+    file: ctas.jsonl
+    record_count: 0
+    golden_count: 0
+  - name: voice
+    file: voice.jsonl
+    record_count: 0
+    golden_count: 0
+pattern_counts:
+  observed: 1
+  validated: 0
+  candidate: 2
+  golden: 0
+  contested: 0
+  deprecated: 0
+  forbidden: 0
+created_at: 2026-03-15
+last_updated: 2026-03-15
