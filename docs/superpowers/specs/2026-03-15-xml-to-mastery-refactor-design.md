@@ -1,8 +1,8 @@
 # XML-to-Mastery Refactor Pipeline — Design Spec
 
-> **Version:** 1.0.0
+> **Version:** 1.1.0
 > **Date:** 2026-03-15
-> **Status:** Draft — Awaiting Approval
+> **Status:** Reviewed — 7 issues fixed (3 blocking, 4 important)
 > **Depends On:** Phase 2A Shadow-Graph (complete), Threadex CLI (operational)
 > **Builds On:** tools/tx.py (2,317 lines), .threadex/ infrastructure
 
@@ -10,7 +10,7 @@
 
 ## 1. Problem Statement
 
-ULTRAMIND has 78+ XML skill files (SkillML V1.4 format) across `.agents/skills/` and `.claude/skills/`. These skills contain substantial domain knowledge — frameworks, procedures, contracts, guardrails, failure modes — locked inside XML tags with no relational metadata, no searchability, and no connection to the Threadex memory graph.
+ULTRAMIND has 78+ XML skill files (SkillML V1.4 format) across `.claude/skills/` and `.agents/skills/`. These skills contain substantial domain knowledge — frameworks, procedures, contracts, guardrails, failure modes — locked inside XML tags with no relational metadata, no searchability, and no connection to the Threadex memory graph.
 
 The Phase 2A Shadow-Graph gave Threadex a "brain" (SQLite edges, FTS5 search, PRU hub scoring). This spec defines the pipeline that **feeds knowledge into that brain** by refactoring XML skills into Threadex-indexed, graph-connected knowledge artifacts.
 
@@ -91,59 +91,63 @@ Uses `xml.etree.ElementTree` (stdlib) to parse the XML file and extract structur
 #### Typed Extraction Schema
 
 ```python
+from dataclasses import dataclass, field
+
 @dataclass
 class SkillIdentity:
     skill_id: str           # From root skill_id attribute or <Meta>
     name: str               # Display name
     version: str            # Semantic version
-    tier: str               # production | meta | experimental
-    status: str             # active | draft | deprecated
-    domain: str             # copy, meta, design, research, etc.
-    track: str              # T1 | T2 | T3 | T4 | cross
-    model: str              # sonnet | opus
-    neurobox_position: str  # HEART, BODY, MIND, SPIRIT, PSYCH, CONSCIENCE, CENTER
-    trigger_commands: list  # /command triggers
-    source_xml: str         # Original XML file path
+    tier: str = ""          # production | meta | experimental
+    status: str = ""        # active | draft | deprecated
+    domain: str = ""        # copy, meta, design, research, etc.
+    track: str = ""         # T1 | T2 | T3 | T4 | cross
+    model: str = ""         # sonnet | opus
+    neurobox_position: str = ""  # HEART, BODY, MIND, SPIRIT, PSYCH, CONSCIENCE, CENTER
+    trigger_commands: list = field(default_factory=list)  # /command triggers
+    source_xml: str = ""    # Original XML file path
 
 @dataclass
 class SkillLayer:
     layer_id: str           # L1, L2, L3, L4
-    name: str               # Layer display name
-    token_budget: int       # Target token count
-    load_priority: str      # always | when_executing | when_complexity_high | rarely
-    content: str            # Raw content (CDATA stripped)
-    frameworks: list        # Named frameworks extracted from this layer
+    name: str = ""          # Layer display name
+    token_budget: int = 0   # Target token count
+    load_priority: str = "always"  # always | when_executing | when_complexity_high | rarely
+    content: str = ""       # Raw content (CDATA stripped)
+    frameworks: list = field(default_factory=list)  # Named frameworks extracted from this layer
 
 @dataclass
 class SkillContract:
-    inputs_required: list   # [{name, format, description}]
-    inputs_optional: list   # [{name, format, description}]
-    outputs_primary: list   # [{name, format, description}]
-    outputs_secondary: list # [{name, format, description}]
-    quality_gates: dict     # {"T2": 6.0, "T3": 8.0, "T4": 9.0}
-    circuit_breakers: dict  # {"max_fix_loops": 3, "on_exhausted": "HALT"}
+    inputs_required: list = field(default_factory=list)   # [{name, format, description}]
+    inputs_optional: list = field(default_factory=list)    # [{name, format, description}]
+    outputs_primary: list = field(default_factory=list)    # [{name, format, description}]
+    outputs_secondary: list = field(default_factory=list)  # [{name, format, description}]
+    quality_gates: dict = field(default_factory=dict)      # {"T2": 6.0, "T3": 8.0, "T4": 9.0}
+    circuit_breakers: dict = field(default_factory=dict)   # {"max_fix_loops": 3, "on_exhausted": "HALT"}
 
 @dataclass
 class SkillEdge:
     target_id: str          # Target skill ID or SSOT reference
-    relation: str           # DEPENDS_ON | COMPLEMENTS | SUPERSEDES | DERIVES_FROM | CONFLICTS_WITH
-    priority: str           # critical | high | medium
-    direction: str          # upstream | downstream
-    strength: float         # 0.0-1.0 relationship strength
+    relation: str = "DEPENDS_ON"  # DEPENDS_ON | COMPLEMENTS | SUPERSEDES | DERIVES_FROM | CONFLICTS_WITH
+    priority: str = "medium"      # critical | high | medium
+    direction: str = "upstream"   # upstream | downstream
+    strength: float = 1.0         # 0.0-1.0 relationship strength
 
 @dataclass
 class RefactorResult:
-    identity: SkillIdentity
-    layers: list            # List of SkillLayer
-    contract: SkillContract
-    edges: list             # List of SkillEdge
-    guardrails: list        # List of guardrail strings
-    warnings: list          # Non-fatal extraction issues
+    identity: SkillIdentity = None
+    layers: list = field(default_factory=list)      # List of SkillLayer
+    contract: SkillContract = None
+    edges: list = field(default_factory=list)        # List of SkillEdge
+    guardrails: list = field(default_factory=list)   # List of guardrail strings
+    warnings: list = field(default_factory=list)     # Non-fatal extraction issues
     # Populated after synthesis:
-    markdown_path: str
-    records_created: int
-    edges_created: int
+    markdown_path: str = ""
+    records_created: int = 0
+    edges_created: int = 0
 ```
+
+**Import requirement:** Add `from dataclasses import dataclass, field` alongside existing imports in tx.py.
 
 #### Extraction Rules
 
@@ -164,6 +168,8 @@ class RefactorResult:
 Written to `.threadex/mastery/{domain}/{skill_slug}.md`
 
 Template includes YAML frontmatter with all identity fields plus `refactored_at`, `source_xml`, `mode`, and `threadex_records` fields. Body contains sections for L1-L4 content, Contract (inputs, outputs, quality gates, circuit breakers), Dependencies (upstream/downstream), Guardrails, and Graph Edges.
+
+**Frontmatter serialization:** Use a dedicated `_write_frontmatter()` helper that writes simple key-value YAML (scalars and flat lists only). This avoids dependency on PyYAML (which is optional in tx.py via `HAS_YAML` flag). Frontmatter fields are intentionally kept simple — no nested dicts or multi-line strings — so stdlib string formatting suffices. For `threadex_records` (a list of UUIDs), serialize as a YAML inline list: `[uuid1, uuid2, ...]`.
 
 #### JSONL Records (--auto mode only)
 
@@ -193,6 +199,8 @@ Each record includes `threadex_graph` pointers connecting to the mastery doc URI
 | `ads` | `mastery/ads/` | `writer` | `ctas` |
 | `leadgen` | `mastery/leadgen/` | `strategist` | `funnel_architecture` |
 
+**Record target format:** Records are created with target = `{expertise_domain}/{subdomain}` (e.g., `strategist/offer_design`), consistent with existing `tx record` target format. The `cmd_record()` function parses this as `domain/subdomain` to determine the JSONL file path: `EXPERTISE_DIR / domain / subdomain.jsonl`.
+
 ### Stage 3: Genesis (Index + Graph)
 
 **Input:** Created records + edges
@@ -200,9 +208,33 @@ Each record includes `threadex_graph` pointers connecting to the mastery doc URI
 
 1. **Shred edges into SQLite** — call existing `insert_edges()` for each edge extracted
 2. **Index content in FTS5** — call existing `index_record_content()` for each JSONL record
-3. **Update mastery index** — append entry to `.threadex/mastery/_index.yaml`
+3. **Update mastery index** — append entry to `.threadex/mastery/_index.yaml` (schema below)
 4. **Update Markdown frontmatter** — write record UUIDs back into mastery doc `threadex_records` field
 5. **Print summary** — records created, edges shredded, warnings
+
+#### Mastery Index Schema (`.threadex/mastery/_index.yaml`)
+
+```yaml
+version: "1.0"
+updated: "2026-03-15T14:00:00Z"
+skills_refactored: 5
+skills:
+  zpwo_v4_0_0:
+    name: "Zero-Point Workflow Orchestrator"
+    domain: "meta"
+    version: "4.0.0"
+    mastery_path: "mastery/meta/zpwo_v4_0_0.md"
+    source_xml: ".claude/skills/meta/zpwo_v4_0_0.xml"
+    mode: "auto"              # auto | draft | committed
+    records_created: 8
+    edges_created: 12
+    refactored_at: "2026-03-15T14:00:00Z"
+  mma_master_monitor_v1_0_0:
+    name: "MMA Master Monitor Agent"
+    # ... same structure per skill
+```
+
+The index is keyed by `skill_slug` (derived from skill_id with dots/spaces replaced by underscores). The `mode` field tracks lifecycle: `draft` (Track B extraction), `committed` (Track B after revision), `auto` (Track A full pipeline). Serialized using the existing `_write_yaml_string()` helper or simple string formatting.
 
 ---
 
@@ -268,6 +300,22 @@ ssot://{object_name}                            # SSOT reference (PROJECT_BRIEF,
 3. **Relational operations YAML** (if available) — wake conditions, ownership chains
 4. **Cross-references in content** — skill IDs mentioned in layer text (lower confidence, strength 0.5)
 
+### SkillEdge to threadex_graph Pointer Mapping
+
+The `SkillEdge` dataclass maps to the existing `shred_to_edges()` pointer format as follows:
+
+| SkillEdge Field | threadex_graph Pointer Key | Notes |
+|----------------|---------------------------|-------|
+| `target_id` | `target` | Converted to full URI: `threadex://mastery/{domain}/{target_id}` |
+| `relation` | `rel` | Direct mapping (same GRAPH_RELATIONS enum) |
+| `strength` | `strength` | Direct mapping (0.0-1.0 float) |
+| `priority` | — | Encoded as strength modifier: critical=1.0, high=0.8, medium=0.5 |
+| `direction` | — | Used for Markdown display only (upstream vs downstream sections) |
+
+The `direction` field is metadata for human-readable output — it determines whether an edge appears in the "Upstream" or "Downstream" section of the mastery doc. The actual SQLite edge is always stored as source→target regardless of direction.
+
+A helper function `skill_edges_to_graph_pointers(edges: List[SkillEdge], source_uri: str) -> List[dict]` converts the dataclass list into the dict format expected by `shred_to_edges()` / `insert_edges()`.
+
 ---
 
 ## 7. Directory Structure
@@ -331,11 +379,11 @@ ssot://{object_name}                            # SSOT reference (PROJECT_BRIEF,
 
 | # | Skill | XML Path | Rationale |
 |---|-------|----------|-----------|
-| 1 | ZPWO v4.0.0 | `.agents/skills/meta/zpwo_v4_0_0.xml` | Anchor — center node, orchestrates everything |
-| 2 | MMA Master Monitor v1.0.0 | `.agents/skills/meta/mma_master_monitor_agent_v1_0_0.xml` | Quality gate — validates all production |
-| 3 | Copy Director v3.0.0 | `.agents/skills/copy/skill_copy_director_v3_0_0_FINAL.xml` | Routing hub — dispatches all copy skills |
+| 1 | ZPWO v4.0.0 | `.claude/skills/meta/zpwo_v4_0_0.xml` | Anchor — center node, orchestrates everything |
+| 2 | MMA Master Monitor v1.0.0 | `.claude/skills/meta/mma_master_monitor_agent_v1_0_0.xml` | Quality gate — validates all production |
+| 3 | Copy Director v3.0.0 | `.claude/skills/copy/skill_copy_director_v3_0_0_FINAL.xml` | Routing hub — dispatches all copy skills |
 | 4 | Meta Skill Builder v4.0.0 | `.agents/skills/meta/meta_skill_builder_v4_0_0.xml` | Self-referential — builds new skills |
-| 5 | Workflow Translator v1.1.0 | `.agents/skills/automations/MODULE_3_WORKFLOW_TRANSLATOR_v1_1_0.xml` | Translation patterns — cross-domain |
+| 5 | Workflow Translator v1.1.0 | `.claude/skills/automations/MODULE_3_WORKFLOW_TRANSLATOR_v1_1_0.xml` | Translation patterns — cross-domain |
 
 ### Execution Order
 
