@@ -740,6 +740,127 @@ def generate_mastery_doc(result, mode="draft"):
 
 
 # ============================================================
+# EDGE-TO-POINTER MAPPING & RECORD CREATION
+# ============================================================
+
+def skill_edges_to_graph_pointers(edges, source_uri):
+    """Convert SkillEdge list to threadex_graph pointer dicts.
+
+    Maps each SkillEdge to a graph edge dict via make_graph_edge():
+      - target_id is prefixed with threadex://mastery/meta/ if not already a URI
+      - priority maps to strength: critical=1.0, high=0.8, medium=0.5
+      - direction is ignored (display-only metadata)
+    """
+    pointers = []
+    for edge in edges:
+        target = edge.target_id
+        if not target.startswith("threadex://") and not target.startswith("ssot://"):
+            target = "threadex://mastery/meta/" + target
+        strength_map = {"critical": 1.0, "high": 0.8, "medium": 0.5}
+        strength = strength_map.get(edge.priority, edge.strength)
+        pointers.append(make_graph_edge(
+            target=target,
+            rel=edge.relation,
+            strength=strength,
+        ))
+    return pointers
+
+
+def create_skill_records(result):
+    """Create JSONL record dicts from a RefactorResult.
+
+    Returns a list of record dicts ready for JSONL serialization:
+      - Record 1: type=reference, status=validated (L1 + identity summary)
+      - Records 2-N: type=pattern, status=candidate (one per framework)
+      - Records N+1-M: type=insight, status=observed (one per L4 layer)
+      - Records M+1-P: type=convention, status=golden (one per guardrail)
+
+    All records include threadex_graph pointers.
+    """
+    records = []
+    identity = result.identity
+
+    # Route domain via DOMAIN_ROUTING
+    routing = DOMAIN_ROUTING.get(identity.domain, ("unknown", "unknown", "unknown"))
+    mastery_subdir, expertise_domain, default_subdomain = routing
+
+    # Build mastery URI
+    slug = identity.skill_id.replace(".", "_").replace(" ", "_").lower()
+    mastery_uri = "threadex://mastery/{}/{}".format(mastery_subdir, slug)
+
+    # Convert edges to graph pointers
+    graph_pointers = skill_edges_to_graph_pointers(result.edges, mastery_uri)
+
+    # Record 1: Reference (L1 + identity summary)
+    l1_content = ""
+    for layer in result.layers:
+        if layer.layer_id == "L1":
+            l1_content = layer.content
+            break
+
+    ref_content = "{} (v{})\n\n{}".format(identity.name, identity.version, l1_content)
+    records.append(make_record(
+        domain="{}/{}".format(expertise_domain, default_subdomain),
+        content=ref_content,
+        record_type="reference",
+        status="validated",
+        tags=["skill:{}".format(identity.skill_id), "domain:{}".format(identity.domain)],
+        provenance="tx refactor --auto {}".format(identity.source_xml),
+        threadex_graph=graph_pointers,
+    ))
+
+    # Records 2-N: Patterns (one per framework from any layer)
+    for layer in result.layers:
+        for fw in layer.frameworks:
+            derives_edge = make_graph_edge(
+                target=mastery_uri, rel="DERIVES_FROM", strength=0.8,
+            )
+            fw_content = fw.get("content", "")
+            records.append(make_record(
+                domain="{}/{}".format(expertise_domain, default_subdomain),
+                content="Framework: {}\n\n{}".format(fw["name"], fw_content),
+                record_type="pattern",
+                status="candidate",
+                tags=["skill:{}".format(identity.skill_id), "framework:{}".format(fw["name"])],
+                provenance="tx refactor --auto {}".format(identity.source_xml),
+                threadex_graph=[derives_edge],
+            ))
+
+    # Records: Insights (one per L4 layer with content)
+    for layer in result.layers:
+        if layer.layer_id == "L4" and layer.content:
+            derives_edge = make_graph_edge(
+                target=mastery_uri, rel="DERIVES_FROM", strength=0.6,
+            )
+            records.append(make_record(
+                domain="{}/{}".format(expertise_domain, default_subdomain),
+                content=layer.content,
+                record_type="insight",
+                status="observed",
+                tags=["skill:{}".format(identity.skill_id), "golden_run"],
+                provenance="tx refactor --auto {}".format(identity.source_xml),
+                threadex_graph=[derives_edge],
+            ))
+
+    # Records: Conventions (one per guardrail)
+    for guardrail in result.guardrails:
+        derives_edge = make_graph_edge(
+            target=mastery_uri, rel="DERIVES_FROM", strength=0.9,
+        )
+        records.append(make_record(
+            domain="_shared/frameworks",
+            content=guardrail,
+            record_type="convention",
+            status="golden",
+            tags=["skill:{}".format(identity.skill_id), "guardrail"],
+            provenance="tx refactor --auto {}".format(identity.source_xml),
+            threadex_graph=[derives_edge],
+        ))
+
+    return records
+
+
+# ============================================================
 # DEFAULT CONFIG
 # ============================================================
 

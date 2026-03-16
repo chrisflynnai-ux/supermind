@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Threadex Phase 1B + 2A Acceptance Tests -- TX-01 through TX-23
+Threadex Phase 1B + 2A Acceptance Tests -- TX-01 through TX-24
 Tests verify Threadex file layer is operational.
 Uses temporary .threadex_test/ directory (no real data polluted).
 
@@ -848,6 +848,87 @@ class ThreadexAcceptanceTests:
             return False, "Failed checks: %s" % ", ".join(failed)
         return True, "generate_mastery_doc produces valid frontmatter and all expected sections"
 
+
+    # TX-24
+    def tx_24_create_skill_records(self):
+        self._init_threadex()
+        # Build test data
+        identity = tx.SkillIdentity(
+            skill_id="meta_test_strategist",
+            name="Test Strategist",
+            version="2.0.0",
+            domain="meta",
+            source_xml="test_strategist.xml",
+        )
+        layers = [
+            tx.SkillLayer(layer_id="L1", content="L1 identity and role content"),
+            tx.SkillLayer(
+                layer_id="L2",
+                content="L2 frameworks",
+                frameworks=[
+                    {"name": "BeliefLadder", "content": "Ladder rung definitions"},
+                ],
+            ),
+        ]
+        contract = tx.SkillContract(
+            inputs_required=["PROJECT_BRIEF"],
+            quality_gates={"min_score": 8.0},
+        )
+        guardrails = ["No fabrication allowed"]
+        edges = [
+            tx.SkillEdge(
+                target_id="copy_director",
+                relation="DEPENDS_ON",
+                priority="high",
+            ),
+        ]
+        result = tx.RefactorResult(
+            identity=identity,
+            layers=layers,
+            contract=contract,
+            edges=edges,
+            guardrails=guardrails,
+            warnings=[],
+        )
+
+        records = tx.create_skill_records(result)
+
+        # At least 3 records: reference + pattern (BeliefLadder) + convention (guardrail)
+        if len(records) < 3:
+            return False, "Expected at least 3 records, got %d" % len(records)
+
+        # First record: reference, validated, domain contains "strategist"
+        first = records[0]
+        if first["type"] != "reference":
+            return False, "First record type should be 'reference', got '%s'" % first["type"]
+        if first["status"] != "validated":
+            return False, "First record status should be 'validated', got '%s'" % first["status"]
+        if "strategist" not in first["domain"]:
+            return False, "First record domain should contain 'strategist', got '%s'" % first["domain"]
+
+        # Pattern records
+        pattern_records = [r for r in records if r["type"] == "pattern"]
+        if not pattern_records:
+            return False, "No pattern records found"
+        for pr in pattern_records:
+            if pr["status"] != "candidate":
+                return False, "Pattern record status should be 'candidate', got '%s'" % pr["status"]
+
+        # Convention records
+        convention_records = [r for r in records if r["type"] == "convention"]
+        if not convention_records:
+            return False, "No convention records found"
+        for cr in convention_records:
+            if cr["status"] != "golden":
+                return False, "Convention record status should be 'golden', got '%s'" % cr["status"]
+
+        # All records have threadex_graph key
+        for i, r in enumerate(records):
+            if "threadex_graph" not in r:
+                return False, "Record %d missing threadex_graph key" % i
+
+        return True, "create_skill_records creates correct types, statuses, and graph pointers"
+
     def run_all(self, target=None):
         """Run all (or one) acceptance tests with setup/teardown."""
         tests = [
@@ -874,6 +955,7 @@ class ThreadexAcceptanceTests:
             ("TX-21", "parse_skill_xml extracts identity from well-formed XML", self.tx_21_parse_skill_xml),
             ("TX-22", "extract_layers handles missing layers gracefully", self.tx_22_extract_layers_missing),
             ("TX-23", "generate_mastery_doc produces valid frontmatter + sections", self.tx_23_generate_mastery_doc),
+            ("TX-24", "create_skill_records creates correct types and statuses", self.tx_24_create_skill_records),
         ]
         if target:
             tests = [(tid, name, fn) for tid, name, fn in tests if tid == target]
