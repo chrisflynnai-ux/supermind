@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Threadex Phase 1B + 2A Acceptance Tests -- TX-01 through TX-21
+Threadex Phase 1B + 2A Acceptance Tests -- TX-01 through TX-22
 Tests verify Threadex file layer is operational.
 Uses temporary .threadex_test/ directory (no real data polluted).
 
@@ -713,6 +713,45 @@ class ThreadexAcceptanceTests:
             if tmp and os.path.exists(tmp.name):
                 os.unlink(tmp.name)
 
+
+    # TX-22
+    def tx_22_extract_layers_missing(self):
+        self._init_threadex()
+        tmp = None
+        try:
+            xml_content = (
+                '<?xml version="1.0" encoding="UTF-8"?>\n'
+                '<Skill skill_id="test_layers" name="Layer Test" version="1.0.0">\n'
+                '  <Meta><Domain>meta</Domain></Meta>\n'
+                '  <L1>First layer content</L1>\n'
+                '  <L3><FailureModePlaybook>Handle errors gracefully</FailureModePlaybook></L3>\n'
+                '</Skill>\n'
+            )
+            tmp = tempfile.NamedTemporaryFile(mode="w", suffix=".xml", delete=False, encoding="utf-8")
+            tmp.write(xml_content)
+            tmp.close()
+            result = tx.parse_skill_xml(tmp.name)
+            layer_ids = [l.layer_id for l in result.layers]
+            checks = {
+                "count_2": len(result.layers) == 2,
+                "has_L1": "L1" in layer_ids,
+                "has_L3": "L3" in layer_ids,
+                "no_L2": "L2" not in layer_ids,
+                "no_L4": "L4" not in layer_ids,
+                "L3_framework": any(
+                    f["name"] == "FailureModePlaybook"
+                    for l in result.layers if l.layer_id == "L3"
+                    for f in l.frameworks
+                ),
+            }
+            failed = [k for k, v in checks.items() if not v]
+            if failed:
+                return False, "Failed checks: %s" % ", ".join(failed)
+            return True, "Layer extraction handles missing L2/L4 and detects frameworks in L3"
+        finally:
+            if tmp and os.path.exists(tmp.name):
+                os.unlink(tmp.name)
+
     def run_all(self, target=None):
         """Run all (or one) acceptance tests with setup/teardown."""
         tests = [
@@ -737,6 +776,7 @@ class ThreadexAcceptanceTests:
             ("TX-19", "search_jsonl_fallback finds by substring", self.tx_19_search_fallback),
             ("TX-20", "graph broken detects orphans", self.tx_20_graph_broken),
             ("TX-21", "parse_skill_xml extracts identity from well-formed XML", self.tx_21_parse_skill_xml),
+            ("TX-22", "extract_layers handles missing layers gracefully", self.tx_22_extract_layers_missing),
         ]
         if target:
             tests = [(tid, name, fn) for tid, name, fn in tests if tid == target]
