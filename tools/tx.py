@@ -861,6 +861,121 @@ def create_skill_records(result):
 
 
 # ============================================================
+# HERMES L3 PROCEDURAL MEMORY
+# ============================================================
+
+def log_refactor_event(conn, event_type, skill_id, content, pru_score=0.0):
+    """Log a refactor event to Hermes conversation_history (L3 Procedural Memory)."""
+    session_id = os.environ.get("THREADEX_SESSION", str(uuid.uuid4())[:8])
+    conn.execute(
+        "INSERT INTO conversation_history (session_id, event_type, skill_id, content, pru_score) VALUES (?, ?, ?, ?, ?)",
+        (session_id, event_type, skill_id, content, pru_score))
+    conn.commit()
+
+
+# ============================================================
+# MASTERY INDEX & FILE MANAGEMENT
+# ============================================================
+
+def _make_skill_slug(skill_id):
+    """Convert skill_id to filesystem-safe slug: lowercase, replace dots/spaces with underscores."""
+    slug = skill_id.lower().replace(".", "_").replace(" ", "_")
+    slug = re.sub(r"[^a-z0-9_]", "", slug)
+    return slug
+
+
+def update_mastery_index(result, mode="auto"):
+    """Update .threadex/mastery/_index.yaml with refactor metadata."""
+    index_path = MASTERY_DIR / "_index.yaml"
+    MASTERY_DIR.mkdir(parents=True, exist_ok=True)
+
+    slug = _make_skill_slug(result.identity.skill_id)
+    now = datetime.now(timezone.utc).isoformat()
+    domain = result.identity.domain or "unknown"
+    mastery_subdir = DOMAIN_ROUTING.get(domain, ("unknown",))[0]
+
+    # Read existing index or create new
+    existing_content = ""
+    skills_count = 0
+    if index_path.exists():
+        existing_content = index_path.read_text(encoding="utf-8")
+        # Count existing skills
+        for line in existing_content.splitlines():
+            stripped = line.strip()
+            if stripped and not stripped.startswith("#") and not stripped.startswith("version:") \
+               and not stripped.startswith("updated:") and not stripped.startswith("skills_refactored:") \
+               and not stripped.startswith("skills:") and not stripped.startswith("-"):
+                if not stripped.startswith(" ") and stripped.endswith(":"):
+                    skills_count += 1
+
+    # Build skill entry
+    entry_lines = [
+        "  %s:" % slug,
+        "    name: \"%s\"" % result.identity.name,
+        "    domain: %s" % domain,
+        "    version: \"%s\"" % result.identity.version,
+        "    mastery_path: \"mastery/%s/%s.md\"" % (mastery_subdir, slug),
+        "    source_xml: \"%s\"" % result.identity.source_xml,
+        "    mode: %s" % mode,
+        "    records_created: %d" % result.records_created,
+        "    edges_created: %d" % result.edges_created,
+        "    refactored_at: \"%s\"" % now,
+    ]
+    entry_block = "\n".join(entry_lines) + "\n"
+
+    if existing_content and ("  %s:" % slug) in existing_content:
+        # Update existing entry - replace from slug: to next entry or end
+        lines = existing_content.splitlines()
+        new_lines = []
+        skip = False
+        for line in lines:
+            if line.strip() == "%s:" % slug or line == "  %s:" % slug:
+                skip = True
+                new_lines.extend(entry_lines)
+                continue
+            if skip and line and not line.startswith("    "):
+                skip = False
+            if not skip:
+                new_lines.append(line)
+        # Update count and timestamp
+        result_text = "\n".join(new_lines) + "\n"
+        result_text = re.sub(r"updated: .+", "updated: \"%s\"" % now, result_text)
+    else:
+        # Add new entry
+        skills_count += 1
+        if existing_content:
+            result_text = existing_content.rstrip() + "\n" + entry_block
+            result_text = re.sub(r"skills_refactored: \d+", "skills_refactored: %d" % skills_count, result_text)
+            result_text = re.sub(r"updated: .+", "updated: \"%s\"" % now, result_text)
+        else:
+            result_text = 'version: "1.0"\n'
+            result_text += 'updated: "%s"\n' % now
+            result_text += "skills_refactored: %d\n" % skills_count
+            result_text += "skills:\n"
+            result_text += entry_block
+
+    index_path.write_text(result_text, encoding="utf-8")
+    return index_path
+
+
+def write_mastery_doc(result, mode="auto"):
+    """Write Markdown mastery doc to .threadex/mastery/{domain}/{slug}.md."""
+    domain = result.identity.domain or "unknown"
+    mastery_subdir = DOMAIN_ROUTING.get(domain, ("unknown",))[0]
+    slug = _make_skill_slug(result.identity.skill_id)
+
+    doc_dir = MASTERY_DIR / mastery_subdir
+    doc_dir.mkdir(parents=True, exist_ok=True)
+    doc_path = doc_dir / ("%s.md" % slug)
+
+    md_content = generate_mastery_doc(result, mode=mode)
+    doc_path.write_text(md_content, encoding="utf-8")
+
+    result.markdown_path = str(doc_path)
+    return doc_path
+
+
+# ============================================================
 # DEFAULT CONFIG
 # ============================================================
 
@@ -1196,6 +1311,27 @@ def init_db(db_path=None):
     except sqlite3.OperationalError as e:
         print(f"Warning: FTS5 not available ({e})", file=sys.stderr)
     conn.execute("CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT)")
+    # Hermes-standard conversation history (L3 Procedural Memory)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS conversation_history (
+            id INTEGER PRIMARY KEY,
+            session_id TEXT,
+            event_type TEXT,
+            skill_id TEXT,
+            content TEXT,
+            tokens INTEGER DEFAULT 0,
+            pru_score REAL DEFAULT 0.0,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+    """)
+    # FTS5 for semantic search across refactor history
+    try:
+        conn.execute("""
+            CREATE VIRTUAL TABLE IF NOT EXISTS history_fts
+            USING fts5(content, content='conversation_history', content_rowid='id');
+        """)
+    except sqlite3.OperationalError:
+        pass  # FTS5 not available
     conn.execute("INSERT OR REPLACE INTO meta (key, value) VALUES ('schema_version', ?)",
                  (str(DB_SCHEMA_VERSION),))
     conn.commit()
