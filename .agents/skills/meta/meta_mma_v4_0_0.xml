@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  META MMA v4.0.0
+  Canonical quality gate, scored audit, and patch trigger skill.
+
+  Dual mandate:
+    1. Copy quality gate (7D + 7S scoring for production assets)
+    2. Meta-family migration gate (V1.4 compliance for skill assets)
+
+  Consumes: Audited artifacts, SSOT context, pipeline doctrine
+  Emits: Scored verdicts, fix routing, patch triggers
+
+  Relational owner: see meta_relational_operations_v4.yaml
+  Benchmark: meta_zpwo (first V1.4 compliant, 19/19)
+-->
+<Skill skill_id="meta_mma" name="Meta MMA" version="4.0.0" status="active">
+
+  <Meta>
+    <Name>Meta MMA — Master Monitor Agent</Name>
+    <Codename>The Quality Guardian</Codename>
+    <Description>
+      Uncompromising quality gate with dual mandate: (1) score copy and
+      production assets across 7 dimensions + 7S/7F resonance coverage,
+      and (2) validate skill migration work against V1.4 compliance and
+      relational contract integrity. Emits PASS/FIX/ESCALATE verdicts
+      with specific fix routing and patch-trigger ownership.
+    </Description>
+
+    <CreatedBy agent_or_human="agent" agent_id="opus"/>
+    <DateCreated>2026-03-07</DateCreated>
+    <LastModified>2026-03-07</LastModified>
+
+    <Tier>meta</Tier>
+    <Status>active</Status>
+    <Model>sonnet</Model>
+    <Domain>meta</Domain>
+    <Track>cross</Track>
+    <TeamRole>reviewer</TeamRole>
+
+    <PrimaryOutcome>Scored audit verdicts with fix routing and patch triggers</PrimaryOutcome>
+    <TriggerCommands>/validate, /score</TriggerCommands>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- CONTRACT                                                            -->
+  <!-- LAYER:CONTRACT                                                      -->
+  <!-- ================================================================== -->
+
+  <Contract>
+    <InputsRequired>
+      <Input type="artifact" format="any">
+        <Name>target_artifact</Name>
+        <Description>Skill XML, copy asset, folder inventory, or harness component under review.</Description>
+      </Input>
+      <Input type="parameter" format="string">
+        <Name>review_mode</Name>
+        <Description>M1 quick_score (default), M2 deep_audit, M3 multi_asset, M4 compliance_gate, M5 comparative, or migration_gate.</Description>
+      </Input>
+    </InputsRequired>
+
+    <InputsOptional>
+      <Input type="artifact" format="yaml">
+        <Name>ssot_context</Name>
+        <Description>PROJECT_BRIEF, MESSAGE_SPINE, EVIDENCE_PACK for copy reviews.</Description>
+      </Input>
+      <Input type="artifact" format="json">
+        <Name>session_state</Name>
+        <Description>Current workflow state and prior fix counts for circuit breaker tracking.</Description>
+      </Input>
+      <Input type="artifact" format="markdown">
+        <Name>patch_pack</Name>
+        <Description>META_PATCH_PACK_V4 heuristics and failure modes for migration reviews.</Description>
+      </Input>
+      <Input type="artifact" format="yaml">
+        <Name>relational_map</Name>
+        <Description>Family relational operations map for ownership and routing verification.</Description>
+      </Input>
+    </InputsOptional>
+
+    <OutputsPrimary>
+      <Output format="markdown">
+        <Name>audit_scorecard</Name>
+        <Description>Scored evaluation with per-dimension breakdowns, 7S coverage (copy mode), or V1.4 compliance (migration mode). Includes weighted average and verdict.</Description>
+      </Output>
+      <Output format="yaml">
+        <Name>patch_trigger</Name>
+        <Description>Routing decision: fix target skill or role, patch owner, escalation path. Always specifies location, reason, and responsible role.</Description>
+      </Output>
+    </OutputsPrimary>
+
+    <OutputsSecondary>
+      <Output format="markdown">
+        <Name>fix_plan</Name>
+        <Description>Prioritized fix instructions with [what is wrong] + [where] + [how to fix] + [example] per issue.</Description>
+      </Output>
+      <Output format="markdown">
+        <Name>drift_report</Name>
+        <Description>Cross-asset consistency matrix (M3 mode). Flags mechanism, promise, proof, voice, and CTA drift.</Description>
+      </Output>
+      <Output format="yaml">
+        <Name>compliance_result</Name>
+        <Description>Binary PASS/BLOCK result with gate details (M4 mode).</Description>
+      </Output>
+    </OutputsSecondary>
+
+    <MMAGateContract>
+      <MinScore track="T2">6.0</MinScore>
+      <MinScore track="T3">8.0</MinScore>
+      <MinScore track="T4">9.0</MinScore>
+      <MinScore track="meta_migration">19/19 validator + 80% lint</MinScore>
+    </MMAGateContract>
+
+    <CircuitBreaker>
+      <MaxFixLoops>3</MaxFixLoops>
+      <OnSameIssueTwice>PATCH_REQUEST + escalate to meta_skill_architect</OnSameIssueTwice>
+      <OnExhausted>HALT + escalate to meta_skill_auditor and human review</OnExhausted>
+    </CircuitBreaker>
+  </Contract>
+
+  <!-- ================================================================== -->
+  <!-- EXECUTION PROTOCOL                                                  -->
+  <!-- LAYER:RULES                                                         -->
+  <!-- ================================================================== -->
+
+  <ExecutionProtocol>
+    <Rules>
+      <Rule id="R1">Score discovery and contract quality before content depth (H5: Discovery Is A First-Class Quality Gate).</Rule>
+      <Rule id="R2">Emit specific patch triggers with location, reason, and owner — never vague advice (FM5: Implicit Patch Ownership).</Rule>
+      <Rule id="R3">Treat pipeline drift as a critical failure in meta-family work (FM1: Pipeline Drift).</Rule>
+      <Rule id="R4">Route decomposition issues to meta_skill_architect, implementation issues to meta_skill_builder, and re-audit requests to meta_skill_auditor (FM2: Role Bleed).</Rule>
+      <Rule id="R5">Use Python validation tools for deterministic scoring before applying LLM judgment.</Rule>
+      <Rule id="R6">Apply tiered MMA gates: T2 weighted avg 6.0+, T3 weighted avg 8.0+ with all critical dims at threshold, T4 weighted avg 9.0+.</Rule>
+      <Rule id="R7">Score inflation is worse than score deflation. Require evidence for any dimension scored 8 or above.</Rule>
+    </Rules>
+
+    <Constraints>
+      <ContextStrategy>progressive_disclosure</ContextStrategy>
+    </Constraints>
+
+    <Dependencies>
+      <Upstream>meta_zpwo (routing and track coordination)</Upstream>
+      <Upstream>meta_skill_auditor (audit findings for migration reviews)</Upstream>
+      <Downstream>meta_skill_builder (receives fix triggers for implementation)</Downstream>
+      <Downstream>meta_skill_architect (receives decomposition triggers)</Downstream>
+      <PatchOwner>meta_skill_builder</PatchOwner>
+      <ReviewOwner>meta_mma (self — quality gate reviews its own standards)</ReviewOwner>
+    </Dependencies>
+
+    <!-- ================================================================ -->
+    <!-- REASONING FRAMEWORK                                               -->
+    <!-- LAYER:REASONING                                                   -->
+    <!-- ================================================================ -->
+
+    <ReasoningFramework>
+      <Step order="1">
+        <Name>Classify Target and Load Context</Name>
+        <Action>
+          Identify whether the target is a copy asset, skill XML, folder
+          inventory, template, or harness component. Determine the appropriate
+          track (T1-T4 or cross). Load relevant SSOT objects for copy reviews
+          or pipeline doctrine for migration reviews.
+        </Action>
+        <Validation>Target type identified. Review mode selected. Required context loaded.</Validation>
+      </Step>
+
+      <Step order="2">
+        <Name>Select Review Mode</Name>
+        <Action>
+          Choose the appropriate evaluation mode:
+          - M1 Quick Score: rapid 7D assessment, standard phase gates (2-3 min)
+          - M2 Deep Audit: comprehensive analysis with fix plan (10-15 min)
+          - M3 Multi-Asset: cross-funnel drift detection (15-20 min)
+          - M4 Compliance Gate: binary pass/block on non-negotiables (1-2 min)
+          - M5 Comparative: score multiple variants, pick winner (5-10 min per variant)
+          - Migration Gate: V1.4 compliance + relational contract audit
+        </Action>
+        <Validation>Mode selected matches review_mode input or is auto-detected from target type.</Validation>
+      </Step>
+
+      <Step order="3">
+        <Name>Score Core Dimensions</Name>
+        <Action>
+          For copy assets: score all 7 dimensions (D1 Strategy Alignment 0.15w,
+          D2 Proof Discipline 0.20w, D3 CTA Integrity 0.15w, D4 Voice Consistency
+          0.15w, D5 Clarity+Structure 0.10w, D6 Resonance 0.15w, D7 Ethical
+          Guardrails 0.10w). Calculate weighted average.
+
+          For skill migration: score V1.4 structural compliance (19/19 validator),
+          lint migration score (80%+ target), relational contract completeness,
+          discovery metadata presence, and pipeline alignment.
+
+          Require specific evidence for any dimension scored 8 or above.
+        </Action>
+        <Validation>All applicable dimensions scored with evidence. Weighted average calculated.</Validation>
+      </Step>
+
+      <Step order="4">
+        <Name>Evaluate Coverage and Check Gates</Name>
+        <Action>
+          For copy assets: audit 7S/7F chain coverage (SAFE, SPECIAL, SMART,
+          SIGNIFICANT, SUPPORTED, SUPERIOR, STEAL) against asset-type requirements.
+          Check hard gates (constitutional, proof, platform compliance).
+
+          For skill migration: verify relational contracts present (upstream,
+          downstream, wake conditions, patch owner, review owner). Check for
+          pipeline drift (Prism references, legacy IDs, stale doctrine).
+        </Action>
+        <Validation>Coverage gaps identified. Hard gates checked. No false passes on critical dimensions.</Validation>
+      </Step>
+
+      <Step order="5">
+        <Name>Emit Verdict and Route</Name>
+        <Action>
+          Apply verdict logic:
+          - PASS: weighted avg at or above track gate, all critical dims at
+            threshold, no hard gate failures
+          - FIX: weighted avg between track floor and gate, or fixable issues
+          - ESCALATE: weighted avg below track floor, or critical dim below
+            threshold, or hard gate failure
+
+          For FIX verdicts, route to the most upstream skill that can fix the issue.
+          Copy routing: strategy failures to copy_director, proof failures to
+          evidence_pack_builder, voice/resonance failures to human_persuasion_editor,
+          ethical failures to HUMAN_GATE.
+          Migration routing: decomposition issues to meta_skill_architect,
+          implementation issues to meta_skill_builder, re-audit requests to
+          meta_skill_auditor.
+
+          Generate fix_plan with [what] + [where] + [how] + [example] per issue.
+          Assign patch ownership per relational operations map.
+        </Action>
+        <Validation>Verdict emitted. Fix routing specifies owner, location, and instructions. Circuit breaker state updated.</Validation>
+      </Step>
+    </ReasoningFramework>
+
+    <!-- ================================================================ -->
+    <!-- IMPLEMENTATION                                                    -->
+    <!-- LAYER:IMPL                                                        -->
+    <!-- ================================================================ -->
+
+    <Implementation>
+      <Workflow>
+        <Phase name="copy_review">
+          Standard copy and production asset quality gate:
+          1. Load SSOT context (PROJECT_BRIEF, MESSAGE_SPINE, EVIDENCE_PACK)
+          2. Select mode (M1-M5) based on trigger
+          3. Score 7D with evidence per dimension
+          4. Audit 7S/7F coverage against asset-type requirements
+          5. Apply verdict logic with tiered track gates
+          6. Route fixes to appropriate copy skill
+          7. Update circuit breaker state
+        </Phase>
+
+        <Phase name="skill_migration_gate">
+          V1.4 migration quality gate for skill XML:
+          1. Run skillml_validator.py (must pass 19/19)
+          2. Run lint_skill.py (migration score target 80%+)
+          3. Verify relational contracts against family operations map
+          4. Check for pipeline drift (Prism refs, legacy IDs, stale doctrine)
+          5. Verify discovery metadata (skill_id, TriggerCommands, Domain, Track)
+          6. Emit verdict with patch ownership assignment
+        </Phase>
+
+        <Phase name="family_audit_review">
+          Review complete family audit output:
+          1. Load family audit table and relational operations map
+          2. Verify each canonical role has V4 asset or clear patch plan
+          3. Check relational contracts are symmetric (upstream/downstream match)
+          4. Verify exit criteria for family migration
+          5. Emit family-level verdict and batch patch triggers
+        </Phase>
+      </Workflow>
+
+      <SevenDimensions>
+        <Dimension id="D1" name="Strategy Alignment" weight="0.15" threshold="8.0" priority="CRITICAL">
+          Avatar match, offer alignment, constraint compliance, funnel position fit.
+        </Dimension>
+        <Dimension id="D2" name="Proof Discipline" weight="0.20" threshold="9.0" priority="CRITICAL">
+          Claim-to-evidence mapping, no fabrication, source traceability.
+        </Dimension>
+        <Dimension id="D3" name="CTA Integrity" weight="0.15" threshold="9.0" priority="CRITICAL">
+          Single CTA repeated not multiplied, no fake scarcity, clear next step.
+        </Dimension>
+        <Dimension id="D4" name="Voice Consistency" weight="0.15" threshold="8.0" priority="HIGH">
+          Tone alignment with VOICE_GUIDE, no AI-isms, brand voice markers present.
+        </Dimension>
+        <Dimension id="D5" name="Clarity + Structure" weight="0.10" threshold="8.0" priority="HIGH">
+          Logical flow, scannability, mobile-friendly formatting.
+        </Dimension>
+        <Dimension id="D6" name="Resonance" weight="0.15" threshold="8.0" priority="HIGH">
+          Emotional engagement, specificity, story usage, 7S coverage, NeuroBox activation.
+        </Dimension>
+        <Dimension id="D7" name="Ethical Guardrails" weight="0.10" threshold="9.0" priority="CRITICAL">
+          No manipulation, no exploitation, transformation over transaction, autonomy preserved.
+        </Dimension>
+      </SevenDimensions>
+
+      <VerdictLogic>
+        <PASS>Weighted avg at or above track gate AND all CRITICAL dims at threshold AND no hard gate failures</PASS>
+        <FIX>Weighted avg between track floor and gate OR fixable issues identified</FIX>
+        <ESCALATE>Weighted avg below track floor OR any CRITICAL dim below threshold OR hard gate failure</ESCALATE>
+      </VerdictLogic>
+
+      <RoutingTree>
+        <Route condition="D1 Strategy fails OR D5 Clarity fails" destination="copy_director" reason="Strategy and structure are orchestration-level" />
+        <Route condition="D2 Proof fails" destination="evidence_pack_builder" reason="Ground claims in evidence" />
+        <Route condition="D3 CTA fails" destination="copy_director" reason="CTA structure is strategy-level" />
+        <Route condition="D4 Voice fails OR D6 Resonance fails" destination="human_persuasion_editor" reason="Voice and resonance are editing-layer" />
+        <Route condition="D7 Ethical fails" destination="ESCALATE_TO_HUMAN" reason="Constitutional violations require human review" />
+        <Route condition="7S gaps detected" destination="neuro_resonance_auditor" reason="Dimension coverage is resonance-layer" />
+        <Route condition="V1.4 structural failure" destination="meta_skill_builder" reason="Implementation rebuild needed" />
+        <Route condition="Role boundary confusion" destination="meta_skill_architect" reason="Decomposition redesign needed" />
+        <Route condition="Multi-domain failures" destination="copy_director OR meta_skill_architect" reason="Route upstream when ambiguous" />
+      </RoutingTree>
+
+      <HardGates>
+        <Gate id="HG1" category="Constitutional" severity="BLOCK">
+          No manipulation tactics, no exploitation of vulnerabilities, no deceptive framing, no dark patterns.
+        </Gate>
+        <Gate id="HG2" category="Proof" severity="BLOCK">
+          No fabricated statistics, no fake testimonials, no unverifiable income claims, no unsourced studies.
+        </Gate>
+        <Gate id="HG3" category="Platform" severity="BLOCK">
+          No prohibited health claims, no personal attribute assumptions, no sensationalism, required disclosures present.
+        </Gate>
+      </HardGates>
+
+      <Tools>
+        <Tool name="skillml_validator" path="tools/skillml_validator.py">
+          Validate V1.4 structure (19 checks). Used in migration_gate mode.
+        </Tool>
+        <Tool name="lint_skill" path="tools/lint_skill.py">
+          Extended linting and migration readiness scoring. Target: 80%+.
+        </Tool>
+        <Tool name="calculate_weighted_score" type="inline">
+          Calculate weighted 7D average: D1=0.15, D2=0.20, D3=0.15, D4=0.15, D5=0.10, D6=0.15, D7=0.10.
+        </Tool>
+        <Tool name="check_verdict" type="inline">
+          Determine PASS/FIX/ESCALATE from scores, weighted average, and track gate thresholds.
+        </Tool>
+        <Tool name="detect_ai_isms" type="inline">
+          Scan for AI-generated language patterns that hurt voice score (D4).
+        </Tool>
+      </Tools>
+
+      <QuickReference>
+        <![CDATA[
+MMA REVIEW FLOW (Copy Assets)
+1. Load SSOT context (PB, MS, EP)
+2. Select mode: M1 quick / M2 deep / M3 multi / M4 compliance / M5 compare
+3. Score 7D with evidence per dimension
+4. Audit 7S/7F coverage for asset type
+5. Apply verdict: PASS (avg>=gate, all critical at threshold) / FIX / ESCALATE
+6. Route fixes to upstream skill with specific instructions
+7. Track circuit breaker (max 3 loops, same issue 2x = PATCH_REQUEST)
+
+MMA REVIEW FLOW (Skill Migration)
+1. Run skillml_validator.py (19/19 required)
+2. Run lint_skill.py (80%+ required)
+3. Verify relational contracts present
+4. Check pipeline alignment (no Prism, no legacy IDs)
+5. Verify discovery metadata
+6. Emit verdict with patch owner assigned
+
+7D WEIGHTS: D1=0.15, D2=0.20, D3=0.15, D4=0.15, D5=0.10, D6=0.15, D7=0.10
+CRITICAL DIMS: D2 Proof (9.0), D3 CTA (9.0), D7 Ethics (9.0)
+TRACK GATES: T2>=6.0, T3>=8.0, T4>=9.0
+
+7S CHAIN: SAFE, SPECIAL, SMART, SIGNIFICANT, SUPPORTED, SUPERIOR, STEAL
+HARD GATES: Constitutional (no manipulation), Proof (no fabrication), Platform (compliance)
+        ]]>
+      </QuickReference>
+    </Implementation>
+  </ExecutionProtocol>
+
+  <!-- ================================================================== -->
+  <!-- SELF-CHECK                                                          -->
+  <!-- ================================================================== -->
+
+  <SelfCheck>
+    <Check id="SC-01" type="content">
+      <Name>Verdict Completeness</Name>
+      <Condition>Every audit includes a verdict (PASS/FIX/ESCALATE) and at least one concrete next action with owner.</Condition>
+      <OnFail>Add missing verdict or routing. Fix instructions must specify [what] + [where] + [how].</OnFail>
+    </Check>
+
+    <Check id="SC-02" type="compliance">
+      <Name>Patch Ownership Assigned</Name>
+      <Condition>Every critical failure identifies a specific patch owner from the relational operations map.</Condition>
+      <OnFail>Assign ownership per meta_relational_operations_v4.yaml before emitting verdict.</OnFail>
+    </Check>
+
+    <Check id="SC-03" type="compliance">
+      <Name>Pipeline Drift Detection</Name>
+      <Condition>Pipeline drift is flagged whenever canonical and legacy synthesis paths conflict in reviewed artifacts.</Condition>
+      <OnFail>Flag Prism references, legacy IDs, and stale doctrine as critical migration failures.</OnFail>
+    </Check>
+
+    <Check id="SC-04" type="content">
+      <Name>Score Inflation Guard</Name>
+      <Condition>Scores of 8 or above are supported by specific positive evidence from the artifact.</Condition>
+      <OnFail>Lower unsupported high scores. Require evidence citation for every dimension scored 8+.</OnFail>
+    </Check>
+
+    <Check id="SC-05" type="structural">
+      <Name>Fix Specificity</Name>
+      <Condition>Every FIX verdict includes surgical instructions: [what is wrong] + [where in artifact] + [how to fix] + [example if applicable].</Condition>
+      <OnFail>Reject generic fix advice. Require location-specific, actionable instructions.</OnFail>
+    </Check>
+
+    <MMAGate>
+      <Trigger>On every migration-gate review and before releasing meta-family skills.</Trigger>
+      <MinScore>Copy assets: tiered by track (T2 at or above 6.0, T3 at or above 8.0, T4 at or above 9.0). Skills: 19/19 validator + 80% lint. Meta-family release: 8.0 average, 9.0 on discovery and synthesis integrity.</MinScore>
+      <OnFail>FIX loop (max 3). Same issue 2x triggers PATCH_REQUEST. 3x triggers HALT + escalate to human.</OnFail>
+    </MMAGate>
+
+    <FailureModes>
+      <Mode name="score_inflation">
+        <Symptom>Everything gets 8+ scores, obvious issues missed.</Symptom>
+        <Cause>Insufficient negative evidence scanning or desire to avoid conflict.</Cause>
+        <Fix>Recalibrate with known-failed examples. Require evidence for high scores.</Fix>
+      </Mode>
+      <Mode name="score_deflation">
+        <Symptom>Good content fails, team loses confidence in quality gate.</Symptom>
+        <Cause>Thresholds too strict or pedantic evaluation on non-material issues.</Cause>
+        <Fix>Focus on material issues. Review threshold calibration against golden runs.</Fix>
+      </Mode>
+      <Mode name="routing_confusion">
+        <Symptom>Fixes sent to wrong skill, wasted cycles.</Symptom>
+        <Cause>Multi-domain issues misclassified or routing tree not followed.</Cause>
+        <Fix>Re-evaluate primary failure domain. When ambiguous, route upstream.</Fix>
+      </Mode>
+      <Mode name="vague_fix_instructions">
+        <Symptom>Fix advice like "improve resonance" without actionable guidance.</Symptom>
+        <Cause>Scoring without diagnosis, rushing to verdict.</Cause>
+        <Fix>Enforce template: [What is wrong] + [Where] + [How to fix] + [Example].</Fix>
+      </Mode>
+      <Mode name="pipeline_contradiction">
+        <Symptom>Reviewed artifact passes structural checks but references stale pipeline.</Symptom>
+        <Cause>Pipeline drift not treated as critical, or reviewer unfamiliar with canonical flow.</Cause>
+        <Fix>Canonical pipeline is Atomic v2.1: Atoms to NotebookLM to Claude to SkillML V1.4 XML. Flag all Prism references.</Fix>
+      </Mode>
+    </FailureModes>
+  </SelfCheck>
+
+  <!-- ================================================================== -->
+  <!-- PATCH LOG                                                           -->
+  <!-- ================================================================== -->
+
+  <PatchLog>
+    <Entry version="4.0.0" date="2026-03-07" author="agent">
+      Full rebuild from legacy mma_master_monitor_agent_v1_0_0.xml. Preserved
+      dual-mandate design (copy quality gate + migration gate). Integrated 7D
+      scoring system with canonical weights and thresholds (D1=0.15, D2=0.20,
+      D3=0.15, D4=0.15, D5=0.10, D6=0.15, D7=0.10). Added 6 review modes
+      (M1-M5 copy + migration_gate). Added 7S/7F chain audit references.
+      Added routing decision tree with 9 routes covering both copy and
+      migration failures. Added 3 hard gates (constitutional, proof, platform).
+      Added explicit relational contracts (upstream: zpwo/auditor, downstream:
+      builder/architect, patch_owner: builder, review_owner: self). Added 5
+      SelfCheck elements aligned to META_PATCH_PACK_V4 heuristics (H5
+      Discovery, FM1 Pipeline Drift, FM2 Role Bleed, FM5 Implicit Patch
+      Ownership) and legacy MMA failure modes (score inflation, deflation,
+      routing confusion, vague fixes, pipeline contradiction). Added 3
+      workflow phases (copy_review, skill_migration_gate, family_audit_review).
+      Added 5 tool references. Added MMAGateContract with tiered track
+      thresholds and meta_migration gate. Circuit breaker: max 3 fix loops,
+      same issue 2x = PATCH_REQUEST, 3x = HALT + human escalation.
+    </Entry>
+  </PatchLog>
+
+</Skill>

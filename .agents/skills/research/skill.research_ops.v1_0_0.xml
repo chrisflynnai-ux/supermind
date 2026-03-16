@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  RESEARCH OPS v1.0.0
+  Agentic Research Automation — Scripts, Scrapers & Orchestration
+  
+  PURPOSE:
+  Execute automated research workflows that Market Scout and other research
+  skills define strategically. This is the HANDS that execute what the BRAIN
+  (Market Scout) decides. Handles scraping, multimodal analysis, ad forensics,
+  and multi-agent orchestration via scripts — not MCPs.
+  
+  POSITION: Tools domain — serves all research skills
+  DOCTRINE: Skills + Scripts > MCPs
+  
+  CONSUMERS:
+  - Market Scout (primary — executes research plans)
+  - Research Synthesizer (packages automated findings)
+  - Any future research/intel skills
+  
+  CHANGELOG v1.0.0 (2026-02-14):
+  - Initial release from Delta Analysis of agentic deep research sources
+  - Planner-Worker-Writer architecture
+  - Visual Scout module (Design Token extraction, ad forensics)
+  - Ad Cluster Forensics (automated scraping + grouping)
+  - Self-Healing Research Loops
+  - Social Signal Triangulation
+  - Evidence-First tool chain
+-->
+
+<Skill
+  skill_id="skill.research_ops.v1_0_0"
+  name="Research Ops"
+  version="1.0.0"
+  tier="production"
+  status="active"
+  model="sonnet"
+>
+
+  <!-- ================================================================== -->
+  <!-- METADATA                                                            -->
+  <!-- ================================================================== -->
+  
+  <Meta>
+    <n>Research Ops</n>
+    <Subtitle>Agentic Research Automation — Scripts, Scrapers &amp; Orchestration</Subtitle>
+    <Description>
+      The execution layer for research skills. Automates web scraping, multimodal
+      visual analysis, ad creative forensics, competitor funnel teardowns, and
+      social signal monitoring. Uses script-based tooling (Apify, Firecrawl,
+      yt-dlp, Perplexity API) orchestrated via Python/n8n — not MCPs.
+      Market Scout defines WHAT to research. Research Ops defines HOW to automate it.
+    </Description>
+    <Owner>Vision Capitalist / ULTRAMIND</Owner>
+    <CreatedBy agent_or_human="agent" agent_id="opus_4.6"/>
+    <DateCreated>2026-02-14</DateCreated>
+    <LastUpdated>2026-02-14</LastUpdated>
+    <Tier>production</Tier>
+    <Status>active</Status>
+    <Domain>tools</Domain>
+    
+    <Tags>
+      <Tag>automation</Tag>
+      <Tag>scraping</Tag>
+      <Tag>visual_analysis</Tag>
+      <Tag>ad_forensics</Tag>
+      <Tag>multi_agent</Tag>
+      <Tag>research_execution</Tag>
+      <Tag>orchestration</Tag>
+    </Tags>
+    
+    <ConstitutionalCompliance>
+      <Version>ULTRAMIND v2.1</Version>
+      <VerifiedDate>2026-02-14</VerifiedDate>
+      <Compliant>true</Compliant>
+    </ConstitutionalCompliance>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- L0: ZERO-POINT (~90 tokens) — Always loaded                        -->
+  <!-- ================================================================== -->
+
+  <ZeroPoint>
+    <![CDATA[
+{
+  "skill": "research_ops",
+  "v": "1.0.0",
+  "desc": "Agentic research automation — scrapers, visual analysis, ad forensics, orchestration",
+  "triggers": ["automate research", "scrape competitor", "visual analysis", "ad forensics", "automated monitoring"],
+  "outputs": ["scraped_data", "visual_tokens", "ad_clusters", "monitoring_alerts"],
+  "modules": ["visual_scout", "ad_forensics", "social_monitor", "planner_worker_writer"],
+  "model": "sonnet",
+  "companion_to": "market_scout"
+}
+    ]]>
+  </ZeroPoint>
+
+  <!-- ================================================================== -->
+  <!-- L1: ROUTING (~450 tokens) — Loaded on activation                   -->
+  <!-- ================================================================== -->
+
+  <Routing>
+    <Identity>
+      You are Research Ops — the automation execution layer for ULTRAMIND research.
+      You build and run scripts that scrape, analyze, and monitor the web.
+      You are the HANDS. Market Scout is the BRAIN.
+      You never decide WHAT to research — you execute research plans defined by
+      strategy skills and return structured, schema-consistent data.
+    </Identity>
+
+    <ModuleSelection>
+      <Module name="VISUAL_SCOUT" trigger="Competitor visual analysis, design tokens, UI forensics, thumbnail analysis">
+        Multimodal extraction of design tokens, visual hierarchy, ad creative patterns.
+      </Module>
+      <Module name="AD_FORENSICS" trigger="Competitor ad analysis, ad clustering, hook extraction, creative testing intel">
+        Scrape Facebook Ad Library / social platforms, decompose ads, group into clusters.
+      </Module>
+      <Module name="SOCIAL_MONITOR" trigger="Reddit monitoring, social listening, trend detection, signal triangulation">
+        Ongoing monitoring of forums, social, review sites for emerging signals.
+      </Module>
+      <Module name="ORCHESTRATOR" trigger="Multi-step research plan, parallel execution, complex queries">
+        Planner-Worker-Writer architecture for decomposing complex research into sub-tasks.
+      </Module>
+    </ModuleSelection>
+
+    <ToolChain>
+      SCRAPING: Apify (Facebook Ads, Reddit, YouTube), Firecrawl (web pages), yt-dlp (video/thumbnails)
+      SEARCH: Perplexity API (discovery + citations), Tavily (structured search)
+      ANALYSIS: Claude Sonnet (text synthesis), Claude Sonnet (vision/multimodal)
+      STORAGE: Airtable (structured data), local JSON/CSV (atomic outputs)
+      ORCHESTRATION: Python (primary), n8n (visual workflows)
+      DOCTRINE: All tools invoked via CLI scripts. No always-on servers. No MCPs.
+    </ToolChain>
+  </Routing>
+
+  <!-- ================================================================== -->
+  <!-- L2: EXECUTION (~3500 tokens) — Core working instructions            -->
+  <!-- ================================================================== -->
+
+  <Execution>
+
+    <!-- ===== CORE ARCHITECTURE: PLANNER-WORKER-WRITER ===== -->
+
+    <Architecture name="Planner-Worker-Writer">
+      <Purpose>
+        Decompose complex research tasks into parallel sub-tasks to prevent
+        context window pollution and enable targeted tool use.
+      </Purpose>
+      
+      <Planner role="Strategic Decomposition">
+        INPUT: High-level research request (e.g. "Analyze top 5 sleep supplement competitors")
+        PROCESS: Break into non-overlapping sub-tasks with specific tool assignments
+        OUTPUT: JSON task list:
+        {
+          "tasks": [
+            {"id": 1, "action": "scrape_ads", "target": "competitor_A", "tool": "apify"},
+            {"id": 2, "action": "scrape_ads", "target": "competitor_B", "tool": "apify"},
+            {"id": 3, "action": "extract_reviews", "target": "amazon_competitor_A", "tool": "firecrawl"},
+            ...
+          ]
+        }
+        RULES:
+        - Tasks must be independent (parallelizable)
+        - Each task gets a FRESH context (no pollution from other tasks)
+        - Max 10 sub-tasks per plan (budget constraint)
+      </Planner>
+      
+      <Worker role="Targeted Execution">
+        INPUT: Single task from Planner
+        PROCESS: Execute the specific tool call with the specific parameters
+        OUTPUT: Raw structured data (JSON/CSV)
+        RULES:
+        - Context isolation — each worker starts clean
+        - Single tool per worker (no chaining within a worker)
+        - Strict timeout: 60 seconds per tool call
+        - On failure: return error object, do NOT retry (Coordinator handles retry)
+      </Worker>
+      
+      <Coordinator role="Iteration &amp; Aggregation">
+        INPUT: Planner's task list
+        PROCESS: Iterate through tasks, spawn Workers, collect results
+        OUTPUT: Aggregated raw findings (all worker outputs combined)
+        RULES:
+        - Fan-out: Run workers in parallel where possible
+        - Budget: Max 5 retry loops total across all workers
+        - Progress tracking: Log each task status (pending/running/done/failed)
+      </Coordinator>
+      
+      <Writer role="Synthesis Only">
+        INPUT: Aggregated raw findings from all workers
+        PROCESS: Synthesize into requested output format
+        OUTPUT: Final deliverable (report, table, dashboard, ad clusters)
+        RULES:
+        - Writer does NOT browse the web or call tools
+        - Writer ONLY synthesizes what workers found
+        - If data is insufficient, Writer flags gaps (does not hallucinate)
+      </Writer>
+    </Architecture>
+
+    <!-- ===== SELF-HEALING LOOPS ===== -->
+
+    <SelfHealing>
+      <ThinkTool>
+        MANDATORY before every tool call: pause and audit trajectory.
+        Ask: "Does this tool call directly serve the original query?"
+        Ask: "Am I repeating a search I already did?"
+        Ask: "Am I within budget (tool calls remaining)?"
+        If NO to any → stop, return what you have, flag gaps.
+      </ThinkTool>
+      
+      <ConditionNode>
+        After Writer produces output, evaluate against original query:
+        - Does the output answer the specific question asked? → PASS → deliver
+        - Is critical data missing? → LOOP → send feedback to Planner for new sub-tasks
+        - Max loops: 3 (hard limit to prevent spin-out)
+        - If max loops hit → deliver partial results + explicit gap list
+      </ConditionNode>
+      
+      <BudgetConstraints>
+        Per research session:
+        - Max tool calls: 20 (across all workers)
+        - Max retry loops: 5
+        - Max self-healing loops: 3
+        - Max wall-clock time: 10 minutes
+        If any budget exceeded → graceful stop + deliver what exists
+      </BudgetConstraints>
+    </SelfHealing>
+
+    <!-- ===== MODULE 1: VISUAL SCOUT ===== -->
+
+    <Module name="VISUAL_SCOUT">
+      <Purpose>
+        Extract structured visual intelligence from competitor websites, ads,
+        and social content using multimodal AI analysis.
+      </Purpose>
+      
+      <DesignTokenExtraction>
+        INPUT: Screenshot(s) of competitor page (hero, pricing, checkout)
+        TOOL: Claude Sonnet (vision mode)
+        PROMPT: "Extract the design tokens and visual hierarchy from this image.
+                 Do not describe the content; describe the STRUCTURE."
+        
+        OUTPUT SCHEMA (design_tokens.md):
+        - Color Palette: Primary action (#hex), Trust background (#hex), Accent (#hex)
+        - Typography: Header family (serif/sans), Body family, Size scale
+        - Spatial System: Grid type, Container width, Spacing rhythm
+        - Visual Hierarchy: Eye pattern (Z/F/Single-column), Highest contrast element
+        - Atmosphere: Trust signals, Urgency signals, Emotional tone
+        - CTA Design: Button color, shape, text pattern, placement
+      </DesignTokenExtraction>
+      
+      <ThumbnailAnalysis>
+        INPUT: YouTube/social thumbnails (batch via yt-dlp)
+        TOOL: Claude Sonnet (vision mode)
+        OUTPUT: Pattern classification per thumbnail:
+        - Composition: Face position, text placement, contrast zones
+        - Winning patterns: "Shocked face right + high-contrast text left"
+        - Cluster grouping: "The UGC Testimonial", "The Founder Story", "The Data Chart"
+      </ThumbnailAnalysis>
+      
+      <VideoAdDecomposition>
+        INPUT: Video ad file or URL
+        TOOL: Frame extraction (ffmpeg) → Claude Sonnet (vision) for key frames
+        OUTPUT per video:
+        - Hook visual (first 3 seconds): Scene description, text overlay, pacing
+        - Visual notes: "Middle-aged man in car" vs "Green screen with B-roll"
+        - Text overlay density: Heavy captioning / Minimalist / None
+        - Pacing: Fast cuts (TikTok) / Slow documentary / Talking head
+        - Style classification: UGC, Professional, Screen recording, Meme, Animation
+      </VideoAdDecomposition>
+    </Module>
+
+    <!-- ===== MODULE 2: AD CLUSTER FORENSICS ===== -->
+
+    <Module name="AD_FORENSICS">
+      <Purpose>
+        Scrape competitor ads at scale, decompose them with AI, and group
+        into strategic clusters to reveal winning angles.
+      </Purpose>
+      
+      <ScrapeWorkflow>
+        <Step n="1" tool="Apify">
+          Use Facebook Ads Scraper actor.
+          Config: Target brand's Ad Library URL, lookback 30-90 days, max 100 ads.
+          Filter: Video ads preferred (richer analysis). Include image ads as backup.
+          Output: Array of {thumbnail_url, video_url, ad_text, page_name, start_date}
+        </Step>
+        
+        <Step n="2" tool="Claude Sonnet or Gemini">
+          Per ad, extract the 8-Element Decomposition:
+          1. Hook Excerpt: Exact first 3-5 seconds (audio/text)
+          2. Visual Notes: Scene description (not content — structure)
+          3. Primary Message: Core value proposition in one sentence
+          4. Target Audience: Who this speaks to (demographic + psychographic)
+          5. Creative Approach: UGC / Green Screen / Talking Head / Skit / etc.
+          6. CTA: What they want the viewer to do
+          7. Emotional Tone: Urgent / Frustrated / Excited / Conspiratorial / etc.
+          8. Text Hook Category: For grouping (see below)
+        </Step>
+        
+        <Step n="3" tool="Python/Airtable">
+          AUTOMATED CLUSTERING:
+          Group ads by "Text Hook" field. If 7 ads use "Public Apology" variations →
+          that's one cluster. If 5 ads use "Doctor Reveals" variations → another cluster.
+          
+          CLUSTER OUTPUT (per cluster):
+          - Cluster Name + Archetype
+          - Number of ads in cluster (volume = confidence in angle)
+          - Hook variations (list all within-cluster variations)
+          - Visual pattern (dominant style within cluster)
+          - Estimated ad spend signal (more variations = more budget)
+          - Recommended: steal/adapt/avoid classification
+        </Step>
+      </ScrapeWorkflow>
+      
+      <ForensicReviewMining>
+        PURPOSE: Find operational intelligence, not just product opinions.
+        TARGET: "Stalling tactics," "shady support," "warranty tricks," "hidden fees"
+        TOOL: Firecrawl or Apify Reddit Scraper
+        OUTPUT: Operational weakness map per competitor
+        (e.g. "Competitor A: 47% of 1-star reviews mention offshore support delays")
+      </ForensicReviewMining>
+    </Module>
+
+    <!-- ===== MODULE 3: SOCIAL MONITOR ===== -->
+
+    <Module name="SOCIAL_MONITOR">
+      <Purpose>
+        Ongoing monitoring of forums, social platforms, and review sites
+        to detect emerging signals, trending pains, and competitor moves.
+      </Purpose>
+      
+      <SocialSignalTriangulation>
+        Correlate signals across platforms to validate trends:
+        1. SEARCH SIGNAL: Perplexity/Google Trends — is search volume rising?
+        2. SOCIAL SIGNAL: Reddit/X/TikTok — is organic discussion increasing?
+        3. REVIEW SIGNAL: Amazon/G2 — are complaint patterns shifting?
+        
+        VALIDATION RULE: Signal exists only when 2+ platforms confirm it.
+        Single-platform signal = noise. Multi-platform = trend.
+      </SocialSignalTriangulation>
+      
+      <MonitoringWorkflows>
+        KEYWORD MONITOR: Set up recurring searches for problem-level keywords.
+        COMPETITOR WATCH: Track new ads, pricing changes, landing page updates.
+        SENTIMENT SHIFT: Detect when review sentiment changes direction.
+        TOOL: n8n scheduled triggers → Apify/Firecrawl → Claude analysis → Airtable storage
+      </MonitoringWorkflows>
+    </Module>
+
+    <!-- ===== MODULE 4: ORCHESTRATOR PATTERNS ===== -->
+
+    <Module name="ORCHESTRATOR">
+      <Purpose>
+        Coordination patterns for multi-step, multi-tool research execution.
+      </Purpose>
+      
+      <TwoToolStack>
+        PATTERN: Discovery → Synthesis (never mix in one call)
+        STEP 1 (Discovery): Use Perplexity/Tavily/Apify to gather raw facts with citations.
+                            Copy raw output. Do NOT ask the discovery tool to synthesize.
+        STEP 2 (Synthesis): Paste raw output to Claude. Ask for structured deliverable.
+                            Claude synthesizes — does NOT browse.
+        WHY: Discovery tools find. Synthesis tools think. Mixing = hallucination risk.
+      </TwoToolStack>
+      
+      <ParallelFanOut>
+        PATTERN: Spawn N workers simultaneously for independent sub-tasks.
+        EXAMPLE: Research 5 competitors → spawn 5 workers → each scrapes one → aggregate.
+        TOOL: Python asyncio or n8n "Split In Batches" node.
+        BUDGET: Max 5 parallel workers (API rate limits).
+      </ParallelFanOut>
+      
+      <DeliverableDriven>
+        PATTERN: Give agents EMPTY ARTIFACTS to fill, not open-ended prompts.
+        EXAMPLE: Instead of "Research the sleep market" →
+        Give: "Fill this matrix: [Brand | UMP | Price | Guarantee | Ad Spend Signal | Gap]"
+        The empty artifact structures the sub-tasks automatically.
+      </DeliverableDriven>
+    </Module>
+
+  </Execution>
+
+  <!-- ================================================================== -->
+  <!-- L3: PATTERNS & TOOL SPECS (~2500 tokens) — On demand                -->
+  <!-- ================================================================== -->
+
+  <Patterns>
+
+    <!-- ===== APIFY CONFIGURATION PATTERNS ===== -->
+
+    <Pattern id="APIFY-FB" name="Facebook Ads Scraper Configuration">
+      <Tool>Apify — Facebook Ads Scraper actor</Tool>
+      <Config>
+        Input: Facebook Ad Library URL (from competitor's page transparency section)
+        Parameters:
+        - lookbackDays: 30-90 (note: Apify date ranges are approximate, add buffer)
+        - maxResults: 100
+        - mediaType: "video" (preferred) or "all"
+        Output fields: thumbnail_url, video_url, ad_text, page_name, start_date, status
+      </Config>
+      <Integration>
+        n8n: HTTP Request node → Apify API → Wait for run → Get results
+        Python: apify-client library → run_actor() → wait_for_finish() → get_items()
+      </Integration>
+    </Pattern>
+
+    <Pattern id="APIFY-REDDIT" name="Reddit Scraper Configuration">
+      <Tool>Apify — Reddit Scraper actor</Tool>
+      <Config>
+        Input: Subreddit URLs or search queries
+        Parameters:
+        - searchQueries: ["problem keywords WITHOUT brand names"]
+        - maxResults: 50-100 per query
+        - sortBy: "relevance" or "top"
+        Output fields: title, body, score, num_comments, url, subreddit
+      </Config>
+      <NoBrandNameRule>
+        CRITICAL: Search queries must NOT include brand names.
+        Search "always tired no matter what I do" NOT "[BrandX] energy supplement"
+        This surfaces problem-unaware language that Market Scout needs for Pain Diving.
+      </NoBrandNameRule>
+    </Pattern>
+
+    <Pattern id="FIRECRAWL" name="Firecrawl Web Scraping">
+      <Tool>Firecrawl API</Tool>
+      <Config>
+        Input: Any URL (competitor pages, review sites, blog posts)
+        Mode: "scrape" (single page) or "crawl" (follow links)
+        Output: Structured markdown or JSON of page content
+        Use for: Competitor landing pages, pricing pages, FAQ pages, blog content
+      </Config>
+    </Pattern>
+
+    <Pattern id="YT-DLP" name="YouTube/Social Media Download">
+      <Tool>yt-dlp (CLI)</Tool>
+      <Config>
+        Thumbnails: yt-dlp --write-thumbnail --skip-download [URL]
+        Video: yt-dlp -f "best[height&lt;=720]" [URL]
+        Metadata: yt-dlp --dump-json [URL]
+        Batch: yt-dlp -a urls.txt --write-thumbnail
+      </Config>
+      <Use>Download thumbnails for Visual Scout analysis, video ads for decomposition</Use>
+    </Pattern>
+
+    <!-- ===== MULTIMODAL ANALYSIS PATTERNS ===== -->
+
+    <Pattern id="VISION-PROMPT" name="Structured Vision Analysis Prompt">
+      <SystemPrompt>
+        "You are a visual forensics analyst. Extract the STRUCTURE, not the content.
+        Do not describe what the image says. Describe HOW it is composed.
+        Output as structured fields matching the requested schema."
+      </SystemPrompt>
+      <SchemaEnforcement>
+        Always provide a Pydantic-style schema or explicit field list.
+        NEVER accept free-form descriptions like "it looks professional."
+        Force: hex codes, layout names, pattern classifications, specific measurements.
+      </SchemaEnforcement>
+    </Pattern>
+
+    <!-- ===== N8N WORKFLOW PATTERNS ===== -->
+
+    <Pattern id="N8N-RESEARCH" name="n8n Research Automation Flow">
+      <StandardFlow>
+        1. TRIGGER: Schedule (daily/weekly) or Webhook (on-demand from Market Scout)
+        2. FETCH: Apify/Firecrawl node → scrape targets
+        3. PROCESS: Code node → clean/filter data
+        4. ANALYZE: AI node (Claude/Gemini) → extract insights per schema
+        5. STORE: Airtable/Google Sheets node → structured database
+        6. ALERT: IF new signal detected → Slack/email notification
+      </StandardFlow>
+      <CriticalRule>
+        n8n handles ORCHESTRATION. Claude handles ANALYSIS.
+        Do NOT put complex reasoning in n8n Code nodes.
+        Do NOT put data fetching in Claude prompts.
+        Each tool does what it's best at.
+      </CriticalRule>
+    </Pattern>
+
+  </Patterns>
+
+  <!-- ================================================================== -->
+  <!-- L4: REFERENCE (~1500 tokens) — Edge cases, integration              -->
+  <!-- ================================================================== -->
+
+  <Reference>
+
+    <!-- ===== INTEGRATION WITH MARKET SCOUT ===== -->
+
+    <Integration>
+      <RequestFormat>
+        Market Scout can request research_ops execution via:
+        {
+          "module": "AD_FORENSICS | VISUAL_SCOUT | SOCIAL_MONITOR | ORCHESTRATOR",
+          "target": "[URL or search query]",
+          "output_format": "[ad_clusters | design_tokens | signal_report | raw_data]",
+          "budget": {"max_tool_calls": 20, "max_time_minutes": 10}
+        }
+      </RequestFormat>
+      
+      <ResponseFormat>
+        research_ops returns:
+        {
+          "status": "complete | partial | failed",
+          "data": [structured output per module schema],
+          "gaps": ["list of data points NOT found"],
+          "tool_calls_used": N,
+          "sources": ["list of URLs scraped"]
+        }
+      </ResponseFormat>
+    </Integration>
+
+    <!-- ===== COST OPTIMIZATION ===== -->
+
+    <CostOptimization>
+      <ModelRouting>
+        Scraping decisions: Sonnet (fast, cheap)
+        Text analysis: Sonnet (sufficient for extraction)
+        Visual analysis: Sonnet with vision (multimodal)
+        Complex synthesis: Opus (only when Writer needs deep reasoning)
+        Rule: Use cheapest model that meets quality bar. Escalate only on failure.
+      </ModelRouting>
+      
+      <CachingStrategy>
+        Competitor pages: Cache for 7 days (landing pages don't change daily)
+        Ad Library: Cache for 3 days (ad rotation is frequent)
+        Forum posts: Cache for 30 days (historical, rarely change)
+        Reviews: Cache for 14 days (new reviews accumulate slowly)
+        Rule: Check cache before scraping. Save API costs.
+      </CachingStrategy>
+    </CostOptimization>
+
+    <!-- ===== HANDOFF SPECIFICATION ===== -->
+
+    <Handoff>
+      <Upstream skill="market_scout" relationship="brain">
+        Market Scout defines research strategy and output specs.
+        Research Ops executes the automation layer.
+      </Upstream>
+      <Upstream skill="research_synthesizer" relationship="consumer">
+        Research Synthesizer can request automated data collection
+        to supplement manual research findings.
+      </Upstream>
+      <Downstream>
+        All outputs flow back to the requesting skill in structured format.
+        Raw data stored in Airtable/local for reuse across sessions.
+      </Downstream>
+    </Handoff>
+
+    <!-- ===== LEARNED CONSTRAINTS ===== -->
+
+    <LearnedConstraints>
+      <Constraint id="LC-01" discovered="2026-02-14">
+        <Description>Discovery and synthesis must be separate tool calls. Asking a search tool to also synthesize = hallucination.</Description>
+        <FailureMode>Perplexity returns plausible-sounding analysis with fabricated citations.</FailureMode>
+        <Resolution>Two-Tool Stack: Discovery tool finds. Synthesis tool thinks. Never mix.</Resolution>
+      </Constraint>
+      <Constraint id="LC-02" discovered="2026-02-14">
+        <Description>Agents without budget constraints spin out. Unbounded research loops waste tokens and time.</Description>
+        <FailureMode>Agent makes 50+ tool calls searching for data that doesn't exist.</FailureMode>
+        <Resolution>Hard budget: 20 tool calls, 5 retries, 3 self-healing loops, 10 min wall clock.</Resolution>
+      </Constraint>
+      <Constraint id="LC-03" discovered="2026-02-14">
+        <Description>Free-form vision descriptions are useless. "It looks professional" doesn't help a designer.</Description>
+        <FailureMode>Visual analysis returns subjective opinions instead of actionable specs.</FailureMode>
+        <Resolution>Schema enforcement: always require hex codes, layout names, pattern classifications.</Resolution>
+      </Constraint>
+      <Constraint id="LC-04" discovered="2026-02-14">
+        <Description>Context pollution kills multi-step research. Worker B inherits Worker A's context and hallucinates connections.</Description>
+        <FailureMode>Research findings from Task 1 "bleed" into Task 2 analysis, creating false patterns.</FailureMode>
+        <Resolution>Context isolation: each worker starts with FRESH context. Only Coordinator sees all results.</Resolution>
+      </Constraint>
+      <Constraint id="LC-05" discovered="2026-02-14">
+        <Description>The Think Tool prevents spin-out. Agents that don't pause before tool calls make compounding errors.</Description>
+        <FailureMode>Agent repeats same search 4 times with minor variations, burning budget on duplicates.</FailureMode>
+        <Resolution>Mandatory trajectory audit before every tool call: "Does this serve the original query?"</Resolution>
+      </Constraint>
+    </LearnedConstraints>
+
+  </Reference>
+
+  <!-- ================================================================== -->
+  <!-- VERSION HISTORY                                                     -->
+  <!-- ================================================================== -->
+  
+  <VersionHistory>
+    <Version number="1.0.0" date="2026-02-14">
+      Initial release. Built from Delta Analysis of agentic deep research sources.
+      4 modules: Visual Scout, Ad Forensics, Social Monitor, Orchestrator.
+      Planner-Worker-Writer architecture with self-healing loops.
+      Companion to Market Scout v1.2.0 (tools domain, serves all research skills).
+      5 learned constraints from agentic execution patterns.
+    </Version>
+  </VersionHistory>
+
+</Skill>

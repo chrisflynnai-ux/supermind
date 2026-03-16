@@ -1,0 +1,1676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  PRODUCT CREATION GENIUS v2.0
+  Master Orchestration Skill for Digital Product & Offer Creation
+  
+  The complete system for shipping products people already want,
+  with monetization and distribution designed in from day one.
+  
+  CHANGELOG v2.0 (2025-12-29):
+  - Integrated P2P-OS (Proof-to-Product Operating System)
+  - Added 4 KB Block coordination (Onboarding, Offer Tiering, Consciousness, Retention)
+  - Added Story → Surface Router for content compounding
+  - UVE (Ultimate Value Experience) framework integration
+  - Added Triangulated Proof validation system
+  - 10× Value Justification framework
+  - AI-First Build System (3 Inputs → Outline Engine)
+  - Distribution OS (PITM + Content Loops + Partnerships)
+  - Complete failure mode library with debugging map
+  - Self-annealing architecture with KB Memory integration
+-->
+
+<Skill
+  skill_id="skill.product_creation_genius.v2_0_0"
+  name="Product Creation Genius"
+  version="2.0.0"
+  tier="orchestration"
+  status="active"
+  model="opus"
+>
+
+  <!-- ================================================================== -->
+  <!-- METADATA & PROVENANCE                                               -->
+  <!-- ================================================================== -->
+  
+  <Meta>
+    <Owner>Vision Capitalist / ULTRAMIND</Owner>
+    <PrimaryDomain>product_creation</PrimaryDomain>
+    <SecondaryDomain>offer_architecture</SecondaryDomain>
+    <TertiaryDomain>transformation_design</TertiaryDomain>
+    <LastUpdated>2025-12-29</LastUpdated>
+    
+    <PatchHistory>
+      <Patch id="PATCH-PCG-20251229" date="2025-12-29">
+        <Change>Complete v2.0 rebuild with P2P-OS integration</Change>
+        <Change>4 KB Block coordination system</Change>
+        <Change>Story → Surface Router for content compounding</Change>
+        <Change>UVE (Ultimate Value Experience) framework</Change>
+        <Change>Triangulated Proof validation</Change>
+        <Change>AI-First Build System</Change>
+        <Change>Distribution OS integration</Change>
+        <Change>Self-annealing KB Memory architecture</Change>
+      </Patch>
+    </PatchHistory>
+    
+    <Tags>
+      <Tag>orchestration</Tag>
+      <Tag>product_creation</Tag>
+      <Tag>offer_architecture</Tag>
+      <Tag>validation_first</Tag>
+      <Tag>distribution_aware</Tag>
+      <Tag>transformation_design</Tag>
+      <Tag>neuro_resonance</Tag>
+    </Tags>
+    
+    <ConstitutionalCompliance>
+      <Version>ULTRAMIND v2.0</Version>
+      <VerifiedDate>2025-12-29</VerifiedDate>
+      <Compliant>true</Compliant>
+      <AuditLog>
+        <Check>human_first: PASS (humans own final truth on pricing/claims)</Check>
+        <Check>evidence_honesty: PASS (no fabricated proof, hypothesis framing)</Check>
+        <Check>consent_intent: PASS (no fake urgency, respect autonomy)</Check>
+        <Check>radical_clarity: PASS (audience/promise/mechanism explicit)</Check>
+      </AuditLog>
+    </ConstitutionalCompliance>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- PURPOSE & SCOPE                                                     -->
+  <!-- ================================================================== -->
+  
+  <Purpose>
+    <PrimeDirective>
+      Ship products people already want, with monetization and distribution designed in from day one.
+    </PrimeDirective>
+    
+    <CoreOutcome>
+      In 7–21 days, repeatedly ship products that pass demand thresholds before heavy building,
+      and have a distribution plan baked in.
+    </CoreOutcome>
+    
+    <ThreeNonNegotiables>
+      <NonNegotiable id="1">
+        <Name>Validation Before Build</Name>
+        <Rule>Prove demand with signals, waitlists, or pre-sales before serious building</Rule>
+      </NonNegotiable>
+      <NonNegotiable id="2">
+        <Name>Outcome Over Features</Name>
+        <Rule>Sell transformations, not content volume or tool access</Rule>
+      </NonNegotiable>
+      <NonNegotiable id="3">
+        <Name>Distribution Is Part of Product</Name>
+        <Rule>PITM (Product Is The Marketing) - marketing teaches the method product implements</Rule>
+      </NonNegotiable>
+    </ThreeNonNegotiables>
+    
+    <DefaultLoop>
+      Discover → Validate → Outline/Design → MVP Ship → Launch → Measure → Double down/Pivot → Scale
+    </DefaultLoop>
+  </Purpose>
+
+  <Scope>
+    <WhenToUse>
+      <Trigger>Create a new digital product from scratch</Trigger>
+      <Trigger>Validate a product idea before building</Trigger>
+      <Trigger>Design an offer ladder (entry → premium)</Trigger>
+      <Trigger>Build transformation-based programs (courses, coaching, memberships)</Trigger>
+      <Trigger>Create AI-enhanced info products</Trigger>
+      <Trigger>Design physical + digital hybrid solutions</Trigger>
+      <Trigger>Launch a beta/founding member program</Trigger>
+      <Trigger>Productize agency services</Trigger>
+    </WhenToUse>
+    
+    <NotFor>
+      <Item>Content-only products with no transformation (use content skills instead)</Item>
+      <Item>Pure SaaS technical builds (use app development skills)</Item>
+      <Item>One-off freelance projects (not productized)</Item>
+    </NotFor>
+    
+    <PrimaryAudiences>
+      <Audience>Agency Owners</Audience>
+      <Audience>High-Ticket Coaches</Audience>
+      <Audience>Ecommerce Operators</Audience>
+      <Audience>SaaS and App Builders</Audience>
+      <Audience>Creators and Course Builders</Audience>
+    </PrimaryAudiences>
+  </Scope>
+
+  <!-- ================================================================== -->
+  <!-- CANONICAL TRUTHS (Doctrines)                                        -->
+  <!-- ================================================================== -->
+  
+  <CanonicalTruths>
+    <Truth id="1" name="Transformation Over Information">
+      <Doctrine>Products must produce behavior + identity change, not just content consumption</Doctrine>
+      <Implication>Measure success by outcomes achieved, not modules completed</Implication>
+      <Test>Can you point to specific behavioral change by Day 14?</Test>
+    </Truth>
+    
+    <Truth id="2" name="Whole Solution Integration">
+      <Doctrine>Physical + Digital + Community + AI must work together as unified system</Doctrine>
+      <Implication>No siloed components; every element references and reinforces others</Implication>
+      <Test>Does removing any component break the transformation?</Test>
+    </Truth>
+    
+    <Truth id="3" name="Human Core, AI Shell">
+      <Doctrine>Sell human expertise and outcomes; AI amplifies delivery, not replaces value</Doctrine>
+      <Implication>The proprietary method is human; AI makes it accessible and scalable</Implication>
+      <Test>Would this still work without AI? (Should be yes, just slower)</Test>
+    </Truth>
+    
+    <Truth id="4" name="Validate First, Build Second">
+      <Doctrine>No serious build without 72-hour validation signal or 2+ source market proof</Doctrine>
+      <Implication>Build only after waitlist threshold passed or pre-sell converts</Implication>
+      <Test>Can you cite demand evidence? If no, validation gate not passed.</Test>
+    </Truth>
+    
+    <Truth id="5" name="UVE Over USP">
+      <Doctrine>Ultimate Value Experience (dimensionalized ideal life result) beats Unique Selling Proposition</Doctrine>
+      <Implication>Sell the vision of the transformed life, not just differentiated features</Implication>
+      <Test>Can the buyer see themselves living the result?</Test>
+    </Truth>
+    
+    <Truth id="6" name="10× Value Justification">
+      <Doctrine>Buyers must feel the value is 10× the price paid</Doctrine>
+      <Implication>Scope product to price; higher price = more implementation support</Implication>
+      <Test>Would you feel over-served at this price?</Test>
+    </Truth>
+  </CanonicalTruths>
+
+  <!-- ================================================================== -->
+  <!-- SSOT REQUIREMENTS                                                   -->
+  <!-- ================================================================== -->
+  
+  <SSOT>
+    <Required>
+      <Object schema_id="PROJECT_BRIEF">
+        Context, constraints, goals, timeline, budget
+      </Object>
+      <Object schema_id="AVATAR_BUNDLE">
+        ICP definition: demographics, psychographics, pain language, desires
+      </Object>
+      <Object schema_id="OFFER_SEED">
+        Initial offer concept: audience, outcome, mechanism, timeframe
+      </Object>
+    </Required>
+    
+    <Optional>
+      <Object schema_id="EVIDENCE_PACK">
+        Testimonials, case studies, data, credentials for proof
+      </Object>
+      <Object schema_id="MARKET_RESEARCH_BUNDLE">
+        Competitor analysis, marketplace signals, community pain mining
+      </Object>
+      <Object schema_id="CHANGE_OF_BELIEFS">
+        Before/after belief mapping for transformation design
+      </Object>
+      <Object schema_id="VOICE_GUIDE">
+        Brand voice, tone, vocabulary, constraints
+      </Object>
+      <Object schema_id="CONSTRAINTS">
+        Time, budget, tech, team limitations
+      </Object>
+      <Object schema_id="EXISTING_ASSETS">
+        Prior content, products, or systems to leverage
+      </Object>
+    </Optional>
+    
+    <Outputs>
+      <Output id="ECOSYSTEM_BLUEPRINT" primary="true">
+        Complete product ecosystem: tiers, components, pricing, delivery
+      </Output>
+      <Output id="TRANSFORMATION_MAP">
+        Journey stages, milestones, behavioral markers
+      </Output>
+      <Output id="OFFER_LADDER">
+        Entry → Core → Premium → VIP tier structure
+      </Output>
+      <Output id="IRRESISTIBLE_OFFER_STATEMENT">
+        One-sentence positioning: [Product] helps [audience] achieve [outcome] without [friction] by using [mechanism] in [timeframe]
+      </Output>
+      <Output id="VALIDATION_PLAN_72H">
+        Landing page, traffic plan, thresholds, pivot matrix
+      </Output>
+      <Output id="MVP_OUTLINE">
+        Modules, deliverables, price-aligned scope
+      </Output>
+      <Output id="SUPPORT_SYSTEM_SPEC">
+        Community, coaching, resources, AI support design
+      </Output>
+      <Output id="ONBOARDING_7_DAY_PLAN">
+        Day 1-7 breakthrough sequence
+      </Output>
+      <Output id="DISTRIBUTION_PLAN">
+        PITM content, influencer partnerships, launch sequence
+      </Output>
+      <Output id="LAUNCH_PACK">
+        Story sequences, UGC scripts, CTA assets
+      </Output>
+      <Output id="HANDOFF_PACK">
+        Downstream skill triggers (Sales Page, Email, Content)
+      </Output>
+    </Outputs>
+  </SSOT>
+
+  <!-- ================================================================== -->
+  <!-- CONTRACT (I/O)                                                      -->
+  <!-- ================================================================== -->
+  
+  <Contract>
+    <InputsRequired>
+      <Input name="PROJECT_BRIEF" ssot="true">
+        <Notes>Context, constraints, goals, timeline</Notes>
+      </Input>
+      <Input name="AVATAR_BUNDLE" ssot="true">
+        <Notes>ICP: who exactly, what blocks them, what done looks like</Notes>
+      </Input>
+      <Input name="OFFER_SEED" ssot="true">
+        <Notes>Initial concept: audience, outcome, mechanism, timeframe</Notes>
+      </Input>
+    </InputsRequired>
+    
+    <InputsOptional>
+      <Input name="EVIDENCE_PACK" ssot="true">
+        <Notes>Proof assets: testimonials, case studies, data</Notes>
+      </Input>
+      <Input name="MARKET_RESEARCH_BUNDLE" ssot="false">
+        <Notes>Competitor analysis, marketplace signals, pain mining</Notes>
+      </Input>
+      <Input name="CHANGE_OF_BELIEFS" ssot="true">
+        <Notes>Before/after belief transformation mapping</Notes>
+      </Input>
+    </InputsOptional>
+    
+    <OutputsPrimary>
+      <Output id="ECOSYSTEM_BLUEPRINT" format="structured">
+        Complete product ecosystem with tiers, components, pricing
+      </Output>
+    </OutputsPrimary>
+    
+    <OutputsSecondary>
+      <Output id="TRANSFORMATION_MAP" format="structured">
+        Journey stages with behavioral markers
+      </Output>
+      <Output id="OFFER_LADDER" format="structured">
+        Tiered pricing and value structure
+      </Output>
+      <Output id="VALIDATION_PLAN_72H" format="structured">
+        Landing page, traffic test, thresholds
+      </Output>
+      <Output id="MVP_OUTLINE" format="structured">
+        Modules, deliverables, price-aligned scope
+      </Output>
+    </OutputsSecondary>
+  </Contract>
+
+  <!-- ================================================================== -->
+  <!-- PROGRESSIVE DISCLOSURE                                              -->
+  <!-- ================================================================== -->
+  
+  <ProgressiveDisclosure>
+    
+    <!-- ===== LAYER 1: Quick Reference (≤400 tokens) ===== -->
+    <Layer id="L1" name="Quick Reference" token_budget="400">
+      <TriggerConditions>
+        <Condition>Simple product idea validation needed</Condition>
+        <Condition>Quick offer statement generation</Condition>
+        <Condition>Fast decision on format or pricing</Condition>
+        <Condition>80% of standard product creation requests</Condition>
+      </TriggerConditions>
+      
+      <DecisionTree>
+        <![CDATA[
+START → Have validated demand?
+  ├─ NO → Go to Phase 1 (Discover + Validate)
+  │        ├─ Run Triangulated Proof (marketplace + ads + communities)
+  │        ├─ Pass: 2+ sources show demand → Continue
+  │        └─ Fail: <2 sources → Pivot angle or niche
+  │
+  └─ YES → Have Irresistible Offer Statement?
+           ├─ NO → Generate Offer Statement
+           │        "[Product] helps [audience] achieve [outcome]
+           │         without [friction] by using [mechanism] in [timeframe]"
+           │
+           └─ YES → Price set?
+                    ├─ NO → Use 10× Value Justification
+                    │        └─ Scope to price (higher = more support)
+                    │
+                    └─ YES → Run 3-Input Outline Engine
+                             ├─ Input 1: Offer Statement
+                             ├─ Input 2: Format (course/ebook/app/hybrid)
+                             └─ Input 3: Price
+                                      ↓
+                             Generate MVP Outline → Build → Launch
+        ]]>
+      </DecisionTree>
+      
+      <FastOutputs>
+        <Output name="Irresistible Offer Statement">
+          [Product] helps [specific audience] achieve [desired outcome] 
+          without [main frustration] by using [mechanism: steps/templates/tools] 
+          in [timeframe].
+        </Output>
+        <Output name="10× Value Rule">
+          Perceived value must = 10× price. Higher price → add implementation assets.
+          Lower price → narrow scope, faster win.
+        </Output>
+        <Output name="Validation Threshold">
+          Waitlist: ≥15% on 500-1000 visitors
+          Pre-sell: 10-20 sales to 100+ waitlist
+        </Output>
+      </FastOutputs>
+    </Layer>
+    
+    <!-- ===== LAYER 2: Standard Procedure (≤3500 tokens) ===== -->
+    <Layer id="L2" name="Standard Procedure" token_budget="3500">
+      <TriggerConditions>
+        <Condition>Full product creation workflow needed</Condition>
+        <Condition>Multiple components to design</Condition>
+        <Condition>Tier structure required</Condition>
+        <Condition>Distribution plan needed</Condition>
+      </TriggerConditions>
+      
+      <Procedure>
+        <Phase id="1" name="Discover" duration="1-2 days">
+          <Step id="1.1" name="Market Proof Research">
+            <Action>Run Triangulated Proof scan</Action>
+            <Substeps>
+              <Substep>Marketplace scan (ClickBank, Etsy, Gumroad patterns)</Substep>
+              <Substep>Ads scan (Facebook Ads Library, TikTok ads signals)</Substep>
+              <Substep>Community scan (Reddit, Facebook Groups, X pain language)</Substep>
+            </Substeps>
+            <Output>Opportunity Scorecard with 3 scored opportunities</Output>
+            <Gate>Must have proof from ≥2 sources to proceed</Gate>
+          </Step>
+          
+          <Step id="1.2" name="UVC Selection">
+            <Action>Define Unique Value Zone</Action>
+            <Template>
+              Group: [who exactly]
+              Problem: [what blocks them right now]
+              Outcome: [what "done" looks like]
+              Mechanism: [your system that gets them there]
+            </Template>
+            <Gate>One product → one problem → one solution</Gate>
+          </Step>
+        </Phase>
+        
+        <Phase id="2" name="Validate" duration="3-7 days">
+          <Step id="2.1" name="Offer Engineering">
+            <Action>Create Irresistible Offer Statement</Action>
+            <Template>
+              [Product] helps [specific audience] achieve [desired outcome]
+              without [main frustration] by using [mechanism: steps/templates/tools]
+              in [timeframe].
+            </Template>
+            <Output>3 offer statement variants, pick strongest</Output>
+          </Step>
+          
+          <Step id="2.2" name="Profit-First Validation Funnel">
+            <Action>Build landing page + run traffic test</Action>
+            <Substeps>
+              <Substep>Pain mining → exact phrasing from market</Substep>
+              <Substep>Landing page v1 (waitlist CTA)</Substep>
+              <Substep>Drive 500-1000 visitors ($20/day ads or targeted communities)</Substep>
+            </Substeps>
+            <Gates>
+              <Gate name="Waitlist">≥15% conversion → proceed</Gate>
+              <Gate name="PreSell">10-20 pre-sells to 100+ waitlist → green light build</Gate>
+            </Gates>
+            <PivotMatrix>
+              <If condition="waitlist &lt; 15%">Pivot ICP → Promise → Mechanism → Price</If>
+            </PivotMatrix>
+          </Step>
+        </Phase>
+        
+        <Phase id="3" name="Build" duration="2-10 days">
+          <Step id="3.1" name="3-Input Outline Engine">
+            <Action>Generate complete product outline</Action>
+            <Inputs>
+              <Input>Irresistible Offer Statement</Input>
+              <Input>Format (mini-course, ebook, templates, app, hybrid)</Input>
+              <Input>Price</Input>
+            </Inputs>
+            <Output>Module outline + fill-in ideas + deliverables list</Output>
+          </Step>
+          
+          <Step id="3.2" name="10× Value Scoping">
+            <Action>Align scope to price</Action>
+            <Rules>
+              <Rule>Higher price → add templates, examples, implementation support</Rule>
+              <Rule>Lower price → narrow scope, faster win, fewer modules</Rule>
+              <Rule>Ongoing outcome → consider membership/SaaS</Rule>
+            </Rules>
+          </Step>
+          
+          <Step id="3.3" name="AI Synthesize → Package → Polish">
+            <Action>Build content using AI acceleration</Action>
+            <Substeps>
+              <Substep>Synthesize: gather best practices + steps</Substep>
+              <Substep>Package: arrange into success path</Substep>
+              <Substep>Polish: add examples, templates, brand voice</Substep>
+            </Substeps>
+            <QCChecklist>
+              <Check>Clear "start here" onboarding</Check>
+              <Check>Quick win early (Day 1-3)</Check>
+              <Check>Every module ends with actions</Check>
+              <Check>Templates/examples included</Check>
+              <Check>Common pitfalls + troubleshooting section</Check>
+            </QCChecklist>
+          </Step>
+        </Phase>
+        
+        <Phase id="4" name="Launch" duration="7-14 days">
+          <Step id="4.1" name="PITM Content Loop">
+            <Action>Create marketing content that teaches the method</Action>
+            <Rule>Every content piece is a slice of the product method</Rule>
+            <Rule>One CTA, one destination (waitlist or purchase)</Rule>
+          </Step>
+          
+          <Step id="4.2" name="UGC Replication Loop">
+            <Action>Rapid content testing</Action>
+            <Substeps>
+              <Substep>Find winning formats in niche</Substep>
+              <Substep>Recreate with your twist + product CTA</Substep>
+              <Substep>Ship 9-10 variations quickly</Substep>
+              <Substep>Double down on winners (70/30 rule)</Substep>
+            </Substeps>
+          </Step>
+          
+          <Step id="4.3" name="Micro-Influencer Partnerships">
+            <Action>Activate performance-based partnerships</Action>
+            <Substeps>
+              <Substep>Find: keywords → suggested accounts (20-50K followers)</Substep>
+              <Substep>Qualify: consistency, ≥3% engagement, reels views</Substep>
+              <Substep>Deal: commission-first (30-60%)</Substep>
+              <Substep>Convert: Three-Story Sequence (survey → method → CTA)</Substep>
+            </Substeps>
+          </Step>
+        </Phase>
+        
+        <Phase id="5" name="Scale" duration="ongoing">
+          <Step id="5.1" name="Offer Ladder Design">
+            <Action>Build ascension path</Action>
+            <Ladder>
+              <Tier name="Entry" price="$67-$497">Sweet spot for info products</Tier>
+              <Tier name="Upsell" price="$297-$997">Done-with-you implementation</Tier>
+              <Tier name="Premium" price="$997-$2997">Coaching tier or group program</Tier>
+              <Tier name="Enterprise" price="$5000+">Custom builds/systems</Tier>
+            </Ladder>
+          </Step>
+          
+          <Step id="5.2" name="Evergreen Funnel">
+            <Action>Stabilize revenue beyond launch</Action>
+            <Components>
+              <Component>Proven creative → always-on traffic</Component>
+              <Component>Email follow-up sequences</Component>
+              <Component>Affiliate program (up to 50% commission)</Component>
+            </Components>
+          </Step>
+          
+          <Step id="5.3" name="Competitive Refresh Cycle">
+            <Action>Every 2-4 weeks refresh positioning</Action>
+            <Substeps>
+              <Substep>Re-check competitors (marketplaces + ads + social)</Substep>
+              <Substep>Update landing page (problem, mechanism, value)</Substep>
+              <Substep>Add missing value assets users request</Substep>
+            </Substeps>
+          </Step>
+        </Phase>
+      </Procedure>
+    </Layer>
+    
+    <!-- ===== LAYER 3: Edge Cases & Failure Modes (≤4000 tokens) ===== -->
+    <Layer id="L3" name="Edge Cases" token_budget="4000">
+      <TriggerConditions>
+        <Condition>Validation threshold not met</Condition>
+        <Condition>Complex multi-tier offer needed</Condition>
+        <Condition>Hybrid physical + digital product</Condition>
+        <Condition>Prior failed launch recovery</Condition>
+        <Condition>Niche with unusual constraints</Condition>
+      </TriggerConditions>
+      
+      <FailureModePlaybook>
+        <!-- VALIDATION FAILURES -->
+        <FailureMode id="FM1" category="validation">
+          <Name>Low Waitlist Conversion</Name>
+          <Detection>Waitlist &lt;15% on 500+ visitors</Detection>
+          <LikelyCauses>
+            <Cause>Wrong ICP targeting</Cause>
+            <Cause>Unclear promise/outcome</Cause>
+            <Cause>Weak mechanism</Cause>
+            <Cause>Mispriced (too high or too low)</Cause>
+          </LikelyCauses>
+          <Recovery>
+            <Step>Pivot ICP first (who exactly?)</Step>
+            <Step>Then pivot promise (what outcome?)</Step>
+            <Step>Then pivot mechanism (why your approach?)</Step>
+            <Step>Then pivot price (value perception)</Step>
+            <Step>Finally check page clarity</Step>
+          </Recovery>
+        </FailureMode>
+        
+        <FailureMode id="FM2" category="validation">
+          <Name>Build Before Validate</Name>
+          <Detection>No demand evidence cited; product already built</Detection>
+          <Recovery>
+            <Step>STOP building</Step>
+            <Step>Create 72h validation plan</Step>
+            <Step>Run signal test (waitlist or pre-sell)</Step>
+            <Step>Only continue if thresholds met</Step>
+          </Recovery>
+          <Prevention>Proof gate enforced at Phase 1 exit</Prevention>
+        </FailureMode>
+        
+        <!-- PRODUCT FAILURES -->
+        <FailureMode id="FM3" category="product">
+          <Name>Information Dump</Name>
+          <Detection>40+ videos/modules, no clear progression, completion &lt;20%</Detection>
+          <Recovery>
+            <Step>Rebuild via Transformation Map</Step>
+            <Step>Cut to 5-7 core modules max</Step>
+            <Step>Add breakthrough by Day 7-14</Step>
+            <Step>Every module ends with DO action</Step>
+          </Recovery>
+        </FailureMode>
+        
+        <FailureMode id="FM4" category="product">
+          <Name>No Support System</Name>
+          <Detection>Content-only product, no community/coaching/resources/AI</Detection>
+          <Recovery>
+            <Step>Add 4-pillar support system:</Step>
+            <Step>1. Community (accountability, wins)</Step>
+            <Step>2. Coaching (Q&amp;A, office hours)</Step>
+            <Step>3. Resources (templates, swipes)</Step>
+            <Step>4. AI (assistant, automation)</Step>
+          </Recovery>
+        </FailureMode>
+        
+        <FailureMode id="FM5" category="product">
+          <Name>No Breakthrough Week 1-2</Name>
+          <Detection>No measurable quick win in first 14 days</Detection>
+          <Recovery>
+            <Step>Redesign Phase 1 until quick win exists</Step>
+            <Step>Quick win must be: measurable, achievable, motivating</Step>
+            <Step>Add completion ritual + celebration</Step>
+          </Recovery>
+        </FailureMode>
+        
+        <FailureMode id="FM6" category="product">
+          <Name>Refunds / Dissatisfaction</Name>
+          <Detection>Refund rate &gt;10%, negative feedback patterns</Detection>
+          <LikelyCauses>
+            <Cause>Mismatch between promise and deliverables</Cause>
+            <Cause>No success path / onboarding</Cause>
+            <Cause>Content too abstract, not actionable</Cause>
+          </LikelyCauses>
+          <Recovery>
+            <Step>Add clear onboarding sequence</Step>
+            <Step>Add quick win in first session</Step>
+            <Step>Add templates/swipes for implementation</Step>
+            <Step>Add troubleshooting section</Step>
+          </Recovery>
+        </FailureMode>
+        
+        <!-- POSITIONING FAILURES -->
+        <FailureMode id="FM7" category="positioning">
+          <Name>Selling AI Instead of Outcomes</Name>
+          <Detection>Marketing emphasizes "AI-powered" over transformation</Detection>
+          <Recovery>
+            <Step>Reframe AI as delivery enhancement, not the product</Step>
+            <Step>Lead with outcome, mention AI as "how it works"</Step>
+            <Step>Human method is core; AI makes it accessible</Step>
+          </Recovery>
+        </FailureMode>
+        
+        <FailureMode id="FM8" category="positioning">
+          <Name>Unrealistic Timelines / Hype Promises</Name>
+          <Detection>Claims not backed by evidence, "get rich quick" vibes</Detection>
+          <Recovery>
+            <Step>Cite EVIDENCE_PACK for all claims</Step>
+            <Step>Or frame explicitly as "hypothesis" / "beta test"</Step>
+            <Step>Use honest timeline ranges</Step>
+          </Recovery>
+        </FailureMode>
+        
+        <FailureMode id="FM9" category="positioning">
+          <Name>Content-Based Tiering</Name>
+          <Detection>Premium tier = more videos (not more support)</Detection>
+          <Recovery>
+            <Step>Redesign tiers around support level:</Step>
+            <Step>Entry = self-serve + community</Step>
+            <Step>Premium = coaching + templates + priority</Step>
+            <Step>VIP = 1:1 + done-with-you + custom</Step>
+          </Recovery>
+        </FailureMode>
+        
+        <!-- DISTRIBUTION FAILURES -->
+        <FailureMode id="FM10" category="distribution">
+          <Name>Content Gets Views But No Clicks</Name>
+          <Detection>High impressions, low CTR to offer</Detection>
+          <LikelyCauses>
+            <Cause>CTA mismatch (content doesn't lead to offer)</Cause>
+            <Cause>Weak offer statement</Cause>
+            <Cause>Wrong destination (landing page issues)</Cause>
+          </LikelyCauses>
+          <Recovery>
+            <Step>Tighten CTA alignment with content topic</Step>
+            <Step>Ensure landing page matches content promise</Step>
+            <Step>Test different CTAs (resource vs call vs waitlist)</Step>
+          </Recovery>
+        </FailureMode>
+        
+        <FailureMode id="FM11" category="distribution">
+          <Name>Influencers Don't Respond</Name>
+          <Detection>Low reply rate on outreach (&lt;5%)</Detection>
+          <Recovery>
+            <Step>Target smaller accounts (10-30K)</Step>
+            <Step>Improve offer (higher commission, clearer value)</Step>
+            <Step>Increase follow-up cadence (2-3x/day for 3 days)</Step>
+            <Step>Make commission terms crystal clear</Step>
+          </Recovery>
+        </FailureMode>
+        
+        <FailureMode id="FM12" category="distribution">
+          <Name>Launch Obsession, Delivery Neglect</Name>
+          <Detection>All energy on launch, retention/completion ignored</Detection>
+          <Recovery>
+            <Step>Equal focus on post-purchase experience</Step>
+            <Step>Design onboarding before launch</Step>
+            <Step>Set retention metrics (completion %, NPS)</Step>
+            <Step>Build support system before scaling acquisition</Step>
+          </Recovery>
+        </FailureMode>
+      </FailureModePlaybook>
+      
+      <EdgeCases>
+        <EdgeCase name="Hybrid Physical + Digital">
+          <Scenario>Product includes physical kit + digital course + community</Scenario>
+          <Handling>
+            <Step>Use KB-ONBOARDING-RETENTION for physical unboxing experience</Step>
+            <Step>Cross-reference physical components in digital modules</Step>
+            <Step>Ensure physical materials arrive BEFORE digital access starts</Step>
+            <Step>Build "ritual" around physical component use</Step>
+          </Handling>
+        </EdgeCase>
+        
+        <EdgeCase name="High-Ticket VIP Hybrid">
+          <Scenario>$5000+ offer with 1:1 + group + digital components</Scenario>
+          <Handling>
+            <Step>Escalation path: Core → Group → 1:1 as needed</Step>
+            <Step>VIP welcome ritual (personal call, custom plan)</Step>
+            <Step>Honest boundaries on access/response times</Step>
+            <Step>Guarantee tied to completion, not just purchase</Step>
+          </Handling>
+        </EdgeCase>
+        
+        <EdgeCase name="First Cohort Beta">
+          <Scenario>Launching to founding members before full build</Scenario>
+          <Handling>
+            <Step>Founding-member pricing (40-60% off)</Step>
+            <Step>Explicit "beta" framing with feedback expectations</Step>
+            <Step>Fast iteration plan (weekly updates)</Step>
+            <Step>Community-first approach (founders shape product)</Step>
+            <Step>Upgrade path to full program when complete</Step>
+          </Handling>
+        </EdgeCase>
+        
+        <EdgeCase name="Productized Agency Service">
+          <Scenario>Converting done-for-you service to done-with-you product</Scenario>
+          <Handling>
+            <Step>Document your internal SOP → becomes product curriculum</Step>
+            <Step>Add templates/tools you use → client deliverables</Step>
+            <Step>Coaching tier replaces custom service</Step>
+            <Step>Maintain VIP tier for full-service clients</Step>
+          </Handling>
+        </EdgeCase>
+      </EdgeCases>
+    </Layer>
+    
+    <!-- ===== LAYER 4: Integration & Advanced (≤4000 tokens) ===== -->
+    <Layer id="L4" name="Integration" token_budget="4000">
+      <TriggerConditions>
+        <Condition>Multiple KB blocks need coordination</Condition>
+        <Condition>Full ecosystem blueprint generation</Condition>
+        <Condition>Cross-skill handoffs needed</Condition>
+        <Condition>Advanced neuro-resonance integration</Condition>
+        <Condition>Self-annealing KB updates</Condition>
+      </TriggerConditions>
+      
+      <KBBlockIntegration>
+        <Block id="1" name="KB-ONBOARDING-RETENTION">
+          <Purpose>7-day breakthrough sequence, retention triggers, dropout prevention</Purpose>
+          <Provides>ONBOARDING_7_DAY_PLAN, retention metrics, community rituals</Provides>
+          <Consumes>TRANSFORMATION_MAP, OFFER_LADDER</Consumes>
+          <Triggers>After ECOSYSTEM_BLUEPRINT complete, before launch</Triggers>
+        </Block>
+        
+        <Block id="2" name="KB-OFFER-TIERING-VALIDATION">
+          <Purpose>Tier structure, pricing validation, value justification</Purpose>
+          <Provides>OFFER_LADDER, pricing rationale, tier differentiation</Provides>
+          <Consumes>AVATAR_BUNDLE, OFFER_SEED, market research</Consumes>
+          <Triggers>During Phase 2 (Validate) and Phase 3 (Build)</Triggers>
+        </Block>
+        
+        <Block id="3" name="KB-CONSCIOUSNESS-CONVECTION">
+          <Purpose>Neuro-resonance integration, viral heat mechanics, ethical boundaries</Purpose>
+          <Provides>NEURO_ACTIVATION_STRATEGY, convection triggers, balance validation</Provides>
+          <Consumes>AVATAR_BUNDLE, CHANGE_OF_BELIEFS</Consumes>
+          <Triggers>During messaging, content, and launch phases</Triggers>
+        </Block>
+        
+        <Block id="4" name="KB-PATTERN-REGISTRIES">
+          <Purpose>Memory layer for compounding (hooks, templates, winners, rules)</Purpose>
+          <Provides>Hook templates, voice DNA, transitions, visual stuns, performance signals</Provides>
+          <Consumes>All content outputs, performance data</Consumes>
+          <Triggers>Continuous - every content creation and iteration cycle</Triggers>
+        </Block>
+        
+        <Coordination>
+          <Flow>
+            1. PCG creates ECOSYSTEM_BLUEPRINT + TRANSFORMATION_MAP
+            2. KB-OFFER-TIERING generates OFFER_LADDER aligned to transformation
+            3. KB-ONBOARDING designs 7-day sequence for each tier
+            4. KB-CONSCIOUSNESS ensures neuro-balance + convection design
+            5. KB-PATTERN-REGISTRIES stores winning patterns for iteration
+          </Flow>
+          <LockedObjects>
+            All blocks share: TRANSFORMATION_MAP, OFFER_LADDER, AVATAR_BUNDLE
+          </LockedObjects>
+        </Coordination>
+      </KBBlockIntegration>
+      
+      <SisterSkillsCoordination>
+        <Primary always_wake="true" synchronous="true">
+          <Skill name="Transformation Ecosystem Architect">
+            PCG defines transformation journey → TEA designs physical manifestation + delivery ops
+            Handoff: ECOSYSTEM_BLUEPRINT + SUPPORT_SYSTEM_SPEC → TEA produces delivery cadence, rituals
+          </Skill>
+        </Primary>
+        
+        <Secondary>
+          <Skill name="Viral Resonance Architect">
+            Consumes: ECOSYSTEM_BLUEPRINT, OFFER_LADDER
+            Produces: Content strategy, hook bank, distribution plan
+            Trigger: After validation passed, during launch prep
+          </Skill>
+          <Skill name="Sales Page Copywriter">
+            Consumes: IRRESISTIBLE_OFFER_STATEMENT, TRANSFORMATION_MAP, EVIDENCE_PACK
+            Produces: Sales page copy, objection handling, guarantee framing
+            Trigger: After MVP Outline complete
+          </Skill>
+          <Skill name="Email Campaign Genius">
+            Consumes: ONBOARDING_7_DAY_PLAN, OFFER_LADDER
+            Produces: Welcome sequence, nurture series, launch emails
+            Trigger: After onboarding designed
+          </Skill>
+          <Skill name="Strategic Business Mentor">
+            Consumes: ECOSYSTEM_BLUEPRINT, performance data
+            Produces: Weekly review, strategic adjustments, scaling decisions
+            Trigger: Post-launch, ongoing
+          </Skill>
+        </Secondary>
+      </SisterSkillsCoordination>
+      
+      <StorySurfaceRouter>
+        <Description>
+          Automatically compound winning content structures across Business OS surfaces.
+          One winning structure → 5+ outputs (outbound, offer page, nurture, ads, etc.)
+        </Description>
+        <Routing>
+          <Route structure="Problem → Mechanism → Steps">
+            <Surface>Outbound Opener: Problem + mechanism + question</Surface>
+            <Surface>Offer Bullets: Steps as deliverables</Surface>
+            <Surface>Nurture Email: Problem + micro-example + action</Surface>
+            <Surface>Ads Brief: 3 angles (pain, mechanism, proof)</Surface>
+          </Route>
+          <Route structure="Expectation vs Reality">
+            <Surface>Outbound Opener: Contrast + question</Surface>
+            <Surface>Offer Bullets: Reality beats as ladder</Surface>
+            <Surface>Nurture Email: Expectation + beat + action</Surface>
+            <Surface>Ads Brief: Trap/upgrade/proof angles</Surface>
+          </Route>
+          <Route structure="Contrarian Claim">
+            <Surface>Outbound Opener: Claim + steelman + question</Surface>
+            <Surface>Offer Bullets: Pre-handle objections + trade-offs</Surface>
+            <Surface>Nurture Email: Contrarian + validate + reframe</Surface>
+            <Surface>Ads Brief: Contrarian/objection/proof angles</Surface>
+          </Route>
+        </Routing>
+      </StorySurfaceRouter>
+      
+      <UVEFramework>
+        <Name>Ultimate Value Experience</Name>
+        <Description>
+          Dimensionalized vision of an idealized life result.
+          More sophisticated than USP (Unique Selling Proposition).
+          Maps to the 6-axis Neuro-Box (Matrix of Desires).
+        </Description>
+        <Dimensions>
+          <Dimension axis="BODY" neuro="Dopamine">Safety, Security, Foundation</Dimension>
+          <Dimension axis="HEART" neuro="GABA">Connection, Love, Belonging</Dimension>
+          <Dimension axis="MIND" neuro="Acetylcholine">Clarity, Knowledge, Competence</Dimension>
+          <Dimension axis="SPIRIT" neuro="Serotonin">Purpose, Meaning, Significance</Dimension>
+          <Dimension axis="PSYCHE" neuro="Adrenaline">Energy, Momentum, Power</Dimension>
+          <Dimension axis="CONSCIENCE" neuro="Oxytocin">Integrity, Values, Legacy</Dimension>
+        </Dimensions>
+        <Application>
+          <Step>Identify which UVE dimensions your product activates</Step>
+          <Step>Map transformation to dimension shifts (before → after)</Step>
+          <Step>Craft messaging that paints the UVE picture</Step>
+          <Step>Ensure product delivery actually creates the experience</Step>
+        </Application>
+      </UVEFramework>
+      
+      <SelfAnnealingProtocol>
+        <Description>
+          PCG continuously improves through KB Memory integration.
+          Winners become templates. Corrections become rules.
+        </Description>
+        <Triggers>
+          <Trigger>Performance data shows winner (top 10%)</Trigger>
+          <Trigger>User correction ("don't do X")</Trigger>
+          <Trigger>Pattern analysis reveals repeated failure</Trigger>
+        </Triggers>
+        <Actions>
+          <Action trigger="winner">Promote to HookTemplate or StoryStructure</Action>
+          <Action trigger="correction">Add to Rules registry</Action>
+          <Action trigger="failure">Add to FailureModePlaybook</Action>
+        </Actions>
+        <KBFiles>
+          <File>hooks.jsonl (winning hooks)</File>
+          <File>hook_templates.jsonl (reusable molds)</File>
+          <File>angles_vantages.jsonl (POV inventory)</File>
+          <File>rules.jsonl (corrections)</File>
+          <File>performance_signals.jsonl (metrics)</File>
+        </KBFiles>
+      </SelfAnnealingProtocol>
+    </Layer>
+    
+  </ProgressiveDisclosure>
+
+  <!-- ================================================================== -->
+  <!-- CORE FRAMEWORKS                                                     -->
+  <!-- ================================================================== -->
+  
+  <Frameworks>
+    <!-- ===== FRAMEWORK 1: Triangulated Proof ===== -->
+    <Framework id="1" name="Triangulated Proof">
+      <Purpose>Validate ideas by cross-referencing 3 sources</Purpose>
+      <Sources>
+        <Source name="Marketplaces">ClickBank, Etsy, Gumroad - what's already selling</Source>
+        <Source name="Ads">Facebook Ads Library, TikTok - what's being aggressively promoted</Source>
+        <Source name="Communities">Reddit, Facebook Groups, X - what pains people describe unprompted</Source>
+      </Sources>
+      <DecisionRule>
+        If you can't find proof across at least 2 of 3 sources, downscope or pivot the angle.
+      </DecisionRule>
+      <ScoringTemplate>
+        <Dimension name="Pain intensity" range="0-5"/>
+        <Dimension name="Urgency/time pressure" range="0-5"/>
+        <Dimension name="Buyer identity clarity" range="0-5"/>
+        <Dimension name="Existing proof (2+ sources)" range="0-5"/>
+        <Dimension name="Differentiation gap" range="0-5"/>
+        <Dimension name="Distribution fit" range="0-5"/>
+        <Dimension name="Monetization clarity" range="0-5"/>
+      </ScoringTemplate>
+    </Framework>
+    
+    <!-- ===== FRAMEWORK 2: Irresistible Offer Statement ===== -->
+    <Framework id="2" name="Irresistible Offer Statement">
+      <Purpose>Force clarity on audience, transformation, and differentiation before building</Purpose>
+      <Template>
+        [Product] helps [specific audience] achieve [desired outcome]
+        without [main frustration] by using [mechanism: steps/templates/tools]
+        in [timeframe].
+      </Template>
+      <Components>
+        <Component name="Product">What you're selling</Component>
+        <Component name="Specific Audience">Narrow ICP, not "everyone"</Component>
+        <Component name="Desired Outcome">Measurable transformation</Component>
+        <Component name="Main Frustration">What they've tried that failed</Component>
+        <Component name="Mechanism">Your unique system (steps, templates, tools)</Component>
+        <Component name="Timeframe">When they'll see results</Component>
+      </Components>
+      <WhenToUse>Before outlining, sales page writing, ads, or content-driven selling</WhenToUse>
+    </Framework>
+    
+    <!-- ===== FRAMEWORK 3: 10× Value Justification ===== -->
+    <Framework id="3" name="10× Value Justification">
+      <Purpose>Determine how robust product needs to be given the price</Purpose>
+      <Rule>Perceived value must = 10× the price</Rule>
+      <Adjustments>
+        <IfHigherPrice>
+          Add: templates, examples, implementation support, DWY assets, coaching
+        </IfHigherPrice>
+        <IfLowerPrice>
+          Remove: modules, narrow scope, faster win, single transformation
+        </IfLowerPrice>
+        <IfOngoing>
+          Consider: membership, SaaS, subscription model
+        </IfOngoing>
+      </Adjustments>
+      <Test>Would a buyer feel over-served at this price? If no, add more value or lower price.</Test>
+    </Framework>
+    
+    <!-- ===== FRAMEWORK 4: 3-Input Outline Engine ===== -->
+    <Framework id="4" name="3-Input Outline Engine">
+      <Purpose>Generate complete product structure without manual outlining</Purpose>
+      <Inputs>
+        <Input name="Irresistible Offer Statement">Who, outcome, mechanism, timeframe</Input>
+        <Input name="Product Format">Mini-course, ebook, templates, app, hybrid</Input>
+        <Input name="Price">Determines depth and scope</Input>
+      </Inputs>
+      <Output>
+        - Module outline aligned to promised outcome
+        - Fill-in suggestions for each section
+        - Deliverables list (templates, scripts, tools)
+        - QC checklist for actionability
+      </Output>
+      <BuildRule>Outline first, then create assets module-by-module</BuildRule>
+    </Framework>
+    
+    <!-- ===== FRAMEWORK 5: Profit-First Validation Funnel ===== -->
+    <Framework id="5" name="Profit-First Validation Funnel">
+      <Purpose>Prove demand with numbers before heavy building</Purpose>
+      <Steps>
+        <Step order="1" name="Pain Mining">
+          Identify specific pain statements in communities
+        </Step>
+        <Step order="2" name="Landing Page">
+          One page: problem → promise → mechanism → CTA
+        </Step>
+        <Step order="3" name="Traffic Test">
+          Send 500-1000 visitors ($20/day ads or targeted communities)
+        </Step>
+        <Step order="4" name="Pre-Sell">
+          If 100+ waitlist, offer early access discount
+        </Step>
+      </Steps>
+      <Thresholds>
+        <Threshold name="Waitlist">≥15% conversion</Threshold>
+        <Threshold name="PreSell">10-20 sales before full build = winner</Threshold>
+      </Thresholds>
+      <PivotOrder>ICP → Promise → Mechanism → Price → Page Clarity</PivotOrder>
+    </Framework>
+    
+    <!-- ===== FRAMEWORK 6: PITM (Product Is The Marketing) ===== -->
+    <Framework id="6" name="PITM">
+      <Purpose>Build demand while building the product</Purpose>
+      <Principle>Marketing content should teach the method the product implements</Principle>
+      <Rules>
+        <Rule>Create hooks that share a valuable step or insight</Rule>
+        <Rule>Drive traffic to one CTA (waitlist, purchase, or webinar)</Rule>
+        <Rule>Every content piece is a slice of the product method</Rule>
+      </Rules>
+      <ContentLoop>
+        <Step>Identify high-performing videos in niche</Step>
+        <Step>Recreate structure with your twist + product CTA</Step>
+        <Step>Post 9-10 variations quickly</Step>
+        <Step>Double down on winners (70/30 rule)</Step>
+      </ContentLoop>
+    </Framework>
+    
+    <!-- ===== FRAMEWORK 7: Offer Ladder ===== -->
+    <Framework id="7" name="Offer Ladder">
+      <Purpose>Scale revenue through tiered ascension</Purpose>
+      <Tiers>
+        <Tier name="Entry" price="$67-$497">
+          Digital product, self-serve, community support
+        </Tier>
+        <Tier name="Upsell/Core" price="$297-$997">
+          Done-with-you implementation sprint
+        </Tier>
+        <Tier name="Premium" price="$997-$2997">
+          Coaching tier, group program, priority support
+        </Tier>
+        <Tier name="VIP/Enterprise" price="$5000+">
+          Custom builds, 1:1 access, done-for-you
+        </Tier>
+      </Tiers>
+      <Principle>
+        Tiering by SUPPORT level, not content volume.
+        Same transformation, different levels of help getting there.
+      </Principle>
+    </Framework>
+    
+    <!-- ===== FRAMEWORK 8: Program Model ===== -->
+    <Framework id="8" name="Program Model Elements">
+      <Purpose>Complete program architecture beyond content</Purpose>
+      <Elements>
+        <Element name="FAQs">Frequently Asked Questions - common queries</Element>
+        <Element name="SHAQs">Should Have Asked Questions - questions they don't know to ask</Element>
+        <Element name="Hacks">Quick wins and shortcuts</Element>
+        <Element name="Cracks">Common breaking points and how to avoid</Element>
+        <Element name="Stacks">What to combine for multiplicative results</Element>
+      </Elements>
+      <Application>
+        Include all 5 elements in product design to create comprehensive solution
+      </Application>
+    </Framework>
+    
+    <!-- ===== FRAMEWORK 9: Whole Solution Stack ===== -->
+    <Framework id="9" name="Whole Solution Stack">
+      <Purpose>Integrate all components for complete transformation</Purpose>
+      <Components>
+        <Component name="Physical">Tangible items (kits, books, tools)</Component>
+        <Component name="Digital">Content, templates, tools, apps</Component>
+        <Component name="Community">Accountability, celebration, support</Component>
+        <Component name="AI">Automation, personalization, accessibility</Component>
+      </Components>
+      <Rule>Every component must reference and reinforce the others</Rule>
+      <Test>Does removing any component break the transformation?</Test>
+    </Framework>
+    
+    <!-- ===== FRAMEWORK 10: Micro-Influencer Partnership ===== -->
+    <Framework id="10" name="Micro-Influencer Partnership System">
+      <Purpose>Performance-based distribution through creators</Purpose>
+      <Discovery>
+        <Step>Search Instagram keywords in niche</Step>
+        <Step>Target 20-50K followers</Step>
+        <Step>Use "suggested accounts" to expand list</Step>
+      </Discovery>
+      <Qualification>
+        <Check>20-50K followers</Check>
+        <Check>Consistent posting</Check>
+        <Check>3%+ engagement</Check>
+        <Check>10K+ views on recent reels</Check>
+        <Check>Story views plausible vs follower count</Check>
+      </Qualification>
+      <DealStructure>
+        <Commission>30-60% per sale</Commission>
+        <Tracking>Unique links/codes</Tracking>
+        <Payment>Net 14-30 after refund period</Payment>
+      </DealStructure>
+      <ConversionContent>
+        <Story order="1">Survey/warmup question (engagement + pain ID)</Story>
+        <Story order="2">Method + results (credibility + mechanism)</Story>
+        <Story order="3">CTA + urgency (limited bonus, deadline)</Story>
+      </ConversionContent>
+    </Framework>
+  </Frameworks>
+
+  <!-- ================================================================== -->
+  <!-- PYTHON VALIDATION TOOLS                                             -->
+  <!-- ================================================================== -->
+  
+  <PythonTools>
+    <Tool name="validate_offer_statement" execution_time="15ms">
+      <Purpose>Check Irresistible Offer Statement has all components</Purpose>
+      <Input>offer_statement: str</Input>
+      <Output>ValidationResult with score 0-6 (one per component)</Output>
+      <Code>
+        <![CDATA[
+def validate_offer_statement(offer_statement: str) -> dict:
+    """Validate Irresistible Offer Statement has all 6 components."""
+    components = {
+        "product": False,
+        "specific_audience": False,
+        "desired_outcome": False,
+        "main_frustration": False,
+        "mechanism": False,
+        "timeframe": False
+    }
+    
+    # Check for component indicators
+    lower = offer_statement.lower()
+    
+    if "helps" in lower or "for" in lower:
+        components["product"] = True
+        components["specific_audience"] = True
+    
+    if "achieve" in lower or "get" in lower or "become" in lower:
+        components["desired_outcome"] = True
+    
+    if "without" in lower or "no more" in lower:
+        components["main_frustration"] = True
+    
+    if "by using" in lower or "through" in lower or "with" in lower:
+        components["mechanism"] = True
+    
+    if any(t in lower for t in ["days", "weeks", "hours", "minutes", "month"]):
+        components["timeframe"] = True
+    
+    score = sum(components.values())
+    passed = score >= 5
+    
+    return {
+        "passed": passed,
+        "score": score,
+        "max_score": 6,
+        "components": components,
+        "missing": [k for k, v in components.items() if not v]
+    }
+        ]]>
+      </Code>
+    </Tool>
+    
+    <Tool name="validate_triangulated_proof" execution_time="20ms">
+      <Purpose>Check if idea has proof from 2+ sources</Purpose>
+      <Input>proof_sources: dict with marketplace, ads, community keys</Input>
+      <Output>ValidationResult with source count and pass/fail</Output>
+      <Code>
+        <![CDATA[
+def validate_triangulated_proof(proof_sources: dict) -> dict:
+    """Validate idea has proof from at least 2 of 3 sources."""
+    sources = {
+        "marketplace": bool(proof_sources.get("marketplace")),
+        "ads": bool(proof_sources.get("ads")),
+        "community": bool(proof_sources.get("community"))
+    }
+    
+    source_count = sum(sources.values())
+    passed = source_count >= 2
+    
+    return {
+        "passed": passed,
+        "source_count": source_count,
+        "sources": sources,
+        "missing": [k for k, v in sources.items() if not v],
+        "recommendation": "Proceed" if passed else "Pivot angle or find more proof"
+    }
+        ]]>
+      </Code>
+    </Tool>
+    
+    <Tool name="calculate_10x_value" execution_time="10ms">
+      <Purpose>Calculate perceived value and scope requirements</Purpose>
+      <Input>price: float, deliverables: list</Input>
+      <Output>Value score and scope recommendations</Output>
+      <Code>
+        <![CDATA[
+def calculate_10x_value(price: float, deliverables: list) -> dict:
+    """Calculate if deliverables provide 10x perceived value."""
+    target_value = price * 10
+    
+    # Value weights per deliverable type
+    value_weights = {
+        "module": 50,
+        "template": 100,
+        "script": 75,
+        "checklist": 50,
+        "tool": 200,
+        "coaching_session": 300,
+        "community_access": 150,
+        "ai_assistant": 250,
+        "done_for_you": 500
+    }
+    
+    total_value = 0
+    for d in deliverables:
+        d_type = d.get("type", "module")
+        total_value += value_weights.get(d_type, 50) * d.get("quantity", 1)
+    
+    ratio = total_value / price if price > 0 else 0
+    passed = ratio >= 10
+    
+    return {
+        "passed": passed,
+        "perceived_value": total_value,
+        "price": price,
+        "value_ratio": round(ratio, 1),
+        "target_ratio": 10,
+        "gap": max(0, target_value - total_value),
+        "recommendation": "Add more value" if not passed else "Value justified"
+    }
+        ]]>
+      </Code>
+    </Tool>
+    
+    <Tool name="validate_validation_thresholds" execution_time="10ms">
+      <Purpose>Check if validation thresholds are met</Purpose>
+      <Input>visitors: int, waitlist_signups: int, presales: int</Input>
+      <Output>Validation status with pass/fail per threshold</Output>
+      <Code>
+        <![CDATA[
+def validate_validation_thresholds(visitors: int, waitlist_signups: int, presales: int = 0) -> dict:
+    """Check validation thresholds for product viability."""
+    waitlist_rate = waitlist_signups / visitors if visitors > 0 else 0
+    
+    waitlist_passed = waitlist_rate >= 0.15 and visitors >= 500
+    presell_passed = presales >= 10 and waitlist_signups >= 100
+    
+    overall_passed = waitlist_passed or presell_passed
+    
+    return {
+        "passed": overall_passed,
+        "waitlist_threshold": {
+            "passed": waitlist_passed,
+            "rate": round(waitlist_rate * 100, 1),
+            "target_rate": 15,
+            "visitors": visitors,
+            "signups": waitlist_signups
+        },
+        "presell_threshold": {
+            "passed": presell_passed,
+            "presales": presales,
+            "target": 10
+        },
+        "recommendation": "Proceed to build" if overall_passed else "Pivot before building"
+    }
+        ]]>
+      </Code>
+    </Tool>
+    
+    <Tool name="validate_offer_ladder" execution_time="15ms">
+      <Purpose>Check offer ladder has proper tier differentiation</Purpose>
+      <Input>tiers: list of tier dicts with name, price, support_level</Input>
+      <Output>Ladder validation with tier spacing and support progression</Output>
+      <Code>
+        <![CDATA[
+def validate_offer_ladder(tiers: list) -> dict:
+    """Validate offer ladder has proper tier structure."""
+    issues = []
+    
+    if len(tiers) < 2:
+        issues.append("Need at least 2 tiers")
+    
+    # Check price progression
+    prices = [t.get("price", 0) for t in tiers]
+    if prices != sorted(prices):
+        issues.append("Prices should increase with tier level")
+    
+    # Check support level progression
+    support_levels = ["self_serve", "community", "group", "coaching", "vip"]
+    for i, tier in enumerate(tiers):
+        support = tier.get("support_level", "")
+        if support not in support_levels:
+            issues.append(f"Unknown support level: {support}")
+    
+    # Check differentiation is by support, not content
+    content_based = any(
+        "more videos" in str(t.get("differentiator", "")).lower() or
+        "more modules" in str(t.get("differentiator", "")).lower()
+        for t in tiers
+    )
+    if content_based:
+        issues.append("Tier differentiation should be by SUPPORT level, not content volume")
+    
+    passed = len(issues) == 0
+    
+    return {
+        "passed": passed,
+        "tier_count": len(tiers),
+        "issues": issues,
+        "tiers": tiers
+    }
+        ]]>
+      </Code>
+    </Tool>
+    
+    <Tool name="check_whole_solution_stack" execution_time="15ms">
+      <Purpose>Verify all 4 components of Whole Solution Stack present</Purpose>
+      <Input>components: dict with physical, digital, community, ai keys</Input>
+      <Output>Stack completeness score</Output>
+      <Code>
+        <![CDATA[
+def check_whole_solution_stack(components: dict) -> dict:
+    """Check if product has all 4 Whole Solution Stack components."""
+    stack = {
+        "physical": bool(components.get("physical")),
+        "digital": bool(components.get("digital")),
+        "community": bool(components.get("community")),
+        "ai": bool(components.get("ai"))
+    }
+    
+    present = sum(stack.values())
+    passed = present >= 3  # At least 3 of 4
+    
+    return {
+        "passed": passed,
+        "components_present": present,
+        "components": stack,
+        "missing": [k for k, v in stack.items() if not v],
+        "note": "Physical optional for digital-first products"
+    }
+        ]]>
+      </Code>
+    </Tool>
+    
+    <Tool name="validate_breakthrough_week1" execution_time="10ms">
+      <Purpose>Check if product has measurable quick win in Week 1-2</Purpose>
+      <Input>onboarding_plan: dict with day-by-day structure</Input>
+      <Output>Breakthrough validation</Output>
+      <Code>
+        <![CDATA[
+def validate_breakthrough_week1(onboarding_plan: dict) -> dict:
+    """Validate product has measurable breakthrough in Week 1-2."""
+    days = onboarding_plan.get("days", [])
+    
+    has_orientation = any("orientation" in str(d).lower() for d in days[:2])
+    has_quick_win = any("win" in str(d).lower() or "breakthrough" in str(d).lower() for d in days[:14])
+    has_do_actions = any("do" in str(d).lower() or "action" in str(d).lower() for d in days[:7])
+    has_celebration = any("celebrat" in str(d).lower() or "milestone" in str(d).lower() for d in days[:14])
+    
+    score = sum([has_orientation, has_quick_win, has_do_actions, has_celebration])
+    passed = score >= 3
+    
+    return {
+        "passed": passed,
+        "score": score,
+        "max_score": 4,
+        "checks": {
+            "has_orientation": has_orientation,
+            "has_quick_win": has_quick_win,
+            "has_do_actions": has_do_actions,
+            "has_celebration": has_celebration
+        },
+        "recommendation": "Redesign Week 1-2 until measurable quick win exists" if not passed else "Breakthrough present"
+    }
+        ]]>
+      </Code>
+    </Tool>
+  </PythonTools>
+
+  <!-- ================================================================== -->
+  <!-- MOD INTEGRATION                                                     -->
+  <!-- ================================================================== -->
+  
+  <MODIntegration>
+    <RoutingTriggers>
+      <Trigger pattern="create product|new offer|build course">
+        Load L1, assess if L2 needed based on complexity
+      </Trigger>
+      <Trigger pattern="validate idea|test demand|market research">
+        Load L1 + Triangulated Proof framework
+      </Trigger>
+      <Trigger pattern="offer ladder|pricing tiers|upsell">
+        Load L2 + KB-OFFER-TIERING-VALIDATION
+      </Trigger>
+      <Trigger pattern="launch|distribution|content strategy">
+        Load L2 + PITM + Viral Resonance Architect
+      </Trigger>
+      <Trigger pattern="failed validation|low conversion|pivot">
+        Load L3 Failure Modes
+      </Trigger>
+      <Trigger pattern="ecosystem|full blueprint|integration">
+        Load L4 + all KB Blocks
+      </Trigger>
+    </RoutingTriggers>
+    
+    <LayerLoadConditions>
+      <L1>Default for quick decisions and simple products</L1>
+      <L2>Multi-phase creation, tiered offers, distribution planning</L2>
+      <L3>Recovery from failures, edge cases, complex constraints</L3>
+      <L4>Full ecosystem builds, cross-skill coordination, advanced integration</L4>
+    </LayerLoadConditions>
+    
+    <AwakeningProtocol>
+      <AlwaysWake>
+        <Skill>Transformation Ecosystem Architect (TEA)</Skill>
+        <Reason>PCG defines what; TEA designs how to deliver</Reason>
+      </AlwaysWake>
+      <ConditionalWake>
+        <Skill condition="launch_phase">Viral Resonance Architect</Skill>
+        <Skill condition="sales_page_needed">Sales Page Copywriter</Skill>
+        <Skill condition="email_sequences_needed">Email Campaign Genius</Skill>
+        <Skill condition="post_launch">Strategic Business Mentor</Skill>
+      </ConditionalWake>
+    </AwakeningProtocol>
+    
+    <ContextBudget>
+      <Rule>L1 alone: 400 tokens</Rule>
+      <Rule>L1 + L2: 3900 tokens</Rule>
+      <Rule>L1 + L2 + L3: 7900 tokens</Rule>
+      <Rule>Full load (L1-L4): 11900 tokens</Rule>
+      <Rule>With KB Blocks: +1500 per block</Rule>
+    </ContextBudget>
+  </MODIntegration>
+
+  <!-- ================================================================== -->
+  <!-- MMA INTEGRATION                                                     -->
+  <!-- ================================================================== -->
+  
+  <MMAIntegration>
+    <QualityDimensions>
+      <Dimension id="1" name="validation_evidence_present" weight="critical">
+        Demand evidence from 2+ sources before build recommendation
+      </Dimension>
+      <Dimension id="2" name="offer_statement_complete" weight="high">
+        All 6 components present in Irresistible Offer Statement
+      </Dimension>
+      <Dimension id="3" name="10x_value_justified" weight="high">
+        Scope aligned to price with 10x perceived value
+      </Dimension>
+      <Dimension id="4" name="breakthrough_week1_2_present" weight="high">
+        Measurable quick win designed for first 14 days
+      </Dimension>
+      <Dimension id="5" name="support_before_content" weight="high">
+        Tier differentiation by support level, not content volume
+      </Dimension>
+      <Dimension id="6" name="distribution_designed_in" weight="medium">
+        PITM content plan, not afterthought marketing
+      </Dimension>
+      <Dimension id="7" name="honest_timeline_rule" weight="critical">
+        All claims cite evidence or framed as hypothesis
+      </Dimension>
+    </QualityDimensions>
+    
+    <HardGates>
+      <Gate name="proof_gate">
+        Cannot recommend build without validation evidence
+      </Gate>
+      <Gate name="honesty_gate">
+        Cannot include unsubstantiated claims
+      </Gate>
+      <Gate name="transformation_gate">
+        Must produce behavior change, not just content consumption
+      </Gate>
+    </HardGates>
+    
+    <PassThreshold>
+      Score ≥80% on weighted dimensions AND all hard gates passed
+    </PassThreshold>
+  </MMAIntegration>
+
+  <!-- ================================================================== -->
+  <!-- GOLDEN RUNS (Test Cases)                                            -->
+  <!-- ================================================================== -->
+  
+  <GoldenRuns>
+    <GoldenRun id="GR1" name="Time-Poor Skeptical Avatar">
+      <Scenario>
+        Create a digital product for busy professionals who've been burned before.
+        Skeptical of online courses, limited time (30min/day max).
+      </Scenario>
+      <ExpectedOutputs>
+        <Output>Breakthrough by Day 7-14 with tasks under 30 minutes</Output>
+        <Output>Support-based tiering (not "more videos in premium")</Output>
+        <Output>Validation plan with clear thresholds</Output>
+        <Output>Evidence-based claims only</Output>
+      </ExpectedOutputs>
+      <ValidationChecks>
+        <Check>Quick wins achievable in short sessions</Check>
+        <Check>Trust-building proof prominently featured</Check>
+        <Check>Refund concerns addressed proactively</Check>
+      </ValidationChecks>
+    </GoldenRun>
+    
+    <GoldenRun id="GR2" name="High-Ticket VIP Hybrid">
+      <Scenario>
+        Design a $5000+ offer combining 1:1 coaching, group program, and digital assets.
+        Needs escalation path and clear VIP differentiation.
+      </Scenario>
+      <ExpectedOutputs>
+        <Output>Escalation path: Core → Group → 1:1</Output>
+        <Output>Strong support system at every tier</Output>
+        <Output>VIP welcome ritual and custom planning</Output>
+        <Output>Honest promise boundaries (what's included/not)</Output>
+      </ExpectedOutputs>
+      <ValidationChecks>
+        <Check>10x value justified at premium price</Check>
+        <Check>Clear tier differentiation by support</Check>
+        <Check>Delivery capacity considered</Check>
+      </ValidationChecks>
+    </GoldenRun>
+    
+    <GoldenRun id="GR3" name="First Cohort Beta Program">
+      <Scenario>
+        Launch founding member program before full product is built.
+        Need to balance value with iteration speed.
+      </Scenario>
+      <ExpectedOutputs>
+        <Output>Founding-member pricing (40-60% off)</Output>
+        <Output>Explicit beta framing with feedback expectations</Output>
+        <Output>Fast iteration plan (weekly updates)</Output>
+        <Output>Community-first approach (founders shape product)</Output>
+        <Output>Upgrade path to full program</Output>
+      </ExpectedOutputs>
+      <ValidationChecks>
+        <Check>Clear expectations set upfront</Check>
+        <Check>Feedback loops designed</Check>
+        <Check>Minimum viable transformation delivered</Check>
+      </ValidationChecks>
+    </GoldenRun>
+    
+    <GoldenRun id="GR4" name="Miracle Sleep Reset Program">
+      <Scenario>
+        Create a body renewal program focused on sleep transformation.
+        Physical + digital + AI hybrid. Could become franchise model.
+      </Scenario>
+      <ExpectedOutputs>
+        <Output>UVE mapping across 6 dimensions (especially Body + Mind)</Output>
+        <Output>Physical kit + digital protocol + community + AI coach</Output>
+        <Output>7-day breakthrough (measurable sleep improvement)</Output>
+        <Output>FAQs, SHAQs, Hacks, Cracks, Stacks included</Output>
+        <Output>Franchise-ready program model</Output>
+      </ExpectedOutputs>
+      <ValidationChecks>
+        <Check>Whole Solution Stack complete</Check>
+        <Check>Scientific backing cited (evidence honesty)</Check>
+        <Check>Transformation measurable (sleep metrics)</Check>
+        <Check>Replicable for franchise variations</Check>
+      </ValidationChecks>
+    </GoldenRun>
+  </GoldenRuns>
+
+  <!-- ================================================================== -->
+  <!-- TEMPLATES                                                           -->
+  <!-- ================================================================== -->
+  
+  <Templates>
+    <Template name="Landing Page v1 Skeleton">
+      <![CDATA[
+PRE-HEADLINE: [Who it's for]
+HEADLINE: [Outcome promise]
+SUB-HEADLINE: [Remove main friction]
+
+MECHANISM BULLETS (3-5):
+• [How it works step 1]
+• [How it works step 2]
+• [How it works step 3]
+
+PROOF:
+[Process proof, examples, mini case studies - even if early stage]
+
+WHAT'S INCLUDED:
+• [Deliverable 1]
+• [Deliverable 2]
+• [Deliverable 3]
+
+CTA: [Waitlist / Buy Now]
+
+FAQ:
+• How much time does this take?
+• Who is this NOT for?
+• What if it doesn't work for me?
+      ]]>
+    </Template>
+    
+    <Template name="Pre-Sell Offer Script">
+      <![CDATA[
+PROBLEM:
+[Describe the pain they're experiencing]
+
+PROMISE:
+[What transformation awaits]
+
+WHAT'S INCLUDED:
+• [Module/deliverable 1]
+• [Module/deliverable 2]
+• [Module/deliverable 3]
+• [Bonus if applicable]
+
+EARLY ACCESS DISCOUNT:
+Regular: $[full_price]
+Founding Member: $[discounted_price]
+
+DEADLINE:
+[Real deadline with real reason]
+
+EXPECTATIONS:
+[What they need to bring, time commitment, etc.]
+      ]]>
+    </Template>
+    
+    <Template name="Influencer DM Script">
+      <![CDATA[
+[1 line compliment - specific to their content]
+
+[1 line what you do + who you help]
+
+[1 line offer - commission-based, low risk for them]
+
+[1 line CTA - "Want details?"]
+
+Example:
+"Loved your reel on [topic] - the [specific thing] was spot on.
+
+I help [audience] achieve [outcome] with [mechanism].
+
+Looking for partners: 50% commission on each sale, tracked links, no upfront cost.
+
+Want me to send the details?"
+      ]]>
+    </Template>
+    
+    <Template name="Product Build Checklist (MVP)">
+      <![CDATA[
+PRE-BUILD (required before creating content):
+[ ] Offer statement locked (all 6 components)
+[ ] Pricing locked (10x value justified)
+[ ] Validation threshold passed (15% waitlist OR 10+ presales)
+
+BUILD:
+[ ] Outline generated (3-input engine)
+[ ] Module 1 quick win complete
+[ ] Templates/scripts included per module
+[ ] Onboarding "success path" designed
+[ ] Common pitfalls + troubleshooting added
+
+DELIVERY:
+[ ] Checkout + delivery automated
+[ ] Welcome sequence ready
+[ ] Community access configured (if applicable)
+[ ] Support channels established
+      ]]>
+    </Template>
+    
+    <Template name="Opportunity Scorecard">
+      <![CDATA[
+IDEA: [Name]
+
+TRIANGULATED PROOF:
+[ ] Marketplace signals (what's selling): 
+[ ] Ads signals (what's promoted):
+[ ] Community signals (pain language):
+Sources found: ___/3
+
+SCORING (0-5 each):
+Pain intensity:        ___
+Urgency/time pressure: ___
+Buyer identity clarity: ___
+Existing proof:        ___
+Differentiation gap:   ___
+Distribution fit:      ___
+Monetization clarity:  ___
+TOTAL:                 ___/35
+
+DECISION: [ ] Proceed  [ ] Pivot  [ ] Kill
+NOTES:
+      ]]>
+    </Template>
+  </Templates>
+
+</Skill>

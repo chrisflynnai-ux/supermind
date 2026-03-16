@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<knowledge_block>
+  <!-- ============================================================ -->
+  <!-- KB: META ADS PERFORMANCE DIAGNOSTICS v1.0                    -->
+  <!-- 15 Failure Modes, 7 Anti-Patterns, Troubleshooting           -->
+  <!-- ============================================================ -->
+
+  <metadata>
+    <block_id>KB-META-ADS-PERFORMANCE-DIAGNOSTICS-v1.0</block_id>
+    <version>1.0.0</version>
+    <parent_skill>meta_ads_system_v1.0</parent_skill>
+    <created_date>2026-01-19</created_date>
+    <author>ULTRAMIND / Vision Capitalist</author>
+    <constitutional_compliance>
+      <version>2.0</version>
+      <compliant>true</compliant>
+      <audit_log>
+        <check>Autonomy: PASS (diagnostic frameworks guide troubleshooting, not prescriptive fixes)</check>
+        <check>Consciousness: PASS (RIGHT-SMART analytical diagnosis + BOTTOM-SAFE circuit breakers)</check>
+      </audit_log>
+    </constitutional_compliance>
+  </metadata>
+
+  <consciousness_profile>
+    <neurobox_6d_mapping>
+      <component id="diagnostic_rigor" neuro_target="RIGHT_BOTTOM">
+        <dimensions>Smart (RIGHT), Safe (BOTTOM)</dimensions>
+        <activation_strategy>RIGHT systematic diagnosis (identify root cause not symptoms) + BOTTOM protective circuit breakers (kill losers fast)</activation_strategy>
+      </component>
+    </neurobox_6d_mapping>
+  </consciousness_profile>
+
+  <!-- ============================================================ -->
+  <!-- FAILURE MODES (15 Full Playbooks)                            -->
+  <!-- ============================================================ -->
+
+  <failure_modes>
+
+    <failure_mode id="FM1" name="Creative Fatigue">
+      <symptoms>Hook Rate drops >30% from baseline; Frequency >3.0 (Prospecting); CPA rises while CTR drops</symptoms>
+      <root_cause>Audience saturation of specific visual/hook; novelty worn off</root_cause>
+      <diagnosis>Compare current Hook Rate (last 3 days) vs Launch Week Hook Rate</diagnosis>
+      <recovery>Launch new Concept (not variation) in fresh pack immediately</recovery>
+      <prevention>Follow Rule of 1:10k (1 new ad/week per $10k spend)</prevention>
+      <source>[SRC: Sam Piliero | 190]</source>
+    </failure_mode>
+
+    <failure_mode id="FM2" name="Attribution Hallucination">
+      <symptoms>Ads Manager shows 4.0+ ROAS but bank account empty / MER flat</symptoms>
+      <root_cause>Platform over-crediting View-Through conversions (Retargeting disguised as Prospecting)</root_cause>
+      <diagnosis>Compare "1-day View" vs "7-day Click" breakdown; Calculate ncROAS</diagnosis>
+      <recovery>Switch to "Incremental" attribution or "7-day Click" only; tighten Exclusions</recovery>
+      <prevention>Use M3 Swim Lanes to strictly separate Prospecting from Retargeting</prevention>
+      <source>[SRC: Sam Piliero | 511]</source>
+    </failure_mode>
+
+    <failure_mode id="FM3" name="The Spend Hog">
+      <symptoms>One ad gets 90% of CBO budget; new test ads get zero spend</symptoms>
+      <root_cause>Meta's predicted action rate favors known historical winner over unknown new test</root_cause>
+      <diagnosis>Check spend distribution in CBO over last 3 days</diagnosis>
+      <recovery>Apply "Ad Set Spending Limit" (Min = 1x CPA) to starved ad sets for 3-7 days</recovery>
+      <prevention>Launch new creative packs in separate ad sets</prevention>
+      <source>[SRC: Ben Heath | 603]</source>
+    </failure_mode>
+
+    <failure_mode id="FM4" name="Learning Limited Loop">
+      <symptoms>Ad sets stuck in "Learning," high CPA volatility day-to-day</symptoms>
+      <root_cause>Budget too dispersed across too many ad sets; <50 conversions/week per set</root_cause>
+      <diagnosis>Check conversion volume per ad set (<50 = starving)</diagnosis>
+      <recovery>Consolidate ad sets (merge audiences); move to Broad CBO</recovery>
+      <prevention>Use 3:2:2 Flexible Ads to consolidate creative data into fewer objects</prevention>
+      <source>[SRC: Professor Charley T | 98]</source>
+    </failure_mode>
+
+    <failure_mode id="FM5" name="Pixel Malnutrition">
+      <symptoms>Zero conversions in Ads Manager despite sales occurring; "Learning" never progresses</symptoms>
+      <root_cause>Data signal loss (iOS14, AdBlockers) or CAPI disconnect</root_cause>
+      <diagnosis>Check Events Manager "Event Match Quality" (<6.0 = critical failure)</diagnosis>
+      <recovery>Setup CAPI (Conversion API) or import "Offline Events" from CRM</recovery>
+      <prevention>Enable "Enhanced Matching" and CAPI during setup</prevention>
+      <source>[SRC: Tier 11 | 706]</source>
+    </failure_mode>
+
+    <failure_mode id="FM6" name="Hook-Body Mismatch (Clickbait)">
+      <symptoms>High Hook Rate (>40%), High CTR, but Low Conversion Rate / Low Hold Rate</symptoms>
+      <root_cause>Hook promises something body/offer doesn't deliver (Expectation misalignment)</root_cause>
+      <diagnosis>Compare Hook Rate vs Hold Rate (15s). If gap massive, it's clickbait</diagnosis>
+      <recovery>Re-edit video body to match hook tone; ensure landing page headline matches ad hook</recovery>
+      <prevention>Ensure "Topic Clarity" in first 2 seconds</prevention>
+      <source>[SRC: Chase Chappell | 313]</source>
+    </failure_mode>
+
+    <failure_mode id="FM7" name="Lag Time Disconnect">
+      <symptoms>Ad account shows zero results; budget spends but algorithm can't optimize</symptoms>
+      <root_cause>Sales cycle >7 days (Optimization window missed)</root_cause>
+      <diagnosis>Calculate time from Lead → Sale. If >7 days, Pixel is blind</diagnosis>
+      <recovery>Optimize for higher-funnel event (e.g., "Qualified Lead" or "Booked Call" instead of Purchase)</recovery>
+      <prevention>Lead Gen Lag-Time Optimization Framework</prevention>
+      <source>[SRC: Caden Thompson | 290]</source>
+    </failure_mode>
+
+    <failure_mode id="FM8" name="Audience Fragmentation">
+      <symptoms>High CPMs, overlapping audiences, competing against yourself</symptoms>
+      <root_cause>Too many ad sets targeting similar people (e.g., "Lookalike 1%" vs "Lookalike 2%")</root_cause>
+      <diagnosis>Use "Audience Overlap" tool; check for multiple ad sets targeting same geo/interest</diagnosis>
+      <recovery>Collapse all non-distinct audiences into one "Broad" or "Stack" ad set</recovery>
+      <prevention>Adopt "One Campaign, Broad Targeting" philosophy</prevention>
+      <source>[SRC: Dr. Matt Shiver | 55]</source>
+    </failure_mode>
+
+    <failure_mode id="FM9" name="The Junk Lead Spiral">
+      <symptoms>Low CPL (Cost Per Lead) but zero backend sales; sales team complaints</symptoms>
+      <root_cause>Optimizing for volume (Lead) without quality signals; algorithm finding bots/low-intent users</root_cause>
+      <diagnosis>Check Lead-to-Sale conversion rate</diagnosis>
+      <recovery>Add friction (more form questions) or optimize for "Conversion Leads" (CRM integration)</recovery>
+      <prevention>Use "Offline Conversions" to train pixel on qualified leads only</prevention>
+      <source>[SRC: Tier 11 | 685]</source>
+    </failure_mode>
+
+    <failure_mode id="FM10" name="Cost Cap Freeze">
+      <symptoms>Campaign stops spending completely; zero impressions</symptoms>
+      <root_cause>Bid cap/Cost cap set lower than market auction price</root_cause>
+      <diagnosis>Check "Delivery" status; if "Active" but no spend, bid too low</diagnosis>
+      <recovery>Raise bid by 10-20% daily until spend resumes, or switch to Lowest Cost</recovery>
+      <prevention>Set initial caps based on historical CPA + 20% buffer</prevention>
+      <source>[SRC: Sam Piliero | 519]</source>
+    </failure_mode>
+
+    <failure_mode id="FM11" name="Variable Testing Trap">
+      <symptoms>Testing many ads but performance stays flat; no "breakout" winners</symptoms>
+      <root_cause>Testing minor variations (button color, font) instead of distinct concepts</root_cause>
+      <diagnosis>Visual audit of active ads. Do they look 80% the same?</diagnosis>
+      <recovery>Adopt "Concept Over Variation" protocol; test entirely different angles</recovery>
+      <prevention>Ensure new tests are "Meaningfully Different"</prevention>
+      <source>[SRC: Alex Robinson | 121]</source>
+    </failure_mode>
+
+    <failure_mode id="FM12" name="Retargeting Saturation">
+      <symptoms>Retargeting frequency >10; CPMs astronomical; ROAS declining</symptoms>
+      <root_cause>Retargeting pool too small for budget allocated</root_cause>
+      <diagnosis>Check Frequency on Retargeting Ad Set</diagnosis>
+      <recovery>Reduce retargeting budget or expand window (30 days → 180 days)</recovery>
+      <prevention>M3 Swim Lanes: Force budget to Prospecting to feed funnel</prevention>
+      <source>[SRC: Sam Piliero | 512]</source>
+    </failure_mode>
+
+    <failure_mode id="FM13" name="Native Format Misfit">
+      <symptoms>Low CTR, high CPM; ads look like "commercials"</symptoms>
+      <root_cause>Creative too polished/produced for placement (Reels/TikTok)</root_cause>
+      <diagnosis>"Native Audit" - does it look like friend's post or ad?</diagnosis>
+      <recovery>Remove logos, use system fonts, add "Ugly" filters or UGC style</recovery>
+      <prevention>Use "Lazy Static" or "iPhone Native" styles</prevention>
+      <source>[SRC: Franky Shaw | 235]</source>
+    </failure_mode>
+
+    <failure_mode id="FM14" name="Front-End Obsession">
+      <symptoms>High CTR, Low CPC, but low ROAS/High CPA</symptoms>
+      <root_cause>Optimizing for clicks (traffic) rather than conversions; attracting window shoppers</root_cause>
+      <diagnosis>Check objective (Traffic vs Sales) and optimization event</diagnosis>
+      <recovery>Switch objective to "Sales" (Conversions); accept higher CPC for better intent</recovery>
+      <prevention>Optimize for "Conversion Velocity" not cheap clicks</prevention>
+      <source>[SRC: Chase Chappell | 250]</source>
+    </failure_mode>
+
+    <failure_mode id="FM15" name="Algorithmic Whiplash">
+      <symptoms>Performance crashes after making manual edits</symptoms>
+      <root_cause>Major changes (budget >20%, creative swaps) reset learning phase</root_cause>
+      <diagnosis>Check "History" for frequent edits (daily tinkering)</diagnosis>
+      <recovery>Stop touching it. Let settle for 72 hours</recovery>
+      <prevention>Batch updates; use automated rules for scaling</prevention>
+      <source>[SRC: Chase Chappell | 253]</source>
+    </failure_mode>
+
+  </failure_modes>
+
+  <!-- ============================================================ -->
+  <!-- ANTI-PATTERNS (7 to Avoid)                                   -->
+  <!-- ============================================================ -->
+
+  <anti_patterns>
+    <anti_pattern id="AP1" name="Variable Testing">
+      <description>"Testing one hook, one thumbnail... that was the old way."</description>
+      <instead>Test multiple unique creative formats simultaneously in one audience</instead>
+      <source>[SRC: Chase Chappell | 252]</source>
+    </anti_pattern>
+
+    <anti_pattern id="AP2" name="Frequent Pausing">
+      <description>"Pausing or duplicating ads daily... forces Meta to restart learning phase."</description>
+      <instead>Allow 7-day windows and algorithmic rhythm</instead>
+      <source>[SRC: Chase Chappell | 253]</source>
+    </anti_pattern>
+
+    <anti_pattern id="AP3" name="Front-End Obsession">
+      <description>"Optimizing for front-end metrics like CTR... cheap clicks doesn't mean buying intent."</description>
+      <instead>Optimize for Conversion Velocity/Payback loop</instead>
+      <source>[SRC: Chase Chappell | 250]</source>
+    </anti_pattern>
+
+    <anti_pattern id="AP4" name="Reactionary Pausing">
+      <description>Turning off winning ad because of one bad day</description>
+      <instead>Look at 7-day trends; spend is variable</instead>
+      <source>[SRC: Sam Piliero | 520]</source>
+    </anti_pattern>
+
+    <anti_pattern id="AP5" name="Micro-Segmentation">
+      <description>Breaking audiences into tiny ad sets (Men 25-34)</description>
+      <instead>Broad targeting allows Andromeda to find pocket</instead>
+      <source>[SRC: Dr. Matt Shiver | 56]</source>
+    </anti_pattern>
+
+    <anti_pattern id="AP6" name="The Perfect Ad">
+      <description>Waiting for high-production assets</description>
+      <instead>"Ugly" ads and "Lazy Statics" often outperform branded content</instead>
+      <source>[SRC: Justin Lalonde | 10]</source>
+    </anti_pattern>
+
+    <anti_pattern id="AP7" name="The Retargeting Trap">
+      <description>Spending >20% of budget on retargeting</description>
+      <instead>Focus spend on New Customer Acquisition (ncROAS)</instead>
+      <source>[SRC: Sam Piliero | 511]</source>
+    </anti_pattern>
+  </anti_patterns>
+
+  <!-- ============================================================ -->
+  <!-- DIAGNOSTIC HEURISTICS                                        -->
+  <!-- ============================================================ -->
+
+  <heuristics>
+    <category name="Diagnostic">
+      <heuristic>IF learning limited >7 days THEN consolidate ad sets or increase budget to hit 50 conversions/week [SRC: Ben Heath | 612]</heuristic>
+      <heuristic>IF one ad hogs >80% of CBO spend THEN launch separate "Testing Campaign" or use Ad Set Spending Limits [SRC: Ben Heath | 603]</heuristic>
+      <heuristic>IF Hook Rate <25% THEN audit first 3 seconds; visual interrupt weak [SRC: Fraser Cottrell | 888]</heuristic>
+      <heuristic>IF Hook Rate >40% but Hold Rate <10% THEN creative is clickbait; align body with hook [SRC: Jared Robinson | 483]</heuristic>
+      <heuristic>IF CPMs spike THEN check creative diversity; Andromeda penalizes repetitive formats [SRC: THE ECOM KING | 372]</heuristic>
+      <heuristic>IF Platform ROAS >3.0 but MER <2.0 THEN attribution hallucination; calculate ncROAS [SRC: Sam Piliero | 192]</heuristic>
+      <heuristic>IF frequency >3.0 in prospecting THEN creative fatigued; launch new concept [SRC: Tier 11 | 724]</heuristic>
+    </category>
+    <category name="Optimization">
+      <heuristic>IF ncROAS >1.5x THEN scale budget by 20% [SRC: Justin Lalonde | 7]</heuristic>
+      <heuristic>IF using Cost Caps and spend stops THEN raise bid by 10-20% [SRC: Sam Piliero | 521]</heuristic>
+      <heuristic>IF creative works THEN do not edit it; harvest Post ID to scaling campaign [SRC: Professor Charley T | 103]</heuristic>
+      <heuristic>IF under $1M revenue THEN focus on ONE avatar with multiple angles [SRC: Dr. Matt Shiver | 54]</heuristic>
+    </category>
+    <category name="Troubleshooting">
+      <heuristic>IF leads are low quality THEN add friction (questions) to form [SRC: Caden Thompson | 294]</heuristic>
+      <heuristic>IF static ads fail THEN try "Native" formats (Notes app, news headline) [SRC: Franky Shaw | 235]</heuristic>
+      <heuristic>IF production bottleneck THEN use "Nano Banana" (AI) to generate variations [SRC: Sam Piliero | 627]</heuristic>
+    </category>
+  </heuristics>
+
+  <!-- ============================================================ -->
+  <!-- TROUBLESHOOTING WORKFLOWS                                    -->
+  <!-- ============================================================ -->
+
+  <troubleshooting_workflows>
+
+    <workflow id="WF1" name="My Ads Stopped Working (Fatigue vs Broken)">
+      <step n="1">Check Date Range: Look at "Last 7 Days" vs "Previous Period"</step>
+      <step n="2">Check Frequency: Is it >3.0? → Fatigue. Action: New Creative</step>
+      <step n="3">Check CPM: Did it double? → Competition/Quality Drop. Action: Refresh Creative</step>
+      <step n="4">Check CTR: Did it drop? → Ad Blindness. Action: New Hook</step>
+      <step n="5">Check CVR: CTR stable but CVR dropped? → Landing Page/Offer issue. Action: Audit site speed/stock</step>
+    </workflow>
+
+    <workflow id="WF2" name="I Can't Exit Learning Phase">
+      <step n="1">Check Event Count: Are you getting 50 conversions/week?</step>
+      <step n="2">IF NO: Is budget <$50/day? → Increase Budget</step>
+      <step n="3">IF BUDGET OK: Splitting across 5 ad sets? → Consolidate to 1 Ad Set</step>
+      <step n="4">IF CONSOLIDATED: Event too rare (e.g., Purchase)? → Move Up-Funnel (e.g., Add to Cart) temporarily</step>
+    </workflow>
+
+  </troubleshooting_workflows>
+
+  <!-- ============================================================ -->
+  <!-- CIRCUIT BREAKERS (When to Stop)                              -->
+  <!-- ============================================================ -->
+
+  <circuit_breakers>
+    <circuit_breaker id="CB1" name="The Profit Floor">
+      <rule>IF ncROAS <1.0 for 7 days THEN STOP SCALING. Losing money on every new customer</rule>
+      <source>[SRC: Sam Piliero | 776]</source>
+    </circuit_breaker>
+
+    <circuit_breaker id="CB2" name="The Spend Spiral">
+      <rule>IF CPA >3x Target for 48 hours with no conversions THEN KILL AD. Not going to "optimize" its way out</rule>
+      <source>[SRC: Chase Chappell | 44]</source>
+    </circuit_breaker>
+
+    <circuit_breaker id="CB3" name="The Creative Dead End">
+      <rule>IF you launch 10 new concepts and 0 get spend THEN AUDIT OFFER. Problem likely product/offer, not ads</rule>
+      <source>[SRC: blake ecom | 416]</source>
+    </circuit_breaker>
+  </circuit_breakers>
+
+  <!-- SOPs -->
+  <sops>
+    <sop id="SOP1" name="Daily Diagnostic Check">
+      <frequency>Daily (Morning)</frequency>
+      <steps>
+        <step>Check Spend Amount (Did we hit budget?)</step>
+        <step>Check MER (Total Revenue / Total Spend). Is it healthy?</step>
+        <step>Check Top Ads. Any "Spend Hogs" with low ROAS?</step>
+        <step>Action: IF Spend Hog CPA >Target THEN apply "Ad Set Limit" or Pause</step>
+      </steps>
+    </sop>
+
+    <sop id="SOP2" name="Creative Refresh Protocol">
+      <frequency>Weekly (or when Frequency >3.0)</frequency>
+      <steps>
+        <step>Identify "Fatigued" winners (High Freq, Dropping CTR)</step>
+        <step>Select 1 new "Concept" from bench</step>
+        <step>Launch in "Prospecting CBO" as new "Pack" (Ad Set)</step>
+        <step>Do NOT turn off old winner yet; let Andromeda shift spend naturally</step>
+      </steps>
+    </sop>
+  </sops>
+
+  <!-- COMPLIANCE -->
+  <compliance_guardrails>
+    <guardrail priority="critical">IF ncROAS <1.0 for 7 days → STOP scaling (Circuit Breaker 1)</guardrail>
+    <guardrail priority="high">Never pause ads after 1-2 bad days; evaluate over 7-day windows minimum</guardrail>
+    <guardrail priority="medium">Budget changes >20% reset learning phase; scale incrementally</guardrail>
+  </compliance_guardrails>
+
+</knowledge_block>

@@ -1,0 +1,43 @@
+version: 4
+family: automations
+status: active
+patches:
+  - patch_id: automations_patch_001
+    file: PATCH_master_automations_architect_reinvent_v2_0_0.md
+    status: superseded
+    target: Master Automations Architect
+    note: initial rebuild brief; superseded by ground-up rebuild patch
+  - patch_id: automations_patch_002
+    file: PATCH_master_automations_architect_ground_up_rebuild_v2_1_0.md
+    status: applied
+    target: automations_master_architect_v4_0_0.xml
+    note: ground-up rebuild completed 2026-03-10; M1-M3 seeds absorbed into Hub + Spokes architecture
+    applied_date: 2026-03-10
+  - patch_id: automations_patch_003
+    file: NotebookLM_enhancement_pass
+    status: applied
+    target: automations_master_architect_v4_0_0.xml
+    note: "NotebookLM Query Pack enhancement: +4 heuristics (H13-H16), +4 anti-patterns (AP11-AP14), +5 contract seams (TASK_REQUEST, TASK_RESULT, BENCHMARK_ARTIFACT + execution_surface + SelfCheck), +3 memory seams, +tiered MMA thresholds, +3 HCTS entries, +2 relational links"
+    applied_date: 2026-03-10
+    sources:
+      - "Notebook LM Query Master MAA.docx"
+      - "Notebook LM Query Master MAA II.docx"
+      - "Notebook LM Query Master MAA III.docx"
+  - patch_id: threadex_patch_001
+    file: NotebookLM_memory_enhancement_pass
+    status: applied
+    target: docs/plans/2026-03-11-threadex-memory-architecture-design.md
+    note: "NotebookLM Memory Query Pack enhancement (14 patches): +3 SIMS lifecycle stages (DEPRECATED/CONTESTED/FORBIDDEN), utility-based decay replacing static temporal, cross-harness provenance fields, enhanced handoff.yaml/evals.jsonl/partial_postmortem schemas, auto-extraction heuristics, _shared/ governance (Private→Client→Collective), concurrent write protection, log rotation policy, pre-compaction flush, contradiction resolution rule, Knowledge Graph seam for Tier 2, maturity tags (cognitive_stage), pattern_counts governance in _index.yaml. 14 future seams declared. 9 doctrine conflicts resolved."
+    applied_date: 2026-03-11
+    sources:
+      - "MAA Master Build Knowledge I NBKLM.docx"
+      - "MAA Master Build Knowledge IA NBKLM.docx"
+      - "MAA Master Build Knowledge II NBKLM.docx"
+      - "MAA Master Build Knowledge III NBKLM.docx"
+    stats:
+      raw_findings: 360
+      deduplicated_themes: 14
+      patches_applied: 14
+      future_seams_declared: 14
+      doctrine_conflicts_resolved: 9
+      doc_growth: "295 lines → 549 lines"

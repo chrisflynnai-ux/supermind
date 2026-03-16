@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  VERTICAL: AGENCY LANDING PAGE v1.0.0
+  Design skill for agency, services, and B2B landing pages
+  
+  EXTENDS:
+  - design_core_v1.0.0 (universal foundation)
+  - agentic_visual_language (dark mode option)
+  - style_agency OR style_saas_modern
+  
+  PURPOSE:
+  Convert visitors into booked calls/leads through trust engineering,
+  pain resonance, and "Sell Maui" destination-focused messaging.
+  
+  EXTRACTED FROM: NotebookLM analysis of top agency sites + proposal patterns
+  
+  VERSION: 1.0.0
+  UPDATED: 2026-02-09
+-->
+
+<VerticalSkill
+  skill_id="skill.vertical_agency.v1_0_0"
+  name="Agency Landing Page"
+  version="1.0.0"
+  tier="vertical"
+  status="active"
+>
+
+  <Meta>
+    <Extends>design_core_v1.0.0, agentic_visual_language</Extends>
+    <RecommendedStyles>style_agency, style_saas_modern, style_high_ticket</RecommendedStyles>
+    <TokenBudget>~600 tokens when loaded</TokenBudget>
+    <SwipeDerivation>Agency templates, B2B sites, proposal deck patterns</SwipeDerivation>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- PAGE ARCHETYPE                                                      -->
+  <!-- ================================================================== -->
+  
+  <PageArchetype>
+    <Purpose>
+      Convert visitors into booked calls or qualified leads.
+      Sell the DESTINATION (results), not the FLIGHT (services).
+      Engineer trust through specificity and proof.
+    </Purpose>
+    
+    <CorePrinciple>
+      "Sell Maui, not the flight."
+      Customers buy results, not services.
+      Use exact customer language from research.
+    </CorePrinciple>
+    
+    <ConversionGoals>
+      <Primary>Book a Discovery Call</Primary>
+      <Secondary>Download Case Study / Guide</Secondary>
+      <Tertiary>Join Waitlist / Get Audit</Tertiary>
+    </ConversionGoals>
+    
+    <BinaryChoiceFunnel>
+      <PathA name="direct">
+        <Target>High-intent, ready to buy (3%)</Target>
+        <CTA>"Book a Call" or "Get Started"</CTA>
+      </PathA>
+      <PathB name="nurture">
+        <Target>Problem-aware, not product-aware (90%)</Target>
+        <CTA>"Get the Roadmap" or "See ROI Calculator"</CTA>
+      </PathB>
+    </BinaryChoiceFunnel>
+  </PageArchetype>
+
+  <!-- ================================================================== -->
+  <!-- HERO SECTION                                                        -->
+  <!-- ================================================================== -->
+  
+  <HeroSection>
+    <SellMauiFramework>
+      <Mistake>"We offer AI-powered automation services"</Mistake>
+      <Correction>"Save 20+ hours per week and close more deals"</Correction>
+      <Rule>Sell destination (transformation), not flight (mechanism)</Rule>
+    </SellMauiFramework>
+    
+    <HeadlineFormulas>
+      <Formula name="dream_outcome">
+        <Structure>[End Result] + [Time Period] + [Emotional Payoff]</Structure>
+        <Example>"Scale to $10M revenue in 12 months while working less"</Example>
+      </Formula>
+      
+      <Formula name="switch">
+        <Structure>Why [Audience] are Ditching [Old Way] for [Your Approach]</Structure>
+        <Example>"Why 500+ Agencies Ditched Freelancers for Our AI Team"</Example>
+      </Formula>
+      
+      <Formula name="guarantee">
+        <Structure>[Outcome] + [Timeframe] + [Risk Reversal]</Structure>
+        <Example>"Double your qualified leads in 90 days or we work free"</Example>
+      </Formula>
+    </HeadlineFormulas>
+    
+    <AboveTheFold>
+      <Required>
+        <Element>Destination-focused headline</Element>
+        <Element>Two CTAs (Book Call + Secondary)</Element>
+        <Element>Trust signal (client count, logos, or metric)</Element>
+        <Element>Visual proof (dashboard, result, or team)</Element>
+      </Required>
+      <Scarcity>Optional: "Only 3 spots left this month"</Scarcity>
+    </AboveTheFold>
+  </HeroSection>
+
+  <!-- ================================================================== -->
+  <!-- SOCIAL PROOF STRIP                                                  -->
+  <!-- ================================================================== -->
+  
+  <SocialProofStrip>
+    <Placement>Immediately after hero (credibility bridge)</Placement>
+    
+    <LogoStrip>
+      <Treatment>Monochrome (all white or grey)</Treatment>
+      <EdgeFade>Gradient fade left/right for infinite effect</EdgeFade>
+      <Count>5-7 logos maximum</Count>
+    </LogoStrip>
+    
+    <MetricBadge>
+      <Examples>
+        <Example>"Trusted by 150+ agencies"</Example>
+        <Example>"$50M+ in client revenue generated"</Example>
+        <Example>"4.9/5 from 200+ reviews"</Example>
+      </Examples>
+      <Placement>Paired with logo strip</Placement>
+    </MetricBadge>
+  </SocialProofStrip>
+
+  <!-- ================================================================== -->
+  <!-- PROBLEM/PAIN SECTION                                                -->
+  <!-- ================================================================== -->
+  
+  <ProblemSection>
+    <PainPointEngineering>
+      <Sources>
+        <Source>Reddit threads</Source>
+        <Source>Amazon 3-star reviews</Source>
+        <Source>TikTok competitor comments</Source>
+      </Sources>
+      <Rule>Use EXACT customer language</Rule>
+      <Categories>Physical, Emotional, Social, Financial, Time-based</Categories>
+    </PainPointEngineering>
+    
+    <ThreePainFramework>
+      <Pattern>
+        <Pain>[Specific customer pain]</Pain>
+        <Solution>[Your solution]</Solution>
+      </Pattern>
+      <Example>
+        <Pain>"Too busy to generate leads"</Pain>
+        <Solution>"We automate lead sourcing 24/7"</Solution>
+      </Example>
+    </ThreePainFramework>
+    
+    <BeforeAfterCard>
+      <Layout>Split card design</Layout>
+      <Before>
+        <Label>"Manual Work" or "Current State"</Label>
+        <Color>Red text/metrics</Color>
+        <Metric>"60% time on admin"</Metric>
+      </Before>
+      <After>
+        <Label>"With Us" or "After"</Label>
+        <Color>Green text/metrics</Color>
+        <Metric>"3X more client calls"</Metric>
+      </After>
+    </BeforeAfterCard>
+    
+    <PASStructure>
+      <Problem>Call out specific struggle with empathy</Problem>
+      <Agitate>Describe failed attempts, consequences</Agitate>
+      <Solve>Present as only logical solution via unique mechanism</Solve>
+    </PASStructure>
+  </ProblemSection>
+
+  <!-- ================================================================== -->
+  <!-- HOW IT WORKS                                                        -->
+  <!-- ================================================================== -->
+  
+  <HowItWorksSection>
+    <ThreeStepLayout>
+      <Step position="1">
+        <Title>Discovery / Audit</Title>
+        <Description>We identify bottlenecks and opportunities</Description>
+        <Icon>Search/Magnifying glass</Icon>
+      </Step>
+      <Step position="2">
+        <Title>Deploy / Build</Title>
+        <Description>We implement systems and integrations</Description>
+        <Icon>Gear/Build</Icon>
+      </Step>
+      <Step position="3">
+        <Title>Optimize / Support</Title>
+        <Description>Ongoing refinement and scaling</Description>
+        <Icon>Chart/Growth</Icon>
+      </Step>
+    </ThreeStepLayout>
+    
+    <VisualConnections>
+      <Desktop>Beam connector line between cards</Desktop>
+      <Mobile>Vertical timeline with left-side line</Mobile>
+    </VisualConnections>
+    
+    <NumberedSteps>
+      <Style>Oversized transparent "01" "02" "03" in background</Style>
+      <Purpose>Depth and structure without clutter</Purpose>
+    </NumberedSteps>
+  </HowItWorksSection>
+
+  <!-- ================================================================== -->
+  <!-- SERVICES/FEATURES                                                   -->
+  <!-- ================================================================== -->
+  
+  <ServicesSection>
+    <BentoGrid>
+      <Card size="1x1">Simple service highlight</Card>
+      <Card size="2x1">Dashboard/result visualization</Card>
+      <Alternation>Creates visual rhythm</Alternation>
+    </BentoGrid>
+    
+    <FeatureBenefitTranslation>
+      <Rule>Apply "So What?" test to every feature</Rule>
+      <Before>"AI-powered automation"</Before>
+      <After>"Reclaim 20 hours per week"</After>
+    </FeatureBenefitTranslation>
+    
+    <HoverToReveal>
+      <Initial>Icon + Service title</Initial>
+      <Expanded>Full description + outcomes</Expanded>
+    </HoverToReveal>
+  </ServicesSection>
+
+  <!-- ================================================================== -->
+  <!-- TESTIMONIALS                                                        -->
+  <!-- ================================================================== -->
+  
+  <TestimonialSection>
+    <MetricFirstCard>
+      <Hierarchy>
+        <First>Result metric bold ("73% Sales Increase")</First>
+        <Second>Quote text</Second>
+        <Third>Full attribution</Third>
+      </Hierarchy>
+    </MetricFirstCard>
+    
+    <Attribution>
+      <Required>
+        <Element>Full name</Element>
+        <Element>Role + Company</Element>
+        <Element>High-res headshot</Element>
+        <Element>Verified badge (green checkmark)</Element>
+      </Required>
+    </Attribution>
+    
+    <BelievabilityDetails>
+      <Metrics>"Saved 1,200 minutes/month" not "Saved time"</Metrics>
+      <Transformation>"Revenue up 340%" not "Great service"</Transformation>
+      <Visuals>Imperfect photos over polished (authentic sells)</Visuals>
+    </BelievabilityDetails>
+    
+    <WallOfLove>
+      <Layout>Masonry grid (staggered columns)</Layout>
+      <Content>High volume tweets, reviews, messages</Content>
+      <Effect>Overwhelming social proof</Effect>
+    </WallOfLove>
+  </TestimonialSection>
+
+  <!-- ================================================================== -->
+  <!-- CASE STUDY SECTION                                                  -->
+  <!-- ================================================================== -->
+  
+  <CaseStudySection>
+    <Structure>
+      <Challenge>Client's problem before</Challenge>
+      <Solution>What we implemented</Solution>
+      <Results>Specific metrics achieved</Results>
+    </Structure>
+    
+    <MetricsDisplay>
+      <Format>Large emerald numbers with labels</Format>
+      <Example>"340% revenue increase | 50% cost reduction | 90 days"</Example>
+    </MetricsDisplay>
+    
+    <ClientQuote>
+      <Placement>Near results</Placement>
+      <Format>Metric-first with full attribution</Format>
+    </ClientQuote>
+  </CaseStudySection>
+
+  <!-- ================================================================== -->
+  <!-- PRICING / INVESTMENT                                                -->
+  <!-- ================================================================== -->
+  
+  <PricingSection>
+    <Structure>
+      <Option name="starter">Entry package</Option>
+      <Option name="growth" highlight="true">Most popular</Option>
+      <Option name="enterprise">Custom/premium</Option>
+    </Structure>
+    
+    <MagneticMiddle>
+      <Visual>Scale 1.05x, distinct border, "Most Popular" badge</Visual>
+      <PreSelection>Middle option selected by default</PreSelection>
+    </MagneticMiddle>
+    
+    <FeatureDisplay>
+      <Included>Green checkmarks</Included>
+      <NotIncluded>Greyed out (show what they miss)</NotIncluded>
+    </FeatureDisplay>
+    
+    <PaymentTerms>
+      <TwoCardSplit>
+        <Card name="deposit">50% upfront</Card>
+        <Card name="completion">50% on delivery</Card>
+      </TwoCardSplit>
+    </PaymentTerms>
+  </PricingSection>
+
+  <!-- ================================================================== -->
+  <!-- FAQ SECTION                                                         -->
+  <!-- ================================================================== -->
+  
+  <FAQSection>
+    <SplitLayout>
+      <Left>
+        <Headline>FAQ</Headline>
+        <Subtext>Still have questions?</Subtext>
+        <CTA>Email us / Book a call</CTA>
+      </Left>
+      <Right>Accordion list</Right>
+    </SplitLayout>
+    
+    <AccordionDesign>
+      <Separators>Thin, low-opacity dividers</Separators>
+      <Icon>Plus → rotates to X on expand</Icon>
+      <Animation>Height auto-animate (200ms)</Animation>
+    </AccordionDesign>
+    
+    <StrategicQuestions>
+      <Question>"How quickly will I see results?"</Question>
+      <Question>"What if it doesn't work?"</Question>
+      <Question>"How involved do I need to be?"</Question>
+      <Question>"What makes you different?"</Question>
+    </StrategicQuestions>
+  </FAQSection>
+
+  <!-- ================================================================== -->
+  <!-- FINAL CTA                                                           -->
+  <!-- ================================================================== -->
+  
+  <FinalCTASection>
+    <ValueCannonBlock>
+      <Style>Full-width, high-contrast</Style>
+      <ColorTreatment>Reverse scheme or gradient</ColorTreatment>
+    </ValueCannonBlock>
+    
+    <Content>
+      <Headline>Destination-focused restatement</Headline>
+      <Example>"Ready to scale without the chaos?"</Example>
+      <Button>Massive, prominent</Button>
+      <MicroCopy>"No commitment required" or "Free strategy call"</MicroCopy>
+    </Content>
+    
+    <SoftClose>
+      <Copy>"Not ready to book? Join 2,000+ founders getting weekly growth tips"</Copy>
+      <Input>Email capture for nurture track</Input>
+    </SoftClose>
+  </FinalCTASection>
+
+  <!-- ================================================================== -->
+  <!-- FOOTER                                                              -->
+  <!-- ================================================================== -->
+  
+  <Footer>
+    <TerminalStyle>
+      <StatusLight>"All Systems Operational"</StatusLight>
+      <Links>Styled as directory paths</Links>
+      <Copyright>Terminal format</Copyright>
+    </TerminalStyle>
+  </Footer>
+
+  <!-- ================================================================== -->
+  <!-- QUALITY CHECKLIST                                                   -->
+  <!-- ================================================================== -->
+  
+  <QualityChecklist>
+    <Category name="Messaging">
+      <Item>Headline sells destination, not flight</Item>
+      <Item>Pain points use exact customer language</Item>
+      <Item>Features translated to benefits (So What? test)</Item>
+      <Item>Binary choice funnel (Direct + Nurture paths)</Item>
+    </Category>
+    
+    <Category name="Trust">
+      <Item>Logo strip immediately after hero</Item>
+      <Item>Metric badges with specific numbers</Item>
+      <Item>Testimonials include metrics + full attribution</Item>
+      <Item>Case study with specific results</Item>
+    </Category>
+    
+    <Category name="Structure">
+      <Item>Before/After card in problem section</Item>
+      <Item>3-step process with visual connections</Item>
+      <Item>Magnetic Middle pricing highlighted</Item>
+      <Item>Split-layout FAQ</Item>
+    </Category>
+    
+    <Category name="Conversion">
+      <Item>Two CTAs above fold (Book + Secondary)</Item>
+      <Item>Scarcity signal if applicable</Item>
+      <Item>Soft close for nurture track</Item>
+      <Item>Terminal-style footer</Item>
+    </Category>
+  </QualityChecklist>
+
+  <!-- ================================================================== -->
+  <!-- EXECUTION OUTPUT                                                    -->
+  <!-- ================================================================== -->
+  
+  <ExecutionOutput>
+    <StitchPrompt>
+      Create an agency landing page with dark mode agentic aesthetic.
+      
+      HERO:
+      - Destination headline (result + time + emotion)
+      - Two CTAs: "Book a Call" (primary) + "Get the Roadmap" (secondary)
+      - Trust metric badge ("Trusted by 150+ agencies")
+      - Optional: Scarcity ("Only 3 spots left this month")
+      
+      SOCIAL PROOF:
+      - Monochrome logo strip with edge fade
+      - Metric badge paired
+      
+      PROBLEM:
+      - 3-pain framework with specific customer language
+      - Before/After split card (red vs green metrics)
+      
+      PROCESS:
+      - 3-step horizontal layout with beam connectors
+      - Oversized background numbers
+      
+      TESTIMONIALS:
+      - Metric-first cards (result bold, then quote)
+      - Full attribution with photos
+      
+      PRICING:
+      - 3-tier with middle emphasized ("Most Popular")
+      - Payment terms two-card split
+      
+      FAQ:
+      - Split layout (headline left, accordion right)
+      
+      FINAL CTA:
+      - Value cannon block (reverse colors)
+      - Soft close email capture for nurture
+      
+      FOOTER:
+      - Terminal style with status light
+    </StitchPrompt>
+  </ExecutionOutput>
+
+</VerticalSkill>

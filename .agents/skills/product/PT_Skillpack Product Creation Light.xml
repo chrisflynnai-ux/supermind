@@ -1,0 +1,183 @@
+{
+  "_comment": "PT SKILLPACK (Draft 2025-12) — LITE Cards for Quick Info Product Builder + Sales Page Copywriter",
+  "_version": "1.0",
+  "_created_date": "2025-12-31",
+  "_compatibility": ["ULTRAMIND v2.x", "PT Wrapper Draft 2025-12"],
+  "SkillPack": {
+    "name": "PT-LITE-COPY-BUILDERS",
+    "version": "1.0",
+    "date": "2025-12",
+    "domains": ["CopyStrategy", "Meta"],
+    "shared_object_schema": {
+      "ICP": ["industry", "role", "company_size", "geo", "sophistication_level"],
+      "Offer": ["offer_type", "price_tier", "primary_outcome", "timeframe", "constraints"],
+      "Anchor": ["metric_anchor", "report_artifact"],
+      "Proof": ["assets", "proof_gaps"],
+      "Routing": ["tiers", "rules", "destinations"],
+      "Tracking": ["events", "utm_schema", "crm_fields"],
+      "Awareness": ["entry_level", "exit_level", "belief_shift"],
+      "Voice": ["tone_dials", "forbidden_words", "required_patterns"]
+    },
+    "output_format_rules": [
+      "Every generated output must include: tokens used (est), SSOT refs used, and MMA score (or LITE QA verdict).",
+      "Every asset must define: awareness (entry/exit), belief shift, and single primary CTA.",
+      "If EVIDENCE_PACK is absent, claims must be softened + a Proof Request list must be produced.",
+      "Avoid AI-default patterns by explicitly referencing VOICE_GUIDE + MESSAGE_SPINE language where available.",
+      "No fake urgency/scarcity; only factual or consequence-based urgency."
+    ]
+  },
+  "SkillCards": [
+    {
+      "id": "PT-081",
+      "name": "Quick Info Product Builder (LITE)",
+      "domain": "CopyStrategy",
+      "purpose": "Turn one validated problem + mechanism into a scannable quick-win info product (guide/checklist/mini-playbook) that produces a measurable result in 24–72 hours.",
+      "inputs": {
+        "required": ["PROJECT_BRIEF"],
+        "optional": ["MESSAGE_SPINE", "EVIDENCE_PACK", "VOICE_GUIDE", "OFFER_ARCHITECTURE"]
+      },
+      "outputs": [
+        "INFO_PRODUCT_BRIEF_LOCKED",
+        "TITLE_PROMISE_SET",
+        "TOC_ULTRA_LEAN",
+        "CORE_GUIDE_DRAFT",
+        "CHECKLIST_TRACKER_TEMPLATE",
+        "DAY_1_3_QUICK_WIN_PLAN",
+        "OBJECTION_MINI_FAQ",
+        "PROOF_REQUESTS_IF_NEEDED"
+      ],
+      "method_steps": [
+        "Step 1: Lock the job (one problem, one promise, one win) into INFO_PRODUCT_BRIEF_LOCKED.",
+        "Step 2: Define the 24–72h measurable win (or a measurable proxy).",
+        "Step 3: Snapshot mechanism (1–3 sentences + 1 metaphor) using MESSAGE_SPINE if available.",
+        "Step 4: Build the 3-step action path (setup → execution → stabilization), each step <30 min/day.",
+        "Step 5: Create action assets (checklist + tracker + template) to reduce friction.",
+        "Step 6: Write a 6-question mini-FAQ mapped to top objections.",
+        "Step 7: Add bridge CTA to next step (soft by default unless PB requires hard sell).",
+        "Step 8: Run LITE QA (quick win clarity, scannability, proof discipline, single job)."
+      ],
+      "kpis": [
+        "Completion rate of Day 1 actions (target: 60%+ in cohort/beta)",
+        "Time-to-first-win (target: <=72 hours)",
+        "Refund/complaint rate (target: low; indicates expectation alignment)",
+        "Conversion from info product → next step (target: depends on funnel; track click-through)"
+      ],
+      "awareness": {
+        "entry": "Problem-Aware",
+        "exit": "Solution-Aware"
+      },
+      "prompts": {
+        "builder": "Build a LITE quick-win info product using PROJECT_BRIEF. If MESSAGE_SPINE exists, align mechanism language. Output: (1) locked product brief, (2) title+promise options, (3) ultra-lean TOC, (4) guide draft, (5) checklist+tracker+template, (6) Day 1–3 quick win plan, (7) mini-FAQ. If EVIDENCE_PACK is missing, soften claims and list Proof Requests.",
+        "validator": "Run the LITE QA gate: Is there one clear 24–72h measurable win? Is the product scannable? Any unsupported claims? Is there only one job/promise? Produce PASS/FIX + top 5 edits."
+      }
+    },
+    {
+      "id": "PT-101",
+      "name": "Sales Page Copywriter (LITE)",
+      "domain": "CopyStrategy",
+      "purpose": "Draft a clean, conversion-ready sales page quickly, strictly aligned to MESSAGE_SPINE + PROJECT_BRIEF, with proof discipline, one primary CTA, and mobile-first scannability.",
+      "inputs": {
+        "required": ["PROJECT_BRIEF", "MESSAGE_SPINE"],
+        "optional": ["EVIDENCE_PACK", "VOICE_GUIDE", "VISUAL_SPINE", "OFFER_ARCHITECTURE"]
+      },
+      "outputs": [
+        "PAGE_STRATEGY_LOCKED",
+        "HEADLINE_SET_5",
+        "SUBHEAD_SET_5",
+        "HERO_VARIANTS_2",
+        "SALES_PAGE_DRAFT_V1",
+        "OFFER_STACK_BLOCK",
+        "FAQ_8_12_MAPPED",
+        "PROOF_MAP_CLAIM_TO_REF",
+        "CTA_MICROCOPY_3"
+      ],
+      "method_steps": [
+        "Step 1: Lock strategy from PB+MS (promise, mechanism, CTA, objections, proof pillars) into PAGE_STRATEGY_LOCKED.",
+        "Step 2: Generate 5 headlines + 5 subheads; select 1 primary hero + 2 alternates.",
+        "Step 3: Write empathy-driven pain + failed solutions (no shame, no melodrama).",
+        "Step 4: Reveal the mechanism (MS language) with 1 metaphor + consequence-based urgency (no fake scarcity).",
+        "Step 5: Explain how it works in 3 steps tied to reader wins.",
+        "Step 6: Add proof + credibility bursts; if EP absent, soften and output Proof Requests.",
+        "Step 7: Build offer stack (what you get, who it’s for/not for) with clarity > volume.",
+        "Step 8: Write FAQs (8–12) mapped to objections (safety/fit/timeline/effort/price/support).",
+        "Step 9: CTA integrity + LITE QA (single CTA, MS alignment, proof discipline, mobile scan, ethics)."
+      ],
+      "kpis": [
+        "Scroll depth to mechanism section (target: high; indicates slope)",
+        "CTA click-through rate (CTR) on primary CTA",
+        "Conversion rate (CR) on offer page",
+        "Objection-driven FAQ engagement (heatmap/time on section)",
+        "Refund rate / chargeback rate (proxy for expectation alignment)"
+      ],
+      "awareness": {
+        "entry": "Solution-Aware",
+        "exit": "Most-Aware"
+      },
+      "prompts": {
+        "builder": "Write a LITE sales page using PROJECT_BRIEF + MESSAGE_SPINE. Output: (1) PAGE_STRATEGY_LOCKED, (2) 5 headlines + 5 subheads, (3) 2 hero variants, (4) full sales page draft v1 with mobile scannability, (5) offer stack, (6) FAQ 8–12 mapped to objections, (7) proof map linking claims to EVIDENCE_PACK refs or listing proof gaps, (8) 3 CTA microcopy options. Enforce single primary CTA and no fake urgency/scarcity.",
+        "validator": "Score with MMA-LITE: Strategy Alignment, Clarity/Structure, Voice Consistency (if VG), Proof Discipline, Resonance, CTA Integrity, Ethical Guardrails. Return PASS/FIX/ESCALATE + exact edits."
+      }
+    }
+  ],
+  "Recipes": [
+    {
+      "name": "Quick Offer Build (Info Product → Sales Page)",
+      "description": "Use when you want a fast validated quick-win info product that bridges into a sales page offer with consistent mechanism language.",
+      "run_order": ["PT-081", "PT-101"],
+      "optional_additions": [],
+      "expected_duration": "2–4 hours",
+      "success_criteria": "Info product ships with Day 1–3 win path + action assets; sales page maintains MESSAGE_SPINE consistency with a single CTA and proof map."
+    }
+  ],
+  "QAGates": {
+    "Copy": [
+      "Kitchen Table Test passed (sounds human; no corporate AI-isms).",
+      "Mechanism is named and used consistently across the page.",
+      "Proof discipline maintained (claims grounded or softened + proof requests).",
+      "Single primary CTA repeated; no competing CTAs.",
+      "No fake urgency/scarcity; only factual or consequence-based urgency."
+    ],
+    "Funnel": [
+      "Hierarchy is clear in 3 seconds (headline/subhead/CTA).",
+      "Awareness journey is explicit (entry → exit).",
+      "Proof map provided (Claim → E## or proof gap)."
+    ]
+  },
+  "IntegrationPoints": {
+    "SSOT_Objects": {
+      "PROJECT_BRIEF": "Goal, avatar, offer, constraints, CTA",
+      "MESSAGE_SPINE": "Promise, mechanism, proof pillars, objections, bridge beliefs",
+      "EVIDENCE_PACK": "Claims grounding, proof snippets, citations",
+      "VOICE_GUIDE": "Tone, taboos, rhythm, personality",
+      "OFFER_ARCHITECTURE": "Value Equation, tiers, UMP, UMS"
+    },
+    "Sister_Skills": {
+      "synchronous": ["Human Persuasion Editor", "MMA (Master Monitor Agent)"],
+      "asynchronous": ["Offer Architect", "Market Intelligence Synthesizer"],
+      "support": ["Master Writing Partner", "Transformation Ecosystem Architect"]
+    },
+    "Validation_Layer": {
+      "MMA": "7-dimension quality scoring (or MMA-LITE subset)",
+      "Python_Tools": "Deterministic checks: CTA count, banned words, claim markers, section completeness",
+      "Human_Review": "Final polish + compliance edge cases"
+    }
+  },
+  "Metadata": {
+    "created_by": "agent",
+    "created_date": "2025-12-31",
+    "last_updated": "2025-12-31",
+    "constitutional_compliance": {
+      "version": "ULTRAMIND v2.0",
+      "verified": true
+    },
+    "tags": [
+      "lite",
+      "copystrategy",
+      "info-product",
+      "sales-page",
+      "ssot",
+      "mma",
+      "pt-wrapper-2025-12"
+    ]
+  }
+}

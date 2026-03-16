@@ -1,0 +1,60 @@
+# ULTRAMIND Design Style Layer v1.0.0
+# Vertical: Product Pages / Ecom | Priority: 4 (Ecom & SaaS)
+# Extracted from UI-UX-Pro-Max + Neuro-Resonance mapped
+# Load cost: ~150 tokens | Layer: L2
+
+style_layer:
+  name: "Ecom Product"
+  version: "1.0.0"
+  vertical: "ecom_product"
+  extends: "STYLE_BASE_OVERRIDE"
+  extracted_from: "ui-ux-pro-max"
+
+  quick_reference:
+    style_archetype: "Social Proof-Focused"
+    mood: "clean, trustworthy, conversion-driven"
+    best_for: "Supplement PDPs, physical product pages, ecom landing pages"
+
+  color_palette:
+    primary: "#0891B2"
+    primary_light: "#22D3EE"
+    primary_dark: "#0E7490"
+    secondary: "#22D3EE"
+    accent: "#22C55E"
+    surface_bg: "#ECFEFF"
+    surface_card: "#FFFFFF"
+    text_primary: "#164E63"
+    text_secondary: "#6B7280"
+    cta_primary: "#22C55E"
+    cta_hover: "#16A34A"
+
+  typography:
+    heading_font: "Rubik"
+    heading_weight: 600
+    body_font: "Nunito Sans"
+    body_weight: 400
+    google_fonts_import: "https://fonts.google.com/share?selection.family=Nunito+Sans:wght@300;400;500;600;700|Rubik:wght@300;400;500;600;700"
+
+  motion:
+    entry_style: "fade"
+    duration_base: "200ms"
+    easing: "ease-out"
+    special: "testimonial carousel, logo grid fade-in, stat counter animations, star ratings"
+
+  radius:
+    default: "8px"
+    buttons: "8px"
+    cards: "12px"
+
+  neuro_resonance:
+    primary_axis: "CONSCIENCE"
+    primary_neurotransmitter: "Adrenaline"
+    secondary_axis: "BODY"
+    emotional_target: "action, trust, purchase confidence"
+    7s_emphasis: ["SUPPORTED", "SAFE"]
+
+  anti_patterns:
+    - "Complex navigation (keep it simple)"
+    - "Hidden contact info or support"
+    - "Missing social proof / reviews"
+    - "No guarantee or trust badges"

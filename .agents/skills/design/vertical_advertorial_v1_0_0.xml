@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  VERTICAL: ADVERTORIAL PAGE v1.0.0
+  Design skill for native advertorials, editorial sales content, and bridge pages
+  
+  EXTENDS:
+  - design_core_v1.0.0 (universal foundation)
+  - style_editorial (recommended primary)
+  - conversion_core_patterns (trust + CTA patterns)
+  
+  PURPOSE:
+  Generate high-converting advertorial pages that maintain editorial credibility
+  while driving action. The "bridge" between cold traffic and sales page.
+  
+  EXTRACTED FROM: NotebookLM analysis of proven advertorial patterns
+  
+  VERSION: 1.0.0
+  UPDATED: 2026-02-09
+-->
+
+<VerticalSkill
+  skill_id="skill.vertical_advertorial.v1_0_0"
+  name="Advertorial Page"
+  version="1.0.0"
+  tier="vertical"
+  status="active"
+>
+
+  <Meta>
+    <Extends>design_core_v1.0.0, conversion_core_patterns</Extends>
+    <RecommendedStyles>style_editorial, style_minimal_clean</RecommendedStyles>
+    <TokenBudget>~700 tokens when loaded</TokenBudget>
+    <SwipeDerivation>Extracted from health, finance, lifestyle advertorial analysis</SwipeDerivation>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- PAGE ARCHETYPE                                                      -->
+  <!-- ================================================================== -->
+  
+  <PageArchetype>
+    <Purpose>
+      Bridge cold traffic from ad to sale by mimicking editorial content.
+      Shift beliefs through education before revealing the offer.
+      Maintain "content consumption mode" not "shopping mode".
+    </Purpose>
+    
+    <CorePrinciple>
+      The advertorial sells the CLICK, not the product.
+      Education first. Commerce second.
+      Native feel. Editorial trust. Soft conversion.
+    </CorePrinciple>
+    
+    <TypicalFlow>
+      <Step>Hook: Pattern interrupt headline that sparks curiosity</Step>
+      <Step>Struggle: Validate their pain, show empathy</Step>
+      <Step>Failed Alternatives: Why traditional solutions don't work</Step>
+      <Step>Discovery: The "aha moment" / new mechanism reveal</Step>
+      <Step>Proof: Expert citations, before/after, social proof</Step>
+      <Step>Solution: Product as vehicle for the mechanism</Step>
+      <Step>Bridge CTA: "Check Availability" (soft close)</Step>
+    </TypicalFlow>
+    
+    <ConversionGoals>
+      <Primary>Click through to sales page / product page</Primary>
+      <Secondary>Build belief in the mechanism</Secondary>
+      <Tertiary>Collect email (if exit intent)</Tertiary>
+    </ConversionGoals>
+  </PageArchetype>
+
+  <!-- ================================================================== -->
+  <!-- PUBLICATION STYLING                                                 -->
+  <!-- ================================================================== -->
+  
+  <PublicationStyling>
+    <Purpose>Lower defenses by mimicking trusted editorial wrapper</Purpose>
+    
+    <Header type="editorial">
+      <Logo>
+        <Rule>Generic publication name, NOT product brand</Rule>
+        <Examples>Health News Daily, Smart Living, Wellness Insider</Examples>
+        <Why>Keeps user in "consumption mode" not "shopping mode"</Why>
+      </Logo>
+      
+      <Navigation>
+        <Remove>Shop, About, Cart, Account</Remove>
+        <Use>News, Lifestyle, Trending, Health, Finance</Use>
+      </Navigation>
+    </Header>
+    
+    <Byline required="true">
+      <Author format="Name with credential">Dr. Graham Bennett, MD</Author>
+      <Date format="Updated: [Recent Date]">Signals relevance</Date>
+      <ReadTime>3-4 min read (lowers commitment)</ReadTime>
+    </Byline>
+    
+    <Disclosure required="true">
+      <Format>Small grey text above headline</Format>
+      <Text>Advertorial | Sponsored Content</Text>
+      <Styling>font-size: 12px; color: #999;</Styling>
+    </Disclosure>
+  </PublicationStyling>
+
+  <!-- ================================================================== -->
+  <!-- EDITORIAL TYPOGRAPHY                                                -->
+  <!-- ================================================================== -->
+  
+  <EditorialTypography>
+    <Headlines>
+      <Style>Serif fonts (Georgia, Times) to mimic newspapers</Style>
+      <Formulas>
+        <Formula name="discovery">[Authority] Reveals: [Action] to Fix [Pain]</Formula>
+        <Formula name="switch">Why [Audience] Are Ditching [Old] for [New]</Formula>
+        <Formula name="secret">The [Adj] Secret to [Result] That [Authority] Don't Want You to Know</Formula>
+      </Formulas>
+      <Avoid>Buy One Get One Free style (too salesy)</Avoid>
+    </Headlines>
+    
+    <BodyText>
+      <ColumnWidth>600-800px max</ColumnWidth>
+      <LineHeight>1.5x to 1.6x</LineHeight>
+      <FontColor>#333 (not pure black)</FontColor>
+      <FontSize>18px</FontSize>
+    </BodyText>
+    
+    <PullQuotes>
+      <Purpose>Stop skimmers with key proof</Purpose>
+      <Styling>Large, italicized, left border</Styling>
+      <Example>"In 30 years of practice... this tops the list."</Example>
+    </PullQuotes>
+    
+    <Subheadings>
+      <Frequency>Every 2-3 paragraphs</Frequency>
+      <Pattern>Problem → Failed Solutions → Discovery → Results</Pattern>
+    </Subheadings>
+  </EditorialTypography>
+
+  <!-- ================================================================== -->
+  <!-- IMAGE INTEGRATION                                                   -->
+  <!-- ================================================================== -->
+  
+  <ImageIntegration>
+    <Philosophy>Visual evidence over visual polish</Philosophy>
+    
+    <NativeStyle>
+      <Rule>Ugly/Real outperforms Polished</Rule>
+      <Why>Feels authentic and "leaked" not "produced"</Why>
+      <Examples>iPhone photos of problem, user selfies, FB screenshots</Examples>
+    </NativeStyle>
+    
+    <MedicalDiagrams>
+      <Use>Health/supplement products</Use>
+      <Example>Diagram of "damaged nerve" vs "healthy nerve"</Example>
+    </MedicalDiagrams>
+    
+    <Captions required="true">
+      <Rule>Every image MUST have a caption</Rule>
+      <Why>Captions read 300% more than body copy</Why>
+      <Styling>Small, italicized, below image</Styling>
+    </Captions>
+    
+    <BeforeAfter>
+      <Layout>Side-by-side grid</Layout>
+      <Labeling>Week 1 vs Week 6 (specific)</Labeling>
+    </BeforeAfter>
+  </ImageIntegration>
+
+  <!-- ================================================================== -->
+  <!-- NARRATIVE FLOW                                                      -->
+  <!-- ================================================================== -->
+  
+  <NarrativeFlow>
+    <Philosophy>Slippery slope from education to purchase</Philosophy>
+    
+    <StoryArc>
+      <Step position="1">Hook: Pattern interrupt, spark curiosity</Step>
+      <Step position="2">Struggle: Validate pain with empathy</Step>
+      <Step position="3">Failed Alternatives: Why traditional fails</Step>
+      <Step position="4">Pivot: The "aha" discovery moment</Step>
+      <Step position="5">Mechanism: How the solution works</Step>
+      <Step position="6">Proof: Stack evidence (citations, B/A, testimonials)</Step>
+      <Step position="7">Bridge CTA: Soft close to sales page</Step>
+    </StoryArc>
+    
+    <InlineCTAs>
+      <Purpose>Filter high-intent readers early</Purpose>
+      <Format>Hyperlinked text phrases in content</Format>
+      <Examples>"this safe device" [linked], "the 3-step method" [linked]</Examples>
+    </InlineCTAs>
+    
+    <SoftClose>
+      <Avoid>Buy Now, Add to Cart</Avoid>
+      <Use>Check Availability, See If You Qualify, Claim Discount</Use>
+      <Why>Advertorial sells the click, not the product</Why>
+    </SoftClose>
+  </NarrativeFlow>
+
+  <!-- ================================================================== -->
+  <!-- CREDIBILITY ELEMENTS                                                -->
+  <!-- ================================================================== -->
+  
+  <CredibilityElements>
+    <Citations>
+      <Format>Superscript numbers → References footer</Format>
+      <Content>Clinical trials, university studies</Content>
+    </Citations>
+    
+    <AsSeenIn>
+      <Rule>Logos + Quotes, not logos alone</Rule>
+      <Example>"The missing link in dental care" - WSJ</Example>
+    </AsSeenIn>
+    
+    <ScreenshotProof>
+      <Rule>Screenshot reviews, don't retype them</Rule>
+      <Sources>Facebook comments, Trustpilot</Sources>
+      <Why>Proves real people, harder to fake</Why>
+    </ScreenshotProof>
+  </CredibilityElements>
+
+  <!-- ================================================================== -->
+  <!-- ANTI-PATTERNS                                                       -->
+  <!-- ================================================================== -->
+  
+  <AntiPatterns>
+    <AntiPattern id="AP-001">
+      <Problem>Buy button in hero</Problem>
+      <Fix>Use "Read More" or scroll arrow</Fix>
+    </AntiPattern>
+    
+    <AntiPattern id="AP-002">
+      <Problem>Fake countdown timers that reset</Problem>
+      <Fix>Real deadlines or omit urgency</Fix>
+    </AntiPattern>
+    
+    <AntiPattern id="AP-003">
+      <Problem>Product logo as site logo</Problem>
+      <Fix>Generic publication name</Fix>
+    </AntiPattern>
+    
+    <AntiPattern id="AP-004">
+      <Problem>"Add to Cart" language</Problem>
+      <Fix>"Claim Discount" or "Try Risk-Free"</Fix>
+    </AntiPattern>
+    
+    <AntiPattern id="AP-005">
+      <Problem>Stock photography</Problem>
+      <Fix>Real photos, UGC, diagrams</Fix>
+    </AntiPattern>
+  </AntiPatterns>
+
+  <!-- ================================================================== -->
+  <!-- QUALITY CHECKLIST                                                   -->
+  <!-- ================================================================== -->
+  
+  <QualityChecklist>
+    <Category name="Editorial Feel">
+      <Item>Generic publication name (not product brand)</Item>
+      <Item>Byline with author and date</Item>
+      <Item>Disclosure present but subtle</Item>
+      <Item>Serif headlines mimicking news</Item>
+      <Item>No ecom navigation visible</Item>
+    </Category>
+    
+    <Category name="Narrative Flow">
+      <Item>Hook captures in first line</Item>
+      <Item>Problem validated with empathy</Item>
+      <Item>Failed alternatives addressed</Item>
+      <Item>Clear mechanism reveal</Item>
+      <Item>Proof before ask</Item>
+    </Category>
+    
+    <Category name="CTA Strategy">
+      <Item>No Buy Now in hero</Item>
+      <Item>Inline links early in content</Item>
+      <Item>Soft close language</Item>
+      <Item>CTA after belief shift</Item>
+    </Category>
+  </QualityChecklist>
+
+  <!-- ================================================================== -->
+  <!-- EXECUTION OUTPUT                                                    -->
+  <!-- ================================================================== -->
+  
+  <ExecutionOutput>
+    <StitchPrompt>
+      Create an advertorial with editorial styling.
+      Header: Generic publication name, minimal nav.
+      Byline: Author with credential, date, read time.
+      Headline: Serif font, curiosity-driven.
+      Body: Narrow column (600-800px), generous spacing.
+      Images: Native style with required captions.
+      CTA: "Check Availability" not "Buy Now".
+      Tone: Educational first, commercial second.
+    </StitchPrompt>
+  </ExecutionOutput>
+
+</VerticalSkill>

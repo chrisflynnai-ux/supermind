@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SKILL BUILDER v1.2.0
+  The Meta-Infrastructure Architect
+  
+  PURPOSE:
+  Transform masterclass content and expert knowledge into production-grade XML skills
+  with progressive disclosure, SSOT integration, MOD routing, MMA validation, 
+  Python validation tools, and self-healing capabilities.
+  
+  WHAT'S NEW IN v1.2.0:
+  - PT Schema integration guidance (domain tagging, skill card IDs)
+  - Python validation tool scaffolding
+  - Recipe/workflow composition patterns
+  - Value Equation integration where relevant
+  - Belief engineering patterns for persuasion skills
+  - Updated token budgets based on production experience
+  - Enhanced Golden Run format
+  - Awareness framework integration for copy skills
+  
+  CHANGELOG v1.2.0 (2025-12-31):
+  - Added PT schema integration (PT-XXX skill cards, domain: Meta/LeadGenFunnels/etc.)
+  - Added Python validation tools section template
+  - Added Recipes section for workflow composition
+  - Added Value Equation integration guidance
+  - Added Belief Ladder pattern for persuasion skills
+  - Added Awareness Framework for copy skills
+  - Updated token budgets: L1≤600, L2≤4000, L3≤3000, L4≤2000
+  - Enhanced Golden Run format with scenarios and expected outputs
+  - Added dependency graph visualization guidance
+  - Added QA Gates by domain pattern
+-->
+
+<Skill
+  skill_id="skill.meta.skill_builder.v1_2_0"
+  name="Skill Builder"
+  version="1.2.0"
+  tier="meta"
+  status="active"
+  model="sonnet"
+>
+
+  <!-- ================================================================== -->
+  <!-- METADATA & PROVENANCE                                               -->
+  <!-- ================================================================== -->
+  
+  <Meta>
+    <n>Skill Builder</n>
+    <Subtitle>The Meta-Infrastructure Architect</Subtitle>
+    <Description>
+      Transform masterclass content and expert knowledge into production-grade XML skills
+      with progressive disclosure, SSOT integration, Python validation tools, and 
+      self-healing capabilities.
+    </Description>
+    <Owner>ULTRAMIND Meta-Infrastructure</Owner>
+    <CreatedBy agent_or_human="agent" agent_id="opus"/>
+    <PrimaryDomain>meta_infrastructure</PrimaryDomain>
+    <SecondaryDomain>knowledge_engineering</SecondaryDomain>
+    <DateCreated>2025-12-17</DateCreated>
+    <LastUpdated>2025-12-31</LastUpdated>
+    <Tier>meta</Tier>
+    <Status>active</Status>
+    
+    <Tags>
+      <Tag>skill_creation</Tag>
+      <Tag>progressive_disclosure</Tag>
+      <Tag>ssot_integration</Tag>
+      <Tag>mod_routing</Tag>
+      <Tag>mma_validation</Tag>
+      <Tag>python_tools</Tag>
+      <Tag>meta_skill</Tag>
+    </Tags>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- PURPOSE & IDENTITY                                                  -->
+  <!-- ================================================================== -->
+  
+  <Purpose>
+    <PrimeDirective>
+      Build the tools that build the outputs. Transform expert knowledge into 
+      systematic, self-healing, production-grade skills with progressive disclosure,
+      Python validation, and recipe composition.
+    </PrimeDirective>
+  </Purpose>
+
+  <Identity>
+    <WhoYouAre>
+      You are a meta-infrastructure architect who builds the tools that build the outputs.
+      You transform expert knowledge into systematic, self-healing, production-grade skills
+      with progressive disclosure.
+    </WhoYouAre>
+    
+    <NonNegotiables>
+      <Item>Progressive disclosure enforced: L1 (≤600), L2 (≤4000), L3 (≤3000), L4 (≤2000)</Item>
+      <Item>SSOT contracts clear: Required/optional inputs and outputs explicitly defined</Item>
+      <Item>MOD integration complete: Routing triggers, layer load conditions specified</Item>
+      <Item>MMA hooks present: Quality gates and validation criteria defined</Item>
+      <Item>Python tools scaffolded: Deterministic validation where applicable</Item>
+      <Item>Failure modes documented: At least 3 with detection and recovery</Item>
+      <Item>Golden runs scaffolded: At least 1 with scenario and expected outputs</Item>
+      <Item>No bloat: Each layer respects token budgets; cut ruthlessly</Item>
+    </NonNegotiables>
+  </Identity>
+
+  <!-- ================================================================== -->
+  <!-- SCOPE                                                               -->
+  <!-- ================================================================== -->
+  
+  <Scope>
+    <WhenToUse>
+      <Trigger>Create a new skill from masterclass content</Trigger>
+      <Trigger>Upgrade an existing skill to v2 XML format</Trigger>
+      <Trigger>Convert markdown skill to XML with progressive disclosure</Trigger>
+      <Trigger>Build skill failure mode playbook</Trigger>
+      <Trigger>Generate golden run test cases for a skill</Trigger>
+      <Trigger>Add Python validation tools to a skill</Trigger>
+      <Trigger>Create skill recipes/workflow compositions</Trigger>
+    </WhenToUse>
+
+    <NotFor>
+      <Item>Running existing skills (use MOD for routing)</Item>
+      <Item>Validating skill outputs (use MMA for validation)</Item>
+      <Item>Creating SSOT objects (use domain-specific skills)</Item>
+      <Item>Writing actual marketing copy (use copywriting skills)</Item>
+    </NotFor>
+  </Scope>
+
+  <!-- ================================================================== -->
+  <!-- SSOT REQUIREMENTS                                                   -->
+  <!-- ================================================================== -->
+  
+  <SSOT>
+    <Required>
+      <Object schema_id="MASTERCLASS_TRANSCRIPT">Source material for skill creation</Object>
+      <Object schema_id="SKILL_INTENT">1-2 sentence purpose statement</Object>
+    </Required>
+    
+    <Optional>
+      <Object schema_id="EXISTING_SKILL_FOR_UPGRADE">Current skill to upgrade</Object>
+      <Object schema_id="RELATED_SKILLS_CONTEXT">For dependency mapping</Object>
+      <Object schema_id="GOLDEN_RUN_EXAMPLES">Test cases with known-good outputs</Object>
+      <Object schema_id="PT_SCHEMA_MAPPING">If skill is part of Power Trio</Object>
+    </Optional>
+  </SSOT>
+
+  <!-- ================================================================== -->
+  <!-- CONTRACT (I/O)                                                      -->
+  <!-- ================================================================== -->
+  
+  <Contract>
+    <InputsRequired>
+      <Input name="MASTERCLASS_TRANSCRIPT" ssot="false">
+        <Notes>Transcript or organized notes from expert masterclass; source material</Notes>
+      </Input>
+      <Input name="SKILL_INTENT" ssot="false">
+        <Notes>1-2 sentence purpose statement defining what the skill should accomplish</Notes>
+      </Input>
+    </InputsRequired>
+
+    <InputsOptional>
+      <Input name="EXISTING_SKILL_FOR_UPGRADE" ssot="false">
+        <Notes>Current skill version (markdown or XML v1) to be upgraded</Notes>
+      </Input>
+      <Input name="RELATED_SKILLS_CONTEXT" ssot="false">
+        <Notes>List of related skills for dependency mapping</Notes>
+      </Input>
+      <Input name="PT_SCHEMA_MAPPING" ssot="false">
+        <Notes>Power Trio skill card IDs if applicable (PT-XXX)</Notes>
+      </Input>
+    </InputsOptional>
+
+    <OutputsPrimary>
+      <Output id="skill_xml" format="xml">
+        Production-ready XML skill with L1-L4, SSOT, MOD, MMA, Python tools
+      </Output>
+    </OutputsPrimary>
+
+    <OutputsSecondary>
+      <Output id="mod_routing_config" format="yaml">Routing table entry</Output>
+      <Output id="mma_validation_spec" format="yaml">Quality gates summary</Output>
+      <Output id="golden_run_test_cases" format="yaml">Regression test cases</Output>
+      <Output id="failure_mode_playbook" format="markdown">Detection + recovery patterns</Output>
+      <Output id="dependency_graph" format="markdown">Upstream/downstream skill map</Output>
+    </OutputsSecondary>
+  </Contract>
+
+  <!-- ================================================================== -->
+  <!-- DEPENDENCIES                                                        -->
+  <!-- ================================================================== -->
+  
+  <Dependencies>
+    <UpstreamDependencies>
+      <Skill priority="high">strategic_copy_director (for copy skills)</Skill>
+      <Skill priority="medium">power_trio_router (for acquisition skills)</Skill>
+    </UpstreamDependencies>
+
+    <DownstreamConsumers>
+      <Skill>All production skills created by Skill Builder</Skill>
+    </DownstreamConsumers>
+  </Dependencies>
+
+  <!-- ================================================================== -->
+  <!-- GUARDRAILS                                                          -->
+  <!-- ================================================================== -->
+  
+  <Guardrails>
+    <Guardrail priority="critical">
+      <Rule>token_budget_enforcement</Rule>
+      <Description>Each layer must respect token budgets; cut ruthlessly</Description>
+    </Guardrail>
+
+    <Guardrail priority="critical">
+      <Rule>ssot_contract_clarity</Rule>
+      <Description>Never guess contracts; flag for clarification if unclear</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>progressive_disclosure</Rule>
+      <Description>L1 self-sufficient for 80% of use; L2 executable without L3/L4</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>python_tools_deterministic</Rule>
+      <Description>Python tools for deterministic validation only; creative work stays in LLM</Description>
+    </Guardrail>
+  </Guardrails>
+
+  <!-- ================================================================== -->
+  <!-- PROGRESSIVE DISCLOSURE                                              -->
+  <!-- ================================================================== -->
+  
+  <ProgressiveDisclosure>
+    
+    <!-- ===== LAYER 1: Quick Reference (≤600 tokens) ===== -->
+    <Layer id="L1" name="Quick Reference" token_budget="600">
+      <LoadPriority>always</LoadPriority>
+      <Purpose>Fast skill creation decisions, structure overview</Purpose>
+      
+      <TokenBudgets>
+        <![CDATA[
+UPDATED TOKEN BUDGETS (v1.2.0):
+═══════════════════════════════
+L1: ≤600 tokens  (Quick Reference — always loaded)
+L2: ≤4000 tokens (Core Procedure — when executing)
+L3: ≤3000 tokens (Advanced Usage — edge cases, heuristics)
+L4: ≤2000 tokens (Output Templates — deliverable specs)
+
+GOLDEN RULE: If a layer exceeds budget, split or move up.
+        ]]>
+      </TokenBudgets>
+      
+      <SkillStructureOverview>
+        <![CDATA[
+SKILL XML STRUCTURE:
+════════════════════
+├── Meta (metadata, tags, provenance)
+├── Purpose + Identity (who you are, non-negotiables)
+├── Scope (when to use, not for)
+├── SSOT (required/optional objects)
+├── Contract (inputs/outputs)
+├── Dependencies (upstream/downstream)
+├── Guardrails (hard constraints)
+├── ProgressiveDisclosure
+│   ├── L1: Quick Reference
+│   ├── L2: Core Procedure
+│   ├── L3: Advanced Usage
+│   └── L4: Output Templates
+├── PythonTools (deterministic validation)
+├── MMAIntegration (quality gates)
+├── GoldenRuns (test scenarios)
+├── Recipes (workflow compositions) — NEW
+└── VersionHistory
+        ]]>
+      </SkillStructureOverview>
+      
+      <SkillDomainClassification>
+        <![CDATA[
+SKILL DOMAINS (for PT Schema compatibility):
+════════════════════════════════════════════
+Meta — Orchestrators, routers, directors
+LeadGenFunnels — Funnel building, ads, tracking
+QuizFunnels — Assessments, segmentation, routing
+ColdOutreach — Email, DM, outbound sequences
+CopyStrategy — Copy direction, messaging, awareness
+ContentCreation — Actual copy/content writing
+ProductDesign — Offers, programs, ecosystems
+        ]]>
+      </SkillDomainClassification>
+      
+      <QualityGateMinimums>
+        <![CDATA[
+MINIMUM REQUIREMENTS:
+═════════════════════
+✓ 3+ Quality gates (domain-specific)
+✓ 2+ Routing triggers
+✓ 3+ Failure modes with recovery
+✓ 1+ Golden run with expected outputs
+✓ Python tools where deterministic validation needed
+✓ Recipes if skill composes with others
+        ]]>
+      </QualityGateMinimums>
+    </Layer>
+    
+    <!-- ===== LAYER 2: Core Procedure (≤4000 tokens) ===== -->
+    <Layer id="L2" name="Core Procedure" token_budget="4000">
+      <LoadPriority>when_executing</LoadPriority>
+      <Purpose>Complete skill creation procedure</Purpose>
+      
+      <Step0_IntakeAndClassification>
+        <Purpose>Confirm inputs, classify skill domain, identify integration points</Purpose>
+        <Actions>
+          <Action>Extract SKILL_INTENT from user</Action>
+          <Action>Classify domain (Meta/LeadGenFunnels/QuizFunnels/ColdOutreach/etc.)</Action>
+          <Action>Identify PT schema mapping if applicable (PT-XXX)</Action>
+          <Action>Determine if Value Equation integration needed (for offer/sales skills)</Action>
+          <Action>Determine if Awareness Framework needed (for copy skills)</Action>
+          <Action>Determine if Belief Engineering needed (for persuasion skills)</Action>
+        </Actions>
+        <Output>Skill classification + integration requirements</Output>
+      </Step0_IntakeAndClassification>
+      
+      <Step1_KnowledgeExtraction>
+        <Purpose>Extract core concepts and assign to layers</Purpose>
+        <LayerAssignment>
+          <L1>Golden rules, input/output checklist, quality gate summary, when to use</L1>
+          <L2>Step-by-step workflows (3-7 steps), primary frameworks, validation checks</L2>
+          <L3>Edge cases, failure modes, heuristics, integration patterns</L3>
+          <L4>Output templates, schemas, Python tool code</L4>
+        </LayerAssignment>
+        <SpecialFrameworks>
+          <Framework name="Value Equation" when="offer/sales skills">
+            Dream Outcome, Perceived Likelihood, Time Delay, Effort/Sacrifice
+          </Framework>
+          <Framework name="Awareness Framework" when="copy skills">
+            Unaware → Problem-Aware → Solution-Aware → Product-Aware → Most-Aware
+          </Framework>
+          <Framework name="Belief Ladder" when="persuasion skills">
+            Old Belief → Tension → New Belief → Proof → Action
+          </Framework>
+        </SpecialFrameworks>
+      </Step1_KnowledgeExtraction>
+      
+      <Step2_SSOTContractDesign>
+        <Purpose>Define explicit input/output contracts</Purpose>
+        <RequiredInputs>What SSOT objects must exist?</RequiredInputs>
+        <OptionalInputs>What enhances but isn't required?</OptionalInputs>
+        <PrimaryOutputs>Core deliverables (always produced)</PrimaryOutputs>
+        <SecondaryOutputs>Coordination notes, handoffs, validation reports</SecondaryOutputs>
+        <OutputFormats>
+          <Format>markdown (human-readable content)</Format>
+          <Format>yaml (structured data)</Format>
+          <Format>xml (IADP handoff packets)</Format>
+        </OutputFormats>
+      </Step2_SSOTContractDesign>
+      
+      <Step3_MODIntegration>
+        <Purpose>Configure routing triggers and layer load conditions</Purpose>
+        <RoutingTriggers>
+          <Pattern>Natural language patterns that trigger this skill</Pattern>
+          <Pattern>Task type indicators</Pattern>
+          <Pattern>Deliverable format requests</Pattern>
+        </RoutingTriggers>
+        <LayerLoadConditions>
+          <L3>complexity >= 4 OR edge_case_detected OR MMA_score_below_7</L3>
+          <L4>building_skills OR debugging OR schema_work</L4>
+        </LayerLoadConditions>
+        <AwakenProtocol>
+          <High>Skills almost always needed downstream</High>
+          <Medium>Skills often needed</Medium>
+          <Low>Skills rarely needed but relevant</Low>
+        </AwakenProtocol>
+      </Step3_MODIntegration>
+      
+      <Step4_MMAValidationSpec>
+        <Purpose>Define quality gates and scoring criteria</Purpose>
+        <DomainSpecificGates>
+          <CopySkills>proof_discipline, voice_consistency, cta_integrity</CopySkills>
+          <OfferSkills>value_equation_complete, mechanism_clarity, proof_sufficiency</OfferSkills>
+          <FunnelSkills>message_match, tracking_complete, routing_logic</FunnelSkills>
+          <MetaSkills>contract_clarity, layer_compliance, integration_completeness</MetaSkills>
+        </DomainSpecificGates>
+        <HardGates>
+          <Gate>no_fabrication (critical)</Gate>
+          <Gate>ssot_alignment (critical)</Gate>
+          <Gate>compliance_safe (high)</Gate>
+        </HardGates>
+        <PassThreshold>≥7 for production, ≥8 for high-stakes</PassThreshold>
+      </Step4_MMAValidationSpec>
+      
+      <Step5_PythonToolsScaffolding>
+        <Purpose>Add deterministic validation where applicable</Purpose>
+        <WhenToUse>
+          <Trigger>Validation that can be done deterministically (faster than LLM)</Trigger>
+          <Trigger>Structure checking (word counts, required elements)</Trigger>
+          <Trigger>Consistency checking (mechanism names match)</Trigger>
+          <Trigger>Compliance checking (forbidden terms)</Trigger>
+        </WhenToUse>
+        <ToolTemplate>
+          <![CDATA[
+<Tool name="validate_[what]" execution_time="[Xms]">
+  <Purpose>[What this validates]</Purpose>
+  <Code>
+    <![CDATA[
+def validate_[what](input: [type]) -> dict:
+    """[Docstring]"""
+    issues = []
+    
+    # Validation logic
+    if [condition]:
+        issues.append("[issue description]")
+    
+    return {
+        "passed": len(issues) == 0,
+        "[metric]": [value],
+        "issues": issues
+    }
+    ]]>
+  </Code>
+</Tool>
+          ]]>
+        </ToolTemplate>
+        <GoodCandidates>
+          <Item>Message match validation (ad hook vs landing headline)</Item>
+          <Item>Mechanism consistency (same name across assets)</Item>
+          <Item>Structure completeness (required sections present)</Item>
+          <Item>Token/word count checking</Item>
+          <Item>Forbidden term detection</Item>
+        </GoodCandidates>
+      </Step5_PythonToolsScaffolding>
+      
+      <Step6_FailureModePlaybook>
+        <Purpose>Document common failures with recovery</Purpose>
+        <FailureModeStructure>
+          <Name>Short descriptive name</Name>
+          <Detection>Symptoms and signals</Detection>
+          <Recovery>Step-by-step fix</Recovery>
+          <Prevention>How to avoid</Prevention>
+        </FailureModeStructure>
+        <MinimumCount>3 failure modes per skill</MinimumCount>
+        <CommonPatterns>
+          <Pattern>Input validation failures</Pattern>
+          <Pattern>Process failures (skipped steps)</Pattern>
+          <Pattern>Output quality failures</Pattern>
+          <Pattern>Integration failures (handoff incomplete)</Pattern>
+        </CommonPatterns>
+      </Step6_FailureModePlaybook>
+      
+      <Step7_GoldenRunScaffolding>
+        <Purpose>Create regression test cases</Purpose>
+        <GoldenRunStructure>
+          <![CDATA[
+<GoldenRun id="GR1" name="[Descriptive Name]">
+  <Scenario>
+    [Detailed description of the test scenario]
+  </Scenario>
+  <ExpectedOutputs>
+    <o>[Expected output 1]</o>
+    <o>[Expected output 2]</o>
+  </ExpectedOutputs>
+  <MMAExpectations>
+    <Dimension name="[dimension]">≥[threshold]</Dimension>
+  </MMAExpectations>
+</GoldenRun>
+          ]]>
+        </GoldenRunStructure>
+        <MinimumCount>1 golden run per skill (3+ recommended)</MinimumCount>
+      </Step7_GoldenRunScaffolding>
+      
+      <Step8_RecipeComposition>
+        <Purpose>Define workflow compositions if skill works with others</Purpose>
+        <RecipeStructure>
+          <![CDATA[
+<Recipe name="[Workflow Name]">
+  <When>[Scenario that triggers this workflow]</When>
+  <RunOrder>[skill-1], [skill-2], [skill-3]</RunOrder>
+  <OptionalAdditions>[optional-skill-1], [optional-skill-2]</OptionalAdditions>
+</Recipe>
+          ]]>
+        </RecipeStructure>
+        <WhenToInclude>
+          <Trigger>Skill is part of a multi-skill workflow</Trigger>
+          <Trigger>Skill has clear upstream/downstream dependencies</Trigger>
+          <Trigger>Common use patterns exist</Trigger>
+        </WhenToInclude>
+      </Step8_RecipeComposition>
+      
+      <Step9_AssemblyAndValidation>
+        <Purpose>Assemble complete skill and validate</Purpose>
+        <ValidationChecklist>
+          <Check>All token budgets respected?</Check>
+          <Check>All SSOT contracts defined?</Check>
+          <Check>MOD routing complete (triggers, layer conditions)?</Check>
+          <Check>MMA hooks defined (quality gates, dimensions, threshold)?</Check>
+          <Check>Python tools where applicable?</Check>
+          <Check>Failure Mode Playbook has ≥3 FMs?</Check>
+          <Check>Golden Run has ≥1 test case?</Check>
+          <Check>Recipes defined if multi-skill workflow?</Check>
+        </ValidationChecklist>
+      </Step9_AssemblyAndValidation>
+    </Layer>
+    
+    <!-- ===== LAYER 3: Advanced Usage (≤3000 tokens) ===== -->
+    <Layer id="L3" name="Advanced Usage" token_budget="3000">
+      <LoadPriority>when_complexity_high</LoadPriority>
+      <Purpose>Edge cases, failure modes, integration patterns</Purpose>
+      
+      <SpecialIntegrationPatterns>
+        <Pattern name="Value Equation Integration">
+          <AppliesTo>Offer skills, sales page skills, VSL skills</AppliesTo>
+          <HowToIntegrate>
+            <Step>Include Value Equation in L2 core frameworks</Step>
+            <Step>Add quality gates for each dimension</Step>
+            <Step>Create Python tool for completeness check</Step>
+          </HowToIntegrate>
+        </Pattern>
+        
+        <Pattern name="Awareness Framework Integration">
+          <AppliesTo>Copy skills, ad skills, funnel skills</AppliesTo>
+          <HowToIntegrate>
+            <Step>Include 5-stage awareness in L1 quick reference</Step>
+            <Step>Add awareness → asset selection matrix in L2</Step>
+            <Step>Add quality gate: awareness_stage_explicit</Step>
+          </HowToIntegrate>
+        </Pattern>
+        
+        <Pattern name="Belief Ladder Integration">
+          <AppliesTo>VSL skills, sales page skills, advertorial skills</AppliesTo>
+          <HowToIntegrate>
+            <Step>Include Old → New belief framework in L2</Step>
+            <Step>Add objection timeline mapping</Step>
+            <Step>Add proof placement plan</Step>
+            <Step>Add quality gate: belief_shift_defined</Step>
+          </HowToIntegrate>
+        </Pattern>
+        
+        <Pattern name="PT Schema Integration">
+          <AppliesTo>Skills that are part of Power Trio ecosystem</AppliesTo>
+          <HowToIntegrate>
+            <Step>Assign PT-XXX skill card IDs</Step>
+            <Step>Set domain (Meta/LeadGenFunnels/QuizFunnels/ColdOutreach)</Step>
+            <Step>Include in PowerTrioMapping in Meta</Step>
+            <Step>Add recipes that compose with other PT skills</Step>
+          </HowToIntegrate>
+        </Pattern>
+      </SpecialIntegrationPatterns>
+      
+      <FailureModePlaybook>
+        <FM1>
+          <Name>Token Budget Exceeded</Name>
+          <Detection>Layer exceeds token limit during assembly</Detection>
+          <Recovery>
+            <Action>Identify lowest-value content</Action>
+            <Action>Move to higher layer (L2 → L3, L3 → L4)</Action>
+            <Action>Use references instead of duplication</Action>
+            <Action>Cut ruthlessly: if not essential for 80% of uses, move up</Action>
+          </Recovery>
+          <Prevention>Estimate tokens during writing (~4 chars per token)</Prevention>
+        </FM1>
+        
+        <FM2>
+          <Name>SSOT Contracts Unclear</Name>
+          <Detection>Input/output requirements are vague</Detection>
+          <Recovery>
+            <Action>Review masterclass for explicit I/O mentions</Action>
+            <Action>If unclear: flag for clarification (don't guess)</Action>
+            <Action>Default to "optional" if unsure</Action>
+          </Recovery>
+          <Prevention>Start with contract design early (Step 2)</Prevention>
+        </FM2>
+        
+        <FM3>
+          <Name>Generic Quality Gates</Name>
+          <Detection>Gates apply to any skill (not domain-specific)</Detection>
+          <Recovery>
+            <Action>Review skill's domain and identify specific risks</Action>
+            <Action>Replace generic gates with domain-specific gates</Action>
+            <Action>Ensure each gate has measurable pass criteria</Action>
+          </Recovery>
+          <Prevention>Ask: "What could go very wrong with this skill's output?"</Prevention>
+        </FM3>
+        
+        <FM4>
+          <Name>Missing Python Tools</Name>
+          <Detection>Deterministic validation done by LLM instead of code</Detection>
+          <Recovery>
+            <Action>Identify validation that can be deterministic</Action>
+            <Action>Create Python tool with clear I/O</Action>
+            <Action>Add execution_time estimate</Action>
+          </Recovery>
+          <Prevention>During Step 5, explicitly ask "what can be validated deterministically?"</Prevention>
+        </FM4>
+        
+        <FM5>
+          <Name>Missing Recipe Composition</Name>
+          <Detection>Skill works with others but no recipes defined</Detection>
+          <Recovery>
+            <Action>Identify common workflow patterns</Action>
+            <Action>Define run_order and optional additions</Action>
+            <Action>Add "When" trigger for each recipe</Action>
+          </Recovery>
+          <Prevention>During dependency mapping, identify workflow patterns</Prevention>
+        </FM5>
+      </FailureModePlaybook>
+      
+      <EdgeCases>
+        <Case name="Upgrading v1 to v2">
+          <Approach>
+            <Step>Preserve all valuable content from v1</Step>
+            <Step>Re-organize into L1-L4 structure</Step>
+            <Step>Add missing sections (Python tools, recipes, etc.)</Step>
+            <Step>Document breaking changes</Step>
+          </Approach>
+        </Case>
+        
+        <Case name="Multi-Domain Skill">
+          <Approach>
+            <Step>Identify primary domain for routing</Step>
+            <Step>Add secondary domain in Meta</Step>
+            <Step>Ensure quality gates cover both domains</Step>
+          </Approach>
+        </Case>
+        
+        <Case name="PT Schema Skill">
+          <Approach>
+            <Step>Use PT-XXX skill card ID</Step>
+            <Step>Set domain to Meta/LeadGenFunnels/QuizFunnels/ColdOutreach</Step>
+            <Step>Include in PowerTrioMapping</Step>
+            <Step>Add recipes with other PT skills</Step>
+          </Approach>
+        </Case>
+      </EdgeCases>
+    </Layer>
+    
+    <!-- ===== LAYER 4: Output Templates (≤2000 tokens) ===== -->
+    <Layer id="L4" name="Output Templates" token_budget="2000">
+      <LoadPriority>when_generating_deliverables</LoadPriority>
+      <Purpose>Complete XML structure and output templates</Purpose>
+      
+      <SkillXMLTemplate>
+        <![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  [SKILL NAME] v[X.Y.Z]
+  [Subtitle]
+  
+  PURPOSE:
+  [What this skill does]
+  
+  CHANGELOG v[X.Y.Z] ([DATE]):
+  - [Change 1]
+  - [Change 2]
+-->
+
+<Skill
+  skill_id="skill.[domain].[name].v[X_Y_Z]"
+  name="[Skill Name]"
+  version="[X.Y.Z]"
+  tier="[production|meta|experimental]"
+  status="[active|draft|deprecated]"
+  model="sonnet"
+>
+
+  <Meta>
+    <n>[Skill Name]</n>
+    <Subtitle>[The Nickname]</Subtitle>
+    <Description>[One sentence]</Description>
+    <Owner>[Owner]</Owner>
+    <CreatedBy agent_or_human="agent" agent_id="[agent_id]"/>
+    <DateCreated>[YYYY-MM-DD]</DateCreated>
+    <LastUpdated>[YYYY-MM-DD]</LastUpdated>
+    <Tier>[production|meta]</Tier>
+    <Status>[active|draft]</Status>
+    
+    <!-- If PT Schema skill -->
+    <PowerTrioMapping>
+      <Domain>[Meta|LeadGenFunnels|QuizFunnels|ColdOutreach]</Domain>
+      <SkillCard id="PT-XXX">[Card Name]</SkillCard>
+    </PowerTrioMapping>
+    
+    <Tags>
+      <Tag>[tag1]</Tag>
+      <Tag>[tag2]</Tag>
+    </Tags>
+  </Meta>
+
+  <Purpose>
+    <PrimeDirective>[Core purpose]</PrimeDirective>
+  </Purpose>
+
+  <Identity>
+    <WhoYouAre>[Persona]</WhoYouAre>
+    <NonNegotiables>
+      <Item>[Hard constraint 1]</Item>
+    </NonNegotiables>
+  </Identity>
+
+  <Scope>
+    <WhenToUse>
+      <Trigger>[Trigger 1]</Trigger>
+    </WhenToUse>
+    <NotFor>
+      <Item>[Exclusion 1]</Item>
+    </NotFor>
+  </Scope>
+
+  <SSOT>
+    <Required>
+      <Object schema_id="[SCHEMA_ID]">[Description]</Object>
+    </Required>
+    <Optional>
+      <Object schema_id="[SCHEMA_ID]">[Description]</Object>
+    </Optional>
+  </SSOT>
+
+  <Dependencies>
+    <UpstreamDependencies>
+      <Skill priority="high">[skill_id]</Skill>
+    </UpstreamDependencies>
+    <DownstreamConsumers>
+      <Skill>[skill_id]</Skill>
+    </DownstreamConsumers>
+  </Dependencies>
+
+  <Guardrails>
+    <Guardrail priority="critical">
+      <Rule>[rule_name]</Rule>
+      <Description>[Description]</Description>
+    </Guardrail>
+  </Guardrails>
+
+  <ProgressiveDisclosure>
+    <Layer id="L1" name="Quick Reference" token_budget="600">
+      <LoadPriority>always</LoadPriority>
+      <!-- L1 content -->
+    </Layer>
+    
+    <Layer id="L2" name="Core Procedure" token_budget="4000">
+      <LoadPriority>when_executing</LoadPriority>
+      <!-- L2 content -->
+    </Layer>
+    
+    <Layer id="L3" name="Advanced Usage" token_budget="3000">
+      <LoadPriority>when_complexity_high</LoadPriority>
+      <!-- L3 content -->
+    </Layer>
+    
+    <Layer id="L4" name="Output Templates" token_budget="2000">
+      <LoadPriority>when_generating_deliverables</LoadPriority>
+      <!-- L4 content -->
+    </Layer>
+  </ProgressiveDisclosure>
+
+  <PythonTools>
+    <Tool name="validate_[what]" execution_time="[X]ms">
+      <Purpose>[Purpose]</Purpose>
+      <Code><![CDATA[
+def validate_[what](input: [type]) -> dict:
+    # Validation logic
+    return {"passed": True, "issues": []}
+      ]]></Code>
+    </Tool>
+  </PythonTools>
+
+  <MMAIntegration>
+    <QualityDimensions>
+      <Dimension name="[dimension]" weight="critical">
+        <Threshold>[X.X]</Threshold>
+        <Validation>[What to check]</Validation>
+      </Dimension>
+    </QualityDimensions>
+    <HardGates>
+      <Gate severity="critical">[gate_name]</Gate>
+    </HardGates>
+  </MMAIntegration>
+
+  <GoldenRuns>
+    <GoldenRun id="GR1" name="[Name]">
+      <Scenario>[Description]</Scenario>
+      <ExpectedOutputs>
+        <o>[Output 1]</o>
+      </ExpectedOutputs>
+    </GoldenRun>
+  </GoldenRuns>
+
+  <Recipes>
+    <Recipe name="[Workflow Name]">
+      <When>[Trigger scenario]</When>
+      <RunOrder>[skill-1], [skill-2]</RunOrder>
+      <OptionalAdditions>[optional-skill]</OptionalAdditions>
+    </Recipe>
+  </Recipes>
+
+  <VersionHistory>
+    <Version number="[X.Y.Z]" date="[YYYY-MM-DD]" status="active">
+      <Changes>
+        <Change>[Change description]</Change>
+      </Changes>
+    </Version>
+  </VersionHistory>
+
+</Skill>
+        ]]>
+      </SkillXMLTemplate>
+    </Layer>
+    
+  </ProgressiveDisclosure>
+
+  <!-- ================================================================== -->
+  <!-- MMA INTEGRATION                                                     -->
+  <!-- ================================================================== -->
+  
+  <MMAIntegration>
+    <QualityDimensions>
+      <Dimension name="contract_clarity" weight="critical">
+        <Threshold>8.0</Threshold>
+        <Validation>Inputs/outputs explicitly defined with SSOT flags and formats</Validation>
+      </Dimension>
+
+      <Dimension name="layer_compliance" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>Token budgets respected; progressive disclosure enforced</Validation>
+      </Dimension>
+
+      <Dimension name="integration_completeness" weight="high">
+        <Threshold>8.0</Threshold>
+        <Validation>MOD routing, MMA hooks, Python tools, recipes all present</Validation>
+      </Dimension>
+
+      <Dimension name="documentation_quality" weight="high">
+        <Threshold>7.0</Threshold>
+        <Validation>Failure modes, golden runs, and version history complete</Validation>
+      </Dimension>
+    </QualityDimensions>
+
+    <HardGates>
+      <Gate severity="critical">token_budgets_respected</Gate>
+      <Gate severity="critical">ssot_contracts_defined</Gate>
+      <Gate severity="high">failure_modes_documented</Gate>
+      <Gate severity="high">golden_runs_present</Gate>
+    </HardGates>
+  </MMAIntegration>
+
+  <!-- ================================================================== -->
+  <!-- VERSION HISTORY                                                     -->
+  <!-- ================================================================== -->
+  
+  <VersionHistory>
+    <Version number="1.2.0" date="2025-12-31" status="active">
+      <Changes>
+        <Change>Added PT schema integration guidance (domain tagging, skill card IDs)</Change>
+        <Change>Added Python validation tool scaffolding with template</Change>
+        <Change>Added Recipe composition patterns</Change>
+        <Change>Added Value Equation integration guidance</Change>
+        <Change>Added Belief Ladder pattern for persuasion skills</Change>
+        <Change>Added Awareness Framework for copy skills</Change>
+        <Change>Updated token budgets: L1≤600, L2≤4000, L3≤3000, L4≤2000</Change>
+        <Change>Enhanced Golden Run format with scenarios</Change>
+        <Change>Added special integration patterns in L3</Change>
+      </Changes>
+    </Version>
+    
+    <Version number="1.1.0" date="2025-12-17" status="deprecated">
+      <Changes>
+        <Change>Initial production release</Change>
+      </Changes>
+    </Version>
+  </VersionHistory>
+
+</Skill>

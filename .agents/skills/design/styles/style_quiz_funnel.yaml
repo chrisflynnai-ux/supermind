@@ -1,0 +1,60 @@
+# ULTRAMIND Design Style Layer v1.0.0
+# Vertical: Quiz Funnels / Assessments | Priority: 3 (Conversion)
+# Extracted from UI-UX-Pro-Max + Neuro-Resonance mapped
+# Load cost: ~150 tokens | Layer: L2
+
+style_layer:
+  name: "Quiz Funnel"
+  version: "1.0.0"
+  vertical: "quiz_funnel"
+  extends: "STYLE_BASE_OVERRIDE"
+  extracted_from: "ui-ux-pro-max"
+
+  quick_reference:
+    style_archetype: "Minimal Single Column"
+    mood: "clean, progressive, engaging"
+    best_for: "Quiz funnels, assessments, diagnostic tools, lead gen quizzes"
+
+  color_palette:
+    primary: "#0891B2"
+    primary_light: "#22D3EE"
+    primary_dark: "#0E7490"
+    secondary: "#22D3EE"
+    accent: "#22C55E"
+    surface_bg: "#F8FAFC"
+    surface_card: "#FFFFFF"
+    text_primary: "#1E293B"
+    text_secondary: "#64748B"
+    cta_primary: "#22C55E"
+    cta_hover: "#16A34A"
+
+  typography:
+    heading_font: "DM Sans"
+    heading_weight: 600
+    body_font: "DM Sans"
+    body_weight: 400
+    google_fonts_import: "https://fonts.google.com/share?selection.family=DM+Sans:wght@300;400;500;600;700"
+
+  motion:
+    entry_style: "slide"
+    duration_base: "250ms"
+    easing: "ease-out"
+    special: "progress bar animation, answer card selection, step transitions, result reveal"
+
+  radius:
+    default: "12px"
+    buttons: "12px"
+    cards: "16px"
+
+  neuro_resonance:
+    primary_axis: "BODY"
+    primary_neurotransmitter: "Dopamine"
+    secondary_axis: "MIND"
+    emotional_target: "discovery, curiosity, progress"
+    7s_emphasis: ["SPECIAL", "SMART"]
+
+  anti_patterns:
+    - "No progress indicator (users need to know where they are)"
+    - "Too many options per question (max 4-5)"
+    - "Missing back button / navigation"
+    - "Generic Inter/Inter typography"

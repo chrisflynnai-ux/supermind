@@ -1,0 +1,61 @@
+﻿family: meta
+version: 4.0.0
+status: planned_not_applied
+canonical_rule: work_in_agents_merge_later
+pipeline:
+  - audit
+  - synthesize
+  - notebooklm_enhancement
+  - relational_mapping
+  - v4_refactor
+  - validation
+  - human_review
+patches:
+  - patch_id: PATCH_mma_refactor_to_meta_mma_v4_0_0
+    status: ready_for_claude
+    source_path: .agents/skills/meta/mma_master_monitor_agent_v1_0_0.xml
+    proposed_v4_path: .agents/skills/meta/meta_mma_v4_0_0.xml
+    artifact_path: .agents/skills/meta/patches/PATCH_mma_refactor_to_meta_mma_v4_0_0.md
+    patch_type: refactor
+    notebooklm_query_pack: .agents/skills/meta/META_NOTEBOOKLM_QUERY_PACK_V4.md
+    validation_target: .agents/skills/meta/meta_mma_v4_0_0.xml
+  - patch_id: PATCH_skill_builder_refactor_to_meta_skill_builder_v4_0_0
+    status: ready_for_claude
+    source_path: .agents/skills/meta/skill_builder_v1.2.0.xml
+    proposed_v4_path: .agents/skills/meta/meta_skill_builder_v4_0_0.xml
+    artifact_path: .agents/skills/meta/patches/PATCH_skill_builder_refactor_to_meta_skill_builder_v4_0_0.md
+    patch_type: refactor
+    notebooklm_query_pack: .agents/skills/meta/META_NOTEBOOKLM_QUERY_PACK_V4.md
+    validation_target: .agents/skills/meta/meta_skill_builder_v4_0_0.xml
+  - patch_id: PATCH_skill_architect_refactor_to_meta_skill_architect_v4_0_0
+    status: ready_for_claude
+    source_path: .agents/skills/meta/SKILL_ARCHITECT_v2_ENHANCED.md
+    proposed_v4_path: .agents/skills/meta/meta_skill_architect_v4_0_0.xml
+    artifact_path: .agents/skills/meta/patches/PATCH_skill_architect_refactor_to_meta_skill_architect_v4_0_0.md
+    patch_type: refactor
+    notebooklm_query_pack: .agents/skills/meta/META_NOTEBOOKLM_QUERY_PACK_V4.md
+    validation_target: .agents/skills/meta/meta_skill_architect_v4_0_0.xml
+  - patch_id: PATCH_skill_template_refactor_to_meta_template_system_v4_0_0
+    status: ready_for_claude
+    source_path: .agents/skills/meta/SKILL_TEMPLATE_V3.md
+    proposed_v4_path: .agents/skills/meta/meta_template_system_v4_0_0.xml
+    artifact_path: .agents/skills/meta/patches/PATCH_skill_template_refactor_to_meta_template_system_v4_0_0.md
+    patch_type: refactor
+    notebooklm_query_pack: .agents/skills/meta/META_NOTEBOOKLM_QUERY_PACK_V4.md
+    validation_target: .agents/skills/meta/meta_template_system_v4_0_0.xml
+  - patch_id: PATCH_skill_framework_alignment_to_meta_template_system_v4_0_0
+    status: ready_for_claude
+    source_path: .agents/skills/meta/ULTRAMIND_SKILL_FRAMEWORK_V3.md
+    proposed_v4_path: .agents/skills/meta/meta_template_system_v4_0_0.xml
+    artifact_path: .agents/skills/meta/patches/PATCH_skill_framework_alignment_to_meta_template_system_v4_0_0.md
+    patch_type: alignment
+    notebooklm_query_pack: .agents/skills/meta/META_NOTEBOOKLM_QUERY_PACK_V4.md
+    validation_target: .agents/skills/meta/meta_template_system_v4_0_0.xml
+  - patch_id: PATCH_meta_family_relational_ops_v4_0_0
+    status: ready_for_claude
+    source_path: .agents/skills/meta/META_FAMILY_AUDIT_V4_2026-03-07.md
+    proposed_v4_path: .agents/skills/meta/meta_relational_operations_v4.yaml
+    artifact_path: .agents/skills/meta/patches/PATCH_meta_family_relational_ops_v4_0_0.md
+    patch_type: linkage
+    notebooklm_query_pack: .agents/skills/meta/META_NOTEBOOKLM_QUERY_PACK_V4.md
+    validation_target: .agents/skills/meta/meta_relational_operations_v4.yaml

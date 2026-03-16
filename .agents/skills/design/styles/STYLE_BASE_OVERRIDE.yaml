@@ -1,0 +1,45 @@
+# ULTRAMIND Aesthetic DNA v1.0.0
+# Master Override — applies to ALL vertical styles as universal foundation
+# Load cost: ~150 tokens | Layer: L2 (loads with any vertical)
+
+style_base_override:
+  name: "ULTRAMIND Aesthetic DNA"
+  version: "1.0.0"
+  description: "Modern clean minimal with subtle design elements"
+
+  universal_traits:
+    density: "minimal"
+    decisions: "forced_simple"
+    interaction: "subtle_tactile"
+    guidance: "contextual"
+
+  ai_service_traits:
+    visual_language: "code_glyphs"
+    activity_indicators: "agentic"
+    aesthetic: "futuristic_clean"
+    motion: "purposeful"
+
+  constraints:
+    max_cta_per_viewport: 2
+    min_whitespace_ratio: 0.4
+    font_weights: ["400", "500", "600"]
+    border_radius: "subtle"
+    shadows: "diffused"
+    no_ai_defaults: true
+    mobile_first: true
+
+  accessibility:
+    target: "WCAG AA"
+    min_contrast_ratio: 4.5
+    focus_states: "required"
+    keyboard_nav: "required"
+    reduced_motion: "respected"
+
+  responsive:
+    breakpoints:
+      mobile: "375px"
+      tablet: "768px"
+      desktop: "1024px"
+      large: "1440px"
+    base_unit: "4px"
+    spacing_scale: [0, 4, 8, 12, 16, 24, 32, 48, 64, 96]

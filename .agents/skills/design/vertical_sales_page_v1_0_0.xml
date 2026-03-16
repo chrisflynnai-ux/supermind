@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  VERTICAL: SALES PAGE v1.0.0
+  Design skill for long-form, direct-response landing pages
+  
+  EXTENDS:
+  - design_core_v1.0.0 (universal foundation)
+  - conversion_core_patterns (trust + CTA patterns)
+  - style_high_ticket OR style_saas_modern (context-dependent)
+  
+  PURPOSE:
+  Take cold traffic from "curious" to "customer" through psychological
+  persuasion architecture. Maximize conversion through narrative flow.
+  
+  EXTRACTED FROM: NotebookLM analysis of proven sales page structures
+  
+  VERSION: 1.0.0
+  UPDATED: 2026-02-09
+-->
+
+<VerticalSkill
+  skill_id="skill.vertical_sales_page.v1_0_0"
+  name="Sales Page"
+  version="1.0.0"
+  tier="vertical"
+  status="active"
+>
+
+  <Meta>
+    <Extends>design_core_v1.0.0, conversion_core_patterns</Extends>
+    <RecommendedStyles>style_high_ticket, style_saas_modern, style_editorial</RecommendedStyles>
+    <TokenBudget>~750 tokens when loaded</TokenBudget>
+    <SwipeDerivation>Direct response, info products, high-ticket offers</SwipeDerivation>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- PAGE ARCHETYPE                                                      -->
+  <!-- ================================================================== -->
+  
+  <PageArchetype>
+    <Purpose>
+      Long-form persuasion page that follows psychological sequence,
+      not just logical sequence. Convert cold traffic through narrative.
+    </Purpose>
+    
+    <CorePrinciple>
+      The page is a story, not a brochure.
+      Each section builds on the last.
+      The user should never stop scrolling until they buy.
+    </CorePrinciple>
+    
+    <TheSlipperySide>
+      Visually connect sections so momentum never stops.
+      Dense → Sparse → Dense rhythm maintains engagement.
+      CTA appears after every psychological shift.
+    </TheSlipperySide>
+    
+    <ConversionGoals>
+      <Primary>Purchase / Signup</Primary>
+      <Secondary>Application / Demo request (high-ticket)</Secondary>
+      <Tertiary>Email capture (if not ready)</Tertiary>
+    </ConversionGoals>
+  </PageArchetype>
+
+  <!-- ================================================================== -->
+  <!-- 7-STEP PERSUASION ARCHITECTURE                                      -->
+  <!-- ================================================================== -->
+  
+  <PersuasionArchitecture>
+    <Philosophy>Follow psychological sequence, not logical sequence</Philosophy>
+    
+    <Step position="1" name="hook" section="hero">
+      <Purpose>Grants 3 seconds of attention</Purpose>
+      <Must>State the dream outcome immediately</Must>
+      <CTA>Yes - first CTA after hero</CTA>
+    </Step>
+    
+    <Step position="2" name="credibility" section="social_proof">
+      <Purpose>Validate the promise to encourage scrolling</Purpose>
+      <Elements>"As seen in" logos, star ratings, user count</Elements>
+      <Placement>Immediately after hero</Placement>
+    </Step>
+    
+    <Step position="3" name="agitation" section="problem">
+      <Purpose>Make the user feel understood</Purpose>
+      <Technique>Agitate pain so they seek relief</Technique>
+      <CTA>Optional - after problem awareness peaks</CTA>
+    </Step>
+    
+    <Step position="4" name="revelation" section="solution">
+      <Purpose>Introduce product as the mechanism</Purpose>
+      <Key>Explain WHY this works when others failed</Key>
+      <CTA>Yes - after solution reveal</CTA>
+    </Step>
+    
+    <Step position="5" name="evidence" section="proof">
+      <Purpose>Deep dive into benefits, features, proof</Purpose>
+      <Elements>Testimonials, before/after, expert endorsements</Elements>
+    </Step>
+    
+    <Step position="6" name="desire" section="offer">
+      <Purpose>Stack value, reveal price, present guarantee</Purpose>
+      <CTA>Yes - primary conversion point</CTA>
+    </Step>
+    
+    <Step position="7" name="action" section="close">
+      <Purpose>Final urgency and risk reversal</Purpose>
+      <Elements>FAQ, guarantee, final CTA</Elements>
+      <CTA>Yes - final conversion opportunity</CTA>
+    </Step>
+    
+    <CTAFrequency>
+      <Rule>Place CTA after every major psychological shift</Rule>
+      <Minimum>After Hero, After Solution, After Offer, Final Close</Minimum>
+      <Format>Can alternate buttons and text links</Format>
+    </CTAFrequency>
+    
+    <RhythmPattern>
+      <Pattern>Dense → Sparse → Dense</Pattern>
+      <Dense>Text-heavy sections (stories, evidence)</Dense>
+      <Sparse>Visual-heavy sections (benefits, hero images)</Sparse>
+      <Purpose>Maintain engagement, prevent fatigue</Purpose>
+    </RhythmPattern>
+  </PersuasionArchitecture>
+
+  <!-- ================================================================== -->
+  <!-- HERO SECTION                                                        -->
+  <!-- ================================================================== -->
+  
+  <HeroSection>
+    <HeadlineFormula name="dream_outcome">
+      <Structure>[End Result] + [Time Period] + [Emotional Payoff]</Structure>
+      <Examples>
+        <Example>"End fatigue and boost energy in 45 days so you can feel alive again"</Example>
+        <Example>"Get a lean sexy body just 45 minutes per day feeling great in your clothes"</Example>
+        <Example>"Build a six-figure mediation practice in 30 days changing people's lives"</Example>
+      </Examples>
+    </HeadlineFormula>
+    
+    <HeroVariants>
+      <Variant name="problem_aware">
+        <Focus>Calls out specific suffering immediately</Focus>
+        <Headline>"Struggling with [Problem]? Here is the fix everyone is talking about"</Headline>
+      </Variant>
+      
+      <Variant name="transformation_promise">
+        <Focus>Visualizes the "After" state</Focus>
+        <Visual>High-quality image of result (smiling person, finished project)</Visual>
+        <Rule>Show outcome, not just product</Rule>
+      </Variant>
+      
+      <Variant name="scarcity_driven">
+        <Focus>Drives immediate impulse</Focus>
+        <Elements>"Sold Out [X] Times" or "Sale Ends Tonight" above headline</Elements>
+      </Variant>
+    </HeroVariants>
+    
+    <Subheadline>
+      <Purpose>Clarify the HOW and the WHO</Purpose>
+      <Template>"The only [Mechanism] for [Target Audience] who want to [Benefit] without [Pain Point]"</Template>
+      <Example>"The only 3-step system using Arctic Plants to reverse aging"</Example>
+    </Subheadline>
+    
+    <AboveTheFold>
+      <Required>
+        <Element>Dream outcome headline</Element>
+        <Element>Subheadline with mechanism</Element>
+        <Element>Primary CTA</Element>
+        <Element>Trust signal (rating, logos, or count)</Element>
+      </Required>
+    </AboveTheFold>
+  </HeroSection>
+
+  <!-- ================================================================== -->
+  <!-- PROBLEM AGITATION                                                   -->
+  <!-- ================================================================== -->
+  
+  <ProblemAgitation>
+    <Framework name="PAS">
+      <Problem>Clearly state the issue</Problem>
+      <ProblemExample>"Back pain ruining your sleep?"</ProblemExample>
+      
+      <Agitate>Make it visceral</Agitate>
+      <AgitateExample>"You've tried pills, chiros, and expensive mattresses, but the pain always comes back..."</AgitateExample>
+      
+      <Solve>Present product as only viable exit</Solve>
+    </Framework>
+    
+    <Layouts>
+      <Layout name="symptom_checklist">
+        <Format>Bullet list of symptoms</Format>
+        <Examples>"Brain fog", "Afternoon crash", "Sugar cravings"</Examples>
+        <Psychology>User mentally checks "Yes" to each, building compliance</Psychology>
+      </Layout>
+      
+      <Layout name="old_vs_new">
+        <Format>Visual contrast table</Format>
+        <OldWay>"Expensive Surgery"</OldWay>
+        <NewWay>"15 Minutes a Day at Home"</NewWay>
+      </Layout>
+      
+      <Layout name="failed_alternatives">
+        <Content>Why traditional solutions don't work</Content>
+        <Purpose>Validate their past failures weren't their fault</Purpose>
+      </Layout>
+    </Layouts>
+  </ProblemAgitation>
+
+  <!-- ================================================================== -->
+  <!-- SOLUTION REVELATION                                                 -->
+  <!-- ================================================================== -->
+  
+  <SolutionRevelation>
+    <UniqueMechanism>
+      <Purpose>Explain WHY this works when others failed</Purpose>
+      <Technique>Give mechanism a proprietary name</Technique>
+      <Examples>
+        <Example>"Activated Edathamil"</Example>
+        <Example>"Foot Regeneration Technology"</Example>
+        <Example>"The Bio-Availability Complex"</Example>
+      </Examples>
+      <Why>Makes ordinary sound extraordinary and proprietary</Why>
+    </UniqueMechanism>
+    
+    <IntroducingSection>
+      <Headline>"Finally, a solution that works"</Headline>
+      <Visual>High-resolution product shot</Visual>
+      <Purpose>Dramatic reveal after problem agitation</Purpose>
+    </IntroducingSection>
+    
+    <PivotScript>
+      <Bridge>"I tried everything... until I discovered..."</Bridge>
+      <Reveal>"That's when I found [Product], the only solution that uses [Mechanism] to target the root cause"</Reveal>
+      <Psychology>Shifts user from Problem Aware to Solution Aware</Psychology>
+    </PivotScript>
+    
+    <FeatureBenefitTranslation>
+      <Formula>Feature (What) + Benefit (So What)</Formula>
+      <Before>"Wireless headphones"</Before>
+      <After>"Wireless headphones so you can run without tangles"</After>
+    </FeatureBenefitTranslation>
+  </SolutionRevelation>
+
+  <!-- ================================================================== -->
+  <!-- PROOF SECTIONS                                                      -->
+  <!-- ================================================================== -->
+  
+  <ProofSections>
+    <BeforeAfter>
+      <Layout>Side-by-side grid</Layout>
+      <Requirements>Consistent lighting, framing</Requirements>
+      <Labeling>"Day 1" vs "Day 30" (specific)</Labeling>
+      <Verticals>Essential for health/beauty</Verticals>
+    </BeforeAfter>
+    
+    <TestimonialDesign>
+      <Formula>Visual + Source + Headline</Formula>
+      <Elements>
+        <Element>Photo of user/result</Element>
+        <Element>Review text</Element>
+        <Element>Bold headline summarizing win</Element>
+      </Elements>
+      <Rule>Never use text-only testimonials</Rule>
+    </TestimonialDesign>
+    
+    <ExpertEndorsement>
+      <Format>Headshot + Quote + Credentials</Format>
+      <Example>"As a Physical Therapist, I only recommend..."</Example>
+      <Purpose>Authority bias</Purpose>
+    </ExpertEndorsement>
+    
+    <MediaBar>
+      <Content>"As Featured In" logos</Content>
+      <Enhancement>Include specific quote from publication</Enhancement>
+      <Rule>Quote + Logo, not logo alone</Rule>
+    </MediaBar>
+  </ProofSections>
+
+  <!-- ================================================================== -->
+  <!-- OFFER PRESENTATION                                                  -->
+  <!-- ================================================================== -->
+  
+  <OfferPresentation>
+    <MagneticMiddle>
+      <Structure>1-Pack, 3-Pack, 6-Pack</Structure>
+      <Highlighting>Middle option as "Best Value" or "Most Popular"</Highlighting>
+      <Psychology>Humans avoid cheapest (low quality fear) and most expensive (overspending fear)</Psychology>
+    </MagneticMiddle>
+    
+    <ValueStacking name="the_receipt">
+      <Purpose>Make total value exceed price dramatically</Purpose>
+      <Format>
+        <Line>The Course .................. $997 value</Line>
+        <Line>Bonus 1: Templates .......... $297 value</Line>
+        <Line>Bonus 2: Community .......... $497 value</Line>
+        <Line>Bonus 3: Coaching Call ...... $500 value</Line>
+        <Line>─────────────────────────────────────</Line>
+        <Line>Total Value: $2,291</Line>
+        <Line>Your Price: $297</Line>
+      </Format>
+    </ValueStacking>
+    
+    <PriceAnchoring>
+      <Strikethrough>Show "Regular Price" crossed out</Strikethrough>
+      <MicroPricing>"$0.34 per brushing" or "$1.50/day"</MicroPricing>
+      <Comparison>"Less than a cup of coffee a day"</Comparison>
+    </PriceAnchoring>
+    
+    <SubscriptionFraming>
+      <PreSelection>Consider pre-selecting Subscribe option</PreSelection>
+      <PerksStacking>
+        <Perk>Save 20%</Perk>
+        <Perk>Free Shipping</Perk>
+        <Perk>Priority Access</Perk>
+      </PerksStacking>
+      <CommitmentReduction>"Pause or cancel anytime"</CommitmentReduction>
+    </SubscriptionFraming>
+  </OfferPresentation>
+
+  <!-- ================================================================== -->
+  <!-- OBJECTION HANDLING                                                  -->
+  <!-- ================================================================== -->
+  
+  <ObjectionHandling>
+    <TheObjectionKiller>
+      <Purpose>Proactively answer silent questions that stop sales</Purpose>
+      <Questions>
+        <Question>"Will this work for me?"</Question>
+        <Question>"Is it worth the price?"</Question>
+        <Question>"Is it safe?"</Question>
+      </Questions>
+      <Placement>Right before or after offer section</Placement>
+    </TheObjectionKiller>
+    
+    <FAQ>
+      <Placement>Below offer/buy box</Placement>
+      <Purpose>Catch users who scrolled past price due to hesitation</Purpose>
+      <TopQuestions>
+        <Question>"Will it work for me?"</Question>
+        <Question>"How fast is shipping?"</Question>
+        <Question>"What if I don't like it?"</Question>
+        <Question>"Is it safe?"</Question>
+        <Question>"How do I use it?"</Question>
+      </TopQuestions>
+      <Format>Accordion style</Format>
+    </FAQ>
+    
+    <GuaranteeSection>
+      <Visual>Certificate or seal design</Visual>
+      <SpecificPromise>"90-Day Money-Back Guarantee"</SpecificPromise>
+      <EmptyBottle>"If you don't like it, keep it and we refund you"</EmptyBottle>
+      <Placement>Near final CTA</Placement>
+    </GuaranteeSection>
+  </ObjectionHandling>
+
+  <!-- ================================================================== -->
+  <!-- URGENCY & CLOSE                                                     -->
+  <!-- ================================================================== -->
+  
+  <UrgencyClose>
+    <DeadlineVisualization>
+      <Timer>Countdown for specific offers</Timer>
+      <Copy>"Cart expires in 10:00 minutes"</Copy>
+      <StockWarning>"High Sell-Out Risk" or "Limited inventory"</StockWarning>
+    </DeadlineVisualization>
+    
+    <PostCTAReassurance>
+      <Placement>Underneath final Buy button</Placement>
+      <Elements>
+        <Element>"256-Bit Secure Encryption"</Element>
+        <Element>"Ships in 24 Hours"</Element>
+        <Element>"Over 200,000 Happy Customers"</Element>
+      </Elements>
+    </PostCTAReassurance>
+    
+    <FinalCTA>
+      <Headline>Compelling restatement of outcome</Headline>
+      <Subhead>Brief supporting text</Subhead>
+      <Button>Large, high-contrast</Button>
+      <Guarantee>Visual badge nearby</Guarantee>
+    </FinalCTA>
+  </UrgencyClose>
+
+  <!-- ================================================================== -->
+  <!-- VISUAL RHYTHM                                                       -->
+  <!-- ================================================================== -->
+  
+  <VisualRhythm>
+    <SectionAlternation>
+      <Pattern>White → Light Grey → Brand Color → White</Pattern>
+      <Purpose>Signals new "chapter" to brain</Purpose>
+    </SectionAlternation>
+    
+    <Scannability>
+      <Bold>Key benefits in bold</Bold>
+      <Bullets>Lists for scannable points</Bullets>
+      <Subheads>Every 2-3 paragraphs</Subheads>
+      <Avoid>Walls of text</Avoid>
+    </Scannability>
+    
+    <MobileOptimization>
+      <StickyButton>Buy Now bar at bottom</StickyButton>
+      <Behavior>Always available for conversion</Behavior>
+    </MobileOptimization>
+  </VisualRhythm>
+
+  <!-- ================================================================== -->
+  <!-- COPY VELOCITY                                                       -->
+  <!-- ================================================================== -->
+  
+  <CopyVelocity>
+    <Definition>Ratio of information/emotion per word</Definition>
+    <Goal>High impact, low word count</Goal>
+    
+    <LowVelocity avoid="true">
+      "This product contains 5g of fiber which helps with digestion."
+    </LowVelocity>
+    
+    <HighVelocity use="true">
+      "Eliminate bloating instantly."
+    </HighVelocity>
+    
+    <Technique>Icons + short bullets (under 8 words)</Technique>
+  </CopyVelocity>
+
+  <!-- ================================================================== -->
+  <!-- QUALITY CHECKLIST                                                   -->
+  <!-- ================================================================== -->
+  
+  <QualityChecklist>
+    <Category name="Architecture">
+      <Item>7-step persuasion sequence followed</Item>
+      <Item>CTA after every psychological shift</Item>
+      <Item>Dense/Sparse rhythm maintained</Item>
+      <Item>Section backgrounds alternate</Item>
+    </Category>
+    
+    <Category name="Hero">
+      <Item>Dream outcome in headline</Item>
+      <Item>Mechanism in subheadline</Item>
+      <Item>CTA above the fold</Item>
+      <Item>Trust signal visible</Item>
+    </Category>
+    
+    <Category name="Problem/Solution">
+      <Item>Pain agitated viscerally</Item>
+      <Item>Failed alternatives acknowledged</Item>
+      <Item>Unique mechanism named</Item>
+      <Item>Clear "pivot" moment</Item>
+    </Category>
+    
+    <Category name="Proof">
+      <Item>Before/after with labels</Item>
+      <Item>Testimonials have photos</Item>
+      <Item>Expert endorsement present</Item>
+      <Item>Media logos with quotes</Item>
+    </Category>
+    
+    <Category name="Offer">
+      <Item>Value stack totaled</Item>
+      <Item>Middle option highlighted</Item>
+      <Item>Price anchored (strikethrough)</Item>
+      <Item>Guarantee visualized</Item>
+    </Category>
+    
+    <Category name="Close">
+      <Item>FAQ addresses top objections</Item>
+      <Item>Urgency element present</Item>
+      <Item>Post-CTA reassurance</Item>
+      <Item>Mobile sticky CTA</Item>
+    </Category>
+  </QualityChecklist>
+
+  <!-- ================================================================== -->
+  <!-- EXECUTION OUTPUT                                                    -->
+  <!-- ================================================================== -->
+  
+  <ExecutionOutput>
+    <StitchPrompt>
+      Create a long-form sales page following 7-step persuasion architecture.
+      
+      1. HERO: Dream outcome headline + mechanism subhead + CTA + trust signal
+      2. SOCIAL PROOF: Logo bar with quotes, star rating
+      3. PROBLEM: PAS framework, symptom checklist, failed alternatives
+      4. SOLUTION: Unique mechanism reveal, "Introducing..." moment
+      5. PROOF: Before/after grid, photo testimonials, expert quote
+      6. OFFER: Value stack, 3-tier pricing with middle highlighted, guarantee
+      7. CLOSE: FAQ accordion, urgency, final CTA with reassurance
+      
+      Visual Rhythm: Alternate backgrounds White/Grey/Brand.
+      CTA Frequency: After hero, solution, offer, and final close.
+      Mobile: Sticky CTA bar throughout.
+      
+      Copy Velocity: High impact, low word count.
+      No walls of text. Icons + short bullets.
+    </StitchPrompt>
+  </ExecutionOutput>
+
+</VerticalSkill>

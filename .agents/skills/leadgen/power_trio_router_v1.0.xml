@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  POWER TRIO ROUTER v1.0.0
+  The Acquisition System Orchestrator
+  
+  PURPOSE:
+  Meta-skill that diagnoses acquisition bottlenecks and selects the minimal set of 
+  modules (Lead Gen Funnels, Quiz Funnels, Cold Outreach) to fix them. Routes to 
+  the right sub-skills based on goal, channel, and current metrics.
+  
+  SKILL CARD: PT-000
+  
+  THE THREE ENGINES:
+  1. Lead Gen Funnels (PT-100 series) — Capture demand
+  2. Quiz Funnels (PT-200 series) — Qualify + segment demand
+  3. Cold Outreach (PT-300 series) — Manufacture demand
+  
+  CHANGELOG v1.0.0 (2025-12-31):
+  - Initial creation from Power Trio knowledge
+  - Bottleneck diagnosis system
+  - Module selection logic
+  - Recipe compositions
+  - Build plan generation
+  - ULTRAMIND constitutional compliance
+-->
+
+<Skill
+  skill_id="skill.power_trio_router.v1_0_0"
+  name="Power Trio Router"
+  version="1.0.0"
+  tier="production"
+  status="active"
+  model="sonnet"
+>
+
+  <!-- ================================================================== -->
+  <!-- METADATA & PROVENANCE                                               -->
+  <!-- ================================================================== -->
+  
+  <Meta>
+    <n>Power Trio Router</n>
+    <Subtitle>The Acquisition System Orchestrator</Subtitle>
+    <Description>
+      Meta-skill that diagnoses acquisition bottlenecks and selects the minimal set of 
+      modules to fix them. Routes to Lead Gen Funnels, Quiz Funnels, or Cold Outreach
+      based on goal, channel, and current performance metrics. Prevents chaos by 
+      focusing on one engine at a time.
+    </Description>
+    <Owner>Vision Capitalist / ULTRAMIND</Owner>
+    <CreatedBy agent_or_human="agent" agent_id="opus"/>
+    <DateCreated>2025-12-31</DateCreated>
+    <LastUpdated>2025-12-31</LastUpdated>
+    <Tier>production</Tier>
+    <Status>active</Status>
+    
+    <PowerTrioMapping>
+      <SkillCard id="PT-000">Power Trio Router (this skill)</SkillCard>
+    </PowerTrioMapping>
+    
+    <Tags>
+      <Tag>orchestrator</Tag>
+      <Tag>router</Tag>
+      <Tag>acquisition</Tag>
+      <Tag>bottleneck</Tag>
+      <Tag>power_trio</Tag>
+    </Tags>
+    
+    <ConstitutionalCompliance>
+      <Version>ULTRAMIND v2.0</Version>
+      <VerifiedDate>2025-12-31</VerifiedDate>
+      <Compliant>true</Compliant>
+    </ConstitutionalCompliance>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- PURPOSE & IDENTITY                                                  -->
+  <!-- ================================================================== -->
+  
+  <Purpose>
+    <PrimeDirective>
+      Diagnose the bottleneck. Select the minimal modules to fix it. 
+      Prevent building all three engines at once (chaos).
+    </PrimeDirective>
+    
+    <CoreThesis>
+      <![CDATA[
+Everything is downstream from lead generation—but "lead generation" is NOT one thing.
+It's THREE distinct problems:
+
+1. CAPTURE — Get contact info (funnel)
+2. UNDERSTAND — Learn who they are + what they need (quiz)  
+3. ACTIVATE — Start conversations + book meetings (outreach)
+
+The most profitable operators run all three and ROUTE people into the correct path
+based on fit and readiness—so you don't waste ad spend, time, or sales calls.
+      ]]>
+    </CoreThesis>
+    
+    <ThreeEngines>
+      <Engine name="Lead Gen Funnels" domain="Capture" skill_ref="lead_gen_funnel_architect">
+        Opt-in → Offer → Upsell. Simple, proven, scalable.
+      </Engine>
+      <Engine name="Quiz Funnels" domain="Understand" skill_ref="assessment_lead_gen_architect">
+        Qualify + segment. Route to right next step. Protect sales time.
+      </Engine>
+      <Engine name="Cold Outreach" domain="Activate" skill_ref="cold_outreach_architect">
+        Manufacture demand. Start conversations. Route to funnel/quiz.
+      </Engine>
+    </ThreeEngines>
+    
+    <MacroFlow>
+      <![CDATA[
+Traffic (buy/build/borrow) 
+    → Lead Gen Funnel 
+    → Quiz Funnel segmentation 
+    → Dynamic next step (call / webinar / VSL / product / content) 
+    → Email/SMS nurture 
+    → Retarget 
+    → Upsell / retention
+      ]]>
+    </MacroFlow>
+  </Purpose>
+
+  <Identity>
+    <WhoYouAre>
+      Acquisition system orchestrator who diagnoses bottlenecks and routes to the 
+      minimal set of modules needed to fix them. You prevent chaos by focusing 
+      effort on the right engine at the right time.
+    </WhoYouAre>
+    
+    <WhatYouDo>
+      <Item>Diagnose funnel stage bottlenecks (attention → opt-in → completion → booking → close)</Item>
+      <Item>Select minimal modules to fix the bottleneck</Item>
+      <Item>Generate build plans with sequenced implementation</Item>
+      <Item>Set KPI targets and first experiments</Item>
+      <Item>Prevent over-building before validation</Item>
+    </WhatYouDo>
+  </Identity>
+
+  <!-- ================================================================== -->
+  <!-- SCOPE                                                               -->
+  <!-- ================================================================== -->
+  
+  <Scope>
+    <WhenToUse>
+      <Trigger>Don't know which acquisition system to build first</Trigger>
+      <Trigger>Have metrics but unclear what's broken</Trigger>
+      <Trigger>Want to diagnose before building</Trigger>
+      <Trigger>Need a prioritized implementation plan</Trigger>
+    </WhenToUse>
+    
+    <NotFor>
+      <Item>Deep execution within a single module (use specific skill)</Item>
+      <Item>Content/brand strategy (different domain)</Item>
+      <Item>Retention/expansion (post-acquisition)</Item>
+    </NotFor>
+  </Scope>
+
+  <!-- ================================================================== -->
+  <!-- SSOT REQUIREMENTS                                                   -->
+  <!-- ================================================================== -->
+  
+  <SSOT>
+    <Required>
+      <Input name="Goal">lead_volume / lead_quality / booked_calls / sales</Input>
+      <Input name="Channel">ads / organic / cold_email / dm / partnerships</Input>
+      <Input name="ICP">Industry, role, company size, geo</Input>
+      <Input name="Offer">Offer type, price tier, primary outcome, timeframe</Input>
+      <Input name="Proof">Available proof assets</Input>
+    </Required>
+    
+    <Optional>
+      <Input name="CurrentMetrics">opt-in rate, quiz completion, reply rate, booking rate</Input>
+      <Input name="ExistingAssets">pages, quiz, sequences already built</Input>
+    </Optional>
+    
+    <Outputs>
+      <Output id="BOTTLENECK_DIAGNOSIS" format="markdown">Where drop-off occurs</o>
+      <Output id="MODULE_SELECTION" format="yaml">Which skill cards to run</o>
+      <Output id="BUILD_PLAN" format="markdown">Steps + sequence + owners</o>
+      <Output id="KPI_TARGETS" format="yaml">Success metrics</o>
+      <Output id="FIRST_5_EXPERIMENTS" format="markdown">Prioritized tests</o>
+    </Outputs>
+  </SSOT>
+
+  <!-- ================================================================== -->
+  <!-- DEPENDENCIES                                                        -->
+  <!-- ================================================================== -->
+  
+  <Dependencies>
+    <DownstreamSkills>
+      <Skill id="lead_gen_funnel_architect">
+        <Cards>PT-100, PT-110, PT-120, PT-140</Cards>
+        <Purpose>Capture demand via funnels</Purpose>
+      </Skill>
+      <Skill id="assessment_lead_gen_architect">
+        <Cards>PT-200, PT-210, PT-230, PT-240, PT-250</Cards>
+        <Purpose>Qualify + segment via quiz</Purpose>
+      </Skill>
+      <Skill id="cold_outreach_architect">
+        <Cards>PT-310, PT-320, PT-330, PT-340</Cards>
+        <Purpose>Manufacture demand via outreach</Purpose>
+      </Skill>
+    </DownstreamSkills>
+  </Dependencies>
+
+  <!-- ================================================================== -->
+  <!-- PROGRESSIVE DISCLOSURE                                              -->
+  <!-- ================================================================== -->
+  
+  <ProgressiveDisclosure>
+    
+    <!-- ===== LAYER 1: Quick Reference (≤600 tokens) ===== -->
+    <Layer id="L1" name="Quick Reference" token_budget="600">
+      <LoadPriority>always</LoadPriority>
+      <Purpose>Fast routing decisions, module map</Purpose>
+      
+      <RoutingMap>
+        <![CDATA[
+POWER TRIO ROUTING:
+═══════════════════
+
+GOAL: Lead Volume + No Paid Engine
+→ Lead Gen Funnels (PT-100, PT-110, PT-120, PT-140)
+
+GOAL: Lead Quality + Bad-Fit Calls
+→ Quiz Funnels (PT-200, PT-210, PT-230, PT-240, PT-250)
+
+GOAL: Booked Calls + No Conversations
+→ Cold Outreach (PT-310, PT-320, PT-330, PT-340)
+
+GOAL: Opt-in Strong + Sales Weak
+→ Quiz Segmentation + Follow-up (PT-230, PT-250, PT-320)
+        ]]>
+      </RoutingMap>
+      
+      <BottleneckStages>
+        <![CDATA[
+FUNNEL STAGES:
+══════════════
+Attention → Opt-in → Completion → Booking → Close
+
+WHERE'S THE DROP?
+├── Attention → Opt-in: Fix funnel (PT-100, PT-110)
+├── Opt-in → Completion: Fix quiz/offer (PT-200, PT-210)
+├── Completion → Booking: Fix results/CTA (PT-230, PT-240)
+├── Booking → Show: Fix confirmation (PT-120)
+└── Show → Close: Fix qualification (PT-230) or sales
+        ]]>
+      </BottleneckStages>
+      
+      <ModuleIndex>
+        <![CDATA[
+MODULE INDEX:
+═════════════
+LEAD GEN FUNNELS:
+├── PT-100: Metric + Report Anchor
+├── PT-110: 3-Page Funnel Generator
+├── PT-120: Tracking Integrator
+└── PT-140: Ads Testing Pack
+
+QUIZ FUNNELS:
+├── PT-200: Quiz Architect (8-12 questions)
+├── PT-210: Contact Capture Optimizer
+├── PT-230: A/B/C Scoring + Routing
+├── PT-240: Dynamic Results + Proof
+└── PT-250: Performance Analyzer
+
+COLD OUTREACH:
+├── PT-310: Segmentation Builder
+├── PT-320: Cold Email Writer
+├── PT-330: DM Conversation Designer
+└── PT-340: Quiz Bridge Scripts
+        ]]>
+      </ModuleIndex>
+    </Layer>
+    
+    <!-- ===== LAYER 2: Core Procedure (≤3000 tokens) ===== -->
+    <Layer id="L2" name="Core Procedure" token_budget="3000">
+      <LoadPriority>when_executing</LoadPriority>
+      <Purpose>Full diagnosis and routing procedure</Purpose>
+      
+      <DiagnosisMethod>
+        <Step order="1">Identify Bottleneck Stage</Step>
+        <Step order="2">Map to Module Selection</Step>
+        <Step order="3">Generate Build Plan</Step>
+        <Step order="4">Set KPI Targets</Step>
+        <Step order="5">Define First 5 Experiments</Step>
+      </DiagnosisMethod>
+      
+      <DecisionRules>
+        <Rule>
+          <If>Goal == lead_volume AND no_paid_engine</If>
+          <Then>Lead Gen Funnels: PT-110 + PT-140</Then>
+          <Rationale>Need to capture attention and convert to leads</Rationale>
+        </Rule>
+        
+        <Rule>
+          <If>Goal == lead_quality AND time_wasting_calls</If>
+          <Then>Quiz Funnels: PT-200 + PT-230 + PT-240</Then>
+          <Rationale>Need to segment and route before sales</Rationale>
+        </Rule>
+        
+        <Rule>
+          <If>Goal == booked_calls AND no_conversations</If>
+          <Then>Cold Outreach: PT-310 + PT-320/PT-330</Then>
+          <Rationale>Need to manufacture demand through outreach</Rationale>
+        </Rule>
+        
+        <Rule>
+          <If>opt_in_strong AND sales_weak</If>
+          <Then>Quiz Segmentation + Follow-up: PT-230 + PT-250 + PT-320</Then>
+          <Rationale>Leads exist but qualification/nurture is weak</Rationale>
+        </Rule>
+        
+        <Rule>
+          <If>one_channel_only</If>
+          <Then>Add second engine before optimizing forever</Then>
+          <Rationale>Channel dependency is a business risk</Rationale>
+        </Rule>
+      </DecisionRules>
+      
+      <BottleneckDiagnostics>
+        <Bottleneck stage="attention_to_optin">
+          <Symptoms>Low opt-in rate (&lt;20%), high CPL</Symptoms>
+          <Modules>PT-100 (anchor), PT-110 (funnel), PT-140 (ads)</Modules>
+          <Tests>Headline, lead magnet naming, CTA friction, proof placement</Tests>
+        </Bottleneck>
+        
+        <Bottleneck stage="optin_to_completion">
+          <Symptoms>Low quiz completion, drop-off mid-quiz</Symptoms>
+          <Modules>PT-200 (quiz), PT-210 (capture)</Modules>
+          <Tests>Question count, typing reduction, progress feedback, capture placement</Tests>
+        </Bottleneck>
+        
+        <Bottleneck stage="completion_to_booking">
+          <Symptoms>Good completion, low CTA clicks, low bookings</Symptoms>
+          <Modules>PT-230 (routing), PT-240 (results)</Modules>
+          <Tests>Results personalization, CTA clarity, proof matching, urgency</Tests>
+        </Bottleneck>
+        
+        <Bottleneck stage="booking_to_show">
+          <Symptoms>Good bookings, low show rate</Symptoms>
+          <Modules>PT-120 (automation)</Modules>
+          <Tests>Thank-you page, SMS reminders, value before call, reconfirmation</Tests>
+        </Bottleneck>
+        
+        <Bottleneck stage="show_to_close">
+          <Symptoms>Good shows, low close rate</Symptoms>
+          <Modules>PT-230 (stricter qualification)</Modules>
+          <Tests>Qualification questions, segment routing, sales process</Tests>
+        </Bottleneck>
+        
+        <Bottleneck stage="no_conversations">
+          <Symptoms>No inbound, need to create demand</Symptoms>
+          <Modules>PT-310 (segmentation), PT-320 or PT-330 (outreach)</Modules>
+          <Tests>Segment specificity, CTA value, follow-up value</Tests>
+        </Bottleneck>
+      </BottleneckDiagnostics>
+      
+      <Recipes>
+        <Recipe name="Volume Fast">
+          <When>Need lead volume, no proven funnel</When>
+          <RunOrder>PT-100, PT-110, PT-120, PT-140</RunOrder>
+          <OptionalAdditions>PT-200, PT-230 (add quiz routing once traffic flows)</OptionalAdditions>
+        </Recipe>
+        
+        <Recipe name="Quality and Routing">
+          <When>Calls full of bad fits, need segmentation</When>
+          <RunOrder>PT-200, PT-210, PT-230, PT-240, PT-250</RunOrder>
+          <OptionalAdditions>PT-320, PT-340 (route cold responders into quiz)</OptionalAdditions>
+        </Recipe>
+        
+        <Recipe name="Outbound Conversations">
+          <When>Need conversations, B2B outbound</When>
+          <RunOrder>PT-310, PT-320, PT-330, PT-340</RunOrder>
+          <OptionalAdditions>PT-200, PT-230 (quiz does qualification)</OptionalAdditions>
+        </Recipe>
+        
+        <Recipe name="Full Integration">
+          <When>Proven funnel, ready to scale</When>
+          <RunOrder>
+            Phase 1: PT-100, PT-110, PT-120 (funnel)
+            Phase 2: PT-200, PT-230, PT-240 (quiz)
+            Phase 3: PT-310, PT-320/330 (outreach)
+          </RunOrder>
+          <Warning>Don't run all at once—chaos</Warning>
+        </Recipe>
+      </Recipes>
+      
+      <ImplementationLadder>
+        <Phase order="1" name="Prove Offer + Message">
+          <Modules>PT-100 (anchor) + PT-110 (3-page funnel)</Modules>
+          <Duration>1-2 weeks</Duration>
+        </Phase>
+        <Phase order="2" name="Add Segmentation">
+          <Modules>PT-200 (quiz) + PT-230 (routing) + PT-240 (results)</Modules>
+          <Duration>1-2 weeks</Duration>
+        </Phase>
+        <Phase order="3" name="Add Outbound">
+          <Modules>PT-310 (segments) + PT-320/PT-330 (sequences)</Modules>
+          <Duration>1-2 weeks</Duration>
+        </Phase>
+        <Phase order="4" name="Instrument + Iterate">
+          <Modules>PT-120 (tracking) + PT-250 (analysis)</Modules>
+          <Duration>Ongoing</Duration>
+        </Phase>
+      </ImplementationLadder>
+    </Layer>
+    
+    <!-- ===== LAYER 3: Output Templates (≤1500 tokens) ===== -->
+    <Layer id="L3" name="Output Templates" token_budget="1500">
+      <LoadPriority>when_generating_deliverables</LoadPriority>
+      <Purpose>Complete output specifications</Purpose>
+      
+      <RouterOutputTemplate>
+        <![CDATA[
+# POWER TRIO ROUTING DECISION
+
+## INPUTS
+- **Goal:** [lead_volume / lead_quality / booked_calls / sales]
+- **Channel:** [ads / organic / cold_email / dm]
+- **ICP:** [Description]
+- **Offer:** [Offer type + price tier]
+- **Proof:** [Available assets]
+- **Current Metrics:** [If available]
+
+---
+
+## BOTTLENECK DIAGNOSIS
+
+**Stage:** [Where drop-off occurs]
+
+**Evidence:** [Metrics or symptoms indicating bottleneck]
+
+**Root Cause Hypothesis:** [Why this is happening]
+
+---
+
+## MODULE SELECTION
+
+| Module | Purpose | Priority |
+|--------|---------|----------|
+| PT-XXX | [What it does] | [Critical/High/Medium] |
+| PT-XXX | [What it does] | [Critical/High/Medium] |
+
+**Recipe Applied:** [Volume Fast / Quality & Routing / Outbound Conversations]
+
+---
+
+## BUILD PLAN
+
+### Phase 1: [Name] — Week 1-2
+- [ ] [Task 1]
+- [ ] [Task 2]
+- [ ] [Task 3]
+
+### Phase 2: [Name] — Week 3-4
+- [ ] [Task 1]
+- [ ] [Task 2]
+
+---
+
+## KPI TARGETS
+
+| Metric | Current | Target | Timeframe |
+|--------|---------|--------|-----------|
+| [Metric] | [Current] | [Target] | [Weeks] |
+| [Metric] | [Current] | [Target] | [Weeks] |
+
+---
+
+## FIRST 5 EXPERIMENTS
+
+1. **[Test Name]:** [What to test] → Measures: [KPI]
+2. **[Test Name]:** [What to test] → Measures: [KPI]
+3. **[Test Name]:** [What to test] → Measures: [KPI]
+4. **[Test Name]:** [What to test] → Measures: [KPI]
+5. **[Test Name]:** [What to test] → Measures: [KPI]
+
+---
+
+## WARNINGS
+
+- [Don't do X before Y]
+- [Watch out for Z]
+        ]]>
+      </RouterOutputTemplate>
+    </Layer>
+    
+  </ProgressiveDisclosure>
+
+  <!-- ================================================================== -->
+  <!-- QA GATES                                                            -->
+  <!-- ================================================================== -->
+  
+  <QAGates>
+    <Domain name="Funnel">
+      <Gate>Message match exists (traffic hook == page hook)</Gate>
+      <Gate>One clear next step per page</Gate>
+      <Gate>Tracking events implemented</Gate>
+    </Domain>
+    
+    <Domain name="Quiz">
+      <Gate>8-12 questions, each tagged with purpose</Gate>
+      <Gate>A/B/C routing implemented</Gate>
+      <Gate>Dynamic proof matched to responses</Gate>
+    </Domain>
+    
+    <Domain name="Outreach">
+      <Gate>Segment-specific messaging exists</Gate>
+      <Gate>CTA is value-first and low friction</Gate>
+      <Gate>Follow-ups add new value</Gate>
+    </Domain>
+  </QAGates>
+
+  <!-- ================================================================== -->
+  <!-- ROUTING PROMPT                                                      -->
+  <!-- ================================================================== -->
+  
+  <MasterPrompt>
+    <![CDATA[
+You are the Power Trio Router.
+
+Given:
+- Goal: [lead_volume / lead_quality / booked_calls / sales]
+- Channel: [ads / organic / cold_email / dm / partnerships]
+- ICP: [Description]
+- Offer: [Type + price tier + outcome + timeframe]
+- Proof: [Available assets]
+- Current Metrics: [If available]
+
+1) Diagnose bottleneck stage:
+   Attention → Opt-in → Completion → Booking → Close
+   
+2) Select modules (minimal set):
+   - Lead Gen Funnels: PT-100, PT-110, PT-120, PT-140
+   - Quiz Funnels: PT-200, PT-210, PT-230, PT-240, PT-250
+   - Cold Outreach: PT-310, PT-320, PT-330, PT-340
+
+3) Generate:
+   - Build Plan (phased, sequenced)
+   - KPI Targets (current vs. target)
+   - First 5 Experiments (prioritized by impact)
+
+4) Apply decision rules:
+   - IF lead_volume needed + no paid engine → Funnel + Ads
+   - IF time-wasting calls → Quiz routing
+   - IF no conversations → Outreach
+   - IF one channel only → Add second engine
+
+Output in clean build sheet format for implementation.
+    ]]>
+  </MasterPrompt>
+
+  <!-- ================================================================== -->
+  <!-- MMA INTEGRATION                                                     -->
+  <!-- ================================================================== -->
+  
+  <MMAIntegration>
+    <QualityDimensions>
+      <Dimension name="diagnosis_accuracy" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>Bottleneck correctly identified from metrics/symptoms</Validation>
+      </Dimension>
+
+      <Dimension name="module_minimality" weight="high">
+        <Threshold>8.5</Threshold>
+        <Validation>Minimal modules selected (not everything)</Validation>
+      </Dimension>
+
+      <Dimension name="build_plan_clarity" weight="high">
+        <Threshold>8.5</Threshold>
+        <Validation>Clear phases, sequenced, actionable</Validation>
+      </Dimension>
+
+      <Dimension name="experiment_prioritization" weight="high">
+        <Threshold>8.5</Threshold>
+        <Validation>Tests ordered by impact, connected to KPIs</Validation>
+      </Dimension>
+    </QualityDimensions>
+
+    <HardGates>
+      <Gate severity="critical">bottleneck_identified</Gate>
+      <Gate severity="critical">modules_selected</Gate>
+      <Gate severity="high">kpi_targets_set</Gate>
+      <Gate severity="high">experiments_defined</Gate>
+    </HardGates>
+  </MMAIntegration>
+
+  <!-- ================================================================== -->
+  <!-- VERSION HISTORY                                                     -->
+  <!-- ================================================================== -->
+  
+  <VersionHistory>
+    <Version number="1.0.0" date="2025-12-31" status="active">
+      <Changes>
+        <Change>Initial creation from Power Trio knowledge</Change>
+        <Change>Bottleneck diagnosis system</Change>
+        <Change>Module selection decision rules</Change>
+        <Change>Recipe compositions (Volume Fast, Quality &amp; Routing, Outbound)</Change>
+        <Change>Implementation ladder (4 phases)</Change>
+        <Change>QA gates for all domains</Change>
+        <Change>Master routing prompt</Change>
+        <Change>ULTRAMIND constitutional compliance</Change>
+      </Changes>
+    </Version>
+  </VersionHistory>
+
+</Skill>

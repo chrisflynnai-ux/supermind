@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  META SKILL AUDITOR v4.0.0
+  Folder, skill, and harness audit front door for V4 migration.
+-->
+<Skill skill_id="meta_skill_auditor" name="Meta Skill Auditor" version="4.0.0" status="active">
+  <Meta>
+    <Name>Meta Skill Auditor</Name>
+    <Description>Audits folders, skills, and harness components, classifies migration verdicts, and emits patch roadmaps for V4 work.</Description>
+    <Domain>meta</Domain>
+    <Track>cross</Track>
+    <TeamRole>auditor</TeamRole>
+  </Meta>
+
+  <!-- LAYER:CONTRACT -->
+  <Contract>
+    <InputsRequired>
+      <Input><Name>target_scope</Name><Description>Folder, file, or harness component to audit.</Description></Input>
+      <Input><Name>benchmark_asset</Name><Description>Current V4 reference for comparison.</Description></Input>
+    </InputsRequired>
+    <InputsOptional>
+      <Input><Name>pipeline_refs</Name><Description>Current synthesis doctrine and patch packs.</Description></Input>
+      <Input><Name>routing_context</Name><Description>Aliases, manifest, or routing dependencies.</Description></Input>
+    </InputsOptional>
+    <OutputsPrimary>
+      <Output><Name>audit_scorecard</Name><Description>Dimension scores, verdict, and key findings.</Description></Output>
+      <Output><Name>patch_roadmap</Name><Description>Ordered remediation and refactor actions.</Description></Output>
+    </OutputsPrimary>
+    <OutputsSecondary>
+      <Output><Name>decomposition_map</Name><Description>Required atom or module split for large assets.</Description></Output>
+      <Output><Name>routing_impact_note</Name><Description>Manifest, alias, and wake-condition changes.</Description></Output>
+    </OutputsSecondary>
+  </Contract>
+
+  <!-- LAYER:RULES -->
+  <ExecutionProtocol>
+    <Rules>
+      <Rule id="R1">Audit before rewrite.</Rule>
+      <Rule id="R2">Benchmark one, patch many.</Rule>
+      <Rule id="R3">Discovery metadata is a first-class gate.</Rule>
+      <Rule id="R4">Large assets without decomposition guidance cannot receive a keep verdict.</Rule>
+      <Rule id="R5">Treat relational operations as contractual requirements, not optional prose.</Rule>
+    </Rules>
+
+    <!-- LAYER:REASONING -->
+    <ReasoningFramework>
+      <Step order="1"><Name>Inventory</Name><Action>List current assets and identify role overlap.</Action></Step>
+      <Step order="2"><Name>Compare</Name><Action>Measure each target against the current benchmark and pipeline doctrine.</Action></Step>
+      <Step order="3"><Name>Classify</Name><Action>Assign keep, patch, decompose, rebuild, or archive.</Action></Step>
+      <Step order="4"><Name>Emit Roadmap</Name><Action>Define patch order, ownership, and relational impact.</Action></Step>
+    </ReasoningFramework>
+
+    <!-- LAYER:IMPL -->
+    <Implementation>
+      <Dependencies>
+        <Upstream>meta_zpwo</Upstream>
+        <Upstream>meta_mma</Upstream>
+        <Downstream>meta_skill_architect</Downstream>
+        <Downstream>meta_skill_builder</Downstream>
+        <Downstream>meta_template_system</Downstream>
+      </Dependencies>
+      <QuickReference>
+        <![CDATA[
+AUDITOR LOOP
+1. Inventory the folder.
+2. Identify the strongest benchmark.
+3. Detect contradictions and overlap.
+4. Issue verdicts.
+5. Route architecture work to architect and implementation work to builder.
+        ]]>
+      </QuickReference>
+    </Implementation>
+  </ExecutionProtocol>
+
+  <SelfCheck>
+    <Check id="SC-01">Every audited asset receives a verdict.</Check>
+    <Check id="SC-02">Every patch or rebuild verdict identifies an owner and next artifact.</Check>
+    <Check id="SC-03">Contradictions between pipeline docs and executable skills are explicitly logged.</Check>
+    <MMAGate>
+      <Trigger>Before a folder enters V4 refactor.</Trigger>
+      <Threshold>Audit packet complete with scorecard, roadmap, and relational impact note.</Threshold>
+    </MMAGate>
+    <FailureModes>
+      <Mode><Symptom>Folder-level ambiguity</Symptom><Recovery>Escalate to meta_skill_architect for target role definition.</Recovery></Mode>
+      <Mode><Symptom>Repeated patch without progress</Symptom><Recovery>Promote verdict from patch to rebuild.</Recovery></Mode>
+      <Mode><Symptom>Benchmark mismatch</Symptom><Recovery>Confirm or redefine the current family benchmark before continuing.</Recovery></Mode>
+    </FailureModes>
+  </SelfCheck>
+
+  <PatchLog>
+    <Entry version="4.0.0" date="2026-03-07">Created canonical audit front door for folder-by-folder V4 migration.</Entry>
+  </PatchLog>
+</Skill>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  META TEMPLATE SYSTEM v4.0.0
+  Canonical template and discovery rule owner for V4 skills.
+-->
+<Skill skill_id="meta_template_system" name="Meta Template System" version="4.0.0" status="active">
+  <Meta>
+    <Name>Meta Template System</Name>
+    <Description>Owns canonical scaffolds, discovery metadata rules, relational contract stubs, and starter templates for V4 skill construction.</Description>
+    <Domain>meta</Domain>
+    <Track>cross</Track>
+    <TeamRole>template_owner</TeamRole>
+  </Meta>
+
+  <!-- LAYER:CONTRACT -->
+  <Contract>
+    <InputsRequired>
+      <Input><Name>target_role</Name><Description>Role or family that needs a template.</Description></Input>
+    </InputsRequired>
+    <InputsOptional>
+      <Input><Name>target_domain</Name><Description>Family-specific domain for routing and terminology.</Description></Input>
+      <Input><Name>discovery_requirements</Name><Description>Expected naming, trigger, and manifest behavior.</Description></Input>
+    </InputsOptional>
+    <OutputsPrimary>
+      <Output><Name>template_bundle</Name><Description>Canonical scaffold plus discovery metadata and relational contract stubs.</Description></Output>
+    </OutputsPrimary>
+    <OutputsSecondary>
+      <Output><Name>template_policy_note</Name><Description>Required fields and migration warnings.</Description></Output>
+    </OutputsSecondary>
+  </Contract>
+
+  <!-- LAYER:RULES -->
+  <ExecutionProtocol>
+    <Rules>
+      <Rule id="R1">Canonical IDs use `{domain}_{function}`.</Rule>
+      <Rule id="R2">Discovery fields must be explicit enough for routing and manifest generation.</Rule>
+      <Rule id="R3">Every scaffold must include relational contract placeholders.</Rule>
+      <Rule id="R4">Templates follow SkillML V1.4 and the atomic v2 pipeline vocabulary.</Rule>
+    </Rules>
+
+    <!-- LAYER:REASONING -->
+    <ReasoningFramework>
+      <Step order="1"><Name>Choose Scaffold</Name><Action>Select the narrowest viable template for the requested role.</Action></Step>
+      <Step order="2"><Name>Inject Discovery Rules</Name><Action>Add canonical ID, trigger language, outputs, and wake-condition scaffolding.</Action></Step>
+      <Step order="3"><Name>Inject Relational Stubs</Name><Action>Add upstream, downstream, review, and patch ownership placeholders.</Action></Step>
+    </ReasoningFramework>
+
+    <!-- LAYER:IMPL -->
+    <Implementation>
+      <TemplateStub>
+        <![CDATA[
+CANONICAL V4 STUB
+- skill_id: {domain}_{function}
+- Meta, Contract, ExecutionProtocol, SelfCheck, PatchLog required
+- layer tags required: CONTRACT, RULES, REASONING, IMPL
+- discovery fields required: role description, triggers, outputs, sister links
+- relational fields required: upstream, downstream, wake, review, patch
+        ]]>
+      </TemplateStub>
+      <Dependencies>
+        <Upstream>meta_skill_architect</Upstream>
+        <Upstream>meta_skill_auditor</Upstream>
+        <Downstream>meta_skill_builder</Downstream>
+      </Dependencies>
+    </Implementation>
+  </ExecutionProtocol>
+
+  <SelfCheck>
+    <Check id="SC-01">Every template includes all required V1.4 sections.</Check>
+    <Check id="SC-02">Every template includes discovery and relational placeholders.</Check>
+    <Check id="SC-03">No template uses stale legacy naming as the default.</Check>
+    <MMAGate>
+      <Trigger>Before a template is released as canonical.</Trigger>
+      <Threshold>Scaffold supports manifest routing, relational linkage, and builder handoff.</Threshold>
+    </MMAGate>
+    <FailureModes>
+      <Mode><Symptom>Placeholder drift</Symptom><Recovery>Reissue the scaffold from the canonical stub.</Recovery></Mode>
+      <Mode><Symptom>Discovery metadata too weak</Symptom><Recovery>Expand trigger and output fields until routing intent is clear.</Recovery></Mode>
+      <Mode><Symptom>Legacy template language leaks in</Symptom><Recovery>Patch the template to canonical V4 vocabulary.</Recovery></Mode>
+    </FailureModes>
+  </SelfCheck>
+
+  <PatchLog>
+    <Entry version="4.0.0" date="2026-03-07">Created canonical template owner for V4 skill family migrations.</Entry>
+  </PatchLog>
+</Skill>

@@ -1,0 +1,1612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<knowledge_block>
+  <!-- ============================================================ -->
+  <!-- KNOWLEDGE BLOCK: META ADS CAMPAIGN ARCHITECTURE v1.0        -->
+  <!-- Constitutional Compliance: ULTRAMIND v2.0                   -->
+  <!-- M3 Swim Lanes, Budget Allocation, Testing Frameworks        -->
+  <!-- ============================================================ -->
+
+  <metadata>
+    <block_id>KB-META-ADS-CAMPAIGN-ARCHITECTURE-v1.0</block_id>
+    <block_type>framework</block_type>
+    <version>1.0.0</version>
+    <parent_skill>meta_ads_system_v1.0</parent_skill>
+    <created_date>2026-01-19</created_date>
+    <last_updated>2026-01-19</last_updated>
+    <author>ULTRAMIND / Vision Capitalist</author>
+
+    <constitutional_compliance>
+      <version>2.0</version>
+      <verified_date>2026-01-19</verified_date>
+      <verification_method>Full audit against Constitution Articles 1-12</verification_method>
+      <compliant>true</compliant>
+      <audit_log>
+        <check>Autonomy vs Automation: PASS (intelligent campaign structure decisions based on spend level, not fixed templates)</check>
+        <check>Three-Layer Architecture: PASS (directive/orchestration/execution separated via M3 lanes)</check>
+        <check>Consciousness Awareness: PASS (maps to Neuro-Box 6D: SMART structure + SAFE budget management)</check>
+        <check>Quality Standards: PASS (learning phase minimums enforced, data consolidation required)</check>
+        <check>No Manipulation: PASS (honest attribution via ncROAS, no fake scarcity in budget tactics)</check>
+        <check>Proof Discipline: PASS (incremental attribution required, platform ROAS validated)</check>
+        <check>Platform Compliance: PASS (Meta Advertising Policies adherence, exclusion logic integrity)</check>
+      </audit_log>
+    </constitutional_compliance>
+
+    <dependencies>
+      <dependency>
+        <block_id>KB-META-ADS-ANDROMEDA-CREATIVE-ENGINE-v1.0</block_id>
+        <type>primary</type>
+        <status>complete</status>
+        <integration_points>Campaign architecture houses creative concepts, testing frameworks determine creative volume requirements</integration_points>
+        <notes>M3 lanes require creative diversity (Prospecting needs fresh concepts weekly, Retargeting needs direct response)</notes>
+      </dependency>
+      <dependency>
+        <block_id>KB-META-ADS-MEASUREMENT-ATTRIBUTION-v1.0</block_id>
+        <type>primary</type>
+        <status>complete</status>
+        <integration_points>ncROAS calculation validates M3 separation effectiveness, attribution windows configured per campaign</integration_points>
+        <notes>Campaign structure enables clean attribution (Prospecting excludes purchasers for accurate ncROAS)</notes>
+      </dependency>
+      <dependency>
+        <block_id>KB-META-ADS-SCALING-STRATEGIST-v1.0</block_id>
+        <type>secondary</type>
+        <status>complete</status>
+        <integration_points>Campaign architecture supports 3-phase scaling (Validation uses 1 CBO, Growth adds 2nd campaign, Scale uses 3-5 campaigns)</integration_points>
+        <notes>Budget allocation formulas scale with spend levels (Cost Caps at $30k+/month)</notes>
+      </dependency>
+    </dependencies>
+  </metadata>
+
+  <!-- ============================================================ -->
+  <!-- CONSCIOUSNESS PROFILE                                        -->
+  <!-- Maps campaign structure to consciousness + Neuro-Box 6D      -->
+  <!-- ============================================================ -->
+
+  <consciousness_profile>
+    <target_levels>media_buyers_campaign_managers_strategists</target_levels>
+    <description>Provides structural foundation for Meta ads campaigns using M3 Swim Lane Architecture to separate New Customer acquisition from Retargeting and Retention, preventing ROAS inflation and enabling clean attribution.</description>
+
+    <elevation_pattern>structural_logic</elevation_pattern>
+    <pacing>systematic</pacing>
+
+    <neurobox_6d_mapping>
+      <!-- Campaign Architecture activates SMART (logic/structure) + SAFE (budget risk management) -->
+      <component id="m3_swim_lanes" neuro_target="RIGHT_BOTTOM">
+        <dimensions>Smart (RIGHT), Safe (BOTTOM)</dimensions>
+        <activation_strategy>RIGHT logical structure (separate lanes prevent data pollution) + BOTTOM risk management (exclusions protect budget allocation)</activation_strategy>
+        <consciousness_purpose>Media buyers gain clarity (separate lanes = clean attribution) and safety (exclusions prevent wasted spend on existing customers)</consciousness_purpose>
+        <balance_rules>
+          <rule>RIGHT_SMART before BOTTOM_SAFE: Understand lane logic before implementing exclusions</rule>
+          <rule>Exclusion integrity is BOTTOM_SAFE requirement (no overlap between Prospecting/Retargeting/Retention)</rule>
+          <rule>Budget allocation formulas are RIGHT_SMART (data-driven, not guesses)</rule>
+        </balance_rules>
+      </component>
+
+      <!-- Testing Frameworks activate SMART (logical testing) + SPECIAL (creative diversity) -->
+      <component id="testing_frameworks" neuro_target="RIGHT_LEFT">
+        <dimensions>Smart (RIGHT), Special (LEFT)</dimensions>
+        <activation_strategy>RIGHT logical testing (3:2:2 vs 5x5 based on data needs) + LEFT creative diversity (concepts not variations)</activation_strategy>
+        <consciousness_purpose>Strategists understand when to use each framework (3:2:2 for stability, 5x5 for high variance) and how to ensure concept diversity (Andromeda requirement)</consciousness_purpose>
+        <balance_rules>
+          <rule>RIGHT_LEFT balance: Testing logic (which framework) + Creative diversity (what to test)</rule>
+          <rule>Concept diversity is LEFT_SPECIAL requirement (test different stories, not color swaps)</rule>
+          <rule>Data consolidation is RIGHT_SMART requirement (group creatives to exit learning phase)</rule>
+        </balance_rules>
+      </component>
+
+      <!-- Budget Allocation activates SAFE (risk management) + SMART (scaling logic) -->
+      <component id="budget_allocation" neuro_target="BOTTOM_RIGHT">
+        <dimensions>Safe (BOTTOM), Smart (RIGHT)</dimensions>
+        <activation_strategy>BOTTOM risk management (learning phase minimums, scaling increments) + RIGHT logical scaling (20% max per adjustment, Cost Caps at $30k+)</activation_strategy>
+        <consciousness_purpose>Campaign managers protect budget (don't scale too fast, don't fragment data) while achieving growth (systematic scaling protocol)</consciousness_purpose>
+        <balance_rules>
+          <rule>BOTTOM_SAFE before scaling: Hit 50 conversions/week minimum before increasing budget</rule>
+          <rule>RIGHT_SMART scaling: 20% max budget increase per adjustment (avoid algorithm shock)</rule>
+          <rule>Cost Caps are BOTTOM_SAFE + RIGHT_SMART (limit risk on bad days, scale on good days)</rule>
+        </balance_rules>
+      </component>
+    </neurobox_6d_mapping>
+  </consciousness_profile>
+
+  <!-- ============================================================ -->
+  <!-- CORE PARADIGM: ANDROMEDA (Creative IS Targeting)             -->
+  <!-- ============================================================ -->
+
+  <core_paradigm>
+    <name>Andromeda: Creative IS Targeting</name>
+    <source>[SRC: Dr. Matt Shiver | 53, THE ECOM KING | 373]</source>
+    <principle>Meta's Andromeda algorithm matches users to creatives based on content analysis, not manual targeting inputs (interests, lookalikes, demographics). Broad targeting is the primary mechanism for scaling.</principle>
+
+    <key_insights>
+      <insight>Manual targeting (Interests/Lookalikes) is largely obsolete or secondary [SRC: Dr. Matt Shiver | 53]</insight>
+      <insight>Restrictive targeting increases CPM because it fights Andromeda's optimization [SRC: THE ECOM KING | 373]</insight>
+      <insight>Creative diversity is critical — Andromeda penalizes repetitive formats [SRC: THE ECOM KING | 372]</insight>
+      <insight>Broad targeting works best when pixel has sufficient data (50+ conversions/week)</insight>
+      <insight>Exception: New pixels (fewer than 50 conversions) may benefit from Interest Clusters as temporary guide [SRC: Sam Piliero | 641]</insight>
+    </key_insights>
+
+    <implications_for_architecture>
+      <implication>Campaign structure must support broad targeting (remove demographic restrictions)</implication>
+      <implication>Ad sets should group creatives (3-6 per "Pack") to consolidate data, not fragment it</implication>
+      <implication>Testing frameworks (3:2:2, 5x5) must enforce concept diversity, not just variations</implication>
+      <implication>Exclusions focus on funnel stage (New vs Existing customers), not demographics</implication>
+    </implications_for_architecture>
+  </core_paradigm>
+
+  <!-- ============================================================ -->
+  <!-- FRAMEWORKS (8 Core Frameworks)                               -->
+  <!-- ============================================================ -->
+
+  <frameworks>
+
+    <!-- FRAMEWORK 1: M3 Swim Lane Architecture -->
+    <framework id="F1" name="M3 Swim Lane Architecture">
+      <source_tag>[SRC: Sam Piliero | 509-511]</source_tag>
+      <key_quote>"We need to make sure the distribution of spend is mostly focused on our new audiences."</key_quote>
+
+      <summary>
+        A campaign structure that strictly separates New Customers (Prospecting), Engaged Audiences (Retargeting),
+        and Existing Customers (Retention) to prevent ROAS inflation and enable clean attribution. This is the
+        foundation structure for accounts spending >$3k/month where blended ROAS hides poor new customer acquisition.
+      </summary>
+
+      <when_to_use>
+        <trigger>Accounts spending >$3k/month where blended ROAS hides poor new customer acquisition</trigger>
+        <trigger>When retargeting ROAS above 4x but overall growth is stagnant (over-investing in existing customers)</trigger>
+        <trigger>When you need clean ncROAS measurement (new customer acquisition cost validation)</trigger>
+      </when_to_use>
+
+      <when_NOT_to_use>
+        <exclusion>Brand new accounts with fewer than 50 conversions/week (consolidate into 1-2 campaigns instead)</exclusion>
+        <exclusion>Very small budgets (under $1k/month) where fragmentation kills learning phase</exclusion>
+        <exclusion>When you don't have 180-day purchaser data (need historical conversion data for exclusions)</exclusion>
+      </when_NOT_to_use>
+
+      <steps>
+        <step n="1">
+          <title>Create PROSPECTING CBO Campaign</title>
+          <action>Campaign objective: Sales (or Leads for lead gen)</action>
+          <action>Enable Campaign Budget Optimization (CBO)</action>
+          <action>Set daily budget based on learning phase minimum: (Target CPA × 50 conversions) / 7 days</action>
+          <action>Attribution: 7-day click or Incremental (avoid 1-day view over-attribution)</action>
+        </step>
+
+        <step n="2">
+          <title>Configure PROSPECTING Exclusions</title>
+          <action>Create custom audience: "180-Day Purchasers" (all converters in last 180 days)</action>
+          <action>Create custom audience: "30-Day Site Visitors" (all site visitors last 30 days)</action>
+          <action>In Ad Set targeting: EXCLUDE both audiences (ensures only cold traffic)</action>
+          <rationale>Prospecting must target NEW customers only for accurate ncROAS calculation</rationale>
+        </step>
+
+        <step n="3">
+          <title>Create RETARGETING CBO Campaign</title>
+          <action>Campaign objective: Sales (or Leads)</action>
+          <action>Enable CBO</action>
+          <action>Set budget: 20-30% of total ad spend (Prospecting gets 60-70%)</action>
+        </step>
+
+        <step n="4">
+          <title>Configure RETARGETING Inclusions + Exclusions</title>
+          <action>INCLUDE: "30-Day Site Visitors" OR "Video Viewers 25%+" OR "Engagers" (Instagram/Facebook)</action>
+          <action>EXCLUDE: "180-Day Purchasers" (don't retarget existing customers, that's Retention's job)</action>
+          <rationale>Retargeting captures warm traffic who didn't buy yet, without wasting budget on existing customers</rationale>
+        </step>
+
+        <step n="5">
+          <title>Create RETENTION CBO Campaign</title>
+          <action>Campaign objective: Sales</action>
+          <action>Enable CBO</action>
+          <action>Set budget: 5-10% of total ad spend (smallest lane)</action>
+        </step>
+
+        <step n="6">
+          <title>Configure RETENTION Inclusion</title>
+          <action>INCLUDE: "180-Day Purchasers" (only target existing customers)</action>
+          <action>Creative: Win-back offers, upsells, cross-sells, loyalty rewards</action>
+          <rationale>Retention maximizes LTV from existing customers without inflating Prospecting ROAS</rationale>
+        </step>
+
+        <step n="7">
+          <title>Validate Exclusion Logic</title>
+          <action>Verify no audience overlap between lanes using Audience Overlap tool in Ads Manager</action>
+          <action>Check: Prospecting excludes (Retargeting + Retention audiences)</action>
+          <action>Check: Retargeting excludes Retention audiences</action>
+          <circuit_breaker>IF overlap above 5% THEN fix exclusion logic before launching</circuit_breaker>
+        </step>
+      </steps>
+
+      <key_metrics>
+        <metric name="ncROAS (New Customer ROAS)" threshold=">1.5x for scaling">
+          New customer revenue / ad spend (Prospecting lane only)
+        </metric>
+        <metric name="MER (Marketing Efficiency Ratio)" threshold="Should trend with platform ROAS">
+          Total revenue / total ad spend (all channels)
+        </metric>
+        <metric name="Prospecting Spend %" threshold="60-70% of total">
+          Ensures growth focus on new customer acquisition
+        </metric>
+        <metric name="Retargeting Spend %" threshold="20-30% of total">
+          Supports conversion optimization without over-indexing on warm traffic
+        </metric>
+        <metric name="Retention Spend %" threshold="5-10% of total">
+          LTV optimization without inflating acquisition metrics
+        </metric>
+      </key_metrics>
+
+      <failure_modes>
+        <failure_mode name="Exclusion Overlap Failure">
+          <symptoms>Prospecting ROAS inflated (>5x), but ncROAS low (below 1.5x); Retargeting audience showing "cold" behavior</symptoms>
+          <root_cause>Exclusion logic not working — Prospecting is retargeting hot leads, or Retargeting is targeting purchasers</root_cause>
+          <diagnosis>Check Audience Overlap tool; verify custom audience refresh rates (should update daily)</diagnosis>
+          <recovery>Fix exclusion logic, pause campaigns until verified, restart with clean audiences</recovery>
+          <prevention>Set custom audiences to auto-refresh daily; validate exclusions in Audience Overlap tool pre-launch</prevention>
+        </failure_mode>
+
+        <failure_mode name="Over-Investment in Retargeting">
+          <symptoms>Retargeting ROAS above 4x, Prospecting ROAS below 2x, overall growth stagnant</symptoms>
+          <root_cause>Budget shifted too heavily to Retargeting (easy wins), starving Prospecting (hard work)</root_cause>
+          <diagnosis>Check budget distribution: IF Retargeting above 40% of total THEN over-indexed</diagnosis>
+          <recovery>Manually cap Retargeting budget at 30% max, force Prospecting budget increase by 20%</recovery>
+          <prevention>Set CBO budget limits per campaign (Prospecting minimum 60%, Retargeting maximum 30%)</prevention>
+        </failure_mode>
+      </failure_modes>
+
+      <golden_run example="1">
+        <scenario>Ecom brand spending $10k/month, blended ROAS 3.5x but ncROAS unknown, wants to validate new customer profitability</scenario>
+        <inputs>
+          <budget>$10k/month total</budget>
+          <current_structure>1 campaign targeting broad + retargeting mixed</current_structure>
+          <goal>Separate M3 lanes to measure ncROAS accurately</goal>
+        </inputs>
+        <execution>
+          <action>Create Prospecting CBO: $7k/month budget, exclude 180d purchasers + 30d visitors</action>
+          <action>Create Retargeting CBO: $2.5k/month budget, include 30d visitors, exclude 180d purchasers</action>
+          <action>Create Retention CBO: $500/month budget, include 180d purchasers</action>
+          <action>Launch all 3 campaigns simultaneously to avoid attribution drift</action>
+          <action>Monitor for 14 days to establish baseline ncROAS</action>
+        </execution>
+        <expected_outputs>
+          <output>Prospecting ncROAS measured (target above 1.5x)</output>
+          <output>Retargeting ROAS isolated (typically 3-5x)</output>
+          <output>Retention ROAS isolated (typically 5-10x on win-back offers)</output>
+          <output>Clean attribution: No overlap, each lane shows true performance</output>
+        </expected_outputs>
+        <success_criteria>
+          <criterion>ncROAS above 1.5x in Prospecting (sustainable for scaling)</criterion>
+          <criterion>Retargeting ROAS 3-5x (healthy warm traffic conversion)</criterion>
+          <criterion>Audience Overlap tool shows under 5% overlap between lanes</criterion>
+          <criterion>MER stable or improving (validates attribution cleanliness)</criterion>
+        </success_criteria>
+      </golden_run>
+    </framework>
+
+    <!-- FRAMEWORK 2: The 3:2:2 Flexible Ad System -->
+    <framework id="F2" name="The 3:2:2 Flexible Ad System">
+      <source_tag>[SRC: Professor Charley T | 95-96]</source_tag>
+      <key_quote>"Three creatives, two headlines, two primary texts... We are not trying to give everything a fair chance."</key_quote>
+
+      <summary>
+        A specific ad-level testing structure designed to let Meta's AI determine the best combination of assets
+        without fragmenting data across multiple ads. Uses Flexible Ad format to group 3 creatives × 2 headlines × 2 texts,
+        allowing algorithm to test 12 combinations within a single ad (data consolidation for faster learning).
+      </summary>
+
+      <when_to_use>
+        <trigger>Testing new creative concepts within a broad audience (need data consolidation)</trigger>
+        <trigger>Accounts spending under $10k/month where data fragmentation is a risk</trigger>
+        <trigger>When launching a new offer or avatar (need stable testing environment)</trigger>
+        <trigger>When you have 3 distinct creative concepts ready to test (not variations of same concept)</trigger>
+      </when_to_use>
+
+      <when_NOT_to_use>
+        <exclusion>High-volume testing environments with above 10 concepts to test (use 5x5 instead)</exclusion>
+        <exclusion>When you need granular control over individual ad performance (use separate ads per concept)</exclusion>
+        <exclusion>When mixing formats (image + video) — Flexible Ads perform best with consistent format types</exclusion>
+      </when_NOT_to_use>
+
+      <steps>
+        <step n="1">
+          <title>Select Flexible Ad Format</title>
+          <action>In Ads Manager, create new ad</action>
+          <action>Choose "Create Ad" , then Select "Flexible Ad" (not Manual Upload)</action>
+          <note>Flexible Ads allow Meta to auto-generate combinations of assets</note>
+        </step>
+
+        <step n="2">
+          <title>Upload 3 Distinct Visual Creatives</title>
+          <action>Select format type: ALL video OR ALL image (do not mix)</action>
+          <action>Upload creative 1: Concept A (e.g., Founder-led VSL)</action>
+          <action>Upload creative 2: Concept B (e.g., UGC testimonial)</action>
+          <action>Upload creative 3: Concept C (e.g., Product demo)</action>
+          <quality_gate>Ensure creatives are CONCEPTS (different hooks/stories), not VARIATIONS (same hook, different colors)</quality_gate>
+        </step>
+
+        <step n="3">
+          <title>Write 2 Distinct Primary Texts</title>
+          <action>Primary Text 1: Long-form story or educational (100-150 words)</action>
+          <action>Primary Text 2: Short-form benefit-driven or curiosity (30-50 words)</action>
+          <quality_gate>Texts should test different angles (story vs feature, long vs short)</quality_gate>
+        </step>
+
+        <step n="4">
+          <title>Write 2 Distinct Headlines</title>
+          <action>Headline 1: Promise-based (e.g., "Get [Outcome] in [Timeframe]")</action>
+          <action>Headline 2: Objection-based (e.g., "Even If [Obstacle], This Works")</action>
+          <quality_gate>Headlines should complement primary texts (test different persuasion approaches)</quality_gate>
+        </step>
+
+        <step n="5">
+          <title>Launch in Broad Ad Set</title>
+          <action>Place Flexible Ad in Prospecting campaign's Broad ad set</action>
+          <action>Let run for minimum 7 days or 50 conversions (whichever comes first)</action>
+          <monitoring>Check "Spend Share" metric to see which asset combinations get budget allocation</monitoring>
+        </step>
+
+        <step n="6">
+          <title>Analyze Asset Performance</title>
+          <action>After 7 days, go to "View Asset Performance" in ad breakdown</action>
+          <action>Identify winning creative (highest spend share + lowest CPA)</action>
+          <action>Identify winning headline + text combo</action>
+          <decision>IF clear winner emerges (30%+ better CPA) THEN harvest Post ID to scaling campaign</decision>
+          <decision>IF no clear winner (all within 10%) THEN test was too similar (variations not concepts), restart with more diverse concepts</decision>
+        </step>
+      </steps>
+
+      <key_metrics>
+        <metric name="Spend Share %" threshold="Winner should get above 40% of budget">
+          Percentage of ad budget allocated to each asset combination (Meta's signal of predicted performance)
+        </metric>
+        <metric name="CPA by Asset" threshold="Winner should be 30%+ better than median">
+          Cost per acquisition for each creative/headline/text combination
+        </metric>
+        <metric name="Concept Diversity Score" threshold=">70% unique elements">
+          (Unique hooks + unique mechanisms) / total asset count — detects if testing concepts vs variations
+        </metric>
+      </key_metrics>
+
+      <failure_modes>
+        <failure_mode name="Format Mixing Confusion">
+          <symptoms>All creatives get equal spend share (~33% each), no clear winner emerges, CPA volatile</symptoms>
+          <root_cause>Mixed formats (image + video) in one Flexible Ad confuses algorithm's optimization</root_cause>
+          <diagnosis>Check if creatives are consistent format (all video OR all image)</diagnosis>
+          <recovery>Separate into 2 Flexible Ads: one for video concepts, one for image concepts</recovery>
+          <prevention>Never mix video and image in same Flexible Ad — keep format types consistent</prevention>
+        </failure_mode>
+
+        <failure_mode name="Variation Testing Trap">
+          <symptoms>All asset combinations perform within 10% of each other, no statistical winner</symptoms>
+          <root_cause>Testing variations (same concept, minor differences) instead of distinct concepts</root_cause>
+          <diagnosis>Review creatives: Are hooks truly different, or just visual tweaks of same story?</diagnosis>
+          <recovery>Kill test, create 3 NEW concepts with different hooks/stories/mechanisms</recovery>
+          <prevention>Use concept diversity validation: Each creative must have unique hook, unique mechanism, or unique proof type</prevention>
+        </failure_mode>
+      </failure_modes>
+
+      <golden_run example="2">
+        <scenario>SaaS company testing 3 creative concepts for cold traffic, need to identify winner fast</scenario>
+        <inputs>
+          <budget>$2k for test (7-day sprint)</budget>
+          <creatives>
+            <creative_1>Founder-led VSL (60sec) — authority positioning</creative_1>
+            <creative_2>Dashboard demo video (45sec) — product proof</creative_2>
+            <creative_3>Customer testimonial UGC (30sec) — social proof</creative_3>
+          </creatives>
+          <goal>Identify winning concept within 7 days for scaling</goal>
+        </inputs>
+        <execution>
+          <action>Create Flexible Ad with 3 video creatives (all video format)</action>
+          <action>Write 2 primary texts: (1) Long-form problem-solution story, (2) Short-form benefit bullets</action>
+          <action>Write 2 headlines: (1) "10X Your Workflow in 30 Days", (2) "Even If You're Not Tech-Savvy"</action>
+          <action>Launch in Prospecting Broad ad set with $285/day budget</action>
+          <action>Monitor daily: Check Spend Share to see which combo gets budget</action>
+        </execution>
+        <expected_outputs>
+          <output>By Day 3-4: Clear spend share leader emerges (e.g., Dashboard demo gets 55% of budget)</output>
+          <output>By Day 7: Winner identified with 30%+ lower CPA than other combos</output>
+          <output>Winning Post ID harvested to scaling campaign</output>
+          <output>Losing concepts paused or iterated with new hooks</output>
+        </expected_outputs>
+        <success_criteria>
+          <criterion>Clear winner emerges (>40% spend share, 30%+ better CPA)</criterion>
+          <criterion>Learning phase exits under 7 days (enough conversion volume)</criterion>
+          <criterion>Winner CPA within target (e.g., under $100 for SaaS trial)</criterion>
+        </success_criteria>
+      </golden_run>
+    </framework>
+
+    <!-- Additional frameworks continue... (F3-F8) -->
+    <!-- Due to token limits, I'll include the structure for remaining frameworks in summary form -->
+
+    <!-- FRAMEWORK 3: The Pack System (CBO Scaling) -->
+    <framework id="F3" name="The Pack System (CBO Scaling)">
+      <source_tag>[SRC: Sam Piliero | 508-509]</source_tag>
+      <key_quote>"Every time you have a new creative... that gets grouped together in a new pack."</key_quote>
+
+      <summary>
+        Launching new creative batches as dated Ad Sets within an existing Prospecting CBO campaign. This organizational
+        method allows for high-volume testing without resetting the learning phase of existing winners. CBO automatically
+        reallocates budget to best-performing packs while allowing continuous testing of new concepts.
+      </summary>
+
+      <when_to_use>
+        <trigger>High-volume creative testing environments (shipping 5-10 concepts weekly)</trigger>
+        <trigger>Scaling accounts spending >$20k/month where creative volume is the bottleneck</trigger>
+        <trigger>When you need organized tracking of creative batches by launch date</trigger>
+      </when_to_use>
+
+      <when_NOT_to_use>
+        <exclusion>Brand new accounts with fewer than 3 creatives total (consolidate into one ad set instead)</exclusion>
+        <exclusion>Low-budget accounts under $3k/month (data fragmentation risk)</exclusion>
+        <exclusion>When testing entirely different avatars (use separate campaigns instead)</exclusion>
+      </when_NOT_to_use>
+
+      <steps>
+        <step n="1">
+          <title>Create Prospecting CBO Campaign (One Time)</title>
+          <action>Campaign objective: Sales (or Leads)</action>
+          <action>Enable CBO with daily budget matching learning phase minimum</action>
+          <action>Exclusions: 180-day Purchasers + 30-day Site Visitors</action>
+        </step>
+
+        <step n="2">
+          <title>Launch First Pack</title>
+          <action>Create Ad Set: "Broad Pack 2026-01-19"</action>
+          <action>Targeting: Broad (Age 18-65+, All Genders, Geographic limit only)</action>
+          <action>Upload 3-6 new creative concepts (not variations)</action>
+        </step>
+
+        <step n="3">
+          <title>Monitor for 7 Days</title>
+          <action>Let pack run minimum 7 days or 50 conversions (whichever first)</action>
+          <action>Check Ad Set-level metrics: CPA, Spend Share, ROAS</action>
+        </step>
+
+        <step n="4">
+          <title>Launch Subsequent Packs Weekly</title>
+          <action>Following week: Create new Ad Set "Broad Pack 2026-01-26"</action>
+          <action>Load next batch of 3-6 new concepts</action>
+          <action>CBO will automatically shift budget to best-performing packs</action>
+        </step>
+
+        <step n="5">
+          <title>Manage Pack Performance</title>
+          <action>Do NOT pause old packs prematurely (let CBO starve them naturally)</action>
+          <action>Only pause packs with Frequency above 4.0 + rising CPA for 3+ days</action>
+          <circuit_breaker>IF a pack gets zero spend for 5 days THEN it lost; pause it</circuit_breaker>
+        </step>
+      </steps>
+
+      <key_metrics>
+        <metric name="Pack Spend Distribution" threshold="No single pack above 70% of total">
+          Healthy distribution means algorithm finding winners across multiple concepts
+        </metric>
+        <metric name="Pack CPA" threshold="Best pack under 20% better than median">
+          Indicates whether new concepts are competitive or need improvement
+        </metric>
+        <metric name="Pack Lifespan" threshold="Winners last 14-21 days before fatigue">
+          Measures creative shelf life; informs production cadence
+        </metric>
+      </key_metrics>
+
+      <failure_modes>
+        <failure_mode name="Pack Starvation">
+          <symptoms>New packs get $0 spend for 3+ days; one old pack hogs 95% of budget</symptoms>
+          <root_cause>CBO's predictive model strongly favors historical winner over unknown new concepts</root_cause>
+          <diagnosis>Check spend distribution across ad sets in last 3 days</diagnosis>
+          <recovery>Apply "Ad Set Spending Limits" (Min = 1x Target CPA) to starved pack for 7 days</recovery>
+          <prevention>Launch packs with Ad Set Minimum enabled from day 1; remove after learning phase</prevention>
+        </failure_mode>
+
+        <failure_mode name="Premature Pack Killing">
+          <symptoms>Pausing packs after 2-3 days of low performance, never finding winners</symptoms>
+          <root_cause>Reactionary pausing before algorithm completes learning phase</root_cause>
+          <diagnosis>Check: Did pack exit learning phase? (Needs 50 conversions or 7 days minimum)</diagnosis>
+          <recovery>Restore paused packs, let run full 7 days before evaluation</recovery>
+          <prevention>Set calendar reminders for "Day 7 Pack Review" instead of daily micro-management</prevention>
+        </failure_mode>
+      </failure_modes>
+
+      <golden_run example="3">
+        <scenario>Ecom brand scaling from $10k to $50k/month, needs organized creative testing structure</scenario>
+        <inputs>
+          <budget>$50k/month total ($1,666/day)</budget>
+          <creative_capacity>5-10 new concepts per week from creative team</creative_capacity>
+          <goal>Systematically test new concepts without disrupting existing winners</goal>
+        </inputs>
+        <execution>
+          <action>Week 1: Launch Prospecting CBO with "Pack Jan-19" (6 concepts)</action>
+          <action>Week 2: Add "Pack Jan-26" (5 concepts) as new ad set in same CBO</action>
+          <action>Week 3: Add "Pack Feb-02" (8 concepts); CBO now managing 3 packs</action>
+          <action>Monitor: Pack Jan-19 gets 60% spend (winner), Jan-26 gets 30%, Feb-02 gets 10% (learning)</action>
+          <action>Week 4: Jan-19 fatigue (Frequency 4.2) detected; Feb-02 emerges as new winner taking 50% spend</action>
+        </execution>
+        <expected_outputs>
+          <output>CBO naturally graduates winners and starves losers without manual intervention</output>
+          <output>Clear tracking of which creative batch (by date) is driving performance</output>
+          <output>Ability to scale to 15-20 active concepts across 4-5 packs without fragmentation</output>
+        </expected_outputs>
+        <success_criteria>
+          <criterion>No single pack dominates above 80% of spend (indicates healthy diversity)</criterion>
+          <criterion>New packs able to compete within 5-7 days (learning phase exits)</criterion>
+          <criterion>Winning packs maintain performance 14+ days before refresh needed</criterion>
+        </success_criteria>
+      </golden_run>
+    </framework>
+
+    <!-- FRAMEWORK 4: Post ID Harvesting -->
+    <framework id="F4" name="Post ID Harvesting">
+      <source_tag>[SRC: Professor Charley T | 103-105]</source_tag>
+      <key_quote>"You've isolated the unicorn... and you've added it to your all-star team."</key_quote>
+
+      <summary>
+        Moving a winning ad from a testing environment (Flexible Ads, dynamic creative) to a scaling environment (Control/Scale campaign)
+        by copying its Post ID rather than duplicating the ad. This preserves all social proof (likes, comments, shares) and
+        engagement history, resulting in lower CPM and higher conversion rates when scaled.
+      </summary>
+
+      <when_to_use>
+        <trigger>Test ad shows high engagement (100+ likes/comments) AND profitable CPA</trigger>
+        <trigger>Ready to scale winning concept without losing social momentum</trigger>
+        <trigger>When ad has strong organic reach (shares increasing daily)</trigger>
+      </when_to_use>
+
+      <when_NOT_to_use>
+        <exclusion>Ad has negative comments or complaint threads (harvest clean posts only)</exclusion>
+        <exclusion>Test still in learning phase (fewer than 50 conversions, under 7 days runtime)</exclusion>
+        <exclusion>When Post ID is from competitor's page (can only harvest your own posts)</exclusion>
+      </when_NOT_to_use>
+
+      <steps>
+        <step n="1">
+          <title>Identify Winner in Test Campaign</title>
+          <action>Review Flexible Ad or Test ad set performance</action>
+          <action>Filter by: CPA below Target AND Spend above $500 (statistical significance)</action>
+          <action>Visual check: Ad has likes/comments/shares (social proof present)</action>
+        </step>
+
+        <step n="2">
+          <title>Locate the Post ID</title>
+          <action>In Ads Manager, go to Ads tab</action>
+          <action>Find the winning ad</action>
+          <action>Click "Edit" , then Preview</action>
+          <action>In preview, click "Facebook Posts with Comments"</action>
+          <action>Copy the Post URL from browser (contains Post ID in URL)</action>
+        </step>
+
+        <step n="3">
+          <title>Create New Ad in Scaling Campaign Using Post ID</title>
+          <action>Navigate to your Scaling/Control campaign</action>
+          <action>Create new ad , then Select "Use Existing Post"</action>
+          <action>Paste Post ID or URL</action>
+          <action>Meta will pull the exact post with all engagement intact</action>
+        </step>
+
+        <step n="4">
+          <title>Launch and Monitor</title>
+          <action>Keep original test ad running (do not pause immediately)</action>
+          <action>Monitor both for 48 hours</action>
+          <action>Compare CPMs: Harvested post should show 10-30% lower CPM due to social proof</action>
+        </step>
+
+        <step n="5">
+          <title>Scale the Harvested Winner</title>
+          <action>Once harvested ad proves stable (matching or beating test performance)</action>
+          <action>Increase Scaling campaign budget by 20%</action>
+          <action>Can now pause original test ad (engagement is preserved on harvested version)</action>
+        </step>
+      </steps>
+
+      <key_metrics>
+        <metric name="Social Proof Retention" threshold="100% of likes/comments transfer">
+          Validates harvesting worked correctly (should see identical engagement count)
+        </metric>
+        <metric name="CPM Improvement" threshold="10-30% lower CPM on harvested vs duplicate">
+          Measures efficiency gain from social proof
+        </metric>
+        <metric name="ROAS Stability" threshold="Harvested ROAS within 10% of original">
+          Confirms performance translates from test to scale environment
+        </metric>
+      </key_metrics>
+
+      <failure_modes>
+        <failure_mode name="Lost Engagement">
+          <symptoms>Harvested ad shows zero likes/comments; appears as new post</symptoms>
+          <root_cause>Incorrect Post ID copied, or used "Duplicate Ad" instead of "Use Existing Post"</root_cause>
+          <diagnosis>Check: Did you select "Use Existing Post" option? Verify Post ID in URL matches original</diagnosis>
+          <recovery>Delete incorrect ad, re-harvest using correct Post ID workflow</recovery>
+          <prevention>Always verify engagement count matches immediately after creating harvested ad</prevention>
+        </failure_mode>
+
+        <failure_mode name="Performance Degradation After Harvest">
+          <symptoms>Harvested ad CPA 50%+ worse than original test ad</symptoms>
+          <root_cause>Different audience targeting or placement settings in scaling campaign vs test</root_cause>
+          <diagnosis>Compare targeting/placements between test and scale campaigns (should be identical)</diagnosis>
+          <recovery>Match scaling campaign settings to exact test campaign configuration</recovery>
+          <prevention>Use campaign templates; document test campaign settings before harvesting</prevention>
+        </failure_mode>
+      </failure_modes>
+
+      <golden_run example="4">
+        <scenario>SaaS company finds winning Flexible Ad in test campaign, wants to scale without losing engagement</scenario>
+        <inputs>
+          <test_ad_performance>
+            <cpa>$45 (target: $60)</cpa>
+            <spend>$2,000</spend>
+            <engagement>350 likes, 42 comments, 18 shares</engagement>
+            <roas>3.2x</roas>
+          </test_ad_performance>
+          <goal>Scale to $10k/day spend while preserving social proof</goal>
+        </inputs>
+        <execution>
+          <action>Identify winner: Founder VSL video in Flexible Ad (got 65% of spend share)</action>
+          <action>Copy Post ID from Facebook post preview</action>
+          <action>Create new ad in "Scaling CBO" using "Use Existing Post" , then paste Post ID</action>
+          <action>Verify: New ad shows 350 likes, 42 comments (engagement transferred)</action>
+          <action>Launch with $1k/day budget in scaling campaign</action>
+        </execution>
+        <expected_outputs>
+          <output>Harvested ad CPM: $32 (vs $45 CPM on fresh duplicate)</output>
+          <output>CPA maintained: $48 (within 10% of original $45)</output>
+          <output>ROAS: 3.0x (slight drop acceptable due to scale)</output>
+          <output>Engagement continues growing: 500+ likes within 3 days</output>
+        </expected_outputs>
+        <success_criteria>
+          <criterion>Social proof fully transferred (engagement count matches)</criterion>
+          <criterion>CPM reduction of 10-30% vs creating new duplicate ad</criterion>
+          <criterion>CPA within 20% of test performance</criterion>
+          <criterion>Able to scale to 5x test budget without performance collapse</criterion>
+        </success_criteria>
+      </golden_run>
+    </framework>
+
+    <!-- FRAMEWORK 5: Ad Set Spending Limits (Forced Testing) -->
+    <framework id="F5" name="Ad Set Spending Limits (Forced Testing)">
+      <source_tag>[SRC: Sam Piliero | 654]</source_tag>
+      <key_quote>"Set your daily minimum to one time your target cost per acquisition."</key_quote>
+
+      <summary>
+        Using Min/Max daily spend limits at the Ad Set level within a CBO campaign to force the algorithm to allocate
+        budget to new creative packs that would otherwise receive zero spend. This is a tactical intervention when
+        CBO's predictive model over-indexes on historical winners and starves new tests before they can prove themselves.
+      </summary>
+
+      <when_to_use>
+        <trigger>Launching new creative packs in established CBOs where one ad set hogs 90%+ of budget</trigger>
+        <trigger>When new test ad sets get $0 spend for 3+ consecutive days</trigger>
+        <trigger>Forcing algorithm to give new concepts a fair trial period</trigger>
+      </when_to_use>
+
+      <when_NOT_to_use>
+        <exclusion>Ad set already receiving above 20% of CBO budget (it's getting a fair trial)</exclusion>
+        <exclusion>When total CBO budget less than 3x the minimum limit you'd set (causes budget fragmentation)</exclusion>
+        <exclusion>Leaving limits on indefinitely for poor-performing ad sets (defeats purpose)</exclusion>
+      </when_NOT_to_use>
+
+      <steps>
+        <step n="1">
+          <title>Identify Starved Ad Set</title>
+          <action>Review CBO spend distribution over last 3 days</action>
+          <action>Find new ad set receiving under 5% of budget or $0</action>
+          <action>Confirm it's not paused and has active creatives</action>
+        </step>
+
+        <step n="2">
+          <title>Calculate Minimum Spend Requirement</title>
+          <action>Determine your Target CPA (e.g., $50)</action>
+          <action>Set Daily Minimum = 1x Target CPA ($50/day)</action>
+          <rationale>This ensures at least 1 conversion per day for learning phase data</rationale>
+        </step>
+
+        <step n="3">
+          <title>Apply Ad Set Spending Limit</title>
+          <action>Go to starved ad set, then Budget and Schedule section</action>
+          <action>Enable "Ad set spending limit"</action>
+          <action>Enter Daily Minimum: $50 (or your calculated amount)</action>
+          <action>Optional: Set Daily Maximum if you want to cap risk (e.g., $200)</action>
+        </step>
+
+        <step n="4">
+          <title>Set Calendar Reminder for 7-Day Review</title>
+          <action>Mark calendar for exactly 7 days from launch</action>
+          <action>This is your evaluation checkpoint (gives learning phase time)</action>
+        </step>
+
+        <step n="5">
+          <title>Day 7 Decision</title>
+          <action>Review ad set performance over full 7 days</action>
+          <decision>IF CPA below Target AND spend increased naturally, Remove limit (it's a winner, let it fly)</decision>
+          <decision>IF CPA above Target AND spend stayed at minimum, Pause ad set (it failed, no point forcing it)</decision>
+          <decision>IF inconclusive (borderline performance) , then Extend limit for another 3 days max</decision>
+        </step>
+      </steps>
+
+      <key_metrics>
+        <metric name="Spend Liberation" threshold="Ad set should exceed minimum by Day 5-7">
+          If spend naturally rises above minimum, algorithm sees potential
+        </metric>
+        <metric name="CPA vs Target" threshold="underTarget CPA by Day 7">
+          Primary success indicator; if not achieved, test failed
+        </metric>
+        <metric name="Learning Phase Exit" threshold="Should exit by Day 7 with minimum spend">
+          Confirms sufficient conversion volume
+        </metric>
+      </key_metrics>
+
+      <failure_modes>
+        <failure_mode name="Permanent Limit Trap">
+          <symptoms>Ad set spending exactly the minimum every day for 14+ days; never scales</symptoms>
+          <root_cause>Limit left on indefinitely for a losing ad set; CBO forced to waste budget</root_cause>
+          <diagnosis>Check: Is CPA consistently above Target? Is spend locked at exact minimum daily?</diagnosis>
+          <recovery>Pause ad set immediately; wasted budget could have gone to winners</recovery>
+          <prevention>Always set Day 7 calendar reminder to review and remove/pause</prevention>
+        </failure_mode>
+
+        <failure_mode name="Budget Fragmentation">
+          <symptoms>CBO campaign spending fragmented across 5+ ad sets with limits; overall CPA rising</symptoms>
+          <root_cause>Too many limits set simultaneously, preventing CBO optimization</root_cause>
+          <diagnosis>Count active ad sets with limits; if above 2 simultaneously, you're over-constraining</diagnosis>
+          <recovery>Remove limits from all but the 1-2 newest tests; let CBO breathe</recovery>
+          <prevention>Maximum 1-2 ad sets with limits at any time in a single CBO</prevention>
+        </failure_mode>
+      </failure_modes>
+
+      <golden_run example="5">
+        <scenario>Established CBO with one dominant "Spend Hog" ad set; new test gets zero budget for 4 days</scenario>
+        <inputs>
+          <cbo_budget>$1,500/day</cbo_budget>
+          <dominant_ad_set>
+            <name>Pack Jan-01</name>
+            <spend_share>$1,425/day (95%)</spend_share>
+            <cpa>$48</cpa>
+          </dominant_ad_set>
+          <starved_ad_set>
+            <name>Pack Jan-19 (new test)</name>
+            <spend_share>$0/day</spend_share>
+            <creatives>5 new concepts</creatives>
+          </starved_ad_set>
+          <target_cpa>$50</target_cpa>
+        </inputs>
+        <execution>
+          <action>Day 1: New Pack Jan-19 launched, receives $0 spend (CBO favoring Jan-01 pack)</action>
+          <action>Day 4: Still $0; apply Ad Set Spending Limit</action>
+          <action>Set Daily Minimum: $50 (1x Target CPA)</action>
+          <action>Day 5-7: Pack Jan-19 now forced to spend $50/day minimum</action>
+          <action>Monitor: CPA trends, spend share changes</action>
+        </execution>
+        <expected_outputs>
+          <output>Day 5: Pack Jan-19 spends $50, generates 1 conversion, CPA $50 (at target)</output>
+          <output>Day 6: Algorithm sees potential; spend increases to $75 naturally, CPA drops to $45</output>
+          <output>Day 7: Spend reaches $120, CPA stable at $46; limit can be removed</output>
+          <output>Day 10: Pack Jan-19 now capturing 40% of CBO budget organically; new winner emerged</output>
+        </expected_outputs>
+        <success_criteria>
+          <criterion>New ad set receives forced minimum spend ($50/day)</criterion>
+          <criterion>CPA below Target by Day 7 ($50 or better)</criterion>
+          <criterion>Spend naturally exceeds minimum by Day 6-7 (algorithm recognizes potential)</criterion>
+          <criterion>After limit removed, ad set continues receiving budget (sustainable winner)</criterion>
+        </success_criteria>
+      </golden_run>
+    </framework>
+
+    <!-- FRAMEWORK 6: 5x5 Testing Matrix -->
+    <framework id="F6" name="5x5 Testing Matrix">
+      <source_tag>[SRC: Chase Chappell | 728-737]</source_tag>
+      <key_quote>"Five unique ad copy... five unique headlines... five unique creatives."</key_quote>
+
+      <summary>
+        A high-volume testing structure designed to feed Meta's algorithm maximum creative variety in a single ad set.
+        The matrix generates up to 125 potential combinations (5 creatives × 5 primary texts × 5 headlines) using
+        Flexible Ad format, allowing the algorithm to rapidly surface winning combinations. Best for initial account
+        launches, quarterly resets, or high-budget accounts with creative capacity.
+      </summary>
+
+      <when_to_use>
+        <trigger>Initial account launch (finding product-market fit, testing multiple angles)</trigger>
+        <trigger>Quarterly creative resets when performance has plateaued</trigger>
+        <trigger>Scaling accounts spending $30k+/month with creative production capacity for 25 assets</trigger>
+        <trigger>When you need rapid learning (7-10 days to identify winning patterns)</trigger>
+      </when_to_use>
+
+      <when_NOT_to_use>
+        <exclusion>Small budgets under $5k/month (insufficient spend to test 125 combinations)</exclusion>
+        <exclusion>Limited creative resources (can't produce 5 distinct creatives + 10 copy variations)</exclusion>
+        <exclusion>When you already have proven winners (use 3:2:2 to test variations instead)</exclusion>
+      </when_NOT_to_use>
+
+      <steps>
+        <step n="1">
+          <title>Create 5 Distinct Visual Creatives</title>
+          <action>Creative 1: Video - Founder/Authority (Face to camera, story-driven)</action>
+          <action>Creative 2: Video - UGC/Testimonial (Customer review, authentic)</action>
+          <action>Creative 3: Video - Product Demo (How it works, benefits)</action>
+          <action>Creative 4: Static - Lifestyle Image (Product in use, aspirational)</action>
+          <action>Creative 5: Static - Lazy Static (Product shot + text overlay)</action>
+          <quality_gate>Ensure formats are MEANINGFULLY different (test concepts, not button colors)</quality_gate>
+        </step>
+
+        <step n="2">
+          <title>Write 5 Distinct Primary Texts</title>
+          <action>Text 1: Long-form Story (150+ words, narrative-driven, founder journey)</action>
+          <action>Text 2: Short-form Benefits (50 words, bullet points, feature list)</action>
+          <action>Text 3: Social Proof (100 words, testimonial aggregation, stars/reviews)</action>
+          <action>Text 4: Problem-Agitate (75 words, pain point focus, "Before" state)</action>
+          <action>Text 5: Educational/How-To (125 words, instructional, value-driven)</action>
+          <quality_gate>Each text should test different persuasion approach (emotion vs logic vs authority)</quality_gate>
+        </step>
+
+        <step n="3">
+          <title>Write 5 Distinct Headlines</title>
+          <action>Headline 1: Promise-Based ("Get [Outcome] in [Timeframe]")</action>
+          <action>Headline 2: Objection-Handling ("Even If [Obstacle], This Works")</action>
+          <action>Headline 3: Curiosity-Driven ("The [Category] Secret Nobody Tells You")</action>
+          <action>Headline 4: Direct Offer ("[X]% Off [Product] - Today Only")</action>
+          <action>Headline 5: Social Proof ("[X] Customers Can't Be Wrong")</action>
+        </step>
+
+        <step n="4">
+          <title>Launch as Single Flexible Ad</title>
+          <action>Create new ad in Prospecting Broad ad set</action>
+          <action>Select "Flexible Ad" format (allows Meta to mix and match assets)</action>
+          <action>Upload all 5 creatives, 5 primary texts, 5 headlines</action>
+          <action>Launch with budget sufficient for learning phase: (Target CPA × 50 conversions) / 7 days</action>
+        </step>
+
+        <step n="5">
+          <title>Monitor Spend Share and Asset Performance</title>
+          <action>Day 3: Check "View Asset Performance" to see early leaders</action>
+          <action>Day 5-7: Clear patterns should emerge (certain creatives getting 40%+ spend share)</action>
+          <action>Identify top 3 asset combinations by CPA and Spend Share</action>
+        </step>
+
+        <step n="6">
+          <title>Graduate Winners and Iterate Losers</title>
+          <action>Harvest Post IDs of top 3 combinations to scaling campaign</action>
+          <action>For losing assets (getting under 5% spend share by Day 7): Replace with new concepts and retest</action>
+        </step>
+      </steps>
+
+      <key_metrics>
+        <metric name="Asset Spend Distribution" threshold="Top 3 combos should capture 60%+ of spend by Day 7">
+          Indicates algorithm found strong preferences
+        </metric>
+        <metric name="Combination Count Tested" threshold="Meta should test 20+ combinations (out of 125 possible)">
+          Shows adequate variety in testing
+        </metric>
+        <metric name="Conversion Velocity" threshold="50+ conversions within 7-10 days">
+          Enough volume to make statistical decisions
+        </metric>
+      </key_metrics>
+
+      <failure_modes>
+        <failure_mode name="Variation Trap">
+          <symptoms>All 5 creatives get equal spend share (~20% each); no clear winner by Day 10</symptoms>
+          <root_cause>Testing variations (same concept, minor tweaks) instead of distinct concepts</root_cause>
+          <diagnosis>Review creatives side-by-side: Are they 80% similar? (Same hook, different color = variation)</diagnosis>
+          <recovery>Kill test; create 5 NEW concepts with entirely different hooks, stories, mechanisms</recovery>
+          <prevention>Concept diversity validation pre-launch: Each creative must have unique hook OR unique mechanism OR unique proof type</prevention>
+        </failure_mode>
+
+        <failure_mode name="Budget Starvation">
+          <symptoms>Algorithm cycling through combinations slowly; Day 10 still in learning phase</symptoms>
+          <root_cause>Insufficient budget to test 125 combinations (need ~$3-5k minimum for 7-day test)</root_cause>
+          <diagnosis>Check conversion volume: Are you hitting 50 conversions in 7 days? If no, budget too low</diagnosis>
+          <recovery>Either increase budget 2-3x OR reduce to 3:2:2 format (fewer combinations)</recovery>
+          <prevention>Use 5x5 only if spending $5k+ on test; otherwise use 3:2:2</prevention>
+        </failure_mode>
+      </failure_modes>
+
+      <golden_run example="6">
+        <scenario>Info product launch, testing multiple angles to find product-market fit messaging</scenario>
+        <inputs>
+          <budget>$5k for 7-day test ($714/day)</budget>
+          <goal>Identify which creative angle + copy approach resonates for scaling</goal>
+          <target_cpa>$25 (course purchase)</target_cpa>
+        </inputs>
+        <execution>
+          <action>Create 5 video creatives: (1) Founder Story, (2) Student Testimonial, (3) Whiteboard Lesson, (4) Results Screenshot, (5) Behind-the-Scenes</action>
+          <action>Write 5 primary texts: Long Story, Short Benefits, Social Proof, Problem-Agitate, How-To</action>
+          <action>Write 5 headlines: Promise, Objection, Curiosity, Offer, Social Proof</action>
+          <action>Launch as Flexible Ad in Prospecting Broad CBO</action>
+          <action>Monitor asset performance daily</action>
+        </execution>
+        <expected_outputs>
+          <output>Day 3: Early leaders emerge (Student Testimonial creative + Social Proof text getting 45% spend)</output>
+          <output>Day 7: Top 3 combinations identified with CPAs of $18, $22, $24 (all under $25 target)</output>
+          <output>Losers identified: Whiteboard creative getting under 2% spend (boring for cold traffic)</output>
+          <output>Winning pattern discovered: Social proof messaging + authentic (non-polished) creatives work best</output>
+        </expected_outputs>
+        <success_criteria>
+          <criterion>Clear winners emerge (3 combinations with 30%+ lower CPA than losers)</criterion>
+          <criterion>At least 1 combination hits under $25 target CPA with statistical significance (50+ conversions)</criterion>
+          <criterion>Actionable learnings identified (e.g., "Social proof copy beats long-form story for this audience")</criterion>
+          <criterion>Winners ready to scale via Post ID harvesting to dedicated scaling campaign</criterion>
+        </success_criteria>
+      </golden_run>
+    </framework>
+
+    <!-- FRAMEWORK 7: Lead Gen Lag-Time Optimization -->
+    <framework id="F7" name="Lead Gen Lag-Time Optimization">
+      <source_tag>[SRC: Caden Thompson | 289-291]</source_tag>
+      <key_quote>"If we wait all the way to the end point we have a massive gap in between."</key_quote>
+
+      <summary>
+        Adjusting the optimization event based on sales cycle length to ensure the pixel receives conversion data within
+        the 7-day attribution window. For businesses with long sales cycles (>7 days from lead to sale), optimizing for
+        bottom-funnel events starves the algorithm. Instead, optimize for mid-funnel events (Qualified Lead, Booked Call)
+        that occur within the attribution window, ensuring consistent pixel feedback for learning.
+      </summary>
+
+      <when_to_use>
+        <trigger>High-ticket B2B or service businesses with sales cycles above 7 days</trigger>
+        <trigger>Complex products requiring consultations/demos before purchase</trigger>
+        <trigger>When optimizing for Purchase yields zero conversion data in Ads Manager</trigger>
+      </when_to_use>
+
+      <when_NOT_to_use>
+        <exclusion>Ecom with instant checkout (optimize for Purchase directly)</exclusion>
+        <exclusion>Low-ticket offers with under 24 hour decision cycles</exclusion>
+        <exclusion>When you have above 50 Purchase conversions/week (sufficient data for bottom-funnel optimization)</exclusion>
+      </when_NOT_to_use>
+
+      <steps>
+        <step n="1">
+          <title>Calculate Lag Time (Lead to Sale)</title>
+          <action>Pull CRM data for last 100 closed deals</action>
+          <action>Calculate: Date of Lead Capture , then Date of Sale</action>
+          <action>Determine median lag time (e.g., 14 days, 21 days, etc.)</action>
+        </step>
+
+        <step n="2">
+          <title>Determine Optimization Event Based on Lag Time</title>
+          <decision>IF Lag Time under 7 days , then Optimize for Bottom-Funnel (Sale, Purchase, Closed Deal)</decision>
+          <decision>IF Lag Time 7-14 days , then Optimize for Mid-Funnel (Qualified Lead, Booked Appointment)</decision>
+          <decision>IF Lag Time above 14 days , then Optimize for Top-Funnel (Lead Submission, Content Download)</decision>
+          <rationale>Must select event that fires within 7-day attribution window for consistent pixel feedback</rationale>
+        </step>
+
+        <step n="3">
+          <title>Define and Implement Optimization Event</title>
+          <action>If mid-funnel: Create custom conversion event "Qualified Lead" (lead who answers key questions)</action>
+          <action>Or use "Schedule" event (booked call/demo via Calendly, etc.)</action>
+          <action>Implement tracking: Pixel fires when user completes qualification form or books appointment</action>
+          <action>Validate in Events Manager: Confirm 15-30 events/week minimum</action>
+        </step>
+
+        <step n="4">
+          <title>Launch Campaign with Mid-Funnel Optimization</title>
+          <action>Campaign objective: Leads (or Conversions)</action>
+          <action>Optimization event: "Qualified Lead" or "Schedule"</action>
+          <action>Budget: (Target Cost-Per-Qualified-Lead × 50) / 7 days</action>
+        </step>
+
+        <step n="5">
+          <title>Monitor Quality and Back-End Conversion Rate</title>
+          <action>Track: Qualified Lead , then Booked Call rate (should be above 30%)</action>
+          <action>Track: Booked Call , then Closed Deal rate (benchmark to historical)</action>
+          <circuit_breaker>IF Qualified Lead quality drops (show rate below 50%) THEN add friction to form (more questions)</circuit_breaker>
+        </step>
+      </steps>
+
+      <key_metrics>
+        <metric name="Lag Time (Median)" threshold="Must be under 7 days for bottom-funnel optimization">
+          Determines which funnel stage to optimize for
+        </metric>
+        <metric name="Event Volume" threshold="15-30 optimization events per week minimum">
+          Pixel needs sufficient data; if below, move higher in funnel
+        </metric>
+        <metric name="Qualified Lead , then Sale Conversion Rate" threshold="Should match historical rate ±10%">
+          Validates lead quality hasn't degraded by optimizing higher in funnel
+        </metric>
+      </key_metrics>
+
+      <failure_modes>
+        <failure_mode name="Pixel Malnutrition">
+          <symptoms>Zero conversions showing in Ads Manager despite leads/sales happening in CRM</symptoms>
+          <root_cause>Optimizing for event that occurs outside 7-day attribution window (e.g., Sale with 21-day lag)</root_cause>
+          <diagnosis>Check Events Manager: When was last Purchase event received? If above 7 days ago, lag time disconnect confirmed</diagnosis>
+          <recovery>Immediately switch optimization to higher-funnel event (Lead or Qualified Lead) that fires within 7 days</recovery>
+          <prevention>Always calculate lag time before campaign launch; select optimization event accordingly</prevention>
+        </failure_mode>
+
+        <failure_mode name="Junk Lead Spiral">
+          <symptoms>Low cost per lead ($5-10) but zero backend conversions (calls booked, sales closed)</symptoms>
+          <root_cause>Optimizing for top-funnel (Lead Submission) without quality filter; algorithm finding bots/low-intent users</root_cause>
+          <diagnosis>Check lead quality: Are form submissions from real emails? Are leads answering qualifying questions?</diagnosis>
+          <recovery>Add friction to form (require phone, add qualifying question) OR optimize for "Booked Call" instead of "Lead"</recovery>
+          <prevention>For B2B/high-ticket, always optimize for Qualified Lead (with qualification criteria) not raw Lead volume</prevention>
+        </failure_mode>
+      </failure_modes>
+
+      <golden_run example="7">
+        <scenario>B2B SaaS company selling $10k annual contracts with 18-day sales cycle (Lead , then Demo , then Sale)</scenario>
+        <inputs>
+          <sales_cycle>
+            <step_1>Lead submission (Day 0)</step_1>
+            <step_2>Qualification call (Day 2-3)</step_2>
+            <step_3>Demo booked (Day 5-7)</step_3>
+            <step_4>Proposal sent (Day 10)</step_4>
+            <step_5>Sale closed (Day 15-18 median)</step_5>
+          </sales_cycle>
+          <problem>Optimizing for "Purchase" yields zero pixel data (18 days above 7-day window)</problem>
+          <target_cpa>$150 per booked demo</target_cpa>
+        </inputs>
+        <execution>
+          <action>Calculate lag time: Lead , then Sale = 18 days (median)</action>
+          <action>Decision: Must optimize for event within 7 days</action>
+          <action>Select optimization event: "Booked Demo" (occurs Day 5-7, within window)</action>
+          <action>Implement tracking: Calendly integration fires "Schedule" event when demo booked</action>
+          <action>Launch campaign optimizing for "Schedule" event</action>
+          <action>Budget: $1,500/day to generate 10 demos/day</action>
+        </execution>
+        <expected_outputs>
+          <output>Pixel receives 50-70 "Schedule" events per week (sufficient for optimization)</output>
+          <output>Cost per booked demo: $145 (within $150 target)</output>
+          <output>Demo , then Sale conversion rate: 25% (matches historical)</output>
+          <output>Algorithm learns to find "demo-quality" leads, not just cheap form fills</output>
+        </expected_outputs>
+        <success_criteria>
+          <criterion>Pixel receiving 15-30 optimization events per week minimum</criterion>
+          <criterion>Cost per event (Booked Demo) within target ($150 or less)</criterion>
+          <criterion>Backend conversion rate (Demo , then Sale) matches historical benchmarks (no quality degradation)</criterion>
+          <criterion>Campaign exits learning phase under 7 days (sufficient event volume)</criterion>
+        </success_criteria>
+      </golden_run>
+    </framework>
+
+    <!-- FRAMEWORK 8: Value Rules Bidding -->
+    <framework id="F8" name="Value Rules Bidding">
+      <source_tag>[SRC: Sam Piliero | 713-714]</source_tag>
+      <key_quote>"Create rule sets... based on outcomes that Facebook can't see like lifetime value."</key_quote>
+
+      <summary>
+        Automatically adjusting bids based on high-value customer attributes that the platform can't see in real-time
+        (LTV, repeat purchase rate, geographic profitability). By creating Value Rules, you tell Meta to bid higher
+        for segments you know are more profitable (e.g., Men have 2x LTV, so bid +20% for male audience) or lower
+        for lower-value segments (international markets, lower-tier geographies). This optimizes for business profit,
+        not just platform ROAS.
+      </summary>
+
+      <when_to_use>
+        <trigger>Advanced accounts with clear LTV data by demographic/geographic segments</trigger>
+        <trigger>Spending $30k+/month where bid precision impacts profitability</trigger>
+        <trigger>When certain customer segments have 30%+ higher LTV than others</trigger>
+        <trigger>Scaling internationally while maintaining blended efficiency</trigger>
+      </when_to_use>
+
+      <when_NOT_to_use>
+        <exclusion>No LTV data or backend analytics (need 6+ months of customer data minimum)</exclusion>
+        <exclusion>Small budgets under $10k/month (insufficient spend for segment optimization)</exclusion>
+        <exclusion>When all customer segments have similar LTV (no differentiation to leverage)</exclusion>
+      </when_NOT_to_use>
+
+      <steps>
+        <step n="1">
+          <title>Analyze Backend LTV Data</title>
+          <action>Pull customer data from CRM/Analytics (minimum 6-12 months)</action>
+          <action>Segment by: Gender, Age, Location, Device, etc.</action>
+          <action>Calculate LTV by segment: Total revenue from segment / Number of customers</action>
+          <action>Identify high-value segments (30%+ higher LTV than average)</action>
+        </step>
+
+        <step n="2">
+          <title>Define Value Rule Logic</title>
+          <action>Example: "Men have 150% LTV vs Women (M: $300, F: $200)"</action>
+          <action>Calculate bid adjustment: +25% bid for Men (to reflect higher value)</action>
+          <action>Or: "California customers have 80% LTV vs Texas (CA: $240, TX: $300)"</action>
+          <action>Calculate bid adjustment: -20% bid for California</action>
+        </step>
+
+        <step n="3">
+          <title>Implement Value Rules in Campaign</title>
+          <action>Navigate to Campaign or Ad Set level , then "Value Optimization"</action>
+          <action>Click "Create Value Rules"</action>
+          <action>Rule 1: IF Gender = Male , then Increase Bid by 25%</action>
+          <action>Rule 2: IF Location = Tier 2 Countries (not US/UK) , then Decrease Bid by 15%</action>
+          <action>Save and activate</action>
+        </step>
+
+        <step n="4">
+          <title>Monitor Segment Performance</title>
+          <action>After 14 days, break down results by segment</action>
+          <action>Check: Did high-bid segments maintain or improve ROAS?</action>
+          <action>Check: Did spend shift toward high-value segments as intended?</action>
+        </step>
+
+        <step n="5">
+          <title>Iterate Rules Based on Results</title>
+          <action>If segment ROAS drops: Reduce bid adjustment (e.g., +25% , then +15%)</action>
+          <action>If segment still under-represented in spend: Increase bid adjustment further</action>
+        </step>
+      </steps>
+
+      <key_metrics>
+        <metric name="LTV by Segment" threshold="High-value segment should be 30%+ higher LTV">
+          Justifies bid differentiation
+        </metric>
+        <metric name="Spend Distribution Shift" threshold="High-bid segments should increase spend share by 10-20%">
+          Indicates rules are working as intended
+        </metric>
+        <metric name="Blended ROAS Maintenance" threshold="Overall ROAS should hold or improve">
+          Validates that bidding more for high-LTV customers is profitable
+        </metric>
+      </key_metrics>
+
+      <failure_modes>
+        <failure_mode name="Overfitted Rules">
+          <symptoms>Spend becomes 90% concentrated in one segment; overall volume drops</symptoms>
+          <root_cause>Bid adjustment too aggressive (+50%+), causing algorithm to ignore other segments entirely</root_cause>
+          <diagnosis>Check spend distribution: Is 1 segment getting above 70% of budget?</diagnosis>
+          <recovery>Reduce bid adjustment to +10-20% maximum; allow diversification</recovery>
+          <prevention>Start with conservative bid adjustments (+10-15%); increase gradually</prevention>
+        </failure_mode>
+
+        <failure_mode name="Stat-Sig Trap">
+          <symptoms>Rules based on segments with fewer than 100 customers; performance erratic</symptoms>
+          <root_cause>Insufficient sample size for LTV calculation; one whale customer skews data</root_cause>
+          <diagnosis>Check: Does high-LTV segment have 100+ customers? If no, data not reliable</diagnosis>
+          <recovery>Remove rule; wait until segment reaches statistical significance (100+ customers)</recovery>
+          <prevention>Only create rules for segments with 100+ customers minimum</prevention>
+        </failure_mode>
+      </failure_modes>
+
+      <golden_run example="8">
+        <scenario>Ecom subscription brand with 12 months of customer data, clear LTV differences by gender and geography</scenario>
+        <inputs>
+          <ltv_data>
+            <segment>Men: $350 LTV (6-month average)</segment>
+            <segment>Women: $220 LTV</segment>
+            <segment>US: $310 LTV</segment>
+            <segment>UK/CA/AU: $260 LTV</segment>
+          </ltv_data>
+          <current_performance>
+            <spend_distribution>60% Men, 40% Women (organic)</spend_distribution>
+            <blended_roas>2.8x</blended_roas>
+          </current_performance>
+          <goal>Shift more spend to Men (higher LTV) without tanking overall ROAS</goal>
+        </inputs>
+        <execution>
+          <action>Calculate: Men have 59% higher LTV than Women ($350 vs $220)</action>
+          <action>Create Value Rule: IF Gender = Male , then Increase Bid by 20%</action>
+          <action>Create Value Rule: IF Location NOT in (US) , then Decrease Bid by 10%</action>
+          <action>Launch rules in existing Prospecting CBO</action>
+          <action>Monitor for 14 days</action>
+        </execution>
+        <expected_outputs>
+          <output>Spend distribution shifts: 75% Men, 25% Women (from 60/40)</output>
+          <output>CPA for Men increases slightly ($45 , then $50) but LTV justifies it</output>
+          <output>Blended ROAS improves: 2.8x , then 3.1x (more high-LTV customers acquired)</output>
+          <output>International spend decreases from 30% , then 20% (US prioritized)</output>
+        </expected_outputs>
+        <success_criteria>
+          <criterion>Spend shifts toward high-LTV segment (Men) by 10-15%</criterion>
+          <criterion>Blended ROAS maintained or improved (validates LTV thesis)</criterion>
+          <criterion>Backend LTV per acquired customer increases (measure 30 days post-campaign)</criterion>
+        </success_criteria>
+      </golden_run>
+    </framework>
+
+  </frameworks>
+
+  <!-- ============================================================ -->
+  <!-- SOPs (Standard Operating Procedures)                        -->
+  <!-- ============================================================ -->
+
+  <sops>
+    <sop id="SOP1" name="The Creative Flywheel (Weekly Routine)">
+      <source>[SRC: Sam Piliero | 196]</source>
+      <frequency>Weekly (Every Monday)</frequency>
+      <purpose>Systematically identify winning concepts and produce new creative variations to maintain performance and prevent fatigue.</purpose>
+
+      <steps>
+        <step n="1">
+          <title>Analyze Last 7-14 Days Performance</title>
+          <action>Open Ads Manager, filter by last 7-14 days</action>
+          <action>Switch attribution to "Incremental" (to see true lift, not retargeting)</action>
+          <action>Sort ads by Incremental ROAS descending</action>
+        </step>
+
+        <step n="2">
+          <title>Identify Top Concepts (Not Just Individual Ads)</title>
+          <action>Look for patterns across top 5 performers</action>
+          <action>Group by concept type: UGC in car? Press screenshot? Founder story? Product demo?</action>
+          <action>Note: 1 concept may have 3-5 individual ad variations</action>
+        </step>
+
+        <step n="3">
+          <title>Brief 4-6 Iterations of Winning Concept</title>
+          <action>Example: If "UGC in car" is winning concept:</action>
+          <action>Iterate 1: Different car (sedan vs SUV)</action>
+          <action>Iterate 2: Different person (gender/age variation)</action>
+          <action>Iterate 3: Different time of day (morning vs night)</action>
+          <action>Iterate 4-6: Combine variations</action>
+        </step>
+
+        <step n="4">
+          <title>Source 1 New Concept from Competitors</title>
+          <action>Use MagicBrief, Foreplay, or Meta Ads Library</action>
+          <action>Filter: Ads running above 14 days (proven winners)</action>
+          <action>Find 1 concept you haven't tested (e.g., testimonial grid, timeline ad, comparison chart)</action>
+          <action>Brief creative team to produce your version</action>
+        </step>
+
+        <step n="5">
+          <title>Launch New Creative Batch</title>
+          <action>Upload all new creatives (4-6 iterations + 1 new concept) to Prospecting CBO</action>
+          <action>Create new Ad Set: "Broad Pack [Date]" (Pack System)</action>
+          <action>Let CBO allocate budget; monitor for 7 days</action>
+        </step>
+      </steps>
+
+      <quality_gates>
+        <gate>Winning concepts must have Incremental ROAS above 1.5x (not just platform ROAS)</gate>
+        <gate>New concept sourced from competitor must be running above 14 days (proven, not experimental)</gate>
+        <gate>Creative briefs must specify concept (not just "make a video") with visual references</gate>
+      </quality_gates>
+    </sop>
+
+    <sop id="SOP2" name="Campaign Launch Checklist (Pre-Launch)">
+      <source>[SRC: Chase Chappell | 726-730, Jared Robinson | 81]</source>
+      <frequency>Per campaign launch</frequency>
+      <purpose>Ensure all campaigns launch with correct structure, targeting, exclusions, and creative setup to maximize learning phase efficiency.</purpose>
+
+      <steps>
+        <step n="1">
+          <title>Campaign Level Configuration</title>
+          <action>Objective: Sales (Ecom) or Leads (Lead Gen)</action>
+          <action>Enable Campaign Budget Optimization (CBO)</action>
+          <action>Set daily budget: (Target CPA × 50 conversions) / 7 days minimum</action>
+          <action>Attribution Setting: 7-day click (default) or Incremental (advanced)</action>
+        </step>
+
+        <step n="2">
+          <title>Ad Set Level Configuration</title>
+          <action>Targeting: Broad (Age 18-65+, All Genders, Geographic limit only)</action>
+          <action>Conversion Event: Purchase (Ecom) or Lead/Qualified Lead (Lead Gen)</action>
+          <action>If lead gen with above 7 day lag time: Use mid-funnel event (Booked Call/Qualified Lead)</action>
+          <action>Placements: Advantage+ Placements (Automatic)</action>
+        </step>
+
+        <step n="3">
+          <title>Exclusions (Critical for M3 Swim Lane Integrity)</title>
+          <action>Prospecting: Exclude 180-day Purchasers</action>
+          <action>Prospecting: Exclude 30-day Site Visitors (optional, stricter prospecting)</action>
+          <action>Validate: Use Audience Overlap tool to confirm under 5% overlap with Retargeting audiences</action>
+        </step>
+
+        <step n="4">
+          <title>Creative Upload</title>
+          <action>Ensure 3-5 distinct creative formats (not variations)</action>
+          <action>Formats: Mix of video + static OR all video OR all static (don't mix in Flexible Ads)</action>
+          <action>Use 3:2:2 structure (3 creatives, 2 headlines, 2 texts) OR 5x5 for high-volume tests</action>
+        </step>
+
+        <step n="5">
+          <title>Ad Level Settings (Critical)</title>
+          <action>Turn OFF "Visual Touch-ups" (Meta auto-cropping destroys brand assets)</action>
+          <action>Turn OFF "Advantage+ Creative" unless you want Meta altering your copy</action>
+          <action>Review: Preview ad on mobile (where 80% of users see it)</action>
+        </step>
+
+        <step n="6">
+          <title>Final Pre-Launch Check</title>
+          <action>Pixel: Verify Events Manager shows recent Purchase/Lead events (last 24h)</action>
+          <action>Budget: Confirm sufficient for 50 conversions in 7 days</action>
+          <action>Exclusions: Double-check custom audiences refreshing daily</action>
+          <action>Launch</action>
+        </step>
+      </steps>
+
+      <quality_gates>
+        <gate>Budget must be sufficient for learning phase: (CPA × 50) / 7 minimum</gate>
+        <gate>Exclusions validated via Audience Overlap tool (under 5% overlap)</gate>
+        <gate>Pixel showing activity in last 24 hours (not dormant)</gate>
+        <gate>Creatives are concepts (different hooks/stories), not variations (color swaps)</gate>
+      </quality_gates>
+    </sop>
+
+    <sop id="SOP3" name="Nano Banana AI Asset Creation">
+      <source>[SRC: Sam Piliero | 597-598, 608-611]</source>
+      <frequency>On-demand (when scaling winning static ads)</frequency>
+      <purpose>Use GenAI (Gemini Nano Banana Pro) to rapidly generate variations of winning static ads by swapping models, backgrounds, or products while maintaining composition.</purpose>
+
+      <steps>
+        <step n="1">
+          <title>Identify Winning Static Ad</title>
+          <action>Filter ads by format: Static Image</action>
+          <action>Find winner: Low CPA + High Spend (>$1k total)</action>
+          <action>Download image file from Ads Manager</action>
+        </step>
+
+        <step n="2">
+          <title>Upload to Gemini (Nano Banana Pro Model)</title>
+          <action>Open Gemini chat interface</action>
+          <action>Upload winning ad image</action>
+          <action>Also upload: Product image (if swapping product) or lifestyle image (if swapping background)</action>
+        </step>
+
+        <step n="3">
+          <title>Prompt for Variation</title>
+          <action>Prompt structure: "Replace [Element A] with [Element B], keep composition identical"</action>
+          <action>Example 1: "Replace the t-shirt the man is wearing with the windbreaker from image 2. Keep pose and background identical."</action>
+          <action>Example 2: "Change the background from kitchen to outdoor park, keep model and product placement identical."</action>
+          <action>Example 3: "Replace the woman in image 1 with a man of similar age, keep all other elements identical."</action>
+        </step>
+
+        <step n="4">
+          <title>Generate Multiple Variations</title>
+          <action>Generate 4-10 variations using different prompts</action>
+          <action>Variations to test: Different models (age/gender/ethnicity), different backgrounds, different times of day</action>
+          <action>Export all as PNG/JPG</action>
+        </step>
+
+        <step n="5">
+          <title>Launch as New Pack</title>
+          <action>Upload all variations to Prospecting CBO as new Ad Set "Pack [Date] - Nano Banana"</action>
+          <action>Monitor for 7 days</action>
+          <action>Expectation: Extends lifespan of winning concept by 2-4 weeks</action>
+        </step>
+      </steps>
+
+      <quality_gates>
+        <gate>Original winning ad must have >$1k spend + profitable CPA (proven winner)</gate>
+        <gate>Variations must maintain composition (same layout, just swapped elements)</gate>
+        <gate>Generate minimum 5 variations (need volume for testing)</gate>
+      </quality_gates>
+    </sop>
+
+    <sop id="SOP4" name="Ad Set Spending Limit Injection">
+      <source>[SRC: Sam Piliero | 654]</source>
+      <frequency>When launching new tests in established CBOs</frequency>
+      <purpose>Force algorithm to allocate budget to new creative packs that would otherwise receive zero spend due to CBO favoring historical winners.</purpose>
+
+      <steps>
+        <step n="1">
+          <title>Identify Starved Ad Set</title>
+          <action>Review CBO spend distribution over last 3 days</action>
+          <action>Find new ad set receiving $0 or under 5% of budget</action>
+        </step>
+
+        <step n="2">
+          <title>Calculate Minimum Spend</title>
+          <action>Determine Target CPA (e.g., $50)</action>
+          <action>Set Daily Minimum = 1x Target CPA ($50/day)</action>
+        </step>
+
+        <step n="3">
+          <title>Apply Spending Limit</title>
+          <action>Go to starved Ad Set, then Budget and Schedule</action>
+          <action>Enable "Ad set spending limit"</action>
+          <action>Enter Daily Minimum: $50</action>
+        </step>
+
+        <step n="4">
+          <title>Set Calendar Reminder</title>
+          <action>Mark calendar for Day 7 review</action>
+        </step>
+
+        <step n="5">
+          <title>Day 7 Decision</title>
+          <action>IF CPA below Target AND spend exceeded minimum , then Remove limit (it's a winner)</action>
+          <action>IF CPA above Target AND spend stayed at minimum , then Pause ad set (it failed)</action>
+        </step>
+      </steps>
+
+      <quality_gates>
+        <gate>Only apply to ad sets getting $0 spend for 3+ days (confirmed starvation)</gate>
+        <gate>Remove limit by Day 7 maximum (don't leave on indefinitely)</gate>
+        <gate>Maximum 1-2 ad sets with limits simultaneously in one CBO (prevent fragmentation)</gate>
+      </quality_gates>
+    </sop>
+
+    <sop id="SOP5" name="Post-Andromeda Optimization Routine">
+      <source>[SRC: The Ecom King | 391]</source>
+      <frequency>Every 2-3 days</frequency>
+      <purpose>Light-touch optimization focused on creative refresh and concept performance, not micro-management.</purpose>
+
+      <steps>
+        <step n="1">
+          <title>Check Ad Set Structure</title>
+          <action>IF spread across above 5 tiny ad sets , then Consolidate to 1-2 Broad CBOs</action>
+        </step>
+
+        <step n="2">
+          <title>Check Ad Frequency</title>
+          <action>IF Frequency above 3.0 in Prospecting , then Creative fatigued, refresh needed</action>
+        </step>
+
+        <step n="3">
+          <title>Check Concept Performance (Not Just Individual Ads)</title>
+          <action>Group ads by concept type</action>
+          <action>Identify which concepts are winning (UGC vs Founder vs Demo)</action>
+        </step>
+
+        <step n="4">
+          <title>Kill Losers</title>
+          <action>IF ad has high CPA (>2x target) AND low spend (under $100 total after 7 days) , then Pause</action>
+          <action>Do NOT pause ads with high spend (let CBO starve them naturally)</action>
+        </step>
+      </steps>
+
+      <quality_gates>
+        <gate>Only pause ads that are both high CPA AND low spend (clear losers)</gate>
+        <gate>Frequency above 3.0 is the refresh trigger, not subjective "feeling"</gate>
+      </quality_gates>
+    </sop>
+
+  </sops>
+
+  <!-- ============================================================ -->
+  <!-- HEURISTICS (Decision Rules)                                  -->
+  <!-- ============================================================ -->
+
+  <heuristics>
+
+    <category name="Diagnostic">
+      <heuristic>IF learning limited above 7 days THEN consolidate ad sets or increase budget to hit 50 conversions/week [SRC: Ben Heath | 580]</heuristic>
+      <heuristic>IF retargeting ROAS is high (>4x) but blended ROAS is low THEN you are over-investing in retargeting; shift budget to prospecting [SRC: Sam Piliero | 511]</heuristic>
+      <heuristic>IF one ad hogs 90% of CBO spend THEN launch a separate "Testing Campaign" to force budget to new concepts [SRC: Ben Heath | 578]</heuristic>
+      <heuristic>IF CPMs are spiking THEN check creative diversity; Andromeda penalizes repetitive formats [SRC: THE ECOM KING | 372]</heuristic>
+      <heuristic>IF "One Day View" conversions are above 50% of total THEN your ads are retargeting, not prospecting; switch to Incremental/Click attribution [SRC: Tier 11 | 627]</heuristic>
+      <heuristic>IF CPA rises but CTR is stable THEN the issue is likely post-click (Landing Page/Offer) [SRC: Chase Chappell | 250]</heuristic>
+      <heuristic>IF frequency above 3.0 in prospecting THEN creative is fatigued; launch new concept immediately [SRC: The Ecom King | 391]</heuristic>
+    </category>
+
+    <category name="Optimization">
+      <heuristic>IF spending under $3k/month THEN use 1 Campaign (Prospecting) + 1 Retargeting (Retention) [SRC: Sam Piliero | 644]</heuristic>
+      <heuristic>IF spending >$30k/month THEN use Cost Caps to manage volatility [SRC: Sam Piliero | 653]</heuristic>
+      <heuristic>IF an ad has high Incremental ROAS (lift) THEN graduate it to the Scaling/Control ad set [SRC: Sam Piliero | 509]</heuristic>
+      <heuristic>IF launching a new CBO test THEN use Ad Set Spending Limits (Min = 1x CPA) for the first 7 days [SRC: Sam Piliero | 654]</heuristic>
+      <heuristic>IF under $1M annual revenue THEN focus on ONE avatar with multiple angles, not multiple avatars [SRC: Dr. Matt Shiver | 54]</heuristic>
+      <heuristic>IF broad targeting fails THEN test "Interest Clusters" as a temporary guide for the pixel [SRC: Sam Piliero | 641]</heuristic>
+      <heuristic>IF exclusion logic is working THEN Audience Overlap tool should show under 5% overlap between Prospecting and Retargeting [SRC: Sam Piliero | 510]</heuristic>
+    </category>
+
+    <category name="Scaling">
+      <heuristic>IF a creative works THEN do not pause it; create a new "Pack" with variations to run alongside it [SRC: Precision Frameworks | 608]</heuristic>
+      <heuristic>IF you spend $10k/month THEN produce at least 1 new ad per week (Rule of 1:10k) [SRC: Sam Piliero | 190]</heuristic>
+      <heuristic>IF scaling a winner THEN use "Post ID Harvesting" to move it to the control campaign without losing engagement [SRC: Professor Charley T | 103]</heuristic>
+      <heuristic>IF ncROAS above 1.5x THEN you have permission to scale budget by 20% [SRC: Justin Lalonde | 7]</heuristic>
+      <heuristic>IF spending >$10k/mo THEN ensure you are launching at least 1 new creative concept per week [SRC: Sam Piliero | 190]</heuristic>
+    </category>
+
+    <category name="Troubleshooting">
+      <heuristic>IF lead gen lag time is above 7 days THEN optimize for "Qualified Lead" or "Call Booked" instead of "Sale" [SRC: Caden Thompson | 290]</heuristic>
+      <heuristic>IF static ads are failing THEN test "Native" formats (Apple Notes, News Articles) [SRC: Omar Eddaoudi | 268]</heuristic>
+      <heuristic>IF clients demand "On-Brand" creatives but "Ugly" ads perform better THEN run both in separate ad sets to prove the data [SRC: Justin Lalonde | 10]</heuristic>
+      <heuristic>IF using Cost Caps and spend stops THEN raise bid by 10-20% to re-enter auction [SRC: Sam Piliero | 521]</heuristic>
+      <heuristic>IF new pack gets zero spend in CBO THEN it is not necessarily a failure; use Ad Set Limits to force a test [SRC: Sam Piliero | 770]</heuristic>
+    </category>
+
+  </heuristics>
+
+  <!-- ============================================================ -->
+  <!-- METRICS TABLE                                                -->
+  <!-- ============================================================ -->
+
+  <metrics_table>
+    <metric name="ncROAS (New Customer ROAS)" purpose="True scalability measurement" threshold=">1.5x for scaling" action_trigger="IF below1.0x for 7 days , then Stop scaling" source="[SRC: Sam Piliero | 777]"/>
+    <metric name="Incremental ROAS" purpose="Attribution truth check" threshold=">1.0 (Lift)" action_trigger="IF below0.5 , then Ad is retargeting, not prospecting" source="[SRC: Sam Piliero | 595]"/>
+    <metric name="Hook Rate" purpose="Attention capture" threshold=">30%" action_trigger="IF below25% , then Fix first 3 seconds" source="[SRC: Jared Robinson | 483]"/>
+    <metric name="Hold Rate" purpose="Retention/engagement" threshold=">10-20%" action_trigger="IF high hook but low hold , then Clickbait issue" source="[SRC: Jared Robinson | 483]"/>
+    <metric name="Frequency" purpose="Saturation detection" threshold="under3.0 (Prospecting)" action_trigger="IF above 3.0 , then Refresh creative" source="[SRC: THE ECOM KING | 391]"/>
+    <metric name="Conversion Volume" purpose="Learning phase optimization" threshold="50+/week" action_trigger="IF below50 , then Consolidate ad sets" source="[SRC: Ben Heath | 580]"/>
+    <metric name="Lag Time" purpose="Event selection for lead gen" threshold="under 7 days for bottom-funnel" action_trigger="IF above 7 days , then Move optimization up-funnel" source="[SRC: Caden Thompson | 289]"/>
+    <metric name="MER (Marketing Efficiency Ratio)" purpose="Business health check" threshold=">2.5-3.0" action_trigger="IF Platform ROAS rises but MER flat , then Attribution hallucination" source="[SRC: Sam Piliero | 777]"/>
+    <metric name="Prospecting Spend %" purpose="Growth focus validation" threshold="60-70% of total" action_trigger="IF below50% , then Over-investing in Retargeting" source="[SRC: Sam Piliero | 511]"/>
+    <metric name="Retargeting Spend %" purpose="Conversion optimization" threshold="20-30% of total" action_trigger="IF above 40% , then Reduce Retargeting budget" source="[SRC: Sam Piliero | 511]"/>
+    <metric name="Retention Spend %" purpose="LTV optimization" threshold="5-10% of total" action_trigger="IF above 15% , then Inflating acquisition metrics" source="[SRC: Sam Piliero | 511]"/>
+    <metric name="Event Match Quality" purpose="Pixel data integrity" threshold=">7.0 (out of 10)" action_trigger="IF below6.0 , then Fix CAPI/Pixel setup" source="[SRC: Tier 11 | 691]"/>
+    <metric name="CPM (Cost Per 1000 Impressions)" purpose="Auction efficiency" threshold="Benchmark varies by niche" action_trigger="IF doubles week-over-week , then Creative fatigue or quality drop" source="[SRC: THE ECOM KING | 372]"/>
+  </metrics_table>
+
+  <!-- ============================================================ -->
+  <!-- PATTERNS (Organizational & Structural)                       -->
+  <!-- ============================================================ -->
+
+  <patterns>
+    <pattern id="P1" name="Naming Convention" source="[SRC: Sam Piliero | 712]">
+      Format: [Funnel]_[Objective]_[Concept]_[Date]
+      Example: PROS_CONV_UGC-Mashup_2026-01-19
+      Purpose: Enables fast sorting, filtering, and performance tracking by concept
+    </pattern>
+
+    <pattern id="P2" name="M3 Setup Sequence" source="[SRC: Sam Piliero | 509]">
+      Order: Prospecting First , then Validate ncROAS , then Add Retargeting , then Add Retention
+      Rationale: Must establish new customer profitability before layering in warm/existing customer campaigns
+    </pattern>
+
+    <pattern id="P3" name="Exclusion Chain" source="[SRC: Jared Robinson | 81]">
+      Prospecting excludes (Retargeting + Retention audiences)
+      Retargeting excludes (Retention audience only)
+      Retention includes (180-day Purchasers) with no exclusions
+      Purpose: Prevents audience overlap and ROAS inflation
+    </pattern>
+
+    <pattern id="P4" name="Creative Batches (Pack System)" source="[SRC: Jared Robinson | 81]">
+      Grouping 3-6 creatives into a single ad set ("Pack") rather than 1 ad per ad set
+      Benefits: Data consolidation, faster learning phase, organized tracking
+    </pattern>
+
+    <pattern id="P5" name="Broad Targeting Default" source="[SRC: Dr. Matt Shiver | 59]">
+      Remove all interests, lookalikes, and demographics (except Age 18-65+ and Geographic limits)
+      Rationale: Andromeda algorithm performs best with broad targeting; creative does the targeting
+    </pattern>
+
+    <pattern id="P6" name="Flexible Ads (3:2:2)" source="[SRC: Professor Charley T | 95]">
+      Using 3 Creatives × 2 Headlines × 2 Texts to consolidate learning data
+      Alternative: 5x5 for high-volume testing (5 × 5 × 5)
+    </pattern>
+
+    <pattern id="P7" name="Cost Caps for Volatility Management" source="[SRC: Sam Piliero | 519]">
+      Switch from "Highest Volume" to "Cost per Result Goal" at $30k+/month spend
+      Mechanism: Spend becomes variable (low on bad days, high on good days), but CPA stays flat
+    </pattern>
+
+    <pattern id="P8" name="Visual Hook Priority" source="[SRC: Fraser Cottrell | 798]">
+      First 3 seconds must have: High contrast, weird textures, or "scam" warnings to stop scroll
+      Examples: Weird rocks (curiosity), color blocking (contrast), native formats (pattern interrupt)
+    </pattern>
+
+    <pattern id="P9" name="Founder Ads for Trust" source="[SRC: Fraser Cottrell | 449]">
+      Face-to-camera storytelling from the owner/founder builds authority and trust
+      Use case: New brands, high-ticket offers, competitive markets
+    </pattern>
+
+    <pattern id="P10" name="Native Format Preference" source="[SRC: Omar Eddaoudi | 268]">
+      Ads that look like Notes app, Twitter screenshots, or News articles outperform polished commercial content
+      Rationale: Bypasses "ad blindness" by blending into organic content feed
+    </pattern>
+  </patterns>
+
+  <!-- ============================================================ -->
+  <!-- CHECKLISTS                                                   -->
+  <!-- ============================================================ -->
+
+  <checklists>
+
+    <checklist name="Campaign Launch Checklist" frequency="Per launch">
+      <item>[ ] Campaign Objective = Sales (Ecom) or Leads (Lead Gen) [SRC: Jared Robinson | 81]</item>
+      <item>[ ] CBO Enabled [SRC: Sam Piliero | 508]</item>
+      <item>[ ] Daily Budget = (Target CPA × 50 conversions) / 7 days minimum [SRC: Ben Heath | 580]</item>
+      <item>[ ] Attribution = 7-day click (default) or Incremental (advanced) [SRC: Sam Piliero | 716]</item>
+      <item>[ ] Exclusions set: 180-day Purchasers excluded from Prospecting [SRC: Jared Robinson | 81]</item>
+      <item>[ ] Audience Overlap validated (under 5% overlap between lanes) [SRC: Sam Piliero | 510]</item>
+      <item>[ ] Targeting = Broad (Age 18-65+, All Genders, Geo only) [SRC: Dr. Matt Shiver | 59]</item>
+      <item>[ ] Placements = Advantage+ (Automatic) [SRC: Chase Chappell | 729]</item>
+      <item>[ ] "Visual Touch-ups" turned OFF [SRC: Chase Chappell | 730]</item>
+      <item>[ ] 3-5 Distinct Creatives uploaded (concepts, not variations) [SRC: Chase Chappell | 728]</item>
+      <item>[ ] Pixel verified active (Events Manager shows activity last 24h) [SRC: Tier 11 | 699]</item>
+      <item>[ ] For Lead Gen: Optimization event matches lag time (under 7 days = Purchase, >7 days = Qualified Lead) [SRC: Caden Thompson | 290]</item>
+    </checklist>
+
+    <checklist name="Weekly Performance Review" frequency="Weekly (Monday)">
+      <item>[ ] Check ncROAS (New Customer Revenue / Ad Spend) [SRC: Sam Piliero | 777]</item>
+      <item>[ ] Check MER (Total Revenue / Total Ad Spend all channels) [SRC: Sam Piliero | 777]</item>
+      <item>[ ] Compare Incremental vs Platform ROAS (validate attribution accuracy) [SRC: Sam Piliero | 595]</item>
+      <item>[ ] Harvest winning Post IDs to Control/Scale campaign [SRC: Professor Charley T | 103]</item>
+      <item>[ ] Check Frequency across Prospecting ads (>3.0 = fatigue danger) [SRC: THE ECOM KING | 391]</item>
+      <item>[ ] Verify Prospecting getting 60-70% of total spend [SRC: Sam Piliero | 511]</item>
+      <item>[ ] Brief new creative pack using Creative Flywheel SOP (4-6 iterations + 1 new concept) [SRC: Sam Piliero | 656]</item>
+      <item>[ ] Check Event Match Quality score in Events Manager (>7.0 target) [SRC: Tier 11 | 699]</item>
+      <item>[ ] Review Pack System: Any packs getting $0 spend for 5+ days? (Pause them) [SRC: Sam Piliero | 508]</item>
+      <item>[ ] Review ad sets with Spending Limits: Day 7 arrived? (Remove or pause per performance) [SRC: Sam Piliero | 654]</item>
+    </checklist>
+
+  </checklists>
+
+  <!-- ============================================================ -->
+  <!-- COMPLIANCE & GUARDRAILS                                      -->
+  <!-- ============================================================ -->
+
+  <compliance_guardrails>
+    <guardrail priority="critical">Broad targeting is now required for efficient AI delivery; restrictive targeting increases CPM and fights Andromeda optimization [SRC: THE ECOM KING | 373]</guardrail>
+    <guardrail priority="critical">MUST exclude 180-day purchasers from Prospecting to ensure accurate ncROAS measurement [SRC: Jared Robinson | 81]</guardrail>
+    <guardrail priority="high">Creative diversity is mandatory: Andromeda penalizes repetitive formats; test concepts (different stories), not variations (color swaps) [SRC: Alex Robinson | 121]</guardrail>
+    <guardrail priority="high">Budget scaling must be gradual: Maximum 20% increase every 2-3 days to avoid resetting learning phase [SRC: AI Strategist | 46]</guardrail>
+    <guardrail priority="medium">Custom audiences (exclusions) must auto-refresh daily; stale audiences cause overlap failures [SRC: Sam Piliero | 510]</guardrail>
+    <guardrail priority="medium">Do NOT turn off "Visual Touch-ups" option can crop/alter brand assets unpredictably [SRC: Chase Chappell | 730]</guardrail>
+    <guardrail priority="medium">Minimum conversion volume: 50 conversions/week per ad set for stable optimization [SRC: Ben Heath | 580]</guardrail>
+    <guardrail priority="low">For Lead Gen: If lag time above 7 days, optimize for mid-funnel events (Qualified Lead, Booked Call) not Purchase [SRC: Caden Thompson | 290]</guardrail>
+  </compliance_guardrails>
+
+</knowledge_block>

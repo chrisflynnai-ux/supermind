@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ULTRAMIND SKILL TEMPLATE v2.1
+  
+  Updated: 2025-12-31
+  
+  WHAT'S NEW IN v2.1:
+  - Updated token budgets: L1≤600, L2≤4000, L3≤3000, L4≤2000
+  - Simplified layer structure with id-based naming
+  - Added PythonTools section for deterministic validation
+  - Added Recipes section for workflow composition
+  - Added PowerTrioMapping for PT schema integration
+  - Added Value Equation integration points (for offer/sales skills)
+  - Added Awareness Framework integration (for copy skills)
+  - Added Belief Ladder integration (for persuasion skills)
+  - Enhanced GoldenRuns with scenarios and expected outputs
+  - QAGates by domain pattern
+  
+  USAGE:
+  Replace ALL [BRACKETED_VALUES] with actual content.
+  Delete sections marked (optional) if not needed.
+  Follow token budgets strictly.
+-->
+
+<Skill
+  skill_id="skill.[domain].[name].v[X_Y_Z]"
+  name="[Skill Name]"
+  version="[X.Y.Z]"
+  tier="[production|meta|experimental]"
+  status="[active|draft|deprecated]"
+  model="sonnet"
+>
+
+  <!-- ================================================================== -->
+  <!-- METADATA & PROVENANCE                                               -->
+  <!-- ================================================================== -->
+  
+  <Meta>
+    <n>[Skill Name]</n>
+    <Subtitle>[The Nickname / Tagline]</Subtitle>
+    <Description>[One sentence: what this skill does]</Description>
+    <Owner>[Owner agent or team]</Owner>
+    <CreatedBy agent_or_human="[agent|human]" agent_id="[skill_builder|human_name]"/>
+    <DateCreated>[YYYY-MM-DD]</DateCreated>
+    <LastUpdated>[YYYY-MM-DD]</LastUpdated>
+    <Tier>[production|meta|experimental]</Tier>
+    <Status>[active|draft|deprecated]</Status>
+    
+    <!-- Power Trio Mapping (if applicable) -->
+    <PowerTrioMapping>
+      <Domain>[Meta|LeadGenFunnels|QuizFunnels|ColdOutreach]</Domain>
+      <SkillCard id="PT-XXX">[Card Name]</SkillCard>
+    </PowerTrioMapping>
+    
+    <Tags>
+      <Tag>[tag1]</Tag>
+      <Tag>[tag2]</Tag>
+    </Tags>
+    
+    <ConstitutionalCompliance>
+      <Version>ULTRAMIND v2.0</Version>
+      <VerifiedDate>[YYYY-MM-DD]</VerifiedDate>
+      <Compliant>true</Compliant>
+    </ConstitutionalCompliance>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- PURPOSE & IDENTITY                                                  -->
+  <!-- ================================================================== -->
+  
+  <Purpose>
+    <PrimeDirective>[Core purpose in 1-2 sentences]</PrimeDirective>
+    
+    <!-- Optional: Value Equation Integration (for offer/sales skills) -->
+    <ValueEquationFocus>
+      <DreamOutcome>[How this skill maximizes dream outcome]</DreamOutcome>
+      <PerceivedLikelihood>[How this skill increases believability]</PerceivedLikelihood>
+      <TimeDelay>[How this skill minimizes perceived time]</TimeDelay>
+      <EffortSacrifice>[How this skill reduces perceived effort]</EffortSacrifice>
+    </ValueEquationFocus>
+  </Purpose>
+
+  <Identity>
+    <WhoYouAre>[Persona/role statement - who this skill embodies]</WhoYouAre>
+    
+    <NonNegotiables>
+      <Item>[Hard constraint 1]</Item>
+      <Item>[Hard constraint 2]</Item>
+      <Item>[Hard constraint 3]</Item>
+    </NonNegotiables>
+    
+    <WhatYouDo>
+      <Item>[Core capability 1]</Item>
+      <Item>[Core capability 2]</Item>
+    </WhatYouDo>
+    
+    <WhatYouDontDo>
+      <Item>[Explicit exclusion 1]</Item>
+      <Item>[Explicit exclusion 2]</Item>
+    </WhatYouDontDo>
+  </Identity>
+
+  <!-- ================================================================== -->
+  <!-- SCOPE                                                               -->
+  <!-- ================================================================== -->
+  
+  <Scope>
+    <WhenToUse>
+      <Trigger>[Scenario/phrase that triggers this skill]</Trigger>
+      <Trigger>[Another trigger]</Trigger>
+    </WhenToUse>
+    
+    <NotFor>
+      <Item>[This skill is NOT for...]</Item>
+      <Item>[This skill does NOT...]</Item>
+    </NotFor>
+  </Scope>
+
+  <!-- ================================================================== -->
+  <!-- SSOT REQUIREMENTS                                                   -->
+  <!-- ================================================================== -->
+  
+  <SSOT>
+    <Required>
+      <Object schema_id="PROJECT_BRIEF_v2.xml">[What this provides]</Object>
+      <!-- Add more required SSOT objects -->
+    </Required>
+    
+    <HighlyRecommended>
+      <Object schema_id="[SCHEMA_ID]">[What this provides]</Object>
+    </HighlyRecommended>
+    
+    <Optional>
+      <Object schema_id="[SCHEMA_ID]">[What this provides]</Object>
+    </Optional>
+    
+    <Outputs>
+      <Output id="[output_id]" format="[markdown|yaml|xml]">[Description]</Output>
+    </Outputs>
+  </SSOT>
+
+  <!-- ================================================================== -->
+  <!-- CONTRACT (I/O SPECIFICATION)                                        -->
+  <!-- ================================================================== -->
+  
+  <Contract>
+    <InputsRequired>
+      <Input name="[INPUT_NAME]" ssot="[true|false]">
+        <Notes>[What this input provides]</Notes>
+      </Input>
+    </InputsRequired>
+
+    <InputsOptional>
+      <Input name="[INPUT_NAME]" ssot="[true|false]">
+        <Notes>[What this input provides; behavior if missing]</Notes>
+      </Input>
+    </InputsOptional>
+
+    <OutputsPrimary>
+      <Output id="[output_id]" format="[markdown|yaml|xml]">
+        [What this output contains]
+      </Output>
+    </OutputsPrimary>
+
+    <OutputsSecondary>
+      <Output id="[output_id]" format="[markdown|yaml|xml]">
+        [Supporting output description]
+      </Output>
+    </OutputsSecondary>
+  </Contract>
+
+  <!-- ================================================================== -->
+  <!-- DEPENDENCIES                                                        -->
+  <!-- ================================================================== -->
+  
+  <Dependencies>
+    <UpstreamDependencies>
+      <Skill priority="[critical|high|medium]">[skill_id (what it provides)]</Skill>
+    </UpstreamDependencies>
+
+    <DownstreamConsumers>
+      <Skill>[skill_id]</Skill>
+    </DownstreamConsumers>
+  </Dependencies>
+
+  <!-- ================================================================== -->
+  <!-- GUARDRAILS                                                          -->
+  <!-- ================================================================== -->
+  
+  <Guardrails>
+    <Guardrail priority="critical">
+      <Rule>[rule_name]</Rule>
+      <Description>[What this prevents/enforces]</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>[rule_name]</Rule>
+      <Description>[What this prevents/enforces]</Description>
+    </Guardrail>
+  </Guardrails>
+
+  <!-- ================================================================== -->
+  <!-- PROGRESSIVE DISCLOSURE                                              -->
+  <!-- ================================================================== -->
+  
+  <ProgressiveDisclosure>
+    
+    <!-- ===== LAYER 1: Quick Reference (≤600 tokens) ===== -->
+    <Layer id="L1" name="Quick Reference" token_budget="600">
+      <LoadPriority>always</LoadPriority>
+      <Purpose>Instant access for 80% of tasks</Purpose>
+      
+      <CorePurpose>
+        [One sentence: what this skill does]
+      </CorePurpose>
+      
+      <WhenToUse>
+        <![CDATA[
+[Quick reference for when to use this skill]
+        ]]>
+      </WhenToUse>
+      
+      <FastDecisionTree>
+        <![CDATA[
+[Key IF/THEN decisions for fast routing]
+        ]]>
+      </FastDecisionTree>
+      
+      <RequiredOutputs>
+        <![CDATA[
+[What this skill must produce]
+        ]]>
+      </RequiredOutputs>
+      
+      <SuccessMetrics>
+        <![CDATA[
+[How to know if output is good]
+        ]]>
+      </SuccessMetrics>
+    </Layer>
+    
+    <!-- ===== LAYER 2: Core Procedure (≤4000 tokens) ===== -->
+    <Layer id="L2" name="Core Procedure" token_budget="4000">
+      <LoadPriority>when_executing</LoadPriority>
+      <Purpose>Complete step-by-step operating instructions</Purpose>
+      
+      <!-- Frameworks (Optional - choose what's relevant) -->
+      
+      <!-- Value Equation Framework (for offer/sales skills) -->
+      <ValueEquationFramework>
+        <![CDATA[
+VALUE = (Dream Outcome × Perceived Likelihood) / (Time Delay × Effort/Sacrifice)
+
+MAXIMIZE:
+- Dream Outcome: [How to maximize]
+- Perceived Likelihood: [How to maximize]
+
+MINIMIZE:
+- Time Delay: [How to minimize]
+- Effort/Sacrifice: [How to minimize]
+        ]]>
+      </ValueEquationFramework>
+      
+      <!-- Awareness Framework (for copy skills) -->
+      <AwarenessFramework>
+        <![CDATA[
+5 AWARENESS STAGES:
+Unaware → Problem-Aware → Solution-Aware → Product-Aware → Most-Aware
+
+[How this skill handles each stage]
+        ]]>
+      </AwarenessFramework>
+      
+      <!-- Belief Ladder (for persuasion skills) -->
+      <BeliefLadder>
+        <![CDATA[
+BELIEF SHIFT:
+Old Belief → Tension → New Belief → Proof → Action
+
+[How this skill engineers belief shifts]
+        ]]>
+      </BeliefLadder>
+      
+      <!-- Core Procedure Steps -->
+      <Step order="1" name="[Step Name]">
+        <Purpose>[Why this step exists]</Purpose>
+        <Actions>
+          <Action>[Action 1]</Action>
+          <Action>[Action 2]</Action>
+        </Actions>
+        <Validation>
+          <Check>[What to verify]</Check>
+        </Validation>
+        <Output>[What this step produces]</Output>
+      </Step>
+      
+      <!-- Add more steps as needed (typically 4-8 steps) -->
+      
+      <!-- Decision Heuristics -->
+      <DecisionHeuristics>
+        <Heuristic>
+          <If>[condition]</If>
+          <Then>[action]</Then>
+        </Heuristic>
+        <!-- Add 5-10 IF/THEN rules -->
+      </DecisionHeuristics>
+      
+      <!-- Quality Standards -->
+      <QualityStandards>
+        <Standard>[Quality requirement 1]</Standard>
+        <Standard>[Quality requirement 2]</Standard>
+      </QualityStandards>
+    </Layer>
+    
+    <!-- ===== LAYER 3: Advanced Usage (≤3000 tokens) ===== -->
+    <Layer id="L3" name="Advanced Usage" token_budget="3000">
+      <LoadPriority>when_complexity_high</LoadPriority>
+      <Purpose>Edge cases, failure modes, optimization patterns</Purpose>
+      
+      <!-- Edge Cases -->
+      <EdgeCases>
+        <Case name="[Edge Case Name]">
+          <Trigger>[When this happens]</Trigger>
+          <Approach>[How to handle]</Approach>
+        </Case>
+      </EdgeCases>
+      
+      <!-- Failure Mode Playbook -->
+      <FailureModePlaybook>
+        <FM id="FM1">
+          <n>[Failure Name]</n>
+          <Detection>[How to spot it]</Detection>
+          <Recovery>[How to fix]</Recovery>
+          <Prevention>[How to avoid]</Prevention>
+        </FM>
+        <!-- Add 3-5 failure modes -->
+      </FailureModePlaybook>
+      
+      <!-- Anti-Patterns -->
+      <AntiPatterns>
+        <Pattern name="[Anti-Pattern Name]">
+          <Detection>[How to spot]</Detection>
+          <Fix>[How to correct]</Fix>
+        </Pattern>
+      </AntiPatterns>
+      
+      <!-- Optimization Patterns -->
+      <OptimizationPatterns>
+        <Pattern name="[Pattern Name]">
+          <Description>[What this optimizes]</Description>
+          <Implementation>[How to apply]</Implementation>
+        </Pattern>
+      </OptimizationPatterns>
+    </Layer>
+    
+    <!-- ===== LAYER 4: Output Templates (≤2000 tokens) ===== -->
+    <Layer id="L4" name="Output Templates" token_budget="2000">
+      <LoadPriority>when_generating_deliverables</LoadPriority>
+      <Purpose>Formal output specifications and templates</Purpose>
+      
+      <!-- Primary Output Template -->
+      <OutputTemplate name="[Primary Output]">
+        <![CDATA[
+# [OUTPUT TITLE]
+
+## Section 1
+[Template content]
+
+## Section 2
+[Template content]
+        ]]>
+      </OutputTemplate>
+      
+      <!-- Schema Specifications -->
+      <SchemaSpec name="[Schema Name]">
+        <Format>[markdown|yaml|xml]</Format>
+        <Structure>[Structure description]</Structure>
+        <RequiredFields>
+          <Field>[field_name]</Field>
+        </RequiredFields>
+      </SchemaSpec>
+    </Layer>
+    
+  </ProgressiveDisclosure>
+
+  <!-- ================================================================== -->
+  <!-- PYTHON TOOLS (Deterministic Validation)                             -->
+  <!-- ================================================================== -->
+  
+  <PythonTools>
+    <Tool name="validate_[what]" execution_time="[X]ms">
+      <Purpose>[What this validates]</Purpose>
+      <Code><![CDATA[
+def validate_[what](input: [type]) -> dict:
+    """[Docstring explaining the validation]"""
+    issues = []
+    
+    # Validation logic
+    if [condition]:
+        issues.append("[issue description]")
+    
+    return {
+        "passed": len(issues) == 0,
+        "[metric]": [value],
+        "issues": issues
+    }
+      ]]></Code>
+    </Tool>
+    
+    <!-- Add more validation tools as needed -->
+  </PythonTools>
+
+  <!-- ================================================================== -->
+  <!-- MMA INTEGRATION (Quality Validation)                                -->
+  <!-- ================================================================== -->
+  
+  <MMAIntegration>
+    <QualityDimensions>
+      <Dimension name="[dimension_name]" weight="[critical|high|medium]">
+        <Threshold>[X.X]</Threshold>
+        <Validation>[What to check]</Validation>
+      </Dimension>
+      <!-- Add 4-7 dimensions -->
+    </QualityDimensions>
+
+    <HardGates>
+      <Gate severity="critical">[gate_name]</Gate>
+      <Gate severity="high">[gate_name]</Gate>
+    </HardGates>
+
+    <FixRouting>
+      <Route condition="[dimension] < [threshold]">
+        <To>[skill_to_route_to]</To>
+      </Route>
+    </FixRouting>
+  </MMAIntegration>
+
+  <!-- ================================================================== -->
+  <!-- QA GATES (Domain-Specific)                                          -->
+  <!-- ================================================================== -->
+  
+  <QAGates>
+    <Gate domain="[Domain Name]">
+      <Item>[Quality check 1]</Item>
+      <Item>[Quality check 2]</Item>
+    </Gate>
+  </QAGates>
+
+  <!-- ================================================================== -->
+  <!-- GOLDEN RUNS (Test Cases)                                            -->
+  <!-- ================================================================== -->
+  
+  <GoldenRuns>
+    <GoldenRun id="GR1" name="[Descriptive Name]">
+      <Scenario>
+        [Detailed description of the test scenario]
+      </Scenario>
+      <Inputs>
+        <Input>[Input description]</Input>
+      </Inputs>
+      <ExpectedOutputs>
+        <o>[Expected output 1]</o>
+        <o>[Expected output 2]</o>
+      </ExpectedOutputs>
+      <MMAExpectations>
+        <Dimension name="[dimension]">≥[threshold]</Dimension>
+      </MMAExpectations>
+    </GoldenRun>
+    
+    <!-- Add 1-3 golden runs -->
+  </GoldenRuns>
+
+  <!-- ================================================================== -->
+  <!-- RECIPES (Workflow Compositions)                                     -->
+  <!-- ================================================================== -->
+  
+  <Recipes>
+    <Recipe name="[Workflow Name]">
+      <When>[Scenario that triggers this workflow]</When>
+      <RunOrder>[skill-1], [skill-2], [skill-3]</RunOrder>
+      <OptionalAdditions>[optional-skill-1], [optional-skill-2]</OptionalAdditions>
+    </Recipe>
+  </Recipes>
+
+  <!-- ================================================================== -->
+  <!-- VERSION HISTORY                                                     -->
+  <!-- ================================================================== -->
+  
+  <VersionHistory>
+    <Version number="[X.Y.Z]" date="[YYYY-MM-DD]" status="[active|draft]">
+      <Changes>
+        <Change>[Change description]</Change>
+      </Changes>
+    </Version>
+  </VersionHistory>
+
+</Skill>

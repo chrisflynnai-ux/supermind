@@ -1,0 +1,16 @@
+﻿family: docs_triage
+version: 4.0.0
+status: active
+discard_notices:
+  - notice_id: DISCARD_NOTICE_build_summary_2026-03-04_superseded_by_v2
+    target_path: C:/Users/cfar7/OneDrive/Desktop/ULTRAMIND/BUILD_SUMMARY_2026-03-04.md
+    status: historical_only
+  - notice_id: DISCARD_NOTICE_ultramind_knowledge_engine_v1_superseded_by_cosms_v2
+    target_path: C:/Users/cfar7/OneDrive/Desktop/ULTRAMIND/.agents/skills/systems/ULTRAMIND_KNOWLEDGE_ENGINE.md
+    status: superseded_concept_source
+  - notice_id: DISCARD_NOTICE_architecture_phase0_not_built_claims_stale
+    target_path: C:/Users/cfar7/OneDrive/Desktop/ULTRAMIND/ARCHITECTURE_BRIEFING_2026-03-04.md
+    status: stale_section_only
+  - notice_id: DISCARD_NOTICE_skill_template_v2_historical_only
+    target_path: C:/Users/cfar7/OneDrive/Desktop/ULTRAMIND/SUPERMIND ACCESS DOCS/SKILL_TEMPLATE_V2.xml
+    status: historical_only

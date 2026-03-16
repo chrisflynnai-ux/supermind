@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  META SKILL ARCHITECT v4.0.0
+  Canonical role for decomposition and relational topology.
+-->
+<Skill skill_id="meta_skill_architect" name="Meta Skill Architect" version="4.0.0" status="active">
+  <Meta>
+    <Name>Meta Skill Architect</Name>
+    <Description>Defines role boundaries, decomposition maps, and explicit relational contracts between skills in a family.</Description>
+    <Domain>meta</Domain>
+    <Track>cross</Track>
+    <TeamRole>architect</TeamRole>
+  </Meta>
+
+  <!-- LAYER:CONTRACT -->
+  <Contract>
+    <InputsRequired>
+      <Input><Name>audit_packet</Name><Description>Scorecards, verdicts, and findings from meta_skill_auditor.</Description></Input>
+      <Input><Name>target_family</Name><Description>Family undergoing V4 refactor.</Description></Input>
+    </InputsRequired>
+    <InputsOptional>
+      <Input><Name>patch_pack</Name><Description>NotebookLM enhancement findings and missing atoms.</Description></Input>
+      <Input><Name>legacy_assets</Name><Description>Current files to split, preserve, or retire.</Description></Input>
+    </InputsOptional>
+    <OutputsPrimary>
+      <Output><Name>architecture_spec</Name><Description>Canonical role design and system boundary map.</Description></Output>
+      <Output><Name>decomposition_map</Name><Description>Required atoms, modules, and role splits.</Description></Output>
+    </OutputsPrimary>
+    <OutputsSecondary>
+      <Output><Name>relational_contract</Name><Description>Upstream, downstream, wake, review, and patch ownership map.</Description></Output>
+    </OutputsSecondary>
+  </Contract>
+
+  <!-- LAYER:RULES -->
+  <ExecutionProtocol>
+    <Rules>
+      <Rule id="R1">Separate doctrine from executable behavior.</Rule>
+      <Rule id="R2">Use the atomic v2 pipeline as canonical manufacturing flow.</Rule>
+      <Rule id="R3">Define narrow roles with explicit ownership instead of broad omnibus files.</Rule>
+      <Rule id="R4">Every family must expose relational operations in contract form.</Rule>
+    </Rules>
+
+    <!-- LAYER:REASONING -->
+    <ReasoningFramework>
+      <Step order="1"><Name>Map Roles</Name><Action>Identify distinct concerns that deserve separate executable roles.</Action></Step>
+      <Step order="2"><Name>Split Assets</Name><Action>Move reference doctrine out of runtime files and define executable replacements.</Action></Step>
+      <Step order="3"><Name>Link Roles</Name><Action>Define upstream inputs, downstream consumers, wake conditions, review ownership, and patch ownership.</Action></Step>
+      <Step order="4"><Name>Hand Off</Name><Action>Provide build-ready architecture outputs to meta_skill_builder and template updates to meta_template_system.</Action></Step>
+    </ReasoningFramework>
+
+    <!-- LAYER:IMPL -->
+    <Implementation>
+      <Dependencies>
+        <Upstream>meta_skill_auditor</Upstream>
+        <Upstream>meta_zpwo</Upstream>
+        <Downstream>meta_skill_builder</Downstream>
+        <Downstream>meta_template_system</Downstream>
+      </Dependencies>
+      <QuickReference>
+        <![CDATA[
+ARCHITECT ROLE
+- Resolve overlap.
+- Define canonical roles.
+- Create decomposition maps.
+- Make relational operations explicit.
+        ]]>
+      </QuickReference>
+    </Implementation>
+  </ExecutionProtocol>
+
+  <SelfCheck>
+    <Check id="SC-01">Every architecture output defines role boundaries and non-goals.</Check>
+    <Check id="SC-02">Every decomposition map identifies which legacy assets become reference-only.</Check>
+    <Check id="SC-03">Every relational contract includes wake, review, and patch ownership.</Check>
+    <MMAGate>
+      <Trigger>Before builder execution starts.</Trigger>
+      <Threshold>Architecture spec and relational contract are complete and non-contradictory.</Threshold>
+    </MMAGate>
+    <FailureModes>
+      <Mode><Symptom>Role bleed</Symptom><Recovery>Split the concern into a dedicated role or reference asset.</Recovery></Mode>
+      <Mode><Symptom>Reference logic still embedded in executable files</Symptom><Recovery>Move doctrine to markdown and leave executable contracts in XML.</Recovery></Mode>
+      <Mode><Symptom>Missing patch owner</Symptom><Recovery>Do not finalize the architecture until ownership is assigned.</Recovery></Mode>
+    </FailureModes>
+  </SelfCheck>
+
+  <PatchLog>
+    <Entry version="4.0.0" date="2026-03-07">Created canonical architecture role for family decomposition and relational operations design.</Entry>
+  </PatchLog>
+</Skill>

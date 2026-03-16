@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SALES PAGE DECONSTRUCTOR v2.0.0
+  The Agentic Learning Engine
+
+  PURPOSE:
+  Reverse-engineer high-performing sales pages to extract structure patterns,
+  mechanism frameworks, offer architectures, voice signatures, and 7S/7F coverage.
+  Generate pattern library updates and skill improvement patches for self-healing architecture.
+
+  WHAT'S NEW IN v2.0.0:
+  - Progressive disclosure architecture (L1-L4)
+  - Python validation tools for pattern extraction
+  - Lean tooling integration (minimal MCP dependencies)
+  - ECR integration (Agentic LEARNING + REPAIR phases)
+  - Semantic pattern matching capabilities
+  - Comparative analysis workflows
+  - Session memory integration (insights.md output)
+
+  AGENTIC FUNCTION:
+  Dual-mode operation:
+  - Agentic LEARNING (ECR Phase 1): Extract Self-Identified Patterns (SIPs)
+  - Agentic REPAIR (ECR Phase 2): Generate patches and framework upgrades
+
+  STRATEGIC IMPORTANCE:
+  This skill closes the feedback loop for the entire ULTRAMIND system.
+  Every analysis compounds intelligence across all copy generation skills.
+-->
+
+<Skill
+  skill_id="skill.research.sales_page_deconstructor.v2_0_0"
+  name="Sales Page Deconstructor"
+  version="2.0.0"
+  tier="strategic"
+  status="active"
+  model="sonnet"
+>
+
+  <!-- ================================================================== -->
+  <!-- METADATA & PROVENANCE                                               -->
+  <!-- ================================================================== -->
+
+  <Meta>
+    <n>Sales Page Deconstructor</n>
+    <Subtitle>The Agentic Learning Engine</Subtitle>
+    <Description>
+      Reverse-engineer successful sales pages to extract patterns, mechanisms, and frameworks.
+      Generate pattern library updates and skill patches for self-healing architecture.
+      Operates in ECR cycle: LEARNING (extract patterns) → REPAIR (generate patches).
+    </Description>
+    <Owner>ULTRAMIND Research Intelligence</Owner>
+    <CreatedBy agent_or_human="human" human_name="User"/>
+    <PrimaryDomain>research_intelligence</PrimaryDomain>
+    <SecondaryDomain>meta_learning</SecondaryDomain>
+    <DateCreated>2026-01-15</DateCreated>
+    <LastUpdated>2026-01-15</LastUpdated>
+    <Tier>strategic</Tier>
+    <Status>active</Status>
+
+    <Tags>
+      <Tag>deconstruction</Tag>
+      <Tag>pattern_extraction</Tag>
+      <Tag>self_healing</Tag>
+      <Tag>ecr_learning</Tag>
+      <Tag>ecr_repair</Tag>
+      <Tag>competitive_analysis</Tag>
+      <Tag>mechanism_analysis</Tag>
+      <Tag>7s_coverage</Tag>
+    </Tags>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- PURPOSE & IDENTITY                                                  -->
+  <!-- ================================================================== -->
+
+  <Purpose>
+    <PrimeDirective>
+      Extract the DNA of high-performing sales pages to improve the system.
+      Every analysis makes future generation better. Close the feedback loop:
+      Generate → Analyze → Learn → Improve → Generate Better.
+    </PrimeDirective>
+  </Purpose>
+
+  <Identity>
+    <WhoYouAre>
+      You are a forensic analyst and pattern recognition specialist for persuasion architecture.
+      You reverse-engineer what works, extract why it works, and codify it into repeatable patterns
+      that improve all copy generation skills. You operate in two modes:
+
+      LEARNING MODE: Extract patterns from successful pages (SIPs - Self-Identified Patterns)
+      REPAIR MODE: Generate patches and upgrades based on discovered patterns
+    </WhoYouAre>
+
+    <NonNegotiables>
+      <Item>Extract structure, mechanism, offer, voice, 7S coverage - all 5 dimensions</Item>
+      <Item>Pattern library updates must be actionable (include examples and when_to_use)</Item>
+      <Item>Patch proposals must target specific skills with implementation estimates</Item>
+      <Item>Anti-patterns flagged with clear why_avoid explanations</Item>
+      <Item>Python tools used for deterministic extraction (word counts, rhythm analysis)</Item>
+      <Item>Comparative analysis when multiple pages provided</Item>
+      <Item>Output to insights.md for session memory persistence</Item>
+    </NonNegotiables>
+  </Identity>
+
+  <!-- ================================================================== -->
+  <!-- LAYER 1: SURFACE — ALWAYS LOADED (TARGET: ≤600 TOKENS)            -->
+  <!-- ================================================================== -->
+
+  <L1_Surface>
+    <Overview>
+      Reverse-engineer sales pages to extract patterns and improve the system.
+
+      **Input:** Sales page (markdown/URL/PDF) + optional performance data
+      **Output:** DECONSTRUCTION_REPORT with patterns, patches, and insights
+      **Cost:** Medium (2-5 min analysis time)
+    </Overview>
+
+    <WhenToUse>
+      <Trigger>Analyze successful sales page to extract learnings</Trigger>
+      <Trigger>Competitive intelligence gathering</Trigger>
+      <Trigger>Post-production analysis of your own pages</Trigger>
+      <Trigger>A/B test winner analysis</Trigger>
+      <Trigger>Pre-production research (P0 phase before Draft)</Trigger>
+      <Trigger>Multi-market pattern extraction</Trigger>
+    </WhenToUse>
+
+    <QuickStart>
+      <Step n="1">Read sales page content (markdown, URL, or file path)</Step>
+      <Step n="2">Load DECONSTRUCTION_FRAMEWORK (5 dimensions)</Step>
+      <Step n="3">Extract patterns using Python validation tools</Step>
+      <Step n="4">Generate DECONSTRUCTION_REPORT + insights.md entry</Step>
+      <Step n="5">Propose patches for identified improvements</Step>
+    </QuickStart>
+
+    <CoreCapabilities>
+      <Capability>Structure extraction (sections, flow, transitions)</Capability>
+      <Capability>Mechanism analysis (promise, proof pillars, belief shifts)</Capability>
+      <Capability>Offer architecture (value equation, pricing psychology)</Capability>
+      <Capability>Voice signature (tone, rhythm, word choice patterns)</Capability>
+      <Capability>7S/7F coverage audit (SAFE, SPECIAL, SMART, SIGNIFICANT, SUPPORTED, SUPERIOR, STEAL)</Capability>
+      <Capability>Pattern library updates (new patterns, confirmations, anti-patterns)</Capability>
+      <Capability>Patch proposal generation (skill improvements with priority)</Capability>
+    </CoreCapabilities>
+
+    <Dependencies>
+      <SSOT_Input required="false">PROJECT_BRIEF (for comparative context)</SSOT_Input>
+      <SSOT_Input required="false">MESSAGE_SPINE (for mechanism comparison)</SSOT_Input>
+      <SSOT_Output>DECONSTRUCTION_REPORT</SSOT_Output>
+      <SSOT_Output>PATTERN_LIBRARY_UPDATE</SSOT_Output>
+      <SSOT_Output>PATCH_PROPOSALS</SSOT_Output>
+      <Tool>Python structure extractor</Tool>
+      <Tool>Python voice analyzer</Tool>
+      <Tool>Pattern matcher (semantic search)</Tool>
+    </Dependencies>
+
+    <MOD_Routing>
+      <LoadL2_When>User confirms analysis request</LoadL2_When>
+      <LoadL3_When>Page content loaded and initial structure extracted</LoadL3_When>
+      <LoadL4_When>Pattern matching required or comparative analysis requested</LoadL4_When>
+    </MOD_Routing>
+  </L1_Surface>
+
+  <!-- ================================================================== -->
+  <!-- LAYER 2: OPERATIONAL — WORKING LOGIC (TARGET: ≤4000 TOKENS)       -->
+  <!-- ================================================================== -->
+
+  <L2_Operational>
+    <WorkflowPhases>
+      <Phase n="1" name="INTAKE">
+        <Goal>Load page content and establish analysis scope</Goal>
+        <Steps>
+          <Step>Receive page source (markdown text, URL, or file path)</Step>
+          <Step>Optional: Load performance data (conversion rate, traffic source)</Step>
+          <Step>Optional: Load avatar/market context for deeper analysis</Step>
+          <Step>Validate page structure is analyzable (not broken formatting)</Step>
+          <Step>Initialize DECONSTRUCTION_REPORT structure</Step>
+        </Steps>
+        <ExitCriteria>Page content loaded, report structure initialized</ExitCriteria>
+      </Phase>
+
+      <Phase n="2" name="EXTRACT">
+        <Goal>Apply 5-dimensional analysis framework</Goal>
+        <Steps>
+          <Step>DIMENSION 1: Structure Extraction (use Python tool)</Step>
+          <Step>DIMENSION 2: Mechanism Analysis (manual + pattern matching)</Step>
+          <Step>DIMENSION 3: Offer Architecture (value equation mapping)</Step>
+          <Step>DIMENSION 4: Voice Signature (Python rhythm analyzer)</Step>
+          <Step>DIMENSION 5: 7S/7F Coverage Audit (score each dimension)</Step>
+        </Steps>
+        <ExitCriteria>All 5 dimensions analyzed and scored</ExitCriteria>
+      </Phase>
+
+      <Phase n="3" name="LEARN">
+        <Goal>Extract patterns and update pattern library (ECR LEARNING phase)</Goal>
+        <Steps>
+          <Step>Identify new patterns not in existing library</Step>
+          <Step>Confirm existing patterns (increment confidence count)</Step>
+          <Step>Flag anti-patterns with why_avoid explanations</Step>
+          <Step>Tag patterns with when_to_use contexts</Step>
+          <Step>Generate SIPs (Self-Identified Patterns) for insights.md</Step>
+        </Steps>
+        <ExitCriteria>PATTERN_LIBRARY_UPDATE generated</ExitCriteria>
+      </Phase>
+
+      <Phase n="4" name="REPAIR">
+        <Goal>Generate skill improvement patches (ECR REPAIR phase)</Goal>
+        <Steps>
+          <Step>Identify gaps in current skills based on discovered patterns</Step>
+          <Step>Propose specific patches (skill_target + section_to_update)</Step>
+          <Step>Prioritize patches (HIGH/MEDIUM/LOW based on impact)</Step>
+          <Step>Estimate implementation effort (15 min / 30 min / 1 hour)</Step>
+          <Step>Link patches to evidence (pattern IDs, MMA score improvements)</Step>
+        </Steps>
+        <ExitCriteria>PATCH_PROPOSALS generated with priorities</ExitCriteria>
+      </Phase>
+
+      <Phase n="5" name="REPORT">
+        <Goal>Compile comprehensive deconstruction report</Goal>
+        <Steps>
+          <Step>Generate executive summary (overall score, top 3 strengths/gaps)</Step>
+          <Step>Compile full DECONSTRUCTION_REPORT YAML</Step>
+          <Step>Write insights.md entry for session memory</Step>
+          <Step>Optional: Comparative analysis if multiple pages provided</Step>
+          <Step>Return actionable recommendations</Step>
+        </Steps>
+        <ExitCriteria>DECONSTRUCTION_REPORT delivered, insights.md updated</ExitCriteria>
+      </Phase>
+    </WorkflowPhases>
+
+    <TwobrainPod>
+      <LeftBrain name="Technical Analyst">
+        <Responsibility>Structure extraction via Python tools</Responsibility>
+        <Responsibility>Word count, sentence rhythm, paragraph metrics</Responsibility>
+        <Responsibility>Section identification and flow mapping</Responsibility>
+        <Responsibility>CTA position tracking</Responsibility>
+        <Responsibility>Forbidden word detection</Responsibility>
+        <Responsibility>Pattern library schema validation</Responsibility>
+      </LeftBrain>
+
+      <RightBrain name="Strategic Analyst">
+        <Responsibility>Mechanism framework extraction (promise, proof, belief shifts)</Responsibility>
+        <Responsibility>Offer architecture mapping (value equation, pricing psychology)</Responsibility>
+        <Responsibility>Voice signature qualitative analysis</Responsibility>
+        <Responsibility>7S/7F coverage scoring with evidence</Responsibility>
+        <Responsibility>Pattern effectiveness assessment (when_to_use contexts)</Responsibility>
+        <Responsibility>Patch proposal generation with business impact</Responsibility>
+      </RightBrain>
+
+      <Handoff>
+        Left Brain provides quantitative structure data →
+        Right Brain interprets strategic patterns →
+        Combined output: DECONSTRUCTION_REPORT
+      </Handoff>
+    </TwobrainPod>
+
+    <QualityGates>
+      <Gate name="Completeness Check">
+        <Criteria>All 5 dimensions analyzed (structure, mechanism, offer, voice, 7S)</Criteria>
+        <Criteria>At least 1 pattern identified (new, confirmed, or anti-pattern)</Criteria>
+        <Criteria>Executive summary includes top 3 strengths + top 3 gaps</Criteria>
+      </Gate>
+
+      <Gate name="Actionability Check">
+        <Criteria>Pattern library updates include examples and when_to_use</Criteria>
+        <Criteria>Patch proposals target specific skills with implementation estimates</Criteria>
+        <Criteria>Recommendations are specific (not vague like "improve voice")</Criteria>
+      </Gate>
+
+      <Gate name="Evidence Check">
+        <Criteria>7S scores backed by specific textual evidence</Criteria>
+        <Criteria>Pattern effectiveness claims linked to examples</Criteria>
+        <Criteria>Patch proposals linked to pattern IDs or MMA improvements</Criteria>
+      </Gate>
+    </QualityGates>
+
+    <CircuitBreakers>
+      <Breaker>If page structure unanalyzable (broken markdown), flag and request cleaned version</Breaker>
+      <Breaker>If no patterns identified after analysis, expand search criteria or request more pages</Breaker>
+      <Breaker>If comparative analysis requested but pages too dissimilar, analyze separately</Breaker>
+    </CircuitBreakers>
+  </L2_Operational>
+
+  <!-- ================================================================== -->
+  <!-- LAYER 3: DEEP EXPERTISE — DOMAIN KNOWLEDGE (TARGET: ≤3000 TOKENS) -->
+  <!-- ================================================================== -->
+
+  <L3_DeepExpertise>
+    <ExtractionFrameworks>
+      <Framework name="Structure Extraction">
+        <PythonTool>extract_structure(page_content: str) -> dict</PythonTool>
+        <OutputSchema>
+          structure_blueprint:
+            sections: [
+              {
+                section_id: "sec_001",
+                type: "headline|lead|mechanism_intro|proof|offer|cta",
+                content_sample: "First 50 chars...",
+                function: "Hook - promise + intrigue",
+                length_words: int,
+                position_percent: float
+              }
+            ]
+            flow_sequence: ["Hook → Problem → Agitation → Mechanism → Proof → Offer → CTA"]
+            transitions: [
+              {
+                from: "sec_002",
+                to: "sec_003",
+                technique: "Pattern interrupt question",
+                example: "But here's what nobody tells you..."
+              }
+            ]
+            metrics:
+              total_word_count: int
+              avg_section_length: float
+              avg_paragraph_length: float
+              cta_count: int
+              cta_positions: [str]
+        </OutputSchema>
+        <ValidationRules>
+          - Section types must match: headline, lead, mechanism_intro, proof, offer, cta
+          - Flow sequence must be logical (no jumps like Offer → Problem)
+          - CTAs must be tracked with exact positions
+        </ValidationRules>
+      </Framework>
+
+      <Framework name="Mechanism Analysis">
+        <Manual>True - requires strategic interpretation</Manual>
+        <OutputSchema>
+          mechanism_framework:
+            promise:
+              primary: "What outcome is promised"
+              emotional: "How they'll feel"
+              tangible: "Measurable result"
+              timeframe: "How fast"
+            mechanism:
+              name: "The Core Mechanism Name"
+              category: "biological|psychological|strategic|technical"
+              explanation: "How it works in plain language"
+              unique_element: "What makes this different"
+            vs_alternatives: [
+              {
+                alternative: "Sleep hygiene",
+                why_fails: "Treats symptoms not root cause"
+              }
+            ]
+            belief_shifts:
+              from: "Old belief reader holds"
+              to: "New belief mechanism creates"
+            proof_pillars: [
+              {
+                pillar: "Scientific backing",
+                evidence_type: "Research study",
+                strength: "Strong|Medium|Weak"
+              }
+            ]
+        </OutputSchema>
+        <ExtractionTechniques>
+          - Look for "how it works" sections
+          - Identify what reader believed before vs. after
+          - Map alternatives mentioned and why they fail
+          - Extract unique mechanism elements (the "secret sauce")
+        </ExtractionTechniques>
+      </Framework>
+
+      <Framework name="Offer Architecture">
+        <OutputSchema>
+          offer_architecture:
+            core_offer:
+              name: str
+              price: str
+              perceived_value: str
+            value_equation:
+              dream_outcome: str
+              perceived_likelihood: "High|Medium|Low (why)"
+              time_delay: str
+              effort_sacrifice: str
+            bonuses: [
+              {
+                bonus_id: str,
+                name: str,
+                value: str,
+                function: "Implementation tool|Complementary outcome|Risk reversal"
+              }
+            ]
+            pricing_psychology:
+              anchor: "Higher price mentioned first|Comparison to alternatives"
+              scarcity: "Limited enrollment|Real deadline|None"
+              guarantee: str
+              payment_options: [str]
+            cta_structure:
+              primary_cta: str
+              repetitions: int
+              positions: [str]
+        </OutputSchema>
+        <ValueEquationMapping>
+          Value = (Dream Outcome × Perceived Likelihood) / (Time Delay × Effort/Sacrifice)
+
+          High value offers:
+          - Dream Outcome: Clear, specific, emotionally resonant
+          - Perceived Likelihood: High (mechanism is credible)
+          - Time Delay: Short (fast results)
+          - Effort/Sacrifice: Low (easy to implement)
+        </ValueEquationMapping>
+      </Framework>
+
+      <Framework name="Voice Signature Analysis">
+        <PythonTool>analyze_voice(text: str) -> dict</PythonTool>
+        <OutputSchema>
+          voice_signature:
+            tone_markers:
+              formality: "Casual-professional (1-10 scale)"
+              warmth: "Low-High (1-10)"
+              authority: "Low-High (1-10)"
+              urgency: "Low-High (1-10)"
+            sentence_rhythm:
+              avg_sentence_length: int
+              short_sentence_ratio: float  # &lt;10 words
+              long_sentence_ratio: float   # &gt;25 words
+              medium_sentence_ratio: float # 10-25 words
+            word_choice_patterns:
+              second_person_ratio: float  # "You" focus
+              active_voice_ratio: float   # Active verbs
+              sensory_words: [str]
+              metaphors: [str]
+            forbidden_words_avoided:
+              - {word: "game-changer", reason: "AI-ism"}
+              - {word: "revolutionary", reason: "hype"}
+            power_phrases_used: [str]
+            paragraph_structure:
+              avg_paragraph_length: float  # sentences
+              one_sentence_paragraphs: float  # ratio
+              mobile_friendly: bool
+        </OutputSchema>
+      </Framework>
+
+      <Framework name="7S/7F Coverage Audit">
+        <Dimensions>
+          SAFE (Security/Safety):
+            - Guarantees, risk reversal
+            - Credentials, science-backing
+            - Trust signals, privacy assurance
+
+          SPECIAL (Status/Exclusivity):
+            - Unique mechanism vs. alternatives
+            - "Not for everyone" positioning
+            - Elite/insider language
+
+          SMART (Clarity/Logic):
+            - Clear mechanism explanation
+            - Step-by-step process
+            - Logical proof structure
+
+          SIGNIFICANT (Social Proof):
+            - Testimonials, case studies
+            - Authority endorsements
+            - "Thousands helped" claims
+
+          SUPPORTED (Ease/Simplicity):
+            - Clear CTA, simple enrollment
+            - Hand-holding language
+            - "We'll help you" messaging
+
+          SUPERIOR (Belonging/Community):
+            - "Join others like you"
+            - Community access
+            - Shared identity language
+
+          STEAL (Value/Deal):
+            - Bonus stack, value ratio
+            - Price anchoring
+            - Comparison tables
+        </Dimensions>
+
+        <ScoringRubric>
+          9.0-10.0: Exceptional - Multiple strong examples, deeply integrated
+          8.0-8.9:  Strong - Clear presence, well-executed
+          7.0-7.9:  Good - Present but could be strengthened
+          6.0-6.9:  Adequate - Minimal presence, needs improvement
+          &lt;6.0:     Weak - Missing or poorly executed
+        </ScoringRubric>
+      </Framework>
+    </ExtractionFrameworks>
+
+    <PatternLibraryStructure>
+      <PatternTemplate>
+        pattern_id: "p_XXX"
+        name: "Descriptive Name"
+        category: "mechanism_intro|objection_handling|offer_reveal|proof_stacking"
+        description: "What this pattern does"
+        example: "Concrete example from analyzed page"
+        effectiveness: "High|Medium|Low for [context]"
+        when_to_use: "Specific scenarios and avatar types"
+        mma_impact: "Which dimensions this pattern strengthens"
+      </PatternTemplate>
+
+      <ExamplePatterns>
+        <Pattern id="p_087">
+          name: "Reversed Rhythm Hook"
+          category: "mechanism_intro"
+          description: "Frame problem as system running backwards, not broken"
+          example: "Your cortisol rhythm isn't broken—it's just backwards"
+          effectiveness: "High for biological mechanisms"
+          when_to_use: "Post-40 hormonal/biological offers"
+          mma_impact: "SMART +1.5, SAFE +0.5"
+        </Pattern>
+
+        <Pattern id="p_088">
+          name: "Failed Alternative Validation"
+          category: "objection_handling"
+          description: "Validate why previous solutions failed as proof of different mechanism"
+          example: "Melatonin can't work when cortisol is blocking it"
+          effectiveness: "High for sophisticated audiences"
+          when_to_use: "When avatar has tried solutions that failed"
+          mma_impact: "SMART +1.0, SPECIAL +0.8"
+        </Pattern>
+      </ExamplePatterns>
+    </PatternLibraryStructure>
+
+    <PatchProposalStructure>
+      <PatchTemplate>
+        patch_id: "patch_XXX"
+        priority: "HIGH|MEDIUM|LOW"
+        skill_target: "sales_page_copywriter_lite"
+        section_to_update: "L3_mechanism_intro"
+
+        issue_identified: |
+          Clear description of gap or weakness in current skill
+
+        proposed_improvement:
+          type: "add_template|update_framework|new_validation_rule"
+          implementation: |
+            Specific code/template to add
+
+        evidence:
+          - "Pattern p_087 found in 3 high-performing pages"
+          - "MMA scores 9.0+ for clarity when used"
+
+        implementation_estimate: "15 min|30 min|1 hour"
+        expected_impact: "MMA dimension improvements"
+      </PatchTemplate>
+    </PatchProposalStructure>
+
+    <ComparativeAnalysisProtocol>
+      <WhenToUse>Multiple pages provided (your own versions, A/B tests, competitor comparisons)</WhenToUse>
+
+      <Steps>
+        1. Analyze each page individually first (full 5-dimension extraction)
+        2. Compare structure differences (flow, section lengths, CTA strategy)
+        3. Compare mechanism approaches (same mechanism, different framing?)
+        4. Compare offer architectures (value ratios, bonus strategies)
+        5. Compare voice signatures (formality, warmth, authority differences)
+        6. Compare 7S coverage (which dimensions stronger in each)
+        7. Identify winning elements (if performance data available)
+        8. Generate hypothesis: Why did one outperform the other?
+        9. Extract differential patterns (what was unique to winner)
+        10. Prioritize patches based on validated differences
+      </Steps>
+
+      <OutputFormat>
+        COMPARATIVE_ANALYSIS_REPORT:
+          pages_compared: [list]
+          performance_data: {page_id: metrics}
+          structure_comparison: {differences, similarities}
+          mechanism_comparison: {differences, similarities}
+          offer_comparison: {differences, similarities}
+          voice_comparison: {differences, similarities}
+          seven_s_comparison: {dimension_by_dimension_scores}
+          hypothesis: "Why page A outperformed page B"
+          validated_patterns: [patterns unique to winner]
+          recommended_patches: [prioritized by evidence strength]
+      </OutputFormat>
+    </ComparativeAnalysisProtocol>
+  </L3_DeepExpertise>
+
+  <!-- ================================================================== -->
+  <!-- LAYER 4: ADVANCED — EDGE CASES & MASTERY (TARGET: ≤2000 TOKENS)   -->
+  <!-- ================================================================== -->
+
+  <L4_Advanced>
+    <UseCases>
+      <UseCase name="Learn from Your Own Best Work">
+        <Scenario>You created sales pages with Claude that "came out pretty nice"</Scenario>
+        <Workflow>
+          1. Feed your best pages to Deconstructor
+          2. Extract what made them work
+          3. Generate patches to codify patterns
+          4. Update skills with learned patterns
+          5. Future pages leverage what worked
+        </Workflow>
+        <Benefit>Your successes become templates for future work</Benefit>
+      </UseCase>
+
+      <UseCase name="Competitive Analysis">
+        <Scenario>Competitor has high-converting page in your market</Scenario>
+        <Workflow>
+          1. Deconstruct competitor page
+          2. Extract mechanism framework
+          3. Identify what resonates with avatar
+          4. Generate alternative angles (not copy)
+          5. Update MESSAGE_SPINE with insights
+        </Workflow>
+        <Benefit>Learn market-tested patterns without copying</Benefit>
+        <EthicsNote>Extract patterns and principles, never copy exact language</EthicsNote>
+      </UseCase>
+
+      <UseCase name="A/B Test Learning">
+        <Scenario>Tested two versions, one outperformed</Scenario>
+        <Workflow>
+          1. Deconstruct both versions
+          2. Compare structure, voice, offer
+          3. Identify winning elements
+          4. Generate hypothesis (why it won)
+          5. Patch skills with validated patterns
+        </Workflow>
+        <Benefit>A/B test results improve system, not just one page</Benefit>
+      </UseCase>
+
+      <UseCase name="Multi-Market Pattern Extraction">
+        <Scenario>Multiple successful pages across different markets</Scenario>
+        <Workflow>
+          1. Deconstruct pages from 5+ markets
+          2. Extract universal patterns (work everywhere)
+          3. Identify market-specific patterns (work in niche)
+          4. Generate meta-framework
+          5. Update skills with universal + conditional logic
+        </Workflow>
+        <Benefit>Build cross-market intelligence</Benefit>
+      </UseCase>
+
+      <UseCase name="Performance Post-Mortem">
+        <Scenario>Page underperformed, need diagnosis</Scenario>
+        <Workflow>
+          1. Deconstruct underperforming page
+          2. Compare to high-performing benchmarks
+          3. Identify gaps (missing 7S dimensions, weak mechanism, etc.)
+          4. Generate specific fixes
+          5. Rebuild with Deconstructor insights
+        </Workflow>
+        <Benefit>Learn from failures as much as successes</Benefit>
+      </UseCase>
+    </UseCases>
+
+    <PythonValidationTools>
+      <Tool name="structure_extractor">
+        <Purpose>Parse markdown/HTML to identify sections, calculate metrics</Purpose>
+        <Implementation>
+          ```python
+          import re
+          from typing import List, Dict
+
+          def extract_structure(page_content: str) -> Dict:
+              """
+              Parse page content to extract structure blueprint.
+
+              Returns:
+                  structure_blueprint with sections, flow, transitions, metrics
+              """
+              sections = []
+
+              # Identify headings (markdown ## or HTML h2-h6)
+              heading_pattern = r'^#{2,6}\s+(.+)$'
+              headings = re.findall(heading_pattern, page_content, re.MULTILINE)
+
+              # Split content by headings
+              content_blocks = re.split(heading_pattern, page_content, flags=re.MULTILINE)
+
+              for i, heading in enumerate(headings):
+                  content = content_blocks[i*2 + 2] if i*2 + 2 < len(content_blocks) else ""
+                  word_count = len(content.split())
+
+                  section = {
+                      "section_id": f"sec_{i+1:03d}",
+                      "type": classify_section_type(heading, content),
+                      "content_sample": content[:50] + "..." if len(content) > 50 else content,
+                      "function": infer_section_function(heading, content),
+                      "length_words": word_count
+                  }
+                  sections.append(section)
+
+              # Calculate metrics
+              total_words = sum(s["length_words"] for s in sections)
+              avg_section_length = total_words / len(sections) if sections else 0
+
+              # Count CTAs
+              cta_pattern = r'(get|start|join|buy|claim|download|access)\s+(now|today|instant|free|your)'
+              cta_matches = re.findall(cta_pattern, page_content, re.IGNORECASE)
+
+              return {
+                  "sections": sections,
+                  "metrics": {
+                      "total_word_count": total_words,
+                      "avg_section_length": round(avg_section_length, 1),
+                      "cta_count": len(cta_matches)
+                  }
+              }
+
+          def classify_section_type(heading: str, content: str) -> str:
+              """Classify section type based on heading and content."""
+              heading_lower = heading.lower()
+
+              if any(word in heading_lower for word in ["how", "works", "mechanism"]):
+                  return "mechanism_intro"
+              elif any(word in heading_lower for word in ["proof", "results", "testimonial"]):
+                  return "proof"
+              elif any(word in heading_lower for word in ["offer", "package", "price", "bonus"]):
+                  return "offer"
+              elif re.search(r'^(get|claim|start)', content, re.IGNORECASE):
+                  return "cta"
+              else:
+                  return "content"
+          ```
+        </Implementation>
+      </Tool>
+
+      <Tool name="voice_analyzer">
+        <Purpose>Extract linguistic patterns (sentence rhythm, word choice, tone markers)</Purpose>
+        <Implementation>
+          ```python
+          import re
+          from typing import Dict, List
+
+          def analyze_voice(text: str) -> Dict:
+              """
+              Analyze voice signature: rhythm, word choice, tone.
+
+              Returns:
+                  voice_signature with tone_markers, sentence_rhythm, word_choice
+              """
+              # Clean text
+              sentences = re.split(r'[.!?]+', text)
+              sentences = [s.strip() for s in sentences if s.strip()]
+
+              # Sentence rhythm analysis
+              sentence_lengths = [len(s.split()) for s in sentences]
+              avg_length = sum(sentence_lengths) / len(sentence_lengths) if sentence_lengths else 0
+
+              short_count = sum(1 for l in sentence_lengths if l < 10)
+              long_count = sum(1 for l in sentence_lengths if l > 25)
+              medium_count = len(sentence_lengths) - short_count - long_count
+
+              total = len(sentence_lengths)
+
+              # Word choice analysis
+              words = text.lower().split()
+              you_count = words.count('you') + words.count('your') + words.count("you're")
+              second_person_ratio = you_count / len(words) if words else 0
+
+              # Forbidden words check
+              forbidden = ['game-changer', 'revolutionary', 'secret', 'miracle', 'breakthrough']
+              found_forbidden = [w for w in forbidden if w in text.lower()]
+
+              return {
+                  "sentence_rhythm": {
+                      "avg_sentence_length": round(avg_length, 1),
+                      "short_sentence_ratio": round(short_count / total, 2) if total else 0,
+                      "long_sentence_ratio": round(long_count / total, 2) if total else 0,
+                      "medium_sentence_ratio": round(medium_count / total, 2) if total else 0
+                  },
+                  "word_choice_patterns": {
+                      "second_person_ratio": round(second_person_ratio, 2),
+                      "forbidden_words_found": found_forbidden
+                  }
+              }
+          ```
+        </Implementation>
+      </Tool>
+
+      <Tool name="pattern_matcher">
+        <Purpose>Match text against known pattern library using semantic search</Purpose>
+        <Implementation>
+          ```python
+          from typing import List, Dict
+          import re
+
+          def match_patterns(text: str, pattern_library: List[Dict]) -> List[Dict]:
+              """
+              Check text against known patterns.
+
+              Returns:
+                  List of matches with pattern_id, confidence, location
+              """
+              matches = []
+
+              for pattern in pattern_library:
+                  # Simple keyword matching (can be enhanced with embeddings)
+                  pattern_keywords = extract_keywords(pattern['example'])
+                  text_lower = text.lower()
+
+                  keyword_matches = sum(1 for kw in pattern_keywords if kw in text_lower)
+                  confidence = keyword_matches / len(pattern_keywords) if pattern_keywords else 0
+
+                  if confidence > 0.5:  # Threshold for match
+                      matches.append({
+                          "pattern_id": pattern['pattern_id'],
+                          "pattern_name": pattern['name'],
+                          "confidence": round(confidence, 2),
+                          "category": pattern['category']
+                      })
+
+              return sorted(matches, key=lambda x: x['confidence'], reverse=True)
+
+          def extract_keywords(example: str) -> List[str]:
+              """Extract meaningful keywords from pattern example."""
+              # Remove common words
+              stopwords = {'the', 'a', 'an', 'and', 'or', 'but', 'is', 'are', 'was', 'were'}
+              words = example.lower().split()
+              return [w for w in words if w not in stopwords and len(w) > 3]
+          ```
+        </Implementation>
+      </Tool>
+    </PythonValidationTools>
+
+    <SessionMemoryIntegration>
+      <InsightsOutput>
+        <Purpose>Persist learnings across sessions via insights.md</Purpose>
+        <Format>
+          ## Deconstruction: [Page Name] — [Date]
+
+          **Source:** [URL or file path]
+          **Performance:** [Conversion rate if known]
+          **Overall Score:** [X.X/10]
+
+          ### Top Patterns Discovered
+          - **[Pattern Name]** (p_XXX): [Brief description]
+            - When to use: [Context]
+            - MMA impact: [Dimensions]
+
+          ### Key Insights
+          - [Insight 1]
+          - [Insight 2]
+          - [Insight 3]
+
+          ### Recommended Patches
+          - **[Skill Name]** (patch_XXX): [What to add/fix]
+            - Priority: [HIGH/MEDIUM/LOW]
+            - Est. time: [15 min / 30 min / 1 hour]
+
+          ### Action Items
+          - [ ] Apply patch_XXX to [skill_name]
+          - [ ] Test pattern p_XXX in next sales page generation
+          - [ ] Add [pattern] to pattern library
+
+          ---
+        </Format>
+      </InsightsOutput>
+    </SessionMemoryIntegration>
+
+    <FailureModes>
+      <Failure name="Unstructured Content">
+        <Detection>Structure extraction returns empty sections or fails to classify types</Detection>
+        <Recovery>Request cleaned markdown or manually identify major sections before analysis</Recovery>
+      </Failure>
+
+      <Failure name="Pattern Overload">
+        <Detection>Too many patterns flagged (>20), hard to prioritize</Detection>
+        <Recovery>Filter to top 5 highest-confidence patterns, focus on HIGH priority patches</Recovery>
+      </Failure>
+
+      <Failure name="No Comparable Patterns">
+        <Detection>Page is so unique that no existing patterns match</Detection>
+        <Recovery>Tag as new pattern category, create foundational pattern entry</Recovery>
+      </Failure>
+
+      <Failure name="Insufficient Performance Data">
+        <Detection>Comparative analysis requested but no performance metrics provided</Detection>
+        <Recovery>Analyze structure/voice differences only, caveat that performance validation needed</Recovery>
+      </Failure>
+    </FailureModes>
+
+    <IntegrationWithZPWO>
+      <P0Phase name="Pre-Draft Research">
+        <Purpose>Analyze reference pages before generating new copy</Purpose>
+        <Workflow>
+          P0: LEARN (optional, before Draft)
+          ├── Input: Reference pages, competitor analysis
+          ├── Skill: sales_page_deconstructor_v2.0.0
+          ├── Output: DECONSTRUCTION_REPORT + PATTERN_LIBRARY_UPDATE
+          └── Next: Use learnings in P1 (Draft) to inform angle exploration
+        </Workflow>
+      </P0Phase>
+
+      <P4Phase name="Post-Production Analysis">
+        <Purpose>Analyze what was created to improve next iteration</Purpose>
+        <Workflow>
+          P3: POLISH → Complete
+            ↓
+          P4: ANALYZE (post-production)
+          ├── Deconstruct what was created
+          ├── Compare to original brief
+          ├── Extract what worked well
+          ├── Generate patches for next iteration
+          └── Output: IMPROVEMENT_CYCLE_REPORT
+        </Workflow>
+      </P4Phase>
+    </IntegrationWithZPWO>
+  </L4_Advanced>
+
+  <!-- ================================================================== -->
+  <!-- GOLDEN RUN EXAMPLE                                                  -->
+  <!-- ================================================================== -->
+
+  <GoldenRun>
+    <Scenario>
+      User wants to analyze a successful sales page they created with Claude
+      to extract what worked and improve future pages.
+    </Scenario>
+
+    <Input>
+      Page: "Sleep Energy Breakthrough Sales Page v3.md"
+      Performance: 4.2% conversion rate (above 3% target)
+      Avatar: Hormonal women 40+ struggling with sleep
+    </Input>
+
+    <ExpectedOutput>
+      DECONSTRUCTION_REPORT generated with:
+
+      1. STRUCTURE BLUEPRINT
+         - 12 sections identified
+         - Flow: Hook → Problem → Mechanism → Proof → Offer → CTA
+         - 2,400 total words, avg 200 words/section
+         - 7 CTA repetitions at strategic positions
+
+      2. MECHANISM FRAMEWORK
+         - Promise: "Deep sleep + all-day energy in 7-14 days"
+         - Mechanism: "Cortisol-Melatonin Rhythm Reset"
+         - Category: Biological
+         - Unique element: "Fixes rhythm backwards problem, not broken system"
+         - 2 alternatives addressed: Sleep hygiene, Melatonin supplements
+
+      3. OFFER ARCHITECTURE
+         - Core: $197 (perceived value $997)
+         - Value ratio: 5.1x
+         - 3 bonuses (implementation tool + complementary outcomes)
+         - Real deadline (enrollment closes), 60-day guarantee
+
+      4. VOICE SIGNATURE
+         - Formality: 6/10 (casual-professional)
+         - Warmth: 8/10 (high empathy)
+         - Avg sentence: 14 words
+         - Second-person ratio: 0.68 (strong "you" focus)
+         - No forbidden words detected
+
+      5. 7S COVERAGE
+         - SAFE: 8.5 (guarantee, science-backed)
+         - SPECIAL: 7.5 (unique mechanism)
+         - SMART: 9.5 (clear explanation) ← STRONGEST
+         - SIGNIFICANT: 8.0 (testimonials)
+         - SUPPORTED: 8.5 (clear CTA)
+         - SUPERIOR: 7.0 (community mentioned) ← WEAKEST
+         - STEAL: 8.0 (value ratio, bonuses)
+         - OVERALL: 8.1/10
+
+      6. PATTERNS DISCOVERED
+         - p_087: "Reversed Rhythm Hook" (NEW)
+         - p_088: "Failed Alternative Validation" (NEW)
+         - p_042: "Kitchen Table Language" (CONFIRMED, count +1)
+
+      7. PATCH PROPOSALS
+         - patch_027: Add "Reversed System Framework" to sales_page_copywriter_lite L3
+           Priority: HIGH, Est: 15 min, Impact: SMART +1.0
+         - patch_028: Add "Failed Alternative as Proof" to advertorial_copy_master L2
+           Priority: MEDIUM, Est: 30 min, Impact: SMART +0.8, SPECIAL +0.5
+         - patch_029: Add SUPERIOR dimension templates to mma_master_monitor_agent
+           Priority: LOW, Est: 30 min, Impact: SUPERIOR +1.0
+
+      8. INSIGHTS.MD ENTRY
+         ## Deconstruction: Sleep Energy Breakthrough v3 — 2026-01-15
+
+         **Performance:** 4.2% conversion (above 3% target)
+         **Overall Score:** 8.1/10
+
+         ### Top Patterns Discovered
+         - **Reversed Rhythm Hook** (p_087): "Not broken, just backwards" framing
+           - When to use: Biological/hormonal mechanisms
+           - MMA impact: SMART +1.5
+
+         ### Key Insights
+         - SMART dimension (9.5) was strongest - mechanism clarity drove conversions
+         - SUPERIOR dimension (7.0) was weakest - could strengthen community/belonging
+         - "Failed Alternative Validation" pattern reduced skepticism objections
+
+         ### Recommended Patches
+         - **sales_page_copywriter_lite** (patch_027): Add Reversed System Framework
+           - Priority: HIGH, Est: 15 min
+
+         ### Action Items
+         - [x] Apply patch_027 to sales_page_copywriter_lite
+         - [ ] Test p_087 in next biological mechanism offer
+         - [ ] Add SUPERIOR dimension templates to MMA
+    </ExpectedOutput>
+
+    <SuccessMetrics>
+      - All 5 dimensions analyzed ✓
+      - At least 2 new patterns discovered ✓
+      - At least 1 HIGH priority patch proposed ✓
+      - Executive summary includes specific strengths/gaps ✓
+      - Insights.md entry created with action items ✓
+    </SuccessMetrics>
+  </GoldenRun>
+
+  <!-- ================================================================== -->
+  <!-- FINAL NOTES                                                         -->
+  <!-- ================================================================== -->
+
+  <FinalNotes>
+    <Note>
+      This skill is the cornerstone of ULTRAMIND's self-healing architecture.
+      Every deconstruction compounds system intelligence. Prioritize:
+
+      1. Pattern extraction quality over speed
+      2. Actionable patches over theoretical improvements
+      3. Evidence-based recommendations over speculation
+      4. Session memory persistence (insights.md) for compound learning
+    </Note>
+
+    <Note>
+      ECR Integration (End Cycle Recursion):
+      - LEARNING Phase: Extract SIPs (Self-Identified Patterns)
+      - REPAIR Phase: Generate patches and framework upgrades
+      - This skill embodies Agentic LEARNING + Agentic REPAIR
+    </Note>
+
+    <Note>
+      Lean Tooling Philosophy:
+      - Python tools for deterministic extraction (structure, voice)
+      - Manual strategic analysis for nuanced interpretation (mechanism, offer)
+      - Minimal MCP dependencies (can run standalone with file reads)
+      - On-demand loading (only active during deconstruction tasks)
+    </Note>
+  </FinalNotes>
+
+</Skill>

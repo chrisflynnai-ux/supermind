@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SUPERMIND SkillML Master Template v1.0
+  Per REFACTOR PLAN v1.4
+
+  REQUIRED STRUCTURE:
+  - Root: <Skill> with skill_id, version, status attributes
+  - Sections: Meta, Contract, ExecutionProtocol, SelfCheck, PatchLog
+  - Layer tags: LAYER:CONTRACT, LAYER:RULES, LAYER:REASONING, LAYER:IMPL
+  - SelfCheck: minimum 3 Check elements + MMAGate
+
+  CONVENTIONS:
+  - skill_id format: {domain}_{function} (e.g., copy_advertorial)
+  - version: semver (e.g., 1.0.0)
+  - status: draft | beta | active | deprecated
+  - Content is free-form (no content-level schema enforcement)
+
+  USAGE:
+  1. Copy this file to .claude/skills/{domain}/{skill_slug}_v{version}.xml
+  2. Replace all [PLACEHOLDER] values
+  3. Run: python tools/skillml_validator.py <your_skill.xml>
+  4. All 16 checks must pass before commit
+-->
+
+<Skill
+  skill_id="[domain]_[function]"
+  version="1.0.0"
+  status="draft"
+>
+
+  <!-- ================================================================== -->
+  <!-- META                                                                -->
+  <!-- ================================================================== -->
+
+  <Meta>
+    <Name>[Skill Name]</Name>
+    <Codename>[The Nickname / Subtitle]</Codename>
+    <Description>[One sentence: what this skill does and when to use it]</Description>
+
+    <CreatedBy agent_or_human="[agent|human]" agent_id="[creator_id]"/>
+    <DateCreated>[YYYY-MM-DD]</DateCreated>
+    <LastModified>[YYYY-MM-DD]</LastModified>
+
+    <Tier>[system|meta|production|experimental]</Tier>
+    <Status>[draft|beta|active|deprecated]</Status>
+    <Model>[sonnet|opus|haiku]</Model>
+    <Domain>[domain_name]</Domain>
+    <Track>[T1|T2|T3|T4]</Track>
+    <TeamRole>[builder|reviewer|coordinator|specialist]</TeamRole>
+
+    <PrimaryOutcome>[What this skill produces as its main deliverable]</PrimaryOutcome>
+    <TriggerCommands>[/command1, /command2]</TriggerCommands>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- CONTRACT (I/O Specification)                                        -->
+  <!-- LAYER:CONTRACT                                                      -->
+  <!-- ================================================================== -->
+
+  <Contract>
+    <!-- TaskRequest inputs this skill requires -->
+    <InputsRequired>
+      <Input type="[ssot|artifact|parameter]" format="[yaml|json|markdown|text]">
+        <Name>[input_name]</Name>
+        <Description>[What this input provides]</Description>
+      </Input>
+    </InputsRequired>
+
+    <InputsOptional>
+      <Input type="[ssot|artifact|parameter]" format="[yaml|json|markdown|text]">
+        <Name>[optional_input_name]</Name>
+        <Description>[What this optional input provides]</Description>
+      </Input>
+    </InputsOptional>
+
+    <!-- TaskResult outputs this skill produces -->
+    <OutputsPrimary>
+      <Output format="[markdown|yaml|json|xml]">
+        <Name>[output_name]</Name>
+        <Description>[What this output contains]</Description>
+      </Output>
+    </OutputsPrimary>
+
+    <MMAGateContract>
+      <MinScore track="T2">6.0</MinScore>
+      <MinScore track="T3">8.0</MinScore>
+      <MinScore track="T4">9.0</MinScore>
+    </MMAGateContract>
+
+    <CircuitBreaker>
+      <MaxFixLoops>3</MaxFixLoops>
+      <OnExhausted>HALT + PATCH_PROPOSAL</OnExhausted>
+    </CircuitBreaker>
+  </Contract>
+
+  <!-- ================================================================== -->
+  <!-- EXECUTION PROTOCOL                                                  -->
+  <!-- LAYER:RULES                                                         -->
+  <!-- ================================================================== -->
+
+  <ExecutionProtocol>
+    <!-- Rules that govern how this skill operates -->
+    <Rules>
+      <Rule id="R1">[First governing rule]</Rule>
+      <Rule id="R2">[Second governing rule]</Rule>
+      <Rule id="R3">[Third governing rule]</Rule>
+    </Rules>
+
+    <Constraints>
+      <TokenBudget>[max tokens for output]</TokenBudget>
+      <TimeoutSeconds>[max execution time]</TimeoutSeconds>
+      <ContextStrategy>[progressive_disclosure|full_load|lazy]</ContextStrategy>
+    </Constraints>
+
+    <Dependencies>
+      <RequiresSSO>[PROJECT_BRIEF|MESSAGE_SPINE|EVIDENCE_PACK|none]</RequiresSSO>
+      <SisterSkills>[skill_id of coordinating skills]</SisterSkills>
+    </Dependencies>
+
+    <!-- ================================================================ -->
+    <!-- REASONING FRAMEWORK                                               -->
+    <!-- LAYER:REASONING                                                   -->
+    <!-- ================================================================ -->
+
+    <ReasoningFramework>
+      <Step order="1">
+        <Name>[First reasoning step]</Name>
+        <Action>[What the agent does]</Action>
+        <Validation>[How to verify this step succeeded]</Validation>
+      </Step>
+      <Step order="2">
+        <Name>[Second reasoning step]</Name>
+        <Action>[What the agent does]</Action>
+        <Validation>[How to verify this step succeeded]</Validation>
+      </Step>
+      <Step order="3">
+        <Name>[Third reasoning step]</Name>
+        <Action>[What the agent does]</Action>
+        <Validation>[How to verify this step succeeded]</Validation>
+      </Step>
+    </ReasoningFramework>
+
+    <!-- ================================================================ -->
+    <!-- IMPLEMENTATION DETAILS                                            -->
+    <!-- LAYER:IMPL                                                        -->
+    <!-- ================================================================ -->
+
+    <Implementation>
+      <!-- Domain-specific execution logic goes here -->
+      <!-- This section is free-form per skill type -->
+
+      <Workflow>
+        <Phase name="prepare">
+          [Preparation steps: load SSOT, validate inputs, check gates]
+        </Phase>
+        <Phase name="execute">
+          [Core execution: generation, analysis, transformation]
+        </Phase>
+        <Phase name="validate">
+          [Post-execution: run SelfCheck, score via MMA, format output]
+        </Phase>
+      </Workflow>
+
+      <!-- Tool calls (scripts, validators, search) -->
+      <Tools>
+        <Tool name="[tool_name]" path="[tools/script.py]">
+          [When and how to use this tool]
+        </Tool>
+      </Tools>
+
+      <!-- Templates, patterns, golden examples -->
+      <Templates>
+        <Template name="[template_name]">
+          [Template content or reference]
+        </Template>
+      </Templates>
+    </Implementation>
+  </ExecutionProtocol>
+
+  <!-- ================================================================== -->
+  <!-- SELF-CHECK (Minimum 3 Checks + MMAGate)                            -->
+  <!-- ================================================================== -->
+
+  <SelfCheck>
+    <Check id="SC-01" type="structural">
+      <Name>[Structural check name]</Name>
+      <Condition>[What must be true]</Condition>
+      <OnFail>[What to do if check fails]</OnFail>
+    </Check>
+
+    <Check id="SC-02" type="content">
+      <Name>[Content quality check]</Name>
+      <Condition>[What must be true]</Condition>
+      <OnFail>[What to do if check fails]</OnFail>
+    </Check>
+
+    <Check id="SC-03" type="compliance">
+      <Name>[Compliance/guardrail check]</Name>
+      <Condition>[What must be true]</Condition>
+      <OnFail>[What to do if check fails]</OnFail>
+    </Check>
+
+    <!-- Add more checks as needed (3 is minimum) -->
+
+    <MMAGate>
+      <Trigger>[When to invoke MMA scoring]</Trigger>
+      <MinScore>[Minimum MMA score to pass — based on track]</MinScore>
+      <OnFail>Route to FIX loop (max 3 iterations)</OnFail>
+      <Dimensions>
+        <!-- 7D MMA Dimensions -->
+        <Dim name="clarity">Target: [score]</Dim>
+        <Dim name="persuasion">Target: [score]</Dim>
+        <Dim name="proof">Target: [score]</Dim>
+        <Dim name="resonance">Target: [score]</Dim>
+        <Dim name="structure">Target: [score]</Dim>
+        <Dim name="voice">Target: [score]</Dim>
+        <Dim name="compliance">Target: [score]</Dim>
+      </Dimensions>
+    </MMAGate>
+
+    <FailureModes>
+      <Mode name="[failure_type]">
+        <Symptom>[How this failure manifests]</Symptom>
+        <Cause>[Why it happens]</Cause>
+        <Fix>[How to resolve]</Fix>
+      </Mode>
+    </FailureModes>
+  </SelfCheck>
+
+  <!-- ================================================================== -->
+  <!-- PATCH LOG                                                           -->
+  <!-- ================================================================== -->
+
+  <PatchLog>
+    <Entry version="1.0.0" date="[YYYY-MM-DD]" author="[agent|human]">
+      Initial build from [source].
+    </Entry>
+    <!-- Future patches appended here -->
+    <!-- Format: version, date, author, description of changes -->
+  </PatchLog>
+
+</Skill>

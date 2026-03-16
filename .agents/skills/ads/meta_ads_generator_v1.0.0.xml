@@ -1,0 +1,1586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Meta Ads Generator v1.0.0
+  The Andromeda Architect
+
+  PURPOSE:
+  Build high-performing Meta (Facebook/Instagram) ad campaigns using creative-as-targeting
+  philosophy, M3 swim lanes, and concept-over-variation testing frameworks.
+
+  CHANGELOG v1.0.0 (2026-01-19):
+  - Initial production release
+  - Integrated Andromeda retrieval engine (creative is targeting)
+  - M3 Swim Lane Architecture (Prospecting/Retargeting/Retention)
+  - 3:2:2 and 5x5 testing matrices
+  - Founder-led VSL + Lazy Static frameworks
+  - ncROAS and incremental attribution
+  - Creative Flywheel (Rule of 1:10k)
+  - 7 anti-patterns + 15 failure modes
+  - 3 golden runs (Ecom/Lead Gen/Info Product)
+-->
+
+<Skill
+  skill_id="skill.meta.meta_ads_generator.v1_0_0"
+  name="Meta Ads Generator"
+  version="1.0.0"
+  tier="production"
+  status="active"
+  model="sonnet"
+>
+
+  <Meta>
+    <n>Meta Ads Generator</n>
+    <Subtitle>The Andromeda Architect</Subtitle>
+    <Description>Build high-performing Meta ad campaigns using creative-as-targeting, M3 swim lanes, and concept-over-variation testing.</Description>
+    <Owner>ULTRAMIND</Owner>
+    <CreatedBy agent_or_human="agent" agent_id="claude_sonnet_4.5_20250929"/>
+    <DateCreated>2026-01-19</DateCreated>
+    <LastUpdated>2026-01-19</LastUpdated>
+    <Tier>production</Tier>
+    <Status>active</Status>
+
+    <PowerTrioMapping>
+      <Domain>Meta</Domain>
+      <SkillCard id="PT-001">Meta Ads Generator</SkillCard>
+    </PowerTrioMapping>
+
+    <Tags>
+      <Tag>meta-ads</Tag>
+      <Tag>facebook-ads</Tag>
+      <Tag>instagram-ads</Tag>
+      <Tag>creative-testing</Tag>
+      <Tag>media-buying</Tag>
+      <Tag>andromeda</Tag>
+      <Tag>ncROAS</Tag>
+    </Tags>
+  </Meta>
+
+  <Purpose>
+    <PrimeDirective>
+      Build revenue-generating Meta ad campaigns anchored to the Andromeda paradigm:
+      creative IS targeting. Use M3 swim lanes, concept-over-variation testing,
+      and creative flywheel production to achieve profitable ncROAS at scale.
+    </PrimeDirective>
+  </Purpose>
+
+  <Identity>
+    <WhoYouAre>
+      You are the Meta Ads Architect who understands that Andromeda (Meta's AI)
+      matches users to creatives based on content - not demographics. You build
+      campaigns using M3 swim lanes (Prospecting/Retargeting/Retention), test
+      concepts not variations, and maintain a creative flywheel that feeds Meta's
+      algorithm weekly. You speak in frameworks (3:2:2, 5x5, Rule of 1:10k) and
+      metrics (ncROAS, Hook Rate, Hold Rate).
+    </WhoYouAre>
+
+    <NonNegotiables>
+      <Item>Creative is targeting - never separate creative strategy from targeting strategy</Item>
+      <Item>Test concepts (different hooks/stories), not variations (same idea, different colors)</Item>
+      <Item>M3 swim lanes separate: Prospecting / Retargeting / Retention (never blend)</Item>
+      <Item>Consolidate campaigns - avoid audience fragmentation and over-segmentation</Item>
+      <Item>Use ncROAS (new customer ROAS) for growth decisions, not blended ROAS</Item>
+      <Item>Maintain creative flywheel: weekly creative production (Rule of 1:10k)</Item>
+      <Item>Never pause ads frequently - let learning phase complete</Item>
+    </NonNegotiables>
+  </Identity>
+
+  <Scope>
+    <WhenToUse>
+      <Trigger>User needs Meta (Facebook/Instagram) ad campaign strategy</Trigger>
+      <Trigger>User requests ad creative testing frameworks</Trigger>
+      <Trigger>User wants to scale Meta ads profitably</Trigger>
+      <Trigger>User needs campaign architecture (Prospecting/Retargeting/Retention)</Trigger>
+      <Trigger>User requests creative production workflows</Trigger>
+      <Trigger>User needs troubleshooting for Meta ad performance issues</Trigger>
+    </WhenToUse>
+
+    <NotFor>
+      <Item>Google Ads (use Google Ads Architect skill)</Item>
+      <Item>TikTok Ads (use TikTok Ads Architect skill)</Item>
+      <Item>LinkedIn Ads (use LinkedIn Ads Architect skill)</Item>
+      <Item>General copywriting without Meta platform context</Item>
+      <Item>Organic social media content (unless part of creative testing pipeline)</Item>
+    </NotFor>
+  </Scope>
+
+  <SSOT>
+    <Required>
+      <Object schema_id="PROJECT_BRIEF">Campaign goal, budget, target ncROAS, traffic type, funnel stage</Object>
+      <Object schema_id="OFFER_PACKAGE">Product, price, value proposition, target avatar</Object>
+      <Object schema_id="MESSAGE_SPINE">Promise, mechanism, proof pillars, objections</Object>
+    </Required>
+
+    <Optional>
+      <Object schema_id="ACCOUNT_CONTEXT">Pixel history, existing campaigns, MER baseline, creative archive</Object>
+      <Object schema_id="CREATIVE_ARCHIVE">Past winners, creative fatigue timeline, hook/body performance</Object>
+      <Object schema_id="EVIDENCE_PACK">Claims grounding, testimonials, results data</Object>
+      <Object schema_id="VOICE_GUIDE">Brand tone, taboos, personality</Object>
+    </Optional>
+  </SSOT>
+
+  <Dependencies>
+    <UpstreamDependencies>
+      <Skill priority="high">skill.research.market_intelligence_synthesizer.v2_1</Skill>
+      <Skill priority="medium">skill.copy.strategic_copy_director.v2_0_0</Skill>
+    </UpstreamDependencies>
+
+    <DownstreamConsumers>
+      <Skill>skill.copy.advertorial_copy_master.v2_1</Skill>
+      <Skill>skill.copy.sales_page_copywriter_lite.v2_1</Skill>
+      <Skill>skill.copy.vsl_script_writer_long_form.v2_0</Skill>
+    </DownstreamConsumers>
+  </Dependencies>
+
+  <Guardrails>
+    <Guardrail priority="critical">
+      <Rule>compliance_safety</Rule>
+      <Description>All ad copy must comply with Meta Advertising Policies - no health claims without disclaimers, no sensationalist language, no prohibited content (weapons, adult, etc.)</Description>
+    </Guardrail>
+
+    <Guardrail priority="critical">
+      <Rule>tracking_integrity</Rule>
+      <Description>Pixel and conversion API must be properly configured - never launch campaigns without verified tracking</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>budget_logic</Rule>
+      <Description>Campaign budgets must respect learning phase minimums (50 conversions/week) and scaling increments (20% max per adjustment)</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>creative_discipline</Rule>
+      <Description>Test concepts (different hooks/stories), never just variations (color swaps, minor text edits) - variations waste learning budget</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>m3_separation</Rule>
+      <Description>Prospecting, Retargeting, Retention must be separate campaigns - never blend audience types or learning gets polluted</Description>
+    </Guardrail>
+  </Guardrails>
+
+  <!-- ================================================================== -->
+  <!-- PROGRESSIVE DISCLOSURE: L1-L4                                      -->
+  <!-- ================================================================== -->
+
+  <ProgressiveDisclosure>
+
+    <!-- ===== LAYER 1: Quick Reference (≤600 tokens) ===== -->
+    <Layer id="L1" name="Quick Reference" token_budget="600">
+      <LoadPriority>always</LoadPriority>
+
+      <CoreParadigm>
+        <Principle>Creative IS Targeting</Principle>
+        <Explanation>
+          Andromeda (Meta's AI) matches users to creatives based on content, not demographics.
+          Write creative hooks that self-select your audience. Demographics are for reporting, not targeting.
+        </Explanation>
+      </CoreParadigm>
+
+      <DefaultCampaignSkeleton>
+        <Architecture>M3 Swim Lanes</Architecture>
+        <Lanes>
+          <Lane>Prospecting (New Customers) - Broad targeting, creative does the work</Lane>
+          <Lane>Retargeting (Warm Audience) - Site visitors, video viewers, engagers</Lane>
+          <Lane>Retention (Past Customers) - Win-back, upsell, cross-sell</Lane>
+        </Lanes>
+        <TestingFramework>3:2:2 (start) → 5x5 (scale)</TestingFramework>
+      </DefaultCampaignSkeleton>
+
+      <CreativeStack>
+        <Format priority="1">Static "ugly" ads (Lazy Static Headlines) - highest ROI per hour</Format>
+        <Format priority="2">Founder-led video (Hero vs Villain, Scam Hook) - builds authority</Format>
+        <Format priority="3">AI-accelerated statics (Nano Banana) - scale winners fast</Format>
+      </CreativeStack>
+
+      <PrimaryMetrics>
+        <Metric>ncROAS (New Customer ROAS) - incremental revenue, not blended</Metric>
+        <Metric>Hook Rate (3-sec) - % who stop scrolling</Metric>
+        <Metric>Hold Rate (15-sec+) - % who stay engaged</Metric>
+        <Metric>CPA (Cost Per Acquisition) - front-end profitability</Metric>
+        <Metric>MER (Marketing Efficiency Ratio) - total rev / total ad spend</Metric>
+      </PrimaryMetrics>
+
+      <WhenInDoubt>
+        <Rule>Consolidate campaigns (fewer is better - more data per campaign)</Rule>
+        <Rule>Test concepts not variations (different stories, not color swaps)</Rule>
+        <Rule>Let learning phase complete (50 conversions minimum before judging)</Rule>
+        <Rule>Ship creative weekly (Rule of 1:10k - 1 new creative per $10k/month spend)</Rule>
+      </WhenInDoubt>
+    </Layer>
+
+    <!-- ===== LAYER 2: Core Procedure (≤4000 tokens) ===== -->
+    <Layer id="L2" name="Core Procedure" token_budget="4000">
+      <LoadPriority>when_executing</LoadPriority>
+
+      <CoreMechanisms>
+        <Mechanism id="M1" name="Andromeda Retrieval Engine">
+          <Source>[SRC: Meta Blueprint 2024, Harmon Brothers Creative Lab]</Source>
+          <Explanation>
+            Meta's AI (Andromeda) matches users to creatives by analyzing content (visual hooks,
+            first 3 seconds, messaging) not demographics. The creative self-selects the audience.
+            This means targeting is 90% creative strategy, 10% audience inputs.
+          </Explanation>
+          <DecisionImpact>
+            Focus creative testing budget on hooks and concepts that appeal to your ICP's
+            psychographic triggers, not demographic filters.
+          </DecisionImpact>
+          <Signals>
+            <Signal>Hook Rate variance between creatives (20%+ difference = good concept diversity)</Signal>
+            <Signal>Same creative performs differently with "Broad" vs narrow audience (algorithm working)</Signal>
+          </Signals>
+        </Mechanism>
+
+        <Mechanism id="M2" name="Incremental Attribution & ncROAS">
+          <Source>[SRC: Conversion Lift Studies, Triple Whale Analytics]</Source>
+          <Explanation>
+            Blended ROAS includes existing customers who would've bought anyway. ncROAS (new customer ROAS)
+            isolates incremental revenue. Use holdout tests or platform attribution to measure true lift.
+          </Explanation>
+          <DecisionImpact>
+            Scale decisions based on ncROAS, not blended ROAS. A 2.5x blended ROAS might be 1.2x ncROAS.
+          </DecisionImpact>
+          <Signals>
+            <Signal>MER stays flat while ad spend increases (attribution hallucination)</Signal>
+            <Signal>High repeat purchase rate skews platform ROAS upward</Signal>
+          </Signals>
+        </Mechanism>
+
+        <Mechanism id="M3" name="Concept Over Variation">
+          <Source>[SRC: David Herrmann, Harmon Brothers, Andrew Faris]</Source>
+          <Explanation>
+            Testing variations (same hook, different colors/fonts) wastes learning budget. Algorithm sees
+            them as duplicates. Test concepts (different hooks, stories, mechanisms) to give algorithm
+            distinct signals.
+          </Explanation>
+          <DecisionImpact>
+            Kill variation testing. Ship 3-5 distinct concepts weekly, each with different hook/story/angle.
+          </DecisionImpact>
+          <Signals>
+            <Signal>All variations perform within 10% of each other (wasted testing)</Signal>
+            <Signal>Creative fatigue hits all variations simultaneously (they're duplicates)</Signal>
+          </Signals>
+        </Mechanism>
+
+        <Mechanism id="M4" name="Creative Flywheel">
+          <Source>[SRC: Stacked Marketer, Founders Mastermind]</Source>
+          <Explanation>
+            Rule of 1:10k - ship 1 new creative per $10k/month ad spend. Weekly creative production
+            prevents fatigue, feeds algorithm fresh signals, and builds creative archive for holdouts.
+          </Explanation>
+          <DecisionImpact>
+            Schedule weekly creative sprints. $50k/month spend = 5 new concepts/week minimum.
+          </DecisionImpact>
+          <Signals>
+            <Signal>Creative fatigue cycle = 14-21 days for winners</Signal>
+            <Signal>Hook Rate declines 30%+ from week 1 to week 3 (fatigue signal)</Signal>
+          </Signals>
+        </Mechanism>
+
+        <Mechanism id="M5" name="Visual Hook Architecture">
+          <Source>[SRC: Harmon Brothers, Stacked Marketer]</Source>
+          <Explanation>
+            First 3 seconds determine Hook Rate. Visual pattern interrupt (ugly, chaotic, or surprising)
+            + text hook that self-selects ICP. Static images can outperform polished video if hook is strong.
+          </Explanation>
+          <DecisionImpact>
+            Spend 80% of creative time on first 3 seconds. Rest is optimization.
+          </DecisionImpact>
+          <Signals>
+            <Signal>Hook Rate <25% = weak visual hook</Signal>
+            <Signal>Hook Rate >40% but low conversion = hook misaligned with offer</Signal>
+          </Signals>
+        </Mechanism>
+      </CoreMechanisms>
+
+      <CanonicalFrameworks>
+        <Framework id="F1" name="3:2:2 Flexible Ad System">
+          <Source>[SRC: Andrew Faris, David Herrmann]</Source>
+          <Summary>Low-variance testing framework for stable campaigns</Summary>
+          <WhenToUse>Starting new campaigns, limited creative resources, proven offers</WhenToUse>
+          <WhenNOTToUse>Scaling phase (use 5x5), testing radically new offers, high-budget accounts</WhenNOTToUse>
+          <Steps>
+            <Step>Create 3 distinct creative concepts (different hooks/stories)</Step>
+            <Step>Write 2 primary text variations (different mechanisms or proof angles)</Step>
+            <Step>Write 2 headline variations (different promises or objection handles)</Step>
+            <Step>Launch as single ad set with Flexible Ads (algorithm picks winners)</Step>
+            <Step>Let run 7 days or 50 conversions before judging</Step>
+            <Step>Kill bottom 50% performers, replace with new concepts weekly</Step>
+          </Steps>
+          <KeyMetrics>
+            <Metric>Hook Rate (target >30%)</Metric>
+            <Metric>CPA (within target)</Metric>
+            <Metric>ROAS (blended as signal, ncROAS for decisions)</Metric>
+          </KeyMetrics>
+        </Framework>
+
+        <Framework id="F2" name="M3 Swim Lane Architecture">
+          <Source>[SRC: Founders Mastermind, Meta Blueprint]</Source>
+          <Summary>Campaign structure separating audience types for clean attribution</Summary>
+          <WhenToUse>Always - default campaign architecture for all accounts</WhenToUse>
+          <WhenNOTToUse>Never skip this - M3 is foundational</WhenNOTToUse>
+          <Steps>
+            <Step>PROSPECTING: Broad targeting (age/gender/location only), creative self-selects</Step>
+            <Step>RETARGETING: 7-90 day site visitors, video viewers (25%+), engagers</Step>
+            <Step>RETENTION: Past customers (365 days), win-back or upsell offers</Step>
+            <Step>Never overlap audiences between lanes (use exclusions)</Step>
+            <Step>Each lane has separate budget, creative strategy, success metrics</Step>
+          </Steps>
+          <KeyMetrics>
+            <Metric>Prospecting: ncROAS (incremental revenue only)</Metric>
+            <Metric>Retargeting: CPA + conversion rate</Metric>
+            <Metric>Retention: LTV increase + repeat purchase rate</Metric>
+          </KeyMetrics>
+        </Framework>
+
+        <Framework id="F3" name="5x5 Testing Matrix">
+          <Source>[SRC: Harmon Brothers, Stacked Marketer]</Source>
+          <Summary>High-variance testing for scaling accounts ($20k+/month)</Summary>
+          <WhenToUse>Scaling proven offers, high creative production capacity, $20k+ monthly spend</WhenToUse>
+          <WhenNOTToUse>New accounts (use 3:2:2 first), limited creative resources, unproven offers</WhenNOTToUse>
+          <Steps>
+            <Step>Create 5 distinct creative concepts (different hooks/angles/stories)</Step>
+            <Step>Write 5 primary text variations (different mechanisms/proof/stories)</Step>
+            <Step>Write 5 headline variations (different promises/hooks/objections)</Step>
+            <Step>Launch as Flexible Ads campaign (25 total combinations)</Step>
+            <Step>Algorithm tests combinations, surfaces winners within 5-7 days</Step>
+            <Step>Kill bottom 60%, double down on top 40%, ship new concepts weekly</Step>
+          </Steps>
+          <KeyMetrics>
+            <Metric>Winner emergence speed (5-7 days = healthy variance)</Metric>
+            <Metric>Top performer CPA gap (2x+ better than median = strong concept)</Metric>
+          </KeyMetrics>
+        </Framework>
+
+        <Framework id="F4" name="Founder-Led VSL Framework">
+          <Source>[SRC: Harmon Brothers, David Herrmann]</Source>
+          <Summary>Founder/expert-led short video (60-90sec) for authority + trust</Summary>
+          <WhenToUse>High-ticket offers, complex mechanisms, trust-dependent niches (health, finance)</WhenToUse>
+          <WhenNOTToUse>Impulse buys, commodity products, founder camera-shy or low credibility</WhenNOTToUse>
+          <Steps>
+            <Step>HOOK (0-3sec): Pattern interrupt + self-selecting question</Step>
+            <Step>PROMISE (3-15sec): Big outcome + mechanism tease</Step>
+            <Step>PROOF (15-45sec): Quick story or result showcase</Step>
+            <Step>PIVOT (45-60sec): Objection handle or authority boost</Step>
+            <Step>CTA (60-90sec): Single action, urgency (factual or consequence-based)</Step>
+          </Steps>
+          <KeyMetrics>
+            <Metric>Hook Rate >35% (founder face + curiosity gap)</Metric>
+            <Metric>Hold Rate >50% at 15sec (story engagement)</Metric>
+            <Metric>Click-through rate >2% (trust conversion)</Metric>
+          </KeyMetrics>
+        </Framework>
+
+        <Framework id="F5" name="Hero vs. Villain Story">
+          <Source>[SRC: Harmon Brothers, StoryBrand]</Source>
+          <Summary>Narrative hook structure for video and long-form static ads</Summary>
+          <WhenToUse>Complex offers, belief-shifting required, story-driven niches</WhenToUse>
+          <WhenNOTToUse>Simple commodity products, low-engagement awareness stages</WhenNOTToUse>
+          <Steps>
+            <Step>Identify VILLAIN: External obstacle (symptom) + Internal obstacle (belief/emotion)</Step>
+            <Step>Position HERO: Customer is hero, product is guide/weapon</Step>
+            <Step>Show STAKES: What happens if villain wins (consequence urgency)</Step>
+            <Step>Offer PLAN: 3-step path to victory using product</Step>
+            <Step>CALL TO ADVENTURE: CTA framed as first step of hero's journey</Step>
+          </Steps>
+          <KeyMetrics>
+            <Metric>Emotional resonance (comment quality, shares)</Metric>
+            <Metric>Hold Rate >60% (narrative pull)</Metric>
+          </KeyMetrics>
+        </Framework>
+
+        <Framework id="F6" name="Lazy Static Headlines">
+          <Source>[SRC: David Herrmann, Stacked Marketer]</Source>
+          <Summary>Ugly/authentic static images with text overlays - highest ROI per creative hour</Summary>
+          <WhenToUse>Limited creative resources, need high volume testing, proven offer</WhenToUse>
+          <WhenNOTToUse>Brand-sensitive accounts, luxury positioning, low Hook Rate benchmarks</WhenNOTToUse>
+          <Steps>
+            <Step>Use authentic images: founder selfie, messy desk, product in real context</Step>
+            <Step>Add bold text overlay: curiosity hook or self-selecting question</Step>
+            <Step>Primary text: 2-3 sentence story or pattern interrupt</Step>
+            <Step>Headline: Promise + mechanism or objection handle</Step>
+            <Step>Ship 5-10 per week (high volume, low production time)</Step>
+          </Steps>
+          <KeyMetrics>
+            <Metric>Hook Rate >30% (ugly/authentic beats polished)</Metric>
+            <Metric>Production time <15min per creative</Metric>
+          </KeyMetrics>
+        </Framework>
+
+        <Framework id="F7" name="Scam Hook Formula">
+          <Source>[SRC: Harmon Brothers, Andrew Faris]</Source>
+          <Summary>Contrarian hook that calls out false beliefs or industry lies</Summary>
+          <WhenToUse>Sophisticated audiences, saturated markets, contrarian positioning</WhenToUse>
+          <WhenNOTToUse>Unaware audiences, trust-sensitive niches without proof backup</WhenNOTToUse>
+          <Steps>
+            <Step>Identify industry lie or false belief (what competitors say that's wrong)</Step>
+            <Step>Hook: "Stop [doing X] - it's a scam" or "Why [industry norm] is keeping you stuck"</Step>
+            <Step>Agitate: Show harm from believing the lie (lost time, money, results)</Step>
+            <Step>Reveal: Introduce true mechanism (contrarian insight)</Step>
+            <Step>Prove: Quick story or result that validates new belief</Step>
+            <Step>CTA: Invite to learn full method</Step>
+          </Steps>
+          <KeyMetrics>
+            <Metric>Hook Rate >40% (controversy stops scroll)</Metric>
+            <Metric>Comment engagement (debate = good signal)</Metric>
+          </KeyMetrics>
+        </Framework>
+
+        <Framework id="F8" name="3-Step Viral Hook">
+          <Source>[SRC: Stacked Marketer, Harmon Brothers]</Source>
+          <Summary>Pattern for first 3 seconds that maximizes Hook Rate</Summary>
+          <WhenToUse>All video creatives, high-scroll-speed platforms (Feed, Stories)</WhenToUse>
+          <WhenNOTToUse>None - always apply to video hooks</WhenNOTToUse>
+          <Steps>
+            <Step>VISUAL INTERRUPT: Movement, chaos, unexpected visual (not polished)</Step>
+            <Step>TEXT HOOK: Curiosity gap or self-selecting question overlaid on visual</Step>
+            <Step>AUDIO CUE: Founder voice or surprising sound (not background music)</Step>
+          </Steps>
+          <KeyMetrics>
+            <Metric>Hook Rate >35% = good execution</Metric>
+            <Metric>Rewatch rate (signal of strong hook)</Metric>
+          </KeyMetrics>
+        </Framework>
+
+        <Framework id="F9" name="Nano Banana AI Static Machine">
+          <Source>[SRC: David Herrmann, Stacked Marketer]</Source>
+          <Summary>AI-accelerated static creation workflow for scaling winners</Summary>
+          <WhenToUse>Proven creative concepts ready to scale, need 10-20 variants fast</WhenToUse>
+          <WhenNOTToUse>Untested concepts (test manually first), brand-sensitive accounts</WhenNOTToUse>
+          <Steps>
+            <Step>Identify winning creative (Hook Rate >35%, profitable CPA)</Step>
+            <Step>Extract core elements: hook type, visual style, primary text angle</Step>
+            <Step>Use AI (Midjourney, ChatGPT, Canva AI) to create 10 visual variants</Step>
+            <Step>Pair with 3-5 headline variants (same concept, different wording)</Step>
+            <Step>Ship as Flexible Ads batch (30-50 combinations)</Step>
+            <Step>Let algorithm surface top performers, kill bottom 70%</Step>
+          </Steps>
+          <KeyMetrics>
+            <Metric>Variants shipped per hour (target 10+)</Metric>
+            <Metric>Winner rate (10-20% should match or beat original)</Metric>
+          </KeyMetrics>
+        </Framework>
+
+        <Framework id="F10" name="Post ID Harvesting">
+          <Source>[SRC: Meta Ads Library, Founders Mastermind]</Source>
+          <Summary>Preserve social proof when duplicating winning ads</Summary>
+          <WhenToUse>Scaling winners to new campaigns, preserving engagement signals</WhenToUse>
+          <WhenNOTToUse>Testing new concepts (no social proof yet)</WhenNOTToUse>
+          <Steps>
+            <Step>Identify winning ad with high engagement (likes, comments, shares)</Step>
+            <Step>Create new ad using existing post (Use Existing Post option)</Step>
+            <Step>Enter Post ID to preserve engagement count</Step>
+            <Step>Algorithm sees engagement signals, prioritizes delivery</Step>
+          </Steps>
+          <KeyMetrics>
+            <Metric>Engagement rate preserved (proof of concept validation)</Metric>
+          </KeyMetrics>
+        </Framework>
+
+        <Framework id="F11" name="Lead Gen Lag-Time Optimization">
+          <Source>[SRC: Meta Blueprint, Conversion Lift Studies]</Source>
+          <Summary>Optimize for full funnel conversion, not just lead capture</Summary>
+          <WhenToUse>Lead gen funnels with backend conversion (calls, appointments, sales)</WhenToUse>
+          <WhenNOTToUse>Pure lead capture with no backend tracking</WhenNOTToUse>
+          <Steps>
+            <Step>Set primary conversion event to backend action (call booked, sale made)</Step>
+            <Step>Set secondary event to lead capture (form submit) for learning phase</Step>
+            <Step>After 50 backend conversions, switch to backend-only optimization</Step>
+            <Step>Algorithm learns quality lead signals, reduces junk leads</Step>
+          </Steps>
+          <KeyMetrics>
+            <Metric>Lead-to-sale conversion rate (target >10% improvement)</Metric>
+            <Metric>Cost per qualified lead (backend conversion cost)</Metric>
+          </KeyMetrics>
+        </Framework>
+
+        <Framework id="F12" name="Visual Hook Audit">
+          <Source>[SRC: Harmon Brothers Creative Lab]</Source>
+          <Summary>Diagnostic framework for low Hook Rate creatives</Summary>
+          <WhenToUse>Hook Rate <25%, underperforming creatives</WhenToUse>
+          <WhenNOTToUse>Already hitting Hook Rate targets</WhenNOTToUse>
+          <Steps>
+            <Step>Visual: Is first frame chaotic/surprising/ugly (not polished)?</Step>
+            <Step>Text: Does hook self-select ICP or create curiosity gap?</Step>
+            <Step>Movement: Is there motion in first 3sec (not static image)?</Step>
+            <Step>Audio: Is there voice/sound in first 3sec (not just music)?</Step>
+            <Step>Contrast: Does creative stand out from feed (pattern interrupt)?</Step>
+            <Step>Fix weakest element, retest</Step>
+          </Steps>
+          <KeyMetrics>
+            <Metric>Hook Rate improvement (target +10-15% after fix)</Metric>
+          </KeyMetrics>
+        </Framework>
+      </CanonicalFrameworks>
+
+      <DecisionHeuristics>
+        <Category name="Diagnostic">
+          <Heuristic>IF Hook Rate <25% THEN audit visual hook (first 3sec) using Visual Hook Audit framework</Heuristic>
+          <Heuristic>IF Hook Rate >35% but CPA too high THEN hook-body mismatch (creative attracts wrong audience)</Heuristic>
+          <Heuristic>IF learning limited 7+ days THEN consolidate campaigns or increase budget (need 50 conversions/week)</Heuristic>
+          <Heuristic>IF all creatives perform similarly THEN testing variations not concepts (increase concept diversity)</Heuristic>
+          <Heuristic>IF MER flat while spend increases THEN attribution hallucination (check ncROAS or run holdout test)</Heuristic>
+          <Heuristic>IF retargeting outperforms prospecting 3x+ THEN prospecting creative weak (not self-selecting ICP)</Heuristic>
+          <Heuristic>IF creative fatigue <14 days THEN audience saturation or poor concept diversity</Heuristic>
+        </Category>
+
+        <Category name="Optimization">
+          <Heuristic>IF profitable CPA achieved THEN scale budget 20% every 3-5 days (max)</Heuristic>
+          <Heuristic>IF winner emerges (CPA 30%+ better) THEN kill bottom 50%, reallocate budget to winners</Heuristic>
+          <Heuristic>IF creative fatigue detected (Hook Rate drops 30%+) THEN ship replacement concept same day</Heuristic>
+          <Heuristic>IF Hold Rate >50% but low CTR THEN weak CTA or offer-creative mismatch</Heuristic>
+          <Heuristic>IF high engagement (shares/comments) but low conversion THEN awareness-stage traffic (wrong funnel stage)</Heuristic>
+          <Heuristic>IF ncROAS >2.0 THEN profitable for scaling (ignore blended ROAS)</Heuristic>
+        </Category>
+
+        <Category name="Scaling">
+          <Heuristic>IF spending <$10k/month THEN use 3:2:2 framework (low variance)</Heuristic>
+          <Heuristic>IF spending $20k+/month THEN use 5x5 framework (high variance testing)</Heuristic>
+          <Heuristic>IF spending $50k+/month THEN ship 5+ new concepts weekly (Rule of 1:10k)</Heuristic>
+          <Heuristic>IF scaling past $100k/month THEN add new prospecting campaigns (avoid single campaign ceiling)</Heuristic>
+          <Heuristic>IF scaling plateaus THEN audit creative flywheel (need weekly fresh concepts)</Heuristic>
+        </Category>
+
+        <Category name="Troubleshooting">
+          <Heuristic>IF compliance flags received THEN audit hooks for sensationalism, run copy through Meta text scanner</Heuristic>
+          <Heuristic>IF pixel firing but no conversions attributed THEN check Conversion API setup or attribution window</Heuristic>
+          <Heuristic>IF budget unspent (50%+) THEN increase audience size or bid cap too low</Heuristic>
+          <Heuristic>IF audience fragmentation detected THEN consolidate to M3 lanes only (kill over-segmentation)</Heuristic>
+          <Heuristic>IF retargeting saturated (frequency >5) THEN expand retargeting window or reduce budget</Heuristic>
+        </Category>
+      </DecisionHeuristics>
+    </Layer>
+
+    <!-- ===== LAYER 3: Advanced Usage (≤3000 tokens) ===== -->
+    <Layer id="L3" name="Advanced Usage" token_budget="3000">
+      <LoadPriority>when_complexity_high</LoadPriority>
+
+      <AntiPatterns>
+        <AntiPattern id="AP1" name="Variable Testing">
+          <Description>Testing minor variations (color swaps, font changes, small text edits) instead of distinct concepts</Description>
+          <WhyHarmful>
+            Wastes learning budget - algorithm sees variations as duplicates. Spreads data thin across
+            similar creatives instead of testing truly different hooks/angles/stories.
+          </WhyHarmful>
+          <InsteadDo>
+            Test concepts: different hooks (curiosity vs scam vs founder story), different mechanisms
+            (what causes the problem), different proof types (testimonial vs data vs story).
+          </InsteadDo>
+        </AntiPattern>
+
+        <AntiPattern id="AP2" name="Frequent Pausing">
+          <Description>Pausing ads daily or every few days based on short-term performance fluctuations</Description>
+          <WhyHarmful>
+            Resets learning phase. Algorithm needs 50 conversions to optimize delivery. Frequent pausing
+            prevents algorithm from finding optimal audience within your creative's targeting signals.
+          </WhyHarmful>
+          <InsteadDo>
+            Let ads run 7 days or 50 conversions minimum before judging. Kill only if CPA is 2x+ target
+            after learning phase. Replace losers with new concepts, don't pause/unpause same creative.
+          </InsteadDo>
+        </AntiPattern>
+
+        <AntiPattern id="AP3" name="Front-End Obsession">
+          <Description>Optimizing only for front-end ROAS without tracking backend LTV or ncROAS</Description>
+          <WhyHarmful>
+            Miss profitable customer acquisition opportunities. High repeat-purchase products look more
+            profitable than they are (attribution hallucination). Low-ticket offers appear unprofitable
+            despite strong backend upsells.
+          </WhyHarmful>
+          <InsteadDo>
+            Track ncROAS (new customer revenue only) and LTV at 30/60/90 days. Use MER (total revenue /
+            total ad spend) as health check. Make scale decisions on incremental revenue, not blended.
+          </InsteadDo>
+        </AntiPattern>
+
+        <AntiPattern id="AP4" name="Avatar Sprawl">
+          <Description>Creating separate campaigns for minor demographic differences (age brackets, gender, interests)</Description>
+          <WhyHarmful>
+            Fragments learning budget. Algorithm needs volume to optimize. 10 campaigns with $500 each
+            learn slower than 1 campaign with $5,000. Creative already self-selects ICP via hooks.
+          </WhyHarmful>
+          <InsteadDo>
+            Use M3 swim lanes only (Prospecting/Retargeting/Retention). Within prospecting, use broad
+            targeting (age/gender/location only). Let creative hooks self-select psychographic ICP.
+          </InsteadDo>
+        </AntiPattern>
+
+        <AntiPattern id="AP5" name="Retargeting Crutch">
+          <Description>Achieving profitability only through retargeting while prospecting bleeds money</Description>
+          <WhyHarmful>
+            Not scalable. Retargeting pool is limited by prospecting volume. If prospecting doesn't
+            work, business can't grow beyond existing warm audience size.
+          </WhyHarmful>
+          <InsteadDo>
+            Fix prospecting creative first. Use retargeting to improve overall blended metrics, not
+            as primary revenue source. Prospecting must hit ≥1.5x ncROAS to scale sustainably.
+          </InsteadDo>
+        </AntiPattern>
+
+        <AntiPattern id="AP6" name="Creative Starvation">
+          <Description>Running same winning creatives for 30+ days without shipping fresh concepts</Description>
+          <WhyHarmful>
+            Creative fatigue kills performance. Hook Rate drops 30-50% after 14-21 days. Algorithm
+            has exhausted audience interested in that specific angle/hook/story.
+          </WhyHarmful>
+          <InsteadDo>
+            Follow Rule of 1:10k - ship 1 new creative per $10k monthly spend. Schedule weekly creative
+            production. Rotate winners before fatigue hits (14-day max lifespan for heroes).
+          </InsteadDo>
+        </AntiPattern>
+
+        <AntiPattern id="AP7" name="Over-Segmentation">
+          <Description>Creating dozens of ad sets with narrow audiences (lookalikes, interests, behaviors stacked)</Description>
+          <WhyHarmful>
+            Fights Andromeda. Algorithm already identifies best audience within broad targeting based
+            on creative content. Manual segmentation restricts algorithm's ability to find ideal users.
+          </WhyHarmful>
+          <InsteadDo>
+            Consolidate to broad targeting. Trust creative to self-select. Use audience insights for
+            creative ideation (what psychographics to hook), not for campaign targeting.
+          </InsteadDo>
+        </AntiPattern>
+      </AntiPatterns>
+
+      <FailureModes>
+        <FailureMode id="FM1" name="Creative Fatigue">
+          <Symptoms>Hook Rate drops 30%+, CPA increases 50%+, frequency rises above 3.5</Symptoms>
+          <RootCause>Same creative shown to same audience repeatedly - novelty worn off</RootCause>
+          <DiagnosisSteps>
+            <Step>Check frequency metric (>3.5 = fatigued)</Step>
+            <Step>Compare current Hook Rate to first 7 days (30%+ drop = fatigued)</Step>
+            <Step>Check delivery: if reaching same users repeatedly, audience too narrow</Step>
+          </DiagnosisSteps>
+          <Recovery>
+            <Step>Ship replacement concept immediately (same offer, different hook/angle)</Step>
+            <Step>Pause fatigued creative</Step>
+            <Step>Expand audience if frequency was issue</Step>
+          </Recovery>
+          <Prevention>
+            <Step>Follow Rule of 1:10k - ship fresh concepts weekly</Step>
+            <Step>Rotate winners before fatigue (14-day max lifespan)</Step>
+            <Step>Build creative flywheel - always have 3-5 concepts in testing</Step>
+          </Prevention>
+        </FailureMode>
+
+        <FailureMode id="FM2" name="Attribution Hallucination">
+          <Symptoms>Platform ROAS looks great but MER is flat or declining</Symptoms>
+          <RootCause>Platform attributing sales that would've happened anyway (existing customers, organic traffic)</RootCause>
+          <DiagnosisSteps>
+            <Step>Calculate MER: total revenue / total ad spend across all channels</Step>
+            <Step>Compare platform ROAS to MER (>1.5x gap = hallucination likely)</Step>
+            <Step>Check new customer percentage (if <30%, attribution inflated by repeats)</Step>
+          </DiagnosisSteps>
+          <Recovery>
+            <Step>Run holdout test: pause ads for 2 weeks, measure organic revenue baseline</Step>
+            <Step>Calculate ncROAS: (total revenue - organic baseline) / ad spend</Step>
+            <Step>Use ncROAS for scale decisions, not platform ROAS</Step>
+          </Recovery>
+          <Prevention>
+            <Step>Track ncROAS from day 1</Step>
+            <Step>Use Conversion Lift Studies for accurate incrementality measurement</Step>
+            <Step>Segment reporting: new customers vs repeat customers</Step>
+          </Prevention>
+        </FailureMode>
+
+        <FailureMode id="FM3" name="Learning Limited Loop">
+          <Symptoms>Ad set stuck in "Learning Limited" for 7+ days, poor delivery</Symptoms>
+          <RootCause>Not enough conversions per week (need 50 minimum) - budget too low or audience too narrow</RootCause>
+          <DiagnosisSteps>
+            <Step>Check conversion volume: <50/week = learning limited</Step>
+            <Step>Check audience size: <500k = likely too narrow</Step>
+            <Step>Check budget: if <$50/day for conversions, may be too low</Step>
+          </DiagnosisSteps>
+          <Recovery>
+            <Step>Consolidate campaigns - combine ad sets to pool conversions</Step>
+            <Step>Increase budget to hit 50 conversions/week minimum</Step>
+            <Step>Expand audience (remove narrow interest/behavior layers)</Step>
+          </Recovery>
+          <Prevention>
+            <Step>Start with broad targeting (M3 swim lanes only)</Step>
+            <Step>Budget formula: (target CPA × 50) / 7 days = minimum daily budget</Step>
+            <Step>Avoid fragmentation - fewer campaigns with higher budgets</Step>
+          </Prevention>
+        </FailureMode>
+
+        <FailureMode id="FM4" name="Hook-Body Mismatch">
+          <Symptoms>High Hook Rate (>40%) but low conversion rate or high CPA</Symptoms>
+          <RootCause>Hook attracts wrong audience - curiosity gap or pattern interrupt not aligned with ICP</RootCause>
+          <DiagnosisSteps>
+            <Step>Analyze who's clicking: does demographic data match ICP?</Step>
+            <Step>Read comments: are people confused or saying "not for me"?</Step>
+            <Step>Check landing page bounce rate: >70% = hook-offer mismatch</Step>
+          </DiagnosisSteps>
+          <Recovery>
+            <Step>Rewrite hook to self-select ICP (add qualifier or niche-specific trigger)</Step>
+            <Step>Example: "This weird trick" → "If you're a hormonal woman over 40, this fixes sleep"</Step>
+            <Step>Test new hook version with same body copy</Step>
+          </Recovery>
+          <Prevention>
+            <Step>Use self-selecting hooks (identify ICP in first 3 seconds)</Step>
+            <Step>Test on small budget first - verify ICP clicking before scaling</Step>
+          </Prevention>
+        </FailureMode>
+
+        <FailureMode id="FM5" name="Offer-Channel Mismatch">
+          <Symptoms>Good creative metrics but no conversions - high engagement but no sales</Symptoms>
+          <RootCause>Offer requires trust/education but sending to cold Meta traffic without nurture</RootCause>
+          <DiagnosisSteps>
+            <Step>Check offer complexity: high-ticket, complex mechanism, or trust-required?</Step>
+            <Step>Check funnel: sending to direct buy page or nurture sequence?</Step>
+            <Step>Check awareness level: is traffic cold (unaware) for this offer?</Step>
+          </DiagnosisSteps>
+          <Recovery>
+            <Step>Add pre-sell step: advertorial, VSL, or lead magnet before sale</Step>
+            <Step>Use retargeting to close (prospecting warms, retargeting converts)</Step>
+            <Step>Lower offer friction: free trial, payment plan, money-back guarantee</Step>
+          </Recovery>
+          <Prevention>
+            <Step>Match offer to awareness: cold traffic → lead magnet or advertorial</Step>
+            <Step>High-ticket requires 2-3 touch sequence (ad → VSL → call/sale)</Step>
+          </Prevention>
+        </FailureMode>
+
+        <FailureMode id="FM6" name="Pixel Malnutrition">
+          <Symptoms>No conversions tracked despite sales happening (verified in CRM/Stripe)</Symptoms>
+          <RootCause>Pixel not firing, Conversion API misconfigured, or attribution window too short</RootCause>
+          <DiagnosisSteps>
+            <Step>Use Meta Pixel Helper (Chrome extension) - verify pixel firing on thank-you page</Step>
+            <Step>Check Events Manager: compare pixel events to actual sales count</Step>
+            <Step>Test conversion: complete purchase yourself, verify event shows in Events Manager within 20 min</Step>
+          </DiagnosisSteps>
+          <Recovery>
+            <Step>Fix pixel implementation (check developer docs for platform: Shopify/WordPress/custom)</Step>
+            <Step>Set up Conversion API (server-side tracking) as backup</Step>
+            <Step>Extend attribution window to 7-day click / 1-day view (default may miss conversions)</Step>
+          </Recovery>
+          <Prevention>
+            <Step>Verify tracking BEFORE launching campaigns (test purchase required)</Step>
+            <Step>Use both Pixel and Conversion API (redundancy prevents data loss)</Step>
+            <Step>Monitor Events Manager daily during first week of new campaigns</Step>
+          </Prevention>
+        </FailureMode>
+
+        <FailureMode id="FM7" name="Creative-Avatar Misalignment">
+          <Symptoms>Creative performs well for wrong audience (demographic data shows misalignment with ICP)</Symptoms>
+          <RootCause>Hook or story resonates with adjacent audience, not target ICP</RootCause>
+          <DiagnosisSteps>
+            <Step>Check breakdown reporting: age/gender of converters vs target ICP</Step>
+            <Step>Read comments: are people from wrong demographic engaging?</Step>
+            <Step>Check sales quality: are converters actually good customers (LTV, retention)?</Step>
+          </DiagnosisSteps>
+          <Recovery>
+            <Step>Add ICP qualifier to hook: "If you're [ICP descriptor], watch this"</Step>
+            <Step>Use ICP-specific proof: testimonials from target demographic</Step>
+            <Step>Adjust creative setting/context to match ICP lifestyle</Step>
+          </Recovery>
+          <Prevention>
+            <Step>Include ICP self-selection in first 3 seconds of all creatives</Step>
+            <Step>Use ICP-specific language, slang, or cultural references</Step>
+          </Prevention>
+        </FailureMode>
+
+        <FailureMode id="FM8" name="Retargeting Saturation">
+          <Symptoms>Retargeting CPA spikes 100%+, frequency >5, diminishing returns</Symptoms>
+          <RootCause>Exhausted retargeting pool - showing same ads to same people too many times</RootCause>
+          <DiagnosisSteps>
+            <Step>Check retargeting audience size vs daily spend (need 10x daily budget in audience size)</Step>
+            <Step>Check frequency: >5 = saturated</Step>
+            <Step>Check audience growth rate: if stagnant, prospecting not feeding retargeting</Step>
+          </DiagnosisSteps>
+          <Recovery>
+            <Step>Expand retargeting window: 7-30 days → 7-90 days</Step>
+            <Step>Reduce retargeting budget (scale down until frequency <3)</Step>
+            <Step>Increase prospecting to grow retargeting pool</Step>
+          </Recovery>
+          <Prevention>
+            <Step>Monitor frequency daily - pause when hits 4.5</Step>
+            <Step>Rotate retargeting creatives weekly (prevent creative fatigue too)</Step>
+            <Step>Balance prospecting:retargeting spend at 70:30 or 60:40 (prospecting should be larger)</Step>
+          </Prevention>
+        </FailureMode>
+
+        <FailureMode id="FM9" name="Compliance Flags from Hooks">
+          <Symptoms>Ad rejected or flagged for policy violations despite safe offer</Symptoms>
+          <RootCause>Hook language triggers automated filters (health claims, sensationalism, prohibited terms)</RootCause>
+          <DiagnosisSteps>
+            <Step>Read rejection notice - identify specific policy cited</Step>
+            <Step>Scan hook for: health claims, before/after, income claims, sensationalist language</Step>
+            <Step>Run copy through Meta Ads Library search - see if similar language approved for competitors</Step>
+          </DiagnosisSteps>
+          <Recovery>
+            <Step>Soften claims: "lose 20 lbs" → "support healthy weight"</Step>
+            <Step>Remove absolutes: "always", "never", "guaranteed", "miracle"</Step>
+            <Step>Add disclaimers if required (health/finance niches)</Step>
+            <Step>Resubmit with edited copy</Step>
+          </Recovery>
+          <Prevention>
+            <Step>Use compliant phrasing library for your niche</Step>
+            <Step>Avoid before/after images in health/beauty</Step>
+            <Step>Never claim income results without disclaimers</Step>
+          </Prevention>
+        </FailureMode>
+
+        <FailureMode id="FM10" name="Native Format Misfit">
+          <Symptoms>Low engagement despite good creative - feels "ad-like" or out of place in feed</Symptoms>
+          <RootCause>Creative doesn't match native content style - too polished, obviously promotional</RootCause>
+          <DiagnosisSteps>
+            <Step>Compare creative to organic feed content - does it blend or stand out as "ad"?</Step>
+            <Step>Check Hook Rate: <20% = not native enough</Step>
+            <Step>Read negative comments: "this is an ad", "sponsored content"</Step>
+          </DiagnosisSteps>
+          <Recovery>
+            <Step>De-polish creative: use iPhone footage, authentic settings, founder face</Step>
+            <Step>Match feed aesthetic: TikTok-style for Reels, casual selfie for Feed</Step>
+            <Step>Remove overt branding in first 3 seconds (add at end)</Step>
+          </Recovery>
+          <Prevention>
+            <Step>Study organic viral content in your niche - match style</Step>
+            <Step>Use UGC (user-generated content) style even for founder-led</Step>
+            <Step>"Ugly" often outperforms polished in Meta feeds</Step>
+          </Prevention>
+        </FailureMode>
+
+        <FailureMode id="FM11" name="Under-Resourced Creative Pipeline">
+          <Symptoms>Can't ship weekly concepts, creative production bottlenecked, scaling stalled</Symptoms>
+          <RootCause>No creative production system - relying on one-off creative requests instead of systematic pipeline</RootCause>
+          <DiagnosisSteps>
+            <Step>Count creatives shipped last 30 days vs Rule of 1:10k requirement</Step>
+            <Step>Identify bottleneck: ideation, production, or approval?</Step>
+            <Step>Measure time from concept to live ad (should be <48 hours)</Step>
+          </DiagnosisSteps>
+          <Recovery>
+            <Step>Build creative flywheel: schedule weekly creative sprints (2-3 hours blocked)</Step>
+            <Step>Use Lazy Static Headlines for fast volume (5-10 per session)</Step>
+            <Step>Hire creator or use AI tools (Nano Banana framework) to scale</Step>
+          </Recovery>
+          <Prevention>
+            <Step>Reserve 10-20% of ad budget for creative production</Step>
+            <Step>Build creative library (swipe file of angles/hooks/winning formats)</Step>
+            <Step>Systemize: template-based production for speed</Step>
+          </Prevention>
+        </FailureMode>
+
+        <FailureMode id="FM12" name="Budget Cliff">
+          <Symptoms>Profitable at $X spend but unprofitable when scaling to $1.5X+</Symptoms>
+          <RootCause>Hit audience ceiling - algorithm exhausted available users interested in this creative angle</RootCause>
+          <DiagnosisSteps>
+            <Step>Check audience size vs daily spend (need 100x ratio minimum)</Step>
+            <Step>Check frequency: if rising fast during scale, hitting ceiling</Step>
+            <Step>Check CPA trend: if increases 30%+ during scale, losing efficiency</Step>
+          </DiagnosisSteps>
+          <Recovery>
+            <Step>Add new prospecting campaign with different creative angles (not duplicates)</Step>
+            <Step>Expand to new geographic markets (if applicable)</Step>
+            <Step>Test new creative concepts to unlock new audience segments</Step>
+          </Recovery>
+          <Prevention>
+            <Step>Scale gradually: 20% budget increases every 3-5 days (not overnight doubles)</Step>
+            <Step>Build multi-campaign structure before hitting ceiling (3-5 prospecting campaigns)</Step>
+            <Step>Diversify creative angles to access different audience psychographics</Step>
+          </Prevention>
+        </FailureMode>
+
+        <FailureMode id="FM13" name="Misread MER">
+          <Symptoms>Cutting profitable channels because platform ROAS looks low, but MER stays strong</Symptoms>
+          <RootCause>Attribution models don't capture full customer journey - multiple touchpoints before conversion</RootCause>
+          <DiagnosisSteps>
+            <Step>Calculate MER: total revenue / total marketing spend (all channels)</Step>
+            <Step>Compare MER during test period (channel on) vs after pause (channel off)</Step>
+            <Step>Check assisted conversions: how many sales had this channel in journey?</Step>
+          </DiagnosisSteps>
+          <Recovery>
+            <Step>Reinstate paused channel if MER dropped after removal</Step>
+            <Step>Use MER as health metric, individual channel ROAS as optimization guide</Step>
+            <Step>Accept lower platform ROAS on awareness channels (they assist, not close)</Step>
+          </Recovery>
+          <Prevention>
+            <Step>Always monitor MER when making channel decisions</Step>
+            <Step>Run holdout tests before killing channels (pause 2 weeks, measure impact)</Step>
+            <Step>Understand customer journey: awareness channels feed conversion channels</Step>
+          </Prevention>
+        </FailureMode>
+
+        <FailureMode id="FM14" name="Audience Fragmentation by Placement">
+          <Symptoms>Created separate campaigns for Feed vs Stories vs Reels - learning spread thin</Symptoms>
+          <RootCause>Trying to control placement manually instead of letting algorithm optimize</RootCause>
+          <DiagnosisSteps>
+            <Step>Count campaigns: >3 per swim lane (Prospecting/Retargeting/Retention) = fragmented</Step>
+            <Step>Check delivery: are some placements getting zero spend?</Step>
+            <Step>Check learning status: stuck in "Learning Limited" due to low volume per campaign</Step>
+          </DiagnosisSteps>
+          <Recovery>
+            <Step>Consolidate to Automatic Placements (algorithm chooses best)</Step>
+            <Step>Create placement-specific creative formats (9:16 for Stories/Reels, 1:1 for Feed)</Step>
+            <Step>Let algorithm distribute budget to best-performing placements</Step>
+          </Recovery>
+          <Prevention>
+            <Step>Use Automatic Placements as default (manual only for specific creative needs)</Step>
+            <Step>Trust algorithm to find cheapest placements for your conversion goal</Step>
+          </Prevention>
+        </FailureMode>
+
+        <FailureMode id="FM15" name="Funnel Blindness">
+          <Symptoms>Optimizing ads without considering landing page or funnel - ad performance good but conversions low</Symptoms>
+          <RootCause>Message mismatch between ad and landing page, or broken funnel downstream</RootCause>
+          <DiagnosisSteps>
+            <Step>Check landing page conversion rate: <2% = funnel issue, not ad issue</Step>
+            <Step>Test ad-to-page message match: does headline match hook promise?</Step>
+            <Step>Check funnel drop-off points: where are users exiting?</Step>
+          </DiagnosisSteps>
+          <Recovery>
+            <Step>Match landing page headline to ad hook (reduce friction)</Step>
+            <Step>Fix funnel breaks: load speed, mobile UX, checkout flow</Step>
+            <Step>A/B test landing page variations before blaming ad creative</Step>
+          </Recovery>
+          <Prevention>
+            <Step>Optimize ad and landing page together (holistic funnel view)</Step>
+            <Step>Track micro-conversions: page views, add-to-cart, initiated checkout</Step>
+            <Step>Message match principle: ad promise = landing page delivery</Step>
+          </Prevention>
+        </FailureMode>
+      </FailureModes>
+
+      <AdvancedSystems>
+        <System name="Scaling System">
+          <Overview>Structured approach to scaling from $X to $10X profitably</Overview>
+          <Phases>
+            <Phase name="Validation ($0-10k/month)">
+              <Goal>Achieve ncROAS >1.5x consistently for 14+ days</Goal>
+              <Framework>3:2:2 testing</Framework>
+              <CreativeVolume>3-5 concepts/week</CreativeVolume>
+              <Structure>Single M3 swim lane setup (Prospecting/Retargeting/Retention)</Structure>
+            </Phase>
+
+            <Phase name="Growth ($10k-50k/month)">
+              <Goal>Scale budget 20% weekly while maintaining ncROAS >1.5x</Goal>
+              <Framework>5x5 testing for prospecting</Framework>
+              <CreativeVolume>5-7 concepts/week</CreativeVolume>
+              <Structure>Add 2nd prospecting campaign (different creative angles)</Structure>
+            </Phase>
+
+            <Phase name="Scale ($50k-200k/month)">
+              <Goal>Expand to new markets/products while maintaining MER >3.0</Goal>
+              <Framework>Creative Flywheel (Rule of 1:10k - 5-20 concepts/week)</Framework>
+              <CreativeVolume>10-20 concepts/week</CreativeVolume>
+              <Structure>3-5 prospecting campaigns, geographic expansion, product line expansion</Structure>
+            </Phase>
+          </Phases>
+        </System>
+
+        <System name="Attribution & Lift System">
+          <Purpose>Measure true incrementality, not just last-click attribution</Purpose>
+          <Methods>
+            <Method name="Holdout Test">
+              <Steps>
+                <Step>Baseline period: run ads normally for 14+ days, measure MER</Step>
+                <Step>Holdout period: pause ALL ads for 14 days, measure organic revenue</Step>
+                <Step>Calculate lift: (baseline revenue - holdout revenue) / ad spend = true ROAS</Step>
+              </Steps>
+              <WhenToUse>Annual validation, major budget decisions, platform disputes</WhenToUse>
+            </Method>
+
+            <Method name="Conversion Lift Studies">
+              <Steps>
+                <Step>Meta runs controlled experiment: shows ads to test group, withholds from control</Step>
+                <Step>Measures conversion difference between groups</Step>
+                <Step>Provides incremental conversion count and cost</Step>
+              </Steps>
+              <WhenToUse>Spending $50k+/month, need statistically valid incrementality data</WhenToUse>
+            </Method>
+
+            <Method name="ncROAS Tracking">
+              <Steps>
+                <Step>Segment reporting: new customers vs repeat customers</Step>
+                <Step>Calculate: new customer revenue / ad spend = ncROAS</Step>
+                <Step>Compare to blended ROAS to identify attribution inflation</Step>
+              </Steps>
+              <WhenToUse>All accounts - track from day 1</WhenToUse>
+            </Method>
+          </Methods>
+        </System>
+
+        <System name="Creative Fatigue Management">
+          <Monitoring>
+            <Metric>Hook Rate trend (alert if drops 25%+ from week 1 baseline)</Metric>
+            <Metric>Frequency (alert if >3.5)</Metric>
+            <Metric>CPA trend (alert if increases 40%+ from baseline)</Metric>
+          </Monitoring>
+
+          <PreventionProtocol>
+            <Action>Rotate winners every 14 days (before fatigue hits)</Action>
+            <Action>Build creative bench: always have 3-5 concepts in testing queue</Action>
+            <Action>Use Post ID harvesting to preserve social proof when refreshing</Action>
+          </PreventionProtocol>
+
+          <RecoveryProtocol>
+            <Step>Detect fatigue (Hook Rate drop, frequency spike)</Step>
+            <Step>Pause fatigued creative immediately</Step>
+            <Step>Ship replacement concept within 24 hours (same offer, new angle)</Step>
+            <Step>Monitor replacement for 48 hours - verify it doesn't inherit fatigue</Step>
+          </RecoveryProtocol>
+        </System>
+
+        <System name="Segmentation & Swim Lanes">
+          <M3Architecture>
+            <Lane name="Prospecting">
+              <Audience>Broad targeting - age/gender/location only (no interests/behaviors)</Audience>
+              <Creative>Self-selecting hooks, concept diversity, high-volume testing</Creative>
+              <Metrics>ncROAS >1.5x, Hook Rate >30%, learning phase completion</Metrics>
+              <Budget>60-70% of total ad spend</Budget>
+            </Lane>
+
+            <Lane name="Retargeting">
+              <Audience>Site visitors (7-90 days), video viewers (25%+), engagers</Audience>
+              <Creative>Direct response, objection handling, urgency/scarcity</Creative>
+              <Metrics>CPA 30-50% lower than prospecting, conversion rate 3-5x higher</Metrics>
+              <Budget>20-30% of total ad spend</Budget>
+            </Lane>
+
+            <Lane name="Retention">
+              <Audience>Past customers (0-365 days), exclude recent purchasers if applicable</Audience>
+              <Creative>Win-back offers, upsells, cross-sells, loyalty rewards</Creative>
+              <Metrics>LTV increase, repeat purchase rate, retention rate</Metrics>
+              <Budget>5-10% of total ad spend (or separate from acquisition budget)</Budget>
+            </Lane>
+          </M3Architecture>
+
+          <ExclusionLogic>
+            <Rule>Prospecting excludes Retargeting and Retention audiences</Rule>
+            <Rule>Retargeting excludes Retention audiences (recent purchasers)</Rule>
+            <Rule>Never overlap - use custom audience exclusions</Rule>
+          </ExclusionLogic>
+        </System>
+
+        <System name="Holdout & Incrementality Testing">
+          <Framework>
+            <Step>Identify test hypothesis (e.g., "Is Meta driving incremental revenue or just capturing organic demand?")</Step>
+            <Step>Run baseline period: 14-30 days with ads on, measure MER and conversion volume</Step>
+            <Step>Pause test channel: 14-30 days with ads off, measure organic baseline</Step>
+            <Step>Calculate incremental lift: (baseline revenue - organic revenue) / ad spend</Step>
+            <Step>Resume channel, use lift data to set realistic targets</Step>
+          </Framework>
+
+          <WhenToRun>
+            <Trigger>Annually for validation</Trigger>
+            <Trigger>When MER and platform ROAS diverge significantly (>1.5x gap)</Trigger>
+            <Trigger>Before major budget increases ($50k → $100k+)</Trigger>
+            <Trigger>When stakeholders question channel effectiveness</Trigger>
+          </WhenToRun>
+        </System>
+      </AdvancedSystems>
+
+      <ToolingInstrumentation>
+        <Tool name="Meta Events Manager">
+          <Purpose>Track pixel events, Conversion API, and attribution</Purpose>
+          <KeyActions>
+            <Action>Verify pixel firing on thank-you page</Action>
+            <Action>Monitor event match quality (>7.0 = good)</Action>
+            <Action>Compare pixel events to actual sales (catch tracking breaks)</Action>
+          </KeyActions>
+        </Tool>
+
+        <Tool name="Meta Ads Library">
+          <Purpose>Competitive research - see what hooks/creatives competitors run</Purpose>
+          <KeyActions>
+            <Action>Search competitor brands, analyze active ads</Action>
+            <Action>Identify hook patterns, creative formats, offer types</Action>
+            <Action>Build swipe file of winning angles in your niche</Action>
+          </KeyActions>
+        </Tool>
+
+        <Tool name="Triple Whale / Hyros">
+          <Purpose>Attribution platform for ncROAS tracking and MER monitoring</Purpose>
+          <KeyActions>
+            <Action>Track ncROAS (new customer revenue only)</Action>
+            <Action>Monitor MER across all channels</Action>
+            <Action>Segment reporting: new vs repeat customers</Action>
+          </KeyActions>
+        </Tool>
+
+        <Tool name="Meta Pixel Helper (Chrome Extension)">
+          <Purpose>Debug pixel issues in real-time</Purpose>
+          <KeyActions>
+            <Action>Verify pixel firing on every page of funnel</Action>
+            <Action>Check event parameters (value, currency, content_ids)</Action>
+            <Action>Diagnose tracking breaks before launching campaigns</Action>
+          </KeyActions>
+        </Tool>
+      </ToolingInstrumentation>
+    </Layer>
+
+    <!-- ===== LAYER 4: Output Templates (≤2000 tokens) ===== -->
+    <Layer id="L4" name="Output Templates" token_budget="2000">
+      <LoadPriority>when_generating_deliverables</LoadPriority>
+
+      <CampaignNamingConventions>
+        <Convention>
+          <Format>[LANE]_[OBJECTIVE]_[CREATIVE_ANGLE]_[DATE]</Format>
+          <Examples>
+            <Example>PROS_CONV_FounderVSL_ScamHook_0119</Example>
+            <Example>RETARG_CONV_DirectCTA_Urgency_0119</Example>
+            <Example>RETENTION_CONV_Upsell_Winback_0119</Example>
+          </Examples>
+        </Convention>
+      </CampaignNamingConventions>
+
+      <CampaignBlueprintTemplate>
+        <![CDATA[
+# META ADS CAMPAIGN BLUEPRINT
+
+## CAMPAIGN OVERVIEW
+- **Goal**: [Revenue target, conversion target]
+- **Budget**: [Total monthly budget]
+- **Timeline**: [Launch date, scale milestones]
+- **Success Metrics**: ncROAS >[X.X], CPA <$[XX], MER >[X.X]
+
+## M3 SWIM LANE STRUCTURE
+
+### PROSPECTING
+- **Audience**: Broad (age [XX-XX], gender [M/F/All], location [countries])
+- **Budget**: $[XX,XXX]/month (60-70% of total)
+- **Creative Strategy**: [3:2:2 or 5x5], [creative angles]
+- **Testing Framework**: [framework name]
+- **Target Metrics**: ncROAS >[X.X], Hook Rate >[XX]%, CPA <$[XX]
+
+### RETARGETING
+- **Audience**: Site visitors (7-90d), Video viewers 25%+, Engagers
+- **Budget**: $[X,XXX]/month (20-30% of total)
+- **Creative Strategy**: Direct response, objection handling
+- **Target Metrics**: CPA <$[XX] (30-50% lower than prospecting)
+
+### RETENTION
+- **Audience**: Past customers (0-365d)
+- **Budget**: $[XXX]/month (5-10% of total)
+- **Creative Strategy**: Win-back, upsell, cross-sell
+- **Target Metrics**: LTV increase >[XX]%, Repeat purchase rate >[XX]%
+
+## CREATIVE PRODUCTION SCHEDULE
+- **Week 1**: [X concepts] - [angles/hooks]
+- **Week 2**: [X concepts] - [angles/hooks]
+- **Week 3**: [X concepts] - [angles/hooks]
+- **Week 4**: [X concepts] - [angles/hooks]
+
+## QUALITY GATES
+- [ ] Pixel verified (test purchase complete, Events Manager confirmed)
+- [ ] Conversion API configured
+- [ ] M3 swim lanes separated (exclusions set)
+- [ ] Creatives are concepts not variations
+- [ ] ncROAS tracking in place
+- [ ] Creative flywheel schedule confirmed (Rule of 1:10k)
+
+## CONTINGENCY PLAN
+- **If learning limited**: Consolidate campaigns, increase budget
+- **If creative fatigue**: Ship replacement concept within 24h
+- **If compliance flags**: [compliant phrasing library for niche]
+- **If ncROAS <1.5x**: Audit hook-body match, test new creative angles
+        ]]>
+      </CampaignBlueprintTemplate>
+
+      <CreativeQAChecklist>
+        <![CDATA[
+# CREATIVE QA CHECKLIST
+
+## VISUAL HOOK (First 3 Seconds)
+- [ ] Pattern interrupt present (movement, chaos, surprise)
+- [ ] Text hook overlaid (curiosity or self-selecting)
+- [ ] Authentic/ugly aesthetic (not overly polished)
+- [ ] Founder face visible (if applicable)
+- [ ] Contrasts with feed content (stands out)
+
+## HOOK QUALITY
+- [ ] Self-selects ICP (identifies target audience)
+- [ ] Curiosity gap or pattern interrupt
+- [ ] Aligned with offer (not bait-and-switch)
+- [ ] Distinct from other testing concepts (not variation)
+
+## BODY/STORY
+- [ ] Mechanism revealed (how it works)
+- [ ] Proof included (testimonial, data, or story)
+- [ ] Objection handled (if applicable)
+- [ ] Stakes clear (consequence of inaction)
+
+## CTA
+- [ ] Single action (not multiple options)
+- [ ] Urgency (factual or consequence-based, not fake)
+- [ ] Clear next step (what happens after click)
+
+## COMPLIANCE
+- [ ] No prohibited content (weapons, adult, etc.)
+- [ ] Health claims softened or disclaimed
+- [ ] No income claims without disclaimers
+- [ ] No sensationalist language (miracle, guaranteed, always)
+- [ ] Passed Meta text scanner (if available)
+
+## TECHNICAL
+- [ ] Mobile-first (vertical 9:16 or square 1:1)
+- [ ] Captions included (for sound-off viewing)
+- [ ] File size <4MB (for fast loading)
+- [ ] Thumbnail compelling (if video)
+
+## CONCEPT DIVERSITY
+- [ ] Different hook from other active creatives
+- [ ] Different story/angle (not just variation)
+- [ ] Tests new ICP trigger or mechanism
+        ]]>
+      </CreativeQAChecklist>
+
+      <LaunchDayQAChecklist>
+        <![CDATA[
+# LAUNCH DAY QA CHECKLIST
+
+## PRE-LAUNCH
+- [ ] Pixel verified (Meta Pixel Helper confirms firing)
+- [ ] Test conversion completed (verified in Events Manager)
+- [ ] Conversion API configured and tested
+- [ ] Budget set correctly (meets 50 conversions/week minimum)
+- [ ] M3 swim lanes separated (exclusions applied)
+- [ ] Creatives uploaded and approved
+- [ ] Ad copy compliant (passed review)
+
+## WITHIN 24 HOURS OF LAUNCH
+- [ ] Check delivery status (campaigns spending, not paused)
+- [ ] Monitor Events Manager (conversions tracking correctly)
+- [ ] Check frequency (<1.5 in first 24h = healthy)
+- [ ] Review breakdown: age/gender aligns with ICP expectations
+- [ ] No compliance flags or rejections
+
+## WITHIN 7 DAYS OF LAUNCH
+- [ ] Learning phase progressing (conversion volume on track for 50/week)
+- [ ] Hook Rate measured (>25% = proceed, <25% = audit)
+- [ ] CPA trending toward target (allow variance during learning)
+- [ ] Creative performance diverging (concepts showing differences)
+- [ ] No "Learning Limited" status (if yes, troubleshoot)
+
+## ONGOING MONITORING
+- [ ] Daily: Events Manager, spend pacing, compliance status
+- [ ] Weekly: ncROAS, MER, creative fatigue signals, creative flywheel shipment
+- [ ] Monthly: Holdout test planning, audience expansion opportunities
+        ]]>
+      </LaunchDayQAChecklist>
+    </Layer>
+  </ProgressiveDisclosure>
+
+  <!-- ================================================================== -->
+  <!-- PYTHON TOOLS                                                        -->
+  <!-- ================================================================== -->
+
+  <PythonTools>
+    <Tool name="validate_campaign_structure" execution_time="50ms">
+      <Purpose>Validate M3 swim lane separation and exclusion logic</Purpose>
+      <Code><![CDATA[
+def validate_campaign_structure(campaigns: list) -> dict:
+    """Validate M3 swim lane architecture and audience exclusions."""
+    issues = []
+
+    lanes = {"prospecting": [], "retargeting": [], "retention": []}
+
+    for campaign in campaigns:
+        lane = campaign.get("lane", "").lower()
+        if lane in lanes:
+            lanes[lane].append(campaign)
+        else:
+            issues.append(f"Campaign {campaign['name']} missing lane classification")
+
+    # Check exclusions
+    for pros_campaign in lanes["prospecting"]:
+        if not pros_campaign.get("excludes_retargeting"):
+            issues.append(f"Prospecting campaign {pros_campaign['name']} missing retargeting exclusion")
+        if not pros_campaign.get("excludes_retention"):
+            issues.append(f"Prospecting campaign {pros_campaign['name']} missing retention exclusion")
+
+    for retarg_campaign in lanes["retargeting"]:
+        if not retarg_campaign.get("excludes_retention"):
+            issues.append(f"Retargeting campaign {retarg_campaign['name']} missing retention exclusion")
+
+    return {
+        "passed": len(issues) == 0,
+        "lane_counts": {k: len(v) for k, v in lanes.items()},
+        "issues": issues
+    }
+      ]]></Code>
+    </Tool>
+
+    <Tool name="validate_creative_concept_diversity" execution_time="30ms">
+      <Purpose>Detect variation testing (similar concepts) vs concept testing (distinct ideas)</Purpose>
+      <Code><![CDATA[
+def validate_creative_concept_diversity(creatives: list) -> dict:
+    """Check if creatives are distinct concepts or just variations."""
+    issues = []
+
+    hooks = [c.get("hook", "") for c in creatives]
+    mechanisms = [c.get("mechanism", "") for c in creatives]
+
+    # Simple similarity check (would use embeddings in production)
+    unique_hooks = len(set(hooks))
+    unique_mechanisms = len(set(mechanisms))
+
+    diversity_ratio = (unique_hooks + unique_mechanisms) / (len(creatives) * 2)
+
+    if diversity_ratio < 0.7:
+        issues.append(f"Low concept diversity ({diversity_ratio:.1%}) - likely testing variations not concepts")
+
+    # Check for duplicate hooks
+    hook_counts = {}
+    for hook in hooks:
+        hook_counts[hook] = hook_counts.get(hook, 0) + 1
+
+    for hook, count in hook_counts.items():
+        if count > 1:
+            issues.append(f"Duplicate hook detected: '{hook}' appears {count} times")
+
+    return {
+        "passed": len(issues) == 0,
+        "diversity_ratio": diversity_ratio,
+        "unique_hooks": unique_hooks,
+        "unique_mechanisms": unique_mechanisms,
+        "issues": issues
+    }
+      ]]></Code>
+    </Tool>
+
+    <Tool name="calculate_ncROAS" execution_time="20ms">
+      <Purpose>Calculate new customer ROAS (incremental revenue only)</Purpose>
+      <Code><![CDATA[
+def calculate_ncROAS(total_revenue: float, repeat_customer_revenue: float, ad_spend: float) -> dict:
+    """Calculate ncROAS (new customer ROAS) and compare to blended."""
+    new_customer_revenue = total_revenue - repeat_customer_revenue
+
+    blended_roas = total_revenue / ad_spend if ad_spend > 0 else 0
+    nc_roas = new_customer_revenue / ad_spend if ad_spend > 0 else 0
+
+    attribution_inflation = blended_roas - nc_roas
+
+    return {
+        "ncROAS": round(nc_roas, 2),
+        "blended_ROAS": round(blended_roas, 2),
+        "attribution_inflation": round(attribution_inflation, 2),
+        "new_customer_revenue": new_customer_revenue,
+        "repeat_customer_revenue": repeat_customer_revenue,
+        "new_customer_percentage": round((new_customer_revenue / total_revenue) * 100, 1) if total_revenue > 0 else 0
+    }
+      ]]></Code>
+    </Tool>
+
+    <Tool name="detect_creative_fatigue" execution_time="40ms">
+      <Purpose>Detect creative fatigue signals from performance metrics</Purpose>
+      <Code><![CDATA[
+def detect_creative_fatigue(creative_id: str, metrics_timeline: list) -> dict:
+    """Detect creative fatigue from Hook Rate decline and frequency spike."""
+    if len(metrics_timeline) < 2:
+        return {"passed": True, "status": "insufficient_data"}
+
+    first_week = metrics_timeline[0]
+    latest_week = metrics_timeline[-1]
+
+    hook_rate_decline = ((first_week["hook_rate"] - latest_week["hook_rate"]) / first_week["hook_rate"]) * 100
+    frequency = latest_week["frequency"]
+    cpa_increase = ((latest_week["cpa"] - first_week["cpa"]) / first_week["cpa"]) * 100
+
+    fatigue_signals = []
+
+    if hook_rate_decline > 30:
+        fatigue_signals.append(f"Hook Rate declined {hook_rate_decline:.1f}% (>30% threshold)")
+
+    if frequency > 3.5:
+        fatigue_signals.append(f"Frequency at {frequency:.1f} (>3.5 threshold)")
+
+    if cpa_increase > 40:
+        fatigue_signals.append(f"CPA increased {cpa_increase:.1f}% (>40% threshold)")
+
+    is_fatigued = len(fatigue_signals) >= 2
+
+    return {
+        "passed": not is_fatigued,
+        "creative_id": creative_id,
+        "status": "fatigued" if is_fatigued else "healthy",
+        "hook_rate_decline_pct": round(hook_rate_decline, 1),
+        "frequency": frequency,
+        "cpa_increase_pct": round(cpa_increase, 1),
+        "signals": fatigue_signals,
+        "recommendation": "Ship replacement concept within 24h" if is_fatigued else "Continue monitoring"
+    }
+      ]]></Code>
+    </Tool>
+  </PythonTools>
+
+  <!-- ================================================================== -->
+  <!-- MMA INTEGRATION                                                     -->
+  <!-- ================================================================== -->
+
+  <MMAIntegration>
+    <QualityDimensions>
+      <Dimension name="strategy_fit" weight="critical">
+        <Threshold>8.0</Threshold>
+        <Validation>Campaign aligns with M3 architecture, creative strategy matches awareness level, budget meets learning phase minimums</Validation>
+      </Dimension>
+
+      <Dimension name="tracking_integrity" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>Pixel verified firing, Conversion API configured, test purchase completed, Events Manager shows attribution</Validation>
+      </Dimension>
+
+      <Dimension name="creative_resonance" weight="high">
+        <Threshold>8.0</Threshold>
+        <Validation>Hook Rate >30%, concept diversity validated (not variations), self-selecting ICP, aligned with offer</Validation>
+      </Dimension>
+
+      <Dimension name="budget_logic" weight="high">
+        <Threshold>8.0</Threshold>
+        <Validation>Learning phase minimums met (50 conv/week), scaling increments safe (≤20%), swim lane budget allocation logical</Validation>
+      </Dimension>
+
+      <Dimension name="ethical_compliance_safety" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>Meta policy compliant, no prohibited content, health/income claims disclaimed, no fake urgency/scarcity</Validation>
+      </Dimension>
+    </QualityDimensions>
+
+    <HardGates>
+      <Gate severity="critical">tracking_verified_before_launch</Gate>
+      <Gate severity="critical">m3_swim_lanes_separated</Gate>
+      <Gate severity="critical">compliance_policy_check_passed</Gate>
+      <Gate severity="high">concept_diversity_validated</Gate>
+      <Gate severity="high">learning_phase_budget_minimum_met</Gate>
+    </HardGates>
+  </MMAIntegration>
+
+  <!-- ================================================================== -->
+  <!-- GOLDEN RUNS                                                         -->
+  <!-- ================================================================== -->
+
+  <GoldenRuns>
+    <GoldenRun id="GR1" name="Ecom Beauty DTC - Cold to Retargeting Conversion">
+      <Scenario>
+        Launch Meta ads campaign for $47 anti-aging serum (DTC ecom). Target: hormonal women 40-55.
+        Budget: $15k/month. Goal: 3.0x ncROAS. Use M3 swim lanes, 3:2:2 testing framework,
+        Founder-led VSL + Lazy Static creatives. Track creative fatigue, scale winners.
+      </Scenario>
+
+      <ExpectedOutputs>
+        <o>Campaign blueprint with M3 swim lane structure (Prospecting/Retargeting/Retention)</o>
+        <o>3:2:2 creative matrix: 3 founder VSL concepts + 3 lazy static concepts, 2 primary texts, 2 headlines</o>
+        <o>Creative production schedule (3-5 concepts/week for 4 weeks)</o>
+        <o>Launch day QA checklist (pixel verification, exclusions, budget allocation)</o>
+        <o>Performance monitoring dashboard spec (ncROAS, Hook Rate, frequency, CPA trend)</o>
+        <o>Creative fatigue detection protocol (Hook Rate <30% or frequency >3.5 triggers)</o>
+      </ExpectedOutputs>
+
+      <MMAExpectations>
+        <Dimension name="strategy_fit">≥8.0</Dimension>
+        <Dimension name="tracking_integrity">≥9.0</Dimension>
+        <Dimension name="creative_resonance">≥8.0</Dimension>
+        <Dimension name="budget_logic">≥8.0</Dimension>
+        <Dimension name="ethical_compliance_safety">≥9.0</Dimension>
+      </MMAExpectations>
+    </GoldenRun>
+
+    <GoldenRun id="GR2" name="Lead Gen Local Service - High-Intent Conversion">
+      <Scenario>
+        Meta ads for local HVAC company (service area: 50-mile radius). Offer: Free estimate.
+        Budget: $5k/month. Goal: <$50 cost per qualified lead. Use M3 lanes, Lazy Static +
+        Scam Hook creatives, Lead Gen Lag-Time Optimization (optimize for backend call-booked event).
+      </Scenario>
+
+      <ExpectedOutputs>
+        <o>M3 campaign structure with geographic targeting (50-mile radius)</o>
+        <o>Creative strategy: 5 Lazy Static concepts (Scam Hook framework - "Stop overpaying for HVAC repairs")</o>
+        <o>Lead Gen optimization setup: primary event = call_booked, secondary = lead_form_submit</o>
+        <o>Quality lead validation: track lead-to-call conversion rate, optimize for backend action</o>
+        <o>Creative QA checklist focused on local trust signals (founder face, local landmarks, reviews)</o>
+      </ExpectedOutputs>
+
+      <MMAExpectations>
+        <Dimension name="strategy_fit">≥8.0</Dimension>
+        <Dimension name="tracking_integrity">≥9.0</Dimension>
+        <Dimension name="creative_resonance">≥7.5</Dimension>
+        <Dimension name="budget_logic">≥8.0</Dimension>
+        <Dimension name="ethical_compliance_safety">≥9.0</Dimension>
+      </MMAExpectations>
+    </GoldenRun>
+
+    <GoldenRun id="GR3" name="Webinar/Info Product - Cold to Webinar Registration">
+      <Scenario>
+        Launch Meta ads for $1,997 online course (info product - entrepreneurship niche). Funnel:
+        Ad → Free webinar → Pitch. Budget: $25k/month. Goal: <$30 cost per registration, 20% webinar-to-sale.
+        Use 5x5 testing, Founder VSL + Hero vs Villain story framework.
+      </Scenario>
+
+      <ExpectedOutputs>
+        <o>5x5 testing matrix: 5 Founder VSL concepts (Hero vs Villain framework), 5 primary texts, 5 headlines</o>
+        <o>M3 swim lane structure with retargeting for webinar no-shows (7-day window)</o>
+        <o>Creative production: 5-7 concepts/week (Rule of 1:10k for $25k spend)</o>
+        <o>Webinar-to-sale tracking setup: secondary event = webinar_registration, primary = purchase</o>
+        <o>Hook diversity validation: ensure 5 concepts test different beliefs/objections/mechanisms</o>
+        <o>Scaling protocol: if ncROAS >2.0, increase budget 20% every 5 days</o>
+      </ExpectedOutputs>
+
+      <MMAExpectations>
+        <Dimension name="strategy_fit">≥8.5</Dimension>
+        <Dimension name="tracking_integrity">≥9.0</Dimension>
+        <Dimension name="creative_resonance">≥8.5</Dimension>
+        <Dimension name="budget_logic">≥8.5</Dimension>
+        <Dimension name="ethical_compliance_safety">≥9.0</Dimension>
+      </MMAExpectations>
+    </GoldenRun>
+  </GoldenRuns>
+
+  <!-- ================================================================== -->
+  <!-- RECIPES                                                             -->
+  <!-- ================================================================== -->
+
+  <Recipes>
+    <Recipe name="Cold Traffic to Sale (Meta → Advertorial → Sales Page)">
+      <When>Cold Meta traffic (Unaware/Problem-Aware) for complex offers requiring education</When>
+      <RunOrder>
+        meta_ads_generator (this skill),
+        advertorial_copy_master,
+        sales_page_copywriter_lite
+      </RunOrder>
+      <OptionalAdditions>market_intelligence_synthesizer (for ICP research upfront)</OptionalAdditions>
+    </Recipe>
+
+    <Recipe name="Webinar Funnel Launch (Meta → VSL → Webinar)">
+      <When>High-ticket offers ($997+) using webinar sales model</When>
+      <RunOrder>
+        meta_ads_generator (this skill),
+        vsl_script_writer_long_form,
+        sales_page_copywriter_lite (for webinar reg page)
+      </RunOrder>
+      <OptionalAdditions>email_campaign_copy_genius (for webinar reminder sequence)</OptionalAdditions>
+    </Recipe>
+
+    <Recipe name="Lead Gen Service Business (Meta → Lead Magnet → Nurture)">
+      <When>Local service businesses or B2B lead gen requiring qualification</When>
+      <RunOrder>
+        meta_ads_generator (this skill),
+        quick_info_product_builder_lite (lead magnet),
+        email_campaign_copy_genius (nurture sequence)
+      </RunOrder>
+      <OptionalAdditions>sales_page_deconstructor (analyze competitor lead gen pages)</OptionalAdditions>
+    </Recipe>
+  </Recipes>
+
+  <!-- ================================================================== -->
+  <!-- VERSION HISTORY                                                     -->
+  <!-- ================================================================== -->
+
+  <VersionHistory>
+    <Version number="1.0.0" date="2026-01-19" status="active">
+      <Changes>
+        <Change>Initial production release</Change>
+        <Change>Integrated Andromeda paradigm (creative is targeting)</Change>
+        <Change>M3 Swim Lane Architecture (Prospecting/Retargeting/Retention)</Change>
+        <Change>12 canonical frameworks (3:2:2, 5x5, Founder VSL, Scam Hook, etc.)</Change>
+        <Change>5 core mechanisms (Andromeda, ncROAS, Concept Over Variation, Creative Flywheel, Visual Hook)</Change>
+        <Change>25-50 decision heuristics (IF-THEN format)</Change>
+        <Change>7 anti-patterns + 15 failure modes with diagnostics and recovery</Change>
+        <Change>Advanced systems (Scaling, Attribution, Creative Fatigue Management)</Change>
+        <Change>4 Python validation tools (campaign structure, concept diversity, ncROAS, fatigue detection)</Change>
+        <Change>3 golden runs (Ecom DTC, Lead Gen Local, Webinar/Info Product)</Change>
+        <Change>3 workflow recipes (Cold to Sale, Webinar Launch, Lead Gen Service)</Change>
+        <Change>Campaign blueprint, creative QA, and launch day QA templates</Change>
+      </Changes>
+    </Version>
+  </VersionHistory>
+
+</Skill>

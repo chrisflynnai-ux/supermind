@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<knowledge_block>
+  <!-- ============================================================ -->
+  <!-- KNOWLEDGE BLOCK: META ADS IMAGE GENERATOR v1.0              -->
+  <!-- Constitutional Compliance: ULTRAMIND v2.0                   -->
+  <!-- Static Ad Creation, Visual Frameworks, AI Production        -->
+  <!-- ============================================================ -->
+
+  <metadata>
+    <block_id>KB-META-ADS-IMAGE-GENERATOR-v1.0</block_id>
+    <block_type>framework</block_type>
+    <version>1.0.0</version>
+    <parent_skill>meta_ads_system_v1.0</parent_skill>
+    <created_date>2026-01-19</created_date>
+    <last_updated>2026-01-19</last_updated>
+    <author>ULTRAMIND / Vision Capitalist</author>
+
+    <constitutional_compliance>
+      <version>2.0</version>
+      <verified_date>2026-01-19</verified_date>
+      <verification_method>Full audit against Constitution Articles 1-12</verification_method>
+      <compliant>true</compliant>
+      <audit_log>
+        <check>Autonomy vs Automation: PASS (frameworks guide visual strategy, not cookie-cutter templates)</check>
+        <check>Three-Layer Architecture: PASS (niche strategy → style frameworks → AI production execution)</check>
+        <check>Consciousness Awareness: PASS (maps to SPECIAL-LEFT creative expression + SMART-RIGHT systematic production)</check>
+        <check>Quality Standards: PASS (native formats prioritized over polished commercial content)</check>
+        <check>No Manipulation: PASS (authentic visuals, no deceptive "before/after" for sensitive categories)</check>
+        <check>Proof Discipline: PASS (all visual strategies source-tagged to expert training)</check>
+        <check>Platform Compliance: PASS (Meta image requirements, prohibited content avoided)</check>
+      </audit_log>
+    </constitutional_compliance>
+
+    <dependencies>
+      <dependency>
+        <block_id>KB-META-ADS-ANDROMEDA-CREATIVE-ENGINE-v1.0</block_id>
+        <type>primary</type>
+        <status>complete</status>
+        <integration_points>Creative concepts from Andromeda Engine executed as visual assets by this module</integration_points>
+        <notes>Lazy Static Headlines, Scam Hooks, Founder VSLs require specific visual execution covered here</notes>
+      </dependency>
+      <dependency>
+        <block_id>KB-META-ADS-IMAGE-ANALYZER-v1.0</block_id>
+        <type>secondary</type>
+        <status>complete</status>
+        <integration_points>Generated images analyzed for hook rate and visual effectiveness</integration_points>
+      </dependency>
+    </dependencies>
+  </metadata>
+
+  <!-- ============================================================ -->
+  <!-- CONSCIOUSNESS PROFILE                                        -->
+  <!-- ============================================================ -->
+
+  <consciousness_profile>
+    <target_levels>designers_creative_producers_visual_strategists</target_levels>
+    <description>
+      Provides niche-specific visual frameworks and AI-accelerated production workflows for generating high-performance
+      static ad images at scale. Focuses on native formats, text-overlay strategies, and rapid iteration using GenAI tools.
+    </description>
+
+    <elevation_pattern>visual_speed_over_polish</elevation_pattern>
+    <pacing>rapid_iteration</pacing>
+
+    <neurobox_6d_mapping>
+
+      <component id="niche_visual_strategy" neuro_target="SPECIAL_SMART">
+        <dimensions>Special (LEFT), Smart (RIGHT)</dimensions>
+        <activation_strategy>LEFT creative visual expression (Ecom product beauty vs SaaS dashboard simplicity) + RIGHT logical niche-matching (health needs testimonials, B2B needs authority)</activation_strategy>
+        <consciousness_purpose>Designers understand both creative freedom (LEFT_SPECIAL) and strategic constraints (RIGHT_SMART: "Not all visuals work for all niches")</consciousness_purpose>
+        <balance_rules>
+          <rule>RIGHT_SMART niche analysis before LEFT_SPECIAL creative execution</rule>
+          <rule>Each niche has proven visual patterns: Ecom (lifestyle), SaaS (dashboard), Health (testimonial), Lead Gen (direct call-out)</rule>
+          <rule>Testing validates which niche strategy resonates (RIGHT_SMART data)</rule>
+        </balance_rules>
+      </component>
+
+      <component id="ai_production_workflows" neuro_target="SMART_SAFE">
+        <dimensions>Smart (RIGHT), Safe (BOTTOM)</dimensions>
+        <activation_strategy>RIGHT systematic AI workflows (Nano Banana, Midjourney batch generation) + BOTTOM risk mitigation (test cheap statics before expensive video production)</activation_strategy>
+        <consciousness_purpose>Producers scale creative volume efficiently (RIGHT_SMART) while protecting budget (BOTTOM_SAFE: "Don't overproduce losers")</consciousness_purpose>
+        <balance_rules>
+          <rule>BOTTOM_SAFE test-first: Static + text overlay validation before full photoshoot</rule>
+          <rule>RIGHT_SMART workflows: Nano Banana generates 10 variants in 10 minutes vs 10 hours manual design</rule>
+          <rule>Rule of 1:10k requires RIGHT_SMART systematic production to meet volume demands</rule>
+        </balance_rules>
+      </component>
+
+      <component id="native_format_design" neuro_target="SPECIAL_STRONG">
+        <dimensions>Special (LEFT), Strong (TOP)</dimensions>
+        <activation_strategy>LEFT creative pattern interrupt (Notes App, Breaking News formats) + TOP compelling action (native visuals drive higher CTR than polished ads)</activation_strategy>
+        <consciousness_purpose>Designers embrace "ugly" over "beautiful" (LEFT_SPECIAL unconventional aesthetics) to achieve performance (TOP_STRONG results)</consciousness_purpose>
+        <balance_rules>
+          <rule>LEFT_SPECIAL embraces imperfection: UGC-style, iPhone screenshots, handwritten text outperform studio quality</rule>
+          <rule>TOP_STRONG validates approach: Native formats achieve 20-40% higher CTR</rule>
+          <rule>If client demands "on-brand" polish → Split test to prove data (RIGHT_SMART)</rule>
+        </balance_rules>
+      </component>
+
+    </neurobox_6d_mapping>
+  </consciousness_profile>
+
+  <!-- ============================================================ -->
+  <!-- CORE PRINCIPLE: Visuals as Targeting                         -->
+  <!-- ============================================================ -->
+
+  <core_principle>
+    <name>Visuals as Targeting Mechanism</name>
+    <source>[SRC: Justin Lalonde | 11, Mark Builds Brands | 823]</source>
+    <principle>
+      The image itself selects the audience through visual cues and composition. "Ugly" or "Native" visuals often
+      outperform polished/branded content because they bypass ad blindness and appear as organic content in the feed.
+    </principle>
+
+    <key_insights>
+      <insight>Native formats (Notes App, News Headers, UGC) outperform commercial studio content [SRC: Justin Lalonde | 11]</insight>
+      <insight>Indirect visuals (curiosity-driven, no product) scale cold traffic better than direct product shots [SRC: Mark Builds Brands | 843]</insight>
+      <insight>Direct visuals (product + offer) work best for retargeting warm audiences [SRC: Mark Builds Brands | 845]</insight>
+      <insight>Text overlay density matters: <20% of image should be text (Meta preference) [SRC: Mark Builds Brands | 846]</insight>
+      <insight>Square format (1:1, 1080x1080) is default; vertical (9:16) essential for Reels placement [SRC: Justin Lalonde | 19]</insight>
+    </key_insights>
+
+    <production_priority_order>
+      <priority_1>Volume over perfection: 10 native-style statics > 1 polished studio shot</priority_1>
+      <priority_2>Test statics first: Validate concept with text overlay before video production</priority_2>
+      <priority_3>AI-accelerate winners: Use Nano Banana to generate 10 variants of winning static</priority_3>
+      <priority_4>Native format default: Start with UGC-style, then test polished if client demands</priority_4>
+    </production_priority_order>
+  </core_principle>
+
+  <!-- ============================================================ -->
+  <!-- FRAMEWORKS: Niche-Specific Visual Strategies                 -->
+  <!-- ============================================================ -->
+
+  <niche_frameworks>
+
+    <framework id="NICHE1" name="Ecom Product Visuals">
+      <source_tag>[SRC: Justin Lalonde | 15-21, Tiana Asperjan | 25]</source_tag>
+      <summary>Visual strategies for ecom DTC products focusing on lifestyle context, "Lazy Static" text overlays, and rapid variant generation.</summary>
+
+      <visual_strategies>
+        <strategy name="Lifestyle Context">
+          <description>Product shown in use (person wearing clothing, supplement on kitchen counter, skincare in bathroom)</description>
+          <why_it_works>Aspirational; shows product in real-world context vs sterile white background</why_it_works>
+          <production>Can use AI (Midjourney/Nano Banana) to place product in lifestyle scenes</production>
+        </strategy>
+
+        <strategy name="Lazy Static + Text Overlay">
+          <description>Clean product shot with bold text overlay using Lazy Static formulas (e.g., "Knee Pain Gone")</description>
+          <why_it_works>Fast to produce; clearly communicates benefit; easy to test 10+ variants</why_it_works>
+          <reference>See KB-ANDROMEDA-CREATIVE-ENGINE Framework F2 for 11 headline formulas</reference>
+        </strategy>
+
+        <strategy name="Timeline Progression">
+          <description>3-panel split showing "24 Hours / 3 Days / 3 Weeks" results</description>
+          <why_it_works>Increases AOV by encouraging bulk purchases for long-term transformation</why_it_works>
+          <example>"Day 1: Pain Relief | Day 3: Mobility | Day 21: Full Recovery"</example>
+        </strategy>
+
+        <strategy name="Color Blocking">
+          <description>Solid color background (black, yellow, red) with high-contrast product image</description>
+          <why_it_works>Stands out in white Instagram/Facebook feed via involuntary eye attraction</why_it_works>
+          <source>[SRC: Fraser Cottrell | 852]</source>
+        </strategy>
+      </visual_strategies>
+
+      <ai_production_workflow>
+        <step n="1">Start with 1 high-quality product photo (flat lay or lifestyle)</step>
+        <step n="2">Upload to Nano Banana (Gemini): "Place this product in [kitchen/gym/office] scene"</step>
+        <step n="3">Generate 5 lifestyle variants (different settings)</step>
+        <step n="4">Apply Lazy Static formulas to each variant in Canva (10 text overlays × 5 images = 50 variants)</step>
+        <step n="5">Export top 10-15 for testing in Pack System</step>
+      </ai_production_workflow>
+
+      <quality_gates>
+        <gate>Product must be clearly visible (not obscured by text or clutter)</gate>
+        <gate>Text overlay <20% of image area (Meta preference)</gate>
+        <gate>Mobile-first: Preview on phone before export (80% of views are mobile)</gate>
+      </quality_gates>
+    </framework>
+
+    <framework id="NICHE2" name="SaaS Dashboard Visuals">
+      <source_tag>[SRC: Dr. Matt Shiver | 50, Mark Builds Brands | 823]</source_tag>
+      <summary>Visual strategies for SaaS and software products emphasizing dashboard screenshots, data visualization, and B2B authority positioning.</summary>
+
+      <visual_strategies>
+        <strategy name="Dashboard Demo Screenshot">
+          <description>Clean screenshot of software UI showing key features or data dashboard</description>
+          <why_it_works>Product proof; shows what user will actually see; builds trust through transparency</why_it_works>
+          <production_tips>Blur sensitive data; highlight key feature with red box or arrow; use fake data that looks real</production_tips>
+        </strategy>
+
+        <strategy name="Hormozi 'Calling Card'">
+          <description>White background, black text, direct avatar call-out: "If you're a [specific persona]..."</description>
+          <why_it_works>Extreme minimalism; self-selection; cuts through noise for B2B buyers</why_it_works>
+          <example>"If you're a 7-figure landscaping business, we want to help you scale"</example>
+          <source>[SRC: Dr. Matt Shiver | 50]</source>
+        </strategy>
+
+        <strategy name="Data Visualization">
+          <description>Chart or graph showing results (upward trend line, before/after metrics)</description>
+          <why_it_works>Logical proof for analytical B2B buyers; shows ROI potential</why_it_works>
+          <example>Line graph: "Revenue before [Product]: $50k/mo | After: $150k/mo"</example>
+        </strategy>
+
+        <strategy name="Feature Comparison Table">
+          <description>Side-by-side comparison: "Us vs Them" or "Before vs After"</description>
+          <why_it_works>Competitive differentiation; highlights unique value props clearly</why_it_works>
+          <layout>Left column: Competitor (red X marks), Right column: Your product (green checkmarks)</layout>
+        </strategy>
+      </visual_strategies>
+
+      <production_workflow>
+        <step n="1">Take clean dashboard screenshot (use demo account with realistic data)</step>
+        <step n="2">Edit in Figma/Photoshop: Blur sensitive fields, highlight 1-2 key features</step>
+        <step n="3">Add text overlay (optional): "[Feature Name]: 10X Faster Than [Competitor]"</step>
+        <step n="4">Export in 1:1 and 9:16 for feed + Reels placement</step>
+      </production_workflow>
+
+      <quality_gates>
+        <gate>Screenshot must be legible on mobile (text size >14pt)</gate>
+        <gate>Avoid cluttered UI; show 1-2 features max per image</gate>
+        <gate>Use realistic demo data (not "Lorem Ipsum" or obviously fake numbers)</gate>
+      </quality_gates>
+    </framework>
+
+    <framework id="NICHE3" name="Lead Gen Direct Call-Out">
+      <source_tag>[SRC: Dr. Matt Shiver | 50, Dara Denney | 505]</source_tag>
+      <summary>Visual strategies for lead generation and service businesses using direct text-based call-outs to qualify prospects immediately.</summary>
+
+      <visual_strategies>
+        <strategy name="Text-Heavy Direct Call-Out">
+          <description>Minimal background, maximum text: "If you're [specific persona] and struggling with [pain], we can help"</description>
+          <why_it_works>Immediate self-selection; filters low-intent leads; B2B buyers read text ads</why_it_works>
+          <example>"If you're a contractor doing $2M+ revenue and can't find good labor..."</example>
+        </strategy>
+
+        <strategy name="Authority Positioning">
+          <description>Founder headshot + credentials overlaid (certifications, years in business, results)</description>
+          <why_it_works>Trust-building for high-ticket services; human connection</why_it_works>
+          <example>Founder photo + text: "20 Years Litigation Experience | 150+ Cases Won"</example>
+        </strategy>
+
+        <strategy name="Case Study Preview">
+          <description>Before/After metrics with client logo (if permitted)</description>
+          <why_it_works>Social proof + concrete results = high-quality lead filtering</why_it_works>
+          <example>"Case Study: How We Helped [Company] Reduce Legal Spend 40%"</example>
+        </strategy>
+
+        <strategy name="Demographic Call-Out">
+          <description>Image or text specifically naming target demographic: "Over 50?" or "Parents of Teens?"</description>
+          <why_it_works>Visual self-selection; Andromeda serves ad to called-out demographic</why_it_works>
+          <source>[SRC: Dara Denney | 505]</source>
+        </strategy>
+      </visual_strategies>
+
+      <production_workflow>
+        <step n="1">Define ICP (Ideal Customer Profile) with specificity: "Ecom brands doing $500k-2M revenue"</step>
+        <step n="2">Write direct call-out copy targeting that ICP</step>
+        <step n="3">Design in Canva: White or black background, large sans-serif font, minimal graphics</step>
+        <step n="4">Optional: Add founder photo or logo for brand recognition</step>
+        <step n="5">Test 5-10 variations with different pain points or demographics</step>
+      </production_workflow>
+    </framework>
+
+    <framework id="NICHE4" name="Health/Wellness Testimonial Visuals">
+      <source_tag>[SRC: Omar Eddaoudi | 268-270, Franky Shaw | 235]</source_tag>
+      <summary>Visual strategies for health, wellness, and supplement products using testimonial-driven formats and native app interfaces.</summary>
+
+      <visual_strategies>
+        <strategy name="Notes App Testimonial">
+          <description>Screenshot of iPhone Notes app with testimonial text and small product image embedded</description>
+          <why_it_works>Feels personal and authentic; bypasses ad blindness by looking like organic content</why_it_works>
+          <example>Yellow Notes background: "What finally helped my eczema... [bullet points] [product image]"</example>
+          <source>[SRC: Omar Eddaoudi | 268]</source>
+        </strategy>
+
+        <strategy name="Breaking News Format">
+          <description>Image formatted like news article or blog with header "Breaking News" or "Now Available to Public"</description>
+          <why_it_works>Authority positioning; curiosity-driven; looks informational not commercial</why_it_works>
+          <example>Red banner "Breaking News" + product image + headline "The Supplement Doctors Are Recommending"</example>
+          <source>[SRC: Franky Shaw | 235]</source>
+        </strategy>
+
+        <strategy name="Layered Social Proof">
+          <description>Combining multiple proof types: Doctor recommendation + star rating + customer count + science mention</description>
+          <why_it_works>Overcomes skepticism through proof stacking</why_it_works>
+          <elements>Doctor photo OR white coat image + "4.8★ from 12,000 customers" + "Clinically Studied"</elements>
+          <source>[SRC: Omar Eddaoudi | 270]</source>
+        </strategy>
+
+        <strategy name="Transformation Grid">
+          <description>Before/After grid OR timeline progression with customer photos (if compliant)</description>
+          <why_it_works>Visual proof of transformation; high engagement</why_it_works>
+          <compliance_note>For sensitive categories (weight loss, skin conditions), ensure Meta Ad Policy compliance; avoid exaggerated claims</compliance_note>
+        </strategy>
+      </visual_strategies>
+
+      <production_workflow>
+        <step n="1">Collect real customer testimonials (reviews, emails, social media posts)</step>
+        <step n="2">For Notes App format: Screenshot Notes app template, paste testimonial text, embed product image</step>
+        <step n="3">For Breaking News: Use news article template (Canva), add red "Breaking News" banner, insert product + headline</step>
+        <step n="4">Generate 5-10 variants with different testimonials or headlines</step>
+      </production_workflow>
+
+      <compliance_guardrails>
+        <guardrail>No exaggerated "before/after" claims for weight loss, skin conditions, or medical issues</guardrail>
+        <guardrail>Use real testimonials; do not fabricate customer quotes</guardrail>
+        <guardrail>Avoid words like "cure," "miracle," "guaranteed results" (Meta policy violations)</guardrail>
+      </compliance_guardrails>
+    </framework>
+
+    <framework id="NICHE5" name="Info Product Authority Visuals">
+      <source_tag>[SRC: Fraser Cottrell | 797, Dr. Matt Shiver | 50]</source_tag>
+      <summary>Visual strategies for courses, coaching, and info products emphasizing founder authority and educational value.</summary>
+
+      <visual_strategies>
+        <strategy name="Founder Letter Static">
+          <description>Black background, white text, formatted like personal letter from founder with product image in corner</description>
+          <why_it_works>Personal connection; founder transparency builds trust for high-ticket offers</why_it_works>
+          <example>"In 3 years, I've never done this... [offer details]... - Charlie, Founder" + brand logo</example>
+          <source>[SRC: Fraser Cottrell | 797]</source>
+        </strategy>
+
+        <strategy name="Whiteboard Lesson Screenshot">
+          <description>Screenshot from educational video showing whiteboard or diagram with key concept</description>
+          <why_it_works>Demonstrates expertise; gives free value upfront; positions founder as teacher</why_it_works>
+          <example>Whiteboard with diagram + text overlay: "The 3-Step Framework I Use With $10M Clients"</example>
+        </strategy>
+
+        <strategy name="Results Screenshot">
+          <description>Screenshot of student/client results: revenue dashboards, testimonials, success metrics</description>
+          <why_it_works>Social proof via student success; "proof in the pudding"</why_it_works>
+          <example>Stripe dashboard screenshot showing "$127k in 30 days" + blur personal info</example>
+        </strategy>
+
+        <strategy name="Behind-the-Scenes">
+          <description>Founder in workspace, filming setup, or "making of" style image</description>
+          <why_it_works>Authenticity; humanizes brand; builds parasocial connection</why_it_works>
+        </strategy>
+      </visual_strategies>
+
+      <production_workflow>
+        <step n="1">Founder records 60-second "why" video (authentic, face-to-camera)</step>
+        <step n="2">Screenshot best frame (founder speaking, good lighting)</step>
+        <step n="3">Add text overlay: Key quote or value prop</step>
+        <step n="4">Alternative: Use Canva to create Founder Letter format with product image</step>
+      </production_workflow>
+    </framework>
+
+  </niche_frameworks>
+
+  <!-- ============================================================ -->
+  <!-- STYLE FRAMEWORKS (Universal Application)                     -->
+  <!-- ============================================================ -->
+
+  <style_frameworks>
+
+    <framework id="STYLE1" name="Lazy Static System">
+      <source_tag>[SRC: Tiana Asperjan | 25]</source_tag>
+      <reference>See KB-ANDROMEDA-CREATIVE-ENGINE Framework F2 for complete details</reference>
+      <summary>11 text-overlay formulas requiring zero design skill: "Pain Point Gone," "Timeline Ads," "No More [X]," etc.</summary>
+      <application>Apply to any niche; works for ecom, health, productivity products</application>
+    </framework>
+
+    <framework id="STYLE2" name="Nano Banana AI Swap">
+      <source_tag>[SRC: Sam Piliero | 610-611]</source_tag>
+      <summary>Using Gemini (Nano Banana Pro) to generate infinite variations by swapping models, backgrounds, or products while maintaining composition.</summary>
+
+      <workflow>
+        <step n="1">Upload winning static ad to Gemini chat</step>
+        <step n="2">Upload product image or desired background scene</step>
+        <step n="3">Prompt: "Replace [element A] in image 1 with [element B] from image 2. Keep pose/composition identical."</step>
+        <step n="4">Generate 5-10 variants in under 10 minutes</step>
+        <step n="5">Export and test in Pack System</step>
+      </workflow>
+
+      <examples>
+        <example>Swap 1: "Replace the woman in image 1 with a man of similar age"</example>
+        <example>Swap 2: "Change background from kitchen to outdoor park"</example>
+        <example>Swap 3: "Replace product in image 1 with the bottle from image 2"</example>
+        <example>Swap 4: "Make it nighttime instead of daytime, keep everything else identical"</example>
+      </examples>
+
+      <use_cases>
+        <use_case>Scaling winning static to combat fatigue (extend lifespan 2-4 weeks)</use_case>
+        <use_case>Testing demographic variations (age, gender, ethnicity) to find new audience pockets</use_case>
+        <use_case>A/B testing backgrounds (indoor vs outdoor, minimal vs busy)</use_case>
+      </use_cases>
+    </framework>
+
+    <framework id="STYLE3" name="Visual Chaos Reduction">
+      <source_tag>[SRC: Fraser Cottrell | 830]</source_tag>
+      <principle>Remove distractions to create single focal point, ensuring eye goes exactly where intended (product, face, or "weird" texture).</principle>
+
+      <steps>
+        <step n="1">Identify intended focal point (what should viewer look at first?)</step>
+        <step n="2">Blur or remove background distractions using AI background removal or Photoshop</step>
+        <step n="3">Ensure high contrast between subject and background (dark subject on light bg or vice versa)</step>
+        <step n="4">Squint test: Can you identify focal point with eyes half-closed? If yes, it's clear enough</step>
+      </steps>
+
+      <common_fixes>
+        <fix>Cluttered background → AI background removal, replace with solid color or simple gradient</fix>
+        <fix>Multiple subjects → Crop tighter on primary subject, blur secondary elements</fix>
+        <fix>Low contrast → Increase saturation on subject, desaturate background</fix>
+      </common_fixes>
+    </framework>
+
+    <framework id="STYLE4" name="Timeline Ad Structure">
+      <source_tag>[SRC: Tiana Asperjan | 30]</source_tag>
+      <summary>3-column split layout showing progression of results over time to increase Average Order Value.</summary>
+
+      <layout>
+        <column_1>24 Hours: [Immediate benefit]</column_1>
+        <column_2>3 Days: [Short-term progress]</column_2>
+        <column_3>3 Weeks: [Long-term transformation]</column_3>
+      </layout>
+
+      <example>
+        <product>Joint supplement</product>
+        <col_1>24 Hours: Pain Relief</col_1>
+        <col_2>3 Days: Increased Mobility</col_2>
+        <col_3>3 Weeks: Permanent Strength</col_3>
+      </example>
+
+      <why_it_works>Encourages bulk buying ("I need 3 weeks supply to see permanent results") → Higher AOV</why_it_works>
+
+      <production>
+        <tool>Canva or Figma</tool>
+        <template>Create 3-column template (1080x1080 square divided into thirds)</template>
+        <step>Add product image at top or bottom spanning all columns</step>
+        <step>Add timeline text in each column with clear visual separation (borders or bg colors)</step>
+      </production>
+    </framework>
+
+    <framework id="STYLE5" name="Us vs Them Comparison">
+      <source_tag>[SRC: Jared Robinson | 88]</source_tag>
+      <summary>Split-screen static comparing your product (Hero) to competitor or industry standard (Villain).</summary>
+
+      <layout>
+        <left_side>
+          <label>Them (or "Old Way" / "Competitor")</label>
+          <visual_treatment>Black and white or desaturated filter</visual_treatment>
+          <text>List negatives: "Crash," "Sugar," "Expensive," "Side Effects"</text>
+        </left_side>
+        <right_side>
+          <label>Us (or "New Way" / "[Your Brand]")</label>
+          <visual_treatment>Full color, bright lighting</visual_treatment>
+          <text>List positives: "Sustained Energy," "Natural," "Affordable," "Safe"</text>
+        </right_side>
+      </layout>
+
+      <applications>
+        <application>Energy drinks vs natural supplement</application>
+        <application>Traditional marketing agency vs AI-powered solution</application>
+        <application>Old skincare routine (5 steps) vs streamlined product (1 step)</application>
+      </applications>
+    </framework>
+
+  </style_frameworks>
+
+  <!-- ============================================================ -->
+  <!-- SOPs (Production Workflows)                                  -->
+  <!-- ============================================================ -->
+
+  <sops>
+
+    <sop id="SOP1" name="Nano Banana Production Sprint">
+      <source>[SRC: Sam Piliero | 610-615]</source>
+      <frequency>Weekly (or when scaling winner)</frequency>
+      <purpose>Rapidly generate 10-15 static variants using AI to extend lifespan of winning concept and combat fatigue.</purpose>
+
+      <steps>
+        <step n="1">Identify top 3 performing static ads from last 14 days (filter by: Static Image, CPA <target, Spend >$1k)</step>
+        <step n="2">Source 3 competitor templates using MagicBrief or Meta Ads Library (ads running >14 days)</step>
+        <step n="3">Open Gemini (Nano Banana Pro model)</step>
+        <step n="4">Prompt Set 1: "Swap background of [Winner A] with [Lifestyle Setting]" → Generate 5 versions</step>
+        <step n="5">Prompt Set 2: "Put my product [Upload Image] into competitor template [Upload]" → Generate 5 versions</step>
+        <step n="6">Prompt Set 3: "Change model in [Winner A] to [Different Demographic]" → Generate 5 versions</step>
+        <step n="7">Export 15 new variants (total production time: ~45 minutes)</step>
+        <step n="8">Upload to Prospecting CBO as new Pack: "Pack [Date] - Nano Banana Variants"</step>
+      </steps>
+
+      <quality_gates>
+        <gate>AI-generated images must be photorealistic (no obvious artifacts or distortions)</gate>
+        <gate>Brand consistency: Logo placement and product representation accurate</gate>
+        <gate>Mobile preview: Check all variants on phone before export</gate>
+      </quality_gates>
+
+      <expected_output>15 static variants ready for testing in 45-60 minutes</expected_output>
+    </sop>
+
+    <sop id="SOP2" name="Lazy Static Batch Creation">
+      <source>[SRC: Tiana Asperjan | 25]</source>
+      <frequency>Weekly</frequency>
+      <purpose>Produce 10+ static variants quickly using text-overlay formulas for high-volume testing.</purpose>
+
+      <steps>
+        <step n="1">Select 1 high-quality product photo (lifestyle shot or clean product on white background)</step>
+        <step n="2">Open Canva, create 1080x1080 canvas</step>
+        <step n="3">Upload product image, duplicate canvas 11 times</step>
+        <step n="4">Apply all 11 Lazy Static formulas as text overlays (see Andromeda Creative Engine F2 for formulas)</step>
+        <step n="5">Font selection: Bold, sans-serif, high contrast (white text on dark image or black text on light image)</step>
+        <step n="6">Export all 11 variants as PNG (1080x1080)</step>
+        <step n="7">Upload to testing campaign</step>
+      </steps>
+
+      <time_estimate>60-90 minutes for 11 variants</time_estimate>
+    </sop>
+
+    <sop id="SOP3" name="Competitor Swipe & Rewrite">
+      <source>[SRC: Mark Builds Brands | 851]</source>
+      <frequency>On-demand</frequency>
+      <purpose>Identify winning competitor ad creative and recreate with your brand/product.</purpose>
+
+      <steps>
+        <step n="1">Find 5-star performing ad on Meta Ads Library or "Get Hooked" tool (filter: active >7 days)</step>
+        <step n="2">Screenshot competitor ad image</step>
+        <step n="3">Upload to Gemini or Claude AI with prompt: "Analyze why this ad works. Recreate the layout but use my brand colors [Hex Code] and my product [Upload Image]. Write new copy for [My Niche]."</step>
+        <step n="4">Take AI prompt output and execute in Midjourney or Canva</step>
+        <step n="5">Generate 3-5 variants with different headlines or product angles</step>
+        <step n="6">Test in Pack System</step>
+      </steps>
+
+      <ethical_note>Recreate layout/structure, not exact copy; ensure no copyright infringement</ethical_note>
+    </sop>
+
+    <sop id="SOP4" name="Seasonal Banner Injection">
+      <source>[SRC: Fraser Cottrell | 800-801]</source>
+      <frequency>Seasonal (Black Friday, Summer Sale, Holiday)</frequency>
+      <purpose>Refresh winning evergreen ads with seasonal offers without expensive re-shoots.</purpose>
+
+      <steps>
+        <step n="1">Download top 5 evergreen winning ads (Static or Video thumbnail)</step>
+        <step n="2">Do NOT re-design from scratch; overlay simple banner only</step>
+        <step n="3">Design banner in Canva: "Black Friday Sale is Live" or "30% OFF Ends Tonight"</step>
+        <step n="4">For video: Add banner to first 3 seconds (hook) using video editor</step>
+        <step n="5">For static: Overlay banner at top or bottom (20% of image max)</step>
+        <step n="6">Launch as new ads alongside evergreen versions</step>
+      </steps>
+
+      <key_principle>Leverage existing winners; don't start from scratch for seasonal campaigns</key_principle>
+    </sop>
+
+    <sop id="SOP5" name="Visual Hook Audit (Pre-Launch)">
+      <source>[SRC: Fraser Cottrell | 830]</source>
+      <frequency>Before every static batch launch</frequency>
+      <purpose>Validate that static images have clear focal points and will stop scroll.</purpose>
+
+      <audit_checklist>
+        <check n="1">Squint Test: Can you identify focal point immediately with eyes half-closed?</check>
+        <check n="2">Visual Chaos: Is there clutter in background? (If yes → blur or remove)</check>
+        <check n="3">Curiosity Trigger: Does it create question in viewer's mind? ("What is that weird rock?")</check>
+        <check n="4">Text Readability: Can text be read in <1 second on mobile? (Test on phone)</check>
+        <check n="5">Contrast Check: Is subject high-contrast against background?</check>
+      </audit_checklist>
+
+      <pass_criteria>If image passes 4/5 checks → Launch. If <3/5 → Redesign before launch</pass_criteria>
+    </sop>
+
+  </sops>
+
+  <!-- ============================================================ -->
+  <!-- HEURISTICS                                                   -->
+  <!-- ============================================================ -->
+
+  <heuristics>
+
+    <category name="Diagnostic">
+      <heuristic>IF static ads have high CPM THEN reduce text density (Meta prefers visual over text-heavy images) [SRC: Mark Builds Brands | 846]</heuristic>
+      <heuristic>IF CTR is low on product ad THEN switch to "Indirect" curiosity image (weird texture/outcome) to widen net [SRC: Mark Builds Brands | 843]</heuristic>
+      <heuristic>IF targeting skeptical audience THEN use "Scam Hook" visual ("I thought this was a scam...") to leverage loss aversion [SRC: Dara Denney | 496]</heuristic>
+      <heuristic>IF hook rate is high but hold rate is low THEN visual hook is clickbait and doesn't match payoff [SRC: Fraser Cottrell | 483]</heuristic>
+      <heuristic>IF in "boring" niche (insurance, B2B) THEN use "Hormozi Call-Out" (black/white text) to qualify immediately [SRC: Dr. Matt Shiver | 50]</heuristic>
+    </category>
+
+    <category name="Optimization">
+      <heuristic>IF a static ad works THEN use AI (Nano Banana) to swap model's ethnicity or gender to find new audience pockets [SRC: Justin Lalonde | 21]</heuristic>
+      <heuristic>IF writing headlines for statics THEN use "Pain Point + Gone" for instant clarity [SRC: Tiana Asperjan | 25]</heuristic>
+      <heuristic>IF you have a winning angle THEN create a "Native News" version to build authority [SRC: Franky Shaw | 235]</heuristic>
+      <heuristic>IF selling a supplement THEN use "Timeline Ad" format to encourage higher AOV (bulk buys) [SRC: Tiana Asperjan | 30]</heuristic>
+      <heuristic>IF want to stop scroll THEN use "Color Blocking" (all black image on white feed) [SRC: Fraser Cottrell | 833]</heuristic>
+    </category>
+
+    <category name="Scaling">
+      <heuristic>IF you spend $10k/month THEN produce at least 1 new creative concept per week (Rule of 1:10k) [SRC: Sam Piliero | 190]</heuristic>
+      <heuristic>IF you find a winning "Concept" (e.g., UGC in car) THEN create 10 variations of that specific concept [SRC: Sam Piliero | 194]</heuristic>
+      <heuristic>IF scaling a winner THEN do not edit the live ad; duplicate Post ID to scaling campaign [SRC: Professor Charley T | 103]</heuristic>
+      <heuristic>IF need volume THEN use "Creative Formatting" (same image, different crop/layout) to trick Andromeda into seeing it as new [SRC: Justin Lalonde | 19]</heuristic>
+    </category>
+
+    <category name="Troubleshooting">
+      <heuristic>IF ads look too "Ad-like" THEN use "Notes App" style to blend natively with user content [SRC: Omar Eddaoudi | 268]</heuristic>
+      <heuristic>IF can't film new content THEN use "Stock Footage + Text Overlay" (Storyblocks) to create conversational hooks [SRC: Dara Denney | 500]</heuristic>
+      <heuristic>IF customers are price-sensitive THEN use "Investment Hooks" (showing time/money wasted on other solutions) [SRC: Dara Denney | 494]</heuristic>
+      <heuristic>IF need to build trust fast THEN use a "Founder Ad" explaining the why behind the brand [SRC: Fraser Cottrell | 449]</heuristic>
+    </category>
+
+  </heuristics>
+
+  <!-- ============================================================ -->
+  <!-- VISUAL EXAMPLES (Detailed Descriptions)                      -->
+  <!-- ============================================================ -->
+
+  <visual_examples>
+
+    <example id="EX1" name="The Weird Rock Gum Ad">
+      <source>[SRC: Fraser Cottrell | 830]</source>
+      <visual_description>Hand holding what looks like brown, textured "rocks" (actually natural gum resin)</visual_description>
+      <why_it_works>Looks like fecal matter or something gross; creates instant curiosity ("What is that?")</why_it_works>
+      <hook_mechanism>Gross-out curiosity + texture intrigue</hook_mechanism>
+      <expected_performance>Hook Rate >40% due to "WTF" factor</expected_performance>
+    </example>
+
+    <example id="EX2" name="The Lululemon AI Swap">
+      <source>[SRC: Sam Piliero | 610]</source>
+      <visual_description>Original: Man in t-shirt. Variant: Exact same man, same pose, wearing windbreaker jacket</visual_description>
+      <production_method>Nano Banana (Gemini): "Replace t-shirt in image 1 with windbreaker from image 2, keep pose identical"</production_method>
+      <why_it_works>Tests product demand without new photoshoot; maintains proven composition</why_it_works>
+      <time_saved>10 minutes AI generation vs 3-hour photoshoot</time_saved>
+    </example>
+
+    <example id="EX3" name="The Breaking News Knife Ad">
+      <source>[SRC: Franky Shaw | 235]</source>
+      <visual_description>Header: "Breaking News" in red banner. Image: Chef (Gordon Ramsay lookalike or AI-generated) holding Damascus blade</visual_description>
+      <headline>"The Blade Behind Michelin Star Kitchens"</headline>
+      <why_it_works>Looks like news discovery, not product push; authority positioning via news format</why_it_works>
+      <expected_performance>High CTR from curiosity; bypasses ad blindness</expected_performance>
+    </example>
+
+    <example id="EX4" name="The Eczema Notes App Ad">
+      <source>[SRC: Omar Eddaoudi | 268]</source>
+      <visual_description>Standard iPhone Notes app interface, yellow background. Text list: "Gut + Skin approach," "No steroids," "Itch calmed in days." Small product bottle photo at bottom</visual_description>
+      <why_it_works>Feels native, personal, authentic; looks like friend's recommendation not ad</why_it_works>
+      <production_time>15 minutes (screenshot Notes template, add text + product image)</production_time>
+    </example>
+
+  </visual_examples>
+
+  <!-- ============================================================ -->
+  <!-- METRICS TABLE                                                -->
+  <!-- ============================================================ -->
+
+  <metrics_table>
+    <metric name="CTR (Click-Through Rate)" purpose="Interest signal for static ads" threshold=">1.5% (static), >2% (video)" action_trigger="IF <1.0% → Test new visuals or hooks" source="[SRC: Mark Builds Brands | 846]"/>
+    <metric name="Hook Rate (3s Video Plays / Impressions)" purpose="Visual attention capture" threshold=">30%" action_trigger="IF <25% → Audit visual focal point" source="[SRC: Fraser Cottrell | 849]"/>
+    <metric name="Text Overlay Density" purpose="Meta platform preference" threshold="<20% of image area" action_trigger="IF >20% → May face delivery issues or higher CPM" source="[SRC: Mark Builds Brands | 846]"/>
+    <metric name="Production Velocity" purpose="Scaling capacity" threshold="10-15 statics per week for $50k+ spend" action_trigger="IF below → Use AI acceleration (Nano Banana)" source="[SRC: Sam Piliero | 190]"/>
+    <metric name="Variant Performance Spread" purpose="Concept validation" threshold="Winner should be 30%+ better CPA than median" action_trigger="IF all variants within 10% → Testing variations not concepts" source="[SRC: Alex Robinson | 121]"/>
+  </metrics_table>
+
+  <!-- ============================================================ -->
+  <!-- PATTERNS                                                     -->
+  <!-- ============================================================ -->
+
+  <patterns>
+    <pattern id="P1" name="Native Over Polished">Native formats (UGC, Notes App, News) outperform polished studio content by 20-40% CTR [SRC: Justin Lalonde | 11]</pattern>
+    <pattern id="P2" name="Indirect for Cold, Direct for Warm">Curiosity visuals (no product shown) for Prospecting; product + offer for Retargeting [SRC: Mark Builds Brands | 845]</pattern>
+    <pattern id="P3" name="Square Default, Vertical for Reels">1:1 (1080x1080) works everywhere; 9:16 required for Reels/Stories placement [SRC: Justin Lalonde | 19]</pattern>
+    <pattern id="P4" name="AI Acceleration for Winners">Use Nano Banana to generate 10 variants of winning static in 10 minutes [SRC: Sam Piliero | 610]</pattern>
+    <pattern id="P5" name="Text Overlay Speed">Lazy Static formulas produce 11 variants in 60 minutes [SRC: Tiana Asperjan | 25]</pattern>
+  </patterns>
+
+  <!-- ============================================================ -->
+  <!-- CHECKLISTS                                                   -->
+  <!-- ============================================================ -->
+
+  <checklists>
+
+    <checklist name="Pre-Launch Static Batch Validation" frequency="Before every batch launch">
+      <item>[ ] Concept Diversity: Are these 3+ distinct concepts, not variations? [SRC: Alex Robinson | 121]</item>
+      <item>[ ] Visual Hook Audit: Clear focal point in each image? [SRC: Fraser Cottrell | 830]</item>
+      <item>[ ] Mobile Preview: Checked all images on phone? (80% of views are mobile) [SRC: Justin Lalonde | 19]</item>
+      <item>[ ] Text Readability: Can text be read in <1 second? Font size >40pt? [SRC: Chase Chappell | 730]</item>
+      <item>[ ] Text Density: Is text overlay <20% of image area? [SRC: Mark Builds Brands | 846]</item>
+      <item>[ ] Format Check: Exported in 1:1 (feed) and 9:16 (Reels)? [SRC: Justin Lalonde | 19]</item>
+      <item>[ ] Brand Consistency: Logo visible but not overwhelming? [Constitutional Compliance]</item>
+    </checklist>
+
+    <checklist name="Weekly Image Production Review" frequency="Weekly">
+      <item>[ ] Meeting Rule of 1:10k? (1 concept per week per $10k spend) [SRC: Sam Piliero | 190]</item>
+      <item>[ ] Identified top 3 winning statics from last 14 days? [SRC: Sam Piliero | 610]</item>
+      <item>[ ] Scheduled Nano Banana sprint to generate variants of winners? [SRC: Sam Piliero | 615]</item>
+      <item>[ ] Sourced 1 new competitor concept from Ads Library? [SRC: Sam Piliero | 613]</item>
+      <item>[ ] Created 10+ Lazy Static variants for testing? [SRC: Tiana Asperjan | 25]</item>
+    </checklist>
+
+  </checklists>
+
+  <!-- ============================================================ -->
+  <!-- COMPLIANCE & GUARDRAILS                                      -->
+  <!-- ============================================================ -->
+
+  <compliance_guardrails>
+    <guardrail priority="critical">No exaggerated "before/after" claims for weight loss, skin conditions, or medical issues (Meta policy violation) [Meta Ad Policies]</guardrail>
+    <guardrail priority="critical">Use real testimonials; do not fabricate customer quotes or reviews [Constitutional Compliance + Meta Policies]</guardrail>
+    <guardrail priority="high">Text overlay must be <20% of image area for optimal delivery (Meta preference) [SRC: Mark Builds Brands | 846]</guardrail>
+    <guardrail priority="high">All images must be mobile-optimized: preview on phone before export (80% of users on mobile) [SRC: Justin Lalonde | 19]</guardrail>
+    <guardrail priority="medium">Avoid words like "cure," "miracle," "guaranteed results" in text overlays (Meta policy red flags) [Meta Ad Policies]</guardrail>
+    <guardrail priority="medium">AI-generated images must be photorealistic with no obvious artifacts (quality standard) [SRC: Sam Piliero | 617]</guardrail>
+  </compliance_guardrails>
+
+</knowledge_block>

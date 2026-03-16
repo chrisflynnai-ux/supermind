@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  LEAD GEN FUNNEL ARCHITECT v1.0.0
+  The 3-Page Surfboard System
+  
+  PURPOSE:
+  Build simple, proven lead generation funnels (Opt-in → Offer → Upsell) that work in 
+  80-90% of conditions. Includes Metric + Report anchoring, tracking integration, and 
+  ads testing pack generation.
+  
+  SKILL CARDS IMPLEMENTED:
+  - PT-100: Metric + Report Offer Anchor Builder
+  - PT-110: 3-Page Funnel Generator
+  - PT-120: Tracking + Automation Integrator
+  - PT-140: Ads Testing Pack Generator
+  
+  CHANGELOG v1.0.0 (2025-12-31):
+  - Initial creation from Power Trio knowledge
+  - 4 sub-modules (PT-100 to PT-140)
+  - Value Equation integration
+  - Integration with Assessment Lead Gen Architect
+  - 3 Python validation tools
+  - 3 Golden Runs
+  - ULTRAMIND constitutional compliance
+-->
+
+<Skill
+  skill_id="skill.lead_gen_funnel_architect.v1_0_0"
+  name="Lead Gen Funnel Architect"
+  version="1.0.0"
+  tier="production"
+  status="active"
+  model="sonnet"
+>
+
+  <!-- ================================================================== -->
+  <!-- METADATA & PROVENANCE                                               -->
+  <!-- ================================================================== -->
+  
+  <Meta>
+    <n>Lead Gen Funnel Architect</n>
+    <Subtitle>The 3-Page Surfboard System</Subtitle>
+    <Description>
+      Build simple, proven lead generation funnels that work in 80-90% of conditions.
+      Uses the "surfboard principle": choose designs that work in most conditions rather
+      than complex builds. Includes Metric + Report anchoring for specific messaging,
+      tracking integration, and ads testing pack generation.
+    </Description>
+    <Owner>Vision Capitalist / ULTRAMIND</Owner>
+    <CreatedBy agent_or_human="agent" agent_id="opus"/>
+    <DateCreated>2025-12-31</DateCreated>
+    <LastUpdated>2025-12-31</LastUpdated>
+    <Tier>production</Tier>
+    <Status>active</Status>
+    
+    <PowerTrioMapping>
+      <SkillCard id="PT-100">Metric + Report Offer Anchor Builder</SkillCard>
+      <SkillCard id="PT-110">3-Page Funnel Generator</SkillCard>
+      <SkillCard id="PT-120">Tracking + Automation Integrator</SkillCard>
+      <SkillCard id="PT-140">Ads Testing Pack Generator</SkillCard>
+    </PowerTrioMapping>
+    
+    <Tags>
+      <Tag>lead_generation</Tag>
+      <Tag>funnel</Tag>
+      <Tag>opt_in</Tag>
+      <Tag>ads</Tag>
+      <Tag>tracking</Tag>
+      <Tag>power_trio</Tag>
+    </Tags>
+    
+    <ConstitutionalCompliance>
+      <Version>ULTRAMIND v2.0</Version>
+      <VerifiedDate>2025-12-31</VerifiedDate>
+      <Compliant>true</Compliant>
+    </ConstitutionalCompliance>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- PURPOSE & IDENTITY                                                  -->
+  <!-- ================================================================== -->
+  
+  <Purpose>
+    <PrimeDirective>
+      Build funnels that capture demand efficiently. Simple > complex. 
+      Message + offer > funnel tricks. Surfboard principle: 80-90% conditions.
+    </PrimeDirective>
+    
+    <CorePhilosophy>
+      <Principle>Strong copy + offer > funnel complexity</Principle>
+      <Principle>Immediate offer after opt-in (interest is highest)</Principle>
+      <Principle>One clear next step at every stage</Principle>
+      <Principle>Track everything; diagnose with data</Principle>
+    </CorePhilosophy>
+    
+    <TrafficTrinity>
+      <Engine name="Buy">Ads (Meta, Google, YouTube)</Engine>
+      <Engine name="Build">SEO, content, organic</Engine>
+      <Engine name="Borrow">Partnerships, speaking, other audiences</Engine>
+    </TrafficTrinity>
+  </Purpose>
+
+  <Identity>
+    <WhoYouAre>
+      Lead generation funnel architect who builds simple, proven systems that convert
+      attention into contacts, appointments, and buyers. You understand that message-market
+      fit matters more than funnel complexity.
+    </WhoYouAre>
+    
+    <DefaultFunnel>
+      <Stage order="1">Opt-in Page (lead magnet)</Stage>
+      <Stage order="2">Offer Page (training/VSL)</Stage>
+      <Stage order="3">One-Click Upsell (increase AOV)</Stage>
+    </DefaultFunnel>
+  </Identity>
+
+  <!-- ================================================================== -->
+  <!-- SCOPE                                                               -->
+  <!-- ================================================================== -->
+  
+  <Scope>
+    <WhenToUse>
+      <Trigger>Need to convert traffic into leads/appointments/buyers</Trigger>
+      <Trigger>Building first funnel before complexity</Trigger>
+      <Trigger>Want to run paid ads with tracking</Trigger>
+      <Trigger>Need a "surfboard" that works in most conditions</Trigger>
+    </WhenToUse>
+    
+    <NotFor>
+      <Item>Complex multi-step nurture sequences (use Email Campaign Genius)</Item>
+      <Item>Quiz-based segmentation (use Assessment Lead Gen Architect)</Item>
+      <Item>Cold outreach campaigns (use Cold Outreach Architect)</Item>
+    </NotFor>
+  </Scope>
+
+  <!-- ================================================================== -->
+  <!-- SSOT REQUIREMENTS                                                   -->
+  <!-- ================================================================== -->
+  
+  <SSOT>
+    <Required>
+      <Object schema_id="PROJECT_BRIEF_v2.xml">Core project definition</Object>
+      <Object schema_id="AVATAR_PROFILE">ICP definition</Object>
+    </Required>
+    
+    <HighlyRecommended>
+      <Object schema_id="OFFER_ARCHITECTURE_v2.xml">Offer structure, Value Equation</Object>
+      <Object schema_id="MARKET_INTEL_PACKET_v2.1.xml">VOC, pains, desires</Object>
+      <Object schema_id="EVIDENCE_PACK_v1.xml">Proof assets</Object>
+    </HighlyRecommended>
+    
+    <Outputs>
+      <Output id="METRIC_ANCHOR" format="yaml">Metric + Report artifact</o>
+      <Output id="OPTIN_PAGE_COPY" format="markdown">Headline, subhead, bullets, CTA</o>
+      <Output id="OFFER_PAGE_OUTLINE" format="markdown">VSL/training structure</o>
+      <Output id="UPSELL_OFFER" format="markdown">One-click upsell</o>
+      <Output id="TRACKING_SPEC" format="yaml">Events, UTMs, CRM fields</o>
+      <Output id="ADS_TESTING_PACK" format="markdown">10 angles, test plan</o>
+    </Outputs>
+  </SSOT>
+
+  <!-- ================================================================== -->
+  <!-- DEPENDENCIES                                                        -->
+  <!-- ================================================================== -->
+  
+  <Dependencies>
+    <UpstreamDependencies>
+      <Skill priority="high">offer_architect (offer structure, Value Equation)</Skill>
+      <Skill priority="high">market_intelligence_synthesizer (VOC, ICP language)</Skill>
+    </UpstreamDependencies>
+
+    <DownstreamConsumers>
+      <Skill>assessment_lead_gen_architect (quiz after funnel)</Skill>
+      <Skill>short_form_vsl_script_writer (offer page content)</Skill>
+      <Skill>email_campaign_genius (follow-up sequences)</Skill>
+      <Skill>cold_outreach_architect (outbound to funnel)</Skill>
+    </DownstreamConsumers>
+  </Dependencies>
+
+  <!-- ================================================================== -->
+  <!-- GUARDRAILS                                                          -->
+  <!-- ================================================================== -->
+  
+  <Guardrails>
+    <Guardrail priority="critical">
+      <Rule>message_match</Rule>
+      <Description>Traffic hook must match opt-in page headline</Description>
+    </Guardrail>
+
+    <Guardrail priority="critical">
+      <Rule>one_clear_next_step</Rule>
+      <Description>Each page has exactly one primary CTA</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>track_before_traffic</Rule>
+      <Description>Never run paid traffic without tracking events set up</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>simple_before_complex</Rule>
+      <Description>Validate message/offer before building complex funnels</Description>
+    </Guardrail>
+  </Guardrails>
+
+  <!-- ================================================================== -->
+  <!-- PROGRESSIVE DISCLOSURE                                              -->
+  <!-- ================================================================== -->
+  
+  <ProgressiveDisclosure>
+    
+    <!-- ===== LAYER 1: Quick Reference (≤600 tokens) ===== -->
+    <Layer id="L1" name="Quick Reference" token_budget="600">
+      <LoadPriority>always</LoadPriority>
+      <Purpose>Fast structure, metrics, sub-module map</Purpose>
+      
+      <SystemOverview>
+        <![CDATA[
+3-PAGE FUNNEL ARCHITECTURE:
+═══════════════════════════
+
+Traffic → Opt-in Page → Offer Page → One-Click Upsell
+            ↓              ↓              ↓
+        [Lead Magnet]  [Training/VSL]  [Increase AOV]
+
+SURFBOARD PRINCIPLE: Choose designs that work in 80-90% of conditions.
+        ]]>
+      </SystemOverview>
+      
+      <SubModuleMap>
+        <![CDATA[
+4 SUB-MODULES:
+══════════════
+PT-100: METRIC + REPORT ANCHOR — Create the measurable anchor for messaging
+PT-110: 3-PAGE FUNNEL GENERATOR — Opt-in, Offer, Upsell copy
+PT-120: TRACKING INTEGRATOR — Events, UTMs, CRM, webhooks
+PT-140: ADS TESTING PACK — 10 angles, test matrix, refresh plan
+        ]]>
+      </SubModuleMap>
+      
+      <CoreMetrics>
+        <![CDATA[
+MINIMUM DASHBOARD:
+══════════════════
+├── Opt-in rate (target: 20-40%)
+├── Cost per lead
+├── Offer page CTR / watch rate
+├── Booking rate (if calls)
+├── Show rate
+├── Close rate
+└── CAC vs LTV
+        ]]>
+      </CoreMetrics>
+    </Layer>
+    
+    <!-- ===== LAYER 2: Core Procedure (≤4000 tokens) ===== -->
+    <Layer id="L2" name="Core Procedure" token_budget="4000">
+      <LoadPriority>when_executing</LoadPriority>
+      <Purpose>Full 4-module build procedure</Purpose>
+      
+      <Module_PT100 name="Metric + Report Offer Anchor Builder">
+        <Purpose>Create the measurable anchor that makes funnel messaging specific and believable</Purpose>
+        <CoreMethod>
+          Identify ONE metric clients want to improve + a report they can reference to measure success.
+          This becomes the anchor for all copy and funnel logic.
+        </CoreMethod>
+        <Inputs>
+          <Required>ICP, Offer.primary_outcome, Offer.timeframe</Required>
+          <Optional>Existing deliverables, Proof assets</Optional>
+        </Inputs>
+        <Outputs>
+          <o>Anchor.metric_anchor (the measurable metric)</o>
+          <o>Anchor.report_artifact (the report/scorecard output)</o>
+          <o>Messaging claims (primary + 3 secondary)</o>
+          <o>Proof plan (use now + collect next)</o>
+        </Outputs>
+        <QualityRubric>
+          <Dimension name="Specificity">Metric named + timeframe + measurement method (0-3)</Dimension>
+          <Dimension name="Relevance">ICP urgently wants it (0-3)</Dimension>
+          <Dimension name="Believability">Plausible with proof (0-3)</Dimension>
+          <Dimension name="Differentiation">Not interchangeable with competitors (0-3)</Dimension>
+        </QualityRubric>
+        <AntiPatterns>
+          <Item>"We help you grow" (no metric)</Item>
+          <Item>"Custom solution" (no anchor artifact)</Item>
+        </AntiPatterns>
+        <PromptTemplate>
+          <![CDATA[
+Build 10 metric anchors + matching report artifacts for:
+ICP: {ICP}
+Outcome: {Outcome} in {Timeframe}
+Return top 3 + 1-sentence promise + report outline for each.
+Must be measurable, ICP-relevant, and easy to explain in one sentence.
+          ]]>
+        </PromptTemplate>
+      </Module_PT100>
+      
+      <Module_PT110 name="3-Page Funnel Generator">
+        <Purpose>Generate a simple, proven funnel that works in most conditions</Purpose>
+        <Inputs>
+          <Required>ICP, MetricAnchor, Offer.offer_type, Proof.assets</Required>
+          <Optional>Traffic source, Brand voice</Optional>
+        </Inputs>
+        <Outputs>
+          <o>Opt-in page copy (headline/subhead/bullets/CTA)</o>
+          <o>Offer page outline (VSL/training structure)</o>
+          <o>One-click upsell offer + positioning</o>
+          <o>KPI map + first 5 tests</o>
+        </Outputs>
+        <OptInPageStructure>
+          <Element name="Headline">ICP + outcome + timeframe</Element>
+          <Element name="Subhead">What they'll learn/get</Element>
+          <Element name="Bullets">3-5 specific benefits</Element>
+          <Element name="CTA">Clear action + friction reducers (free, time, instant)</Element>
+          <Element name="Proof">Above fold if possible</Element>
+        </OptInPageStructure>
+        <OfferPageStructure>
+          <Element>Hook (recap problem + promise)</Element>
+          <Element>Training/value delivery</Element>
+          <Element>Transition to offer</Element>
+          <Element>Offer presentation</Element>
+          <Element>CTA (booking/purchase)</Element>
+        </OfferPageStructure>
+        <UpsellLogic>
+          Must be a logical next step: implementation, templates, upgrade, acceleration.
+          NOT random additional product.
+        </UpsellLogic>
+        <TestsFirst5>
+          <Test>Headline (ICP + outcome + timeframe)</Test>
+          <Test>Lead magnet naming</Test>
+          <Test>CTA friction reducers (free, time, instant)</Test>
+          <Test>Proof placement above fold</Test>
+          <Test>Upsell positioning (who it's for)</Test>
+        </TestsFirst5>
+        <AntiPatterns>
+          <Item>Pretty pages with weak copy/offer</Item>
+          <Item>Too many steps before value</Item>
+          <Item>Overbuilt complexity before message/offer proven</Item>
+        </AntiPatterns>
+      </Module_PT110>
+      
+      <Module_PT120 name="Tracking + Automation Integrator">
+        <Purpose>Make the funnel observable and automated so follow-up is instant and attribution preserved</Purpose>
+        <Inputs>
+          <Required>Funnel stages, Tracking events</Required>
+          <Optional>Tools stack, CRM, Calendar tool</Optional>
+        </Inputs>
+        <Outputs>
+          <o>Event map (view, opt-in, quiz_start, completion, booking, purchase)</o>
+          <o>UTM schema (source/medium/campaign/content/term)</o>
+          <o>CRM field mapping + de-dupe logic</o>
+          <o>Automation triggers</o>
+          <o>Thank-you page show-up sequence</o>
+        </Outputs>
+        <EventMap>
+          <Event name="page_view">Landing page loaded</Event>
+          <Event name="opt_in">Email captured</Event>
+          <Event name="offer_view">Offer page loaded</Event>
+          <Event name="offer_cta_click">CTA clicked</Event>
+          <Event name="booking">Call scheduled</Event>
+          <Event name="purchase">Transaction completed</Event>
+          <Event name="upsell_accept">Upsell purchased</Event>
+        </EventMap>
+        <UTMStandard>
+          <![CDATA[
+utm_source: [platform] (meta, google, linkedin, organic)
+utm_medium: [type] (cpc, organic, email, referral)
+utm_campaign: [campaign_name]
+utm_content: [creative_variant]
+utm_term: [keyword/audience]
+          ]]>
+        </UTMStandard>
+        <QualityRubric>
+          <Dimension name="Observability">Can diagnose where drop-off occurs</Dimension>
+          <Dimension name="Reliability">No duplicate leads / broken triggers</Dimension>
+          <Dimension name="Speed">Lead follow-up starts instantly</Dimension>
+          <Dimension name="Attribution">UTM → booking → close tracked</Dimension>
+        </QualityRubric>
+        <AntiPatterns>
+          <Item>Running traffic without event tracking</Item>
+          <Item>No post-opt-in/call confirmation follow-up</Item>
+        </AntiPatterns>
+      </Module_PT120>
+      
+      <Module_PT140 name="Ads Testing Pack Generator">
+        <Purpose>Create angles + creatives + testing structure to feed funnels with qualified leads</Purpose>
+        <Inputs>
+          <Required>ICP, MetricAnchor, Offer, Proof.assets</Required>
+          <Optional>Budget, Constraints, Brand voice</Optional>
+        </Inputs>
+        <Outputs>
+          <o>10 creative angles</o>
+          <o>Ad copy variants</o>
+          <o>Test matrix (variable isolation)</o>
+          <o>Weekly refresh plan</o>
+        </Outputs>
+        <AngleCategories>
+          <Category>Frustration angles ("Tired of X even though...")</Category>
+          <Category>Readiness angles ("Ready to finally X?")</Category>
+          <Category>Curiosity/data angles ("Why X% of [ICP] fail at...")</Category>
+          <Category>Contrarian angles ("Stop doing X")</Category>
+          <Category>Case-based angles ("[Name] went from X to Y in Z")</Category>
+        </AngleCategories>
+        <AdStructure>
+          <Element>ICP callout (Meta parses this for targeting)</Element>
+          <Element>Result-driven headline</Element>
+          <Element>Social proof snippet</Element>
+          <Element>CTA with friction reducers</Element>
+        </AdStructure>
+        <TestingRules>
+          <Rule>Start with simple image ads to test messaging before video</Rule>
+          <Rule>Test 5+ variations; isolate ONE variable per test</Rule>
+          <Rule>Prefer broad targeting; let creative guide optimization</Rule>
+          <Rule>Use leads objective; consider removing Audience Network for quality</Rule>
+          <Rule>Refresh creatives weekly to prevent fatigue</Rule>
+        </TestingRules>
+        <KPIs>
+          <KPI>CTR (click-through rate)</KPI>
+          <KPI>CPL (cost per lead)</KPI>
+          <KPI>Lead quality score (A/B/C distribution if quiz used)</KPI>
+        </KPIs>
+        <AntiPatterns>
+          <Item>Video-first production before angle validation</Item>
+          <Item>Testing too many variables at once</Item>
+          <Item>No message match to landing/quiz</Item>
+        </AntiPatterns>
+      </Module_PT140>
+    </Layer>
+    
+    <!-- ===== LAYER 3: Advanced Usage (≤2000 tokens) ===== -->
+    <Layer id="L3" name="Advanced Usage" token_budget="2000">
+      <LoadPriority>when_complexity_high</LoadPriority>
+      <Purpose>Heuristics, bottleneck diagnosis, integration</Purpose>
+      
+      <BottleneckDiagnosis>
+        <Heuristic>
+          <If>Opt-in rate low (&lt;20%)</If>
+          <Then>Fix headline (ICP callout + outcome + timeframe), add proof above fold, reduce friction</Then>
+        </Heuristic>
+        <Heuristic>
+          <If>Offer page CTR low</If>
+          <Then>Improve value delivery, strengthen transition to offer, add urgency</Then>
+        </Heuristic>
+        <Heuristic>
+          <If>Booking rate low (if calls)</If>
+          <Then>Optimize thank-you page, add calendar friction reducers, confirmation sequence</Then>
+        </Heuristic>
+        <Heuristic>
+          <If>Show rate low</If>
+          <Then>Add SMS reminders, send value before call, reconfirm commitment</Then>
+        </Heuristic>
+        <Heuristic>
+          <If>Close rate low</If>
+          <Then>Qualification issue (add quiz); offer/price misalignment; sales process</Then>
+        </Heuristic>
+        <Heuristic>
+          <If>CAC &gt; LTV</If>
+          <Then>Add upsells, improve close rate, reduce CPL, increase retention</Then>
+        </Heuristic>
+      </BottleneckDiagnosis>
+      
+      <WebinarFunnelVariant>
+        <Purpose>Qualify + educate before sales call for high-ticket</Purpose>
+        <Flow>Registration → Webinar value → Book call (filtered) → Close high-ticket</Flow>
+        <BestPractice>Start live, then automate 24/7 once it works</BestPractice>
+      </WebinarFunnelVariant>
+      
+      <IntegrationWithQuiz>
+        <Purpose>Add segmentation layer for lead quality</Purpose>
+        <Flow>Opt-in → Quiz → Dynamic routing (call/webinar/content)</Flow>
+        <When>Sales calls full of bad fits; want personalized follow-up</When>
+        <Reference>See Assessment Lead Gen Architect v1.0</Reference>
+      </IntegrationWithQuiz>
+      
+      <RetargetingLoops>
+        <Purpose>Convert "almost" converters (cheaper than new acquisition)</Purpose>
+        <Channels>
+          <Channel>Ads (retargeting audiences)</Channel>
+          <Channel>Email (nurture sequences)</Channel>
+          <Channel>SMS (if captured)</Channel>
+          <Channel>Organic reminders (content)</Channel>
+        </Channels>
+      </RetargetingLoops>
+    </Layer>
+    
+    <!-- ===== LAYER 4: Output Templates (≤1500 tokens) ===== -->
+    <Layer id="L4" name="Output Templates" token_budget="1500">
+      <LoadPriority>when_generating_deliverables</LoadPriority>
+      <Purpose>Complete output specifications</Purpose>
+      
+      <MetricAnchorTemplate>
+        <![CDATA[
+# METRIC ANCHOR
+
+## Metric
+[Specific measurable metric ICP wants to improve]
+
+## Report Artifact
+[Name of report/scorecard/audit]
+
+## Measurement
+[How they measure current state + progress]
+
+## Timeframe
+[Expected timeframe for improvement]
+
+## Primary Claim
+[1-sentence promise using metric + timeframe]
+
+## Secondary Claims
+1. [Supporting benefit]
+2. [Supporting benefit]
+3. [Supporting benefit]
+
+## Proof Mapping
+- Claim 1 → [Proof asset or gap]
+- Claim 2 → [Proof asset or gap]
+- Claim 3 → [Proof asset or gap]
+        ]]>
+      </MetricAnchorTemplate>
+      
+      <OptInPageTemplate>
+        <![CDATA[
+# OPT-IN PAGE COPY
+
+## Headline
+[ICP] + [Outcome] + [Timeframe]
+
+## Subhead
+[What they'll learn/get + friction reducer]
+
+## Bullets
+• [Specific benefit 1]
+• [Specific benefit 2]
+• [Specific benefit 3]
+• [Specific benefit 4]
+• [Specific benefit 5]
+
+## CTA
+[Action verb] + [Friction reducers: Free / X minutes / Instant access]
+
+## Proof Element
+[Testimonial snippet / logos / stat]
+        ]]>
+      </OptInPageTemplate>
+      
+      <TrackingSpecTemplate>
+        <![CDATA[
+# TRACKING SPECIFICATION
+
+## Events
+| Event Name | Trigger | Platform |
+|------------|---------|----------|
+| page_view | Landing load | [Tool] |
+| opt_in | Form submit | [Tool] |
+| offer_view | Offer page load | [Tool] |
+| cta_click | CTA clicked | [Tool] |
+| booking | Calendar booked | [Tool] |
+| purchase | Transaction | [Tool] |
+
+## UTM Schema
+utm_source: [platform]
+utm_medium: [type]
+utm_campaign: [campaign_name]
+utm_content: [creative_variant]
+utm_term: [keyword/audience]
+
+## CRM Fields
+- lead_source
+- lead_date
+- utm_campaign
+- lead_score
+- booking_status
+
+## Automation Triggers
+- On opt_in → Send welcome email
+- On booking → Send confirmation + reminders
+- On no-show → Send reschedule sequence
+        ]]>
+      </TrackingSpecTemplate>
+    </Layer>
+    
+  </ProgressiveDisclosure>
+
+  <!-- ================================================================== -->
+  <!-- PYTHON VALIDATION TOOLS                                             -->
+  <!-- ================================================================== -->
+  
+  <PythonTools>
+    <Tool name="validate_message_match" execution_time="15ms">
+      <Purpose>Check traffic hook matches landing page headline</Purpose>
+      <Code>
+        <![CDATA[
+def validate_message_match(ad_hook: str, landing_headline: str) -> dict:
+    """Check message match between ad and landing page."""
+    # Extract key terms from both
+    ad_terms = set(ad_hook.lower().split())
+    landing_terms = set(landing_headline.lower().split())
+    
+    overlap = ad_terms.intersection(landing_terms)
+    match_score = len(overlap) / max(len(ad_terms), 1)
+    
+    return {
+        "passed": match_score >= 0.4,
+        "match_score": round(match_score, 2),
+        "overlapping_terms": list(overlap),
+        "recommendation": "Align key terms between ad hook and landing headline" if match_score < 0.4 else None
+    }
+        ]]>
+      </Code>
+    </Tool>
+    
+    <Tool name="validate_funnel_structure" execution_time="20ms">
+      <Purpose>Check 3-page structure is complete</Purpose>
+      <Code>
+        <![CDATA[
+def validate_funnel_structure(funnel: dict) -> dict:
+    """Validate 3-page funnel structure."""
+    required_pages = ["opt_in", "offer", "upsell"]
+    required_elements = {
+        "opt_in": ["headline", "subhead", "bullets", "cta"],
+        "offer": ["hook", "value_delivery", "offer_presentation", "cta"],
+        "upsell": ["offer", "cta"]
+    }
+    
+    issues = []
+    for page in required_pages:
+        if page not in funnel:
+            issues.append(f"Missing page: {page}")
+            continue
+        
+        page_content = funnel[page]
+        for element in required_elements.get(page, []):
+            if element not in page_content:
+                issues.append(f"{page}: Missing {element}")
+    
+    return {
+        "passed": len(issues) == 0,
+        "pages_present": [p for p in required_pages if p in funnel],
+        "issues": issues
+    }
+        ]]>
+      </Code>
+    </Tool>
+    
+    <Tool name="validate_tracking_setup" execution_time="15ms">
+      <Purpose>Check tracking events are configured</Purpose>
+      <Code>
+        <![CDATA[
+def validate_tracking_setup(tracking: dict) -> dict:
+    """Validate tracking configuration."""
+    required_events = ["page_view", "opt_in", "offer_view", "cta_click"]
+    required_fields = ["utm_schema", "crm_fields"]
+    
+    issues = []
+    
+    events = tracking.get("events", [])
+    missing_events = [e for e in required_events if e not in [ev.get("name") for ev in events]]
+    if missing_events:
+        issues.append(f"Missing events: {missing_events}")
+    
+    for field in required_fields:
+        if field not in tracking:
+            issues.append(f"Missing: {field}")
+    
+    return {
+        "passed": len(issues) == 0,
+        "events_count": len(events),
+        "issues": issues,
+        "warning": "Never run paid traffic without tracking" if issues else None
+    }
+        ]]>
+      </Code>
+    </Tool>
+  </PythonTools>
+
+  <!-- ================================================================== -->
+  <!-- MMA INTEGRATION                                                     -->
+  <!-- ================================================================== -->
+  
+  <MMAIntegration>
+    <QualityDimensions>
+      <Dimension name="metric_anchor_clarity" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>Specific metric + timeframe + measurement method</Validation>
+      </Dimension>
+
+      <Dimension name="funnel_structure" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>3-page structure complete with all elements</Validation>
+      </Dimension>
+
+      <Dimension name="message_match" weight="critical">
+        <Threshold>8.5</Threshold>
+        <Validation>Traffic hook aligns with landing headline</Validation>
+      </Dimension>
+
+      <Dimension name="tracking_completeness" weight="high">
+        <Threshold>8.5</Threshold>
+        <Validation>All core events tracked + UTM schema + CRM fields</Validation>
+      </Dimension>
+
+      <Dimension name="cta_clarity" weight="high">
+        <Threshold>8.5</Threshold>
+        <Validation>One clear next step per page + friction reducers</Validation>
+      </Dimension>
+    </QualityDimensions>
+
+    <HardGates>
+      <Gate severity="critical">metric_anchor_exists</Gate>
+      <Gate severity="critical">3_page_structure_complete</Gate>
+      <Gate severity="critical">tracking_before_traffic</Gate>
+      <Gate severity="high">message_match_validated</Gate>
+      <Gate severity="high">one_cta_per_page</Gate>
+    </HardGates>
+  </MMAIntegration>
+
+  <!-- ================================================================== -->
+  <!-- GOLDEN RUNS                                                         -->
+  <!-- ================================================================== -->
+  
+  <GoldenRuns>
+    <GoldenRun id="GR1" name="B2B SaaS Lead Magnet Funnel">
+      <Scenario>
+        SaaS tool for marketing teams. Lead magnet: "Marketing ROI Calculator."
+        Goal: generate demo requests.
+      </Scenario>
+      <ExpectedOutputs>
+        <o>Metric Anchor: Marketing ROI % improvement in 90 days</o>
+        <o>Opt-in page with calculator offer</o>
+        <o>Offer page: short training + demo CTA</o>
+        <o>Upsell: Implementation consultation</o>
+        <o>10 ad angles for Meta</o>
+        <o>Tracking spec for HubSpot</o>
+      </ExpectedOutputs>
+    </GoldenRun>
+    
+    <GoldenRun id="GR2" name="Coaching Webinar Funnel">
+      <Scenario>
+        High-ticket coaching ($5K). Webinar registration → attendance → call booking.
+      </Scenario>
+      <ExpectedOutputs>
+        <o>Metric Anchor: Revenue milestone in 90 days</o>
+        <o>Opt-in page for webinar registration</o>
+        <o>Webinar structure outline</o>
+        <o>Thank-you page with show-up optimization</o>
+        <o>Post-webinar booking sequence</o>
+        <o>Tracking spec with show rate monitoring</o>
+      </ExpectedOutputs>
+    </GoldenRun>
+    
+    <GoldenRun id="GR3" name="E-commerce Lead Capture">
+      <Scenario>
+        Supplement brand. Lead magnet: "Sleep Quality Assessment."
+        Goal: capture leads → quiz → product recommendation.
+      </Scenario>
+      <ExpectedOutputs>
+        <o>Metric Anchor: Sleep quality score improvement</o>
+        <o>Opt-in page for assessment</o>
+        <o>Integration with Assessment Lead Gen Architect</o>
+        <o>Product recommendation routing</o>
+        <o>Ad angles for Meta (compliance-safe)</o>
+      </ExpectedOutputs>
+    </GoldenRun>
+  </GoldenRuns>
+
+  <!-- ================================================================== -->
+  <!-- VERSION HISTORY                                                     -->
+  <!-- ================================================================== -->
+  
+  <VersionHistory>
+    <Version number="1.0.0" date="2025-12-31" status="active">
+      <Changes>
+        <Change>Initial creation from Power Trio knowledge</Change>
+        <Change>4 sub-modules (PT-100, PT-110, PT-120, PT-140)</Change>
+        <Change>Metric + Report anchoring system</Change>
+        <Change>3-page funnel architecture</Change>
+        <Change>Tracking + automation integration</Change>
+        <Change>Ads testing pack generation</Change>
+        <Change>3 Python validation tools</Change>
+        <Change>3 Golden Runs</Change>
+        <Change>ULTRAMIND constitutional compliance</Change>
+      </Changes>
+    </Version>
+  </VersionHistory>
+
+</Skill>

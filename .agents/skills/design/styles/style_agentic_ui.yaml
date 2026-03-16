@@ -1,0 +1,60 @@
+# ULTRAMIND Design Style Layer v1.0.0
+# Vertical: A2UI / AI Services | Priority: 1 (Core Business)
+# Extracted from UI-UX-Pro-Max + Neuro-Resonance mapped
+# Load cost: ~150 tokens | Layer: L2
+
+style_layer:
+  name: "Agentic UI"
+  version: "1.0.0"
+  vertical: "agentic_ui"
+  extends: "STYLE_BASE_OVERRIDE"
+  extracted_from: "ui-ux-pro-max"
+
+  quick_reference:
+    style_archetype: "Dark Mode (OLED)"
+    mood: "futuristic, intelligent, precise"
+    best_for: "AI interfaces, coding platforms, developer tools, agentic dashboards"
+
+  color_palette:
+    primary: "#1E293B"
+    primary_light: "#334155"
+    primary_dark: "#0F172A"
+    secondary: "#334155"
+    accent: "#22C55E"
+    surface_bg: "#0F172A"
+    surface_card: "#1E293B"
+    text_primary: "#F8FAFC"
+    text_secondary: "#94A3B8"
+    cta_primary: "#22C55E"
+    cta_hover: "#16A34A"
+
+  typography:
+    heading_font: "Share Tech Mono"
+    heading_weight: 600
+    body_font: "Fira Code"
+    body_weight: 400
+    google_fonts_import: "https://fonts.google.com/share?selection.family=Fira+Code:wght@300;400;500;600;700|Share+Tech+Mono"
+
+  motion:
+    entry_style: "fade"
+    duration_base: "200ms"
+    easing: "ease-out"
+    special: "minimal glow (text-shadow: 0 0 10px), streaming indicators"
+
+  radius:
+    default: "8px"
+    buttons: "8px"
+    cards: "12px"
+
+  neuro_resonance:
+    primary_axis: "MIND"
+    primary_neurotransmitter: "Acetylcholine"
+    secondary_axis: "CONSCIENCE"
+    emotional_target: "intelligence, precision, control"
+    7s_emphasis: ["SMART", "SUPERIOR"]
+
+  anti_patterns:
+    - "Generic tech design without personality"
+    - "No data visualization or activity indicators"
+    - "Bright/light themes (defeats purpose)"
+    - "Static interfaces (must show agentic activity)"

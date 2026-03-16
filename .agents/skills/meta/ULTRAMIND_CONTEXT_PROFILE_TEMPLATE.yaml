@@ -1,0 +1,371 @@
+# ULTRAMIND CONTEXT PROFILE — UNIFIED TEMPLATE
+# Version: 3.0
+# Merges: voice_dna.json + icp.json + business.json
+# Usage: Fill all sections, save as profiles/ultramind_context.yaml
+
+meta:
+  version: "1.0"
+  project: "[PROJECT_NAME]"
+  owner: "[YOUR_NAME_OR_BRAND]"
+  last_updated: "YYYY-MM-DD"
+  
+# ═══════════════════════════════════════════════════════════════════════════════
+# VOICE DNA — How We Sound
+# ═══════════════════════════════════════════════════════════════════════════════
+voice:
+  
+  summary:
+    one_sentence: "[e.g., candid, sharp, optimistic realism with clear teaching]"
+    archetype: "[builder-teacher | contrarian-analyst | empathetic-coach | visionary-strategist]"
+    emotional_tone:
+      - "[grounded]"
+      - "[urgent]"
+      - "[playful]"
+    reader_feeling_goal:
+      - "[seen and capable]"
+      - "[equipped to act]"
+      - "[part of something bigger]"
+      
+  priority_rules:
+    - priority: 1
+      rule: "[most important rule: clarity, brevity, directness, etc.]"
+      why: "[1 line why it matters]"
+      do:
+        - "[do example]"
+        - "[do example]"
+      dont:
+        - "[don't example]"
+        - "[don't example]"
+    - priority: 2
+      rule: "[second most important rule]"
+      why: "[why it matters]"
+      do:
+        - "[do example]"
+      dont:
+        - "[don't example]"
+        
+  tone_traits:
+    ranked:
+      - trait: "[direct]"
+        weight: 10
+      - trait: "[warm]"
+        weight: 7
+      - trait: "[witty]"
+        weight: 5
+    avoid:
+      - "[corporate jargon]"
+      - "[breathless hype]"
+      - "[vague inspiration]"
+      
+  style_mechanics:
+    reading_level: "[grade 6-9]"
+    sentence_length:
+      default: "[10-18 words]"
+      variation: "[occasional 3-6 word punchline + occasional long explanatory]"
+    paragraphing:
+      max_lines: 3
+      rhythm: "[1/3/1 or short/short/medium]"
+      whitespace_bias: "high"
+    formatting:
+      bullets: "use for lists of 3+ items"
+      bolding: "bold key phrases sparingly (1-3 per section)"
+      headings: "clear, specific subheads that promise value"
+      
+  signature_moves:
+    openers:
+      - "[contrarian premise]"
+      - "[vivid scene]"
+      - "[short punch question]"
+    cadence_tools:
+      - "triads (A, B, C)"
+      - "hard-cut verdict lines"
+      - "short punchline after long sentence"
+    analogy:
+      frequency: "[1 per piece]"
+      source_domains:
+        - "[sports]"
+        - "[startups]"
+        - "[everyday life]"
+      avoid_domains:
+        - "[optional]"
+    humor:
+      types:
+        - "self-deprecating"
+        - "absurdity"
+        - "shared pain"
+      limits:
+        - "no punching down"
+        - "no sarcasm-only voice"
+        
+  lexicon:
+    favorites:
+      - "[phrase you love]"
+      - "[phrase you love]"
+    banned:
+      - "[phrase to avoid]"
+      - "[phrase to avoid]"
+    replacements:
+      "[banned_word]": "[preferred_word]"
+      "[banned_phrase]": "[preferred_phrase]"
+      
+  argumentation:
+    default_structure: "[claim → proof beats → implication → action]"
+    evidence_preferences:
+      - "data"
+      - "examples"
+      - "contrasts"
+      - "first-principles reasoning"
+    stance: "[calm certainty; no hedging unless necessary]"
+    
+  examples:
+    good:
+      - label: "Strong voice match"
+        text: |
+          [Paste a short paragraph of your best writing that exemplifies your voice]
+    bad:
+      - label: "Generic AI drift"
+        text: |
+          [Paste an example of what you do NOT want - generic, corporate, bland]
+          
+  qa_checks:
+    - "Does it sound like a human with taste, not a template?"
+    - "Can a reader summarize the point in 10 seconds?"
+    - "Did we remove clichés and vague abstractions?"
+    - "Are there 1-2 quotable lines or crisp phrasings?"
+    - "Is formatting scannable (short paragraphs, clear subheads)?"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# AUDIENCE (ICP) — Who We Serve
+# ═══════════════════════════════════════════════════════════════════════════════
+audience:
+  
+  summary:
+    one_sentence: "[e.g., founders of B2B SaaS doing $0-$2M ARR who need predictable pipeline]"
+    segments:
+      - name: "[segment name]"
+        description: "[who they are + context]"
+        priority: "primary"
+      - name: "[secondary segment]"
+        description: "[who they are]"
+        priority: "secondary"
+        
+  context:
+    industry: "[industry]"
+    business_model: "[B2B/B2C/services/etc]"
+    typical_stage: "[pre-seed to series A]"
+    constraints:
+      - "[budget constraint]"
+      - "[time constraint]"
+      - "[tooling constraint]"
+      
+  pain:  # The "2pm Tuesday Problem"
+    situation: "[where they are when pain hits — be specific]"
+    description: "[specific pain, not abstract]"
+    current_attempts:
+      - "[what they try now]"
+      - "[what they try now]"
+    why_fails:
+      - "[why current solution fails]"
+      - "[why current solution fails]"
+      
+  goals:
+    primary:
+      - "[goal]"
+      - "[goal]"
+    secondary:
+      - "[goal]"
+    jobs_to_be_done:
+      - job: "[job statement]"
+        success: "[measurable outcome]"
+      - job: "[job statement]"
+        success: "[measurable outcome]"
+        
+  objections:
+    top_pains:
+      - pain: "[pain]"
+        severity: 10
+      - pain: "[pain]"
+        severity: 8
+    common_objections:
+      - objection: "[e.g., 'this won't work for our niche']"
+        real_fear: "[the real fear underneath]"
+        how_to_address: "[how content should respond]"
+    risk_sensitivity:
+      high_risk_topics:
+        - "[claims to avoid]"
+        - "[sensitive areas]"
+      proof_required_for:
+        - "pricing"
+        - "ROI"
+        - "results"
+        
+  beliefs:
+    current:
+      - "[belief they hold now]"
+      - "[belief they hold now]"
+    misconceptions:
+      - "[misconception we need to correct]"
+    awareness_stage: "[unaware | problem-aware | solution-aware | product-aware]"
+    desired_shift: "[what we want them to believe after engaging with us]"
+    
+  language:
+    words_they_use:
+      - "[exact phrase from their mouth]"
+      - "[exact phrase]"
+    words_they_hate:
+      - "[phrase that turns them off]"
+      - "[phrase]"
+    metaphors_that_land:
+      - "[metaphor domain that resonates]"
+      - "[metaphor domain]"
+    channels:
+      - "[newsletter]"
+      - "[LinkedIn]"
+      - "[podcasts]"
+      - "[Slack communities]"
+      
+  content_preferences:
+    formats:
+      - "how-to"
+      - "case study"
+      - "checklist"
+      - "contrarian essay"
+    tolerance:
+      length: "[short/medium/long]"
+      technicality: "[low/medium/high]"
+      humor: "[none/light/medium]"
+    what_they_share:
+      - "[content that makes them look smart]"
+      - "[content that saves them time]"
+      - "[content that signals taste]"
+      
+  cta_fit:
+    best_next_step: "[e.g., book a call | download lead magnet | reply to email]"
+    tone: "[low pressure | direct | permission-based]"
+    hooks:
+      - "[offer hook that resonates]"
+      - "[offer hook]"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# BUSINESS — What We Offer
+# ═══════════════════════════════════════════════════════════════════════════════
+business:
+  
+  positioning:
+    one_liner: "[what you do + for whom + result]"
+    category: "[ghostwriting studio | growth agency | coaching | SaaS]"
+    differentiators:
+      - "[differentiator]"
+      - "[differentiator]"
+    anti_positioning:
+      - "[what you are NOT]"
+      - "[what you refuse to do]"
+      
+  offers:
+    - name: "[offer name]"
+      type: "[productized service | retainer | course | consulting]"
+      for_whom: "[ICP subset]"
+      outcome: "[measurable outcome]"
+      deliverables:
+        - "[deliverable]"
+        - "[deliverable]"
+      timeline: "[timeframe]"
+      pricing:
+        range: "[optional]"
+        model: "[monthly/one-time/per-project]"
+      guarantees:
+        - "[what you guarantee]"
+      boundaries:
+        - "[what you do not guarantee]"
+        
+  messaging:
+    core_messages:
+      - "[message pillar 1]"
+      - "[message pillar 2]"
+      - "[message pillar 3]"
+    claims_allowed:
+      - "[claim you can substantiate]"
+      - "[claim you can substantiate]"
+    claims_disallowed:
+      - "[claim to avoid - unsubstantiated]"
+      - "[claim to avoid]"
+    tone_constraints:
+      - "[confident, never snarky]"
+      - "[no hype]"
+      
+  constraints:
+    compliance:
+      - "[legal/compliance constraints]"
+    brand_safety:
+      - "[topics to avoid]"
+    approval_process: "[who must approve what]"
+    source_requirements: "[cite stats; avoid unverifiable claims]"
+    
+  content_strategy:
+    primary_channels:
+      - "[newsletter]"
+      - "[LinkedIn]"
+      - "[blog]"
+    cadence: "[weekly newsletter + 3 LI posts]"
+    pillars:
+      - "[content pillar 1]"
+      - "[content pillar 2]"
+    repurposing:
+      - "Newsletter → 3 LinkedIn posts → 1 email"
+      - "Long-form → thread → short video script"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# PROOF — Evidence We Can Use
+# ═══════════════════════════════════════════════════════════════════════════════
+proof:
+  
+  case_studies:
+    - client: "[client type or anonymized label]"
+      starting_point: "[baseline]"
+      result: "[outcome]"
+      timeframe: "[time]"
+      notes: "[what mattered]"
+      
+  credibility:
+    markers:
+      - "[credential]"
+      - "[result]"
+      - "[experience]"
+    assets:
+      logos_folder: "knowledge/assets/logos/"
+      brand_guidelines: "knowledge/assets/brand_guidelines.pdf"
+      
+  stats:
+    - stat: "[specific statistic]"
+      source: "[citation/source]"
+      use_when: "[context for using this stat]"
+      
+  testimonials:
+    - quote: "[testimonial quote]"
+      attribution: "[name, title, company]"
+      use_for: "[which offer/context]"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# NEURO-RESONANCE — Persuasion Architecture
+# ═══════════════════════════════════════════════════════════════════════════════
+neuro_resonance:
+  
+  primary_axes:
+    # Which 6D axes this brand typically activates
+    - axis: "[HEAL|RENEW|RESONATE|PERSUADE|DESIGN|DEVELOP]"
+      application: "[how we apply this]"
+      
+  seven_s_progression:
+    # How we move audiences through the 7S chain
+    safe: "[how we establish safety/trust]"
+    special: "[how we make them feel special]"
+    smart: "[how we make them feel smart]"
+    significant: "[how we make them feel significant]"
+    supported: "[how we make them feel supported]"
+    superior: "[how we make them feel capable]"
+    steal: "[how we make the offer irresistible]"
+    
+  audience_adaptation:
+    cold: "[strategy for cold audiences]"
+    warm: "[strategy for warm audiences]"
+    hot: "[strategy for hot audiences]"

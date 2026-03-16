@@ -1,0 +1,121 @@
+version: "4.0.0"
+family: "meta"
+status: "active"
+canonical_roles:
+  - meta_zpwo
+  - meta_mma
+  - meta_skill_builder
+  - meta_skill_architect
+  - meta_skill_auditor
+  - meta_template_system
+
+relations:
+  meta_zpwo:
+    purpose: "Route work, enforce track gates, and coordinate meta/domain execution."
+    upstream_inputs:
+      - routing_table.yaml
+      - aliases.yaml
+      - SESSION_STATE.json
+    downstream_consumers:
+      - meta_mma
+      - meta_skill_auditor
+      - domain skills
+    wake_conditions:
+      - "track transition requested"
+      - "command resolution required"
+      - "context hygiene required"
+    review_owner: meta_mma
+    patch_owner: meta_skill_architect
+
+  meta_mma:
+    purpose: "Score quality, block unsafe transitions, and emit fix or patch triggers."
+    upstream_inputs:
+      - meta_zpwo
+      - audited artifact
+      - SSOT set
+    downstream_consumers:
+      - meta_skill_auditor
+      - meta_skill_builder
+      - meta_skill_architect
+    wake_conditions:
+      - "validation requested"
+      - "quality gate reached"
+      - "fix loop triggered"
+    review_owner: meta_mma
+    patch_owner: meta_skill_builder
+
+  meta_skill_auditor:
+    purpose: "Audit folders, skills, and harness components; classify keep/patch/decompose/rebuild/archive."
+    upstream_inputs:
+      - meta_zpwo
+      - meta_mma
+      - target folder inventory
+      - pipeline docs
+    downstream_consumers:
+      - meta_skill_architect
+      - meta_skill_builder
+      - meta_template_system
+    wake_conditions:
+      - "new folder migration starts"
+      - "family re-audit requested"
+      - "contradiction or overlap detected"
+    review_owner: meta_mma
+    patch_owner: meta_skill_architect
+
+  meta_skill_architect:
+    purpose: "Define role boundaries, decomposition maps, integration contracts, and relational topology."
+    upstream_inputs:
+      - meta_skill_auditor
+      - meta_zpwo
+      - pipeline doctrine
+    downstream_consumers:
+      - meta_skill_builder
+      - meta_template_system
+      - future family migrations
+    wake_conditions:
+      - "decompose or rebuild verdict issued"
+      - "integration ambiguity detected"
+      - "new family standard required"
+    review_owner: meta_mma
+    patch_owner: meta_skill_architect
+
+  meta_skill_builder:
+    purpose: "Create and upgrade executable skills using the canonical pipeline and relational contracts."
+    upstream_inputs:
+      - meta_skill_architect
+      - meta_skill_auditor
+      - NotebookLM patch pack
+      - canonical templates
+    downstream_consumers:
+      - executable V4 skills
+      - manifest and routing updates
+    wake_conditions:
+      - "patch roadmap approved"
+      - "new skill requested"
+      - "upgrade execution required"
+    review_owner: meta_mma
+    patch_owner: meta_skill_builder
+
+  meta_template_system:
+    purpose: "Own canonical scaffolds, discovery metadata rules, and starter contract shapes."
+    upstream_inputs:
+      - meta_skill_architect
+      - meta_skill_auditor
+      - pipeline doctrine
+    downstream_consumers:
+      - meta_skill_builder
+      - all family migrations
+    wake_conditions:
+      - "new template needed"
+      - "discovery metadata inconsistent"
+      - "canonical scaffold update requested"
+    review_owner: meta_skill_auditor
+    patch_owner: meta_template_system
+
+family_workflow:
+  - audit_folder
+  - synthesize_best_components
+  - run_notebooklm_enhancement_queries
+  - define_relational_operations
+  - refactor_to_v4
+  - validate_and_reaudit

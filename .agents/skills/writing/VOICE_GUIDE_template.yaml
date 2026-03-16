@@ -1,0 +1,308 @@
+# VOICE_GUIDE SSOT TEMPLATE
+# Version: 2.0
+# Purpose: Tone dials, taboos, rhythm, personality - ensures voice consistency
+# Usage: Recommended for all copy - THE source of truth for how content sounds
+# Location: /ssot/[project_name]/VOICE_GUIDE.yaml
+
+# ═══════════════════════════════════════════════════════════════
+# INSTRUCTIONS
+# ═══════════════════════════════════════════════════════════════
+# 1. Copy this template to /ssot/[project_name]/VOICE_GUIDE.yaml
+# 2. Fill in based on brand voice, samples, or preferences
+# 3. Reference in all copy tasks for consistency
+# 4. MWP and HPE use this to validate voice
+# ═══════════════════════════════════════════════════════════════
+
+VOICE_GUIDE:
+  # ─────────────────────────────────────────────────────────────
+  # META
+  # ─────────────────────────────────────────────────────────────
+  meta:
+    brand: ""                           # Brand or person name
+    version: "1.0"
+    created: ""
+    updated: ""
+    extracted_from: ""                  # "samples" | "interview" | "existing_guide"
+
+  # ─────────────────────────────────────────────────────────────
+  # VOICE ESSENCE (The Core Identity)
+  # ─────────────────────────────────────────────────────────────
+  essence:
+    one_line: ""                        # Voice in one sentence
+    # Example: "Warm, knowledgeable friend who's been there and figured it out"
+    
+    archetype: ""                       # The persona type
+    # Options: mentor | peer | expert | challenger | nurturer | visionary
+    
+    relationship_to_reader: ""          # How do we relate to them?
+    # Example: "Trusted advisor, not guru. Peer who's a few steps ahead."
+    
+    core_attributes:                    # 3-5 defining characteristics
+      - attribute: ""
+        how_it_shows: ""
+        # Example: 
+        # attribute: "Warm"
+        # how_it_shows: "Uses 'we' language, acknowledges struggles before solutions"
+      - attribute: ""
+        how_it_shows: ""
+      - attribute: ""
+        how_it_shows: ""
+
+  # ─────────────────────────────────────────────────────────────
+  # TONE DIALS (Adjustable Settings)
+  # ─────────────────────────────────────────────────────────────
+  tone_dials:
+    # Each dial: 1-10 (1 = low/none, 10 = maximum)
+    warmth: 0                           # Cold/professional ←→ Warm/personal
+    authority: 0                        # Peer/humble ←→ Expert/authoritative
+    humor: 0                            # Serious ←→ Playful/witty
+    urgency: 0                          # Relaxed ←→ Pressing/time-sensitive
+    formality: 0                        # Casual ←→ Formal
+    intensity: 0                        # Calm ←→ Passionate/energetic
+    complexity: 0                       # Simple ←→ Sophisticated
+    directness: 0                       # Soft/indirect ←→ Blunt/direct
+    
+    # Context adjustments (how dials shift by content type)
+    adjustments:
+      - context: "sales_page"
+        dial_changes:
+          urgency: "+2"
+          authority: "+1"
+      - context: "nurture_email"
+        dial_changes:
+          warmth: "+2"
+          urgency: "-2"
+      - context: "social_post"
+        dial_changes:
+          humor: "+1"
+          formality: "-2"
+
+  # ─────────────────────────────────────────────────────────────
+  # LANGUAGE PATTERNS
+  # ─────────────────────────────────────────────────────────────
+  language:
+    reading_level: ""                   # e.g., "8th grade", "Professional"
+    
+    sentence_structure:
+      average_length: ""                # short (5-10) | medium (12-18) | long (20+)
+      variation: ""                     # Pattern description
+      # Example: "Short punchy sentences. Then expand with detail."
+    
+    paragraph_structure:
+      average_length: ""                # 1-2 sentences | 3-4 sentences | 5+
+      pattern: ""
+      # Example: "One idea per paragraph. Lots of white space."
+    
+    pov: ""                             # 1st person | 2nd person | 3rd person
+    # Example: "Primarily 2nd person (you), with 1st person stories (I/we)"
+    
+    contractions: ""                    # always | sometimes | never
+    # Example: "Always - keeps it conversational"
+    
+    questions: ""                       # frequent | occasional | rare
+    # Example: "Frequent - rhetorical questions create engagement"
+    
+    active_vs_passive: ""               # mostly_active | mixed | formal_passive
+    
+    # Signature punctuation habits
+    punctuation:
+      em_dash: ""                       # Usage pattern
+      # Example: "Frequent — for emphasis and interruption"
+      ellipsis: ""
+      # Example: "Occasional... for trailing thoughts"
+      exclamation: ""
+      # Example: "Rare. One per page maximum."
+      caps: ""
+      # Example: "Strategic CAPS for key words only"
+
+  # ─────────────────────────────────────────────────────────────
+  # SIGNATURE ELEMENTS
+  # ─────────────────────────────────────────────────────────────
+  signatures:
+    phrases:                            # Recurring phrases/transitions
+      - phrase: ""
+        when_to_use: ""
+        # Example:
+        # phrase: "Here's the thing..."
+        # when_to_use: "Before a key insight or contrarian point"
+      - phrase: ""
+        when_to_use: ""
+      - phrase: ""
+        when_to_use: ""
+    
+    openings:                           # How we typically start
+      - type: ""
+        example: ""
+        # Example:
+        # type: "Question hook"
+        # example: "Ever wonder why...?"
+    
+    closings:                           # How we typically end
+      - type: ""
+        example: ""
+        # Example:
+        # type: "Invitation"
+        # example: "Ready to [action]? Let's go."
+    
+    transitions:                        # How we move between ideas
+      - category: ""
+        examples: []
+        # Example:
+        # category: "Building"
+        # examples: ["And here's why that matters...", "But wait — there's more."]
+
+  # ─────────────────────────────────────────────────────────────
+  # VOCABULARY
+  # ─────────────────────────────────────────────────────────────
+  vocabulary:
+    power_words:                        # Words we love and use often
+      - word: ""
+        context: ""
+      # Example:
+      # word: "transform"
+      # context: "For describing outcomes"
+    
+    forbidden_words:                    # Words we NEVER use
+      - word: ""
+        reason: ""
+      # Example:
+      # word: "synergy"
+      # reason: "Corporate jargon, off-brand"
+      - word: ""
+        reason: ""
+    
+    replacements:                       # Preferred alternatives
+      - instead_of: ""
+        use: ""
+      # Example:
+      # instead_of: "utilize"
+      # use: "use"
+
+  # ─────────────────────────────────────────────────────────────
+  # TABOOS (Lines We Don't Cross)
+  # ─────────────────────────────────────────────────────────────
+  taboos:
+    topics:                             # Topics we avoid
+      - topic: ""
+        reason: ""
+      # Example:
+      # topic: "Competitor bashing"
+      # reason: "Undermines authority, looks petty"
+    
+    tones:                              # Tones we never strike
+      - tone: ""
+        example_to_avoid: ""
+      # Example:
+      # tone: "Condescending"
+      # example_to_avoid: "You probably don't know this, but..."
+    
+    tactics:                            # Persuasion tactics we reject
+      - tactic: ""
+        reason: ""
+      # Example:
+      # tactic: "Fake urgency"
+      # reason: "Violates trust, constitutional guardrail"
+
+  # ─────────────────────────────────────────────────────────────
+  # EXAMPLES (Voice in Action)
+  # ─────────────────────────────────────────────────────────────
+  examples:
+    good_examples:                      # This IS our voice
+      - context: ""
+        example: |
+          [Example paragraph that nails the voice]
+        why_it_works: ""
+      
+      - context: ""
+        example: |
+          [Another example]
+        why_it_works: ""
+    
+    bad_examples:                       # This is NOT our voice
+      - context: ""
+        example: |
+          [Example of what NOT to do]
+        why_it_fails: ""
+
+  # ─────────────────────────────────────────────────────────────
+  # PLATFORM ADAPTATIONS
+  # ─────────────────────────────────────────────────────────────
+  platforms:
+    - platform: "email"
+      adjustments:
+        - "More personal, use first name"
+        - "Shorter paragraphs"
+        - "One CTA per email"
+    
+    - platform: "linkedin"
+      adjustments:
+        - "More professional, less casual"
+        - "Include white space for mobile"
+        - "Hook in first line (shows in preview)"
+    
+    - platform: "twitter"
+      adjustments:
+        - "Punchy, no fluff"
+        - "Use threads for longer thoughts"
+        - "Hashtags sparingly (1-2 max)"
+    
+    - platform: "sales_page"
+      adjustments:
+        - "More direct"
+        - "Build urgency gradually"
+        - "Repeat key promises"
+
+  # ─────────────────────────────────────────────────────────────
+  # VALIDATION (Kitchen Table Test)
+  # ─────────────────────────────────────────────────────────────
+  validation:
+    kitchen_table_test: |
+      Imagine reading this copy out loud to [avatar name] at a kitchen table.
+      
+      Ask:
+      - Does it sound like a real person talking?
+      - Would I actually say this?
+      - Does it feel authentic or performative?
+      - Would they lean in or tune out?
+      
+      If it feels scripted, robotic, or try-hard: revise.
+    
+    read_aloud_test: |
+      Read the copy out loud. Check for:
+      - Awkward phrases that trip you up
+      - Sentences that need a breath break
+      - Words that feel unnatural
+      - Rhythm that feels choppy or monotonous
+    
+    impersonation_test: |
+      Could someone who knows this brand well identify this as "them"
+      without seeing the name attached? If not, the voice isn't distinctive enough.
+
+# ═══════════════════════════════════════════════════════════════
+# VALIDATION CHECKLIST
+# ═══════════════════════════════════════════════════════════════
+# Before using this VOICE_GUIDE:
+# [ ] Essence clearly defined (one_line, archetype)
+# [ ] Tone dials calibrated (1-10 for each)
+# [ ] Signature phrases documented
+# [ ] Forbidden words listed
+# [ ] At least 2 good examples provided
+# [ ] At least 1 bad example provided
+# [ ] Platform adaptations noted
+# ═══════════════════════════════════════════════════════════════
+
+# ═══════════════════════════════════════════════════════════════
+# MMA INTEGRATION
+# ═══════════════════════════════════════════════════════════════
+# MMA Voice Consistency dimension checks:
+# - Does copy match tone_dials settings?
+# - Are forbidden_words absent?
+# - Do signature_phrases appear appropriately?
+# - Does it pass kitchen_table_test?
+#
+# If Voice Consistency < 8.0:
+# - Check for forbidden words
+# - Verify tone dials match content type
+# - Run kitchen table test
+# - Compare to good_examples
+# ═══════════════════════════════════════════════════════════════

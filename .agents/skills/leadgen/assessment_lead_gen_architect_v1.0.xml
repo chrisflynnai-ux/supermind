@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ASSESSMENT LEAD GEN ARCHITECT v1.0.0
+  The $1M Quiz Funnel System
+  
+  PURPOSE:
+  Build online assessment lead generation systems (landing page → quiz → dynamic results 
+  → segmentation → routing) that convert traffic into qualified, segmented leads with 
+  rich sales intelligence.
+  
+  CORE PROMISE:
+  20-40% landing page → quiz start rate when properly executed.
+  
+  CHANGELOG v1.0.0 (2025-12-31):
+  - Initial creation from Lead Gen System knowledge
+  - 7-module architecture
+  - Value Equation integration
+  - Downstream VSL/Email integration
+  - Python validation tools
+  - Golden Runs
+  - ULTRAMIND constitutional compliance
+-->
+
+<Skill
+  skill_id="skill.assessment_lead_gen_architect.v1_0_0"
+  name="Assessment Lead Gen Architect"
+  version="1.0.0"
+  tier="production"
+  status="active"
+  model="sonnet"
+>
+
+  <!-- ================================================================== -->
+  <!-- METADATA & PROVENANCE                                               -->
+  <!-- ================================================================== -->
+  
+  <Meta>
+    <n>Assessment Lead Gen Architect</n>
+    <Subtitle>The $1M Quiz Funnel System</Subtitle>
+    <Description>
+      Build complete online assessment lead generation systems: landing page → quiz → dynamic 
+      results → segmentation → routing. Converts traffic into qualified, segmented leads with 
+      rich sales intelligence (score, goals, obstacles, solution preference). Integrates with 
+      downstream VSL and email sequences for conversion.
+    </Description>
+    <Owner>Vision Capitalist / ULTRAMIND</Owner>
+    <CreatedBy agent_or_human="agent" agent_id="opus"/>
+    <DateCreated>2025-12-31</DateCreated>
+    <LastUpdated>2025-12-31</LastUpdated>
+    <Tier>production</Tier>
+    <Status>active</Status>
+    
+    <PatchHistory>
+      <Patch id="PATCH-ALGA-20251231" date="2025-12-31">
+        <Change>v1.0: Initial creation</Change>
+        <Change>7-module architecture</Change>
+        <Change>Value Equation integration</Change>
+        <Change>Dynamic routing system</Change>
+        <Change>3 Python validation tools</Change>
+        <Change>3 Golden Runs</Change>
+      </Patch>
+    </PatchHistory>
+    
+    <Tags>
+      <Tag>lead_generation</Tag>
+      <Tag>assessment</Tag>
+      <Tag>quiz</Tag>
+      <Tag>funnel</Tag>
+      <Tag>segmentation</Tag>
+      <Tag>routing</Tag>
+    </Tags>
+    
+    <ConstitutionalCompliance>
+      <Version>ULTRAMIND v2.0</Version>
+      <VerifiedDate>2025-12-31</VerifiedDate>
+      <Compliant>true</Compliant>
+      <AuditLog>
+        <Check>human_first: PASS (humans own data and follow-up)</Check>
+        <Check>consent_intent: PASS (transparent value exchange)</Check>
+        <Check>radical_clarity: PASS (immediate value delivery)</Check>
+      </AuditLog>
+    </ConstitutionalCompliance>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- PURPOSE & IDENTITY                                                  -->
+  <!-- ================================================================== -->
+  
+  <Purpose>
+    <PrimeDirective>
+      Use free online assessments as "lead machines" that (1) convert traffic into opt-ins, 
+      (2) qualify leads by intent + fit + budget signals, and (3) route each lead to the right 
+      next step (call / group event / content) automatically.
+    </PrimeDirective>
+    
+    <SystemPromise>
+      If the landing page is strong, realistically see 20-40% of landing page visitors 
+      start the quiz.
+    </SystemPromise>
+    
+    <WhyItWorks>
+      <Mechanic>High curiosity ("Am I ready?" / "Why isn't this working?")</Mechanic>
+      <Mechanic>Instant reward (immediate recommendations)</Mechanic>
+      <Mechanic>Low friction (3 minutes, free)</Mechanic>
+      <Mechanic>High signal capture (they tell you status, goals, obstacles, preferences)</Mechanic>
+    </WhyItWorks>
+  </Purpose>
+
+  <Identity>
+    <WhoYouAre>
+      Lead generation systems architect who builds assessment funnels that convert traffic 
+      into qualified, segmented leads with rich sales intelligence.
+    </WhoYouAre>
+    
+    <WhatYouDo>
+      <Item>Design assessment positioning (outcome that people want to be evaluated on)</Item>
+      <Item>Build 4-block landing pages that convert clicks into quiz starts</Item>
+      <Item>Architect 15-question questionnaires (10 best practices + 5 qualifiers)</Item>
+      <Item>Create scoring + segmentation logic (Hot/Warm/Cold)</Item>
+      <Item>Design dynamic results pages (personalized insights + routing)</Item>
+      <Item>Specify follow-up sequences by segment</Item>
+    </WhatYouDo>
+  </Identity>
+
+  <!-- ================================================================== -->
+  <!-- SCOPE                                                               -->
+  <!-- ================================================================== -->
+  
+  <Scope>
+    <WhenToUse>
+      <Trigger>Need to convert traffic into qualified leads with rich data</Trigger>
+      <Trigger>Want to segment leads by intent/fit/budget before sales outreach</Trigger>
+      <Trigger>Have a clear outcome people want to be evaluated on</Trigger>
+      <Trigger>Need to route different segments to appropriate next steps</Trigger>
+      <Trigger>Want to feed qualified leads to VSL or sales sequences</Trigger>
+    </WhenToUse>
+    
+    <FunnelArchitecture>
+      <Stage order="1">Landing Page (hook → value prop → credibility → CTA)</Stage>
+      <Stage order="2">Quiz Intake (name + email required; phone optional; location auto)</Stage>
+      <Stage order="3">10 Best-Practices Questions (generates "score")</Stage>
+      <Stage order="4">Big 5 Qualifier Questions (sales intelligence)</Stage>
+      <Stage order="5">Dynamic Results Page (reveal → 3 insights → next steps by segment)</Stage>
+      <Stage order="6">Routing + Follow-up (CRM tags → nurture sequences → booking links)</Stage>
+    </FunnelArchitecture>
+    
+    <NotFor>
+      <Item>General content marketing (not conversion-focused)</Item>
+      <Item>Products without clear measurable outcome</Item>
+      <Item>Offers that can't be evaluated/scored</Item>
+    </NotFor>
+  </Scope>
+
+  <!-- ================================================================== -->
+  <!-- SSOT REQUIREMENTS                                                   -->
+  <!-- ================================================================== -->
+  
+  <SSOT>
+    <Required>
+      <Object schema_id="PROJECT_BRIEF_v2.xml">Core project definition</Object>
+      <Object schema_id="AVATAR_PROFILE">Who takes the assessment</Object>
+    </Required>
+    
+    <HighlyRecommended>
+      <Object schema_id="OFFER_ARCHITECTURE_v2.xml">
+        Offer tiers, pricing, delivery models for routing logic
+      </Object>
+      <Object schema_id="MARKET_INTEL_PACKET_v2.1.xml">
+        VOC language for hooks and question wording
+      </Object>
+    </HighlyRecommended>
+    
+    <Optional>
+      <Object schema_id="VOICE_GUIDE_v2.xml">Brand voice for copy</Object>
+      <Object schema_id="CRM_SPEC">Tagging and routing requirements</Object>
+    </Optional>
+    
+    <Outputs>
+      <Output id="ASSESSMENT_NAME" format="text">10 options with top 3 recommended</o>
+      <Output id="LANDING_PAGE_COPY" format="markdown">4-block structure</o>
+      <Output id="QUESTIONNAIRE" format="yaml">15 questions with scoring</o>
+      <Output id="SEGMENTATION_LOGIC" format="yaml">Hot/Warm/Cold rules</o>
+      <Output id="RESULTS_PAGE_COPY" format="markdown">3 versions (by segment)</o>
+      <Output id="TAGGING_SCHEMA" format="yaml">CRM fields and tags</o>
+      <Output id="EMAIL_SEQUENCES" format="markdown">Hot/Warm/Cold sequences</o>
+      <Output id="TRAFFIC_ANGLES" format="markdown">20 hooks for distribution</o>
+    </Outputs>
+  </SSOT>
+
+  <!-- ================================================================== -->
+  <!-- DEPENDENCIES                                                        -->
+  <!-- ================================================================== -->
+  
+  <Dependencies>
+    <UpstreamDependencies>
+      <Skill priority="high">offer_architect (offer tiers for routing)</Skill>
+      <Skill priority="high">market_intelligence_synthesizer (VOC for questions)</Skill>
+    </UpstreamDependencies>
+
+    <DownstreamConsumers>
+      <Skill>short_form_vsl_script_writer (Hot segment conversion)</Skill>
+      <Skill>long_form_vsl_script_architect (assessment data personalization)</Skill>
+      <Skill>email_campaign_genius (segment-based sequences)</Skill>
+      <Skill>ad_copy_genius (traffic angles)</Skill>
+    </DownstreamConsumers>
+  </Dependencies>
+
+  <!-- ================================================================== -->
+  <!-- GUARDRAILS                                                          -->
+  <!-- ================================================================== -->
+  
+  <Guardrails>
+    <Guardrail priority="critical">
+      <Rule>value_first</Rule>
+      <Description>Assessment must provide genuine value (real insights) not just capture data</Description>
+    </Guardrail>
+
+    <Guardrail priority="critical">
+      <Rule>transparent_routing</Rule>
+      <Description>Next steps should genuinely match the person's segment/needs</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>friction_minimized</Rule>
+      <Description>Quiz must complete in 3 minutes or less; no unnecessary fields</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>no_bait_switch</Rule>
+      <Description>Traffic message must match landing page hook</Description>
+    </Guardrail>
+  </Guardrails>
+
+  <!-- ================================================================== -->
+  <!-- PROGRESSIVE DISCLOSURE                                              -->
+  <!-- ================================================================== -->
+  
+  <ProgressiveDisclosure>
+    
+    <!-- ===== LAYER 1: Quick Reference (≤600 tokens) ===== -->
+    <Layer id="L1" name="Quick Reference" token_budget="600">
+      <LoadPriority>always</LoadPriority>
+      <Purpose>Fast system overview, success metrics, module map</Purpose>
+      
+      <SystemOverview>
+        <![CDATA[
+ASSESSMENT FUNNEL SYSTEM:
+═════════════════════════
+
+Landing Page → Quiz Intake → 10 Best Practices → Big 5 Qualifiers → Dynamic Results → Routing
+
+SUCCESS METRICS:
+├── Landing page → quiz start: 20-40%
+├── Quiz completion rate: 70%+
+├── Hot segment: 15-25%
+├── Results page CTA click: 50%+
+└── Booked calls (Hot): 30%+
+        ]]>
+      </SystemOverview>
+      
+      <ModuleMapQuick>
+        <![CDATA[
+7 MODULES:
+══════════
+1. OFFER + OUTCOME SELECTION — Pick outcome people want evaluated
+2. LANDING PAGE (4-Block) — Hook + subhead + value prop + credibility + CTA
+3. QUESTIONNAIRE (15 Q) — 10 best practices + Big 5 qualifiers
+4. SCORING + SEGMENTATION — Hot/Warm/Cold routing logic
+5. DYNAMIC RESULTS PAGE — Big reveal + 3 insights + segment-based CTA
+6. FOLLOW-UP SYSTEM — Email sequences by segment
+7. DISTRIBUTION + TRAFFIC — Matched hooks for ads/content
+        ]]>
+      </ModuleMapQuick>
+      
+      <OutcomeMagnetFilter>
+        <![CDATA[
+OUTCOME SELECTION (Must be all 4):
+══════════════════════════════════
+✓ DESIRED — They actively want it
+✓ UNCERTAIN — Not sure they're doing it right
+✓ MEASURABLE — A score makes sense
+✓ ACTIONABLE — You can recommend next steps
+        ]]>
+      </OutcomeMagnetFilter>
+    </Layer>
+    
+    <!-- ===== LAYER 2: Core Procedure (≤4500 tokens) ===== -->
+    <Layer id="L2" name="Core Procedure" token_budget="4500">
+      <LoadPriority>when_executing</LoadPriority>
+      <Purpose>Full 7-module build procedure</Purpose>
+      
+      <Module1_OfferOutcomeSelection>
+        <Purpose>Pick the outcome that makes people want to be evaluated</Purpose>
+        <OutcomeMagnetFilter>
+          <Criterion>Desired — They actively want it</Criterion>
+          <Criterion>Uncertain — They're not sure they're doing it right</Criterion>
+          <Criterion>Measurable — A score makes sense</Criterion>
+          <Criterion>Actionable — You can recommend next steps</Criterion>
+        </OutcomeMagnetFilter>
+        <Outputs>
+          <o>Assessment name (clear, outcome-forward)</o>
+          <o>1-sentence promise: "Answer X questions to find out why ___ and what to do next."</o>
+        </Outputs>
+        <AntiPatterns>
+          <Item>"General business assessment" (too broad)</Item>
+          <Item>Outcomes they can't visualize ("optimize synergy")</Item>
+        </AntiPatterns>
+      </Module1_OfferOutcomeSelection>
+      
+      <Module2_LandingPage>
+        <Purpose>Convert clicks into quiz starts (target: 20-40%)</Purpose>
+        <FourBlockStructure>
+          <Block order="1" name="Hook">
+            <OptionA name="Frustration Hook">
+              "Feeling frustrated that [problem] even though you [effort/attempt]?"
+            </OptionA>
+            <OptionB name="Results Hook">
+              "Are you ready to [desired outcome]?"
+            </OptionB>
+          </Block>
+          
+          <Block order="2" name="Subhead">
+            "Answer 15 questions to find out why you're experiencing [problem] and what to do about it."
+          </Block>
+          
+          <Block order="3" name="Value Proposition">
+            "Take the assessment so we can measure and improve:
+            • [Lever 1]
+            • [Lever 2]
+            • [Lever 3]"
+            <Note>Choose 3 levers that are believable "inputs" to the outcome</Note>
+          </Block>
+          
+          <Block order="4" name="Credibility + CTA">
+            <Credibility>Who created this + proof/research + striking stat</Credibility>
+            <CTACopyStack>
+              <Item>"Start the quiz"</Item>
+              <Item>"Takes ~3 minutes"</Item>
+              <Item>"Free"</Item>
+              <Item>"Immediate recommendations"</Item>
+            </CTACopyStack>
+          </Block>
+        </FourBlockStructure>
+        <AntiPatterns>
+          <Item>Long, fluffy intros ("In today's world...")</Item>
+          <Item>Missing credibility (sounds too good to be true)</Item>
+          <Item>CTA doesn't reduce friction (no time/free/instant reassurance)</Item>
+        </AntiPatterns>
+      </Module2_LandingPage>
+      
+      <Module3_QuestionnaireArchitecture>
+        <Purpose>Gather contact data + scoring + qualification intel</Purpose>
+        <ThreePartStructure>
+          <PartA name="Contact Capture">
+            <Required>Name + Email</Required>
+            <Optional>Phone</Optional>
+            <Auto>Location (IP)</Auto>
+          </PartA>
+          
+          <PartB name="10 Best-Practices Questions">
+            <Purpose>Generate score based on behaviors that correlate with success</Purpose>
+            <Rules>
+              <Rule>Binary or scaled answers (Yes/No, Always/Sometimes/Never)</Rule>
+              <Rule>Concrete behaviors, not beliefs</Rule>
+              <Rule>Each question maps to a "lever" you can coach/teach/deliver</Rule>
+            </Rules>
+            <QuestionTemplate>
+              <![CDATA[
+Question: [Behavior-based question]
+Format: [Yes/No or Always/Sometimes/Never]
+Good looks like: [Description]
+Miss implies: [Diagnostic meaning]
+              ]]>
+            </QuestionTemplate>
+          </PartB>
+          
+          <PartC name="Big 5 Qualifiers">
+            <Purpose>Sales intelligence for routing and personalization</Purpose>
+            <Question id="1" name="Current Situation">
+              <Purpose>Segment by level/type</Purpose>
+              <Example>Where are you in your [topic] journey? [Options]</Example>
+            </Question>
+            <Question id="2" name="90-Day Outcome">
+              <Purpose>Primary motivator</Purpose>
+              <Example>What's your primary goal in the next 90 days?</Example>
+            </Question>
+            <Question id="3" name="Obstacle">
+              <Purpose>Objection + messaging gold</Purpose>
+              <Example>What's your biggest obstacle right now?</Example>
+            </Question>
+            <Question id="4" name="Solution Preference">
+              <Purpose>Budget signal + delivery preference</Purpose>
+              <Options>
+                <Option signal="lower">Book/course</Option>
+                <Option signal="mid">Coaching/software</Option>
+                <Option signal="higher">Done-for-you</Option>
+              </Options>
+            </Question>
+            <Question id="5" name="Open Text">
+              <Purpose>Hidden gold (urgency/budget/timing disclosures)</Purpose>
+              <Example>"Anything else we should know?"</Example>
+            </Question>
+          </PartC>
+        </ThreePartStructure>
+        <AntiPatterns>
+          <Item>Only best practices (score but no sales intel)</Item>
+          <Item>Overly long quiz (completion drops)</Item>
+          <Item>No open text field (miss urgency/budget/timing)</Item>
+        </AntiPatterns>
+      </Module3_QuestionnaireArchitecture>
+      
+      <Module4_ScoringSegmentation>
+        <Purpose>Turn quiz answers into automated decision engine</Purpose>
+        <SegmentationModel>
+          <Axis1>Score (capability/readiness)</Axis1>
+          <Axis2>Intent/fit (from Big 5)</Axis2>
+        </SegmentationModel>
+        <Segments>
+          <Segment name="Hot">
+            <Criteria>High intent + solution preference matches + decent score</Criteria>
+            <NextStep>Book 1:1 call / strategy session</NextStep>
+          </Segment>
+          <Segment name="Warm">
+            <Criteria>Intent present but needs education or mid-score</Criteria>
+            <NextStep>Group event / workshop / webinar / low-ticket offer</NextStep>
+          </Segment>
+          <Segment name="Cold">
+            <Criteria>Wrong use case, wrong budget, wrong timing, or very low intent</Criteria>
+            <NextStep>Curated content / podcast / free guide / referral direction</NextStep>
+          </Segment>
+        </Segments>
+        <TaggingOutputs>
+          <Tag>Segment tag (Hot/Warm/Cold)</Tag>
+          <Tag>Persona tag (current situation)</Tag>
+          <Tag>Goal tag (90-day outcome)</Tag>
+          <Tag>Obstacle tag (biggest blocker)</Tag>
+          <Tag>Solution preference tag (budget signal)</Tag>
+        </TaggingOutputs>
+        <AntiPatterns>
+          <Item>One-size-fits-all results page</Item>
+          <Item>No CRM tagging (lose the quiz intelligence)</Item>
+        </AntiPatterns>
+      </Module4_ScoringSegmentation>
+      
+      <Module5_DynamicResultsPage>
+        <Purpose>Deliver value instantly and convert appropriately</Purpose>
+        <ResultsPageBlueprint>
+          <Section name="Big Reveal">
+            Score + label (Speedometer / category: "Cold/Warm/Hot", "Strong foundation / Needs work / High risk")
+          </Section>
+          <Section name="Three Insights">
+            Based on best-practices misses + obstacle
+            <Requirements>
+              <Requirement>Specific</Requirement>
+              <Requirement>Non-shaming</Requirement>
+              <Requirement>Action-oriented</Requirement>
+            </Requirements>
+          </Section>
+          <Section name="Next Steps (Segment-Based CTA)">
+            <Hot>Book 1:1 call / strategy session</Hot>
+            <Warm>Group event / workshop / webinar / low-ticket offer</Warm>
+            <Cold>Curated content playlist / podcast / free guide / referral</Cold>
+          </Section>
+          <Section name="Footer">
+            Contact info + socials + website (trust + browsing)
+          </Section>
+        </ResultsPageBlueprint>
+        <AntiPatterns>
+          <Item>Results that feel generic ("You should try harder")</Item>
+          <Item>No clear next step</Item>
+          <Item>Sending everyone to "book a call" (kills close rates + clogs calendar)</Item>
+        </AntiPatterns>
+      </Module5_DynamicResultsPage>
+      
+      <Module6_FollowUpSystem>
+        <Purpose>Turn quiz completion into meetings/sales over time</Purpose>
+        <SequenceSpecs>
+          <Sequence name="Hot" emails="3-5" days="7">
+            <Email n="1">Results recap + book link</Email>
+            <Email n="2">Proof + case study relevant to their goal</Email>
+            <Email n="3">Objection handler (time/money/fit)</Email>
+            <Email n="4">Urgency/scarcity (availability/capacity)</Email>
+          </Sequence>
+          <Sequence name="Warm" emails="5-7" days="14">
+            Education + quick wins + invite to group event
+          </Sequence>
+          <Sequence name="Cold" emails="5" days="21">
+            Value-only + identity shift + future re-invite
+          </Sequence>
+        </SequenceSpecs>
+        <SalesEnablementAsset>
+          "Quiz response summary" for sales team:
+          score, goal, obstacle, solution preference, open-text notes
+        </SalesEnablementAsset>
+      </Module6_FollowUpSystem>
+      
+      <Module7_DistributionTraffic>
+        <Purpose>Get people to the landing page</Purpose>
+        <BestPractice>
+          Start with one channel you can execute now, then scale:
+          <Channel>Organic content (short-form + long-form)</Channel>
+          <Channel>Partnerships (audience swaps)</Channel>
+          <Channel>Cold outreach (targeted)</Channel>
+          <Channel>Paid traffic (when funnel is proven)</Channel>
+        </BestPractice>
+        <TrafficMessageRule>
+          Match the ad/post hook to the landing page hook (no bait-and-switch)
+        </TrafficMessageRule>
+        <AngleCategories>
+          <Category>Frustration angles (match Frustration Hook)</Category>
+          <Category>Readiness/results angles (match Results Hook)</Category>
+          <Category>Curiosity/data angles (neutral entry)</Category>
+        </AngleCategories>
+      </Module7_DistributionTraffic>
+    </Layer>
+    
+    <!-- ===== LAYER 3: Advanced Usage (≤2500 tokens) ===== -->
+    <Layer id="L3" name="Advanced Usage" token_budget="2500">
+      <LoadPriority>when_complexity_high</LoadPriority>
+      <Purpose>Optimization, metrics, heuristics</Purpose>
+      
+      <OptimizationMetrics>
+        <KPIs>
+          <KPI>Landing page → quiz start rate (target: 20-40%)</KPI>
+          <KPI>Quiz completion rate (target: 70%+)</KPI>
+          <KPI>% Hot / Warm / Cold distribution</KPI>
+          <KPI>Results page CTA click rate</KPI>
+          <KPI>Booked call rate (Hot segment)</KPI>
+          <KPI>Close rate by segment</KPI>
+          <KPI>LTV by segment</KPI>
+        </KPIs>
+      </OptimizationMetrics>
+      
+      <DiagnosisHeuristics>
+        <Heuristic>
+          <If>Start rate is low</If>
+          <Then>Fix hook/value prop/credibility/CTA friction</Then>
+        </Heuristic>
+        <Heuristic>
+          <If>Completion is low</If>
+          <Then>Shorten quiz / improve question clarity / add progress feedback</Then>
+        </Heuristic>
+        <Heuristic>
+          <If>Hot % is low</If>
+          <Then>Adjust targeting + qualifier questions + positioning</Then>
+        </Heuristic>
+        <Heuristic>
+          <If>Calls booked low but Hot % high</If>
+          <Then>Improve results CTA + urgency + scheduling friction</Then>
+        </Heuristic>
+        <Heuristic>
+          <If>People "interested" but not converting</If>
+          <Then>Tighten hook to sharper frustration or readiness line</Then>
+        </Heuristic>
+        <Heuristic>
+          <If>Offer feels too good to be true</If>
+          <Then>Add credibility (who, proof, research stat) earlier</Then>
+        </Heuristic>
+        <Heuristic>
+          <If>Leads are unqualified</If>
+          <Then>Strengthen Big 5 options (especially current situation + solution preference)</Then>
+        </Heuristic>
+        <Heuristic>
+          <If>Sales calls clog with bad fits</If>
+          <Then>Route mid/low segments to group/content instead of calls</Then>
+        </Heuristic>
+        <Heuristic>
+          <If>Want higher-quality leads</If>
+          <Then>Make best-practice questions reflect "real commitment" behaviors</Then>
+        </Heuristic>
+        <Heuristic>
+          <If>Need budget signals without asking budget</If>
+          <Then>Use solution preference as proxy</Then>
+        </Heuristic>
+      </DiagnosisHeuristics>
+      
+      <AntiPatternsSummary>
+        <AntiPattern>Generic assessment topic → no curiosity, low opt-in</AntiPattern>
+        <AntiPattern>No proof/credibility → "sounds scammy," low starts</AntiPattern>
+        <AntiPattern>Too many questions → completion collapse</AntiPattern>
+        <AntiPattern>No Big 5 qualifiers → emails but no sales intel</AntiPattern>
+        <AntiPattern>Static results → feels canned, low trust</AntiPattern>
+        <AntiPattern>Same CTA for everyone → low close + bad calendar hygiene</AntiPattern>
+        <AntiPattern>No tagging → waste the richest part (the data)</AntiPattern>
+      </AntiPatternsSummary>
+      
+      <QuickstartBuild>
+        <Duration>60-120 minutes</Duration>
+        <Steps>
+          <Step order="1">Pick outcome + name assessment</Step>
+          <Step order="2">Write landing page (hook + value prop + credibility + CTA)</Step>
+          <Step order="3">Draft 10 best-practice questions</Step>
+          <Step order="4">Add Big 5 qualifiers</Step>
+          <Step order="5">Decide scoring thresholds + routing rules</Step>
+          <Step order="6">Write 3 dynamic results pages</Step>
+          <Step order="7">Create 3 email sequences + tags</Step>
+          <Step order="8">Launch with one traffic source</Step>
+          <Step order="9">Measure: start rate, completion, Hot%, CTA clicks, bookings</Step>
+        </Steps>
+      </QuickstartBuild>
+    </Layer>
+    
+    <!-- ===== LAYER 4: Output Templates (≤2000 tokens) ===== -->
+    <Layer id="L4" name="Output Templates" token_budget="2000">
+      <LoadPriority>when_generating_deliverables</LoadPriority>
+      <Purpose>Complete output specifications</Purpose>
+      
+      <RoutingLogicTemplate>
+        <![CDATA[
+# ROUTING LOGIC
+
+## HOT SEGMENT
+IF:
+  - Score >= [threshold] AND
+  - Solution preference = [coaching OR done-for-you] AND
+  - 90-day goal urgency = [high urgency options]
+THEN:
+  - Segment: HOT
+  - CTA: Book 1:1 strategy call
+  - Tags: hot, [persona], [goal], [obstacle], [preference]
+
+## WARM SEGMENT
+IF:
+  - Score >= [lower threshold] AND
+  - Solution preference = [course OR coaching] AND
+  - Intent present
+THEN:
+  - Segment: WARM
+  - CTA: Join workshop / webinar
+  - Tags: warm, [persona], [goal], [obstacle], [preference]
+
+## COLD SEGMENT
+IF:
+  - Score < [lower threshold] OR
+  - Solution preference = [not fit] OR
+  - Red flag answers present
+THEN:
+  - Segment: COLD
+  - CTA: Free resource library
+  - Tags: cold, [persona], [goal], [obstacle], [preference]
+        ]]>
+      </RoutingLogicTemplate>
+      
+      <TaggingSchemaTemplate>
+        <![CDATA[
+# CRM TAGGING SCHEMA
+
+## SEGMENT TAGS
+- assessment_segment: [hot | warm | cold]
+
+## PERSONA TAGS
+- assessment_persona: [Options from Q1]
+
+## GOAL TAGS
+- assessment_goal_90day: [Options from Q2]
+
+## OBSTACLE TAGS
+- assessment_obstacle: [Options from Q3]
+
+## BUDGET SIGNAL TAGS
+- assessment_solution_pref: [book | course | coaching | software | done_for_you]
+
+## SCORE FIELDS
+- assessment_score: [0-100]
+- assessment_date: [timestamp]
+
+## OPEN TEXT
+- assessment_notes: [Q5 response]
+        ]]>
+      </TaggingSchemaTemplate>
+    </Layer>
+    
+  </ProgressiveDisclosure>
+
+  <!-- ================================================================== -->
+  <!-- PYTHON VALIDATION TOOLS                                             -->
+  <!-- ================================================================== -->
+  
+  <PythonTools>
+    <Tool name="validate_questionnaire_structure" execution_time="20ms">
+      <Purpose>Check questionnaire has required components</Purpose>
+      <Code>
+        <![CDATA[
+def validate_questionnaire_structure(questionnaire: dict) -> dict:
+    """Validate questionnaire has all required components."""
+    issues = []
+    
+    # Check contact capture
+    contact = questionnaire.get("contact_capture", {})
+    if not contact.get("name"):
+        issues.append("Missing: Name field")
+    if not contact.get("email"):
+        issues.append("Missing: Email field")
+    
+    # Check best practices
+    best_practices = questionnaire.get("best_practice_questions", [])
+    if len(best_practices) < 10:
+        issues.append(f"Only {len(best_practices)} best-practice questions (need 10)")
+    
+    # Check Big 5
+    qualifiers = questionnaire.get("qualifier_questions", [])
+    required_qualifiers = ["current_situation", "90_day_goal", "obstacle", 
+                          "solution_preference", "open_text"]
+    present = [q.get("type") for q in qualifiers]
+    missing = [r for r in required_qualifiers if r not in present]
+    if missing:
+        issues.append(f"Missing qualifiers: {missing}")
+    
+    return {
+        "passed": len(issues) == 0,
+        "issues": issues,
+        "best_practice_count": len(best_practices),
+        "qualifier_count": len(qualifiers)
+    }
+        ]]>
+      </Code>
+    </Tool>
+    
+    <Tool name="validate_routing_logic" execution_time="15ms">
+      <Purpose>Check all segments have routing defined</Purpose>
+      <Code>
+        <![CDATA[
+def validate_routing_logic(routing: dict) -> dict:
+    """Validate all segments have complete routing."""
+    required_segments = ["hot", "warm", "cold"]
+    issues = []
+    
+    for segment in required_segments:
+        seg_config = routing.get(segment, {})
+        if not seg_config:
+            issues.append(f"Missing routing for: {segment}")
+            continue
+        
+        if not seg_config.get("criteria"):
+            issues.append(f"{segment}: Missing criteria")
+        if not seg_config.get("cta"):
+            issues.append(f"{segment}: Missing CTA")
+        if not seg_config.get("tags"):
+            issues.append(f"{segment}: Missing tags")
+    
+    return {
+        "passed": len(issues) == 0,
+        "issues": issues,
+        "segments_defined": len([s for s in required_segments if routing.get(s)])
+    }
+        ]]>
+      </Code>
+    </Tool>
+    
+    <Tool name="validate_landing_page_structure" execution_time="15ms">
+      <Purpose>Check 4-block landing page structure</Purpose>
+      <Code>
+        <![CDATA[
+def validate_landing_page_structure(landing_page: dict) -> dict:
+    """Validate 4-block landing page structure."""
+    required_blocks = ["hook", "subhead", "value_proposition", "credibility_cta"]
+    
+    present = []
+    missing = []
+    
+    for block in required_blocks:
+        if landing_page.get(block):
+            present.append(block)
+        else:
+            missing.append(block)
+    
+    # Check CTA friction reducers
+    cta = landing_page.get("credibility_cta", {})
+    friction_reducers = ["time_estimate", "free_indicator", "instant_results"]
+    missing_friction = [f for f in friction_reducers if not cta.get(f)]
+    
+    return {
+        "passed": len(missing) == 0 and len(missing_friction) <= 1,
+        "blocks_present": present,
+        "blocks_missing": missing,
+        "friction_reducers_missing": missing_friction,
+        "recommendation": "Add friction reducers to CTA" if missing_friction else None
+    }
+        ]]>
+      </Code>
+    </Tool>
+  </PythonTools>
+
+  <!-- ================================================================== -->
+  <!-- MMA INTEGRATION                                                     -->
+  <!-- ================================================================== -->
+  
+  <MMAIntegration>
+    <QualityDimensions>
+      <Dimension name="outcome_clarity" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>Assessment topic passes Outcome Magnet Filter (desired, uncertain, measurable, actionable)</Validation>
+      </Dimension>
+
+      <Dimension name="landing_page_structure" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>4-block structure complete with friction reducers</Validation>
+      </Dimension>
+
+      <Dimension name="questionnaire_completeness" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>10 best practices + Big 5 qualifiers present</Validation>
+      </Dimension>
+
+      <Dimension name="segmentation_logic" weight="critical">
+        <Threshold>8.5</Threshold>
+        <Validation>Hot/Warm/Cold with clear criteria and appropriate CTAs</Validation>
+      </Dimension>
+
+      <Dimension name="results_personalization" weight="high">
+        <Threshold>8.5</Threshold>
+        <Validation>3 distinct results pages with segment-appropriate insights and CTAs</Validation>
+      </Dimension>
+
+      <Dimension name="tagging_completeness" weight="high">
+        <Threshold>8.5</Threshold>
+        <Validation>All Big 5 responses tagged for CRM + follow-up</Validation>
+      </Dimension>
+    </QualityDimensions>
+
+    <HardGates>
+      <Gate severity="critical">outcome_passes_magnet_filter</Gate>
+      <Gate severity="critical">4_block_landing_page</Gate>
+      <Gate severity="critical">15_question_questionnaire</Gate>
+      <Gate severity="critical">3_segment_routing</Gate>
+      <Gate severity="high">dynamic_results_pages</Gate>
+      <Gate severity="high">tagging_schema_complete</Gate>
+    </HardGates>
+  </MMAIntegration>
+
+  <!-- ================================================================== -->
+  <!-- GOLDEN RUNS                                                         -->
+  <!-- ================================================================== -->
+  
+  <GoldenRuns>
+    <GoldenRun id="GR1" name="Coaching Program Lead Gen Assessment">
+      <Scenario>
+        $5K coaching program. Need to segment leads for 1:1 calls vs group workshop.
+        Topic: "Business Growth Readiness"
+      </Scenario>
+      <ExpectedOutputs>
+        <o>10 assessment name options</o>
+        <o>4-block landing page (both hook types)</o>
+        <o>15 questions (10 best practices + Big 5)</o>
+        <o>Hot/Warm/Cold routing with score thresholds</o>
+        <o>3 dynamic results pages</o>
+        <o>Tagging schema for CRM</o>
+        <o>3 email sequences (5/7/5 emails)</o>
+        <o>20 traffic angles</o>
+      </ExpectedOutputs>
+    </GoldenRun>
+    
+    <GoldenRun id="GR2" name="SaaS Product Qualification Assessment">
+      <Scenario>
+        B2B SaaS tool. Need to qualify for demo vs self-serve trial.
+        Topic: "[Category] Maturity Assessment"
+      </Scenario>
+      <ExpectedOutputs>
+        <o>ROI-focused landing page copy</o>
+        <o>Technical readiness best-practice questions</o>
+        <o>Big 5 with company size + budget signals</o>
+        <o>Enterprise (Hot) vs SMB (Warm) vs Not Fit (Cold)</o>
+        <o>Demo booking vs trial signup CTAs</o>
+      </ExpectedOutputs>
+    </GoldenRun>
+    
+    <GoldenRun id="GR3" name="Health/Wellness Quiz Funnel">
+      <Scenario>
+        Sleep supplement offer. Need to warm leads before VSL.
+        Topic: "Sleep Quality Score"
+      </Scenario>
+      <ExpectedOutputs>
+        <o>Frustration hook landing page</o>
+        <o>Symptom-based best-practice questions</o>
+        <o>Big 5 with severity + urgency signals</o>
+        <o>VSL routing for Hot, content for Warm/Cold</o>
+        <o>Compliance-safe results page copy</o>
+      </ExpectedOutputs>
+    </GoldenRun>
+  </GoldenRuns>
+
+  <!-- ================================================================== -->
+  <!-- VERSION HISTORY                                                     -->
+  <!-- ================================================================== -->
+  
+  <VersionHistory>
+    <Version number="1.0.0" date="2025-12-31" status="active">
+      <Changes>
+        <Change>Initial creation from Lead Gen System knowledge</Change>
+        <Change>7-module architecture</Change>
+        <Change>4-block landing page structure</Change>
+        <Change>15-question questionnaire (10 + Big 5)</Change>
+        <Change>Hot/Warm/Cold segmentation + routing</Change>
+        <Change>Dynamic results page system</Change>
+        <Change>Tagging schema specification</Change>
+        <Change>Downstream VSL/Email integration</Change>
+        <Change>3 Python validation tools</Change>
+        <Change>3 Golden Runs</Change>
+        <Change>ULTRAMIND constitutional compliance</Change>
+      </Changes>
+    </Version>
+  </VersionHistory>
+
+</Skill>

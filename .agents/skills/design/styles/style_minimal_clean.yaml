@@ -1,0 +1,60 @@
+# ULTRAMIND Design Style Layer v1.0.0
+# Vertical: General / Personal Brand | Priority: 4 (Ecom & SaaS)
+# Extracted from UI-UX-Pro-Max + Neuro-Resonance mapped
+# Load cost: ~150 tokens | Layer: L2
+
+style_layer:
+  name: "Minimal Clean"
+  version: "1.0.0"
+  vertical: "minimal_clean"
+  extends: "STYLE_BASE_OVERRIDE"
+  extracted_from: "ui-ux-pro-max"
+
+  quick_reference:
+    style_archetype: "Minimal Single Column"
+    mood: "clean, authentic, spacious"
+    best_for: "Personal brands, opt-in pages, single-product showcases, portfolios"
+
+  color_palette:
+    primary: "#1E293B"
+    primary_light: "#475569"
+    primary_dark: "#0F172A"
+    secondary: "#64748B"
+    accent: "#0891B2"
+    surface_bg: "#F8FAFC"
+    surface_card: "#FFFFFF"
+    text_primary: "#1E293B"
+    text_secondary: "#64748B"
+    cta_primary: "#0891B2"
+    cta_hover: "#0E7490"
+
+  typography:
+    heading_font: "Sora"
+    heading_weight: 600
+    body_font: "Inter"
+    body_weight: 400
+    google_fonts_import: "https://fonts.google.com/share?selection.family=Inter:wght@300;400;500;600;700|Sora:wght@300;400;500;600;700"
+
+  motion:
+    entry_style: "fade"
+    duration_base: "200ms"
+    easing: "ease-out"
+    special: "subtle scroll reveals, text fade-ins, minimal hover states"
+
+  radius:
+    default: "8px"
+    buttons: "8px"
+    cards: "12px"
+
+  neuro_resonance:
+    primary_axis: "PSYCH"
+    primary_neurotransmitter: "Oxytocin"
+    secondary_axis: "MIND"
+    emotional_target: "authenticity, clarity, connection"
+    7s_emphasis: ["SPECIAL", "SMART"]
+
+  anti_patterns:
+    - "Flat design without any depth or texture"
+    - "Too much visual noise (whitespace is the feature)"
+    - "Heavy animations (must feel effortless)"
+    - "Multiple font families (max 2)"

@@ -1,0 +1,13 @@
+﻿family: systems
+version: 4.0.0
+status: planned_not_applied
+current_target: ULTRAMIND_KNOWLEDGE_ENGINE
+patches:
+  - patch_id: PATCH_ultramind_knowledge_engine_simplify_to_cosms_v2_0_0
+    status: ready_for_claude
+    source_path: .agents/skills/systems/ULTRAMIND_KNOWLEDGE_ENGINE.md
+    proposed_v2_path: .agents/skills/systems/ULTRAMIND_KNOWLEDGE_ENGINE_COSMS_V2.md
+    artifact_path: .agents/skills/systems/patches/PATCH_ultramind_knowledge_engine_simplify_to_cosms_v2_0_0.md
+    patch_type: simplify_and_reframe
+    notebooklm_query_pack: .agents/skills/systems/patches/NOTEBOOKLM_SYSTEMS_PROMPT_FRAMEWORK_V4.md
+    audit_path: .agents/skills/systems/SYSTEMS_KNOWLEDGE_ENGINE_AUDIT_V4_2026-03-07.md

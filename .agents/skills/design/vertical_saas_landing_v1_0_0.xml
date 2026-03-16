@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  VERTICAL: SAAS LANDING PAGE v1.0.0
+  Design skill for high-converting SaaS landing pages
+  
+  EXTENDS:
+  - design_core_v1.0.0 (universal foundation)
+  - agentic_visual_language (dark mode, cosmic palette)
+  - style_saas_modern OR style_agentic_ui
+  
+  PURPOSE:
+  Convert visitors into signups/trials through clear value proposition,
+  trust engineering, and "simple decision" architecture.
+  
+  EXTRACTED FROM: NotebookLM analysis of top SaaS sites
+  (Supabase, Linear, Vercel, CreatorOS, etc.)
+  
+  VERSION: 1.0.0
+  UPDATED: 2026-02-09
+-->
+
+<VerticalSkill
+  skill_id="skill.vertical_saas_landing.v1_0_0"
+  name="SaaS Landing Page"
+  version="1.0.0"
+  tier="vertical"
+  status="active"
+>
+
+  <Meta>
+    <Extends>design_core_v1.0.0, agentic_visual_language</Extends>
+    <RecommendedStyles>style_saas_modern, style_agentic_ui, style_minimal_clean</RecommendedStyles>
+    <TokenBudget>~700 tokens when loaded</TokenBudget>
+    <SwipeDerivation>Supabase, Linear, Vercel, CreatorOS, Lander OS analysis</SwipeDerivation>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- PAGE ARCHETYPE                                                      -->
+  <!-- ================================================================== -->
+  
+  <PageArchetype>
+    <Purpose>
+      Convert visitors to signups/trials through clear value proposition.
+      Force simple decisions. Hide complexity behind clean interfaces.
+    </Purpose>
+    
+    <CorePrinciple>
+      The hero gets 50% of design effort.
+      60% of users never scroll past fold.
+      If hero fails, everything fails.
+    </CorePrinciple>
+    
+    <VisualMode>Dark Mode preferred for technical/AI products</VisualMode>
+    
+    <ConversionGoals>
+      <Primary>Free Trial / Get Started</Primary>
+      <Secondary>Book Demo / Talk to Sales</Secondary>
+      <Tertiary>Join Waitlist / Get Updates</Tertiary>
+    </ConversionGoals>
+  </PageArchetype>
+
+  <!-- ================================================================== -->
+  <!-- THE 50% HERO RULE                                                   -->
+  <!-- ================================================================== -->
+  
+  <HeroSection>
+    <Allocation>50% of total design effort</Allocation>
+    <Rationale>
+      100% of visitors see hero.
+      60% never scroll past fold.
+      If hero fails, rest is irrelevant.
+    </Rationale>
+    
+    <AboveTheFoldChecklist>
+      <Item>Value prop clarity (&lt;5 seconds understanding)</Item>
+      <Item>Primary CTA visible without scrolling</Item>
+      <Item>At least one trust signal (logos, count, testimonial)</Item>
+      <Item>Product-in-action visual (dashboard, code, result)</Item>
+      <Item>Minimal navigation (edges only)</Item>
+    </AboveTheFoldChecklist>
+
+    <HeroVariants>
+      <Variant name="agentic_command_center">
+        <Layout>50/50 split - Text left, floating dashboard right</Layout>
+        <TextPlacement>Left-aligned, heavy H1, constrained paragraph</TextPlacement>
+        <VisualPlacement>Floating UI/code tilted in 3D with glassmorphism</VisualPlacement>
+        <CTA>Two buttons side-by-side (Primary + Secondary)</CTA>
+        <Trust>Logo strip below left text</Trust>
+        <BestFor>Technical products, developer tools, AI agents</BestFor>
+      </Variant>
+      
+      <Variant name="value_cannon">
+        <Layout>Centered text stack with high side whitespace</Layout>
+        <TextPlacement>H1 as visual anchor, lighter subhead centered below</TextPlacement>
+        <VisualPlacement>Background glow or dashboard below fold</VisualPlacement>
+        <CTA>Centered single or double buttons</CTA>
+        <Trust>Pill badge above headline or star rating</Trust>
+        <BestFor>Simple SaaS, consumer apps, broad appeal</BestFor>
+      </Variant>
+      
+      <Variant name="terminal_minimalist">
+        <Layout>Stark monochromatic, heavy grid lines</Layout>
+        <TextPlacement>Large bold typography filling screen</TextPlacement>
+        <VisualPlacement>Minimal - typography IS the visual</VisualPlacement>
+        <CTA>Terminal-style prompt: &gt; Start_</CTA>
+        <Trust>Subtle "beam" animations along borders</Trust>
+        <BestFor>Developer tools, CLI products, technical audience</BestFor>
+      </Variant>
+    </HeroVariants>
+
+    <HeadlineFormulas>
+      <Formula name="destination">
+        <Description>Focus on end result, not the tool</Description>
+        <Examples>
+          <Example>"Save Time &amp; Earn More With Your Creator Business"</Example>
+          <Example>"Build in a weekend. Scale to millions."</Example>
+        </Examples>
+      </Formula>
+      
+      <Formula name="identity_shift">
+        <Description>Define what software IS to user</Description>
+        <Examples>
+          <Example>"The Operating System for Content Creators"</Example>
+          <Example>"The Postgres Development Platform"</Example>
+        </Examples>
+      </Formula>
+      
+      <Formula name="triad_command">
+        <Description>Three active verbs defining process</Description>
+        <Examples>
+          <Example>"Automate, Optimize, Scale With AI"</Example>
+          <Example>"Build, Ship, Grow"</Example>
+        </Examples>
+      </Formula>
+      
+      <Formula name="dream_outcome">
+        <Structure>[End Result] + [Time Period] + [Emotional Payoff]</Structure>
+        <Example>"Build a six-figure practice in 30 days changing lives"</Example>
+      </Formula>
+    </HeadlineFormulas>
+
+    <Subheadline>
+      <Purpose>H1 = WHAT, Subhead = HOW + WHO</Purpose>
+      <Template>"The only [Mechanism] for [Audience] who want [Benefit]"</Template>
+      <Example>"The only 3-step system using Arctic Plants to reverse aging"</Example>
+    </Subheadline>
+  </HeroSection>
+
+  <!-- ================================================================== -->
+  <!-- SIMPLE DECISION ARCHITECTURE                                        -->
+  <!-- ================================================================== -->
+  
+  <SimpleDecisionFlow>
+    <Philosophy>Force binary choice, reduce cognitive load</Philosophy>
+    
+    <TwoTrackFunnel>
+      <Track name="high_intent">
+        <CTA>"Book a Call" or "Start Free Trial"</CTA>
+        <Target>Users ready to convert now</Target>
+        <Destination>Calendar embed or signup flow</Destination>
+      </Track>
+      
+      <Track name="nurture">
+        <CTA>"Get the Roadmap" or "Join Waitlist"</CTA>
+        <Target>90% who aren't ready to buy today</Target>
+        <Destination>CRM via webhooks, automated sequences</Destination>
+      </Track>
+    </TwoTrackFunnel>
+    
+    <OnsiteGuidance>
+      <Pattern>Floating/sticky guidance system instead of cluttered nav</Pattern>
+      <ChatSimulator>Visual of query being answered in real-time</ChatSimulator>
+      <Purpose>Teach product function while browsing</Purpose>
+    </OnsiteGuidance>
+    
+    <CognitiveLoadReduction>
+      <Rule>Every section must Educate, Prove, or Close</Rule>
+      <Rule>If section doesn't support Dream Outcome, remove it</Rule>
+      <Rule>Pre-select recommended option (Magnetic Middle)</Rule>
+    </CognitiveLoadReduction>
+  </SimpleDecisionFlow>
+
+  <!-- ================================================================== -->
+  <!-- PRODUCT VISUALS                                                     -->
+  <!-- ================================================================== -->
+  
+  <ProductVisuals>
+    <Philosophy>Show the product WORKING, not just existing</Philosophy>
+    
+    <AgenticVisualStyle>
+      <CodeAsArt>
+        <Rule>Syntax-highlighted code as primary image</Rule>
+        <Purpose>Proves capability, signals developer-grade</Purpose>
+        <Examples>
+          <Example>class ChatBot { address public owner... }</Example>
+          <Example>def evaluate_task(self, input): ...</Example>
+        </Examples>
+      </CodeAsArt>
+      
+      <FloatingUIElements>
+        <Description>3D mockups, not flat screenshots</Description>
+        <Tools>Nano Banana, Spline</Tools>
+        <Styling>Deep drop shadows, border glows</Styling>
+      </FloatingUIElements>
+      
+      <LiveActivity>
+        <Concept>Visuals imply motion/processing</Concept>
+        <Examples>
+          <Example>Chat bubble: "Replying now..." with typing indicator</Example>
+          <Example>Graph with "Live" badge and upward green line</Example>
+        </Examples>
+      </LiveActivity>
+    </AgenticVisualStyle>
+  </ProductVisuals>
+
+  <!-- ================================================================== -->
+  <!-- BENTO GRID FEATURES                                                 -->
+  <!-- ================================================================== -->
+  
+  <BentoGrid>
+    <Concept>Modular grid for high density without clutter</Concept>
+    
+    <CardSizes>
+      <Size name="1x1">Simple features, icons</Size>
+      <Size name="2x1">Graphs, code blocks, visualizations</Size>
+      <Size name="1x2">Testimonials, metrics</Size>
+      <Size name="2x2">Hero features, dashboards</Size>
+    </CardSizes>
+    
+    <CardStyling>
+      <Borders>1px solid rgba(255,255,255,0.1)</Borders>
+      <Corners>20-30px radius (squircle)</Corners>
+      <Background>linear-gradient(135deg, #1A1A1D, #111113)</Background>
+      <Gap>16-24px</Gap>
+    </CardStyling>
+    
+    <PatternAlternation>
+      <Rule>Alternate Square (1x1) and Wide (2x1) cards</Rule>
+      <Rule>Feature icons left, description right</Rule>
+    </PatternAlternation>
+  </BentoGrid>
+
+  <!-- ================================================================== -->
+  <!-- VISUALIZING INVISIBLE SERVICES                                      -->
+  <!-- ================================================================== -->
+  
+  <InvisibleServicePatterns>
+    <Philosophy>AI/Automation is invisible—make it tangible</Philosophy>
+    
+    <Pattern name="code_as_ui">
+      <Description>Display actual syntax-highlighted code</Description>
+      <Purpose>Signals developer-grade tools</Purpose>
+      <Styling>Glass panel cards with proper highlighting</Styling>
+    </Pattern>
+    
+    <Pattern name="chat_simulator">
+      <Description>Chat interface showing query → response</Description>
+      <Details>Include timestamps proving speed (2:45 AM → 2:45 AM)</Details>
+      <Purpose>Visually proves 24/7 capability</Purpose>
+    </Pattern>
+    
+    <Pattern name="floating_dashboard">
+      <Description>Dashboard broken into floating widgets</Description>
+      <Elements>Revenue card, Followers graph, Activity feed</Elements>
+      <Styling>Deep shadows, inner glows, 3D float effect</Styling>
+    </Pattern>
+    
+    <Pattern name="before_after_metric">
+      <Layout>Card split in two</Layout>
+      <Before>Red text, low bar: "Manual Work"</Before>
+      <After>Green text, high bar: "AI Automation"</After>
+      <Metric>Large percentage: "87%"</Metric>
+    </Pattern>
+  </InvisibleServicePatterns>
+
+  <!-- ================================================================== -->
+  <!-- TRUST ARCHITECTURE                                                  -->
+  <!-- ================================================================== -->
+  
+  <TrustArchitecture>
+    <LogoStrip>
+      <Placement>Below hero CTA, above fold</Placement>
+      <Styling>Monochromatic (grey/white), 60-80% opacity</Styling>
+      <Count>5-7 logos maximum</Count>
+      <Label>"Trusted by" or "Powering"</Label>
+    </LogoStrip>
+    
+    <QuantitativeProof>
+      <Formats>
+        <Format>"150k+ Active Users"</Format>
+        <Format>"$2M+ processed daily"</Format>
+        <Format>"99.9% uptime"</Format>
+      </Formats>
+      <Styling>Large, bold typography</Styling>
+    </QuantitativeProof>
+    
+    <RichTestimonials>
+      <Required>
+        <Element>Headshot (high quality, circular)</Element>
+        <Element>Full Name &amp; Role</Element>
+        <Element>Specific Outcome ("Sales +73%")</Element>
+      </Required>
+      <TopLoaded>High-impact quote above H1 to frame mindset</TopLoaded>
+    </RichTestimonials>
+    
+    <CodeAsProof>
+      <Concept>Showing code proves technical capability</Concept>
+      <Message>"We write custom code, not wrapper prompts"</Message>
+    </CodeAsProof>
+  </TrustArchitecture>
+
+  <!-- ================================================================== -->
+  <!-- MOTION PATTERNS                                                     -->
+  <!-- ================================================================== -->
+  
+  <MotionPatterns>
+    <BootUpEffect>
+      <Description>Site feels like it's initializing</Description>
+      <Elements>
+        <Element>Staggered element loading (0.15s delay)</Element>
+        <Element>Graph lines draw themselves</Element>
+        <Element>Numbers tick up to final values</Element>
+      </Elements>
+    </BootUpEffect>
+    
+    <BeamBorder>
+      <Description>Gradient light traveling along borders</Description>
+      <Purpose>Implies data transfer, active processing</Purpose>
+    </BeamBorder>
+    
+    <TactileHover>
+      <Scale>1.02-1.05x on hover</Scale>
+      <Brightness>Increase border/glow</Brightness>
+      <Animation>Spring with damping 15-25</Animation>
+    </TactileHover>
+  </MotionPatterns>
+
+  <!-- ================================================================== -->
+  <!-- PRICING SECTION                                                     -->
+  <!-- ================================================================== -->
+  
+  <PricingSection>
+    <MagneticMiddle>
+      <Structure>3-tier layout (Starter, Pro, Enterprise)</Structure>
+      <Emphasis>Middle tier visually prominent</Emphasis>
+      <Styling>
+        <Highlight>Larger, distinct border color, "Most Popular" badge</Highlight>
+        <PreSelection>Middle option pre-selected</PreSelection>
+      </Styling>
+    </MagneticMiddle>
+    
+    <PerUnitBreakdown>
+      <Rule>Show per-month or per-day cost</Rule>
+      <Example>"$20/mo" instead of "$240/year"</Example>
+    </PerUnitBreakdown>
+    
+    <TerminalFooter>
+      <Style>Mimics command line or status bar</Style>
+      <Content>Copyright, status ("All Systems Operational"), social links</Content>
+    </TerminalFooter>
+  </PricingSection>
+
+  <!-- ================================================================== -->
+  <!-- AGENTIC COPYWRITING                                                 -->
+  <!-- ================================================================== -->
+  
+  <AgenticCopywriting>
+    <SellMauiNotFlight>
+      <Concept>Sell destination (result), not flight (tool)</Concept>
+      <Bad>"We build AI agents with Python"</Bad>
+      <Good>"Save Time &amp; Earn More With Your Creator Business"</Good>
+    </SellMauiNotFlight>
+    
+    <SoWhatTest>
+      <Rule>Transform every feature into benefit</Rule>
+      <Before>"Real-time vector embeddings"</Before>
+      <After>"Your AI understands context instantly"</After>
+    </SoWhatTest>
+    
+    <AgenticLanguage>
+      <Concept>Imply active work being done FOR user</Concept>
+      <Bad>"We offer editing tools"</Bad>
+      <Good>"The Director agent handles the editing logic"</Good>
+      <Effect>Personifies software as active employee</Effect>
+    </AgenticLanguage>
+    
+    <PainAddressing>
+      <Rule>Structure around Top 3 Pain Points</Rule>
+      <Pattern>Pain point → Agentic solution</Pattern>
+    </PainAddressing>
+  </AgenticCopywriting>
+
+  <!-- ================================================================== -->
+  <!-- QUALITY CHECKLIST                                                   -->
+  <!-- ================================================================== -->
+  
+  <QualityChecklist>
+    <Category name="Hero (50% Effort)">
+      <Item>Value prop clear in &lt;5 seconds</Item>
+      <Item>Primary CTA visible without scroll</Item>
+      <Item>Trust signal above fold</Item>
+      <Item>Product-in-action visual</Item>
+      <Item>Headline uses destination formula</Item>
+    </Category>
+    
+    <Category name="Simple Decision">
+      <Item>Two-track funnel (High Intent + Nurture)</Item>
+      <Item>Magnetic Middle in pricing</Item>
+      <Item>Minimal navigation options</Item>
+      <Item>Every section Educates, Proves, or Closes</Item>
+    </Category>
+    
+    <Category name="Visual Language">
+      <Item>Dark mode for technical products</Item>
+      <Item>Glow as hierarchy (not just size)</Item>
+      <Item>Code/Dashboard as hero visual</Item>
+      <Item>Bento grid for features</Item>
+    </Category>
+    
+    <Category name="Trust Engineering">
+      <Item>Monochrome logo strip</Item>
+      <Item>Quantitative proof (numbers)</Item>
+      <Item>Rich testimonials (photo + name + outcome)</Item>
+      <Item>Code as capability proof</Item>
+    </Category>
+    
+    <Category name="Motion">
+      <Item>Boot-up stagger effect</Item>
+      <Item>Tactile hover states</Item>
+      <Item>Processing indicators animate</Item>
+    </Category>
+  </QualityChecklist>
+
+  <!-- ================================================================== -->
+  <!-- EXECUTION OUTPUT                                                    -->
+  <!-- ================================================================== -->
+  
+  <ExecutionOutput>
+    <StitchPrompt>
+      Create a dark mode SaaS landing page with agentic visual language.
+      
+      HERO (50% focus):
+      - Split layout: headline left, floating dashboard right
+      - Destination headline formula: [Result] + [Time] + [Emotion]
+      - Two CTAs: "Start Free Trial" (primary) + "Book Demo" (secondary)
+      - Monochrome logo strip below
+      
+      FEATURES:
+      - Bento grid layout with 1x1 and 2x1 cards
+      - Code snippets as visuals (syntax highlighted)
+      - Chat simulator showing AI responding
+      - Before/After metric cards
+      
+      TRUST:
+      - Rich testimonials with photos and outcomes
+      - Quantitative proof ("150k+ users")
+      
+      PRICING:
+      - 3-tier with middle emphasized ("Most Popular")
+      - Terminal-style footer
+      
+      MOTION:
+      - Staggered boot-up loading
+      - Beam borders on cards
+      - Tactile hover states (scale + glow)
+      
+      COLOR: Deep space background (#0A0A0B), cosmic blue accents (#3B82F6)
+      TYPE: Geometric sans + monospace for code
+    </StitchPrompt>
+  </ExecutionOutput>
+
+</VerticalSkill>

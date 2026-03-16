@@ -1,0 +1,60 @@
+# ULTRAMIND Design Style Layer v1.0.0
+# Vertical: Agency / Services | Priority: 1 (Core Business)
+# Extracted from UI-UX-Pro-Max + Neuro-Resonance mapped
+# Load cost: ~150 tokens | Layer: L2
+
+style_layer:
+  name: "Agency Professional"
+  version: "1.0.0"
+  vertical: "agency"
+  extends: "STYLE_BASE_OVERRIDE"
+  extracted_from: "ui-ux-pro-max"
+
+  quick_reference:
+    style_archetype: "Motion-Driven"
+    mood: "professional, creative, confident"
+    best_for: "Agency sites, service pages, portfolio, creative professionals"
+
+  color_palette:
+    primary: "#1E40AF"
+    primary_light: "#3B82F6"
+    primary_dark: "#1E3A8A"
+    secondary: "#3B82F6"
+    accent: "#F97316"
+    surface_bg: "#EFF6FF"
+    surface_card: "#FFFFFF"
+    text_primary: "#1E3A8A"
+    text_secondary: "#64748B"
+    cta_primary: "#F97316"
+    cta_hover: "#EA580C"
+
+  typography:
+    heading_font: "Archivo"
+    heading_weight: 600
+    body_font: "Space Grotesk"
+    body_weight: 400
+    google_fonts_import: "https://fonts.google.com/share?selection.family=Archivo:wght@300;400;500;600;700|Space+Grotesk:wght@300;400;500;600;700"
+
+  motion:
+    entry_style: "slide"
+    duration_base: "300ms"
+    easing: "ease-out"
+    special: "scroll animations, parallax (3-5 layers), entrance animations, page transitions"
+
+  radius:
+    default: "8px"
+    buttons: "8px"
+    cards: "12px"
+
+  neuro_resonance:
+    primary_axis: "MIND"
+    primary_neurotransmitter: "Acetylcholine"
+    secondary_axis: "HEART"
+    emotional_target: "competence, authority, creativity"
+    7s_emphasis: ["SMART", "SUPERIOR"]
+
+  anti_patterns:
+    - "Boring static design with no motion"
+    - "Hidden portfolio work (must showcase)"
+    - "Generic stock imagery"
+    - "Cluttered layouts (must feel premium)"

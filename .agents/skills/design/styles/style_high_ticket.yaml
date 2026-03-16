@@ -1,0 +1,60 @@
+# ULTRAMIND Design Style Layer v1.0.0
+# Vertical: Coaching / VSL | Priority: 3 (Conversion)
+# Extracted from UI-UX-Pro-Max + Neuro-Resonance mapped
+# Load cost: ~150 tokens | Layer: L2
+
+style_layer:
+  name: "High-Ticket Premium"
+  version: "1.0.0"
+  vertical: "high_ticket"
+  extends: "STYLE_BASE_OVERRIDE"
+  extracted_from: "ui-ux-pro-max"
+
+  quick_reference:
+    style_archetype: "Liquid Glass"
+    mood: "premium, exclusive, elegant"
+    best_for: "Coaching programs, high-ticket offers, VSL pages, premium services"
+
+  color_palette:
+    primary: "#1C1917"
+    primary_light: "#44403C"
+    primary_dark: "#0C0A09"
+    secondary: "#44403C"
+    accent: "#CA8A04"
+    surface_bg: "#FAFAF9"
+    surface_card: "#FFFFFF"
+    text_primary: "#0C0A09"
+    text_secondary: "#78716C"
+    cta_primary: "#CA8A04"
+    cta_hover: "#A16207"
+
+  typography:
+    heading_font: "Cormorant"
+    heading_weight: 600
+    body_font: "Montserrat"
+    body_weight: 400
+    google_fonts_import: "https://fonts.google.com/share?selection.family=Cormorant:wght@400;500;600;700|Montserrat:wght@300;400;500;600;700"
+
+  motion:
+    entry_style: "fade"
+    duration_base: "400ms"
+    easing: "ease-in-out"
+    special: "morphing elements, fluid animations (400-600ms), dynamic blur, slow reveals"
+
+  radius:
+    default: "4px"
+    buttons: "4px"
+    cards: "8px"
+
+  neuro_resonance:
+    primary_axis: "HEART"
+    primary_neurotransmitter: "GABA"
+    secondary_axis: "SPIRIT"
+    emotional_target: "status, exclusivity, aspiration"
+    7s_emphasis: ["SPECIAL", "SIGNIFICANT"]
+
+  anti_patterns:
+    - "Cheap visuals or stock photos"
+    - "Fast/jerky animations (must feel slow and luxurious)"
+    - "Bright/playful colors (defeats premium feel)"
+    - "Multiple competing CTAs"

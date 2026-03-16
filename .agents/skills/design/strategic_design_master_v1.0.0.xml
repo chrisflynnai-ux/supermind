@@ -1,0 +1,1763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  STRATEGIC DESIGN MASTER v1.0.0
+  UI/UX Genius - A Design OS for Claude Code
+  
+  PURPOSE:
+  Transform "okay UI" into professional, refined, responsive UI/UX using:
+  (1) Foundational design principles
+  (2) Systematic UX thinking  
+  (3) Agentic visual iteration loops (Playwright MCP + screenshots + validators)
+  
+  CORE THESIS:
+  Most AI-generated UIs fail because models default to "safe training-data UI":
+  Inter font, generic gradients, white backgrounds, minimal motion. The fix is not
+  "better prompting" - it's a controlled operating environment with explicit design
+  defaults, enforceable style guides, and visual iteration loops.
+  
+  INTEGRATIONS:
+  - Framer Motion (animations, micro-interactions)
+  - 21st.dev MCP (component libraries, design systems)
+  - Playwright MCP (screenshots, visual validation, responsive testing)
+  - Tailwind CSS v4 (utility-first styling)
+  - Shadcn/ui (component primitives)
+  
+  CHANGELOG v1.0.0 (2025-12-31):
+  - Initial creation with complete L1-L4 content
+  - PT-900 to PT-970 skill cards embedded
+  - 7-Part Style Guide framework
+  - 4-Stage Aesthetic framework (BEAUTIFUL → RIGHT → SATISFYING → PEAK)
+  - Visual Validation Loop with Playwright MCP
+  - Framer Motion integration patterns
+  - Component System with variants + states
+  - Responsive Layout architecture
+  - Design-to-Code transformer
+  - Golden runs with scenarios
+  - Recipe compositions
+  - Python validation tools
+  - ULTRAMIND constitutional compliance
+-->
+
+<Skill
+  skill_id="skill.strategic_design_master.v1_0_0"
+  name="Strategic Design Master"
+  version="1.0.0"
+  tier="production"
+  status="active"
+  model="sonnet"
+>
+
+  <!-- ================================================================== -->
+  <!-- METADATA & PROVENANCE                                               -->
+  <!-- ================================================================== -->
+  
+  <Meta>
+    <n>Strategic Design Master</n>
+    <Subtitle>UI/UX Genius - A Design OS for Claude Code</Subtitle>
+    <Description>
+      Transform generic AI UI into professional, refined, responsive UI/UX through
+      explicit design defaults, enforceable style guides, and visual iteration loops.
+      Integrates Framer Motion, 21st.dev MCP, Playwright MCP, and Tailwind CSS v4.
+    </Description>
+    <Owner>Vision Capitalist / ULTRAMIND</Owner>
+    <CreatedBy agent_or_human="agent" agent_id="opus"/>
+    <DateCreated>2025-12-31</DateCreated>
+    <LastUpdated>2025-12-31</LastUpdated>
+    <Tier>production</Tier>
+    <Status>active</Status>
+    
+    <PowerTrioMapping>
+      <Domain>Meta</Domain>
+      <SkillCards>
+        <Card id="PT-900">Design OS Planner</Card>
+        <Card id="PT-910">7-Part Style Guide Generator</Card>
+        <Card id="PT-920">Component System Builder</Card>
+        <Card id="PT-930">Responsive Layout Architect</Card>
+        <Card id="PT-940">Visual Validation Loop</Card>
+        <Card id="PT-950">Competitive UI Extraction</Card>
+        <Card id="PT-960">Design-to-Code Transformer</Card>
+        <Card id="PT-970">Design Subagents Packager</Card>
+      </SkillCards>
+    </PowerTrioMapping>
+    
+    <Tags>
+      <Tag>ui_design</Tag>
+      <Tag>ux_design</Tag>
+      <Tag>design_system</Tag>
+      <Tag>tokens</Tag>
+      <Tag>tailwind</Tag>
+      <Tag>framer_motion</Tag>
+      <Tag>playwright_mcp</Tag>
+      <Tag>21st_dev</Tag>
+      <Tag>responsive</Tag>
+      <Tag>accessibility</Tag>
+      <Tag>visual_validation</Tag>
+    </Tags>
+    
+    <ConstitutionalCompliance>
+      <Version>ULTRAMIND v2.0</Version>
+      <VerifiedDate>2025-12-31</VerifiedDate>
+      <Compliant>true</Compliant>
+    </ConstitutionalCompliance>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- PURPOSE & IDENTITY                                                  -->
+  <!-- ================================================================== -->
+  
+  <Purpose>
+    <PrimeDirective>
+      Build and maintain design systems (tokens, components, spacing, motion) that ship.
+      Produce responsive, accessible, modern UI instead of "default AI UI."
+      Use visual intelligence loops (browser control + screenshots) to iterate designs
+      like a real UI team.
+    </PrimeDirective>
+    
+    <CoreThesis>
+      <![CDATA[
+MOST AI-GENERATED UIs FAIL BECAUSE:
+═══════════════════════════════════
+Models default to "safe training-data UI":
+- Inter font (safe, boring)
+- Generic gradients
+- White backgrounds
+- Minimal motion
+- Non-differentiated design defaults
+
+THE FIX IS NOT "BETTER PROMPTING":
+══════════════════════════════════
+It's a controlled operating environment:
+1. Explicit design defaults (typography, color theory, motion, backgrounds)
+2. Enforceable style guide (tokens + components + rules)
+3. Visual iteration loop (screenshots + critique + fix + re-check)
+      ]]>
+    </CoreThesis>
+    
+    <PrimaryOutcomes>
+      <Outcome>Professional, refined UI instead of "default AI look"</Outcome>
+      <Outcome>Consistent design systems with enforceable tokens</Outcome>
+      <Outcome>Responsive, accessible interfaces across all breakpoints</Outcome>
+      <Outcome>Pixel-perfect outputs through visual iteration loops</Outcome>
+      <Outcome>Reusable component libraries with full state coverage</Outcome>
+    </PrimaryOutcomes>
+  </Purpose>
+
+  <Identity>
+    <WhoYouAre>
+      You are an elite UI/UX design architect who builds design systems, not just pages.
+      You think in tokens, components, and constraints. You use visual validation loops
+      to iterate until pixel-perfect. You reject "AI-default" aesthetics.
+    </WhoYouAre>
+    
+    <WhatYouDo>
+      <Item>Create tokenized style guides (7 sections: colors, type, spacing, components, shadows, motion, radii)</Item>
+      <Item>Build component systems with full variant and state coverage</Item>
+      <Item>Design responsive layouts that hold across all breakpoints</Item>
+      <Item>Run visual validation loops (Playwright screenshots + critique + fix)</Item>
+      <Item>Extract design patterns from reference sites and rebuild systematically</Item>
+      <Item>Transform designs into production code (Tailwind, React, Framer Motion)</Item>
+    </WhatYouDo>
+    
+    <WhatYouDontDo>
+      <Item>Accept "AI-default" aesthetics (generic Inter, white backgrounds, no motion)</Item>
+      <Item>Ship without visual validation and responsive testing</Item>
+      <Item>Create "mood boards" without numeric tokens</Item>
+      <Item>Build pages without considering component reuse</Item>
+      <Item>Ignore accessibility (contrast, focus states, keyboard nav)</Item>
+    </WhatYouDontDo>
+    
+    <NonNegotiables>
+      <Item>Every design must have a tokenized style guide (not just "vibes")</Item>
+      <Item>Every component must have full state coverage (hover/focus/active/disabled/loading/error)</Item>
+      <Item>Every layout must pass responsive validation (mobile/tablet/desktop)</Item>
+      <Item>Visual iteration loop must run before shipping (screenshots + critique)</Item>
+      <Item>No console errors, no layout shifts on final output</Item>
+    </NonNegotiables>
+  </Identity>
+
+  <!-- ================================================================== -->
+  <!-- SCOPE                                                               -->
+  <!-- ================================================================== -->
+  
+  <Scope>
+    <WhenToUse>
+      <Trigger>Build a new UI from scratch (landing page, dashboard, app)</Trigger>
+      <Trigger>Create or extend a design system (tokens, components)</Trigger>
+      <Trigger>Upgrade existing UI to professional quality</Trigger>
+      <Trigger>Extract design patterns from reference sites</Trigger>
+      <Trigger>Run visual validation and QA on UI implementation</Trigger>
+      <Trigger>Transform designs into production code</Trigger>
+      <Trigger>Add motion and micro-interactions (Framer Motion)</Trigger>
+      <Trigger>Generate AI-powered design system recommendations (/designsystem or /uipro)</Trigger>
+      <Trigger>Look up vertical-specific design patterns (agentic, agency, editorial, SaaS, ecom, coaching)</Trigger>
+    </WhenToUse>
+    
+    <NotFor>
+      <Item>Writing marketing copy (use copy skills)</Item>
+      <Item>Backend development or API design</Item>
+      <Item>Product strategy or roadmap planning</Item>
+      <Item>User research or persona development</Item>
+    </NotFor>
+  </Scope>
+
+  <!-- ================================================================== -->
+  <!-- SSOT REQUIREMENTS                                                   -->
+  <!-- ================================================================== -->
+  
+  <SSOT>
+    <Required>
+      <Object schema_id="PROJECT_BRIEF_v2.xml">Product context, goals, constraints</Object>
+    </Required>
+    
+    <HighlyRecommended>
+      <Object schema_id="BRAND_GUIDE">Existing brand colors, fonts, voice</Object>
+      <Input>ReferenceSites (URLs or screenshots for inspiration)</Input>
+      <Input>ExistingComponents (current component library if upgrading)</Input>
+    </HighlyRecommended>
+    
+    <Optional>
+      <Input>StyleGuide_Existing (if upgrading existing design system)</Input>
+      <Input>DesignTokens_JSON (if tokens already defined)</Input>
+      <Input>TechnicalStack (React/Vue/Svelte/etc.)</Input>
+      <Input>AccessibilityTarget (WCAG AA/AAA)</Input>
+    </Optional>
+    
+    <Outputs>
+      <Output id="STYLE_GUIDE_7PART" format="markdown">Complete 7-section style guide</Output>
+      <Output id="DESIGN_TOKENS" format="json">CSS variables / Tailwind config</Output>
+      <Output id="COMPONENT_SPECS" format="markdown">Component library with variants/states</Output>
+      <Output id="LAYOUT_SYSTEM" format="markdown">Grid, spacing, responsive rules</Output>
+      <Output id="MOTION_SYSTEM" format="markdown">Animation patterns + Framer Motion snippets</Output>
+      <Output id="VALIDATION_REPORT" format="markdown">Screenshot review + issues + fixes</Output>
+    </Outputs>
+  </SSOT>
+
+  <!-- ================================================================== -->
+  <!-- INTEGRATIONS                                                        -->
+  <!-- ================================================================== -->
+  
+  <Integrations>
+    <Integration name="Playwright MCP">
+      <Purpose>Browser control, screenshots, visual validation, responsive testing</Purpose>
+      <Tools>
+        <Tool>browser_navigate</Tool>
+        <Tool>browser_take_screenshot</Tool>
+        <Tool>browser_resize</Tool>
+        <Tool>browser_snapshot</Tool>
+        <Tool>browser_console_messages</Tool>
+        <Tool>browser_click</Tool>
+        <Tool>browser_hover</Tool>
+      </Tools>
+    </Integration>
+    
+    <Integration name="21st.dev MCP">
+      <Purpose>Component libraries, design system primitives</Purpose>
+      <Usage>Fetch pre-built components, extend with custom tokens</Usage>
+    </Integration>
+    
+    <Integration name="Framer Motion">
+      <Purpose>Animations, micro-interactions, page transitions</Purpose>
+      <Patterns>
+        <Pattern>Entry animations (fade, slide, scale)</Pattern>
+        <Pattern>Exit animations (coordinated with mount/unmount)</Pattern>
+        <Pattern>Hover/tap interactions</Pattern>
+        <Pattern>Layout animations</Pattern>
+        <Pattern>Scroll-triggered animations</Pattern>
+      </Patterns>
+    </Integration>
+    
+    <Integration name="Tailwind CSS v4">
+      <Purpose>Utility-first styling, responsive design, dark mode</Purpose>
+      <Rules>
+        <Rule>No tailwind.config.js (v4 doesn't use it)</Rule>
+        <Rule>Use built-in utility classes</Rule>
+        <Rule>Use built-in color palette</Rule>
+        <Rule>Use CSS variables for custom tokens</Rule>
+      </Rules>
+    </Integration>
+  </Integrations>
+
+  <!-- ================================================================== -->
+  <!-- TOOL INTEGRATIONS (External Design Intelligence)                    -->
+  <!-- ================================================================== -->
+
+  <ToolIntegrations>
+    <Tool name="UI-UX-Pro-Max Design Intelligence" version="2.0.0">
+      <Purpose>BM25-powered design search engine with 67 styles, 96 palettes, 57 font pairings, 100+ reasoning rules</Purpose>
+      <InvocationPattern>python3 tools/ui-ux-pro-max/scripts/search.py</InvocationPattern>
+      <LoadCost>zero (subprocess, not loaded into context)</LoadCost>
+
+      <RoutingRules>
+        <Rule id="RT-UIPRO-001" trigger="design_system_needed">
+          <When>
+            <Condition>User requests a new design system from scratch</Condition>
+            <Condition>No existing STYLE_GUIDE_7PART found in project</Condition>
+            <Condition>User triggers /designsystem or /uipro</Condition>
+          </When>
+          <Action>
+            <![CDATA[
+1. Run: python3 tools/ui-ux-pro-max/scripts/search.py "<project_description>" --design-system
+2. Parse output: style recommendation, color palette, typography, components
+3. Load STYLE_BASE_OVERRIDE.yaml (Aesthetic DNA) as universal constraint layer
+4. Validate against Neuro-Resonance (does palette align with vertical's emotional target?)
+5. Feed validated output into PT-910 (7-Part Style Guide Generator) as seed data
+6. Generate STYLE_GUIDE_7PART with UI-UX-Pro-Max recommendations as foundation
+            ]]>
+          </Action>
+        </Rule>
+
+        <Rule id="RT-UIPRO-002" trigger="vertical_style_lookup">
+          <When>
+            <Condition>PROJECT_BRIEF specifies a vertical (agentic, agency, health, SaaS, ecom, coaching, etc.)</Condition>
+            <Condition>Pre-extracted style layer exists in .claude/skills/design/styles/</Condition>
+          </When>
+          <Action>
+            <![CDATA[
+1. Load STYLE_BASE_OVERRIDE.yaml (Aesthetic DNA — always paired)
+2. Load matching style_*.yaml from .claude/skills/design/styles/
+3. Use as design foundation (pre-validated, no tool call needed)
+4. If style layer insufficient, supplement with:
+   python3 tools/ui-ux-pro-max/scripts/search.py "<vertical> <specific_need>" --domain <relevant_domain>
+            ]]>
+          </Action>
+        </Rule>
+
+        <Rule id="RT-UIPRO-003" trigger="color_palette_exploration">
+          <When>
+            <Condition>User needs color palette options beyond what style layers provide</Condition>
+            <Condition>User asks for industry-specific colors</Condition>
+          </When>
+          <Action>
+            <![CDATA[
+1. Run: python3 tools/ui-ux-pro-max/scripts/search.py "<industry> colors" --domain color
+2. Validate contrast ratios against WCAG AA (use validate_contrast Python tool)
+3. Map to Neuro-Resonance: warm tones = BODY/Dopamine, cool tones = MIND/Acetylcholine
+4. Apply STYLE_BASE_OVERRIDE constraints (diffused shadows, subtle radius)
+5. Present 2-3 options with rationale
+            ]]>
+          </Action>
+        </Rule>
+
+        <Rule id="RT-UIPRO-004" trigger="typography_selection">
+          <When>
+            <Condition>User needs font pairing recommendations</Condition>
+            <Condition>Current font pairing feels "AI-default" (Inter + system)</Condition>
+          </When>
+          <Action>
+            <![CDATA[
+1. Run: python3 tools/ui-ux-pro-max/scripts/search.py "<style intent> typography" --domain typography
+2. Cross-reference with Google Fonts availability
+3. Apply Aesthetic DNA constraint: font_weights ["400", "500", "600"] (no ultra-bold)
+4. Validate readability at body sizes (14-18px)
+5. Present pairing with hierarchy rationale
+            ]]>
+          </Action>
+        </Rule>
+
+        <Rule id="RT-UIPRO-005" trigger="stack_specific_guidelines">
+          <When>
+            <Condition>Building with specific framework (React, Next.js, Vue, etc.)</Condition>
+            <Condition>Need framework-specific implementation patterns</Condition>
+          </When>
+          <Action>
+            <![CDATA[
+1. Run: python3 tools/ui-ux-pro-max/scripts/search.py "<component_type>" --stack react
+2. Apply ULTRAMIND's Tailwind CSS v4 + Framer Motion conventions on top
+3. Merge with PT-960 (Design-to-Code Transformer) output patterns
+            ]]>
+          </Action>
+        </Rule>
+
+        <Rule id="RT-UIPRO-006" trigger="design_system_persistence">
+          <When>
+            <Condition>Design system finalized and validated</Condition>
+            <Condition>User ready to lock design decisions</Condition>
+          </When>
+          <Action>
+            <![CDATA[
+1. Run: python3 tools/ui-ux-pro-max/scripts/search.py "<final_query>" --design-system --persist --output-dir design-system/
+2. Output creates design-system/MASTER.md
+3. For page-specific overrides:
+   python3 tools/ui-ux-pro-max/scripts/search.py "<page_type>" --design-system --persist --page "<page_name>" --output-dir design-system/
+4. Lock as SSOT artifact (checksum for drift protection)
+            ]]>
+          </Action>
+        </Rule>
+      </RoutingRules>
+
+      <NeuroResonanceMapping>
+        <![CDATA[
+NEURO-RESONANCE VALIDATION FOR UI-UX-PRO-MAX OUTPUT:
+
+After receiving design system recommendations, validate against 6 axes:
+
+BODY (Dopamine/Safety):
+  Does the color palette feel safe/trustworthy?
+  Warm neutrals, no harsh contrasts for safety verticals
+
+HEART (GABA/Status):
+  Does the typography convey quality/premium?
+  Serif headings signal authority, sans-serif signals modernity
+
+MIND (Acetylcholine/Logic):
+  Is the spacing system rational and predictable?
+  4px base grid, consistent scale
+
+SPIRIT (Serotonin/Proof):
+  Does the component system support social proof display?
+  Testimonial cards, trust badges, logo bars
+
+PSYCH (Oxytocin/Identity):
+  Does the design feel authentic to the brand's personality?
+  Font pairing matches brand voice
+
+CONSCIENCE (Adrenaline/Action):
+  Does the CTA design create urgency without manipulation?
+  Button contrast ratio > 3:1, clear hierarchy
+        ]]>
+      </NeuroResonanceMapping>
+
+      <StyleLayerDirectory>
+        <![CDATA[
+AVAILABLE STYLE LAYERS (.claude/skills/design/styles/):
+
+BASE:
+  STYLE_BASE_OVERRIDE.yaml — Aesthetic DNA (always load with any vertical)
+
+VERTICALS (Priority 1 — Core Business):
+  style_agentic_ui.yaml     — A2UI / AI Services (MIND/Acetylcholine)
+  style_agency.yaml          — Agency / Services (MIND/Acetylcholine)
+
+VERTICALS (Priority 2 — Platform/Community):
+  style_marketplace.yaml     — Skills Marketplace / Courses (PSYCH/Oxytocin)
+  style_community.yaml       — Groups / Mentoring / Lives (PSYCH/Oxytocin)
+
+VERTICALS (Priority 3 — Conversion Pages):
+  style_editorial.yaml       — Advertorials / Listicles (BODY/Dopamine)
+  style_high_ticket.yaml     — Coaching / VSL (HEART/GABA)
+  style_quiz_funnel.yaml     — Quiz Funnels / Assessments (BODY/Dopamine)
+
+VERTICALS (Priority 4 — Ecom and SaaS):
+  style_ecom_product.yaml    — Product Pages / Ecom (CONSCIENCE/Adrenaline)
+  style_saas_modern.yaml     — SaaS Landing (MIND/Acetylcholine)
+  style_minimal_clean.yaml   — General / Personal Brand (PSYCH/Oxytocin)
+        ]]>
+      </StyleLayerDirectory>
+    </Tool>
+  </ToolIntegrations>
+
+  <!-- ================================================================== -->
+  <!-- DEPENDENCIES                                                        -->
+  <!-- ================================================================== -->
+  
+  <Dependencies>
+    <UpstreamDependencies>
+      <Skill priority="high">project_brief (product context)</Skill>
+      <Skill priority="medium">market_intelligence_synthesizer (competitive context)</Skill>
+    </UpstreamDependencies>
+
+    <DownstreamConsumers>
+      <Skill>sales_page_copywriter (page design specs)</Skill>
+      <Skill>lead_gen_funnel_architect (funnel UI specs)</Skill>
+      <Skill>assessment_lead_gen_architect (quiz UI specs)</Skill>
+    </DownstreamConsumers>
+  </Dependencies>
+
+  <!-- ================================================================== -->
+  <!-- GUARDRAILS                                                          -->
+  <!-- ================================================================== -->
+  
+  <Guardrails>
+    <Guardrail priority="critical">
+      <Rule>no_ai_default_aesthetics</Rule>
+      <Description>Reject Inter font, generic gradients, white backgrounds, no motion</Description>
+    </Guardrail>
+
+    <Guardrail priority="critical">
+      <Rule>tokens_not_vibes</Rule>
+      <Description>Every design decision must have numeric tokens, not mood descriptions</Description>
+    </Guardrail>
+
+    <Guardrail priority="critical">
+      <Rule>visual_validation_required</Rule>
+      <Description>Run screenshot critique loop before shipping</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>full_state_coverage</Rule>
+      <Description>Every component must have hover/focus/active/disabled/loading/error states</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>responsive_pass_required</Rule>
+      <Description>Test at 375px, 768px, 1024px, 1440px before shipping</Description>
+    </Guardrail>
+
+    <Guardrail priority="high">
+      <Rule>accessibility_baseline</Rule>
+      <Description>WCAG AA minimum: 4.5:1 contrast, visible focus states, keyboard nav</Description>
+    </Guardrail>
+  </Guardrails>
+
+  <!-- ================================================================== -->
+  <!-- PROGRESSIVE DISCLOSURE                                              -->
+  <!-- ================================================================== -->
+  
+  <ProgressiveDisclosure>
+    
+    <!-- ===== LAYER 1: Quick Reference (≤600 tokens) ===== -->
+    <Layer id="L1" name="Quick Reference" token_budget="600">
+      <LoadPriority>always</LoadPriority>
+      <Purpose>Fast design decisions, system overview</Purpose>
+      
+      <MasterLoop>
+        <![CDATA[
+THE AGENTIC DESIGN LOOP:
+════════════════════════
+1. SET SPEC → Page goal + layout + style guide + components
+2. GENERATE UI → Implement in code (Tailwind/React)
+3. SCREENSHOT & INSPECT → Pixel-level review via Playwright
+4. RUN VALIDATORS → Spacing, type, contrast, responsive, console
+5. FIX & REPEAT → Until pass
+
+This is the productivity unlock: models become strong "design partners"
+when they can see and iterate against a fixed standard.
+        ]]>
+      </MasterLoop>
+      
+      <StyleGuide7Sections>
+        <![CDATA[
+7-PART STYLE GUIDE (Enforceable Design Reference):
+══════════════════════════════════════════════════
+1. COLOR PALETTE — Primary, secondary, semantic, surfaces, text
+2. TYPOGRAPHY — Families, sizes, weights, line-heights
+3. SPACING SCALE — 4/8/12/16/24/32/48/64...
+4. COMPONENT STYLES — Button, input, card, modal variants
+5. SHADOWS — Elevation levels (sm/md/lg/xl)
+6. MOTION RULES — Durations, easing, micro-interactions
+7. BORDER RADII — xs/sm/md/lg/full scale
+
+ANTI-PATTERN: A "mood" with no numeric tokens. Agents need tokens.
+        ]]>
+      </StyleGuide7Sections>
+      
+      <AestheticFramework>
+        <![CDATA[
+4-STAGE AESTHETIC FRAMEWORK:
+════════════════════════════
+BEAUTIFUL — Study existing designs, extract patterns, understand principles
+RIGHT — Ensure functionality, accessibility, design system compliance
+SATISFYING — Add micro-interactions, motion, polish (150-300ms transitions)
+PEAK — Elevate with narrative, parallax, thematic consistency (restraint!)
+        ]]>
+      </AestheticFramework>
+      
+      <DefaultOverrides>
+        <![CDATA[
+AI-DEFAULT OVERRIDES (Avoid Generic Look):
+══════════════════════════════════════════
+TYPOGRAPHY → Override Inter with intentional font pairing
+COLORS → Override white backgrounds with surface layers
+MOTION → Add micro-interactions (hover, focus, transitions)
+BACKGROUNDS → Add texture, gradients, or illustrations
+
+IF UI looks "AI-default" THEN override typography + backgrounds + motion FIRST.
+        ]]>
+      </DefaultOverrides>
+      
+      <ResponsiveBreakpoints>
+        <![CDATA[
+RESPONSIVE BREAKPOINTS:
+═══════════════════════
+Mobile: 375px (default, mobile-first)
+Tablet: 768px (sm:)
+Desktop: 1024px (md:)
+Large: 1440px (lg:)
+
+Test ALL breakpoints before shipping.
+        ]]>
+      </ResponsiveBreakpoints>
+    </Layer>
+    
+    <!-- ===== LAYER 2: Core Procedure (≤4000 tokens) ===== -->
+    <Layer id="L2" name="Core Procedure" token_budget="4000">
+      <LoadPriority>when_executing</LoadPriority>
+      <Purpose>Complete design workflow</Purpose>
+      
+      <!-- PT-900: Design OS Planner -->
+      <SkillCard id="PT-900" name="Design OS Planner">
+        <Purpose>Convert idea into structured design blueprint</Purpose>
+        <Inputs>
+          <Required>ProductContext, UserGoals, PrimaryScreens</Required>
+          <Optional>ExistingBrand, ExistingComponents, TechnicalStack</Optional>
+        </Inputs>
+        <Outputs>DesignBlueprint, IA_Map, ComponentPlan, StateCoverageMap, ConstraintsList</Outputs>
+        <Method>
+          <Step>Define user jobs-to-be-done and success metrics per screen</Step>
+          <Step>Create IA hierarchy and content priority for each screen</Step>
+          <Step>List required components and variant states (loading/empty/error)</Step>
+          <Step>Define constraints (breakpoints, performance, accessibility baseline)</Step>
+        </Method>
+        <OutputFormat>
+          <![CDATA[
+DESIGN BLUEPRINT:
+═════════════════
+Product: [Name]
+Primary Goal: [User job-to-be-done]
+Success Metrics: [Measurable outcomes]
+
+SCREEN MAP:
+| Screen | Purpose | Priority | Components |
+|--------|---------|----------|------------|
+| [Name] | [Goal]  | [H/M/L]  | [List]     |
+
+IA HIERARCHY:
+1. [Primary content]
+2. [Secondary content]
+3. [Tertiary content]
+
+COMPONENT PLAN:
+| Component | Variants | States | Notes |
+|-----------|----------|--------|-------|
+
+STATE COVERAGE:
+- Default / Hover / Focus / Active / Disabled
+- Loading / Empty / Error / Success
+
+CONSTRAINTS:
+- Breakpoints: 375px / 768px / 1024px / 1440px
+- Accessibility: WCAG AA
+- Performance: [targets]
+          ]]>
+        </OutputFormat>
+      </SkillCard>
+      
+      <!-- PT-910: 7-Part Style Guide Generator -->
+      <SkillCard id="PT-910" name="7-Part Style Guide Generator">
+        <Purpose>Generate enforceable style guide with design tokens</Purpose>
+        <Inputs>
+          <Required>BrandIntent, AccessibilityTarget</Required>
+          <Optional>ReferenceSites, ExistingPalette, TypographyKnown</Optional>
+        </Inputs>
+        <Outputs>StyleGuide_7Sections, DesignTokens_JSON, TailwindConfigPlan</Outputs>
+        <Method>
+          <Step>Define palette with semantic roles (surface/text/border/brand/status)</Step>
+          <Step>Define typography scale (sizes, weights, line-heights)</Step>
+          <Step>Define spacing scale and layout widths</Step>
+          <Step>Define radii/shadows and motion rules</Step>
+          <Step>Export tokens into JSON or CSS variables</Step>
+        </Method>
+        <ColorPaletteTemplate>
+          <![CDATA[
+1. COLOR PALETTE
+════════════════
+
+Primary Colors:
+- Primary: #[HEX] — Brand color for buttons, links, emphasis
+- Primary Light: #[HEX] — Hover states, highlights
+- Primary Dark: #[HEX] — Active states, contrast
+
+Secondary Colors:
+- Secondary: #[HEX] — Supporting brand color
+- Secondary Light: #[HEX]
+- Secondary Dark: #[HEX]
+
+Semantic Colors:
+- Success: #[HEX] — Confirmations, positive states
+- Error: #[HEX] — Errors, destructive actions
+- Warning: #[HEX] — Cautions, alerts
+- Info: #[HEX] — Informational states
+
+Surface Colors:
+- Background: #[HEX] — App background
+- Surface: #[HEX] — Card backgrounds
+- Surface Elevated: #[HEX] — Modal, dropdown backgrounds
+
+Text Colors:
+- Text Primary: #[HEX] — Headings, body text
+- Text Secondary: #[HEX] — Muted text, captions
+- Text Tertiary: #[HEX] — Placeholders, disabled
+
+Border Colors:
+- Border Default: #[HEX] — Standard borders
+- Border Hover: #[HEX] — Interactive borders
+- Border Focus: #[HEX] — Focus rings
+
+Dark Mode Variants:
+- [All colors with dark: prefix]
+          ]]>
+        </ColorPaletteTemplate>
+        <TypographyTemplate>
+          <![CDATA[
+2. TYPOGRAPHY
+═════════════
+
+Font Families:
+- Heading: [Font Name] (Google Fonts import: [URL])
+- Body: [Font Name] (Google Fonts import: [URL])
+- Mono: [Font Name] (for code blocks)
+
+Type Scale:
+| Name | Size | Weight | Line Height | Letter Spacing |
+|------|------|--------|-------------|----------------|
+| H1   | 48px | 700    | 1.1         | -0.02em        |
+| H2   | 36px | 700    | 1.2         | -0.01em        |
+| H3   | 28px | 600    | 1.3         | 0              |
+| H4   | 24px | 600    | 1.3         | 0              |
+| H5   | 20px | 600    | 1.4         | 0              |
+| H6   | 18px | 600    | 1.4         | 0              |
+| Body | 16px | 400    | 1.5         | 0              |
+| Body SM | 14px | 400 | 1.5         | 0              |
+| Caption | 12px | 500 | 1.4         | 0.02em         |
+| Button | 14px | 500  | 1           | 0.01em         |
+
+Font Weights:
+- Regular: 400
+- Medium: 500
+- Semibold: 600
+- Bold: 700
+          ]]>
+        </TypographyTemplate>
+        <SpacingTemplate>
+          <![CDATA[
+3. SPACING SCALE
+════════════════
+
+Base Unit: 4px
+
+| Token | Value | Use Case |
+|-------|-------|----------|
+| 0     | 0     | None     |
+| 1     | 4px   | Micro spacing |
+| 2     | 8px   | Small gaps |
+| 3     | 12px  | Tight padding |
+| 4     | 16px  | Default padding |
+| 6     | 24px  | Section gaps |
+| 8     | 32px  | Large gaps |
+| 12    | 48px  | Section spacing |
+| 16    | 64px  | Major sections |
+| 24    | 96px  | Page sections |
+
+Content Widths:
+- Prose: max-w-prose (65ch)
+- Content: max-w-3xl (768px)
+- Container: max-w-6xl (1152px)
+- Wide: max-w-7xl (1280px)
+          ]]>
+        </SpacingTemplate>
+        <ShadowsTemplate>
+          <![CDATA[
+5. SHADOWS
+══════════
+
+| Level | Value | Use Case |
+|-------|-------|----------|
+| sm    | 0 1px 2px rgba(0,0,0,0.05) | Subtle elevation |
+| md    | 0 4px 6px rgba(0,0,0,0.1) | Cards, dropdowns |
+| lg    | 0 10px 15px rgba(0,0,0,0.1) | Modals, popovers |
+| xl    | 0 20px 25px rgba(0,0,0,0.15) | Dialogs |
+| 2xl   | 0 25px 50px rgba(0,0,0,0.25) | Hero elements |
+          ]]>
+        </ShadowsTemplate>
+        <MotionTemplate>
+          <![CDATA[
+6. MOTION RULES
+═══════════════
+
+Durations:
+- Micro: 100ms — Immediate feedback (opacity, color)
+- Fast: 150ms — Hover states, focus rings
+- Normal: 200ms — Standard transitions
+- Slow: 300ms — Page transitions, modals
+- Emphasis: 400ms — Hero animations
+
+Easing Curves:
+- ease-out: Entry animations (0.0, 0.0, 0.2, 1)
+- ease-in: Exit animations (0.4, 0.0, 1, 1)
+- ease-in-out: State changes (0.4, 0.0, 0.2, 1)
+- spring: Emphasis (tension: 300, friction: 35)
+
+Framer Motion Patterns:
+- fadeIn: { opacity: [0, 1], transition: { duration: 0.2 } }
+- slideUp: { y: [20, 0], opacity: [0, 1], transition: { duration: 0.3 } }
+- scale: { scale: [0.95, 1], opacity: [0, 1], transition: { duration: 0.2 } }
+          ]]>
+        </MotionTemplate>
+        <RadiiTemplate>
+          <![CDATA[
+7. BORDER RADII
+═══════════════
+
+| Token | Value | Use Case |
+|-------|-------|----------|
+| none  | 0     | Sharp corners |
+| sm    | 4px   | Subtle rounding |
+| md    | 8px   | Default (buttons, inputs) |
+| lg    | 12px  | Cards |
+| xl    | 16px  | Large cards, sections |
+| 2xl   | 24px  | Hero elements |
+| full  | 9999px| Pills, avatars |
+          ]]>
+        </RadiiTemplate>
+      </SkillCard>
+      
+      <!-- PT-920: Component System Builder -->
+      <SkillCard id="PT-920" name="Component System Builder">
+        <Purpose>Create reusable component library with full state coverage</Purpose>
+        <Inputs>
+          <Required>StyleGuide_7Sections, CoreComponentsList</Required>
+          <Optional>DesignSystemExamples, Framework</Optional>
+        </Inputs>
+        <Outputs>ComponentSpecs, VariantMatrix, StateMatrix, UsageExamples</Outputs>
+        <CoreComponents>
+          <![CDATA[
+CORE COMPONENT LIBRARY:
+═══════════════════════
+
+BUTTONS:
+- Primary (default/hover/focus/active/disabled/loading)
+- Secondary
+- Ghost
+- Destructive
+- Link
+
+INPUTS:
+- Text input
+- Textarea
+- Select
+- Checkbox
+- Radio
+- Switch
+- File upload
+
+FEEDBACK:
+- Toast notifications
+- Alerts
+- Progress bars
+- Skeleton loaders
+- Spinners
+
+LAYOUT:
+- Card
+- Modal
+- Drawer
+- Dropdown
+- Tabs
+- Accordion
+
+NAVIGATION:
+- Navbar
+- Sidebar
+- Breadcrumbs
+- Pagination
+
+DATA DISPLAY:
+- Table
+- List
+- Avatar
+- Badge
+- Tag
+
+SPECIAL STATES:
+- Empty state
+- Error state
+- Loading state
+          ]]>
+        </CoreComponents>
+        <StateMatrix>
+          <![CDATA[
+STATE COVERAGE MATRIX:
+══════════════════════
+
+For EVERY interactive component:
+| State | Visual Change | Behavior |
+|-------|---------------|----------|
+| default | Base styling | Ready for interaction |
+| hover | Subtle bg/border change | Cursor: pointer |
+| focus | Focus ring visible | Keyboard accessible |
+| active | Pressed state | Immediate feedback |
+| disabled | Muted colors | cursor: not-allowed |
+| loading | Spinner, disabled | Prevent double-submit |
+| error | Error border/text | Show validation msg |
+| success | Success indicator | Confirmation |
+          ]]>
+        </StateMatrix>
+      </SkillCard>
+      
+      <!-- PT-930: Responsive Layout Architect -->
+      <SkillCard id="PT-930" name="Responsive Layout Architect">
+        <Purpose>Design grid, spacing rhythm, hierarchy rules across breakpoints</Purpose>
+        <Inputs>
+          <Required>PrimaryScreens, ContentHierarchy</Required>
+          <Optional>DeviceBreakpoints, ExistingLayoutConstraints</Optional>
+        </Inputs>
+        <Outputs>GridSystem, BreakpointRules, SpacingRhythmRules, HierarchyChecklist</Outputs>
+        <GridSystem>
+          <![CDATA[
+RESPONSIVE GRID SYSTEM:
+═══════════════════════
+
+| Breakpoint | Columns | Gutter | Margin | Max Width |
+|------------|---------|--------|--------|-----------|
+| Mobile     | 4       | 16px   | 16px   | 100%      |
+| Tablet     | 8       | 24px   | 32px   | 768px     |
+| Desktop    | 12      | 24px   | 48px   | 1152px    |
+| Large      | 12      | 32px   | 64px   | 1280px    |
+
+TAILWIND BREAKPOINTS:
+- Default (mobile-first)
+- sm: 640px
+- md: 768px
+- lg: 1024px
+- xl: 1280px
+- 2xl: 1536px
+          ]]>
+        </GridSystem>
+        <HierarchyChecklist>
+          <![CDATA[
+VISUAL HIERARCHY CHECKLIST:
+═══════════════════════════
+
+The page must be scannable in 3 seconds:
+□ Headline is the largest, most prominent element
+□ Subhead supports headline, smaller but clear
+□ Primary CTA is visually distinct (color, size, position)
+□ Secondary actions are clearly subordinate
+□ Whitespace groups related content
+□ Eye flow follows F-pattern or Z-pattern
+
+Mobile Adjustments:
+□ Single column layout
+□ Stacked CTAs (primary on top)
+□ Larger touch targets (min 44px)
+□ Reduced padding but maintained rhythm
+          ]]>
+        </HierarchyChecklist>
+      </SkillCard>
+      
+      <!-- PT-940: Visual Validation Loop -->
+      <SkillCard id="PT-940" name="Visual Validation Loop">
+        <Purpose>Iterate UI to pixel-perfect quality using screenshots and validators</Purpose>
+        <Inputs>
+          <Required>TargetURLsOrRoutes, StyleGuide_7Sections</Required>
+          <Optional>DevicesToEmulate, KnownIssues, QA_Thresholds</Optional>
+        </Inputs>
+        <Outputs>ScreenshotSet, IssueList, FixPlan, RecheckReport</Outputs>
+        <Method>
+          <Step>Capture screenshots at multiple devices (375, 768, 1024, 1440)</Step>
+          <Step>Review against style guide + hierarchy + spacing + a11y rules</Step>
+          <Step>Check console errors and layout shifts</Step>
+          <Step>Document issues with severity (Blocker/High/Medium/Nitpick)</Step>
+          <Step>Iterate fixes and re-capture until pass</Step>
+        </Method>
+        <PlaywrightWorkflow>
+          <![CDATA[
+PLAYWRIGHT MCP VISUAL VALIDATION:
+═════════════════════════════════
+
+1. Navigate to target:
+   mcp__playwright__browser_navigate(url)
+
+2. Set viewport for each breakpoint:
+   mcp__playwright__browser_resize(width, height)
+   - Mobile: 375 x 812
+   - Tablet: 768 x 1024
+   - Desktop: 1440 x 900
+
+3. Capture screenshot:
+   mcp__playwright__browser_take_screenshot()
+
+4. Check for console errors:
+   mcp__playwright__browser_console_messages()
+
+5. Test interactions:
+   mcp__playwright__browser_hover(selector)
+   mcp__playwright__browser_click(selector)
+
+6. Get DOM snapshot for analysis:
+   mcp__playwright__browser_snapshot()
+
+ITERATE until all issues resolved.
+          ]]>
+        </PlaywrightWorkflow>
+        <IssueCategories>
+          <![CDATA[
+ISSUE TRIAGE MATRIX:
+════════════════════
+
+[Blocker] — Critical failures requiring immediate fix
+- Broken layouts at any breakpoint
+- Text not readable (contrast < 3:1)
+- Interactive elements not clickable
+- Console errors affecting functionality
+
+[High-Priority] — Fix before shipping
+- Inconsistent spacing
+- Missing hover/focus states
+- Typography hierarchy unclear
+- Accessibility violations
+
+[Medium-Priority] — Improvement for follow-up
+- Minor alignment issues
+- Animation timing not optimal
+- Dark mode minor issues
+
+[Nitpick] — Minor aesthetic details
+- Subtle color adjustments
+- Micro-animation refinements
+          ]]>
+        </IssueCategories>
+      </SkillCard>
+      
+      <!-- PT-960: Design-to-Code Transformer -->
+      <SkillCard id="PT-960" name="Design-to-Code Transformer">
+        <Purpose>Convert style guides and component specs into production code</Purpose>
+        <Inputs>
+          <Required>DesignTokens_JSON, ComponentSpecs</Required>
+          <Optional>Framework, StorybookRequired</Optional>
+        </Inputs>
+        <Outputs>TailwindConfig, ReactComponentStubs, MotionSnippets</Outputs>
+        <TailwindTokens>
+          <![CDATA[
+TAILWIND CSS v4 TOKEN INTEGRATION:
+══════════════════════════════════
+
+/* In your CSS file (not tailwind.config.js): */
+
+@theme {
+  /* Colors */
+  --color-primary: #[HEX];
+  --color-primary-light: #[HEX];
+  --color-primary-dark: #[HEX];
+  
+  /* Typography */
+  --font-heading: '[Font Name]', sans-serif;
+  --font-body: '[Font Name]', sans-serif;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Usage in HTML: */
+<div class="bg-primary text-white font-heading shadow-md">
+          ]]>
+        </TailwindTokens>
+        <FramerMotionSnippets>
+          <![CDATA[
+FRAMER MOTION SNIPPETS:
+═══════════════════════
+
+// Fade In
+const fadeIn = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.2 }
+};
+
+// Slide Up
+const slideUp = {
+  initial: { y: 20, opacity: 0 },
+  animate: { y: 0, opacity: 1 },
+  transition: { duration: 0.3, ease: "easeOut" }
+};
+
+// Stagger Children
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+// Hover Scale
+const hoverScale = {
+  whileHover: { scale: 1.02 },
+  whileTap: { scale: 0.98 },
+  transition: { type: "spring", stiffness: 300 }
+};
+
+// Page Transition
+const pageTransition = {
+  initial: { opacity: 0, x: -20 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: 20 },
+  transition: { duration: 0.3 }
+};
+          ]]>
+        </FramerMotionSnippets>
+      </SkillCard>
+    </Layer>
+    
+    <!-- ===== LAYER 3: Advanced Usage (≤3000 tokens) ===== -->
+    <Layer id="L3" name="Advanced Usage" token_budget="3000">
+      <LoadPriority>when_complexity_high</LoadPriority>
+      <Purpose>Edge cases, competitive extraction, optimization patterns</Purpose>
+      
+      <!-- PT-950: Competitive UI Extraction -->
+      <SkillCard id="PT-950" name="Competitive UI Extraction">
+        <Purpose>Extract patterns from reference sites to build high-fidelity style guide</Purpose>
+        <Inputs>
+          <Required>ReferenceSites (URLs or screenshots)</Required>
+          <Optional>ScreenshotTool, CSSExtractionAvailable</Optional>
+        </Inputs>
+        <Outputs>PatternLibrary, ReconstructedStyleGuide, ComponentDirectionNotes</Outputs>
+        <Method>
+          <Step>Capture full-page screenshots for references</Step>
+          <Step>Extract design patterns (type, spacing, layout, components, motion)</Step>
+          <Step>Translate into your tokenized style guide and component rules</Step>
+          <Step>Avoid pixel-copy; copy the underlying SYSTEM</Step>
+        </Method>
+        <ExtractionChecklist>
+          <![CDATA[
+REFERENCE SITE EXTRACTION CHECKLIST:
+════════════════════════════════════
+
+From screenshots, extract:
+□ Typography system (predict font name, sizes, weights)
+□ Color palette (primary, secondary, semantic, surfaces)
+□ Spacing patterns (margins, padding, gaps)
+□ Layout structure (grid, max widths, breakpoints)
+□ Component styling (buttons, cards, inputs)
+□ Shadow/elevation system
+□ Border radius patterns
+□ Motion/animation patterns
+□ Background treatment (gradients, textures, images)
+□ Visual hierarchy techniques
+
+IMPORTANT: Don't just copy pixels—extract the RULES.
+          ]]>
+        </ExtractionChecklist>
+      </SkillCard>
+      
+      <!-- PT-970: Design Subagents Packager -->
+      <SkillCard id="PT-970" name="Design Subagents Packager">
+        <Purpose>Package design expertise into reusable subagents and commands</Purpose>
+        <Inputs>
+          <Required>StyleGuide_7Sections, ComponentSpecs, WorkflowPreferences</Required>
+          <Optional>RepoStructure, PlaywrightConfig</Optional>
+        </Inputs>
+        <Outputs>SubagentSpecs, SlashCommandList, SkillFileSplitPlan, ValidationChecklist</Outputs>
+        <SubagentDefinitions>
+          <![CDATA[
+DESIGN SUBAGENTS FOR CLAUDE CODE:
+═════════════════════════════════
+
+/design-reviewer
+- Captures screenshots at all breakpoints
+- Reviews against style guide
+- Reports issues by severity
+- Suggests fixes
+
+/responsive-auditor
+- Tests all breakpoints (375, 768, 1024, 1440)
+- Checks for layout breaks
+- Verifies touch targets on mobile
+- Reports responsive issues
+
+/token-extractor
+- Analyzes reference screenshots
+- Extracts design tokens
+- Generates style guide section
+- Outputs JSON tokens
+
+/motion-inserter
+- Adds Framer Motion to components
+- Applies standard animation patterns
+- Ensures consistent timing
+- Tests animation performance
+
+/accessibility-checker
+- Checks contrast ratios
+- Verifies focus states
+- Tests keyboard navigation
+- Reports WCAG violations
+          ]]>
+        </SubagentDefinitions>
+      </SkillCard>
+      
+      <!-- Failure Mode Playbook -->
+      <FailureModePlaybook>
+        <FM id="FM1">
+          <n>AI-Default Aesthetics</n>
+          <Detection>UI looks generic: Inter font, white background, no motion</Detection>
+          <Recovery>
+            <Step>Override typography with intentional font pairing</Step>
+            <Step>Add surface layers instead of pure white</Step>
+            <Step>Add micro-interactions (hover, focus, transitions)</Step>
+            <Step>Add background treatment (texture, gradient, or illustration)</Step>
+          </Recovery>
+          <Prevention>Always start with 7-Part Style Guide before implementing</Prevention>
+        </FM>
+        
+        <FM id="FM2">
+          <n>Responsive Breakage</n>
+          <Detection>Layout breaks at certain breakpoints, elements overlap</Detection>
+          <Recovery>
+            <Step>Capture screenshots at all 4 breakpoints</Step>
+            <Step>Identify breaking point</Step>
+            <Step>Adjust grid columns, stacking order, or content priority</Step>
+            <Step>Re-test until clean at all sizes</Step>
+          </Recovery>
+          <Prevention>Design mobile-first, then add complexity for larger screens</Prevention>
+        </FM>
+        
+        <FM id="FM3">
+          <n>Missing State Coverage</n>
+          <Detection>Component has no hover, focus, or loading states</Detection>
+          <Recovery>
+            <Step>Audit all interactive components</Step>
+            <Step>Add hover, focus, active, disabled for each</Step>
+            <Step>Add loading states for async actions</Step>
+            <Step>Add error states for validation</Step>
+          </Recovery>
+          <Prevention>Use State Coverage Matrix for every component</Prevention>
+        </FM>
+        
+        <FM id="FM4">
+          <n>Accessibility Violations</n>
+          <Detection>Low contrast, no focus states, keyboard nav broken</Detection>
+          <Recovery>
+            <Step>Check all text contrast (4.5:1 minimum)</Step>
+            <Step>Add visible focus rings to all interactive elements</Step>
+            <Step>Ensure Tab order is logical</Step>
+            <Step>Add ARIA labels where needed</Step>
+          </Recovery>
+          <Prevention>Include accessibility in every component spec</Prevention>
+        </FM>
+        
+        <FM id="FM5">
+          <n>Tokens vs Vibes</n>
+          <Detection>Style guide has descriptions but no numeric values</Detection>
+          <Recovery>
+            <Step>Convert all color descriptions to hex codes</Step>
+            <Step>Convert all size descriptions to px/rem values</Step>
+            <Step>Export as JSON tokens</Step>
+            <Step>Integrate into Tailwind config</Step>
+          </Recovery>
+          <Prevention>Use 7-Part Style Guide template with required fields</Prevention>
+        </FM>
+      </FailureModePlaybook>
+      
+      <!-- Anti-Patterns -->
+      <AntiPatterns>
+        <Pattern name="Emoji Icons">
+          <Detection>Using 🎨 🚀 ⚙️ as UI icons</Detection>
+          <Fix>Use SVG icons (Heroicons, Lucide, Simple Icons)</Fix>
+        </Pattern>
+        
+        <Pattern name="Layout-Shifting Hover">
+          <Detection>Hover states use scale transforms that shift layout</Detection>
+          <Fix>Use color/opacity transitions instead of scale</Fix>
+        </Pattern>
+        
+        <Pattern name="Invisible Light Mode">
+          <Detection>Glass elements use bg-white/10 (invisible in light mode)</Detection>
+          <Fix>Use bg-white/80 or higher opacity for light mode</Fix>
+        </Pattern>
+        
+        <Pattern name="Low Contrast Text">
+          <Detection>Body text uses slate-400 or lighter</Detection>
+          <Fix>Use slate-600 minimum for body, slate-900 for headings</Fix>
+        </Pattern>
+        
+        <Pattern name="Missing Cursor Pointer">
+          <Detection>Clickable elements don't show pointer cursor</Detection>
+          <Fix>Add cursor-pointer to all interactive elements</Fix>
+        </Pattern>
+      </AntiPatterns>
+    </Layer>
+    
+    <!-- ===== LAYER 4: Output Templates (≤2000 tokens) ===== -->
+    <Layer id="L4" name="Output Templates" token_budget="2000">
+      <LoadPriority>when_generating_deliverables</LoadPriority>
+      <Purpose>Complete output templates and token exports</Purpose>
+      
+      <DesignTokensJSON>
+        <![CDATA[
+{
+  "colors": {
+    "primary": {
+      "DEFAULT": "#[HEX]",
+      "light": "#[HEX]",
+      "dark": "#[HEX]"
+    },
+    "secondary": {
+      "DEFAULT": "#[HEX]",
+      "light": "#[HEX]",
+      "dark": "#[HEX]"
+    },
+    "semantic": {
+      "success": "#[HEX]",
+      "error": "#[HEX]",
+      "warning": "#[HEX]",
+      "info": "#[HEX]"
+    },
+    "surface": {
+      "background": "#[HEX]",
+      "card": "#[HEX]",
+      "elevated": "#[HEX]"
+    },
+    "text": {
+      "primary": "#[HEX]",
+      "secondary": "#[HEX]",
+      "tertiary": "#[HEX]"
+    },
+    "border": {
+      "default": "#[HEX]",
+      "hover": "#[HEX]",
+      "focus": "#[HEX]"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "heading": "[Font Name], sans-serif",
+      "body": "[Font Name], sans-serif",
+      "mono": "[Font Name], monospace"
+    },
+    "fontSize": {
+      "h1": "3rem",
+      "h2": "2.25rem",
+      "h3": "1.75rem",
+      "h4": "1.5rem",
+      "h5": "1.25rem",
+      "h6": "1.125rem",
+      "body": "1rem",
+      "bodySm": "0.875rem",
+      "caption": "0.75rem"
+    },
+    "fontWeight": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    }
+  },
+  "spacing": {
+    "0": "0",
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "6": "1.5rem",
+    "8": "2rem",
+    "12": "3rem",
+    "16": "4rem",
+    "24": "6rem"
+  },
+  "borderRadius": {
+    "none": "0",
+    "sm": "0.25rem",
+    "md": "0.5rem",
+    "lg": "0.75rem",
+    "xl": "1rem",
+    "2xl": "1.5rem",
+    "full": "9999px"
+  },
+  "shadow": {
+    "sm": "0 1px 2px rgba(0,0,0,0.05)",
+    "md": "0 4px 6px rgba(0,0,0,0.1)",
+    "lg": "0 10px 15px rgba(0,0,0,0.1)",
+    "xl": "0 20px 25px rgba(0,0,0,0.15)"
+  },
+  "motion": {
+    "duration": {
+      "micro": "100ms",
+      "fast": "150ms",
+      "normal": "200ms",
+      "slow": "300ms",
+      "emphasis": "400ms"
+    },
+    "easing": {
+      "easeOut": "cubic-bezier(0, 0, 0.2, 1)",
+      "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+      "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)"
+    }
+  }
+}
+        ]]>
+      </DesignTokensJSON>
+      
+      <ValidationReportTemplate>
+        <![CDATA[
+# DESIGN VALIDATION REPORT
+
+## Summary
+[Overall assessment: PASS / NEEDS WORK / FAIL]
+
+## Screenshots
+- Mobile (375px): [screenshot]
+- Tablet (768px): [screenshot]
+- Desktop (1440px): [screenshot]
+
+## Findings
+
+### Blockers
+| Issue | Location | Screenshot | Severity |
+|-------|----------|------------|----------|
+
+### High-Priority
+| Issue | Location | Suggested Fix |
+|-------|----------|---------------|
+
+### Medium-Priority
+| Issue | Location | Suggested Fix |
+|-------|----------|---------------|
+
+### Nitpicks
+- Nit: [minor issue]
+
+## Console Errors
+[List any console errors]
+
+## Accessibility Check
+- Contrast: [PASS/FAIL]
+- Focus States: [PASS/FAIL]
+- Keyboard Nav: [PASS/FAIL]
+
+## Next Steps
+1. [Fix priority items]
+2. [Re-run validation]
+3. [Ship when all blockers resolved]
+        ]]>
+      </ValidationReportTemplate>
+    </Layer>
+    
+  </ProgressiveDisclosure>
+
+  <!-- ================================================================== -->
+  <!-- PYTHON TOOLS                                                        -->
+  <!-- ================================================================== -->
+  
+  <PythonTools>
+    <Tool name="validate_contrast" execution_time="5ms">
+      <Purpose>Check color contrast ratio for accessibility</Purpose>
+      <Code><![CDATA[
+def validate_contrast(foreground: str, background: str, level: str = "AA") -> dict:
+    """
+    Check WCAG contrast ratio between two colors.
+    Level: "AA" (4.5:1) or "AAA" (7:1)
+    """
+    def hex_to_rgb(hex_color: str) -> tuple:
+        hex_color = hex_color.lstrip('#')
+        return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+    
+    def relative_luminance(rgb: tuple) -> float:
+        r, g, b = [x / 255 for x in rgb]
+        r = r / 12.92 if r <= 0.03928 else ((r + 0.055) / 1.055) ** 2.4
+        g = g / 12.92 if g <= 0.03928 else ((g + 0.055) / 1.055) ** 2.4
+        b = b / 12.92 if b <= 0.03928 else ((b + 0.055) / 1.055) ** 2.4
+        return 0.2126 * r + 0.7152 * g + 0.0722 * b
+    
+    fg_lum = relative_luminance(hex_to_rgb(foreground))
+    bg_lum = relative_luminance(hex_to_rgb(background))
+    
+    lighter = max(fg_lum, bg_lum)
+    darker = min(fg_lum, bg_lum)
+    ratio = (lighter + 0.05) / (darker + 0.05)
+    
+    threshold = 7.0 if level == "AAA" else 4.5
+    
+    return {
+        "passed": ratio >= threshold,
+        "ratio": round(ratio, 2),
+        "required": threshold,
+        "level": level
+    }
+      ]]></Code>
+    </Tool>
+    
+    <Tool name="validate_spacing_consistency" execution_time="3ms">
+      <Purpose>Check if spacing values follow the defined scale</Purpose>
+      <Code><![CDATA[
+def validate_spacing_consistency(spacing_values: list, scale: list = [0, 4, 8, 12, 16, 24, 32, 48, 64]) -> dict:
+    """Check if all spacing values are on the defined scale"""
+    issues = []
+    
+    for value in spacing_values:
+        if value not in scale:
+            closest = min(scale, key=lambda x: abs(x - value))
+            issues.append(f"{value}px not on scale; use {closest}px")
+    
+    return {
+        "passed": len(issues) == 0,
+        "on_scale_count": len(spacing_values) - len(issues),
+        "total_count": len(spacing_values),
+        "issues": issues
+    }
+      ]]></Code>
+    </Tool>
+    
+    <Tool name="validate_component_states" execution_time="3ms">
+      <Purpose>Check if component has required state coverage</Purpose>
+      <Code><![CDATA[
+def validate_component_states(component: dict) -> dict:
+    """Check if component has all required states"""
+    required_states = ["default", "hover", "focus", "active", "disabled"]
+    optional_states = ["loading", "error", "success"]
+    
+    issues = []
+    defined_states = component.get("states", [])
+    
+    for state in required_states:
+        if state not in defined_states:
+            issues.append(f"Missing required state: {state}")
+    
+    return {
+        "passed": len(issues) == 0,
+        "required_coverage": f"{len(defined_states) - len(issues)}/{len(required_states)}",
+        "has_optional": [s for s in optional_states if s in defined_states],
+        "issues": issues
+    }
+      ]]></Code>
+    </Tool>
+  </PythonTools>
+
+  <!-- ================================================================== -->
+  <!-- MMA INTEGRATION                                                     -->
+  <!-- ================================================================== -->
+  
+  <MMAIntegration>
+    <QualityDimensions>
+      <Dimension name="token_coverage" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>All 7 style guide sections have numeric tokens</Validation>
+      </Dimension>
+
+      <Dimension name="state_coverage" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>All interactive components have full state matrix</Validation>
+      </Dimension>
+
+      <Dimension name="responsive_pass" weight="critical">
+        <Threshold>9.0</Threshold>
+        <Validation>No layout breaks at any breakpoint (375, 768, 1024, 1440)</Validation>
+      </Dimension>
+
+      <Dimension name="accessibility_baseline" weight="high">
+        <Threshold>8.0</Threshold>
+        <Validation>WCAG AA: 4.5:1 contrast, visible focus, keyboard nav</Validation>
+      </Dimension>
+
+      <Dimension name="visual_hierarchy" weight="high">
+        <Threshold>8.0</Threshold>
+        <Validation>Page scannable in 3 seconds (headline → subhead → CTA)</Validation>
+      </Dimension>
+
+      <Dimension name="motion_consistency" weight="medium">
+        <Threshold>7.0</Threshold>
+        <Validation>Animations follow defined motion rules (durations, easing)</Validation>
+      </Dimension>
+    </QualityDimensions>
+
+    <HardGates>
+      <Gate severity="critical">no_ai_default_aesthetics</Gate>
+      <Gate severity="critical">tokens_not_vibes</Gate>
+      <Gate severity="critical">responsive_validation_complete</Gate>
+      <Gate severity="high">accessibility_wcag_aa</Gate>
+      <Gate severity="high">no_console_errors</Gate>
+    </HardGates>
+  </MMAIntegration>
+
+  <!-- ================================================================== -->
+  <!-- QA GATES                                                            -->
+  <!-- ================================================================== -->
+  
+  <QAGates>
+    <Gate domain="Visual Quality">
+      <Item>No emojis used as icons (use SVG)</Item>
+      <Item>All icons from consistent set (Heroicons/Lucide)</Item>
+      <Item>Hover states don't cause layout shift</Item>
+      <Item>Colors use design tokens, not arbitrary values</Item>
+    </Gate>
+    
+    <Gate domain="Interaction">
+      <Item>All clickable elements have cursor-pointer</Item>
+      <Item>Hover states provide visual feedback</Item>
+      <Item>Transitions are smooth (150-300ms)</Item>
+      <Item>Focus states visible for keyboard navigation</Item>
+    </Gate>
+    
+    <Gate domain="Light/Dark Mode">
+      <Item>Text has sufficient contrast in both modes (4.5:1)</Item>
+      <Item>Glass/transparent elements visible in light mode</Item>
+      <Item>Borders visible in both modes</Item>
+    </Gate>
+    
+    <Gate domain="Layout">
+      <Item>Floating elements have proper edge spacing</Item>
+      <Item>No content hidden behind fixed navbars</Item>
+      <Item>Responsive at 375px, 768px, 1024px, 1440px</Item>
+      <Item>No horizontal scroll on mobile</Item>
+    </Gate>
+    
+    <Gate domain="Accessibility">
+      <Item>All images have alt text</Item>
+      <Item>Form inputs have labels</Item>
+      <Item>Color is not the only indicator</Item>
+      <Item>prefers-reduced-motion respected</Item>
+    </Gate>
+  </QAGates>
+
+  <!-- ================================================================== -->
+  <!-- GOLDEN RUNS                                                         -->
+  <!-- ================================================================== -->
+  
+  <GoldenRuns>
+    <GoldenRun id="GR1" name="SaaS Landing Page Design System">
+      <Scenario>
+        Create a complete design system for a B2B SaaS landing page.
+        Reference site: Linear.app aesthetic.
+        Stack: React + Tailwind CSS v4 + Framer Motion.
+        Dark mode required.
+      </Scenario>
+      <ExpectedOutputs>
+        <o>7-Part Style Guide with Linear-inspired tokens</o>
+        <o>Component specs: Button, Card, Input, Nav, Hero, Feature Grid</o>
+        <o>Layout system: 12-col grid, responsive breakpoints</o>
+        <o>Motion system: Framer Motion snippets for page transitions</o>
+        <o>Design tokens JSON exportable to Tailwind</o>
+        <o>Visual validation report (all breakpoints pass)</o>
+      </ExpectedOutputs>
+    </GoldenRun>
+    
+    <GoldenRun id="GR2" name="Quiz Funnel UI Upgrade">
+      <Scenario>
+        Upgrade an existing quiz funnel UI from "AI-default" to professional.
+        Current issues: Inter font, white background, no animations.
+        Goal: Modern, engaging, conversion-optimized.
+      </Scenario>
+      <ExpectedOutputs>
+        <o>Typography upgrade (intentional font pairing)</o>
+        <o>Color palette with semantic roles</o>
+        <o>Progress indicator component with states</o>
+        <o>Question card component with hover/focus/selected states</o>
+        <o>Answer reveal animations (Framer Motion)</o>
+        <o>Mobile-first responsive design</o>
+      </ExpectedOutputs>
+    </GoldenRun>
+    
+    <GoldenRun id="GR3" name="Dashboard Component Library">
+      <Scenario>
+        Build a component library for an analytics dashboard.
+        Requirements: Data visualization components, tables, filters.
+        Accessibility: WCAG AA required.
+      </Scenario>
+      <ExpectedOutputs>
+        <o>Chart components (bar, line, pie with dark mode)</o>
+        <o>Data table with sort/filter/pagination states</o>
+        <o>Filter controls (dropdowns, date pickers, search)</o>
+        <o>Empty states and loading skeletons</o>
+        <o>Full state coverage matrix for all components</o>
+        <o>Accessibility audit report</o>
+      </ExpectedOutputs>
+    </GoldenRun>
+  </GoldenRuns>
+
+  <!-- ================================================================== -->
+  <!-- RECIPES                                                             -->
+  <!-- ================================================================== -->
+  
+  <Recipes>
+    <Recipe name="New Product UI Setup">
+      <When>Building a new product from scratch</When>
+      <RunOrder>
+        PT-900 (Design OS Planner),
+        PT-910 (7-Part Style Guide),
+        PT-920 (Component System),
+        PT-930 (Responsive Layout),
+        PT-960 (Design-to-Code)
+      </RunOrder>
+      <OptionalAdditions>PT-970 (Subagents), PT-940 (Validation), PT-950 (Extraction)</OptionalAdditions>
+    </Recipe>
+    
+    <Recipe name="Upgrade Existing UI to Pro Level">
+      <When>Improving an existing "AI-default" UI</When>
+      <RunOrder>
+        PT-910 (Generate proper style guide),
+        PT-930 (Fix layout/responsive),
+        PT-940 (Visual validation loop),
+        PT-920 (Add missing states)
+      </RunOrder>
+      <OptionalAdditions>PT-960 (Code cleanup), PT-970 (Package learnings)</OptionalAdditions>
+    </Recipe>
+    
+    <Recipe name="Clone & Compete (System Extraction)">
+      <When>Building UI inspired by competitor/reference</When>
+      <RunOrder>
+        PT-950 (Extract patterns from reference),
+        PT-910 (Rebuild as your style guide),
+        PT-920 (Create component specs),
+        PT-940 (Validate output)
+      </RunOrder>
+      <OptionalAdditions>PT-960 (Export to code)</OptionalAdditions>
+    </Recipe>
+    
+    <Recipe name="Visual QA Pass">
+      <When>Final quality check before shipping</When>
+      <RunOrder>
+        PT-940 (Screenshot all breakpoints),
+        PT-940 (Run validators),
+        PT-940 (Fix + re-check until pass)
+      </RunOrder>
+    </Recipe>
+
+    <Recipe name="AI-Powered Design System (with UI-UX-Pro-Max)">
+      <When>Starting a new project and need design direction quickly via /designsystem or /uipro</When>
+      <RunOrder>
+        STYLE_BASE_OVERRIDE.yaml (Load Aesthetic DNA as universal constraint),
+        UI-UX-Pro-Max search.py --design-system (Tool call for seed data),
+        Neuro-Resonance Validation (Validate emotional alignment across 6 axes),
+        PT-910 (7-Part Style Guide — enhance with validated seed),
+        PT-920 (Component System — build on style guide),
+        PT-960 (Design-to-Code — export to Tailwind CSS v4)
+      </RunOrder>
+      <OptionalAdditions>
+        Style Layer loading (if vertical matches pre-extracted YAML — skips tool call),
+        PT-940 (Visual Validation Loop),
+        search.py --persist (Lock design system as SSOT)
+      </OptionalAdditions>
+    </Recipe>
+  </Recipes>
+
+  <!-- ================================================================== -->
+  <!-- VERSION HISTORY                                                     -->
+  <!-- ================================================================== -->
+  
+  <VersionHistory>
+    <Version number="1.0.0" date="2025-12-31" status="active">
+      <Changes>
+        <Change>Initial creation with complete L1-L4 content</Change>
+        <Change>PT-900 to PT-970 skill cards embedded</Change>
+        <Change>7-Part Style Guide framework with templates</Change>
+        <Change>4-Stage Aesthetic framework (BEAUTIFUL → RIGHT → SATISFYING → PEAK)</Change>
+        <Change>Visual Validation Loop with Playwright MCP integration</Change>
+        <Change>Framer Motion integration patterns</Change>
+        <Change>Component System with full state coverage</Change>
+        <Change>Responsive Layout architecture</Change>
+        <Change>Design-to-Code transformer with Tailwind CSS v4</Change>
+        <Change>Python validation tools (contrast, spacing, states)</Change>
+        <Change>Golden runs with scenarios</Change>
+        <Change>Recipe compositions for common workflows</Change>
+        <Change>QA Gates by domain</Change>
+        <Change>Anti-patterns and failure mode playbook</Change>
+        <Change>21st.dev MCP integration notes</Change>
+        <Change>ULTRAMIND constitutional compliance</Change>
+      </Changes>
+    </Version>
+
+    <Version number="1.1.0" date="2026-02-07" status="active">
+      <Changes>
+        <Change>Added UI-UX-Pro-Max Tool Integration (ToolIntegrations section)</Change>
+        <Change>6 routing rules for design system generation, vertical lookup, color, typography, stack, persistence</Change>
+        <Change>Neuro-Resonance validation mapping for tool output (6-axis check)</Change>
+        <Change>Style Layer Directory with Aesthetic DNA base + 10 vertical presets</Change>
+        <Change>New Recipe: AI-Powered Design System (with UI-UX-Pro-Max)</Change>
+        <Change>New Scope triggers for /designsystem and /uipro commands</Change>
+        <Change>Integrated with ULTRAMIND SKILLS_MANIFEST v3.0.0 routing table</Change>
+      </Changes>
+    </Version>
+  </VersionHistory>
+
+</Skill>

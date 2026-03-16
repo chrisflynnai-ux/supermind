@@ -1,0 +1,53 @@
+﻿family: docs_triage
+version: 4.0.0
+status: active
+current_track:
+  wave_1:
+    - skill_refactor
+    - harness_stabilization
+    - routing_alignment
+    - validator_alignment
+    - notebooklm_patch_workflow
+    - interscale_positioning
+  wave_2:
+    - cosms_standardization
+    - neo4j_adapter
+    - vector_layer
+    - collective_hubs
+repair_patches:
+  - patch_id: PATCH_ultramind_lean_stack_align_present_track_v4_0_0
+    target_path: C:/Users/cfar7/OneDrive/Desktop/Master Automations Architect/Master Architect DOCS/Ultramind_Lean_Stack.md
+    status: ready_for_claude
+    priority: high
+  - patch_id: PATCH_atomic_pipeline_align_skillml_and_present_track_v4_0_0
+    target_path: C:/Users/cfar7/OneDrive/Desktop/CURRENT DOCS/ATOMIC_KNOWLEDGE_SYNTHESIS_PIPELINE_v2 (1).md
+    status: ready_for_claude
+    priority: critical
+  - patch_id: PATCH_architecture_briefing_update_phase0_status_v4_0_0
+    target_path: C:/Users/cfar7/OneDrive/Desktop/ULTRAMIND/ARCHITECTURE_BRIEFING_2026-03-04.md
+    status: ready_for_claude
+    priority: critical
+  - patch_id: PATCH_business_vision_focus_wave1_execution_v4_0_0
+    target_path: C:/Users/cfar7/OneDrive/Desktop/ULTRAMIND/memory/BUSINESS_VISION.md
+    status: ready_for_claude
+    priority: high
+  - patch_id: PATCH_routing_table_validate_present_track_and_meta_roles_v4_0_0
+    target_path: C:/Users/cfar7/OneDrive/Desktop/ULTRAMIND/orchestration/routing/routing_table.yaml
+    status: ready_for_claude
+    priority: high
+  - patch_id: PATCH_orchestrator_core_align_4track_and_hologon_v4_0_0
+    target_path: C:/Users/cfar7/OneDrive/Desktop/ULTRAMIND/SUPERMIND ACCESS DOCS/ORCHESTRATOR_CORE.yaml
+    status: ready_for_claude
+    priority: high
+  - patch_id: PATCH_sub_agent_configurations_correct_hologon_mapping_v4_0_0
+    target_path: C:/Users/cfar7/OneDrive/Desktop/ULTRAMIND/SUPERMIND ACCESS DOCS/SUB_AGENT_CONFIGURATIONS_v2_0_0.yaml
+    status: ready_for_claude
+    priority: critical
+  - patch_id: PATCH_resonance_constitution_correct_hologon_axes_v4_0_0
+    target_path: C:/Users/cfar7/OneDrive/Desktop/ULTRAMIND/SUPERMIND ACCESS DOCS/RESONANCE_CONSTITUTION.xml
+    status: ready_for_claude
+    priority: critical
+  - patch_id: PATCH_ultramind_agentic_os_integration_plan_correct_hologon_and_wave_priority_v4_0_0
+    target_path: C:/Users/cfar7/OneDrive/Desktop/ULTRAMIND/SUPERMIND ACCESS DOCS/ULTRAMIND_AGENTIC_OS_INTEGRATION_PLAN.md
+    status: ready_for_claude
+    priority: high

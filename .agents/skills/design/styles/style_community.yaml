@@ -1,0 +1,60 @@
+# ULTRAMIND Design Style Layer v1.0.0
+# Vertical: Groups / Mentoring / Lives | Priority: 2 (Platform)
+# Extracted from UI-UX-Pro-Max + Neuro-Resonance mapped
+# Load cost: ~150 tokens | Layer: L2
+
+style_layer:
+  name: "Community Hub"
+  version: "1.0.0"
+  vertical: "community"
+  extends: "STYLE_BASE_OVERRIDE"
+  extracted_from: "ui-ux-pro-max"
+
+  quick_reference:
+    style_archetype: "Community / Forum"
+    mood: "warm, welcoming, active"
+    best_for: "Membership groups, mentoring tracks, live events, forums"
+
+  color_palette:
+    primary: "#7C3AED"
+    primary_light: "#A78BFA"
+    primary_dark: "#5B21B6"
+    secondary: "#A78BFA"
+    accent: "#22C55E"
+    surface_bg: "#FAF5FF"
+    surface_card: "#FFFFFF"
+    text_primary: "#4C1D95"
+    text_secondary: "#6B7280"
+    cta_primary: "#22C55E"
+    cta_hover: "#16A34A"
+
+  typography:
+    heading_font: "DM Sans"
+    heading_weight: 600
+    body_font: "DM Sans"
+    body_weight: 400
+    google_fonts_import: "https://fonts.google.com/share?selection.family=DM+Sans:wght@300;400;500;600;700"
+
+  motion:
+    entry_style: "slide"
+    duration_base: "200ms"
+    easing: "ease-out"
+    special: "member avatar stacking, activity feed animations, live indicators"
+
+  radius:
+    default: "12px"
+    buttons: "full"
+    cards: "16px"
+
+  neuro_resonance:
+    primary_axis: "PSYCH"
+    primary_neurotransmitter: "Oxytocin"
+    secondary_axis: "BODY"
+    emotional_target: "belonging, safety, warmth"
+    7s_emphasis: ["SUPPORTED", "SAFE"]
+
+  anti_patterns:
+    - "Hidden community benefits (must show activity)"
+    - "No member showcase or social proof"
+    - "Cold/corporate aesthetics"
+    - "Missing live/active indicators"

@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  VERTICAL: AGENTIC UI v1.0.0
+  Design skill for AI agent interfaces, dashboards, and technical UIs
+  
+  EXTENDS:
+  - design_core_v1.0.0 (universal foundation)
+  - agentic_visual_language (dark mode, cosmic palette)
+  - style_agentic_ui (primary style layer)
+  
+  PURPOSE:
+  Design interfaces that visualize "invisible" AI work—making automation
+  tangible through code displays, processing indicators, and live data.
+  
+  EXTRACTED FROM: NotebookLM analysis of AI/Agent platforms
+  (CreatorOS, Helium, Lander OS, Automatix, etc.)
+  
+  VERSION: 1.0.0
+  UPDATED: 2026-02-09
+-->
+
+<VerticalSkill
+  skill_id="skill.vertical_agentic_ui.v1_0_0"
+  name="Agentic UI"
+  version="1.0.0"
+  tier="vertical"
+  status="active"
+>
+
+  <Meta>
+    <Extends>design_core_v1.0.0, agentic_visual_language</Extends>
+    <RecommendedStyles>style_agentic_ui</RecommendedStyles>
+    <TokenBudget>~600 tokens when loaded</TokenBudget>
+    <SwipeDerivation>CreatorOS, Helium, Lander OS, Automatix, Orbai analysis</SwipeDerivation>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- UI ARCHETYPE                                                        -->
+  <!-- ================================================================== -->
+  
+  <UIArchetype>
+    <Purpose>
+      Visualize invisible AI work. Make automation tangible.
+      Show the system is alive, processing, working FOR the user.
+    </Purpose>
+    
+    <CorePrinciple>
+      The AI is an employee, not a tool.
+      Code is proof of capability.
+      Processing states build trust through transparency.
+    </CorePrinciple>
+    
+    <VisualMode>Dark Mode (mandatory for agentic aesthetic)</VisualMode>
+    
+    <DesignGoals>
+      <Goal>Make invisible work visible</Goal>
+      <Goal>Prove technical competence</Goal>
+      <Goal>Create "the system is alive" feeling</Goal>
+      <Goal>Hide complexity behind simple interfaces</Goal>
+    </DesignGoals>
+  </UIArchetype>
+
+  <!-- ================================================================== -->
+  <!-- COLOR SYSTEM                                                        -->
+  <!-- ================================================================== -->
+  
+  <ColorSystem>
+    <Foundation>
+      <Background>#0A0A0B (Deep space, never flat black)</Background>
+      <Surface>#111113 (Card backgrounds)</Surface>
+      <Elevated>#1A1A1D (Hover, active states)</Elevated>
+    </Foundation>
+    
+    <CosmicAccents>
+      <ElectricBlue>#3B82F6 (Primary actions, active states)</ElectricBlue>
+      <CosmicPurple>#8B5CF6 (AI/Processing indicators)</CosmicPurple>
+      <TerminalGreen>#22C55E (Success, growth, positive data)</TerminalGreen>
+      <WarningAmber>#F59E0B (Alerts, attention)</WarningAmber>
+    </CosmicAccents>
+    
+    <SyntaxColors>
+      <Pink>#F472B6 (Strings)</Pink>
+      <Yellow>#FBBF24 (Functions)</Yellow>
+      <Blue>#60A5FA (Keywords)</Blue>
+      <Green>#4ADE80 (Comments)</Green>
+    </SyntaxColors>
+    
+    <GlowAsHierarchy>
+      <Rule>Most important element has backlight/glow</Rule>
+      <CTAGlow>box-shadow: 0 0 40px rgba(59,130,246,0.4)</CTAGlow>
+      <MetricGlow>text-shadow: 0 0 20px rgba(34,197,94,0.5)</MetricGlow>
+    </GlowAsHierarchy>
+  </ColorSystem>
+
+  <!-- ================================================================== -->
+  <!-- TYPOGRAPHY                                                          -->
+  <!-- ================================================================== -->
+  
+  <Typography>
+    <AgenticSignaturePairing>
+      <HumanCommunication>Geometric Sans-Serif (Inter, Satoshi)</HumanCommunication>
+      <TechnicalProof>Monospace (JetBrains Mono, Fira Code)</TechnicalProof>
+    </AgenticSignaturePairing>
+    
+    <MonospaceUsage>
+      <Use>Code snippets</Use>
+      <Use>Data displays</Use>
+      <Use>Agent names ("The Director agent...")</Use>
+      <Use>Terminal interfaces</Use>
+      <Use>Technical specs</Use>
+    </MonospaceUsage>
+    
+    <SpecialTreatments>
+      <GradientText>linear-gradient(180deg, #FFFFFF, #A1A1AA)</GradientText>
+      <GhostText>-webkit-text-stroke: 1px rgba(255,255,255,0.1)</GhostText>
+      <EyebrowText>uppercase, letter-spacing: 0.1em, 12px</EyebrowText>
+    </SpecialTreatments>
+  </Typography>
+
+  <!-- ================================================================== -->
+  <!-- CODE AS UI PATTERN                                                  -->
+  <!-- ================================================================== -->
+  
+  <CodeAsUI>
+    <Philosophy>For agentic sites, CODE IS the image</Philosophy>
+    <Purpose>Proves technical capability, signals developer-grade</Purpose>
+    
+    <Implementations>
+      <IDEScreenshots>
+        <Content>Actual Python/JS classes</Content>
+        <Example>class ChatBot { def evaluate_task()... }</Example>
+      </IDEScreenshots>
+      
+      <TerminalWindows>
+        <Content>Command execution visuals</Content>
+        <Example>&gt; npm run deploy ✓ Success</Example>
+      </TerminalWindows>
+      
+      <JSONBlocks>
+        <Content>API response previews</Content>
+        <Styling>Syntax highlighted, glass container</Styling>
+      </JSONBlocks>
+    </Implementations>
+    
+    <Styling>
+      <Container>Glass card with blur effect</Container>
+      <Font>JetBrains Mono or Fira Code</Font>
+      <LineNumbers>Show for authenticity</LineNumbers>
+      <Highlighting>Standard syntax color palette</Highlighting>
+    </Styling>
+  </CodeAsUI>
+
+  <!-- ================================================================== -->
+  <!-- CHAT SIMULATOR PATTERN                                              -->
+  <!-- ================================================================== -->
+  
+  <ChatSimulator>
+    <Purpose>Visualize AI responding in real-time</Purpose>
+    
+    <Structure>
+      <CustomerQuery>
+        <Style>User message bubble (right-aligned or left)</Style>
+        <Timestamp>Specific time (e.g., 2:45 AM)</Timestamp>
+      </CustomerQuery>
+      
+      <AutomatedResponse>
+        <Style>Agent message bubble (opposite side)</Style>
+        <Timestamp>Same or immediate (proves speed)</Timestamp>
+        <Indicator>"Replying now..." with typing animation</Indicator>
+      </AutomatedResponse>
+    </Structure>
+    
+    <VisualProof>
+      <Speed>Timestamps prove instant response</Speed>
+      <Availability>Night timestamps prove 24/7</Availability>
+      <Capability>Response content proves competence</Capability>
+    </VisualProof>
+    
+    <Styling>
+      <Container>Match primary brand colors</Container>
+      <Integration>Native feel, not bolted-on widget</Integration>
+      <Animation>Typing indicator, staggered message appear</Animation>
+    </Styling>
+  </ChatSimulator>
+
+  <!-- ================================================================== -->
+  <!-- FLOATING DASHBOARD PATTERN                                          -->
+  <!-- ================================================================== -->
+  
+  <FloatingDashboard>
+    <Concept>Dashboard broken into floating widgets</Concept>
+    
+    <WidgetTypes>
+      <RevenueCard>
+        <Content>Dollar amount, trend arrow, sparkline</Content>
+        <Color>Green for positive, red for negative</Color>
+      </RevenueCard>
+      
+      <FollowersGraph>
+        <Content>Line chart with "Live" badge</Content>
+        <Animation>Line draws itself on load</Animation>
+      </FollowersGraph>
+      
+      <ActivityFeed>
+        <Content>Recent actions with timestamps</Content>
+        <Animation>New items slide in</Animation>
+      </ActivityFeed>
+      
+      <MetricCard>
+        <Content>Large number, label, trend indicator</Content>
+        <Animation>Number ticks up to final value</Animation>
+      </MetricCard>
+    </WidgetTypes>
+    
+    <Styling>
+      <Elevation>Deep drop shadows</Elevation>
+      <Glow>Inner glows, border glows</Glow>
+      <Perspective>Slight 3D tilt</Perspective>
+      <Float>Appears to hover above background</Float>
+    </Styling>
+  </FloatingDashboard>
+
+  <!-- ================================================================== -->
+  <!-- BEFORE/AFTER METRIC PATTERN                                         -->
+  <!-- ================================================================== -->
+  
+  <BeforeAfterMetric>
+    <Layout>Card split in two halves</Layout>
+    
+    <Before>
+      <Label>"Manual Work" or "Before"</Label>
+      <Color>Red text, muted bar</Color>
+      <Visual>Low progress bar</Visual>
+    </Before>
+    
+    <After>
+      <Label>"AI Automation" or "After"</Label>
+      <Color>Green text, bright bar</Color>
+      <Visual>High progress bar</Visual>
+    </After>
+    
+    <Metric>
+      <Size>Large, bold percentage</Size>
+      <Example>"87% Reduction"</Example>
+    </Metric>
+    
+    <Purpose>Value understood in &lt;1 second via color coding</Purpose>
+  </BeforeAfterMetric>
+
+  <!-- ================================================================== -->
+  <!-- MOTION PATTERNS                                                     -->
+  <!-- ================================================================== -->
+  
+  <MotionPatterns>
+    <BootUpEffect>
+      <Concept>Site initializes, not just loads</Concept>
+      <Elements>
+        <Element>Staggered card loading (0.15s delay)</Element>
+        <Element>Graph lines draw themselves</Element>
+        <Element>Numbers tick up to values</Element>
+        <Element>Processing spinners → complete states</Element>
+      </Elements>
+    </BootUpEffect>
+    
+    <BeamBorder>
+      <Description>Moving gradient along card borders</Description>
+      <Purpose>Implies data transfer, active processing</Purpose>
+      <Animation>3s linear infinite loop</Animation>
+    </BeamBorder>
+    
+    <SpotlightPhase>
+      <Description>Active element scales + glows</Description>
+      <Inactive>Surrounding elements fade to 15% opacity</Inactive>
+      <Purpose>Isolate focus on one feature at a time</Purpose>
+    </SpotlightPhase>
+    
+    <TactileHover>
+      <Scale>1.02-1.05x</Scale>
+      <Glow>Increase border brightness</Glow>
+      <Animation>Spring with damping 15-25</Animation>
+      <Feel>Bouncy, physical</Feel>
+    </TactileHover>
+    
+    <ProcessVisualization>
+      <Concept>Show the AI "thinking"</Concept>
+      <Implementation>
+        <Step>Log stream appearing</Step>
+        <Step>Checklist items completing</Step>
+        <Step>"Analyzing..." → "Generating..." → "Complete"</Step>
+      </Implementation>
+    </ProcessVisualization>
+  </MotionPatterns>
+
+  <!-- ================================================================== -->
+  <!-- BENTO GRID LAYOUT                                                   -->
+  <!-- ================================================================== -->
+  
+  <BentoGrid>
+    <CardSizes>
+      <Square1x1>Icons, simple metrics</Square1x1>
+      <Wide2x1>Code blocks, graphs, visualizations</Wide2x1>
+      <Tall1x2>Testimonials, activity feeds</Tall1x2>
+      <Large2x2>Hero features, dashboards</Large2x2>
+    </CardSizes>
+    
+    <CardStyling>
+      <Borders>1px solid rgba(255,255,255,0.1)</Borders>
+      <Corners>20-30px radius (squircle)</Corners>
+      <Background>linear-gradient(135deg, #1A1A1D, #111113)</Background>
+      <Gap>16-24px</Gap>
+    </CardStyling>
+    
+    <CardHierarchy>
+      <Top>Bold metric or status indicator</Top>
+      <Middle>Trend indicator (percentage change)</Middle>
+      <Bottom>Sparkline or visual footer</Bottom>
+    </CardHierarchy>
+    
+    <SemanticColoring>
+      <Success>Soft green background tint</Success>
+      <Alert>Soft red/amber background tint</Alert>
+      <Processing>Soft purple background tint</Processing>
+    </SemanticColoring>
+  </BentoGrid>
+
+  <!-- ================================================================== -->
+  <!-- TERMINAL AESTHETIC                                                  -->
+  <!-- ================================================================== -->
+  
+  <TerminalAesthetic>
+    <InputBoxes>
+      <Style>CLI-style with prompt character</Style>
+      <Prompt>&gt; or $ prefix</Prompt>
+      <Cursor>Blinking underscore or block</Cursor>
+    </InputBoxes>
+    
+    <CTAStyle>
+      <Format>&gt; Start_ or $ deploy</Format>
+      <Font>Monospace</Font>
+    </CTAStyle>
+    
+    <Footer>
+      <Style>Status bar / command line</Style>
+      <Content>Copyright | Status: "All Systems Operational" | Social links</Content>
+    </Footer>
+  </TerminalAesthetic>
+
+  <!-- ================================================================== -->
+  <!-- DECORATIVE ELEMENTS                                                 -->
+  <!-- ================================================================== -->
+  
+  <DecorativeElements>
+    <GridTexture>
+      <Purpose>Denotes workspace, technical blueprint</Purpose>
+      <Color>rgba(255,255,255,0.03)</Color>
+      <Size>40px cells</Size>
+    </GridTexture>
+    
+    <Luminescence>
+      <Purpose>Soft glow behind content creates depth</Purpose>
+      <Implementation>Radial gradient centered on hero</Implementation>
+      <Color>rgba(59,130,246,0.15) to transparent</Color>
+    </Luminescence>
+    
+    <Glassmorphism>
+      <Use>Navbars, modals, cards</Use>
+      <CSS>backdrop-filter: blur(12px); background: rgba(255,255,255,0.05)</CSS>
+    </Glassmorphism>
+    
+    <MarqueeLogos>
+      <Purpose>Scrolling integration/client logos</Purpose>
+      <Speed>Slow, continuous, seamless</Speed>
+    </MarqueeLogos>
+    
+    <3DElements>
+      <Globes>Suggest global connectivity</Globes>
+      <FloatingShapes>Abstract polyhedrons, particle systems</FloatingShapes>
+      <Tools>Three.js, Spline</Tools>
+    </3DElements>
+  </DecorativeElements>
+
+  <!-- ================================================================== -->
+  <!-- QUALITY CHECKLIST                                                   -->
+  <!-- ================================================================== -->
+  
+  <QualityChecklist>
+    <Category name="Visual Language">
+      <Item>Dark mode (#0A0A0B foundation)</Item>
+      <Item>Cosmic accents (blue, purple, green)</Item>
+      <Item>Glow as hierarchy</Item>
+      <Item>Grid texture on background</Item>
+    </Category>
+    
+    <Category name="Typography">
+      <Item>Sans + Mono pairing</Item>
+      <Item>Monospace for technical elements</Item>
+      <Item>Gradient text on key headlines</Item>
+    </Category>
+    
+    <Category name="Visualizing AI">
+      <Item>Code snippets as visuals</Item>
+      <Item>Chat simulator with timestamps</Item>
+      <Item>Floating dashboard widgets</Item>
+      <Item>Before/After metric cards</Item>
+    </Category>
+    
+    <Category name="Motion">
+      <Item>Boot-up stagger effect</Item>
+      <Item>Beam borders on cards</Item>
+      <Item>Processing state animations</Item>
+      <Item>Spring hover states</Item>
+    </Category>
+    
+    <Category name="Layout">
+      <Item>Bento grid for features</Item>
+      <Item>1px subtle borders</Item>
+      <Item>Squircle corners (20-30px)</Item>
+      <Item>Glassmorphism on nav/modals</Item>
+    </Category>
+  </QualityChecklist>
+
+  <!-- ================================================================== -->
+  <!-- EXECUTION OUTPUT                                                    -->
+  <!-- ================================================================== -->
+  
+  <ExecutionOutput>
+    <StitchPrompt>
+      Create an agentic UI dashboard with dark mode cosmic aesthetic.
+      
+      FOUNDATION:
+      - Background: #0A0A0B with subtle grid texture
+      - Accents: Electric blue (#3B82F6), cosmic purple (#8B5CF6), terminal green (#22C55E)
+      - Typography: Inter for UI, JetBrains Mono for code/data
+      
+      LAYOUT:
+      - Bento grid with 1x1, 2x1, 2x2 cards
+      - 1px borders at 10% white opacity
+      - 20-30px squircle corners
+      - Glassmorphic navbar
+      
+      KEY PATTERNS:
+      - Code block card (syntax highlighted Python/JSON)
+      - Chat simulator (user query → AI response with timestamps)
+      - Floating metric cards (revenue, followers, activity)
+      - Before/After comparison card (red vs green bars)
+      
+      MOTION:
+      - Staggered boot-up loading
+      - Beam animation on featured card border
+      - Spring hover states (scale 1.02x + glow)
+      - Numbers tick up on load
+      
+      ELEMENTS:
+      - "Live" badges on real-time data
+      - Typing indicators on chat
+      - Processing state indicators
+      - Terminal-style footer
+    </StitchPrompt>
+  </ExecutionOutput>
+
+</VerticalSkill>

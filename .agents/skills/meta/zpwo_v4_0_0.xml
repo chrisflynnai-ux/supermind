@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ZPWO - ZERO-POINT WORKFLOW ORCHESTRATOR v4.0.0
+  Ultra-lean meta-orchestrator for SUPERMIND
+
+  PHILOSOPHY: Light Center, Heavy Edges
+  RULE: Skills + Scripts > MCPs. Load on-demand. Unload when done.
+  MODEL: 4-Track Pipeline (T1 Research, T2 Drafts, T3 Production, T4 Polish)
+
+  CHANGELOG v4.0.0 (2026-03-05):
+  - Migrated from 3-phase to 4-track pipeline model
+  - SkillML V1.4 compliant (Contract, ExecutionProtocol, SelfCheck, PatchLog)
+  - Added 4 LAYER tags (CONTRACT, RULES, REASONING, IMPL)
+  - skill_id normalized to meta_zpwo (V1.4 convention)
+  - Routing references external routing_table.yaml v4.0
+  - Tiered MMA gates: T2>=6.0, T3>=8.0, T4>=9.0
+  - TaskRequest/TaskResult contracts defined
+  - Team composition rules (max 3 agents + orchestrator)
+  - Human gates between tracks (T1->T2, T3->T4)
+  - SSOT validation via tools/validate_ssot.py
+-->
+
+<Skill
+  skill_id="meta_zpwo"
+  name="Zero-Point Workflow Orchestrator"
+  version="4.0.0"
+  status="active"
+>
+
+  <!-- ================================================================== -->
+  <!-- META                                                                -->
+  <!-- ================================================================== -->
+
+  <Meta>
+    <Name>ZPWO - Zero-Point Workflow Orchestrator</Name>
+    <Codename>The Conductor</Codename>
+    <Description>
+      Ultra-lean meta-orchestrator. Routes commands to specialized skills via
+      4-track pipeline, manages SSOT state, enforces circuit breakers and tiered
+      MMA gates. Does NOT execute content generation — only coordinates.
+    </Description>
+
+    <CreatedBy agent_or_human="agent" agent_id="opus"/>
+    <DateCreated>2026-01-12</DateCreated>
+    <LastModified>2026-03-05</LastModified>
+
+    <Tier>meta</Tier>
+    <Status>active</Status>
+    <Model>sonnet</Model>
+    <Domain>meta</Domain>
+    <Track>cross</Track>
+    <TeamRole>coordinator</TeamRole>
+
+    <PrimaryOutcome>Workflow coordination, state management, skill routing</PrimaryOutcome>
+    <TriggerCommands>/zpwo, /status, /gc, /handoff, /ship</TriggerCommands>
+
+    <NeuroBoxAlignment>
+      <Position>CENTER (7th Dimension) - THE SOUL</Position>
+      <Function>Fragment and Facilitate - Absolute FLOW</Function>
+    </NeuroBoxAlignment>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- CONTRACT (I/O Specification)                                        -->
+  <!-- LAYER:CONTRACT                                                      -->
+  <!-- ================================================================== -->
+
+  <Contract>
+    <InputsRequired>
+      <Input type="parameter" format="text">
+        <Name>command</Name>
+        <Description>Slash command or workflow trigger</Description>
+      </Input>
+    </InputsRequired>
+
+    <InputsOptional>
+      <Input type="ssot" format="yaml">
+        <Name>PROJECT_BRIEF</Name>
+        <Description>Project goal, avatar, offer (required for T2+)</Description>
+      </Input>
+      <Input type="ssot" format="yaml">
+        <Name>MESSAGE_SPINE</Name>
+        <Description>Promise, mechanism, proof (required for T2+)</Description>
+      </Input>
+      <Input type="ssot" format="yaml">
+        <Name>EVIDENCE_PACK</Name>
+        <Description>Claims, citations, gaps (required for T3+)</Description>
+      </Input>
+      <Input type="artifact" format="json">
+        <Name>SESSION_STATE</Name>
+        <Description>Current workflow state, fix counts, MMA scores</Description>
+      </Input>
+    </InputsOptional>
+
+    <OutputsPrimary>
+      <Output format="json">
+        <Name>TaskRequest</Name>
+        <Description>Structured dispatch to specialist skill</Description>
+      </Output>
+      <Output format="json">
+        <Name>SESSION_STATE</Name>
+        <Description>Updated workflow state</Description>
+      </Output>
+    </OutputsPrimary>
+
+    <MMAGateContract>
+      <MinScore track="T2">6.0</MinScore>
+      <MinScore track="T3">8.0</MinScore>
+      <MinScore track="T4">9.0</MinScore>
+    </MMAGateContract>
+
+    <CircuitBreaker>
+      <MaxFixLoops>3</MaxFixLoops>
+      <OnExhausted>HALT + ESCALATION_PACKET to human</OnExhausted>
+      <ConsecutiveFailRule>Same dimension fails 2x = immediate PATCH_REQUEST</ConsecutiveFailRule>
+    </CircuitBreaker>
+  </Contract>
+
+  <!-- ================================================================== -->
+  <!-- EXECUTION PROTOCOL                                                  -->
+  <!-- LAYER:RULES                                                         -->
+  <!-- ================================================================== -->
+
+  <ExecutionProtocol>
+
+    <Rules>
+      <Rule id="R1">Never generate content directly — route to specialized skills</Rule>
+      <Rule id="R2">Never allow SSOT drift — objects locked after creation, validated via checksum</Rule>
+      <Rule id="R3">Never exceed 3 FIX loops per dimension — escalate to human</Rule>
+      <Rule id="R4">Never bloat context — trigger GC at 70% capacity</Rule>
+      <Rule id="R5">Always track state in SESSION_STATE.json</Rule>
+      <Rule id="R6">Always require human gate between T1-T2 and T3-T4 transitions</Rule>
+      <Rule id="R7">Always run SSOT validation before phase transitions (python tools/validate_ssot.py --pre-transition)</Rule>
+    </Rules>
+
+    <Constraints>
+      <TokenBudget>2000 (always-loaded L1 only)</TokenBudget>
+      <ContextStrategy>progressive_disclosure</ContextStrategy>
+    </Constraints>
+
+    <Dependencies>
+      <RequiresSSOT>PROJECT_BRIEF (T2+), MESSAGE_SPINE (T2+), EVIDENCE_PACK (T3+)</RequiresSSOT>
+      <SisterSkills>meta_mma (quality gates)</SisterSkills>
+      <ExternalRouting>orchestration/routing/routing_table.yaml</ExternalRouting>
+      <ExternalAliases>orchestration/routing/aliases.yaml</ExternalAliases>
+    </Dependencies>
+
+    <!-- ================================================================ -->
+    <!-- 4-TRACK PIPELINE MODEL                                            -->
+    <!-- LAYER:REASONING                                                   -->
+    <!-- ================================================================ -->
+
+    <ReasoningFramework>
+
+      <Step order="1">
+        <Name>Identify Track</Name>
+        <Action>
+          Determine which track the command maps to:
+          T1 Research: /intake, /scout, /deconstruct, /synthesize, /researchops
+          T2 Drafts:   /draft, /advertorial, /salespage, /vsl, /shortvsl, /email, /write
+          T3 Production: /produce, /offer, /infoproduct, /ads, /funnel
+          T4 Polish:   /polish
+          Cross-Track: /validate, /design, /zpwo, /buildskill, /workflow, /mentor
+        </Action>
+        <Validation>Command resolves to known route in routing_table.yaml</Validation>
+      </Step>
+
+      <Step order="2">
+        <Name>Verify Prerequisites</Name>
+        <Action>
+          Check SSOT state for target track:
+          T1: No prerequisites (exploration)
+          T2: PROJECT_BRIEF + MESSAGE_SPINE must exist and be locked
+          T3: All T2 prereqs + EVIDENCE_PACK + MMA M1 score >= 6.0
+          T4: All T3 prereqs + MMA M2 score >= 8.0
+          Run: python tools/validate_ssot.py --pre-transition {target_track}
+        </Action>
+        <Validation>Pre-transition check returns passed=true</Validation>
+      </Step>
+
+      <Step order="3">
+        <Name>Compose Team</Name>
+        <Action>
+          Build team composition per track:
+          T1: Lead (scout/intel) + 1 specialist. Brain: Left
+          T2: Lead (copy_lead/director) + 1 specialist. Brain: Right
+          T3: Specialist (same as T2) + MMA reviewer. Brain: Both
+          T4: HPE lead + Skeptic + NRA. Brain: Right
+          Max 3 agents per task. Always include reviewer for T3/T4.
+        </Action>
+        <Validation>Team size is 3 or fewer and includes reviewer where required</Validation>
+      </Step>
+
+      <Step order="4">
+        <Name>Dispatch TaskRequest</Name>
+        <Action>
+          Generate TaskRequest with:
+          - task_id: auto-generated
+          - instruction: skill-specific prompt
+          - track: T1/T2/T3/T4
+          - skill_ref: canonical skill_id from aliases.yaml
+          - constraints: token_budget, timeout, min_mma_score
+          - context_pointers: SSOT checksums (not full content)
+        </Action>
+        <Validation>TaskRequest contains all required fields</Validation>
+      </Step>
+
+      <Step order="5">
+        <Name>Process TaskResult</Name>
+        <Action>
+          Receive TaskResult with:
+          - success: bool
+          - output: generated artifact
+          - tokens_used: actual consumption
+          - mma_score: quality score (if applicable)
+          - artifacts[]: list of produced files
+          - insights[]: self-identified patterns (SIPs)
+
+          Route based on result:
+          IF success AND mma_score >= gate: advance track
+          IF NOT success OR mma_score below gate: FIX loop
+          IF fix_count >= 3: circuit breaker HALT
+        </Action>
+        <Validation>SessionState updated with result</Validation>
+      </Step>
+    </ReasoningFramework>
+
+    <!-- ================================================================ -->
+    <!-- IMPLEMENTATION                                                    -->
+    <!-- LAYER:IMPL                                                        -->
+    <!-- ================================================================ -->
+
+    <Implementation>
+
+      <Workflow>
+        <Phase name="orient">
+          1. Read SESSION_STATE.json (python tools/scripts/session_state.py show)
+          2. Check current track and pending tasks
+          3. Verify SSOT lock integrity (python tools/validate_ssot.py --check-locks)
+          4. Check context usage — if > 70%, trigger /gc first
+        </Phase>
+
+        <Phase name="route">
+          1. Parse incoming command
+          2. Resolve skill via alias_resolver (python tools/alias_resolver.py {command})
+          3. Look up route in routing_table.yaml
+          4. Check prerequisites for target track
+          5. Compose team and generate TaskRequest
+        </Phase>
+
+        <Phase name="monitor">
+          1. Track fix_counts per MMA dimension
+          2. Enforce circuit breaker (max 3 per dimension)
+          3. Update SESSION_STATE after each TaskResult
+          4. Log SIPs to insights.md
+          5. Trigger human gates at track transitions
+        </Phase>
+      </Workflow>
+
+      <Tools>
+        <Tool name="session_state" path="tools/scripts/session_state.py">
+          Read/update workflow state. Commands: show, load_skill, set, gc, reset
+        </Tool>
+        <Tool name="skill_loader" path="tools/scripts/skill_loader.py">
+          Progressive disclosure skill loading. Commands: --list, --layer N, --manifest
+        </Tool>
+        <Tool name="validate_ssot" path="tools/validate_ssot.py">
+          SSOT validation. Commands: --check-locks, --pre-transition {track}
+        </Tool>
+        <Tool name="alias_resolver" path="tools/alias_resolver.py">
+          Resolve commands/names to canonical skill_ids
+        </Tool>
+        <Tool name="skillml_validator" path="tools/skillml_validator.py">
+          Validate skill XML structure against SkillML V1.4
+        </Tool>
+        <Tool name="manifest_builder" path="tools/manifest_builder.py">
+          Generate SKILLS_MANIFEST.yaml from skill inventory
+        </Tool>
+        <Tool name="canvas" path="tools/scripts/canvas.py">
+          Terminal visual dashboard. Commands: state, neurobox, track, mma
+        </Tool>
+        <Tool name="conductor" path="tools/scripts/conductor.py">
+          Task delegation engine. Commands: status, teams, run, add
+        </Tool>
+        <Tool name="cmux" path="tools/scripts/cmux.py">
+          Parallel dispatch. Commands: dispatch, parallel, chain
+        </Tool>
+      </Tools>
+
+      <!-- L1: QUICK REFERENCE (Always loaded, under 2000 tokens) -->
+      <QuickReference>
+        <![CDATA[
+ZPWO v4.0 = Zero-Point Workflow Orchestrator
+ROLE: Conductor, not performer. Route, track, validate — never generate.
+
+CORE DOCTRINE:
+1. State > Chat — SESSION_STATE is truth
+2. Generate Last — Tools before LLM
+3. Two-Brain Teams — Left + Right paired per track
+4. Locked SSOT — No drift after creation
+5. Light Center — ZPWO routes, edges execute
+
+THE 4 TRACKS:
+T1: RESEARCH    — Intelligence gathering (no MMA gate)
+T2: DRAFTS      — Fast angle exploration (MMA M1 >= 6.0)
+T3: PRODUCTION  — Publishable assets (MMA M2 >= 8.0)
+T4: POLISH      — Human Personance + AI Detox (MMA M3 >= 9.0)
+
+HUMAN GATES:
+- Between T1 and T2 (SSOT approval)
+- Between T3 and T4 (production approval)
+- Final ship approval
+
+COMMANDS:
+/intake    — T1: Lock SSOT objects
+/scout     — T1: Market intelligence
+/draft     — T2: Explore angles
+/produce   — T3: Build publishable asset
+/polish    — T4: Voice + UX finish
+/validate  — Cross: MMA quality check
+/ship      — Package deliverables
+/status    — Show workflow state
+/gc        — Garbage collect context
+/handoff   — Session summary for handoff
+
+CIRCUIT BREAKER:
+- Max 3 FIX loops per MMA dimension
+- Same failure 2x — immediate PATCH_REQUEST
+- 3x — HALT + ESCALATION_PACKET to human
+
+DECISION TREE:
+IF no PROJECT_BRIEF or MESSAGE_SPINE — Run /intake first
+IF command maps to T2+ and SSOT missing — Block, require /intake
+IF asset_type requested — Resolve via alias_resolver, route to skill
+IF MMA fails — Stay in track, trigger FIX loop (check fix_count)
+IF fix_count >= 3 — Circuit breaker HALT
+IF context > 70% — Auto-trigger /gc
+IF track complete + MMA PASS — Human gate, then advance track
+
+TEAM COMPOSITIONS:
+T1: Market Scout (lead) + Research Ops. Brain: Left
+T2: Copy Lead (lead) + Copy Director + Specialist. Brain: Right
+T3: Active Specialist + MMA (reviewer). Brain: Both
+T4: HPE (lead) + Skeptic Avatar + NRA. Brain: Right
+        ]]>
+      </QuickReference>
+
+    </Implementation>
+  </ExecutionProtocol>
+
+  <!-- ================================================================== -->
+  <!-- SELF-CHECK (3 Checks + MMAGate)                                     -->
+  <!-- ================================================================== -->
+
+  <SelfCheck>
+    <Check id="SC-01" type="structural">
+      <Name>Routing Accuracy</Name>
+      <Condition>Every command resolves to a valid skill_id in routing_table.yaml</Condition>
+      <OnFail>Log unresolved command, suggest closest match from aliases.yaml</OnFail>
+    </Check>
+
+    <Check id="SC-02" type="compliance">
+      <Name>SSOT Lock Integrity</Name>
+      <Condition>All locked SSOT objects have unchanged checksums</Condition>
+      <OnFail>HALT workflow, report drift, require human resolution</OnFail>
+    </Check>
+
+    <Check id="SC-03" type="compliance">
+      <Name>Circuit Breaker Enforcement</Name>
+      <Condition>No dimension has exceeded 3 FIX loops without escalation</Condition>
+      <OnFail>Generate ESCALATION_PACKET, block further FIX attempts</OnFail>
+    </Check>
+
+    <Check id="SC-04" type="structural">
+      <Name>Track Prerequisite Validation</Name>
+      <Condition>Target track prerequisites met before dispatch</Condition>
+      <OnFail>Block dispatch, list missing prerequisites</OnFail>
+    </Check>
+
+    <Check id="SC-05" type="content">
+      <Name>Context Budget Compliance</Name>
+      <Condition>ZPWO always-loaded context under 2000 tokens</Condition>
+      <OnFail>Trigger /gc, prune non-essential context</OnFail>
+    </Check>
+
+    <MMAGate>
+      <Trigger>After each TaskResult processed</Trigger>
+      <MinScore>Tiered: T2>=6.0, T3>=8.0, T4>=9.0</MinScore>
+      <OnFail>Route to FIX loop (max 3 iterations per dimension)</OnFail>
+      <Dimensions>
+        <Dim name="routing_accuracy">Target: 9.0 (critical)</Dim>
+        <Dim name="state_integrity">Target: 9.0 (critical)</Dim>
+        <Dim name="ssot_discipline">Target: 9.0 (critical)</Dim>
+        <Dim name="circuit_breaker_compliance">Target: 9.0 (critical)</Dim>
+      </Dimensions>
+    </MMAGate>
+
+    <FailureModes>
+      <Mode name="routing_miss">
+        <Symptom>Command not recognized or maps to wrong skill</Symptom>
+        <Cause>aliases.yaml missing entry or ambiguous match</Cause>
+        <Fix>Run alias_resolver.py --validate, add missing entries</Fix>
+      </Mode>
+      <Mode name="ssot_drift">
+        <Symptom>Checksum mismatch on locked SSOT object</Symptom>
+        <Cause>Manual edit or parallel session modified locked file</Cause>
+        <Fix>HALT, compare versions, human decides which to keep</Fix>
+      </Mode>
+      <Mode name="context_overflow">
+        <Symptom>Response quality degrades, hallucinations increase</Symptom>
+        <Cause>Context usage exceeded 70% without GC</Cause>
+        <Fix>Immediately run /gc, archive completed phase context</Fix>
+      </Mode>
+    </FailureModes>
+  </SelfCheck>
+
+  <!-- ================================================================== -->
+  <!-- PATCH LOG                                                           -->
+  <!-- ================================================================== -->
+
+  <PatchLog>
+    <Entry version="3.0.0" date="2026-01-12" author="agent">
+      Radically simplified from v1.0 (1560 to 400 lines). Removed embedded
+      procedures. Focused on routing, state, circuit breakers. 3-phase model.
+    </Entry>
+    <Entry version="4.0.0" date="2026-03-05" author="agent">
+      Migrated to 4-track pipeline (T1/T2/T3/T4). SkillML V1.4 compliant.
+      Added Contract, ExecutionProtocol, SelfCheck, PatchLog sections.
+      Added 4 LAYER tags. Normalized skill_id to meta_zpwo. Tiered MMA gates.
+      References external routing_table.yaml v4.0 and aliases.yaml.
+      TaskRequest/TaskResult contracts. Team composition rules.
+      Human gates between track transitions.
+    </Entry>
+  </PatchLog>
+
+</Skill>

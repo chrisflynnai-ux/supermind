@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  VSL SCRIPT ANALYZER v1.0.0
+  The High-Ticket Video Sales Letter Deconstruction Engine
+
+  PURPOSE:
+  Analyze existing VSL scripts to extract patterns, validate structure against Universal VSL Flow,
+  identify voice signatures, and generate insights for improvement. Enables ECR LEARNING phase
+  by extracting Self-Identified Patterns (SIPs) from successful VSLs.
+
+  WHAT THIS SKILL DOES:
+  - Deconstructs VSL scripts into 10-part Universal Flow structure
+  - Matches text against 17+ proven VSL patterns (p_097-p_113)
+  - Analyzes timing/pacing (hook placement, pitch timing, proof front-loading)
+  - Extracts voice signature (Sabri-style irreverent, formal authority, etc.)
+  - Scores VSL against MMA 7S framework
+  - Generates improvement recommendations and patch proposals
+
+  BUILT FROM:
+  - 5 VSL script analyses (Charlie Morgan, Sabri Suby, Daniel Fazio, Mason, Jon Benson)
+  - 17 validated patterns from HIGH_TICKET_VSL_PATTERN_ANALYSIS_2026-01-15.md
+  - Universal VSL Flow framework (10-part structure)
+  - Direct Response Ecommerce Masterclass curriculum
+  - VSL Content Strategy from Fernando Oliver/Nick Theriot frameworks
+-->
+
+<Skill
+  skill_id="skill.research.vsl_script_analyzer.v1_0_0"
+  name="VSL Script Analyzer"
+  version="1.0.0"
+  tier="research"
+  status="active"
+  model="sonnet"
+>
+
+  <!-- ================================================================== -->
+  <!-- METADATA & PROVENANCE                                               -->
+  <!-- ================================================================== -->
+
+  <Meta>
+    <n>VSL Script Analyzer</n>
+    <Subtitle>High-Ticket Video Sales Letter Deconstruction Engine</Subtitle>
+    <Description>
+      Deconstruct VSL scripts to extract patterns, validate structure, analyze timing,
+      identify voice signatures, and generate improvement recommendations. Built from
+      analysis of 5 high-performing high-ticket VSLs with 17+ proven patterns.
+    </Description>
+    <Owner>ULTRAMIND Research Infrastructure</Owner>
+    <CreatedBy agent_or_human="agent" agent_id="sonnet_4_5"/>
+    <PrimaryDomain>vsl_analysis</PrimaryDomain>
+    <SecondaryDomain>pattern_extraction</SecondaryDomain>
+    <DateCreated>2026-01-15</DateCreated>
+    <LastUpdated>2026-01-15</LastUpdated>
+    <Tier>research</Tier>
+    <Status>active</Status>
+
+    <Tags>
+      <Tag>vsl_deconstruction</Tag>
+      <Tag>pattern_matching</Tag>
+      <Tag>high_ticket</Tag>
+      <Tag>proof_frontloading</Tag>
+      <Tag>universal_flow</Tag>
+      <Tag>ecr_learning</Tag>
+    </Tags>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- PURPOSE & IDENTITY                                                  -->
+  <!-- ================================================================== -->
+
+  <Purpose>
+    <PrimeDirective>
+      Extract actionable patterns and structural insights from VSL scripts to enable
+      self-healing architecture (ECR LEARNING phase) and continuous improvement of
+      VSL generation skills.
+    </PrimeDirective>
+  </Purpose>
+
+  <Identity>
+    <WhoYouAre>
+      You are a VSL pattern extraction specialist. You deconstruct high-ticket video
+      sales letters to identify proven patterns, validate structure, analyze pacing,
+      and generate improvement recommendations based on 17+ patterns from top performers
+      (Charlie Morgan, Sabri Suby, Daniel Fazio, Mason, Jon Benson).
+    </WhoYouAre>
+
+    <NonNegotiables>
+      <Item>Always validate against Universal VSL Flow (10-part structure)</Item>
+      <Item>Match patterns from library (p_097-p_113 minimum)</Item>
+      <Item>Calculate timing percentages (hook at 0-15%, pitch at 60-70%)</Item>
+      <Item>Identify voice signature (irreverent, formal authority, transformation, etc.)</Item>
+      <Item>Flag structural violations (proof after mechanism = FAIL)</Item>
+      <Item>Generate specific, actionable improvement recommendations</Item>
+      <Item>Output includes pattern IDs for cross-referencing</Item>
+    </NonNegotiables>
+  </Identity>
+
+  <!-- ================================================================== -->
+  <!-- L1: OVERVIEW (≤600 tokens)                                         -->
+  <!-- ================================================================== -->
+
+  <L1_Overview>
+    <WhatThisSkillDoes>
+      Analyzes VSL scripts to extract structure, patterns, timing, voice, and improvement
+      opportunities. Built from 5 high-performing high-ticket VSLs with proven patterns.
+    </WhatThisSkillDoes>
+
+    <WhenToUse>
+      <Trigger>Analyzing competitor VSLs for pattern extraction</Trigger>
+      <Trigger>Deconstructing your own successful VSLs to identify what worked</Trigger>
+      <Trigger>Validating VSL script structure before video production</Trigger>
+      <Trigger>Generating improvement recommendations for underperforming VSLs</Trigger>
+      <Trigger>Building pattern library for ECR LEARNING phase</Trigger>
+      <Trigger>Training team on VSL best practices with real examples</Trigger>
+    </WhenToUse>
+
+    <Input>VSL script (text transcript or video URL with transcript)</Input>
+    <Output>
+      - 10-part structure breakdown with timing analysis
+      - Pattern matches (p_097-p_113+) with examples
+      - Voice signature classification
+      - MMA 7S scoring
+      - Improvement recommendations
+      - VSL_ANALYSIS_REPORT.md
+    </Output>
+
+    <QuickStart>
+      <Step n="1">Provide VSL script text or video URL</Step>
+      <Step n="2">Analyzer extracts structure + patterns + timing</Step>
+      <Step n="3">Review VSL_ANALYSIS_REPORT.md with recommendations</Step>
+    </QuickStart>
+
+    <TokenBudget>L1: 600 | L2: 4000 | L3: 3000 | L4: 2000</TokenBudget>
+  </L1_Overview>
+
+  <!-- ================================================================== -->
+  <!-- L2: OPERATIONAL (≤4000 tokens)                                     -->
+  <!-- ================================================================== -->
+
+  <L2_Operational>
+
+    <!-- WORKFLOW PHASES -->
+    <WorkflowPhases>
+
+      <Phase n="1" name="INTAKE">
+        <Description>Extract VSL script content and metadata</Description>
+        <Steps>
+          <Step>If video URL: Use browser tools to navigate + extract transcript</Step>
+          <Step>If text: Validate script length (target 15-30 min = ~3000-6000 words)</Step>
+          <Step>Identify context: High-ticket ($5k+), mid-ticket ($500-$5k), or low-ticket</Step>
+          <Step>Extract metadata: Author, offer type, target avatar if available</Step>
+        </Steps>
+        <Outputs>
+          <Item>vsl_script_text (full transcript)</Item>
+          <Item>word_count (for timing calculations)</Item>
+          <Item>context_metadata (price tier, avatar, offer type)</Item>
+        </Outputs>
+      </Phase>
+
+      <Phase n="2" name="STRUCTURE EXTRACTION">
+        <Description>Map script to Universal VSL Flow (10-part structure)</Description>
+        <UniversalVSLFlow>
+          <Part n="1" name="HOOK" percentage="10-15%" timing="0:00-1:30">
+            Pattern interrupt + curiosity gap + target audience callout
+          </Part>
+          <Part n="2" name="QUALIFIER" percentage="5-10%" timing="1:30-2:30">
+            "This is for X already at $Y. If you're brand new, this isn't for you."
+            [HIGH-TICKET ONLY - if present, confirms $5k+ offer]
+          </Part>
+          <Part n="3" name="EMPATHY/PROBLEM AGITATION" percentage="10-20%" timing="2:30-4:30">
+            "Let me guess..." accumulation OR absurdist frustration painting
+          </Part>
+          <Part n="4" name="AUTHORITY STACK" percentage="10-15%" timing="4:30-6:00">
+            Revenue + clients served + aggregate client results
+          </Part>
+          <Part n="5" name="PROOF FRONT-LOAD" percentage="15-25%" timing="6:00-9:00">
+            CRITICAL: Results shown BEFORE mechanism reveal
+            3-5 named client stories with specific numbers + timeframes
+          </Part>
+          <Part n="6" name="MECHANISM REVEAL" percentage="20-30%" timing="9:00-13:00">
+            Named system/framework with 3-7 components
+            Belief shift declaration ("Most gurus give tactics, we install an ENGINE")
+          </Part>
+          <Part n="7" name="OFFER REVEAL" percentage="5-10%" timing="13:00-15:00">
+            Application/call CTA (NOT "buy now")
+            What happens on call + value even if rejected
+          </Part>
+          <Part n="8" name="GUARANTEE" percentage="2-5%" timing="15:00-16:00">
+            "I'm NOT guaranteeing X... I AM guaranteeing Y" (Ethical Guarantee Contrast p_112)
+          </Part>
+          <Part n="9" name="SCARCITY" percentage="2-5%" timing="16:00-17:00">
+            Honest capacity limits OR no scarcity (confidence play)
+          </Part>
+          <Part n="10" name="FINAL CTA" percentage="2-5%" timing="17:00-18:00">
+            Repeat application instructions + negative contrast OR confident close
+          </Part>
+        </UniversalVSLFlow>
+
+        <StructureValidation>
+          <CriticalCheck name="Proof Timing">
+            IF proof appears AFTER mechanism reveal → FLAG as STRUCTURAL VIOLATION
+            Correct sequence: Problem → Proof → Mechanism (builds belief first)
+          </CriticalCheck>
+          <CriticalCheck name="Qualifier Presence">
+            IF offer is high-ticket ($5k+) AND no qualifier fence → RECOMMEND adding
+            Pattern p_098: Pre-qualifies audience, increases perceived value
+          </CriticalCheck>
+          <CriticalCheck name="Pitch Timing">
+            Calculate pitch percentage: (offer_reveal_start / total_length) × 100
+            Target: 60-70% through VSL
+            IF pitch at 80%+ → TOO LATE (viewer already dropped off)
+            IF pitch at 30-50% → TOO EARLY (belief not built)
+          </CriticalCheck>
+        </StructureValidation>
+
+        <Outputs>
+          <Item>structure_map (10-part breakdown with percentages)</Item>
+          <Item>timing_analysis (actual vs ideal timing)</Item>
+          <Item>structural_violations (critical issues flagged)</Item>
+        </Outputs>
+      </Phase>
+
+      <Phase n="3" name="PATTERN MATCHING">
+        <Description>Match script against VSL pattern library</Description>
+        <PatternLibrary>
+
+          <!-- HOOK PATTERNS (p_097-p_099, p_108) -->
+          <Category name="Hook Structures">
+            <Pattern id="p_097" name="VSL Absurdist Hook">
+              <Keywords>frustrated, rigged, world's gone to shit, escape plan</Keywords>
+              <Structure>Sarcastic/absurd opening that acknowledges viewer frustration</Structure>
+              <WhenToUse>Skeptical audiences tired of typical marketing</WhenToUse>
+            </Pattern>
+            <Pattern id="p_098" name="Qualifier Fence">
+              <Keywords>this is for, already at, if you're brand new, this isn't for you</Keywords>
+              <Structure>"This is for [$X-$Y/month]. If you're [beginner state], this isn't for you."</Structure>
+              <WhenToUse>High-ticket offers ($5k+) to pre-qualify and increase perceived value</WhenToUse>
+              <MMAImpact>SIGNIFICANT +2.0, SPECIAL +1.5</MMAImpact>
+            </Pattern>
+            <Pattern id="p_099" name="Three-Question Self-Identification">
+              <Keywords>do you want, are you willing, are you ready</Keywords>
+              <Structure>3 questions building from desire → effort → readiness</Structure>
+              <WhenToUse>Problem-aware audiences needing to self-select</WhenToUse>
+            </Pattern>
+            <Pattern id="p_108" name="Sabri-Style Pattern Interrupt">
+              <Keywords>crazier than your ex, throw macbook, habanero chillis, eyeballs</Keywords>
+              <Structure>Absurdist humor + sarcasm to break autopilot</Structure>
+              <WhenToUse>Sophisticated, burnt-out audiences (NOT beginners)</WhenToUse>
+              <VoiceRequirement>Irreverent, anti-establishment tone throughout</VoiceRequirement>
+            </Pattern>
+          </Category>
+
+          <!-- AUTHORITY & PROOF PATTERNS (p_100-p_103, p_106, p_107) -->
+          <Category name="Authority Building">
+            <Pattern id="p_100" name="Authority Stack">
+              <Keywords>$[X]M in client revenue, [X]+ businesses, featured in</Keywords>
+              <Structure>Revenue + client count + media mentions stacked rapidly</Structure>
+              <Timing>4-6 min mark (before mechanism reveal)</Timing>
+              <MMAImpact>SMART +2.0, SUPPORTED +1.5</MMAImpact>
+            </Pattern>
+            <Pattern id="p_101" name="Before/After Case Study Grid">
+              <Keywords>went from, to, in [X] days</Keywords>
+              <Structure>Name + before state + after state + timeframe</Structure>
+              <Timing>After authority stack, before mechanism</Timing>
+            </Pattern>
+            <Pattern id="p_102" name="Proof Front-Loading">
+              <Keywords>CRITICAL - results shown BEFORE "how"</Keywords>
+              <Structure>Show 3-5 client results BEFORE explaining mechanism</Structure>
+              <Timing>6-9 min mark (before mechanism at 9-13 min)</Timing>
+              <Why>Builds belief results are possible, then introduces "how"</Why>
+              <MMAImpact>SMART +2.0, SIGNIFICANT +1.0</MMAImpact>
+            </Pattern>
+            <Pattern id="p_103" name="Student Revenue Screenshots">
+              <Keywords>stripe, dashboard, revenue, screenshot</Keywords>
+              <Structure>Actual revenue dashboards, payment screenshots</Structure>
+              <WhenToUse>Info products, coaching where revenue is the outcome</WhenToUse>
+            </Pattern>
+            <Pattern id="p_106" name="Origin Story Arc">
+              <Keywords>rock bottom, death, rebirth, mastery, vow</Keywords>
+              <Structure>Crisis → Dark night → Awakening → Transformation → Current state</Structure>
+              <WhenToUse>About pages, founder story sections, personal brands</WhenToUse>
+              <MMAImpact>SAFE +2.0, SIGNIFICANT +1.5</MMAImpact>
+            </Pattern>
+            <Pattern id="p_107" name="Absurdist Bio Closer">
+              <Keywords>incredibly handsome, tamed sharks, lost count of yachts</Keywords>
+              <Structure>Self-aware humor after heavy authority (humanizes)</Structure>
+              <WhenToUse>Only AFTER credibility established (About pages, not VSL)</WhenToUse>
+              <Warning>Will backfire if credibility not yet built</Warning>
+            </Pattern>
+          </Category>
+
+          <!-- MECHANISM PATTERNS (p_104, p_113) -->
+          <Category name="Mechanism Framing">
+            <Pattern id="p_104" name="Systemized Module Naming">
+              <Keywords>system #1, system #2, module, component</Keywords>
+              <Structure>"[Brand] System #1: [Name], System #2: [Name]..."</Structure>
+              <Count>3-7 components (3=simple, 5=comprehensive, 7=abundance)</Count>
+              <MMAImpact>SMART +1.5, SUPERIOR +1.0</MMAImpact>
+            </Pattern>
+            <Pattern id="p_113" name="Named Framework Components">
+              <Keywords>formula, blueprint, process</Keywords>
+              <Structure>Numbered/named steps with countable elements</Structure>
+              <Example>"Larger Market Formula: 1) Pick large market, 2) Find underserved..."</Example>
+            </Pattern>
+          </Category>
+
+          <!-- CTA PATTERNS (p_105, p_110) -->
+          <Category name="CTA Strategy">
+            <Pattern id="p_105" name="Application CTA">
+              <Keywords>fill out application, see if you qualify, book a call</Keywords>
+              <Structure>NOT "buy now" - application/call booking for qualification</Structure>
+              <WhenToUse>ALL high-ticket offers ($5k+)</WhenToUse>
+              <MMAImpact>SPECIAL +2.0, SIGNIFICANT +1.5</MMAImpact>
+            </Pattern>
+            <Pattern id="p_110" name="Negative Contrast CTA">
+              <Keywords>or don't, grey pit of pity, stay stuck</Keywords>
+              <Structure>"Click now and [positive]... OR don't and [negative consequence]"</Structure>
+              <Tone>Polarizing - only works for bold/irreverent brands</Tone>
+            </Pattern>
+          </Category>
+
+          <!-- OBJECTION HANDLING (p_109) -->
+          <Category name="Objection Pre-Handling">
+            <Pattern id="p_109" name="Reverse Objection Pre-Handle">
+              <Keywords>elephant trumpeting, you might be wondering, let me address</Keywords>
+              <Structure>State obvious objection with self-aware acknowledgment BEFORE they think it</Structure>
+              <Timing>Before offer reveal (addressing skepticism)</Timing>
+            </Pattern>
+          </Category>
+
+          <!-- GUARANTEE & IDENTITY (p_111, p_112) -->
+          <Category name="Guarantee & Identity Shift">
+            <Pattern id="p_111" name="Why Can't That Be You?">
+              <Keywords>why can't that be you, why can't you</Keywords>
+              <Structure>Rhetorical questions challenging limiting self-identity</Structure>
+              <Placement>After social proof, before final CTA (80-90%)</Placement>
+              <MMAImpact>SIGNIFICANT +2.0, SAFE +1.0</MMAImpact>
+            </Pattern>
+            <Pattern id="p_112" name="Ethical Guarantee Contrast">
+              <Keywords>I'm NOT guaranteeing, I AM guaranteeing</Keywords>
+              <Structure>"I'm NOT guaranteeing [unrealistic]. I AM guaranteeing [realistic]."</Structure>
+              <WhenToUse>High-ticket offers where results depend on client effort</WhenToUse>
+              <MMAImpact>SAFE +2.0, SMART +1.0</MMAImpact>
+              <Compliance>Reduces FTC risk, demonstrates ethical marketing</Compliance>
+            </Pattern>
+          </Category>
+
+        </PatternLibrary>
+
+        <PatternMatchingLogic>
+          <Step n="1">Scan script for keyword matches (initial filter)</Step>
+          <Step n="2">Validate structure matches pattern definition</Step>
+          <Step n="3">Confirm timing/placement appropriate for pattern</Step>
+          <Step n="4">Extract specific example from script</Step>
+          <Step n="5">Calculate confidence score (keyword + structure + placement)</Step>
+          <Step n="6">Flag pattern ID + example + confidence in report</Step>
+        </PatternMatchingLogic>
+
+        <Outputs>
+          <Item>pattern_matches (list of matched patterns with examples)</Item>
+          <Item>pattern_confidence_scores (0.0-1.0 for each match)</Item>
+          <Item>missing_recommended_patterns (what SHOULD be present but isn't)</Item>
+        </Outputs>
+      </Phase>
+
+      <Phase n="4" name="VOICE SIGNATURE ANALYSIS">
+        <Description>Identify voice signature and consistency</Description>
+        <VoiceSignatures>
+          <Signature name="Sabri Suby - Irreverent Anti-Guru">
+            <Characteristics>
+              - Absurdist humor ("crazier than your ex")
+              - Self-aware fourth wall breaks ("Yep, this funnel")
+              - Aggressive belief declarations ("That's a stupid idea")
+              - Profanity (strategic, not excessive)
+              - Short punchy sentences (8-12 words average)
+              - High second-person usage (3-5x "you" per paragraph)
+            </Characteristics>
+            <WhenToUse>Sophisticated, burnt-out entrepreneur audiences (30-50 male)</WhenToUse>
+            <WhenNOT>Conservative industries, first-time visitors, 50+ demographics</WhenNOT>
+          </Signature>
+          <Signature name="Charlie Morgan - Authority Professional">
+            <Characteristics>
+              - Direct, no-nonsense tone
+              - Revenue-focused language
+              - "I'm going to show you exactly..."
+              - Confident declarations
+              - Structured, logical flow
+              - Minimal humor, maximum credibility
+            </Characteristics>
+            <WhenToUse>B2B services, agency growth, business scaling</WhenToUse>
+          </Signature>
+          <Signature name="Mason - Transformation Empathy">
+            <Characteristics>
+              - Deep empathy for suffering
+              - Personal vulnerability
+              - Hope + possibility language
+              - "Imagine feeling..."
+              - Softer tone, emotional connection
+              - Partnership framing ("together")
+            </Characteristics>
+            <WhenToUse>Health transformation, personal growth, coaching</WhenToUse>
+          </Signature>
+          <Signature name="Jon Benson - Origin Story Authority">
+            <Characteristics>
+              - Hero's journey structure
+              - Visceral crisis moment
+              - Transformation narrative
+              - Ongoing evolution ("still learning")
+              - Vulnerability → Credibility → Aspiration
+            </Characteristics>
+            <WhenToUse>Founder stories, About pages, personal brand authority</WhenToUse>
+          </Signature>
+        </VoiceSignatures>
+
+        <VoiceAnalysisMetrics>
+          <Metric name="Sentence Length Average">
+            Calculate avg words per sentence
+            Sabri-style: 8-12 words
+            Professional: 15-20 words
+            Transformation: 12-18 words
+          </Metric>
+          <Metric name="Second-Person Ratio">
+            Count "you" occurrences / total sentences
+            High engagement: 3-5x per paragraph
+            Moderate: 1-2x per paragraph
+          </Metric>
+          <Metric name="Profanity Index">
+            Count mild/strong profanity
+            Irreverent: Present (strategic)
+            Professional: Absent
+          </Metric>
+          <Metric name="Humor Markers">
+            Count absurdist phrases, sarcasm, self-aware asides
+            Sabri-style: High (5-10 instances)
+            Charlie-style: Low (0-2 instances)
+          </Metric>
+        </VoiceAnalysisMetrics>
+
+        <Outputs>
+          <Item>voice_signature_classification (primary + confidence score)</Item>
+          <Item>voice_consistency_score (0.0-1.0 - do patterns match voice?)</Item>
+          <Item>voice_metrics (sentence length, second-person ratio, etc.)</Item>
+        </Outputs>
+      </Phase>
+
+      <Phase n="5" name="MMA SCORING">
+        <Description>Score VSL against 7S framework</Description>
+        <SevenSFramework>
+          <Dimension name="SAFE" weight="critical">
+            Evidence: Ethical guarantee (p_112), vulnerability, "why can't that be you" identity shift
+            Scoring: Does viewer feel understood, not manipulated? Trust signals present?
+          </Dimension>
+          <Dimension name="SPECIAL" weight="high">
+            Evidence: Qualifier fence (p_098), unique mechanism, pattern interrupts
+            Scoring: Is offer positioned as exclusive/premium? Memorable hook?
+          </Dimension>
+          <Dimension name="SMART" weight="critical">
+            Evidence: Authority stack (p_100), proof front-loading (p_102), revenue screenshots
+            Scoring: Credible results shown? Mechanism explained clearly?
+          </Dimension>
+          <Dimension name="SIGNIFICANT" weight="high">
+            Evidence: Problem agitation, "why can't that be you", qualifier fence
+            Scoring: Does viewer see themselves in transformation? Identity shift achieved?
+          </Dimension>
+          <Dimension name="SUPPORTED" weight="high">
+            Evidence: Client stories, testimonials, aggregate results
+            Scoring: Proof distributed throughout (not just stacked at end)?
+          </Dimension>
+          <Dimension name="SUPERIOR" weight="high">
+            Evidence: Mechanism framing, systemized modules, belief shift declarations
+            Scoring: Is solution positioned as better than alternatives?
+          </Dimension>
+          <Dimension name="STEAL" weight="medium">
+            Evidence: Scarcity, value stacking, guarantee
+            Scoring: Compelling offer? Risk reversal? (Less critical for application CTA)
+          </Dimension>
+        </SevenSFramework>
+
+        <ScoringLogic>
+          <Step>Extract evidence for each dimension from script</Step>
+          <Step>Score each dimension 0-10 based on evidence quality + placement</Step>
+          <Step>Calculate weighted average (Critical dimensions must ≥9.0)</Step>
+          <Step>Flag dimensions below threshold</Step>
+        </ScoringLogic>
+
+        <Outputs>
+          <Item>mma_scores (7S scores with evidence citations)</Item>
+          <Item>overall_score (weighted average)</Item>
+          <Item>failing_dimensions (below threshold)</Item>
+        </Outputs>
+      </Phase>
+
+      <Phase n="6" name="IMPROVEMENT RECOMMENDATIONS">
+        <Description>Generate specific, actionable recommendations</Description>
+        <RecommendationLogic>
+          <IfCondition>Proof appears AFTER mechanism</IfCondition>
+          <ThenRecommend>
+            CRITICAL: Reorder to proof front-loading (p_102)
+            Move client stories to 6-9 min mark (BEFORE mechanism at 9-13 min)
+            Why: Builds belief results are possible before explaining "how"
+          </ThenRecommend>
+
+          <IfCondition>High-ticket offer ($5k+) AND no qualifier fence</IfCondition>
+          <ThenRecommend>
+            Add qualifier fence at 1:30-2:30 mark (p_098)
+            Example: "This is for agencies already at $5k-$20k/month. If you're brand new, this isn't for you."
+            Impact: Pre-qualifies audience, increases perceived value (SIGNIFICANT +2.0)
+          </ThenRecommend>
+
+          <IfCondition>Pitch timing >75% or <50%</IfCondition>
+          <ThenRecommend>
+            Adjust offer reveal to 60-70% mark
+            Too late (>75%): Viewer already dropped off
+            Too early (<50%): Belief not built yet
+          </ThenRecommend>
+
+          <IfCondition>No application CTA (uses "buy now" instead)</IfCondition>
+          <ThenRecommend>
+            Replace with application CTA (p_105)
+            High-ticket offers require call booking, not direct purchase
+            Frame: "Fill out application to see if you qualify"
+          </ThenRecommend>
+
+          <IfCondition>Guarantee is simple promise (not ethical contrast)</IfCondition>
+          <ThenRecommend>
+            Upgrade to Ethical Guarantee Contrast (p_112)
+            "I'm NOT guaranteeing [unrealistic]. I AM guaranteeing [realistic]."
+            Reduces FTC risk, builds trust (SAFE +2.0)
+          </ThenRecommend>
+
+          <IfCondition>Voice inconsistency detected (absurdist hook + formal body)</IfCondition>
+          <ThenRecommend>
+            Align voice throughout script
+            If opening with Sabri-style pattern interrupt (p_108), maintain irreverent tone
+            If professional authority voice, avoid absurdist elements
+          </ThenRecommend>
+        </RecommendationLogic>
+
+        <Outputs>
+          <Item>critical_fixes (structural violations, must fix)</Item>
+          <Item>high_priority_improvements (proven pattern additions)</Item>
+          <Item>medium_priority_enhancements (polish, optimization)</Item>
+          <Item>patch_proposals (if patterns suggest skill updates)</Item>
+        </Outputs>
+      </Phase>
+
+      <Phase n="7" name="REPORT GENERATION">
+        <Description>Compile comprehensive analysis report</Description>
+        <ReportStructure>
+          # VSL ANALYSIS REPORT
+          **Script:** [Title/Author]
+          **Date:** [Analysis date]
+          **Overall Score:** [X.X/10]
+
+          ## EXECUTIVE SUMMARY
+          - Word count: [X] words (~[X] min at 200 wpm)
+          - Offer tier: [High/Mid/Low-ticket]
+          - Voice signature: [Classification]
+          - Structure adherence: [% match to Universal Flow]
+          - Critical issues: [Count]
+
+          ## STRUCTURE BREAKDOWN
+          [10-part Universal Flow mapping with timing analysis]
+
+          ## PATTERN MATCHES
+          [List of matched patterns with examples and confidence scores]
+
+          ## MISSING PATTERNS
+          [Recommended patterns not present but should be]
+
+          ## VOICE ANALYSIS
+          [Voice signature classification with metrics]
+
+          ## MMA SCORING
+          [7S scores with evidence]
+
+          ## RECOMMENDATIONS
+          ### Critical Fixes (Must Address)
+          [Structural violations]
+
+          ### High Priority Improvements
+          [Proven pattern additions]
+
+          ### Medium Priority Enhancements
+          [Polish and optimization]
+
+          ## PATCH PROPOSALS
+          [If analysis reveals skill improvement opportunities]
+        </ReportStructure>
+
+        <Outputs>
+          <Item>VSL_ANALYSIS_REPORT_[date].md (comprehensive report)</Item>
+          <Item>pattern_extraction_log.yaml (for ECR LEARNING phase)</Item>
+          <Item>patch_proposals.yaml (if skill updates needed)</Item>
+        </Outputs>
+      </Phase>
+
+    </WorkflowPhases>
+
+    <!-- QUALITY GATES -->
+    <QualityGates>
+      <Gate name="Structure Validation">
+        <Requirement>All 10 parts of Universal Flow identified</Requirement>
+        <Requirement>Timing percentages calculated for each part</Requirement>
+        <Requirement>Proof front-loading validated (BEFORE mechanism)</Requirement>
+      </Gate>
+      <Gate name="Pattern Matching">
+        <Requirement>Minimum 5 patterns matched with examples</Requirement>
+        <Requirement>Confidence scores ≥0.7 for high-priority patterns</Requirement>
+        <Requirement>Missing recommended patterns identified</Requirement>
+      </Gate>
+      <Gate name="Voice Analysis">
+        <Requirement>Voice signature classified with confidence ≥0.7</Requirement>
+        <Requirement>Voice consistency validated (patterns match voice)</Requirement>
+      </Gate>
+      <Gate name="Recommendations">
+        <Requirement>Critical fixes identified (if structural violations present)</Requirement>
+        <Requirement>All recommendations specific and actionable</Requirement>
+        <Requirement>Recommendations prioritized (Critical/High/Medium)</Requirement>
+      </Gate>
+    </QualityGates>
+
+    <!-- FAILURE MODES -->
+    <FailureModes>
+      <FailureMode name="Incomplete Transcript">
+        <Detection>Word count <1000 or >10000 (outside normal VSL range)</Detection>
+        <Recovery>Request full transcript or flag as partial analysis</Recovery>
+      </FailureMode>
+      <FailureMode name="Non-VSL Content">
+        <Detection>No clear offer reveal or CTA sections</Detection>
+        <Recovery>Confirm this is a VSL script (not blog post, email, etc.)</Recovery>
+      </FailureMode>
+      <FailureMode name="Pattern Library Mismatch">
+        <Detection><3 patterns matched despite high-quality script</Detection>
+        <Recovery>Flag as potential new patterns for library expansion</Recovery>
+      </FailureMode>
+    </FailureModes>
+
+  </L2_Operational>
+
+  <!-- ================================================================== -->
+  <!-- L3: DEEP EXPERTISE (≤3000 tokens)                                  -->
+  <!-- ================================================================== -->
+
+  <L3_DeepExpertise>
+
+    <!-- ADVANCED PATTERN ANALYSIS -->
+    <AdvancedPatternAnalysis>
+
+      <Technique name="Semantic Pattern Matching">
+        <Description>
+          Beyond keyword matching - identify pattern presence even with different wording
+        </Description>
+        <Example>
+          Pattern p_098 (Qualifier Fence) can appear as:
+          - "This is for agencies at $5k-$20k/month"
+          - "If you're not already making $X, this won't work for you"
+          - "I only work with entrepreneurs who have proven they can X"
+          All express same core pattern: pre-qualification + exclusivity
+        </Example>
+        <Implementation>
+          Use semantic similarity (not just keyword matching) to detect pattern structure
+          Confidence score = (keyword_match × 0.4) + (structure_match × 0.6)
+        </Implementation>
+      </Technique>
+
+      <Technique name="Pattern Timing Validation">
+        <Description>
+          Patterns are only effective when placed at correct timing
+        </Description>
+        <TimingRules>
+          <Rule pattern="p_098_qualifier_fence">Must appear in first 15% (ideally 1:30-2:30)</Rule>
+          <Rule pattern="p_102_proof_frontloading">Must be BEFORE mechanism (6-9 min, not 14-16 min)</Rule>
+          <Rule pattern="p_105_application_cta">First mention at 60-70%, repeated at 90-95%</Rule>
+          <Rule pattern="p_111_why_cant_that_be_you">After social proof, before final CTA (80-90%)</Rule>
+          <Rule pattern="p_112_ethical_guarantee">Before OR during final CTA (85-95%)</Rule>
+        </TimingRules>
+        <ScoringAdjustment>
+          If pattern present but timing wrong: confidence × 0.7 (pattern exists but less effective)
+        </ScoringAdjustment>
+      </Technique>
+
+      <Technique name="Voice-Pattern Compatibility">
+        <Description>
+          Some patterns only work with specific voice signatures
+        </Description>
+        <CompatibilityMatrix>
+          <Pattern id="p_097_absurdist_hook" compatible_voices="sabri_irreverent" incompatible="formal_authority, transformation_empathy"/>
+          <Pattern id="p_108_pattern_interrupt" compatible_voices="sabri_irreverent" incompatible="formal_authority, transformation_empathy"/>
+          <Pattern id="p_110_negative_contrast_cta" compatible_voices="sabri_irreverent" incompatible="transformation_empathy"/>
+          <Pattern id="p_106_origin_story" compatible_voices="transformation_empathy, jon_benson_authority" incompatible="sabri_irreverent"/>
+        </CompatibilityMatrix>
+        <ValidationLogic>
+          IF pattern present AND voice incompatible → FLAG as voice mismatch
+          Recommend: Either change pattern OR adjust voice for consistency
+        </ValidationLogic>
+      </Technique>
+
+    </AdvancedPatternAnalysis>
+
+    <!-- COMPARATIVE ANALYSIS -->
+    <ComparativeAnalysis>
+      <Description>
+        When analyzing multiple VSLs, extract meta-patterns and differential performance
+      </Description>
+      <ComparativeMetrics>
+        <Metric name="Pattern Density">
+          Compare pattern count per 1000 words across VSLs
+          High-performers: 4-6 patterns per 1000 words
+          Low-performers: <3 patterns per 1000 words
+        </Metric>
+        <Metric name="Proof Distribution">
+          Calculate proof instances per section
+          High-performers: Proof in ALL 10 sections (continuous reinforcement)
+          Low-performers: Proof stacked in 1-2 sections only
+        </Metric>
+        <Metric name="CTA Frequency">
+          Count CTA mentions throughout VSL
+          High-performers: 5-7 CTA mentions (micro-agreements building to main ask)
+          Low-performers: 1-2 CTA mentions (single ask at end)
+        </Metric>
+      </ComparativeMetrics>
+    </ComparativeAnalysis>
+
+    <!-- ECR INTEGRATION -->
+    <ECRIntegration>
+      <LearningPhase>
+        <Description>Extract Self-Identified Patterns (SIPs) from successful VSLs</Description>
+        <SIPExtractionLogic>
+          <Step>Identify patterns NOT in current library (pattern_library p_097-p_113)</Step>
+          <Step>Validate pattern appears in multiple high-performing VSLs</Step>
+          <Step>Extract pattern structure, keywords, timing, voice compatibility</Step>
+          <Step>Assign new pattern ID (p_114, p_115, etc.)</Step>
+          <Step>Add to pattern_extraction_log.yaml for library expansion</Step>
+        </SIPExtractionLogic>
+        <Example>
+          If analyzing a new VSL discovers "Fear-Based Future Projection" pattern
+          (painting vivid negative future if problem unsolved), and this pattern
+          appears in 3+ high-performing VSLs but not in current library:
+          → Extract as NEW pattern p_114
+          → Document structure, examples, effectiveness
+          → Recommend adding to pattern library
+        </Example>
+      </LearningPhase>
+
+      <RepairPhase>
+        <Description>Generate patch proposals for skill improvements</Description>
+        <PatchProposalLogic>
+          <IfCondition>New pattern discovered (SIP extraction)</IfCondition>
+          <ThenPropose>
+            Patch: vsl_script_analyzer_v1.0.0 → v1.1.0
+            Addition: New pattern p_[X] to pattern library
+            Benefit: Increased pattern recognition accuracy
+          </ThenPropose>
+
+          <IfCondition>Existing pattern definition too narrow (false negatives)</IfCondition>
+          <ThenPropose>
+            Patch: Expand pattern p_[X] keyword set or structure definition
+            Example: p_098 qualifier fence initially only matched "$5k-$20k"
+            but also appears as "six-figure businesses" or "established entrepreneurs"
+          </ThenPropose>
+
+          <IfCondition>Timing rules violated in successful VSLs</IfCondition>
+          <ThenPropose>
+            Patch: Adjust timing guidelines for pattern p_[X]
+            Example: If proof front-loading sometimes appears at 10-12 min
+            (instead of strict 6-9 min) in successful VSLs, widen acceptable range
+          </ThenPropose>
+        </PatchProposalLogic>
+      </RepairPhase>
+    </ECRIntegration>
+
+    <!-- PYTHON TOOLS -->
+    <PythonTools>
+      <Tool name="vsl_timing_analyzer.py">
+        <Purpose>Calculate timing percentages and validate structure</Purpose>
+        <Functions>
+          <Function name="calculate_timing_percentages(script_text, word_count)">
+            Estimates timing based on 200 words/min speaking rate
+            Returns dict with {part_name: {start_time, end_time, percentage}}
+          </Function>
+          <Function name="validate_proof_timing(structure_map)">
+            Checks if proof sections appear BEFORE mechanism reveal
+            Returns bool + violation_details if failed
+          </Function>
+          <Function name="calculate_pitch_percentage(structure_map)">
+            Returns percentage through VSL where offer first revealed
+            Target: 60-70% (flags if outside range)
+          </Function>
+        </Functions>
+      </Tool>
+
+      <Tool name="pattern_matcher.py">
+        <Purpose>Semantic pattern matching with confidence scoring</Purpose>
+        <Functions>
+          <Function name="match_patterns(script_text, pattern_library)">
+            Scans script for pattern matches (keyword + structure)
+            Returns list of {pattern_id, confidence, example_text, timing}
+          </Function>
+          <Function name="extract_pattern_examples(script_text, pattern_id)">
+            Finds specific text excerpt matching pattern
+            Returns quoted text with context
+          </Function>
+          <Function name="calculate_pattern_density(matches, word_count)">
+            Returns patterns per 1000 words metric
+          </Function>
+        </Functions>
+      </Tool>
+
+      <Tool name="voice_analyzer.py">
+        <Purpose>Quantitative voice signature analysis</Purpose>
+        <Functions>
+          <Function name="calculate_sentence_metrics(script_text)">
+            Returns {avg_sentence_length, sentence_length_variance}
+          </Function>
+          <Function name="calculate_second_person_ratio(script_text)">
+            Counts "you" occurrences / total sentences
+          </Function>
+          <Function name="detect_humor_markers(script_text)">
+            Counts absurdist phrases, sarcasm, self-aware asides
+            Returns humor_index (0.0-1.0)
+          </Function>
+          <Function name="classify_voice_signature(metrics)">
+            Uses decision tree to classify voice based on metrics
+            Returns {signature_name, confidence_score}
+          </Function>
+        </Functions>
+      </Tool>
+    </PythonTools>
+
+  </L3_DeepExpertise>
+
+  <!-- ================================================================== -->
+  <!-- L4: EDGE CASES & ADVANCED USE (≤2000 tokens)                       -->
+  <!-- ================================================================== -->
+
+  <L4_EdgeCases>
+
+    <!-- GOLDEN RUNS -->
+    <GoldenRuns>
+
+      <Run n="1" scenario="Charlie Morgan EasyGrow VSL">
+        <Input>
+          VSL script from Charlie Morgan (Acquisition OS)
+          Word count: ~5000 words (~25 min VSL)
+          Offer: $15k-$25k high-ticket agency coaching
+        </Input>
+        <ExpectedStructure>
+          - Hook: 0-15% ✓
+          - Qualifier fence: Present (1:30-2:30) ✓
+          - Authority stack: 4:30-6:00 ✓
+          - Proof front-loading: 6:00-9:00 ✓
+          - Mechanism: 9:00-13:00 ("Acquisition OS" with 4 systems) ✓
+          - Offer reveal: 60% mark ✓
+          - Application CTA: Present ✓
+        </ExpectedStructure>
+        <ExpectedPatterns>
+          - p_098 (Qualifier fence): "For agencies at $5k-$20k/month"
+          - p_100 (Authority stack): "$100M+ client revenue, 500+ businesses"
+          - p_102 (Proof front-loading): 5 client stories before mechanism
+          - p_104 (Systemized modules): 4 named systems
+          - p_105 (Application CTA): "Book strategy call"
+        </ExpectedPatterns>
+        <ExpectedVoice>Charlie Morgan - Authority Professional (confidence ≥0.8)</ExpectedVoice>
+        <ExpectedMMA>
+          SMART: 9.5/10 (massive proof)
+          SPECIAL: 9.0/10 (qualifier fence + premium positioning)
+          SAFE: 8.5/10 (ethical positioning)
+          Overall: 9.0/10
+        </ExpectedMMA>
+        <ExpectedRecommendations>None (structure optimal)</ExpectedRecommendations>
+      </Run>
+
+      <Run n="2" scenario="Sabri Suby Book Funnel VSL">
+        <Input>
+          VSL script from Sabri Suby (Sell Like Crazy)
+          Word count: ~3500 words (~17-18 min VSL)
+          Offer: Free book → backend coaching upsell
+        </Input>
+        <ExpectedStructure>
+          - Hook: Absurdist pattern interrupt ✓
+          - NO qualifier fence (low-ticket entry) ✓
+          - Problem agitation: Heavy (20% of script) ✓
+          - Proof: Distributed throughout ✓
+          - Mechanism: "Larger Market Formula" ✓
+          - Offer: Free book + shipping ✓
+          - Guarantee: Ethical contrast ✓
+        </ExpectedStructure>
+        <ExpectedPatterns>
+          - p_097 or p_108 (Absurdist hook): "Crazier than your ex"
+          - p_109 (Reverse objection): "Elephant trumpeting"
+          - p_110 (Negative contrast CTA): "Grey pit of pity"
+          - p_112 (Ethical guarantee): "Use common f*cking sense"
+          - p_113 (Named framework): "Larger Market Formula"
+        </ExpectedPatterns>
+        <ExpectedVoice>Sabri Suby - Irreverent Anti-Guru (confidence ≥0.9)</ExpectedVoice>
+        <ExpectedMMA>
+          SAFE: 9.0/10 (ethical guarantee, self-aware)
+          SPECIAL: 9.5/10 (highly memorable, pattern interrupt)
+          SMART: 8.5/10 (proof present but lighter for low-ticket)
+          Overall: 8.8/10
+        </ExpectedMMA>
+        <ExpectedRecommendations>
+          - Voice consistency: Excellent (irreverent throughout)
+          - Pattern usage: Advanced (5+ patterns)
+          - No critical fixes needed
+        </ExpectedRecommendations>
+      </Run>
+
+      <Run n="3" scenario="Broken VSL - Proof After Mechanism">
+        <Input>
+          Hypothetical VSL with structural violation
+          Mechanism revealed at 8:00 (40%), proof at 12:00 (60%)
+        </Input>
+        <ExpectedDetection>
+          CRITICAL STRUCTURAL VIOLATION flagged
+          Proof timing: 60% (AFTER mechanism at 40%)
+          Correct sequence: Proof (40%) → Mechanism (60%)
+        </ExpectedDetection>
+        <ExpectedRecommendations>
+          CRITICAL FIX: Reorder to proof front-loading
+          Move client stories to 6-9 min mark (BEFORE mechanism)
+          Pattern p_102 implementation required
+          Impact: SMART +2.0, SIGNIFICANT +1.0
+        </ExpectedRecommendations>
+      </Run>
+
+    </GoldenRuns>
+
+    <!-- EDGE CASES -->
+    <EdgeCases>
+
+      <Case name="Short-Form VSL (5-10 min)">
+        <Challenge>Universal Flow designed for 15-30 min VSLs</Challenge>
+        <Adaptation>
+          - Compress sections (combine authority + proof into 2-3 min)
+          - Qualifier fence optional (unless high-ticket)
+          - Mechanism reveal lighter (name system, don't explain all components)
+          - Focus on 1-2 key patterns vs full pattern suite
+        </Adaptation>
+      </Case>
+
+      <Case name="Multi-Language VSL">
+        <Challenge>Pattern keywords in English, VSL in Spanish/French/etc.</Challenge>
+        <Adaptation>
+          - Translate pattern keywords for target language
+          - Focus on structural matching over keyword matching
+          - Voice analysis metrics (sentence length, etc.) may differ by language
+          - Recommend human review for cultural nuance
+        </Adaptation>
+      </Case>
+
+      <Case name="Webinar VSL Hybrid">
+        <Challenge>Live webinar format with Q&A vs pure VSL</Challenge>
+        <Adaptation>
+          - Analyze presentation portion only (exclude Q&A)
+          - Webinar pattern: Teaching → Proof → Pitch (different from VSL)
+          - Flag if script appears to be webinar, recommend webinar-specific analysis
+        </Adaptation>
+      </Case>
+
+      <Case name="Low-Ticket VSL ($20-$100)">
+        <Challenge>Patterns designed for high-ticket may not apply</Challenge>
+        <Adaptation>
+          - Qualifier fence NOT expected (counterproductive)
+          - Application CTA replaced with "Buy now" (acceptable)
+          - Proof lighter (fewer case studies needed)
+          - Adjust MMA scoring (STEAL more important, SPECIAL less critical)
+        </Adaptation>
+      </Case>
+
+    </EdgeCases>
+
+    <!-- INTEGRATION WITH OTHER SKILLS -->
+    <SkillIntegration>
+      <Integration skill="High-Ticket VSL Script Writer v1.0.0">
+        <Relationship>VSL Analyzer provides input patterns for Writer</Relationship>
+        <Workflow>
+          1. Analyze competitor VSLs with Analyzer
+          2. Extract top-performing patterns
+          3. Feed pattern library to Writer
+          4. Writer generates new VSL using proven patterns
+          5. Analyze generated VSL with Analyzer (validation loop)
+        </Workflow>
+      </Integration>
+
+      <Integration skill="Sales Page Deconstructor v2.0.0">
+        <Relationship>VSL Analyzer is VSL-specific variant of SPDC</Relationship>
+        <DifferenceFromSPDC>
+          - SPDC: General sales page analysis (any format)
+          - VSL Analyzer: VSL-specific (10-part flow, timing analysis)
+          - SPDC: 5-dimension analysis
+          - VSL Analyzer: 7-phase workflow with VSL patterns
+        </DifferenceFromSPDC>
+      </Integration>
+
+      <Integration skill="MMA Master Monitor Agent">
+        <Relationship>VSL Analyzer uses MMA for scoring</Relationship>
+        <Workflow>
+          VSL Analyzer extracts evidence → MMA scores 7S dimensions → Pass/fail determination
+        </Workflow>
+      </Integration>
+    </SkillIntegration>
+
+  </L4_EdgeCases>
+
+  <!-- ================================================================== -->
+  <!-- SSOT REQUIREMENTS                                                   -->
+  <!-- ================================================================== -->
+
+  <SSOT>
+    <Required>
+      <Object schema_id="VSL_SCRIPT_TEXT">Full transcript of VSL</Object>
+    </Required>
+
+    <Optional>
+      <Object schema_id="VSL_METADATA">Author, offer price, target avatar, performance metrics</Object>
+      <Object schema_id="PATTERN_LIBRARY_CUSTOM">User's own pattern library to merge with defaults</Object>
+    </Optional>
+
+    <Outputs>
+      <Object schema_id="VSL_ANALYSIS_REPORT">Comprehensive analysis with recommendations</Object>
+      <Object schema_id="PATTERN_EXTRACTION_LOG">For ECR LEARNING phase (SIPs)</Object>
+      <Object schema_id="PATCH_PROPOSALS">For ECR REPAIR phase (skill improvements)</Object>
+    </Outputs>
+  </SSOT>
+
+  <!-- ================================================================== -->
+  <!-- DEPENDENCIES                                                        -->
+  <!-- ================================================================== -->
+
+  <Dependencies>
+    <SkillDependencies>
+      <Dependency skill_id="mma_master_monitor_agent" optional="false">
+        For 7S scoring validation
+      </Dependency>
+    </SkillDependencies>
+
+    <DataDependencies>
+      <Dependency>Pattern library (p_097-p_113 embedded in L2/L3)</Dependency>
+      <Dependency>Universal VSL Flow (10-part structure embedded in L2)</Dependency>
+      <Dependency>Voice signatures (4 signatures embedded in L2)</Dependency>
+    </DataDependencies>
+  </Dependencies>
+
+</Skill>

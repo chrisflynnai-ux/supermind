@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<knowledge_block>
+  <!-- ============================================================ -->
+  <!-- KB: META ADS MEASUREMENT & ATTRIBUTION v1.0                  -->
+  <!-- ncROAS, Incremental Attribution, Lead Gen Optimization       -->
+  <!-- ============================================================ -->
+
+  <metadata>
+    <block_id>KB-META-ADS-MEASUREMENT-ATTRIBUTION-v1.0</block_id>
+    <version>1.0.0</version>
+    <parent_skill>meta_ads_system_v1.0</parent_skill>
+    <created_date>2026-01-19</created_date>
+    <author>ULTRAMIND / Vision Capitalist</author>
+    <constitutional_compliance>
+      <version>2.0</version>
+      <compliant>true</compliant>
+      <audit_log>
+        <check>Autonomy: PASS (measurement frameworks guide decisions, not prescribe actions)</check>
+        <check>Proof Discipline: PASS (ncROAS validates true profitability vs platform vanity metrics)</check>
+        <check>No Manipulation: PASS (truth in reporting; distinguish Platform ROAS from MER)</check>
+      </audit_log>
+    </constitutional_compliance>
+    <dependencies>
+      <dependency><block_id>KB-META-ADS-CAMPAIGN-ARCHITECTURE-v1.0</block_id><type>primary</type><notes>M3 Swim Lanes enable clean ncROAS calculation</notes></dependency>
+    </dependencies>
+  </metadata>
+
+  <consciousness_profile>
+    <neurobox_6d_mapping>
+      <component id="measurement_rigor" neuro_target="RIGHT_BOTTOM">
+        <dimensions>Smart (RIGHT), Safe (BOTTOM)</dimensions>
+        <activation_strategy>RIGHT analytical truth (Incremental ROAS not inflated Platform ROAS) + BOTTOM risk management (IF ncROAS <1.0 → Stop scaling)</activation_strategy>
+      </component>
+    </neurobox_6d_mapping>
+  </consciousness_profile>
+
+  <!-- FRAMEWORKS -->
+  <frameworks>
+
+    <framework id="F1" name="Incremental Attribution Check">
+      <source_tag>[SRC: Sam Piliero | 788]</source_tag>
+      <key_quote>"It's only focused on conversions that happened because of Facebook... not Facebook slipping in at the last second."</key_quote>
+      <summary>Validates if ads drive new revenue or just retarget people who would have bought anyway.</summary>
+      <steps>
+        <step n="1">Go to Ads Manager → Columns → "Compare Attribution Settings"</step>
+        <step n="2">Select "Incremental Attribution"</step>
+        <step n="3">Compare "Incremental Purchases" vs "7-day Click Purchases"</step>
+        <step n="4">Metric: IF gap >30% THEN ad likely over-crediting retargeting</step>
+      </steps>
+      <action_trigger>IF Incremental ROAS <50% of Platform ROAS → Switch to Incremental optimization or tighten exclusions</action_trigger>
+    </framework>
+
+    <framework id="F2" name="Lead Gen Lag-Time Optimization">
+      <source_tag>[SRC: Caden Thompson | 290-291]</source_tag>
+      <key_quote>"If we wait all the way to the end point we have a massive gap in between."</key_quote>
+      <summary>Adjust conversion event based on sales cycle length to ensure pixel gets data within 7-day attribution window.</summary>
+      <decision_tree>
+        <decision>IF Lag Time <7 days → Optimize for Bottom-Funnel (Sale/Purchase/Closed Deal)</decision>
+        <decision>IF Lag Time 7-14 days → Optimize for Mid-Funnel (Qualified Lead/Booked Appointment)</decision>
+        <decision>IF Lag Time >14 days → Optimize for Top-Funnel (Lead Submission/Content Download)</decision>
+      </decision_tree>
+      <rule>Must select event that fires within 7-day attribution window for consistent pixel feedback</rule>
+    </framework>
+
+    <framework id="F3" name="ncROAS Calculation (New Customer ROAS)">
+      <source_tag>[SRC: Justin Lalonde | 7, Sam Piliero | 777]</source_tag>
+      <formula>(Total Revenue - Returning Customer Revenue) / Ad Spend</formula>
+      <target>>1.5x ncROAS is scalable; <1.0x is burning cash (unless LTV massive)</target>
+      <application>Weekly reporting metric; primary scaling decision input</application>
+    </framework>
+
+    <framework id="F4" name="MER King Goal Monitoring">
+      <source_tag>[SRC: Sam Piliero | 777-778]</source_tag>
+      <key_quote>"Your king goal... overrides all other goals."</key_quote>
+      <formula>MER = Total Revenue (all sources) / Total Ad Spend (all channels)</formula>
+      <validation>IF Platform ROAS rises but MER stays flat → Attribution Hallucination (Meta claiming organic sales)</validation>
+      <threshold>Target MER varies by business model; typical 2.5-3.0+ for profitable ecom</threshold>
+    </framework>
+
+    <framework id="F5" name="Attribution Window Configuration">
+      <source_tag>[SRC: Sam Piliero | 729]</source_tag>
+      <strategy>
+        <tier><spend_level><$100k/mo</spend_level><setting>7-day click / 1-day view (default)</setting></tier>
+        <tier><spend_level>>$100k/mo</spend_level><setting>1-day click or Incremental (force quality traffic)</setting></tier>
+      </strategy>
+      <rationale>Tighten attribution windows at scale to prevent over-crediting view-throughs</rationale>
+    </framework>
+
+    <framework id="F6" name="Value Rules Bidding">
+      <source_tag>[SRC: Sam Piliero | 784]</source_tag>
+      <summary>Adjust bids based on high-value attributes platform can't see (LTV segments).</summary>
+      <example>IF Men have 150% LTV vs Women → Set rule: "If Gender = Men, Bid +20%"</example>
+      <requirement>Need 6-12 months customer data; min 100 customers per segment for statistical validity</requirement>
+    </framework>
+
+  </frameworks>
+
+  <!-- HEURISTICS -->
+  <heuristics>
+    <category name="Diagnostic">
+      <heuristic>IF Platform ROAS >3.0 but MER <2.0 THEN "Attribution Hallucination" (Meta claiming organic sales) [SRC: Sam Piliero | 777]</heuristic>
+      <heuristic>IF "One Day View" conversions >50% of total THEN ads are retargeting, not prospecting [SRC: Tier 11 | 698]</heuristic>
+      <heuristic>IF lead volume high but "Booked Call" volume low THEN optimize deeper in funnel (Lag Time Optimization) [SRC: Caden Thompson | 291]</heuristic>
+      <heuristic>IF ncROAS <1.0 THEN paying more to acquire customer than worth; stop scaling immediately [SRC: Sam Piliero | 777]</heuristic>
+    </category>
+    <category name="Optimization">
+      <heuristic>IF high LTV segment exists (e.g., Men) THEN use "Value Rules" to increase bids +20% for that segment [SRC: Sam Piliero | 784]</heuristic>
+      <heuristic>IF spending >$100k/mo THEN switch to "Incremental" or "1-day click" attribution [SRC: Sam Piliero | 729]</heuristic>
+      <heuristic>IF creative has high Incremental ROAS THEN true scaler; move to scale campaign [SRC: Sam Piliero | 628]</heuristic>
+    </category>
+    <category name="Scaling">
+      <heuristic>IF ncROAS >1.5x THEN increase budget by 20% [SRC: Justin Lalonde | 7]</heuristic>
+      <heuristic>IF using Cost Caps THEN understand spend is variable (high on good days, low on bad) [SRC: Sam Piliero | 520]</heuristic>
+    </category>
+  </heuristics>
+
+  <!-- SOPs -->
+  <sops>
+    <sop id="SOP1" name="Weekly Incrementality Audit">
+      <source>[SRC: Sam Piliero | 788]</source>
+      <frequency>Weekly (Monday)</frequency>
+      <steps>
+        <step>Open Ads Manager → "Compare Attribution Settings"</step>
+        <step>Look at top 5 spending ads</step>
+        <step>Calculate drop-off from "Default" to "Incremental"</step>
+        <step>Action: IF ad drops >50% ROAS under Incremental → Pause or move to Retargeting</step>
+      </steps>
+    </sop>
+
+    <sop id="SOP2" name="ncROAS Calculation Routine">
+      <source>[SRC: Justin Lalonde | 7]</source>
+      <frequency>Daily/Weekly reporting</frequency>
+      <steps>
+        <step>Pull "New Customer Sales" from Shopify/CRM</step>
+        <step>Pull Total Ad Spend from Meta</step>
+        <step>Formula: New Customer Revenue / Spend</step>
+        <step>Target: Maintain >1.5x ncROAS for scaling</step>
+      </steps>
+    </sop>
+  </sops>
+
+  <!-- METRICS TABLE -->
+  <metrics_table>
+    <metric name="ncROAS" purpose="True scalability" threshold=">1.5x" action_trigger="IF <1.0 → Stop scaling" source="[SRC: Sam Piliero | 777]"/>
+    <metric name="Incremental ROAS" purpose="Attribution truth" threshold=">1.0 (Lift)" action_trigger="IF <0.5 → Retargeting not prospecting" source="[SRC: Sam Piliero | 595]"/>
+    <metric name="MER" purpose="Business health" threshold=">2.5-3.0" action_trigger="IF dropping → Cut wasted spend" source="[SRC: Sam Piliero | 777]"/>
+    <metric name="Lag Time" purpose="Event selection" threshold="<7 Days" action_trigger="IF >7 → Move optimization up-funnel" source="[SRC: Caden Thompson | 289]"/>
+    <metric name="Event Match Quality" purpose="Data integrity" threshold=">7.0 (out of 10)" action_trigger="IF <6.0 → Fix CAPI/Pixel" source="[SRC: Tier 11 | 691]"/>
+  </metrics_table>
+
+  <!-- FAILURE MODES -->
+  <failure_modes>
+    <failure_mode name="Attribution Hallucination">
+      <symptoms>Ads Manager shows 5x ROAS but bank account empty / MER flat</symptoms>
+      <root_cause>Platform over-crediting "View-Through" conversions from retargeting</root_cause>
+      <recovery>Switch to Incremental Attribution or stricter exclusions</recovery>
+      <source>[SRC: Sam Piliero | 775]</source>
+    </failure_mode>
+
+    <failure_mode name="Pixel Malnutrition">
+      <symptoms>Zero conversions showing despite sales happening</symptoms>
+      <root_cause>Lag time >7 days or CAPI disconnected</root_cause>
+      <recovery>Optimize for higher-funnel event (Lead vs Sale) or fix CAPI</recovery>
+      <source>[SRC: Caden Thompson | 290]</source>
+    </failure_mode>
+
+    <failure_mode name="Junk Lead Spiral">
+      <symptoms>Low CPL but zero sales/booked calls</symptoms>
+      <root_cause>Optimizing for "Lead" without quality filter; algorithm finding bots</root_cause>
+      <recovery>Switch to "Booked Call" or import "Qualified Lead" offline events</recovery>
+      <source>[SRC: Caden Thompson | 293]</source>
+    </failure_mode>
+  </failure_modes>
+
+  <!-- COMPLIANCE -->
+  <compliance_guardrails>
+    <guardrail priority="critical">When using CAPI, hash PII (emails/phones) before sending to Meta [SRC: Tier 11 | 699]</guardrail>
+    <guardrail priority="critical">Never report "Blended ROAS" as "Ad Performance"; distinguish Platform ROAS from MER [SRC: Sam Piliero | 777]</guardrail>
+    <guardrail priority="high">Exclude 180-day purchasers from Prospecting to ensure clean ncROAS [SRC: Sam Piliero | 716]</guardrail>
+  </compliance_guardrails>
+
+</knowledge_block>

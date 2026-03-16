@@ -1,0 +1,292 @@
+# POWER TRIO INTEGRATION PATTERNS
+# Module 4 (Browser Orchestrator) ↔ COA, LGFA, ALGA
+# Source: NotebookLM Extraction 2026-02-10
+
+metadata:
+  principle: "Separation of Concerns"
+  architects_role: "Coordinators — Hold Strategy (Information Layer)"
+  orchestrator_role: "Executor — Hold Tactics (Implementation Layer)"
+
+# =============================================================================
+# INTEGRATION 1: COLD OUTREACH ARCHITECT (COA)
+# =============================================================================
+
+cold_outreach_architect:
+  role: "Hunter + Validator"
+  objective: "High-volume lead discovery, verification, and hyper-personalized enrichment"
+  
+  data_flows:
+    lead_sourcing:
+      direction: "Input to Orchestrator"
+      sources:
+        - "Google Maps (local businesses)"
+        - "Apollo (via Apify/Ample Leads)"
+        - "LinkedIn Sales Navigator"
+      transformation:
+        - "Normalize company names (strip LLC)"
+        - "Clean job titles"
+        - "Dedupe against Private Lead Database"
+      destination: "Supabase leads_table"
+      
+    enrichment_verification:
+      direction: "Output from Orchestrator"
+      trigger: "Lead flagged as Risky or Catch-All"
+      action: "AI Agent visits company website/LinkedIn for alt emails"
+      output: "Validated contact → CRM → Instantly/SmartLead"
+      
+  skill_calls:
+    run_lead_pipeline:
+      description: "Full lead generation pipeline"
+      payload:
+        search_query: "string (e.g., 'Plumbers Chicago')"
+        max_leads: "int (default: 100)"
+        enrichment_depth: "enum: low|medium|high"
+      execution:
+        step_a: "Discovery — Scrapes Google Maps/Apollo → Extract domains"
+        step_b: "Enrichment — Visits each domain → Extracts About Us, Team page"
+        step_c: "Verification — Passes emails to MillionVerifier API (no LLM)"
+        step_d: "Icebreaker — Uses Haiku/Flash inside sandbox for 1-sentence personalization"
+      return: "Job ID + Summary only (e.g., 'Job 123 Complete. 87 leads added.')"
+      
+    verify_leads:
+      description: "Run validation waterfall on existing leads"
+      payload:
+        lead_ids: "list[str]"
+        waterfall_depth: "int (1-4)"
+      return: "Validation results summary"
+      
+    enrich_contact:
+      description: "Deep enrichment for single high-value prospect"
+      payload:
+        linkedin_url: "string"
+        company_domain: "string"
+      return: "Enriched profile JSON"
+      
+  trigger_patterns:
+    low_inventory:
+      description: "Auto-refill when campaign list drops below threshold"
+      trigger: "leads_count < 500"
+      action: "Fire new scraping job to refill buffer"
+      
+    interest_signal:
+      description: "Personalize follow-up for interested leads"
+      trigger: "Lead replies 'Interested' in Instantly"
+      webhook: "Instantly → Zapier → Module 4"
+      action: "Scrape LinkedIn for recent posts → personalized follow-up"
+      
+  handoff:
+    format: "JSON to Supabase"
+    table: "leads_table"
+    fields:
+      - "first_name"
+      - "last_name"
+      - "company_clean"
+      - "email_verified"
+      - "linkedin_url"
+      - "icebreaker"
+      - "esp_provider"
+      - "quality_score"
+
+# =============================================================================
+# INTEGRATION 2: LEAD GEN FUNNEL ARCHITECT (LGFA)
+# =============================================================================
+
+lead_gen_funnel_architect:
+  role: "Spy + QA Engineer"
+  objective: "Competitor reconnaissance and funnel testing without visual hallucinations"
+  
+  data_flows:
+    competitor_intelligence:
+      direction: "Output to LGFA"
+      action: "Scrape Facebook/Google/LinkedIn Ad Libraries"
+      extraction:
+        - "Message hooks"
+        - "CTAs"
+        - "Active Duration (longest running = winners)"
+        - "Visual type (video/image/carousel)"
+      flow: "Scraped Data → LLM Analysis → Market Gaps Report → LGFA"
+      
+    page_testing:
+      direction: "Input from LGFA → Validation Output"
+      action: "Playwright tests on deployed funnel pages"
+      tasks:
+        - "Fill forms"
+        - "Click buttons"
+        - "Take desktop + mobile screenshots"
+        - "Check for 404 errors"
+      flow: "Deployment Event → Playwright Test → Slack (Pass/Fail)"
+      
+  skill_calls:
+    deep_funnel_scan:
+      description: "Analyze competitor landing pages"
+      payload:
+        urls: "list[str] (e.g., ['competitor1.com', 'competitor2.com'])"
+        capture: "list[str] (e.g., ['screenshots', 'h1_copy', 'cta_buttons'])"
+      execution:
+        visual_capture: "Full-page screenshot → Save to R2/S3 → Return URL ref"
+        dom_analysis: "Extract H1 > H2 > P hierarchy"
+        pixel_detection: "Identify Meta Pixel, GA4, etc."
+        mobile_test: "Re-run with viewport 375px"
+      return:
+        format: "JSON with screenshot URLs (never binary)"
+        example: |
+          {
+            "competitor1": {
+              "headline": "...",
+              "screenshot_url": "https://r2.../screenshot.png",
+              "pixels": ["fb_pixel", "ga4"],
+              "mobile_responsive": true
+            }
+          }
+          
+    competitor_ad_spy:
+      description: "Weekly competitor ad analysis"
+      payload:
+        competitor_names: "list[str]"
+        ad_libraries: "list[str] (e.g., ['facebook', 'linkedin'])"
+        min_duration_days: "int (default: 30)"
+      return: "Top performing ads by duration with extracted copy"
+      
+    test_deployment:
+      description: "QA test for funnel deployments"
+      payload:
+        funnel_url: "string"
+        test_actions: "list[str] (e.g., ['fill_form', 'click_cta'])"
+        viewports: "list[str] (e.g., ['desktop', 'mobile'])"
+      return: "Pass/Fail with evidence screenshots"
+      
+  trigger_patterns:
+    weekly_spy:
+      description: "Scheduled competitor monitoring"
+      schedule: "Cron: 0 9 * * 1 (Monday 9:00 AM)"
+      action: "Scrape competitor ads → Generate Fresh Angles report"
+      
+    deployment_push:
+      description: "Automated QA on code push"
+      trigger: "GitHub webhook on funnel repository"
+      action: "Playwright test → Verify CTA button works"
+      
+  handoff:
+    format: "JSON to Supabase + Screenshot URLs"
+    table: "competitor_intel"
+    visual_bridge:
+      principle: "Never send raw HTML (context rot)"
+      send: "Screenshot URL + Text Summary"
+      display: "Screenshot to human for verification"
+
+# =============================================================================
+# INTEGRATION 3: ASSESSMENT LEAD GEN ARCHITECT (ALGA)
+# =============================================================================
+
+assessment_lead_gen_architect:
+  role: "Researcher"
+  objective: "Mine qualitative data for assessments and benchmarks"
+  
+  data_flows:
+    review_mining:
+      direction: "Output to ALGA"
+      action: "Scrape 1-3 star reviews from competitors"
+      sources:
+        - "Google Maps"
+        - "Trustpilot"
+        - "G2"
+      analysis: "Extract specific complaints for quiz questions"
+      flow: "Raw Reviews → Sentiment Analysis → ALGA"
+      example_output: "Quiz question: 'Are you tired of hidden fees?'"
+      
+    benchmark_collection:
+      direction: "Output to ALGA"
+      action: "Scrape pricing pages from 50+ industry sites"
+      output: "Industry Average Database"
+      usage: "Compare user quiz input against live data"
+      
+  skill_calls:
+    mine_reviews:
+      description: "Extract pain points from competitor reviews"
+      payload:
+        competitors: "list[str] (company names)"
+        sources: "list[str] (e.g., ['google_maps', 'trustpilot'])"
+        rating_filter: "str (e.g., '1-3')"
+        max_reviews: "int"
+      return:
+        format: "Categorized pain points"
+        example: |
+          {
+            "hidden_fees": 23,
+            "poor_support": 18,
+            "slow_response": 12
+          }
+          
+    scrape_benchmarks:
+      description: "Collect industry benchmark data"
+      payload:
+        industry: "string"
+        data_points: "list[str] (e.g., ['pricing', 'features', 'team_size'])"
+        site_count: "int (default: 50)"
+      return: "Industry averages database"
+      
+    verify_claims:
+      description: "Verify prospect claims before sales call"
+      payload:
+        company_domain: "string"
+        claims_to_verify: "list[str] (e.g., ['revenue', 'employee_count'])"
+      return: "Verification results with evidence"
+      
+  trigger_patterns:
+    review_alert:
+      description: "Competitor reputation monitoring"
+      trigger: "Sudden influx of negative reviews detected"
+      action: "Alert sales team → Launch Competitor Takedown campaign"
+      
+    quiz_completion:
+      description: "Pre-call verification for high-value leads"
+      trigger: "High-value lead completes assessment"
+      action: "Scrape their website → Verify claims before call"
+      
+  handoff:
+    format: "JSON to Supabase"
+    tables:
+      - "pain_database"
+      - "industry_benchmarks"
+      - "prospect_verification"
+
+# =============================================================================
+# BATCHED WATERFALL PATTERN
+# =============================================================================
+
+batched_waterfall:
+  description: "COA triggers batch → goes to sleep → wakes on completion"
+  
+  flow:
+    step_1: "COA invokes run_lead_pipeline with batch parameters"
+    step_2: "COA goes to sleep (no polling, no waiting)"
+    step_3: "Module 4 processes entire batch in serverless containers"
+    step_4: "Module 4 writes results directly to SSOT (Supabase)"
+    step_5: "Module 4 sends webhook/notification on completion"
+    step_6: "COA wakes up, queries database for results"
+    
+  benefits:
+    - "No context rot (COA never sees raw data)"
+    - "Parallel processing (100+ leads simultaneously)"
+    - "Cost efficient (serverless compute only when working)"
+    - "Decoupled (phases can run at different speeds)"
+
+# =============================================================================
+# VISUAL BRIDGE PATTERN
+# =============================================================================
+
+visual_bridge:
+  description: "Handle visual data without context rot"
+  
+  problem: "Sending raw HTML or screenshots to LLM bloats context"
+  
+  solution:
+    step_1: "Orchestrator captures screenshot"
+    step_2: "Orchestrator saves to R2/S3 storage"
+    step_3: "Orchestrator extracts text summary"
+    step_4: "Return to Architect: Screenshot URL + Text Summary"
+    step_5: "Architect uses text for logic, displays screenshot to human"
+    
+  never: "Send raw HTML or binary image data to Architect context"
+  
+  benefit: "Visual verification by humans, clean context for agents"

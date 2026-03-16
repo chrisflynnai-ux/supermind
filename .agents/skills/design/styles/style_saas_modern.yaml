@@ -1,0 +1,60 @@
+# ULTRAMIND Design Style Layer v1.0.0
+# Vertical: SaaS Landing | Priority: 4 (Ecom & SaaS)
+# Extracted from UI-UX-Pro-Max + Neuro-Resonance mapped
+# Load cost: ~150 tokens | Layer: L2
+
+style_layer:
+  name: "SaaS Modern"
+  version: "1.0.0"
+  vertical: "saas_modern"
+  extends: "STYLE_BASE_OVERRIDE"
+  extracted_from: "ui-ux-pro-max"
+
+  quick_reference:
+    style_archetype: "Glassmorphism"
+    mood: "modern, clean, professional"
+    best_for: "SaaS landing pages, dashboards, web apps, B2B, productivity tools"
+
+  color_palette:
+    primary: "#0891B2"
+    primary_light: "#22D3EE"
+    primary_dark: "#0E7490"
+    secondary: "#22D3EE"
+    accent: "#22C55E"
+    surface_bg: "#ECFEFF"
+    surface_card: "rgba(255,255,255,0.8)"
+    text_primary: "#164E63"
+    text_secondary: "#6B7280"
+    cta_primary: "#22C55E"
+    cta_hover: "#16A34A"
+
+  typography:
+    heading_font: "Plus Jakarta Sans"
+    heading_weight: 600
+    body_font: "Plus Jakarta Sans"
+    body_weight: 400
+    google_fonts_import: "https://fonts.google.com/share?selection.family=Plus+Jakarta+Sans:wght@300;400;500;600;700"
+
+  motion:
+    entry_style: "fade"
+    duration_base: "200ms"
+    easing: "ease-out"
+    special: "backdrop blur (10-20px), light reflections, z-depth layering, glass borders"
+
+  radius:
+    default: "12px"
+    buttons: "8px"
+    cards: "16px"
+
+  neuro_resonance:
+    primary_axis: "MIND"
+    primary_neurotransmitter: "Acetylcholine"
+    secondary_axis: "HEART"
+    emotional_target: "intelligence, quality, modernity"
+    7s_emphasis: ["SMART", "SUPERIOR"]
+
+  anti_patterns:
+    - "Excessive animation (must feel fast and functional)"
+    - "Dark mode by default (light mode for SaaS landing)"
+    - "Low contrast glass elements (4.5:1 minimum)"
+    - "Competing visual effects (restraint over flash)"
