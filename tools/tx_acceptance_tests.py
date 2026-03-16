@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Threadex Phase 1B + 2A Acceptance Tests -- TX-01 through TX-24
+Threadex Phase 1B + 2A Acceptance Tests -- TX-01 through TX-28
 Tests verify Threadex file layer is operational.
 Uses temporary .threadex_test/ directory (no real data polluted).
 
@@ -929,6 +929,89 @@ class ThreadexAcceptanceTests:
 
         return True, "create_skill_records creates correct types, statuses, and graph pointers"
 
+
+    # TX-28
+    def tx_28_parse_mastery_doc(self):
+        self._init_threadex()
+        tmp = None
+        try:
+            md_content = """---
+skill_id: meta_test_commit
+name: Test Commit Skill
+version: 2.0.0
+domain: meta
+tier: production
+source_xml: test_commit.xml
+---
+
+# Test Commit Skill (v2.0.0)
+
+> A commit mode test
+
+## L1: Identity
+
+First layer content for commit test.
+
+## L2: Execution
+
+Second layer execution details.
+
+### Frameworks
+
+**BeliefLadder:** Ladder framework content
+
+## Contract
+
+### Required Inputs
+- **INPUT_A** (yaml) -- Description A
+
+## Dependencies
+
+### Upstream
+- `meta_zpwo` \u2014 DEPENDS_ON (critical, strength=1.0)
+
+### Downstream
+(none)
+
+## Guardrails
+
+1. First guardrail for commit
+2. Second guardrail for commit
+
+## Graph Edges
+
+```yaml
+edges:
+  - target: meta_zpwo
+    rel: DEPENDS_ON
+```
+"""
+            import tempfile as _tf
+            tmp = _tf.NamedTemporaryFile(mode="w", suffix=".md", delete=False, encoding="utf-8")
+            tmp.write(md_content)
+            tmp.close()
+
+            result = tx.parse_mastery_doc(tmp.name)
+
+            checks = {
+                "skill_id": result.identity.skill_id == "meta_test_commit",
+                "name": result.identity.name == "Test Commit Skill",
+                "version": result.identity.version == "2.0.0",
+                "domain": result.identity.domain == "meta",
+                "layers_count": len(result.layers) >= 2,
+                "guardrails_count": len(result.guardrails) >= 2,
+                "edges_count": len(result.edges) >= 1,
+                "edge_target": any(e.target_id == "meta_zpwo" for e in result.edges),
+                "edge_relation": any(e.relation == "DEPENDS_ON" for e in result.edges),
+            }
+            failed = [k for k, v in checks.items() if not v]
+            if failed:
+                return False, "Failed checks: %s" % ", ".join(failed)
+            return True, "parse_mastery_doc correctly parses revised Markdown"
+        finally:
+            if tmp and os.path.exists(tmp.name):
+                os.unlink(tmp.name)
+
     def run_all(self, target=None):
         """Run all (or one) acceptance tests with setup/teardown."""
         tests = [
@@ -956,6 +1039,7 @@ class ThreadexAcceptanceTests:
             ("TX-22", "extract_layers handles missing layers gracefully", self.tx_22_extract_layers_missing),
             ("TX-23", "generate_mastery_doc produces valid frontmatter + sections", self.tx_23_generate_mastery_doc),
             ("TX-24", "create_skill_records creates correct types and statuses", self.tx_24_create_skill_records),
+            ("TX-28", "commit mode parses revised Markdown", self.tx_28_parse_mastery_doc),
         ]
         if target:
             tests = [(tid, name, fn) for tid, name, fn in tests if tid == target]

@@ -976,6 +976,164 @@ def write_mastery_doc(result, mode="auto"):
 
 
 # ============================================================
+# COMMIT MODE PARSER
+# ============================================================
+
+def parse_mastery_doc(md_path):
+    """Parse a revised Markdown mastery doc back into a RefactorResult.
+
+    Reads YAML frontmatter for identity metadata and Markdown sections
+    for layers, contract, dependencies, guardrails.
+
+    Args:
+        md_path: Path to the Markdown file.
+
+    Returns:
+        RefactorResult with identity, layers, edges, guardrails populated.
+
+    Raises:
+        ValueError: If required frontmatter fields are missing.
+    """
+    text = Path(md_path).read_text(encoding="utf-8")
+
+    # Parse frontmatter
+    parts = text.split("---", 2)
+    if len(parts) < 3:
+        raise ValueError("No YAML frontmatter found (missing --- delimiters)")
+    fm_text = parts[1].strip()
+
+    # Parse frontmatter key-value pairs
+    fm = {}
+    for line in fm_text.splitlines():
+        line = line.strip()
+        if ":" in line:
+            key, _, val = line.partition(":")
+            key = key.strip()
+            val = val.strip().strip('"').strip("'")
+            fm[key] = val
+
+    # Validate required fields
+    required = ["skill_id", "name", "version", "domain"]
+    missing = [f for f in required if not fm.get(f)]
+    if missing:
+        raise ValueError("Missing required frontmatter fields: %s" % ", ".join(missing))
+
+    # Build identity
+    triggers = []
+    if fm.get("triggers"):
+        raw = fm["triggers"].strip("[]")
+        triggers = [t.strip().strip("'").strip('"') for t in raw.split(",") if t.strip()]
+
+    identity = SkillIdentity(
+        skill_id=fm["skill_id"],
+        name=fm["name"],
+        version=fm["version"],
+        tier=fm.get("tier", ""),
+        status=fm.get("status", ""),
+        domain=fm["domain"],
+        track=fm.get("track", ""),
+        model=fm.get("model", ""),
+        neurobox_position=fm.get("neurobox", ""),
+        trigger_commands=triggers,
+        source_xml=fm.get("source_xml", ""),
+    )
+
+    # Parse body sections
+    body = parts[2]
+    sections = {}
+    current_section = None
+    current_lines = []
+
+    for line in body.splitlines():
+        if line.startswith("## "):
+            if current_section:
+                sections[current_section] = "\n".join(current_lines)
+            current_section = line[3:].strip()
+            current_lines = []
+        elif current_section:
+            current_lines.append(line)
+
+    if current_section:
+        sections[current_section] = "\n".join(current_lines)
+
+    # Extract layers
+    layers = []
+    for key, content_text in sections.items():
+        match = re.match(r"^(L[1-4]):", key)
+        if match:
+            layer_id = match.group(1)
+            # Detect frameworks in subsections
+            frameworks = []
+            subsections = content_text.split("### Frameworks")
+            layer_content = subsections[0].strip()
+            if len(subsections) > 1:
+                fw_text = subsections[1]
+                # Parse **FrameworkName:** content pattern
+                fw_matches = re.findall(r"\*\*([A-Za-z]+):\*\*\s*(.*?)(?=\n\*\*|$)", fw_text, re.DOTALL)
+                for fw_name, fw_content in fw_matches:
+                    frameworks.append({"name": fw_name, "content": fw_content.strip()})
+            if "(missing)" not in key:
+                layers.append(SkillLayer(
+                    layer_id=layer_id,
+                    content=layer_content,
+                    frameworks=frameworks,
+                ))
+
+    # Extract guardrails
+    guardrails = []
+    if "Guardrails" in sections:
+        for line in sections["Guardrails"].splitlines():
+            match = re.match(r"^\d+\.\s+(.+)", line.strip())
+            if match:
+                guardrails.append(match.group(1))
+
+    # Extract edges from Dependencies section
+    edges = []
+    if "Dependencies" in sections:
+        dep_text = sections["Dependencies"]
+        # Parse lines like: - `target_id` — RELATION (priority, strength=X.X)
+        edge_matches = re.findall(
+            r"-\s+`([^`]+)`\s+.*?(DEPENDS_ON|COMPLEMENTS|SUPERSEDES|DERIVES_FROM|CONFLICTS_WITH)\s*\(([^)]+)\)",
+            dep_text
+        )
+        for target, relation, details in edge_matches:
+            priority = "medium"
+            strength = 1.0
+            if "critical" in details:
+                priority = "critical"
+                strength = 1.0
+            elif "high" in details:
+                priority = "high"
+                strength = 0.8
+            strength_match = re.search(r"strength=([\d.]+)", details)
+            if strength_match:
+                strength = float(strength_match.group(1))
+            # Determine direction from subsection
+            direction = "upstream"
+            downstream_start = dep_text.find("### Downstream")
+            if downstream_start >= 0:
+                edge_pos = dep_text.find("`%s`" % target)
+                if edge_pos > downstream_start:
+                    direction = "downstream"
+            edges.append(SkillEdge(
+                target_id=target,
+                relation=relation,
+                priority=priority,
+                direction=direction,
+                strength=strength,
+            ))
+
+    return RefactorResult(
+        identity=identity,
+        layers=layers,
+        contract=SkillContract(),
+        edges=edges,
+        guardrails=guardrails,
+        warnings=[],
+    )
+
+
+# ============================================================
 # DEFAULT CONFIG
 # ============================================================
 
