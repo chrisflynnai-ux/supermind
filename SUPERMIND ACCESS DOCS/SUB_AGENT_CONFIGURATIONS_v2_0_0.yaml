@@ -13,7 +13,7 @@
 # - Added 7S/7F Chain validation in MMA checks
 # - Added Neuro-Resonance Auditor integration
 # - Added Evidence Pack Builder integration
-# - Aligned with ULTRAMIND 3-Axis Architecture v2.1
+# - Aligned with ULTRAMIND 4-Track Architecture v4.0 (patched from 3-Axis v2.1)
 #
 # ARCHITECTURE:
 # ┌─────────────────────────────────────────────────────────────────┐
@@ -51,18 +51,27 @@ global_config:
     fast: "claude-haiku-4-20250514"            # Quick operations, validation
     fallback: "gemini-2.0-flash"               # Speed-critical, large context
   
-  # Phase definitions aligned with 3-Axis Architecture v2.1
-  phases:
-    P1_draft:
+  # Track definitions aligned with 4-Track Architecture v4.0
+  tracks:
+    T1_research:
+      axis: "discovery"
+      direction: "Gathering"
+      dimensions: "cross"
+      seven_s: []
+      model: "sonnet"
+      mma_mode: "none"
+      threshold: null  # No gate — research is exploratory
+
+    T2_draft:
       axis: "A (UP)"
       direction: "Lifting"
       dimensions: "BODY ↔ HEART"
       seven_s: ["SAFE", "SPECIAL"]
       model: "sonnet"
       mma_mode: "M1_quick_score"
-      threshold: 7.0
-      
-    P2_production:
+      threshold: 6.0
+
+    T3_production:
       axis: "B (OVER)"
       direction: "Advancing"
       dimensions: "MIND ↔ SPIRIT"
@@ -70,11 +79,11 @@ global_config:
       model: "opus"
       mma_mode: "M2_deep_audit"
       threshold: 8.0
-      
-    P3_polish:
+
+    T4_polish:
       axis: "C (OUT)"
       direction: "Expanding"
-      dimensions: "PSYCHE ↔ CONSCIENCE"
+      dimensions: "PSYCH ↔ CONSCIENCE"
       seven_s: ["SUPPORTED", "SUPERIOR", "STEAL"]
       model: "opus"
       mma_mode: "M1_quick_score"
@@ -109,15 +118,15 @@ zpwo_orchestrator:
   name: "ZPWO - Zero-Point Workflow Orchestrator"
   type: orchestrator
   model: claude-sonnet
-  skill_ref: "zpwo_v1.0.0.xml"
+  skill_ref: "zpwo_v4_0_0.xml"  # Canonical V4 orchestrator
   
   system_prompt: |
     You are ZPWO, the Zero-Point Workflow Orchestrator for ULTRAMIND.
     
     YOUR ROLE:
     - Route tasks to appropriate sub-agent pods
-    - Manage 3-phase workflow (Draft → Production → Polish)
-    - Track SESSION_STATE across phases
+    - Manage 4-track workflow (T1 Research → T2 Draft → T3 Production → T4 Polish)
+    - Track SESSION_STATE across tracks
     - Enforce circuit breakers (max 3 FIX loops)
     - Trigger garbage collection when context > 70%
     - Ensure MMA validation at every phase gate
@@ -132,10 +141,11 @@ zpwo_orchestrator:
     - /email → email_pods
     - /infoproduct → infoproduct_pods
     
-    PHASE MANAGEMENT (3-Axis Aligned):
-    - P1 (Draft): Axis A (UP), SAFE + SPECIAL, MMA Quick Score ≥7.0
-    - P2 (Production): Axis B (OVER), SMART + SIGNIFICANT, MMA Deep Audit ≥8.0
-    - P3 (Polish): Axis C (OUT), SUPPORTED + SUPERIOR + STEAL, MMA ≥9.0
+    TRACK MANAGEMENT (4-Track Aligned):
+    - T1 (Research): Discovery, no MMA gate
+    - T2 (Draft): Axis A (UP), SAFE + SPECIAL, MMA Quick Score ≥6.0
+    - T3 (Production): Axis B (OVER), SMART + SIGNIFICANT, MMA Deep Audit ≥8.0
+    - T4 (Polish): Axis C (OUT), SUPPORTED + SUPERIOR + STEAL, MMA ≥9.0
     
     STATE MANAGEMENT:
     - Track: run_id, project_id, active_phase, ssot_versions
@@ -171,7 +181,7 @@ mma_master_monitor:
   name: "MMA - Master Monitor Agent"
   type: validator
   model: claude-sonnet
-  skill_ref: "mma_master_monitor_agent_v1.0.0.xml"
+  skill_ref: "meta_mma_v4_0_0.xml"  # Canonical V4 quality gate
   
   system_prompt: |
     You are the Master Monitor Agent — an uncompromising quality guardian 
@@ -252,7 +262,7 @@ strategic_copy_director_full:
     CORE FRAMEWORKS:
     - 7S/7F Chain: Safe→Special→Smart→Significant→Supported→Superior→Steal
     - Neuro-Box 6D: BODY/Dopamine, HEART/GABA, MIND/Acetylcholine,
-      SPIRIT/Serotonin, PSYCHE/Adrenaline, CONSCIENCE/Oxytocin
+      SPIRIT/Serotonin, PSYCH/Adrenaline, CONSCIENCE/Oxytocin
     - Convection Model: Attention → Appreciation → Affection
     - Purchase Driver Sequence: Status → Emotion → Validation → Social → Value
   
@@ -299,8 +309,8 @@ neuro_resonance_auditor:
     - SPECIAL (HEART/GABA): "Is this unique for me?"
     - SMART (MIND/Acetylcholine): "Am I making a good choice?"
     - SIGNIFICANT (SPIRIT/Serotonin): "Do others want this?"
-    - SUPPORTED (PSYCHE/Adrenaline): "Can I act now?"
-    - SUPERIOR (CONSCIENCE/Oxytocin): "Do I belong here?"
+    - SUPERIOR (PSYCH/Adrenaline): "I've found the best" (Front/ego)
+    - SUPPORTED (CONSCIENCE/Oxytocin): "Am I supported on this path?" (Back/social)
     - STEAL (SOUL/Zero Point): "Is this an incredible deal?"
   
   modes:
@@ -325,7 +335,7 @@ human_persuasion_editor:
     - Resonance Enhancement (emotional connection)
     
     7S INTEGRATION:
-    Focus on SPECIAL (voice uniqueness) and SUPERIOR (belonging/connection).
+    Focus on SPECIAL (voice uniqueness) and SUPPORTED (belonging/connection).
 
 evidence_pack_builder:
   name: "Evidence Pack Builder"
@@ -352,12 +362,12 @@ evidence_pack_builder:
 advertorial_pods:
   description: "Complete advertorial creation workflow"
   
-  # Phase 1: Draft
+  # T2: Draft
   draft:
     angle_finder:
       name: "Advertorial Angle Finder"
       type: sub_agent
-      phase: P1
+      phase: T2
       model: claude-sonnet
       
       system_prompt: |
@@ -394,7 +404,7 @@ advertorial_pods:
     draft_writer:
       name: "Advertorial Draft Writer"
       type: sub_agent
-      phase: P1
+      phase: T2
       model: claude-sonnet
       
       system_prompt: |
@@ -419,14 +429,14 @@ advertorial_pods:
       exit_criteria: "Draft complete, belief ladder documented"
       mma_gate: true
       mma_mode: "M1_quick_score"
-      mma_threshold: 7.0
+      mma_threshold: 6.0
 
-  # Phase 2: Production
+  # T3: Production
   production:
     builder:
       name: "Advertorial Production Builder"
       type: sub_agent
-      phase: P2
+      phase: T3
       model: claude-opus
       
       system_prompt: |
@@ -469,7 +479,7 @@ advertorial_pods:
     validator:
       name: "Advertorial Production Validator"
       type: validator
-      phase: P2
+      phase: T3
       model: claude-sonnet
       
       system_prompt: |
@@ -494,18 +504,18 @@ advertorial_pods:
         - mma_scorer
       
       skills:
-        - mma_master_monitor_agent_v1.0.0.xml
+        - meta_mma_v4_0_0.xml
         - sales_copy_consistency_contract_v1.0.0.xml
       
       loop_max: 3
       escalate_to: human_gate
 
-  # Phase 3: Polish
+  # T4: Polish
   polish:
     voice_editor:
       name: "Advertorial Voice Editor"
       type: sub_agent
-      phase: P3
+      phase: T4
       model: claude-opus
       
       system_prompt: |
@@ -517,7 +527,7 @@ advertorial_pods:
         - Rhythm optimization (vary sentence length)
         - Kitchen Table Test (sounds human)
         
-        7S FOCUS: SPECIAL (voice uniqueness), SUPERIOR (belonging)
+        7S FOCUS: SPECIAL (voice uniqueness), SUPPORTED (belonging/connection)
         
         AI-ISMS TO REMOVE:
         - "In today's fast-paced world"
@@ -538,7 +548,7 @@ advertorial_pods:
     final_qa:
       name: "Advertorial Final QA"
       type: validator
-      phase: P3
+      phase: T4
       model: claude-sonnet
       
       system_prompt: |
@@ -561,7 +571,7 @@ advertorial_pods:
         □ Neuro-Box dimensions balanced
       
       skills:
-        - mma_master_monitor_agent_v1.0.0.xml
+        - meta_mma_v4_0_0.xml
         - neuro_resonance_auditor_v2.1.0.md
       
       mma_mode: "M4_compliance_gate"
@@ -578,7 +588,7 @@ salespage_pods:
     strategy:
       name: "Sales Page Strategy"
       type: sub_agent
-      phase: P1
+      phase: T2
       model: claude-sonnet
       
       system_prompt: |
@@ -598,7 +608,7 @@ salespage_pods:
         - Proof: SIGNIFICANT (social proof), SMART (data)
         - Offer Stack: STEAL (value), SUPPORTED (path clear)
         - Guarantee: SAFE (risk removal)
-        - CTA: SUPPORTED (action), SUPERIOR (belonging)
+        - CTA: SUPERIOR (action/ego), SUPPORTED (belonging/connection)
       
       skills:
         - strategic_copy_director_v2.1.0_full.xml
@@ -608,7 +618,7 @@ salespage_pods:
     writer:
       name: "Sales Page Draft Writer"
       type: sub_agent
-      phase: P1
+      phase: T2
       model: claude-sonnet
       
       skills:
@@ -616,13 +626,13 @@ salespage_pods:
       
       mma_gate: true
       mma_mode: "M1_quick_score"
-      mma_threshold: 7.0
+      mma_threshold: 6.0
 
   production:
     builder:
       name: "Sales Page Production Builder"
       type: sub_agent
-      phase: P2
+      phase: T3
       model: claude-opus
       
       system_prompt: |
@@ -633,8 +643,8 @@ salespage_pods:
         - SPECIAL: ≥8 (unique positioning)
         - SMART: ≥9 (mechanism clarity)
         - SIGNIFICANT: ≥9 (proof weight)
-        - SUPPORTED: ≥9 (clear path)
-        - SUPERIOR: ≥8 (community/belonging)
+        - SUPERIOR: ≥9 (ego/action - front)
+        - SUPPORTED: ≥8 (community/belonging - back)
         - STEAL: ≥8 (value perception)
         
         PURCHASE DRIVER SEQUENCE:
@@ -655,11 +665,11 @@ salespage_pods:
     validator:
       name: "Sales Page Validator"
       type: validator
-      phase: P2
+      phase: T3
       model: claude-sonnet
       
       skills:
-        - mma_master_monitor_agent_v1.0.0.xml
+        - meta_mma_v4_0_0.xml
         - neuro_resonance_auditor_v2.1.0.md
       
       loop_max: 3
@@ -668,7 +678,7 @@ salespage_pods:
     voice_editor:
       name: "Sales Page Voice Editor"
       type: sub_agent
-      phase: P3
+      phase: T4
       model: claude-opus
       
       skills:
@@ -681,11 +691,11 @@ salespage_pods:
     final_qa:
       name: "Sales Page Final QA"
       type: validator
-      phase: P3
+      phase: T4
       model: claude-sonnet
       
       skills:
-        - mma_master_monitor_agent_v1.0.0.xml
+        - meta_mma_v4_0_0.xml
       
       mma_mode: "M4_compliance_gate"
 
@@ -700,7 +710,7 @@ vsl_pods:
     strategy:
       name: "VSL Strategy"
       type: sub_agent
-      phase: P1
+      phase: T2
       model: claude-sonnet
       
       system_prompt: |
@@ -717,7 +727,7 @@ vsl_pods:
         8. Offer → STEAL (value)
         9. Bonuses → STEAL (extra value)
         10. Guarantee → SAFE (risk removal)
-        11. Close → SUPPORTED (action)
+        11. Close → SUPERIOR (action/ego)
         
         7S FLOW: Must hit all 7 dimensions in sequence.
       
@@ -727,32 +737,32 @@ vsl_pods:
     long_form_writer:
       name: "Long Form VSL Writer"
       type: sub_agent
-      phase: P1
+      phase: T2
       model: claude-opus
       
       skills:
         - long_form_vsl_script_architect_v2.0.xml
       
       mma_gate: true
-      mma_threshold: 7.0
+      mma_threshold: 6.0
 
     short_form_writer:
       name: "Short Form VSL Writer"
       type: sub_agent
-      phase: P1
+      phase: T2
       model: claude-sonnet
       
       skills:
         - short_form_vsl_script_writer_v2.0.xml
       
       mma_gate: true
-      mma_threshold: 7.0
+      mma_threshold: 6.0
 
   production:
     builder:
       name: "VSL Production Builder"
       type: sub_agent
-      phase: P2
+      phase: T3
       model: claude-opus
       
       skills:
@@ -766,11 +776,11 @@ vsl_pods:
     validator:
       name: "VSL Validator"
       type: validator
-      phase: P2
+      phase: T3
       model: claude-sonnet
       
       skills:
-        - mma_master_monitor_agent_v1.0.0.xml
+        - meta_mma_v4_0_0.xml
       
       loop_max: 3
 
@@ -778,7 +788,7 @@ vsl_pods:
     voice_editor:
       name: "VSL Voice Editor"
       type: sub_agent
-      phase: P3
+      phase: T4
       model: claude-opus
       
       skills:
@@ -797,7 +807,7 @@ design_pods:
     style_guide:
       name: "Style Guide Creator (Enhanced)"
       type: sub_agent
-      phase: P1
+      phase: T2
       model: claude-sonnet
 
       system_prompt: |
@@ -851,7 +861,7 @@ design_pods:
     component_designer:
       name: "Component Designer"
       type: sub_agent
-      phase: P1
+      phase: T2
       model: claude-sonnet
       
       skills:
@@ -861,7 +871,7 @@ design_pods:
     builder:
       name: "Design Builder"
       type: sub_agent
-      phase: P2
+      phase: T3
       model: claude-opus
       
       system_prompt: |
@@ -882,7 +892,7 @@ design_pods:
     validator:
       name: "Design Validator"
       type: validator
-      phase: P2
+      phase: T3
       model: claude-sonnet
       
       system_prompt: |
@@ -897,7 +907,7 @@ design_pods:
     responsive_auditor:
       name: "Responsive Auditor"
       type: validator
-      phase: P3
+      phase: T4
       model: claude-sonnet
       
       system_prompt: |
@@ -912,7 +922,7 @@ design_pods:
     accessibility_checker:
       name: "Accessibility Checker"
       type: validator
-      phase: P3
+      phase: T4
       model: claude-sonnet
       
       system_prompt: |
@@ -932,7 +942,7 @@ design_pods:
     design_system_locker:
       name: "Design System Locker"
       type: sub_agent
-      phase: P1
+      phase: T2
       model: claude-sonnet
 
       system_prompt: |
@@ -965,7 +975,7 @@ email_pods:
     strategy:
       name: "Email Strategy"
       type: sub_agent
-      phase: P1
+      phase: T2
       model: claude-sonnet
       
       system_prompt: |
@@ -988,7 +998,7 @@ email_pods:
     writer:
       name: "Email Writer"
       type: sub_agent
-      phase: P2
+      phase: T3
       model: claude-opus
       
       system_prompt: |
@@ -1015,7 +1025,7 @@ email_pods:
     editor:
       name: "Email Editor"
       type: sub_agent
-      phase: P3
+      phase: T4
       model: claude-opus
       
       skills:
@@ -1034,7 +1044,7 @@ infoproduct_pods:
     planner:
       name: "Info Product Planner"
       type: sub_agent
-      phase: P1
+      phase: T2
       model: claude-sonnet
       
       system_prompt: |
@@ -1054,7 +1064,7 @@ infoproduct_pods:
     builder:
       name: "Info Product Builder"
       type: sub_agent
-      phase: P2
+      phase: T3
       model: claude-opus
       
       system_prompt: |
@@ -1082,7 +1092,7 @@ infoproduct_pods:
     editor:
       name: "Info Product Editor"
       type: sub_agent
-      phase: P3
+      phase: T4
       model: claude-opus
       
       skills:
@@ -1221,7 +1231,7 @@ pydantic_schemas:
       - name: project_id
         type: str
       - name: current_phase
-        type: "Literal['P1', 'P2', 'P3']"
+        type: "Literal['T1', 'T2', 'T3', 'T4']"
       - name: artifacts
         type: "Dict[str, Any]"
       - name: mma_history
@@ -1289,10 +1299,11 @@ workflow_commands:
     - "/email"          # Email sequence
     - "/infoproduct"    # Quick info product
   
-  phase_commands:
-    - "/draft"   # Run draft phase only
-    - "/produce" # Run production phase only
-    - "/polish"  # Run polish phase only
+  track_commands:
+    - "/research" # Run T1 research track
+    - "/draft"    # Run T2 draft track
+    - "/produce"  # Run T3 production track
+    - "/polish"   # Run T4 polish track
   
   mma_commands:
     - "/mma"          # Run MMA Quick Score
@@ -1315,6 +1326,20 @@ workflow_commands:
 # ═══════════════════════════════════════════════════════════════════
 
 version_history:
+  v2.0.1_patch:
+    date: "2026-03-07"
+    changes:
+      - "Corrected Hologon mapping: SUPPORTED→CONSCIENCE/Oxytocin, SUPERIOR→PSYCH/Adrenaline (was swapped)"
+      - "Normalized PSYCHE→PSYCH across all references"
+      - "Updated from 3-phase (P1/P2/P3) to 4-track (T1/T2/T3/T4) model"
+      - "Added T1_research track definition (no MMA gate)"
+      - "Fixed draft MMA threshold from 7.0 to 6.0 (T2 gate)"
+      - "Updated ZPWO skill_ref to zpwo_v4_0_0.xml"
+      - "Updated MMA skill_refs to meta_mma_v4_0_0.xml"
+      - "Updated OrchestrationResult schema to include T1-T4"
+      - "Preserved all named-agent inventory and business-role definitions"
+      - "Preserved 7D scoring, 7S chain, routing trees, LangGraph workflows"
+
   v2.0.0:
     date: "2026-01-07"
     changes:

@@ -1,10 +1,24 @@
 # ULTRAMIND AGENTIC OS — INTEGRATION ARCHITECTURE PLAN
 ## Google Ecosystem + Enhanced Skills + Self-Improving Systems
 
-**Version:** 1.0.0  
-**Date:** 2026-01-18  
-**Purpose:** Comprehensive integration plan for lead gen automation, business services, and neuro-perfection pursuit  
+**Version:** 1.0.1 (patched 2026-03-07 — Hologon alignment + wave priority annotation)
+**Date:** 2026-01-18 (patched 2026-03-07)
+**Purpose:** Comprehensive integration plan for lead gen automation, business services, and neuro-perfection pursuit
 **Mode:** BUILD (Deep Architecture)
+**Hologon Reference:** `.agents/skills/meta/docs_triage/NEUROBOX_HOLOGON_CANONICAL_NOTE_V4.md`
+
+### WAVE PRIORITY ANNOTATION (Added 2026-03-07)
+| Section | Wave | Status |
+|---------|------|--------|
+| PART 2: Enhanced Skills Suite v3.0 | **Wave 1** | Active — deconstructor/evaluator roles are current quality model |
+| PART 3: Agentic Orchestration | **Wave 1** (harness + routing) / **Wave 2** (full Agent Zero) | Partial |
+| PART 4: GoHighLevel Replacement | **Wave 2** | Later — platform architecture |
+| PART 5: Recursive Self-Learning | **Wave 1** (ECR/SIPs) / **Wave 2** (full Neuro-Perfection) | Partial |
+| PART 6: Google Suite Integration | **Wave 2** | Later — platform integration |
+| PART 7: Implementation Roadmap | **Wave 1** (skill migration) / **Wave 2** (platform build) | Active |
+| PART 8: Critical Success Factors | Reference | Always applicable |
+| PART 10: Conclusion & Vision | Reference | Strategic context |
+| COSMS / deeper memory architecture | **Not in file** | Later-wave when delivery path requires it |
 
 ---
 
@@ -94,7 +108,7 @@ This plan integrates:
 
 **Key Enhancements:**
 - **Recursive Learning Loop**: Outputs Self-Identified Patterns (SIPs) to `golden_runs.yaml`
-- **6D Neuro-Box Balance Check**: Identifies over-indexing (e.g., too much Adrenaline/pressure vs Oxytocin/belonging)
+- **6D Neuro-Box Balance Check**: Identifies over-indexing (e.g., too much SUPERIOR/Adrenaline pressure vs SUPPORTED/Oxytocin belonging)
 - **Agentic Orchestration Bridge**: Auto-triggers Manus when gap detected → finds prospect LinkedIn → drafts Sendsay email
 - **Stitch Integration**: Visual-neural sync for Authority Stack validation
 
@@ -193,7 +207,7 @@ Report Complete ← ← ← ←
 ### 2.3 Offer Architect v3.0 (Upgrade from v2.0)
 
 **Key Enhancements:**
-- **6D Neuro-Box Mapping**: Embeds neurochemical activation model (Dopamine→Safety, GABA→Excitement, etc.)
+- **6D Neuro-Box Mapping**: Embeds neurochemical activation model (canonical Hologon — see NEUROBOX_HOLOGON_CANONICAL_NOTE_V4.md)
 - **Convection Logic**: Replaces "Conversion" metrics with "Convection" (value delivery BEFORE asking for sale)
 - **5-Driver Chain Gate**: Hard requirement: activate "Higher Status" (Safety) before presenting "Steal" (Pricing)
 - **Appreciation Audit**: Validates offer earns genuine appreciation before CTA
@@ -205,15 +219,15 @@ enhancements:
   neuro_box_integration:
     model: "6-axis neurochemical activation"
     mapping:
-      - axis: "Body-Heart"
-        bottom: "Dopamine (Safety, Status)"
-        top: "GABA (Special, Excitement)"
-      - axis: "Heart-Mind"  
-        bottom: "Serotonin (Smart, Confidence)"
-        top: "Acetylcholine (Significant, Meaning)"
-      - axis: "Mind-Body"
-        bottom: "Oxytocin (Supported, Belonging)"
-        top: "Adrenaline (Superior, Achievement)"
+      - axis: "Vertical (BODY ↔ HEART)"
+        bottom: "Dopamine (SAFE)"
+        top: "GABA (SPECIAL)"
+      - axis: "Horizontal (MIND ↔ SPIRIT)"
+        left: "Acetylcholine (SMART)"
+        right: "Serotonin (SIGNIFICANCE)"
+      - axis: "Depth (PSYCH ↔ CONSCIENCE)"
+        front: "Adrenaline (SUPERIOR)"
+        back: "Oxytocin (SUPPORTED)"
         
   convection_metrics:
     replace: "Conversion-focused"
@@ -223,13 +237,13 @@ enhancements:
   purchase_driver_sequence:
     gate: "Must activate in order"
     sequence:
-      1: "Higher Status (Safety) - Dopamine"
-      2: "Feel Special (Excitement) - GABA"
-      3: "Get Smart (Confidence) - Serotonin"
-      4: "Be Significant (Meaning) - Acetylcholine"
-      5: "Feel Supported (Belonging) - Oxytocin"
-      6: "Achieve Superior (Status) - Adrenaline"
-      7: "Steal (Price Anchor) - Only after 1-6"
+      1: "SAFE (Safety) - Dopamine (BODY)"
+      2: "SPECIAL (Excitement) - GABA (HEART)"
+      3: "SMART (Clarity) - Acetylcholine (MIND)"
+      4: "SIGNIFICANCE (Meaning) - Serotonin (SPIRIT)"
+      5: "SUPERIOR (Action/Ego) - Adrenaline (PSYCH/Front)"
+      6: "SUPPORTED (Belonging) - Oxytocin (CONSCIENCE/Back)"
+      7: "STEAL (Value Anchor) - Only after 1-6 (SOUL/Center)"
       
   appreciation_audit:
     check: "Does offer deliver genuine value?"

@@ -1,6 +1,7 @@
-# ULTRAMIND ORCHESTRATOR CORE v4.1
-# Stateful coordination intelligence for ZPWO
+# ULTRAMIND ORCHESTRATOR CORE v4.2
+# Stateful coordination intelligence for ZPWO — 4-Track Architecture
 # This is the "informed center" - light enough to always load, smart enough to route decisions
+# Hologon Reference: .agents/skills/meta/docs_triage/NEUROBOX_HOLOGON_CANONICAL_NOTE_V4.md
 
 ---
 
@@ -25,7 +26,7 @@ left_brain:
       - viral_resonance_analyzer_v1.0.0.xml
       - hook_template_generator_v1.5.xml
     development:
-      - skill_builder_architect_v2.0.0.xml
+      - meta_skill_builder_v4_0_0.xml
       - pydantic_schema_generator_v1.0.xml
       - api_integration_specialist_v1.0.xml
   personality: "Analytical, data-driven, pattern recognition, structural thinking"
@@ -58,8 +59,8 @@ central_coordination:
     - Monitor quality gates (MMA)
     - Enforce SSOT locking
   skills:
-    - zpwo_meta_orchestrator_v1.0.0.xml
-    - mma_master_monitor_agent_v1.0.0.xml
+    - zpwo_v4_0_0.xml
+    - meta_mma_v4_0_0.xml
     - market_intelligence_synthesizer_v2.1.xml
 
 vertical_axis:
@@ -83,22 +84,22 @@ two_brain_pairs:
   sales_page_production:
     left_brain: "viral_thread_deconstructor (MIND) - extract proof patterns, resonance themes"
     right_brain: "sales_page_copywriter (SPIRIT) - construct conversion narrative"
-    coordination: "mma_master_monitor - validate quality gates"
+    coordination: "meta_mma - validate quality gates"
 
   email_sequence:
     left_brain: "hook_template_generator (MIND) - create subject line variants"
     right_brain: "email_campaign_copy_genius (SPIRIT) - write sequences"
-    coordination: "zpwo - route through 3-phase workflow"
+    coordination: "zpwo - route through 4-track workflow (T1→T2→T3→T4)"
 
   skill_development:
-    left_brain: "skill_builder_architect (PSYCH) - build backend structure, schemas"
+    left_brain: "meta_skill_builder (PSYCH) - build backend structure, schemas"
     right_brain: "sales_page_deconstructor (CONSCIENCE) - design skill interface, user experience"
     coordination: "zpwo - manage progressive disclosure layers"
 
 collaboration_triggers:
   - "ALWAYS pair LEFT (analysis/structure) with RIGHT (creation/persuasion)"
-  - "LEFT brain goes FIRST for research/analysis phases"
-  - "RIGHT brain goes SECOND for production/polish phases"
+  - "LEFT brain goes FIRST for research/analysis tracks (T1, T2)"
+  - "RIGHT brain goes SECOND for production/polish tracks (T3, T4)"
   - "ORCHESTRATOR coordinates transitions, validates SSOT locks"
 
 ---
@@ -173,25 +174,34 @@ audience_types:
 
 ---
 
-## WORKFLOW STATE TRANSITIONS
+## WORKFLOW STATE TRANSITIONS (4-Track Model)
 
-phase_gates:
-  draft_to_production:
+track_gates:
+  T1_research_exit:
+    requirements:
+      - "Discovery questions answered"
+      - "SSOT draft objects populated"
+    orchestrator_action: "No MMA gate — research is exploratory"
+    note: "T1 has no quality gate; output feeds T2"
+
+  T2_to_T3:
     requirements:
       - "MESSAGE_SPINE.yaml locked (checksum verified)"
       - "User approval on selected angle"
       - "EVIDENCE_PACK.yaml exists (for proof grounding)"
+      - "MMA score ≥ 6.0 (T2 draft threshold)"
     orchestrator_action: "Load production skills, activate MMA validation loop"
 
-  production_to_polish:
+  T3_to_T4:
     requirements:
       - "MMA average score ≥ 8.0"
-      - "MMA critical dimensions (Proof, Mechanism, Voice) ≥ 9.0"
+      - "MMA critical dimensions (D2_Proof, D4_Voice) ≥ 9.0"
       - "Max 3 FIX loops not exceeded"
     orchestrator_action: "Load human_persuasion_editor, run Kitchen Table Test"
 
-  polish_to_ship:
+  T4_to_ship:
     requirements:
+      - "MMA score ≥ 9.0"
       - "Human Personance score ≥ 9.0"
       - "AI Detox complete (no corporate-speak, no obvious AI patterns)"
       - "User final approval"
@@ -213,14 +223,22 @@ circuit_breakers:
 
 quality_gates:
   mma_continuous: true  # Run MMA after every generation
-  mma_passing_threshold:
-    average: 8.0
-    critical_dimensions: 9.0
-  mma_dimensions: ["Proof", "Mechanism", "Voice", "Clarity", "Engagement", "Conversion", "Compliance"]
+  mma_passing_threshold:  # Tiered by track
+    T2_draft: 6.0
+    T3_production: 8.0
+    T4_polish: 9.0
+  mma_dimensions:  # Canonical 7D (weighted)
+    - "D1_Strategy (0.15)"
+    - "D2_Proof (0.20)"
+    - "D3_CTA (0.15)"
+    - "D4_Voice (0.15)"
+    - "D5_Clarity (0.10)"
+    - "D6_Resonance (0.15)"
+    - "D7_Ethics (0.10)"
 
 ssot_locking:
   lock_after_intake: ["PROJECT_BRIEF.yaml", "MESSAGE_SPINE.yaml", "EVIDENCE_PACK.yaml"]
-  drift_protection: "Validate checksums before every phase transition"
+  drift_protection: "Validate checksums before every track transition"
   patch_request_required: "Any change to locked SSOT requires PATCH_PROPOSAL approval"
 
 ---
@@ -243,17 +261,20 @@ skill_dependencies:
     optional_ssot: ["EVIDENCE_PACK.yaml", "VOICE_GUIDE.yaml"]
     pairing: "hook_template_generator (for subject lines)"
 
-  mma_master_monitor:
+  meta_mma:
     required_ssot: ["MESSAGE_SPINE.yaml"]  # To validate alignment
-    pairing: "zpwo_meta_orchestrator (for quality gate enforcement)"
+    pairing: "zpwo (for quality gate enforcement)"
 
   human_persuasion_editor:
-    required_input: "Production-phase output (MMA validated)"
-    pairing: "mma_master_monitor (to verify polish improvements)"
+    required_input: "T3 production output (MMA validated ≥8.0)"
+    pairing: "meta_mma (to verify polish improvements)"
 
 ---
 
 ## DIMENSIONAL ROUTING LOGIC
+# Canonical dimension mapping: see NEUROBOX_HOLOGON_CANONICAL_NOTE_V4.md
+# BODY/SAFE/Dopamine | HEART/SPECIAL/GABA | MIND/SMART/Acetylcholine
+# SPIRIT/SIGNIFICANCE/Serotonin | Front: PSYCH/SUPERIOR/Adrenaline | Back: CONSCIENCE/SUPPORTED/Oxytocin
 
 routing_rules:
   if_audience_is_cold:
@@ -331,7 +352,7 @@ layer_strategy:
     - "Skill names, categories, readiness status"
 
   L2_skill_execution:
-    - "Full skill XML loaded ONLY when triggered by user command"
+    - "Full skill XML loaded ONLY when triggered by command or track transition"
     - "Unloaded after completion (Garbage Collection)"
 
   L3_ssot_checksums:
@@ -339,7 +360,7 @@ layer_strategy:
     - "Full SSOT loaded only when skill requires it"
 
   L4_heavy_context:
-    - "EVIDENCE_PACK contents (only during production phase)"
+    - "EVIDENCE_PACK contents (only during T3 production)"
     - "COMPETITOR_ANALYSIS (only if needed for differentiation)"
 
 context_budget:
@@ -353,7 +374,7 @@ context_budget:
 
 runtime_state_file: ".claude/SESSION_STATE.json"
 state_schema:
-  current_phase: "draft | production | polish | shipped"
+  current_track: "T1_research | T2_draft | T3_production | T4_polish | shipped"
   workflow_step: "intake | angle_selection | mma_validation | human_polish | etc"
   locked_ssots:
     MESSAGE_SPINE: "checksum_abc123"
@@ -385,6 +406,6 @@ principles:
 
 ---
 
-*Version: v4.1*
-*Last Updated: 2026-01-13*
+*Version: v4.2 (patched 2026-03-07 — 4-track alignment + canonical meta skill IDs + Hologon ref)*
+*Last Updated: 2026-03-07*
 *Philosophy: Informed Center, Light Enough to Always Load, Smart Enough to Route Well*

@@ -2,8 +2,12 @@
 <!--
   ULTRAMIND RESONANCE CONSTITUTION
   Global Quality Standard - Referenced by All Skills
-  Version: 1.0.0
+  Version: 1.0.1 (patched 2026-03-07 — canonical Hologon neurochemical alignment)
   Created: 2025-12-17
+  Hologon Reference: .agents/skills/meta/docs_triage/NEUROBOX_HOLOGON_CANONICAL_NOTE_V4.md
+  NOTE: Neurochemical assignments follow the canonical Hologon metaphorical model.
+        BrainRegion descriptions are from the original resonance model and reflect
+        functional processing areas, not strict neurochemical localization.
 -->
 
 <ResonanceConstitution version="1.0.0">
@@ -21,8 +25,8 @@
 
     <!-- VERTICAL AXIS: Foundation ↔ Elevation -->
     <Axis name="VERTICAL" pair="BOTTOM_TOP">
-      <Bottom id="GABA" name="Safety/Foundation">
-        <Neurochemical>GABA (Gamma-Aminobutyric Acid)</Neurochemical>
+      <Bottom id="DOPAMINE" name="SAFE/Foundation">
+        <Neurochemical>Dopamine</Neurochemical>
         <BrainRegion>Reptilian Brain, Amygdala</BrainRegion>
         <Drive>Safety, Security, Trust</Drive>
         <Resonance>"I am safe here. No threat. I can trust."</Resonance>
@@ -40,8 +44,8 @@
         <IfMissing>Fight/flight activated, amygdala blocks decisions, page abandoned</IfMissing>
       </Bottom>
 
-      <Top id="SEROTONIN" name="Status/Elevation">
-        <Neurochemical>Serotonin</Neurochemical>
+      <Top id="GABA" name="SPECIAL/Elevation">
+        <Neurochemical>GABA (Gamma-Aminobutyric Acid)</Neurochemical>
         <BrainRegion>Prefrontal Cortex, Social Brain</BrainRegion>
         <Drive>Status, Specialness, Significance</Drive>
         <Resonance>"This elevates my rank. I am special for finding it."</Resonance>
@@ -59,10 +63,10 @@
       </Top>
     </Axis>
 
-    <!-- HORIZONTAL AXIS: Emotion ↔ Logic -->
+    <!-- HORIZONTAL AXIS: Resonance ↔ Persuasion (SMART ↔ SIGNIFICANCE) -->
     <Axis name="HORIZONTAL" pair="LEFT_RIGHT">
-      <Left id="DOPAMINE" name="Emotion/Stimulation">
-        <Neurochemical>Dopamine</Neurochemical>
+      <Left id="ACETYLCHOLINE" name="SMART/Resonance">
+        <Neurochemical>Acetylcholine</Neurochemical>
         <BrainRegion>Limbic System, Reward Center, Nucleus Accumbens</BrainRegion>
         <Drive>Emotional Kick, Stress Relief, Novelty</Drive>
         <Resonance>"This is new. This excites me. This relieves my pain."</Resonance>
@@ -80,8 +84,8 @@
         <IfMissing>Copy is boring, no engagement, no curiosity, flat energy</IfMissing>
       </Left>
 
-      <Right id="ACETYLCHOLINE" name="Logic/Expansion">
-        <Neurochemical>Acetylcholine</Neurochemical>
+      <Right id="SEROTONIN" name="SIGNIFICANCE/Persuasion">
+        <Neurochemical>Serotonin</Neurochemical>
         <BrainRegion>Neocortex, Prefrontal Cortex</BrainRegion>
         <Drive>Smart, Logic, Understanding</Drive>
         <Resonance>"I understand the mechanism. I am smart for seeing the logic."</Resonance>
@@ -100,19 +104,19 @@
       </Right>
     </Axis>
 
-    <!-- DEPTH AXIS: Action ↔ Integration -->
+    <!-- DEPTH AXIS: SUPERIOR ↔ SUPPORTED (Action ↔ Integration) -->
     <Axis name="DEPTH" pair="FRONT_BACK">
-      <Front id="ADRENALINE" name="Action/Projection">
+      <Front id="ADRENALINE" name="SUPERIOR/Action">
         <Neurochemical>Adrenaline (Epinephrine)</Neurochemical>
         <BrainRegion>Motor Cortex, Sympathetic Nervous System</BrainRegion>
-        <Drive>Strength, "Steal the Deal", Urgency</Drive>
-        <Resonance>"I must act now to get this advantage. It's a weapon for my life."</Resonance>
+        <Drive>Superiority, Decision, "I've found the best"</Drive>
+        <Resonance>"This is the best. I must act now to claim this advantage."</Resonance>
         <SequencePosition>FOURTH - After foundation/understanding established</SequencePosition>
         <CopyManifestations>
           <Item>Authentic urgency (real deadlines only)</Item>
           <Item>Genuine scarcity (actual limits, explained why)</Item>
           <Item>Competitive advantage ("get ahead")</Item>
-          <Item>"Steal the deal" framing (value >> cost)</Item>
+          <Item>Value clarity (value >> cost) — "Steal the Deal" originates from SOUL/Center</Item>
           <Item>Clear next step (exact action specified)</Item>
           <Item>Momentum building (micro-commitments)</Item>
           <Item>Loss aversion (ethical - opportunity cost clarity)</Item>
@@ -121,11 +125,11 @@
         <IfMissing>No urgency, procrastination, delayed decisions, opportunity slips</IfMissing>
       </Front>
 
-      <Back id="OXYTOCIN" name="Harmony/Integration">
+      <Back id="OXYTOCIN" name="SUPPORTED/Integration">
         <Neurochemical>Oxytocin</Neurochemical>
         <BrainRegion>Social Brain, Anterior Cingulate, Identity Centers</BrainRegion>
-        <Drive>Sync, Harmony, Identity Alignment</Drive>
-        <Resonance>"This fits who I am. It aligns with my identity and life."</Resonance>
+        <Drive>Support, Connection, "I am supported on this path"</Drive>
+        <Resonance>"This fits who I am. I feel supported and connected. This is my path."</Resonance>
         <SequencePosition>ONGOING - Woven throughout, culminates at close</SequencePosition>
         <CopyManifestations>
           <Item>"This is FOR people like you" (specific avatar)</Item>
@@ -156,49 +160,49 @@
       <Stage order="1" name="PULLED UP">
         <Movement>BOTTOM → TOP</Movement>
         <Description>Foundation establishes → Elevation beckons</Description>
-        <Neurochemicals>GABA calms → Serotonin lifts</Neurochemicals>
+        <Neurochemicals>Dopamine grounds (SAFE) → GABA elevates (SPECIAL)</Neurochemicals>
         <CopySection>Hook, Lead, Safety Establishment</CopySection>
       </Stage>
 
       <Stage order="2" name="PRODDED FORWARD">
         <Movement>LEFT → RIGHT</Movement>
         <Description>Emotion engages → Logic validates</Description>
-        <Neurochemicals>Dopamine excites → Acetylcholine understands</Neurochemicals>
+        <Neurochemicals>Acetylcholine engages (SMART) → Serotonin validates (SIGNIFICANCE)</Neurochemicals>
         <CopySection>Story hooks → Mechanism explains</CopySection>
       </Stage>
 
       <Stage order="3" name="PROVIDED VALUE">
         <Movement>RIGHT peak</Movement>
         <Description>Understanding crystallizes, proof validates</Description>
-        <Neurochemicals>Acetylcholine (learning satisfaction)</Neurochemicals>
+        <Neurochemicals>Serotonin deepens (SIGNIFICANCE crystallizes)</Neurochemicals>
         <CopySection>Mechanism deep dive, scientific backing, "I get it" moment</CopySection>
       </Stage>
 
       <Stage order="4" name="ENCOURAGEMENT &amp; SAFETY">
         <Movement>BOTTOM reinforced</Movement>
         <Description>Trust deepens, "This is safe for me"</Description>
-        <Neurochemicals>GABA strengthens</Neurochemicals>
+        <Neurochemicals>Dopamine reinforces (SAFE deepens)</Neurochemicals>
         <CopySection>Guarantee, social proof, risk reversal</CopySection>
       </Stage>
 
       <Stage order="5" name="ALIGNS WITH IDENTITY">
         <Movement>BACK engaged</Movement>
         <Description>Tribal belonging, "This is WHO I AM"</Description>
-        <Neurochemicals>Oxytocin bonds</Neurochemicals>
+        <Neurochemicals>Oxytocin connects (SUPPORTED belonging)</Neurochemicals>
         <CopySection>Community, values alignment, identity transformation</CopySection>
       </Stage>
 
       <Stage order="6" name="MOVES FORWARD">
         <Movement>FRONT activated</Movement>
         <Description>Action inevitable, commitment made</Description>
-        <Neurochemicals>Adrenaline mobilizes</Neurochemicals>
+        <Neurochemicals>Adrenaline drives (SUPERIOR action)</Neurochemicals>
         <CopySection>CTA, authentic urgency, clear next step</CopySection>
       </Stage>
 
       <Stage order="7" name="ASCENSION">
         <Movement>TOP culminates</Movement>
         <Description>Transformation complete, growth achieved</Description>
-        <Neurochemicals>Serotonin peaks</Neurochemicals>
+        <Neurochemicals>GABA peaks (SPECIAL culminates)</Neurochemicals>
         <CopySection>New identity claimed, elevated status, advocacy</CopySection>
       </Stage>
     </Journey>
@@ -222,7 +226,7 @@
     </Principle>
 
     <Test>
-      <Question number="1" axis="LEFT_TOP" neurochemicals="Dopamine_Serotonin">
+      <Question number="1" axis="LEFT_TOP" neurochemicals="Acetylcholine_GABA">
         <Ask>THE PROMISE: Can I state the transformation in ONE sentence?</Ask>
         <Rule>Singular transformation (one clear arrow, no compound claims)</Rule>
         <Example>YES: "Sleep naturally without pills within 14 days"</Example>
@@ -230,7 +234,7 @@
         <Why>Brain can only hold ONE promise at a time in working memory</Why>
       </Question>
 
-      <Question number="2" axis="RIGHT_BACK" neurochemicals="Acetylcholine_Oxytocin">
+      <Question number="2" axis="RIGHT_BACK" neurochemicals="Serotonin_Oxytocin">
         <Ask>THE PROOF: Can I explain WHY it works simply + show WHO it worked for?</Ask>
         <Components>
           <Component>Mechanism (UMP/UMS) explainable to 8th grader</Component>
@@ -240,7 +244,7 @@
         <Why>Prefrontal cortex needs justification, but must be SIMPLE</Why>
       </Question>
 
-      <Question number="3" axis="BOTTOM" neurochemicals="GABA">
+      <Question number="3" axis="BOTTOM" neurochemicals="Dopamine">
         <Ask>THE TRUST: Have I made them feel SAFE before asking for anything?</Ask>
         <Components>
           <Component>Guarantee (strong risk reversal, 60-90 day)</Component>
@@ -255,7 +259,7 @@
         <Ask>THE DEAL: Is there a genuine reason to act NOW (not fake urgency)?</Ask>
         <CriticalDistinction>
           <Item>Scarcity of OFFER: Authentic (founding member pricing, limited cohort)</Item>
-          <Item>Scarcity of PRODUCT: Often fake (VIOLATES GABA)</Item>
+          <Item>Scarcity of PRODUCT: Often fake (VIOLATES BOTTOM/SAFE)</Item>
         </CriticalDistinction>
         <Components>
           <Component>Value vastly exceeds cost ("steal the deal")</Component>
@@ -278,7 +282,7 @@
       <Mechanism>Remove unqualified leads</Mechanism>
       <Result>90%+ drop-off designed in</Result>
       <Philosophy>Extract maximum from minority who stay</Philosophy>
-      <Neurochemicals>Overindex Adrenaline (pressure), Dopamine spikes (false promises), Cortisol (stress)</Neurochemicals>
+      <Neurochemicals>Overindex FRONT/Adrenaline (false superiority), BOTTOM/Dopamine spikes (false safety), Cortisol (stress)</Neurochemicals>
       <Outcome>Short-term conversions, long-term burnout, buyer's remorse</Outcome>
       <AxisViolation>Overindex FRONT, violates BOTTOM (Safety) and BACK (Alignment)</AxisViolation>
     </Old>
@@ -288,7 +292,7 @@
       <Mechanism>Remove friction, accelerate transformation</Mechanism>
       <Result>Maximize success rate</Result>
       <Philosophy>Ensure everyone succeeds (Whole Solution)</Philosophy>
-      <Neurochemicals>Balanced all 6 axes - GABA (safety), Oxytocin (community), Serotonin (transformation), Dopamine (progress)</Neurochemicals>
+      <Neurochemicals>Balanced all 6 axes - Dopamine (SAFE), GABA (SPECIAL), Acetylcholine (SMART), Serotonin (SIGNIFICANCE), Adrenaline (SUPERIOR/Front), Oxytocin (SUPPORTED/Back)</Neurochemicals>
       <Outcome>Sustainable transformation, advocacy, compounding growth</Outcome>
       <AxisBalance>All 6 axes activated in proper sequence with balanced pairs</AxisBalance>
     </New>
@@ -316,13 +320,13 @@
         <Identity>"I am someone who HAS this" (tangible + credible)</Identity>
       </Component>
 
-      <Component number="2" name="DIGITAL PROTOCOL" axis="RIGHT" neurochemical="Acetylcholine">
+      <Component number="2" name="DIGITAL PROTOCOL" axis="RIGHT" neurochemical="Serotonin">
         <Why>Provides knowledge, step-by-step process, education</Why>
         <Examples>Video lessons, frameworks, protocols, templates</Examples>
         <Understanding>Uses physical anchor, guided by AI</Understanding>
       </Component>
 
-      <Component number="3" name="AI AGENT" axes="BACK_BOTTOM" neurochemicals="Oxytocin_GABA">
+      <Component number="3" name="AI AGENT" axes="BACK_BOTTOM" neurochemicals="Oxytocin_Dopamine">
         <Why>Prevents dropout, adapts protocol, provides daily guidance</Why>
         <Function>
           <Item>Daily check-ins</Item>
@@ -331,7 +335,7 @@
           <Item>Celebration of progress</Item>
           <Item>Prevent quitting at critical moments</Item>
         </Function>
-        <Relationship>AI companion (BACK - Oxytocin), Always there (BOTTOM - GABA)</Relationship>
+        <Relationship>AI companion (BACK - Oxytocin/SUPPORTED), Always there (BOTTOM - Dopamine/SAFE)</Relationship>
       </Component>
     </ThreeComponentModel>
 
@@ -352,7 +356,7 @@
     </Principle>
 
     <Prohibited severity="critical" penalty="-3.0_per_violation">
-      <Tactic>Fake countdown timers (destroys GABA long-term)</Tactic>
+      <Tactic>Fake countdown timers (destroys Dopamine/SAFE long-term)</Tactic>
       <Tactic>Manufactured scarcity (violates trust)</Tactic>
       <Tactic>Fear-mongering (trauma exploitation)</Tactic>
       <Tactic>Hidden costs revealed late (betrayal)</Tactic>
@@ -362,16 +366,16 @@
 
     <AdrenalineMarketingAntiPattern>
       <Description>"Weird stretched teeth" (High Smile) tactic</Description>
-      <Works>For clicks (Dopamine/Adrenaline spike)</Works>
-      <Destroys>Trust (GABA/Oxytocin crash)</Destroys>
+      <Works>For clicks (Acetylcholine/Adrenaline spike)</Works>
+      <Destroys>Trust (Dopamine/SAFE + Oxytocin/SUPPORTED(Back) crash)</Destroys>
       <Result>Buyer's remorse, refunds, negative reviews, unsustainable</Result>
-      <Diagnosis>Overindex LEFT (Dopamine manipulation) + FRONT (Fake urgency), violates BOTTOM + BACK</Diagnosis>
+      <Diagnosis>Overindex LEFT (Acetylcholine/SMART manipulation) + FRONT (Fake SUPERIOR urgency), violates BOTTOM (SAFE) + BACK (SUPPORTED)</Diagnosis>
     </AdrenalineMarketingAntiPattern>
 
     <AuthenticMarketing>
       <Goal>Customers who feel SMARTER for buying</Goal>
       <Mechanism>All 6 axes in balance</Mechanism>
-      <Foundation>BOTTOM (Safety) first, always</Foundation>
+      <Foundation>BOTTOM (SAFE/Dopamine) first, always</Foundation>
       <Result>Advocacy, loyalty, sustainable growth</Result>
     </AuthenticMarketing>
   </AntiManipulation>
@@ -442,6 +446,24 @@
         <Change>Mandated Hybrid Whole Solutions architecture</Change>
         <Change>Specified manipulation prohibitions</Change>
         <Change>Created scoring system and balance rules</Change>
+      </Changes>
+      <Status>stable</Status>
+    </Version>
+    <Version number="1.0.1" date="2026-03-07">
+      <Changes>
+        <Change>Corrected all 6 neurochemical-to-side assignments to canonical Hologon mapping</Change>
+        <Change>Bottom: GABA→Dopamine (SAFE), Top: Serotonin→GABA (SPECIAL)</Change>
+        <Change>Left: Dopamine→Acetylcholine (SMART), Right: Acetylcholine→Serotonin (SIGNIFICANCE)</Change>
+        <Change>Front: Adrenaline→Oxytocin→Adrenaline (SUPERIOR/PSYCH), Back: Oxytocin→Adrenaline→Oxytocin (SUPPORTED/CONSCIENCE)</Change>
+        <Change>v1.0.1b: Corrected depth axis — SUPERIOR(PSYCH/ego) to Front, SUPPORTED(CONSCIENCE/social) to Back per owner clarification</Change>
+        <Change>Added 7S canonical labels to all side name attributes</Change>
+        <Change>Updated TransformationPath neurochemical journey references</Change>
+        <Change>Updated RadicalSimplicity 4-question neurochemical attributes</Change>
+        <Change>Updated WholeSolution component axis/neurochemical mappings</Change>
+        <Change>Updated ParadigmShift neurochemical references to use side/7S pairs</Change>
+        <Change>Updated AntiManipulation neurochemical references</Change>
+        <Change>Moved "Steal the Deal" to CENTER/SOUL origin note (was Front side Drive)</Change>
+        <Change>Added Hologon canonical reference in header</Change>
       </Changes>
       <Status>stable</Status>
     </Version>

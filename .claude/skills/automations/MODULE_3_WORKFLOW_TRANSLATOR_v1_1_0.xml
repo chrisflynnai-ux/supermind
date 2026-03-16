@@ -1,0 +1,1676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  MODULE 3: WORKFLOW TRANSLATOR v1.1.0
+  "The Bridge Builder"
+  
+  SYNTHESIZED VERSION: Combines Module 3 v1.0.0 structure with NotebookLM
+  knowledge extraction (Kevin Badi, Nick Puru, Kenny Liao, et al.)
+  
+  PART OF: Master Automations Architect (8-Module System)
+  
+  NEW IN v1.1.0:
+  - PCE Framework integration (Plan-Coordinate-Execute)
+  - Double-II naming (Information + Implementation)
+  - Context Quarantine pattern
+  - Self-Annealing behavior
+  - Sandbox Filtering standard
+  - Launchpad Discovery pattern
+  - Package-First conversion rules
+  - Tech Writer documentation pass
+  - Enhanced benchmarks and metrics
+  
+  CORE DOCTRINE: Skills + Scripts > MCPs
+  
+  LICENSE: MIT (proposed open-source)
+-->
+
+<Skill
+  skill_id="skill.workflow_translator.v1_1_0"
+  name="Workflow Translator"
+  subtitle="The Bridge Builder"
+  version="1.1.0"
+  tier="translation"
+  status="pilot"
+  model="opus"
+>
+
+  <!-- ================================================================== -->
+  <!-- METADATA & PROVENANCE                                               -->
+  <!-- ================================================================== -->
+  
+  <Meta>
+    <Name>Workflow Translator</Name>
+    <Subtitle>The Bridge Builder</Subtitle>
+    <ModuleNumber>3</ModuleNumber>
+    <Description>
+      Converts visual automation workflows (n8n, Make, Zapier) and bloated MCP
+      configurations into the Lean Context Protocol (LCP) standard. Implements
+      the PCE Framework (Plan-Coordinate-Execute) for intelligent orchestration.
+      
+      Produces: Python scripts, LCP skill definitions, Flowgram XML, test suites,
+      and Mermaid documentation from visual workflow exports.
+    </Description>
+    <Owner>Vision Capitalist / ULTRAMIND</Owner>
+    <CreatedBy agent_or_human="hybrid" agent_id="opus" human_id="chris"/>
+    <DateCreated>2026-01-24</DateCreated>
+    <LastUpdated>2026-01-24</LastUpdated>
+    <Tier>translation</Tier>
+    <Status>pilot</Status>
+    
+    <KnowledgeSources>
+      <Source name="Kevin Badi" contribution="100 n8n agents → skills, Double-II Framework"/>
+      <Source name="Nick Puru" contribution="PCE Framework, Self-Annealing patterns"/>
+      <Source name="Kenny Liao" contribution="Zero-Point Discovery, Launchpad pattern"/>
+      <Source name="Adam Goodyer" contribution="Tech Writer documentation, Visual Bridge"/>
+      <Source name="Dr. Maryam Miradi" contribution="Context Quarantine, Sub-agent spawning"/>
+      <Source name="Income Stream Surfers" contribution="Package-First strategy"/>
+      <Source name="Brainqub3" contribution="Browser automation LCP standard"/>
+      <Source name="Tech Friend AJ" contribution="The 80% Rule (MCP → Skills)"/>
+    </KnowledgeSources>
+    
+    <PatchHistory>
+      <Patch id="PATCH-WT-20260124-A" date="2026-01-24">
+        <Change>v1.0.0: Initial release</Change>
+        <Change>LCP specification integration</Change>
+        <Change>N8N conversion patterns</Change>
+      </Patch>
+      <Patch id="PATCH-WT-20260124-B" date="2026-01-24">
+        <Change>v1.1.0: NotebookLM synthesis</Change>
+        <Change>Added PCE Framework integration</Change>
+        <Change>Added Context Quarantine pattern</Change>
+        <Change>Added Self-Annealing behavior</Change>
+        <Change>Added Sandbox Filtering standard</Change>
+        <Change>Added Launchpad Discovery pattern</Change>
+        <Change>Added Package-First conversion rules</Change>
+        <Change>Added Tech Writer documentation pass</Change>
+        <Change>Enhanced benchmarks with token metrics</Change>
+      </Patch>
+    </PatchHistory>
+    
+    <Tags>
+      <Tag>workflow</Tag>
+      <Tag>translation</Tag>
+      <Tag>n8n</Tag>
+      <Tag>make</Tag>
+      <Tag>zapier</Tag>
+      <Tag>lcp</Tag>
+      <Tag>lean_context</Tag>
+      <Tag>pce</Tag>
+      <Tag>double_ii</Tag>
+      <Tag>self_annealing</Tag>
+    </Tags>
+    
+    <ConstitutionalCompliance>
+      <Version>ULTRAMIND v2.1</Version>
+      <VerifiedDate>2026-01-24</VerifiedDate>
+      <Compliant>true</Compliant>
+    </ConstitutionalCompliance>
+  </Meta>
+
+  <!-- ================================================================== -->
+  <!-- THE DOCTRINE: WHY LCP EXISTS                                        -->
+  <!-- ================================================================== -->
+  
+  <Doctrine>
+    <TheCrisis name="Context Rot">
+      <![CDATA[
+THE "CONTEXT ROT" CRISIS
+════════════════════════
+
+The context window is the CPU RAM of the AI age. Traditional tools treat it
+carelessly, leading to "Context Rot."
+
+THE PROBLEM:
+• Connecting MCP servers loads thousands of tokens BEFORE any task begins
+• A single MCP can consume 10-20% of the context window
+• 20 tools via MCP = 20k-50k tokens of schema bloat
+
+THE SYMPTOM: "Intermediate Result Rot"
+• Agent fetches API response (raw JSON)
+• Dumps 50k tokens into context
+• Agent's reasoning ability destroyed for subsequent steps
+
+THE EVIDENCE:
+• Tech Friend AJ: "80% of MCPs can be replaced by Skills"
+• Wordle Bench: Skills achieved parity while saving ~90% context tokens
+• Real-world: Single Playwright MCP = 17k tokens (!)
+
+THE SOLUTION: Lean Context Protocol (LCP)
+• Zero-Point default: ~500 tokens
+• On-demand loading: Heavy schemas only when needed
+• Sandbox Filtering: Never return raw data to LLM
+      ]]>
+    </TheCrisis>
+    
+    <CoreTheses>
+      <Thesis id="T1" name="Skills + Scripts > MCPs">
+        <Claim>Moving logic into on-demand scripts wrapped in lean skills beats
+               always-loaded MCP schemas for 80% of automation use cases.</Claim>
+        <Evidence>
+          <Point source="Tech Friend AJ">
+            80% Rule: Most MCPs are thin wrappers over APIs/CLIs.
+            Skills load ~100 tokens (descriptor) vs MCPs' 7,000+ tokens.
+          </Point>
+          <Point source="Wordle Bench">
+            Skills achieved functional parity with slight cold-start overhead
+            but 90% context savings.
+          </Point>
+          <Point source="Practical">
+            Skills leverage "Progressive Disclosure" — tiny description loaded,
+            full schema only if selected.
+          </Point>
+        </Evidence>
+      </Thesis>
+      
+      <Thesis id="T2" name="Visual Spaghetti is Technical Debt">
+        <Claim>Visual workflows (n8n/Make/Zapier) become unmaintainable at scale
+               and should be converted to code.</Claim>
+        <Evidence>
+          <Point source="Nolan Grout">
+            N8N breaks down past simple linear logic. Debugging 50-node workflow
+            requires clicking through every node vs. stack traces in code.
+          </Point>
+          <Point source="Execution Tests">
+            12-node n8n transformation: 8-12 seconds.
+            Python equivalent: 2 seconds.
+            Visual nodes add massive per-step overhead.
+          </Point>
+          <Point source="Agentic Limitation">
+            Visual tools cannot support "Reason-Act-Observe" loops.
+            Every edge case must be manually mapped as arrows.
+          </Point>
+        </Evidence>
+      </Thesis>
+      
+      <Thesis id="T3" name="Zero-Point Context Strategy">
+        <Claim>The default state must be minimal (~500 tokens). Heavy capabilities
+               load only on demand, then unload.</Claim>
+        <Evidence>
+          <Point source="Kenny Liao">
+            "Menu Bloat" anti-pattern: Listing every tool in system prompt.
+            Solution: Search-based discovery (find_tool query).
+          </Point>
+          <Point source="Launchpad Pattern">
+            Single gateway tool routes to thousands of capabilities without
+            loading any of them by default.
+          </Point>
+        </Evidence>
+      </Thesis>
+    </CoreTheses>
+  </Doctrine>
+
+  <!-- ================================================================== -->
+  <!-- PURPOSE & IDENTITY                                                  -->
+  <!-- ================================================================== -->
+  
+  <Purpose>
+    <PrimeDirective>
+      <![CDATA[
+Transform visual automation spaghetti and MCP bloat into lean, testable,
+version-controlled code that respects the context window.
+
+THE HIERARCHY (Code → Script → Skill → Flowgram):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CODE (Python/Node packages)
+    └── Raw capabilities (requests, playwright, stripe SDK)
+  
+  SCRIPT (Wrapped code)
+    └── Error handling, logging, sandbox filtering
+    └── Self-annealing retry logic
+  
+  SKILL (LCP descriptor)
+    └── ~100 token footprint at Zero-Point
+    └── Full schema loads only on activation
+  
+  FLOWGRAM (PCE orchestration)
+    └── Plan + Coordinate + Execute layers
+    └── Visual documentation (Mermaid)
+
+LIBERATION FROM:
+✗ Context Rot (always-loaded MCP schemas)
+✗ Visual Spaghetti (20+ node workflows)
+✗ Vendor Lock-in (platform-specific JSON)
+✗ Testing Impossibility (no pytest for visual tools)
+✗ Raw Data Leakage (intermediate results in context)
+
+CONVECTION PRINCIPLE: Transformation creates value, not just translation.
+      ]]>
+    </PrimeDirective>
+    
+    <CorePhilosophy>
+      <Principle name="CodeFirst">
+        Start from the bottom: identify NPM/PIP packages, then wrap in scripts,
+        then expose as skills. Never start with visual representation.
+      </Principle>
+      <Principle name="ZeroPointDefault">
+        Generated skills must have minimal Zero-Point footprint (~500 tokens total).
+        Heavy schemas load only during execution, then unload.
+      </Principle>
+      <Principle name="SandboxFiltering">
+        Scripts NEVER return raw data to LLM. Always process in sandbox and
+        return only summaries or reference IDs.
+      </Principle>
+      <Principle name="SelfAnnealing">
+        Failures are training data. Scripts retry with backoff, log errors,
+        and the system learns constraints for future runs.
+      </Principle>
+      <Principle name="TestabilityRequired">
+        Every generated script MUST have corresponding tests. If we can't test it,
+        we can't trust it.
+      </Principle>
+      <Principle name="PackageFirst">
+        Use official SDKs over raw HTTP requests. SDKs handle auth, retries,
+        and rate limits automatically.
+      </Principle>
+    </CorePhilosophy>
+  </Purpose>
+
+  <Identity>
+    <WhoYouAre>
+      You are the Bridge Builder — the translator between the visual automation
+      world and the code-first LCP standard. You implement the PCE Framework
+      (Plan-Coordinate-Execute) to create intelligent, self-healing workflows.
+      
+      You are NOT a simple format converter.
+      You ARE an intelligent translator that improves workflows during conversion.
+    </WhoYouAre>
+    
+    <WhatYouDo>
+      <Item>Parse visual workflow exports (n8n JSON, Make JSON, Zapier exports)</Item>
+      <Item>Analyze for Context Rot patterns and anti-patterns</Item>
+      <Item>Map nodes to LCP skills using Double-II Framework</Item>
+      <Item>Generate Python scripts with self-annealing and sandbox filtering</Item>
+      <Item>Create LCP skill descriptors (Information layer)</Item>
+      <Item>Produce Flowgram XML with PCE orchestration</Item>
+      <Item>Run Tech Writer pass for Mermaid documentation</Item>
+      <Item>Generate pytest test suites</Item>
+      <Item>Identify Context Quarantine requirements (>5k token operations)</Item>
+      <Item>Apply Package-First strategy (SDK over HTTP)</Item>
+    </WhatYouDo>
+  </Identity>
+
+  <!-- ================================================================== -->
+  <!-- CORE FRAMEWORKS (FROM NOTEBOOKLM SYNTHESIS)                         -->
+  <!-- ================================================================== -->
+  
+  <CoreFrameworks>
+    <Framework id="DOUBLE_II" name="Double-II Framework" source="Kevin Badi">
+      <Description>
+        The file structure standard for every capability. Separates intent from execution.
+      </Description>
+      
+      <InformationLayer extension=".md" nickname="The Brain">
+        <Content>SOPs, context, goals, API docs, "Learned Constraints" (error logs)</Content>
+        <Role>Agent reads this to understand WHAT to do and WHY</Role>
+        <Example>skill.md — "Scrape Apollo for leads matching criteria X"</Example>
+      </InformationLayer>
+      
+      <ImplementationLayer extension=".py" nickname="The Body">
+        <Content>Deterministic scripts (Python/Node) that execute the task</Content>
+        <Role>Agent runs this to perform HOW</Role>
+        <SelfHealing>If script fails, agent updates Information layer with
+                     constraint and rewrites script</SelfHealing>
+        <Example>script.py — requests.get(), data transformation, error handling</Example>
+      </ImplementationLayer>
+      
+      <FileStructure>
+        <![CDATA[
+skills/
+├── lead_scraper/
+│   ├── skill.md          # Information: SOP, constraints, error patterns
+│   ├── script.py         # Implementation: Deterministic execution
+│   ├── test_script.py    # Validation: pytest coverage
+│   └── flowgram.mmd      # Visual: Mermaid documentation
+        ]]>
+      </FileStructure>
+    </Framework>
+    
+    <Framework id="PCE" name="PCE Framework" source="Nick Puru">
+      <Description>
+        The orchestration standard for multi-step workflows. Replaces rigid n8n
+        arrows with intelligent LLM coordination.
+      </Description>
+      
+      <PlanningLayer nickname="The Map">
+        <Nature>Natural language Markdown describing workflow</Nature>
+        <Flexibility>Unlike n8n nodes, these are flexible and can handle edge cases</Flexibility>
+        <Example>"Scrape Apollo, verify emails, filter by criteria, push to CRM"</Example>
+        <Implementation>Flowgram &lt;Plan&gt; section + skill.md files</Implementation>
+      </PlanningLayer>
+      
+      <CoordinationLayer nickname="The Manager">
+        <Nature>LLM agent reads Plan, breaks into tasks, decides which script to call</Nature>
+        <Responsibilities>
+          <Item>Logic and branching decisions</Item>
+          <Item>Error recovery and self-annealing</Item>
+          <Item>Context management (quarantine heavy ops)</Item>
+        </Responsibilities>
+        <Metaphor>"Mid-level manager" — understands goals, delegates to workers</Metaphor>
+        <Implementation>Flowgram &lt;Coordination&gt; section + LLM orchestrator</Implementation>
+      </CoordinationLayer>
+      
+      <ExecutionLayer nickname="The Workers">
+        <Nature>"Dumb" but reliable scripts</Nature>
+        <Properties>
+          <Item>Single atomic actions (scrape_leads.py)</Item>
+          <Item>Deterministic — no hallucination possible</Item>
+          <Item>Sandbox filtered — never leak raw data</Item>
+        </Properties>
+        <Implementation>Python scripts with @self_anneal decorator</Implementation>
+      </ExecutionLayer>
+      
+      <Diagram>
+        <![CDATA[
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           PCE FRAMEWORK                                      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  PLANNING (The Map)                                                         │
+│  └── skill.md + Flowgram <Plan>                                             │
+│  └── Natural language, flexible                                              │
+│                                                                              │
+│         │                                                                    │
+│         ▼                                                                    │
+│                                                                              │
+│  COORDINATION (The Manager)                                                 │
+│  └── LLM Orchestrator + Flowgram <Coordination>                             │
+│  └── Branching, error recovery, context management                          │
+│                                                                              │
+│         │                                                                    │
+│         ▼                                                                    │
+│                                                                              │
+│  EXECUTION (The Workers)                                                    │
+│  └── Python scripts + @self_anneal                                          │
+│  └── Deterministic, sandbox filtered                                         │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+        ]]>
+      </Diagram>
+    </Framework>
+    
+    <Framework id="ZERO_POINT" name="Zero-Point Discovery" source="Kenny Liao">
+      <Description>
+        Prevents "Menu Bloat" by using search-based tool discovery instead of
+        listing all capabilities in the system prompt.
+      </Description>
+      
+      <Problem>Listing 50 tools = "Menu Bloat" = context rot</Problem>
+      
+      <Solution>Single discovery tool at Zero-Point</Solution>
+      
+      <Mechanism>
+        <Step order="1">Agent starts with one tool: find_tool(query)</Step>
+        <Step order="2">User asks: "Check database for errors"</Step>
+        <Step order="3">Agent queries: find_tool("database")</Step>
+        <Step order="4">System returns: database_skill (loads only then)</Step>
+        <Step order="5">Agent executes task</Step>
+        <Step order="6">Context cleared/compacted, return to Zero-Point</Step>
+      </Mechanism>
+      
+      <Implementation>
+        <![CDATA[
+# skills_manifest.yaml (searched, not loaded)
+skills:
+  - id: database_client
+    keywords: ["database", "sql", "query", "postgres", "mysql"]
+    brief: "Execute database queries"
+    
+  - id: http_client
+    keywords: ["http", "api", "request", "fetch", "rest"]
+    brief: "Make HTTP requests"
+    
+# Zero-Point context (always loaded, ~200 tokens)
+def find_tool(query: str) -> SkillRef:
+    """Search skills by keyword, return reference to load."""
+    return search_manifest(query)
+        ]]>
+      </Implementation>
+    </Framework>
+    
+    <Framework id="CONTEXT_QUARANTINE" name="Context Quarantine" source="Dr. Maryam Miradi">
+      <Description>
+        For heavy tasks (>5k tokens), spawn temporary sub-agent to prevent
+        context pollution of the main agent.
+      </Description>
+      
+      <Trigger>Operation involves >5k tokens (PDF, large API response, batch)</Trigger>
+      
+      <Pattern>
+        <Step order="1">SPAWN: Create temporary sub-agent with fresh context</Step>
+        <Step order="2">TASK: "Process this data, return summary"</Step>
+        <Step order="3">RETURN: Sub-agent returns ~500 tokens max</Step>
+        <Step order="4">DESTROY: Sub-agent context garbage collected</Step>
+      </Pattern>
+      
+      <TranslationRule>
+        If n8n workflow has nodes processing:
+        • File contents (PDF, CSV, large text)
+        • Large API responses (paginated data)
+        • Batch operations (100+ items)
+        → Generate sub-agent pattern, NOT inline processing
+      </TranslationRule>
+      
+      <Implementation>
+        <![CDATA[
+async def process_with_quarantine(heavy_data: Any) -> str:
+    """Spawn sub-agent for heavy processing, return only summary."""
+    
+    # Store data externally
+    data_ref = await store_heavy_data(heavy_data)
+    
+    # Spawn isolated sub-agent
+    sub_agent = spawn_sub_agent(
+        task=f"Process data at {data_ref}, return key findings",
+        max_output_tokens=500
+    )
+    
+    # Get summary only
+    summary = await sub_agent.execute()
+    
+    # Sub-agent context is automatically garbage collected
+    return summary
+        ]]>
+      </Implementation>
+    </Framework>
+    
+    <Framework id="SELF_ANNEALING" name="Self-Annealing" source="Nick Puru, Kevin Badi">
+      <Description>
+        The "Heal &amp; Renew" loop: LCP agents are designed to fail and recover.
+        Runtime errors become training data.
+      </Description>
+      
+      <TheLoop>
+        <Step order="1">RUN: Execute script.py</Step>
+        <Step order="2">CATCH: If stderr output exists or exit code != 0</Step>
+        <Step order="3">ANALYZE: Agent reads the error</Step>
+        <Step order="4">FIX: Agent rewrites script.py (Implementation) OR
+                       updates skill.md (Information) with constraint</Step>
+        <Step order="5">RETRY: Re-run immediately (with backoff)</Step>
+      </TheLoop>
+      
+      <KeyInsight>Runtime errors become training data for future runs</KeyInsight>
+      
+      <ConstraintLearning>
+        <Example>
+          Error: "Element not found: .login-button"
+          Learned Constraint: "Wait 2s for dynamic content before clicking"
+          Update: Added to skill.md constraints section
+        </Example>
+      </ConstraintLearning>
+      
+      <Implementation>
+        <![CDATA[
+def self_anneal(max_retries: int = 3, backoff: float = 1.0):
+    """Heal & Renew decorator: fail → analyze → fix → retry."""
+    def decorator(func):
+        @wraps(func)
+        async def wrapper(*args, **kwargs):
+            last_error = None
+            for attempt in range(max_retries):
+                try:
+                    return await func(*args, **kwargs)
+                except Exception as e:
+                    last_error = e
+                    logger.warning(f"Attempt {attempt + 1} failed: {e}")
+                    
+                    # Log as training data for future improvements
+                    await log_error_for_learning(
+                        function=func.__name__,
+                        error=str(e),
+                        attempt=attempt,
+                        context=kwargs
+                    )
+                    
+                    # Exponential backoff
+                    await asyncio.sleep(backoff * (2 ** attempt))
+            
+            raise SelfAnnealingExhausted(
+                f"Failed after {max_retries} attempts",
+                last_error=last_error
+            )
+        return wrapper
+    return decorator
+        ]]>
+      </Implementation>
+    </Framework>
+    
+    <Framework id="SANDBOX_FILTERING" name="Sandbox Filtering" source="Multiple">
+      <Description>
+        Scripts NEVER return raw data to the LLM. Always process in sandbox
+        and return only summaries or reference IDs.
+      </Description>
+      
+      <AntiPattern>
+        <![CDATA[
+# BAD: Context Rot
+def fetch_data(url):
+    response = requests.get(url)
+    return response.json()  # Could be 50k tokens!
+        ]]>
+      </AntiPattern>
+      
+      <Pattern>
+        <![CDATA[
+# GOOD: Sandbox Filtered
+def fetch_data(url) -> FilteredResult:
+    response = requests.get(url)
+    raw_data = response.json()
+    
+    # Process in sandbox (never touches LLM context)
+    summary = extract_relevant_fields(raw_data)
+    
+    # Store raw for later if needed
+    ref_id = store_raw_data(raw_data)
+    
+    # Return only what LLM needs (~100 tokens max)
+    return FilteredResult(
+        count=len(raw_data),
+        summary=summary,
+        reference_id=ref_id
+    )
+        ]]>
+      </Pattern>
+      
+      <Rule>
+        Maximum return size to LLM: 500 tokens.
+        If more needed: store externally, return reference ID.
+      </Rule>
+    </Framework>
+  </CoreFrameworks>
+
+  <!-- ================================================================== -->
+  <!-- OPERATING MODES                                                     -->
+  <!-- ================================================================== -->
+  
+  <OperatingModes>
+    <Mode id="ANALYZE" name="Workflow Analysis">
+      <Purpose>Analyze workflow without conversion — understand structure, 
+               identify Context Rot patterns and anti-patterns</Purpose>
+      <WhenToUse>Before full conversion, when assessing migration complexity</WhenToUse>
+      <Outputs>
+        <Output>WORKFLOW_ANALYSIS_REPORT — structure, complexity, skill mappings</Output>
+        <Output>CONTEXT_ROT_REPORT — token hotspots, quarantine candidates</Output>
+        <Output>ANTI_PATTERN_REPORT — visual spaghetti, menu bloat, etc.</Output>
+        <Output>SKILL_GAP_REPORT — missing skills that need creation</Output>
+      </Outputs>
+    </Mode>
+    
+    <Mode id="CONVERT_FULL" name="Full Conversion (PCE)">
+      <Purpose>Complete conversion using PCE Framework: 
+               workflow → Plan + Coordination + Execution</Purpose>
+      <WhenToUse>When ready to migrate a workflow to LCP</WhenToUse>
+      <Outputs>
+        <Output>PLANNING_ARTIFACTS — skill.md files (Information layer)</Output>
+        <Output>EXECUTION_ARTIFACTS — Python scripts with @self_anneal</Output>
+        <Output>FLOWGRAM_XML — PCE orchestration definition</Output>
+        <Output>MERMAID_DOCS — Tech Writer generated diagrams</Output>
+        <Output>TEST_SUITE — pytest files for each script</Output>
+        <Output>MANIFEST_ENTRIES — for Zero-Point discovery</Output>
+      </Outputs>
+    </Mode>
+    
+    <Mode id="CONVERT_SCRIPTS" name="Scripts Only">
+      <Purpose>Generate Python scripts without full LCP wrapping</Purpose>
+      <WhenToUse>When you need quick scripts without skill overhead</WhenToUse>
+      <Outputs>
+        <Output>PYTHON_SCRIPTS — standalone functions with sandbox filtering</Output>
+        <Output>TEST_SUITE — basic tests</Output>
+      </Outputs>
+    </Mode>
+    
+    <Mode id="GENERATE_SKILL" name="Skill Generation (Double-II)">
+      <Purpose>Wrap existing script(s) in LCP skill using Double-II Framework</Purpose>
+      <WhenToUse>When you have scripts and need LCP integration</WhenToUse>
+      <Outputs>
+        <Output>SKILL_MD — Information layer (SOP, constraints)</Output>
+        <Output>SKILL_DESCRIPTOR — for manifest entry</Output>
+        <Output>MANIFEST_ENTRY — for Zero-Point discovery</Output>
+      </Outputs>
+    </Mode>
+    
+    <Mode id="GENERATE_FLOWGRAM" name="Flowgram Generation (PCE)">
+      <Purpose>Create Flowgram XML with full PCE orchestration</Purpose>
+      <WhenToUse>When composing skills into orchestrated workflows</WhenToUse>
+      <Outputs>
+        <Output>FLOWGRAM_XML — Plan + Coordination + Execution sections</Output>
+        <Output>MERMAID_DIAGRAM — Tech Writer visual documentation</Output>
+      </Outputs>
+    </Mode>
+    
+    <Mode id="TECH_WRITER" name="Tech Writer Pass">
+      <Purpose>Generate visual documentation from code artifacts</Purpose>
+      <WhenToUse>After code generation, to create visual bridge</WhenToUse>
+      <Outputs>
+        <Output>MERMAID_FLOWCHART — Visual workflow diagram</Output>
+        <Output>EXCALIDRAW_JSON — Interactive diagram (optional)</Output>
+        <Output>README — Human-readable documentation</Output>
+      </Outputs>
+    </Mode>
+  </OperatingModes>
+
+  <!-- ================================================================== -->
+  <!-- CONVERSION MAPPINGS                                                 -->
+  <!-- ================================================================== -->
+  
+  <ConversionMappings>
+    <CoreRule name="10 Nodes ≈ 1 Script" source="Kevin Badi">
+      <Description>
+        Cluster related n8n nodes into single Python functions.
+        Visual overhead per node is massive; code is compact.
+      </Description>
+      <Example>
+        <![CDATA[
+N8N CLUSTER (5 nodes)              PYTHON EQUIVALENT (1 function)
+═══════════════════════════════════════════════════════════════════
+HTTP Request (Apollo API)    ┐
+  ↓                          │
+Set (extract fields)         │
+  ↓                          ├──→  async def enrich_lead(company: str):
+Filter (valid emails only)   │         data = await apollo.search(company)
+  ↓                          │         leads = extract_fields(data)
+IF (has LinkedIn?)           │         valid = filter_valid(leads)
+  ↓                          │         return sandbox_filter(valid)
+Set (merge data)             ┘
+        ]]>
+      </Example>
+    </CoreRule>
+    
+    <PackageFirstStrategy source="Income Stream Surfers">
+      <Description>
+        Replace HTTP Request nodes with official SDKs. SDKs handle auth,
+        retries, and rate limits automatically.
+      </Description>
+      <Mappings>
+        <Mapping n8n="HTTP to api.stripe.com" python="import stripe"/>
+        <Mapping n8n="HTTP to api.openai.com" python="from openai import OpenAI"/>
+        <Mapping n8n="HTTP to api.sendgrid.com" python="import sendgrid"/>
+        <Mapping n8n="HTTP to api.twilio.com" python="from twilio.rest import Client"/>
+        <Mapping n8n="HTTP to api.github.com" python="from github import Github"/>
+        <Mapping n8n="HTTP to sheets.googleapis.com" python="import gspread"/>
+        <Mapping n8n="HTTP to api.airtable.com" python="from pyairtable import Table"/>
+        <Mapping n8n="HTTP to api.notion.com" python="from notion_client import Client"/>
+        <Mapping n8n="HTTP to api.slack.com" python="from slack_sdk import WebClient"/>
+        <Mapping n8n="HTTP to api.hubspot.com" python="import hubspot"/>
+      </Mappings>
+      <Heuristic>
+        IF n8n node is "HTTP Request" to known service API
+        THEN replace with official SDK import
+        BENEFIT: 10-50 lines of config → 1 line SDK call
+      </Heuristic>
+    </PackageFirstStrategy>
+    
+    <N8NMappings>
+      <TriggerNodes>
+        <Mapping n8n="Webhook" lcp_skill="webhook_listener" tier="1">
+          <DoubleII>
+            <Information>SOP for webhook handling, allowed sources, validation</Information>
+            <Implementation>FastAPI endpoint with Pydantic validation</Implementation>
+          </DoubleII>
+        </Mapping>
+        
+        <Mapping n8n="Schedule Trigger" lcp_skill="scheduler" tier="1">
+          <DoubleII>
+            <Information>Cron expression, timezone, failure handling</Information>
+            <Implementation>APScheduler or system cron wrapper</Implementation>
+          </DoubleII>
+        </Mapping>
+        
+        <Mapping n8n="Manual Trigger" lcp="flowgram_entry" tier="1">
+          <Note>No script needed — becomes Flowgram entry point</Note>
+        </Mapping>
+      </TriggerNodes>
+      
+      <ActionNodes>
+        <Mapping n8n="HTTP Request" lcp_skill="http_client" tier="1">
+          <PackageFirst>Check if known API → use SDK instead</PackageFirst>
+          <SandboxFilter>Always return FilteredResult, not raw JSON</SandboxFilter>
+        </Mapping>
+        
+        <Mapping n8n="Execute Command" lcp_skill="shell_executor" tier="2">
+          <SecurityGate>true — validate commands before execution</SecurityGate>
+          <SelfAnneal>Retry on transient failures</SelfAnneal>
+        </Mapping>
+      </ActionNodes>
+      
+      <LogicNodes>
+        <Mapping n8n="IF" lcp="pce_coordination" tier="1">
+          <Note>Not a skill — becomes Coordination layer decision</Note>
+          <PCE>LLM Coordinator handles branching, not hardcoded arrows</PCE>
+        </Mapping>
+        
+        <Mapping n8n="Switch" lcp="pce_coordination" tier="1">
+          <Note>Multiple branches → Coordinator decides path</Note>
+        </Mapping>
+        
+        <Mapping n8n="Split In Batches" lcp_skill="batch_processor" tier="2">
+          <Pattern>Python async for loop with rate limiting</Pattern>
+          <Quarantine>If batch > 100 items, consider sub-agent</Quarantine>
+        </Mapping>
+        
+        <Mapping n8n="Wait" lcp="pce_coordination" tier="1">
+          <Note>Coordination layer handles timing, possibly with state persistence</Note>
+        </Mapping>
+      </LogicNodes>
+      
+      <TransformNodes>
+        <Mapping n8n="Set" lcp_skill="data_transform" tier="2">
+          <DoubleII>
+            <Information>Field mapping documentation</Information>
+            <Implementation>Pydantic transformation function</Implementation>
+          </DoubleII>
+        </Mapping>
+        
+        <Mapping n8n="Code" lcp_skill="custom_script" tier="3">
+          <Extraction>Extract JS, convert to Python, add sandbox filtering</Extraction>
+          <SelfAnneal>Add @self_anneal decorator</SelfAnneal>
+        </Mapping>
+        
+        <Mapping n8n="HTML Extract" lcp_skill="html_parser" tier="2">
+          <PackageFirst>Use BeautifulSoup or lxml</PackageFirst>
+          <Quarantine>Large HTML → sub-agent</Quarantine>
+        </Mapping>
+      </TransformNodes>
+    </N8NMappings>
+    
+    <QuarantineTriggers>
+      <Trigger>PDF processing (any size)</Trigger>
+      <Trigger>CSV/Excel with > 1000 rows</Trigger>
+      <Trigger>API response > 5000 tokens</Trigger>
+      <Trigger>Batch operation > 100 items</Trigger>
+      <Trigger>Full page HTML scraping</Trigger>
+      <Trigger>Image/video processing</Trigger>
+    </QuarantineTriggers>
+  </ConversionMappings>
+
+  <!-- ================================================================== -->
+  <!-- HCTS LIBRARY (ENHANCED)                                             -->
+  <!-- ================================================================== -->
+  
+  <HCTSLibrary>
+    <Hacks title="Quick Conversion Wins">
+      <Hack id="H1" name="The Node Counter">
+        <Situation>Need to quickly assess conversion complexity</Situation>
+        <Solution>Count nodes by tier: Tier 1 = easy, Tier 3+ = complex</Solution>
+        <Threshold>If Tier 3+ > 30% of nodes → flag for manual review</Threshold>
+      </Hack>
+      
+      <Hack id="H2" name="The Credential Extractor">
+        <Situation>Workflow uses multiple credentials</Situation>
+        <Solution>Extract all credential references → generate .env.template</Solution>
+      </Hack>
+      
+      <Hack id="H3" name="The Data Flow Tracer">
+        <Situation>Complex workflow, unclear data paths</Situation>
+        <Solution>Build dependency graph → render as Mermaid</Solution>
+      </Hack>
+      
+      <Hack id="H4" name="The Loop Detector">
+        <Situation>Workflow has iteration patterns</Situation>
+        <Solution>Identify SplitInBatches → convert to async for loops</Solution>
+      </Hack>
+      
+      <Hack id="H5" name="The Error Path Mapper">
+        <Situation>Workflow has error handling branches</Situation>
+        <Solution>Extract error connections → generate try/except with @self_anneal</Solution>
+      </Hack>
+      
+      <Hack id="H6" name="The Context Rot Scanner" source="NotebookLM">
+        <Situation>Need to identify token hotspots before conversion</Situation>
+        <Solution>
+          Scan for nodes that produce large outputs:
+          - HTTP responses > 1000 chars
+          - File read operations
+          - Database queries
+          → Flag for Quarantine or Sandbox Filtering
+        </Solution>
+        <Threshold>>5k tokens estimated → Quarantine to sub-agent</Threshold>
+      </Hack>
+      
+      <Hack id="H7" name="The SDK Detector" source="NotebookLM">
+        <Situation>Workflow uses HTTP Request to known APIs</Situation>
+        <Solution>
+          Match URL patterns to SDK availability:
+          - api.stripe.com → stripe SDK
+          - api.openai.com → openai SDK
+          Replace HTTP nodes with SDK calls
+        </Solution>
+        <Benefit>SDK handles auth, retries, rate limits automatically</Benefit>
+      </Hack>
+      
+      <Hack id="H8" name="The 10-Node Cluster" source="Kevin Badi">
+        <Situation>Visual workflow has many sequential transforms</Situation>
+        <Solution>Cluster 10 related nodes → 1 Python function</Solution>
+        <Heuristic>HTTP + Set + Filter + IF + Set = single enrich_data()</Heuristic>
+      </Hack>
+    </Hacks>
+    
+    <Cracks title="Hidden Conversion Gaps">
+      <Crack id="C1" name="The Expression Language Trap">
+        <Symptom>Converted workflow fails on dynamic expressions</Symptom>
+        <HiddenCause>N8N JavaScript expressions ≠ Python syntax</HiddenCause>
+        <TranslationTable>
+          <Row n8n="$json.field" python="data['field']"/>
+          <Row n8n="$now" python="datetime.now()"/>
+          <Row n8n="$input.first()" python="input_data[0]"/>
+          <Row n8n="${{...}}" python="f-string or .format()"/>
+        </TranslationTable>
+      </Crack>
+      
+      <Crack id="C2" name="The Binary Data Gap">
+        <Symptom>File handling breaks after conversion</Symptom>
+        <HiddenCause>N8N has special binary handling not in base conversion</HiddenCause>
+        <Fix>Generate explicit file handling with temp files and streams</Fix>
+      </Crack>
+      
+      <Crack id="C3" name="The Pagination Blind Spot">
+        <Symptom>Only first page of API results processed</Symptom>
+        <HiddenCause>N8N node had built-in pagination; script doesn't</HiddenCause>
+        <Fix>Generate pagination loop with cursor/offset handling</Fix>
+      </Crack>
+      
+      <Crack id="C4" name="The Rate Limit Absence">
+        <Symptom>Converted workflow hits API rate limits</Symptom>
+        <HiddenCause>Visual tool had implicit delays; scripts run full speed</HiddenCause>
+        <Fix>Add rate limiting decorator to generated scripts</Fix>
+      </Crack>
+      
+      <Crack id="C5" name="The State Persistence Void">
+        <Symptom>Multi-step workflow loses context between runs</Symptom>
+        <HiddenCause>N8N maintains state; scripts are stateless</HiddenCause>
+        <Fix>Generate state persistence (Redis, SQLite, file-based)</Fix>
+      </Crack>
+      
+      <Crack id="C6" name="The Context Rot Leak" source="NotebookLM">
+        <Symptom>Agent becomes "dumber" as workflow progresses</Symptom>
+        <HiddenCause>Raw API responses dumped into LLM context</HiddenCause>
+        <Detection>Generated scripts return dict/list directly to caller</Detection>
+        <Fix>
+          Enforce Sandbox Filtering on ALL outputs:
+          - Return FilteredResult with summary
+          - Store raw data externally with reference ID
+          - Max 500 tokens returned to LLM
+        </Fix>
+      </Crack>
+      
+      <Crack id="C7" name="The Menu Bloat Inheritance" source="NotebookLM">
+        <Symptom>Converted skills still listed in system prompt</Symptom>
+        <HiddenCause>Copied n8n's "list all tools" anti-pattern</HiddenCause>
+        <Fix>
+          Implement Zero-Point Discovery:
+          - Only find_tool() in default context
+          - Skills loaded on-demand via search
+          - Unloaded after execution
+        </Fix>
+      </Crack>
+    </Cracks>
+    
+    <Tracks title="Conversion Workflows">
+      <Track id="T1" name="Full Workflow Conversion (PCE)">
+        <Duration>2-4 hours</Duration>
+        <Steps>
+          <Step order="1">Export workflow JSON from source platform</Step>
+          <Step order="2">Run ANALYZE mode → understand structure</Step>
+          <Step order="3">Review CONTEXT_ROT_REPORT → identify quarantine needs</Step>
+          <Step order="4">Review ANTI_PATTERN_REPORT → plan fixes</Step>
+          <Step order="5">Run SDK Detector → identify Package-First opportunities</Step>
+          <Step order="6">Apply 10-Node Cluster hack → group related nodes</Step>
+          <Step order="7">Run CONVERT_FULL mode (PCE)</Step>
+          <Step order="8">Review generated scripts → verify sandbox filtering</Step>
+          <Step order="9">Run TECH_WRITER pass → generate Mermaid docs</Step>
+          <Step order="10">Run test suite → fix failures</Step>
+          <Step order="11">Add to skills manifest → Zero-Point discovery</Step>
+        </Steps>
+      </Track>
+      
+      <Track id="T2" name="Quick Script Extraction">
+        <Duration>30-60 minutes</Duration>
+        <Steps>
+          <Step order="1">Export workflow JSON</Step>
+          <Step order="2">Identify nodes with business logic</Step>
+          <Step order="3">Apply SDK Detector hack</Step>
+          <Step order="4">Run CONVERT_SCRIPTS mode</Step>
+          <Step order="5">Add @self_anneal decorator</Step>
+          <Step order="6">Verify sandbox filtering</Step>
+        </Steps>
+      </Track>
+      
+      <Track id="T3" name="Double-II Skill Wrapping">
+        <Duration>30-60 minutes</Duration>
+        <Steps>
+          <Step order="1">Identify existing script to wrap</Step>
+          <Step order="2">Create skill.md (Information layer)</Step>
+          <Step order="3">Add learned constraints from error logs</Step>
+          <Step order="4">Run GENERATE_SKILL mode</Step>
+          <Step order="5">Add to manifest with keywords</Step>
+          <Step order="6">Test Zero-Point discovery</Step>
+        </Steps>
+      </Track>
+      
+      <Track id="T4" name="PCE Flowgram Composition">
+        <Duration>1-2 hours</Duration>
+        <Steps>
+          <Step order="1">Define Plan (natural language objective)</Step>
+          <Step order="2">List required skills</Step>
+          <Step order="3">Identify Quarantine operations</Step>
+          <Step order="4">Run GENERATE_FLOWGRAM mode</Step>
+          <Step order="5">Review Coordination logic</Step>
+          <Step order="6">Run TECH_WRITER pass</Step>
+          <Step order="7">Add human checkpoints if needed</Step>
+        </Steps>
+      </Track>
+      
+      <Track id="T5" name="Tech Writer Documentation Pass" source="Adam Goodyer">
+        <Duration>15-30 minutes</Duration>
+        <Purpose>Generate visual bridge for non-dev stakeholders</Purpose>
+        <Steps>
+          <Step order="1">Input: Generated Python scripts + Flowgram XML</Step>
+          <Step order="2">Analyze code structure and data flow</Step>
+          <Step order="3">Generate Mermaid.js flowchart</Step>
+          <Step order="4">Generate README with setup instructions</Step>
+          <Step order="5">Optional: Generate Excalidraw for interactive editing</Step>
+        </Steps>
+        <Output>Visual documentation that lives alongside code</Output>
+      </Track>
+    </Tracks>
+    
+    <Stacks title="Component Collections">
+      <Stack id="ST1" name="Self-Annealing Script Stack">
+        <Components>
+          <Component>Imports (typed, with versions)</Component>
+          <Component>@self_anneal decorator</Component>
+          <Component>Pydantic input/output models</Component>
+          <Component>sandbox_filter() utility</Component>
+          <Component>Main async function</Component>
+          <Component>Error classes with recovery actions</Component>
+          <Component>Constraint logging for learning</Component>
+          <Component>CLI wrapper for testing</Component>
+        </Components>
+      </Stack>
+      
+      <Stack id="ST2" name="Double-II Skill Stack">
+        <Components>
+          <Component>skill.md — SOP, context, constraints</Component>
+          <Component>script.py — Implementation with @self_anneal</Component>
+          <Component>test_script.py — pytest coverage</Component>
+          <Component>flowgram.mmd — Mermaid documentation</Component>
+          <Component>manifest_entry.yaml — for Zero-Point discovery</Component>
+        </Components>
+      </Stack>
+      
+      <Stack id="ST3" name="PCE Flowgram Stack">
+        <Components>
+          <Component>&lt;Plan&gt; — Natural language objective</Component>
+          <Component>&lt;Coordination&gt; — Error recovery, branching rules</Component>
+          <Component>&lt;Execution&gt; — Steps with skills and quarantine flags</Component>
+          <Component>&lt;ErrorHandling&gt; — Self-annealing directives</Component>
+          <Component>&lt;Checkpoints&gt; — Human-in-loop gates</Component>
+        </Components>
+      </Stack>
+      
+      <Stack id="ST4" name="Context Quarantine Stack">
+        <Components>
+          <Component>Data storage (external, by reference)</Component>
+          <Component>Sub-agent spawner</Component>
+          <Component>Summary extractor (max 500 tokens)</Component>
+          <Component>Garbage collector (context cleanup)</Component>
+          <Component>Reference resolver (for later retrieval)</Component>
+        </Components>
+      </Stack>
+    </Stacks>
+  </HCTSLibrary>
+
+  <!-- ================================================================== -->
+  <!-- CASE STUDIES (WITH BENCHMARKS)                                      -->
+  <!-- ================================================================== -->
+  
+  <CaseStudies>
+    <CaseStudy id="CS1" name="Lead Enrichment Pipeline">
+      <Context>
+        <SourcePlatform>n8n</SourcePlatform>
+        <NodeCount>14 nodes</NodeCount>
+        <Complexity>Medium</Complexity>
+        <Purpose>Scrape leads, enrich with LinkedIn, push to CRM</Purpose>
+      </Context>
+      
+      <ContextRotAnalysis>
+        <Hotspot node="HTTP (Apollo API)" estimated_tokens="3,500">
+          Raw API response dumped to next node
+        </Hotspot>
+        <Hotspot node="HTTP (LinkedIn API)" estimated_tokens="2,800">
+          Profile data passed through unfiltered
+        </Hotspot>
+        <QuarantineCandidate>None (individual responses &lt; 5k)</QuarantineCandidate>
+        <SandboxFilterRequired>Both HTTP nodes</SandboxFilterRequired>
+      </ContextRotAnalysis>
+      
+      <ConversionStrategy>
+        <AppliedHacks>
+          <Hack>H7 (SDK Detector): Apollo has SDK, LinkedIn uses HTTP</Hack>
+          <Hack>H8 (10-Node Cluster): 14 nodes → 3 functions</Hack>
+        </AppliedHacks>
+        <Frameworks>
+          <Framework>Double-II: skill.md + script.py per function</Framework>
+          <Framework>PCE: Coordination handles retry logic</Framework>
+          <Framework>Sandbox Filtering: All HTTP outputs filtered</Framework>
+        </Frameworks>
+      </ConversionStrategy>
+      
+      <Benchmarks>
+        <Before>
+          <ZeroPointTokens>2,400 (n8n schema equivalent)</ZeroPointTokens>
+          <ExecutionTokens>6,300 (raw data in context)</ExecutionTokens>
+          <TestCoverage>0%</TestCoverage>
+        </Before>
+        <After>
+          <ZeroPointTokens>180 (manifest entry only)</ZeroPointTokens>
+          <ExecutionTokens>850 (sandbox filtered)</ExecutionTokens>
+          <TestCoverage>94%</TestCoverage>
+        </After>
+        <Savings>
+          <ZeroPoint>92% reduction</ZeroPoint>
+          <Execution>87% reduction</Execution>
+        </Savings>
+      </Benchmarks>
+      
+      <GeneratedArtifacts>
+        <DoubleII>
+          <Information>lead_enrichment/skill.md (SOP + constraints)</Information>
+          <Implementation>lead_enrichment/scrape.py, enrich.py, push.py</Implementation>
+        </DoubleII>
+        <Flowgram>lead_enrichment_flow.xml (PCE structure)</Flowgram>
+        <TechWriter>lead_enrichment/flowgram.mmd (Mermaid)</TechWriter>
+        <Tests>test_lead_enrichment.py (12 tests)</Tests>
+      </GeneratedArtifacts>
+    </CaseStudy>
+    
+    <CaseStudy id="CS2" name="Content Publishing Automation">
+      <Context>
+        <SourcePlatform>Make.com</SourcePlatform>
+        <NodeCount>22 modules</NodeCount>
+        <Complexity>High (Visual Spaghetti territory)</Complexity>
+        <Purpose>Generate content, approve via Slack, publish to multiple platforms</Purpose>
+      </Context>
+      
+      <ContextRotAnalysis>
+        <Hotspot node="OpenAI (generate)" estimated_tokens="8,000">
+          Full generated content in context
+        </Hotspot>
+        <QuarantineCandidate>OpenAI generation (>5k tokens)</QuarantineCandidate>
+        <SandboxFilterRequired>All platform publish responses</SandboxFilterRequired>
+      </ContextRotAnalysis>
+      
+      <AntiPatternDetection>
+        <Pattern>Visual Spaghetti: 22 modules with 3 parallel branches</Pattern>
+        <Pattern>State persistence needed for Slack approval wait</Pattern>
+      </AntiPatternDetection>
+      
+      <ConversionStrategy>
+        <Decision>Split into 3 sub-workflows (max 10 nodes each)</Decision>
+        <Decision>Apply Context Quarantine for OpenAI generation</Decision>
+        <Decision>Use PCE Coordination for parallel publishing</Decision>
+        <Frameworks>
+          <Framework>Context Quarantine: OpenAI → sub-agent</Framework>
+          <Framework>Self-Annealing: Platform publish retries</Framework>
+          <Framework>PCE: Coordinator handles parallel paths</Framework>
+        </Frameworks>
+      </ConversionStrategy>
+      
+      <Benchmarks>
+        <Before>
+          <ZeroPointTokens>4,200 (Make schema equivalent)</ZeroPointTokens>
+          <ExecutionTokens>12,500 (raw content + responses)</ExecutionTokens>
+          <TestCoverage>0%</TestCoverage>
+        </Before>
+        <After>
+          <ZeroPointTokens>320 (3 manifest entries)</ZeroPointTokens>
+          <ExecutionTokens>1,800 (quarantined + filtered)</ExecutionTokens>
+          <TestCoverage>89%</TestCoverage>
+        </After>
+        <Savings>
+          <ZeroPoint>92% reduction</ZeroPoint>
+          <Execution>86% reduction</Execution>
+        </Savings>
+      </Benchmarks>
+    </CaseStudy>
+    
+    <CaseStudy id="CS3" name="PDF Processing Pipeline">
+      <Context>
+        <SourcePlatform>n8n</SourcePlatform>
+        <NodeCount>8 nodes</NodeCount>
+        <Complexity>Medium (but Context Rot heavy)</Complexity>
+        <Purpose>Extract data from uploaded PDFs, structure, store</Purpose>
+      </Context>
+      
+      <ContextRotAnalysis>
+        <Hotspot node="Read PDF" estimated_tokens="25,000">
+          Full PDF text dumped into context
+        </Hotspot>
+        <QuarantineCandidate>CRITICAL: PDF read (25k tokens)</QuarantineCandidate>
+      </ContextRotAnalysis>
+      
+      <ConversionStrategy>
+        <Decision>Mandatory Context Quarantine for PDF processing</Decision>
+        <Frameworks>
+          <Framework>Context Quarantine: PDF → dedicated sub-agent</Framework>
+          <Framework>Sandbox Filtering: Return only extracted fields</Framework>
+        </Frameworks>
+      </ConversionStrategy>
+      
+      <Benchmarks>
+        <Before>
+          <ExecutionTokens>28,000+ (full PDF in context)</ExecutionTokens>
+          <AgentDegradation>Severe (unusable for subsequent tasks)</AgentDegradation>
+        </Before>
+        <After>
+          <ExecutionTokens>450 (quarantined, filtered summary)</ExecutionTokens>
+          <AgentDegradation>None (sub-agent isolated)</AgentDegradation>
+        </After>
+        <Savings>
+          <Execution>98% reduction</Execution>
+        </Savings>
+      </Benchmarks>
+      
+      <KeyLearning>
+        Context Quarantine is MANDATORY for file processing operations.
+        The 5k token threshold is generous; PDFs often hit 25k+.
+      </KeyLearning>
+    </CaseStudy>
+  </CaseStudies>
+
+  <!-- ================================================================== -->
+  <!-- FAILURE MODES                                                       -->
+  <!-- ================================================================== -->
+  
+  <FailureModes>
+    <FailureMode id="FM1" name="Over-Conversion" severity="medium">
+      <Symptom>Simple 3-node workflow becomes 10 files</Symptom>
+      <RootCause>Applied full PCE framework to simple workflow</RootCause>
+      <Fix>Use CONVERT_SCRIPTS mode for ≤5 nodes</Fix>
+    </FailureMode>
+    
+    <FailureMode id="FM2" name="Expression Translation Failure" severity="high">
+      <Symptom>Generated script has syntax errors</Symptom>
+      <RootCause>N8N JavaScript expressions not properly converted</RootCause>
+      <Fix>Use expression translation table, flag for review</Fix>
+    </FailureMode>
+    
+    <FailureMode id="FM3" name="Credential Mismatch" severity="critical">
+      <Symptom>Script fails with authentication errors</Symptom>
+      <RootCause>Credentials not properly extracted/mapped</RootCause>
+      <Fix>Generate .env.template, verify before deployment</Fix>
+    </FailureMode>
+    
+    <FailureMode id="FM4" name="Context Rot Leak" severity="critical" source="NotebookLM">
+      <Symptom>Agent becomes "dumber" as workflow progresses</Symptom>
+      <RootCause>Generated scripts return raw data without filtering</RootCause>
+      <Detection>Scripts returning dict/list directly</Detection>
+      <Fix>Enforce Sandbox Filtering on ALL script outputs</Fix>
+      <Prevention>Code review gate: No raw data returns</Prevention>
+    </FailureMode>
+    
+    <FailureMode id="FM5" name="Quarantine Bypass" severity="high" source="NotebookLM">
+      <Symptom>Heavy operation crashes main agent context</Symptom>
+      <RootCause>Quarantine trigger not detected during conversion</RootCause>
+      <Detection>>5k token estimate in single operation</Detection>
+      <Fix>Run Context Rot Scanner, flag all hotspots</Fix>
+      <Prevention>Automatic quarantine for PDF, large API, batch ops</Prevention>
+    </FailureMode>
+    
+    <FailureMode id="FM6" name="Self-Annealing Exhaustion" severity="medium">
+      <Symptom>Script fails after max retries</Symptom>
+      <RootCause>Underlying issue not fixable by retry (e.g., auth)</RootCause>
+      <Fix>Log error as learned constraint, escalate to human</Fix>
+      <SelfHeal>Update skill.md with new constraint</SelfHeal>
+    </FailureMode>
+    
+    <FailureMode id="FM7" name="Menu Bloat Inheritance" severity="medium" source="NotebookLM">
+      <Symptom>System prompt grows with every converted workflow</Symptom>
+      <RootCause>Skills added to prompt instead of Zero-Point Discovery</RootCause>
+      <Fix>Implement find_tool() discovery, never list skills in prompt</Fix>
+    </FailureMode>
+    
+    <FailureMode id="FM8" name="SDK Bypass" severity="low">
+      <Symptom>Generated script uses raw HTTP for known APIs</Symptom>
+      <RootCause>SDK Detector hack not applied</RootCause>
+      <Fix>Run SDK Detector before conversion, replace HTTP with SDK</Fix>
+      <Impact>Works but misses retry/rate-limit handling</Impact>
+    </FailureMode>
+  </FailureModes>
+
+  <!-- ================================================================== -->
+  <!-- OUTPUT TEMPLATES (ENHANCED WITH PCE + SANDBOX)                      -->
+  <!-- ================================================================== -->
+  
+  <OutputTemplates>
+    <Template id="SELF_ANNEALING_SCRIPT">
+      <![CDATA[
+"""
+Script: ${SCRIPT_NAME}.py
+Generated by: Workflow Translator v1.1.0
+Source: ${SOURCE_PLATFORM} / ${WORKFLOW_NAME}
+Framework: LCP + PCE + Self-Annealing
+
+CONTEXT BUDGET: ${TOKEN_ESTIMATE} tokens on execution
+SANDBOX FILTERED: Yes
+QUARANTINE: ${QUARANTINE_STATUS}
+"""
+
+import asyncio
+import logging
+from typing import Any, Dict, Optional, List
+from pydantic import BaseModel, Field
+from functools import wraps
+from datetime import datetime
+${ADDITIONAL_IMPORTS}
+
+logger = logging.getLogger(__name__)
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SELF-ANNEALING INFRASTRUCTURE
+# ═══════════════════════════════════════════════════════════════════════════
+
+def self_anneal(max_retries: int = 3, backoff: float = 1.0):
+    """
+    Heal & Renew loop: fail → analyze → log → retry.
+    Runtime errors become training data for future improvements.
+    """
+    def decorator(func):
+        @wraps(func)
+        async def wrapper(*args, **kwargs):
+            last_error = None
+            for attempt in range(max_retries):
+                try:
+                    return await func(*args, **kwargs)
+                except Exception as e:
+                    last_error = e
+                    logger.warning(f"[Self-Anneal] Attempt {attempt + 1}/{max_retries} failed: {e}")
+                    
+                    # Log as training data
+                    await log_learned_constraint(
+                        function=func.__name__,
+                        error=str(e),
+                        attempt=attempt,
+                        timestamp=datetime.utcnow().isoformat()
+                    )
+                    
+                    if attempt < max_retries - 1:
+                        await asyncio.sleep(backoff * (2 ** attempt))
+            
+            raise SelfAnnealingExhausted(
+                f"Failed after {max_retries} attempts: {last_error}"
+            )
+        return wrapper
+    return decorator
+
+class SelfAnnealingExhausted(Exception):
+    """Max retries reached. Error logged as learned constraint."""
+    pass
+
+async def log_learned_constraint(function: str, error: str, attempt: int, timestamp: str):
+    """Log error as training data for future skill improvements."""
+    constraint = {
+        "function": function,
+        "error": error,
+        "attempt": attempt,
+        "timestamp": timestamp
+    }
+    # TODO: Write to skill.md constraints section or external log
+    logger.info(f"[Learned Constraint] {constraint}")
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SANDBOX FILTERING (Context Rot Prevention)
+# ═══════════════════════════════════════════════════════════════════════════
+
+class FilteredResult(BaseModel):
+    """
+    NEVER return raw data to LLM. Always filter.
+    Max 500 tokens to prevent Context Rot.
+    """
+    success: bool
+    summary: str = Field(..., max_length=2000)  # ~500 tokens max
+    count: Optional[int] = None
+    reference_id: Optional[str] = None  # For later retrieval if needed
+    error: Optional[str] = None
+
+async def sandbox_filter(
+    raw_data: Any,
+    extractor: callable,
+    store_raw: bool = True
+) -> FilteredResult:
+    """
+    Process heavy data in sandbox, return only summary.
+    Raw data stored externally with reference ID.
+    """
+    try:
+        # Extract only what LLM needs
+        summary = extractor(raw_data)
+        
+        # Store raw externally if needed later
+        ref_id = None
+        if store_raw:
+            ref_id = await store_externally(raw_data)
+        
+        return FilteredResult(
+            success=True,
+            summary=summary[:2000],  # Hard limit
+            count=len(raw_data) if hasattr(raw_data, '__len__') else None,
+            reference_id=ref_id
+        )
+    except Exception as e:
+        return FilteredResult(
+            success=False,
+            summary="",
+            error=str(e)
+        )
+
+async def store_externally(data: Any) -> str:
+    """Store raw data externally, return reference ID."""
+    # TODO: Implement storage (Redis, S3, local file)
+    ref_id = f"ref_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}"
+    logger.info(f"[Sandbox] Stored raw data: {ref_id}")
+    return ref_id
+
+# ═══════════════════════════════════════════════════════════════════════════
+# INPUT/OUTPUT CONTRACTS
+# ═══════════════════════════════════════════════════════════════════════════
+
+class ${INPUT_MODEL}(BaseModel):
+    """Input contract - validated before execution."""
+${INPUT_FIELDS}
+
+class ${OUTPUT_MODEL}(BaseModel):
+    """Output contract - MUST be FilteredResult or extend it."""
+${OUTPUT_FIELDS}
+
+# ═══════════════════════════════════════════════════════════════════════════
+# MAIN FUNCTION (PCE: Execution Layer)
+# ═══════════════════════════════════════════════════════════════════════════
+
+@self_anneal(max_retries=3, backoff=1.0)
+async def ${FUNCTION_NAME}(input_data: ${INPUT_MODEL}) -> FilteredResult:
+    """
+    ${DOCSTRING}
+    
+    PCE Role: Execution (deterministic worker)
+    Context Budget: ${TOKEN_ESTIMATE} tokens
+    Sandbox Filtered: Yes
+    Quarantine: ${QUARANTINE_STATUS}
+    """
+    logger.info(f"[Execute] Starting ${FUNCTION_NAME}")
+    
+    # === EXECUTION LOGIC ===
+${FUNCTION_BODY}
+    
+    # === SANDBOX FILTER (mandatory) ===
+    def extract_summary(data):
+        # Extract only essential fields for LLM
+        ${SUMMARY_EXTRACTION}
+    
+    result = await sandbox_filter(raw_result, extract_summary)
+    
+    logger.info(f"[Execute] Completed ${FUNCTION_NAME}: {result.summary[:100]}...")
+    return result
+
+# ═══════════════════════════════════════════════════════════════════════════
+# CLI WRAPPER (for testing)
+# ═══════════════════════════════════════════════════════════════════════════
+
+if __name__ == "__main__":
+    import sys
+    import json
+    
+    async def main():
+        if len(sys.argv) > 1:
+            input_json = json.loads(sys.argv[1])
+            input_data = ${INPUT_MODEL}(**input_json)
+            result = await ${FUNCTION_NAME}(input_data)
+            print(json.dumps(result.model_dump(), indent=2))
+        else:
+            print("Usage: python ${SCRIPT_NAME}.py '{\"field\": \"value\"}'")
+    
+    asyncio.run(main())
+      ]]>
+    </Template>
+    
+    <Template id="PCE_FLOWGRAM">
+      <![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Flowgram: ${FLOWGRAM_NAME}
+  Generated by: Workflow Translator v1.1.0
+  Framework: PCE (Plan-Coordinate-Execute)
+  Source: ${SOURCE_PLATFORM} / ${WORKFLOW_NAME}
+-->
+<Flowgram
+  id="${FLOWGRAM_ID}"
+  version="1.1.0"
+  name="${FLOWGRAM_NAME}"
+  framework="PCE"
+>
+  <Meta>
+    <Description>${DESCRIPTION}</Description>
+    <Author>Workflow Translator</Author>
+    <SourceWorkflow>${SOURCE_REF}</SourceWorkflow>
+    <Created>${DATE}</Created>
+    <ContextBudget>
+      <ZeroPoint>${ZERO_POINT_TOKENS} tokens</ZeroPoint>
+      <Execution>${EXECUTION_TOKENS} tokens (filtered)</Execution>
+    </ContextBudget>
+  </Meta>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- PCE: PLANNING LAYER (The Map)                                       -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <Plan>
+    <Objective>${OBJECTIVE}</Objective>
+    <Constraints>
+${CONSTRAINTS}
+    </Constraints>
+    <SuccessCriteria>${SUCCESS_CRITERIA}</SuccessCriteria>
+  </Plan>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- PCE: COORDINATION LAYER (The Manager)                               -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <Coordination>
+    <ErrorRecovery strategy="self-anneal" max_retries="3" />
+    <Branching handler="llm">
+      <!-- LLM Coordinator decides branches dynamically -->
+${BRANCHING_RULES}
+    </Branching>
+    <ContextManagement>
+      <SandboxFiltering required="true" />
+      <QuarantineThreshold tokens="5000" />
+    </ContextManagement>
+  </Coordination>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- PCE: EXECUTION LAYER (The Workers)                                  -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <Execution>
+${EXECUTION_STEPS}
+  </Execution>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- ERROR HANDLING (Self-Annealing)                                     -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <ErrorHandling>
+    <On error="timeout" step="*" action="retry" max="3" backoff="exponential" />
+    <On error="rate_limited" step="*" action="wait" strategy="respect-header" />
+    <On error="auth_failed" step="*" action="escalate" />
+    <On error="self_anneal_exhausted" step="*" action="log-constraint-escalate" />
+  </ErrorHandling>
+  
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- HUMAN CHECKPOINTS (optional)                                        -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+${CHECKPOINTS}
+
+</Flowgram>
+      ]]>
+    </Template>
+    
+    <Template id="DOUBLE_II_SKILL_MD">
+      <![CDATA[
+# ${SKILL_NAME}
+## Information Layer (Double-II Framework)
+
+**Skill ID:** ${SKILL_ID}  
+**Version:** ${VERSION}  
+**Generated:** ${DATE}
+
+---
+
+## Purpose
+
+${PURPOSE}
+
+---
+
+## SOP (Standard Operating Procedure)
+
+${SOP}
+
+---
+
+## Inputs
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+${INPUT_TABLE}
+
+---
+
+## Outputs
+
+Returns `FilteredResult` (sandbox filtered):
+- `success`: bool
+- `summary`: str (max 500 tokens)
+- `count`: int (optional)
+- `reference_id`: str (for raw data retrieval)
+
+---
+
+## Constraints (Learned)
+
+${CONSTRAINTS}
+
+---
+
+## Error Handling
+
+| Error | Recovery Action |
+|-------|-----------------|
+${ERROR_TABLE}
+
+---
+
+## Context Budget
+
+- **Zero-Point:** ~100 tokens (manifest entry)
+- **Activated:** ~${ACTIVATED_TOKENS} tokens (this file + schema)
+- **Execution:** ~${EXECUTION_TOKENS} tokens (sandbox filtered output)
+
+---
+
+## Quarantine
+
+${QUARANTINE_SECTION}
+
+---
+
+## Related Skills
+
+${RELATED_SKILLS}
+
+---
+
+*Double-II Framework: Information (this file) + Implementation (script.py)*
+      ]]>
+    </Template>
+  </OutputTemplates>
+
+  <!-- ================================================================== -->
+  <!-- MMA INTEGRATION                                                     -->
+  <!-- ================================================================== -->
+  
+  <MMAIntegration>
+    <QualityDimensions>
+      <Dimension name="conversion_accuracy" weight="critical" threshold="9.0">
+        Generated code preserves original workflow intent and logic
+      </Dimension>
+      
+      <Dimension name="context_hygiene" weight="critical" threshold="9.0">
+        Sandbox filtering enforced, no raw data leakage
+      </Dimension>
+      
+      <Dimension name="zero_point_efficiency" weight="critical" threshold="9.0">
+        Zero-Point footprint &lt;500 tokens
+      </Dimension>
+      
+      <Dimension name="quarantine_compliance" weight="high" threshold="8.5">
+        Heavy operations (&gt;5k tokens) properly quarantined
+      </Dimension>
+      
+      <Dimension name="self_annealing" weight="high" threshold="8.5">
+        @self_anneal decorator on all external calls
+      </Dimension>
+      
+      <Dimension name="double_ii_structure" weight="high" threshold="8.5">
+        Proper Information (.md) + Implementation (.py) separation
+      </Dimension>
+      
+      <Dimension name="pce_compliance" weight="high" threshold="8.5">
+        Flowgram has Plan, Coordination, Execution sections
+      </Dimension>
+      
+      <Dimension name="test_coverage" weight="medium" threshold="8.0">
+        Generated tests cover main paths and error cases
+      </Dimension>
+    </QualityDimensions>
+
+    <HardGates>
+      <Gate severity="critical">sandbox_filtering_enforced</Gate>
+      <Gate severity="critical">no_raw_data_return</Gate>
+      <Gate severity="critical">quarantine_for_heavy_ops</Gate>
+      <Gate severity="critical">zero_point_under_500_tokens</Gate>
+      <Gate severity="high">self_anneal_on_external_calls</Gate>
+      <Gate severity="high">double_ii_file_structure</Gate>
+    </HardGates>
+  </MMAIntegration>
+
+  <!-- ================================================================== -->
+  <!-- VERSION HISTORY                                                     -->
+  <!-- ================================================================== -->
+  
+  <VersionHistory>
+    <Version number="1.0.0" date="2026-01-24" status="superseded">
+      <Changes>
+        <Change>Initial release</Change>
+        <Change>LCP specification integration</Change>
+        <Change>Basic N8N conversion mappings</Change>
+      </Changes>
+    </Version>
+    
+    <Version number="1.1.0" date="2026-01-24" status="pilot">
+      <Changes>
+        <Change>NotebookLM synthesis integration</Change>
+        <Change>Added PCE Framework (Plan-Coordinate-Execute)</Change>
+        <Change>Added Double-II Framework naming</Change>
+        <Change>Added Context Quarantine pattern</Change>
+        <Change>Added Self-Annealing behavior with @self_anneal decorator</Change>
+        <Change>Added Sandbox Filtering standard</Change>
+        <Change>Added Zero-Point Discovery (Launchpad pattern)</Change>
+        <Change>Added Package-First conversion rules</Change>
+        <Change>Added Tech Writer documentation pass</Change>
+        <Change>Added Context Rot analysis to case studies</Change>
+        <Change>Added token benchmarks (before/after)</Change>
+        <Change>Added 3 new HCTS patterns (H6-H8, C6-C7)</Change>
+        <Change>Added Track T5 (Tech Writer Pass)</Change>
+        <Change>Added 3 new failure modes (FM4-FM8)</Change>
+        <Change>Enhanced output templates with PCE and sandbox filtering</Change>
+      </Changes>
+    </Version>
+  </VersionHistory>
+
+</Skill>
