@@ -542,6 +542,203 @@ def parse_skill_xml(xml_path):
     )
 
 
+
+
+# ============================================================
+# MASTERY DOCUMENT GENERATOR
+# ============================================================
+
+MASTERY_DIR = THREADEX_DIR / "mastery"
+
+
+def _write_frontmatter(identity, mode, records=None):
+    """Generate YAML frontmatter block for a mastery document.
+
+    Uses simple string formatting (no PyYAML dependency).
+    Returns the complete ``--- ... ---`` delimited string.
+    """
+    if records is None:
+        records = []
+    triggers_str = "[%s]" % ", ".join(identity.trigger_commands) if identity.trigger_commands else "[]"
+    from datetime import datetime, timezone
+    refactored_at = datetime.now(timezone.utc).isoformat()
+    lines = [
+        "---",
+        "skill_id: %s" % identity.skill_id,
+        "name: %s" % identity.name,
+        "version: %s" % identity.version,
+        "tier: %s" % (identity.tier or ""),
+        "status: %s" % (identity.status or ""),
+        "domain: %s" % (identity.domain or ""),
+        "track: %s" % (identity.track or ""),
+        "model: %s" % (identity.model or ""),
+        "neurobox: %s" % (identity.neurobox_position or ""),
+        "triggers: %s" % triggers_str,
+        "source_xml: %s" % (identity.source_xml or ""),
+        "mode: %s" % mode,
+        "refactored_at: %s" % refactored_at,
+        "threadex_records: %s" % ("[]" if not records else "[%s]" % ", ".join(str(r) for r in records)),
+        "---",
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def generate_mastery_doc(result, mode="draft"):
+    """Generate a full Markdown mastery document from a RefactorResult.
+
+    Args:
+        result: A RefactorResult dataclass instance.
+        mode: One of ``"draft"``, ``"review"``, ``"final"``.
+
+    Returns:
+        A Markdown string ready to be written to disk.
+    """
+    parts = []
+    identity = result.identity
+    layers = result.layers or []
+    contract = result.contract
+    edges = result.edges or []
+    guardrails = result.guardrails or []
+
+    # --- Frontmatter ---
+    parts.append(_write_frontmatter(identity, mode))
+
+    # --- Title ---
+    parts.append("# %s (v%s)\n" % (identity.name, identity.version))
+
+    # --- Description (first line of L1 content) ---
+    l1_layers = [l for l in layers if l.layer_id == "L1"]
+    if l1_layers and l1_layers[0].content:
+        first_line = l1_layers[0].content.split("\n")[0].strip()
+        if first_line:
+            parts.append("> %s\n" % first_line)
+
+    # --- Layer sections ---
+    layer_map = {l.layer_id: l for l in layers}
+    all_layer_ids = ["L1", "L2", "L3", "L4"]
+    for lid in all_layer_ids:
+        if lid in layer_map:
+            layer = layer_map[lid]
+            header = "%s: %s" % (lid, layer.name) if layer.name else lid
+            parts.append("## %s\n" % header)
+            if layer.content:
+                parts.append("%s\n" % layer.content.strip())
+            if layer.frameworks:
+                parts.append("### Frameworks\n")
+                for fw in layer.frameworks:
+                    fw_name = fw.get("name", "Unknown") if isinstance(fw, dict) else str(fw)
+                    fw_content = fw.get("content", "") if isinstance(fw, dict) else ""
+                    parts.append("**%s:** %s\n" % (fw_name, fw_content))
+        else:
+            parts.append("## %s: (missing)\n" % lid)
+            parts.append("> _This layer was not present in the source XML. Add content during review._\n")
+
+    # --- Contract ---
+    parts.append("## Contract\n")
+    if contract:
+        # Required Inputs
+        parts.append("### Required Inputs\n")
+        if contract.inputs_required:
+            for inp in contract.inputs_required:
+                name = inp.get("name", "?")
+                fmt = inp.get("format", "")
+                desc = inp.get("description", "")
+                parts.append("- **%s** (%s) \u2014 %s" % (name, fmt, desc))
+            parts.append("")
+        else:
+            parts.append("(none extracted)\n")
+
+        # Optional Inputs
+        parts.append("### Optional Inputs\n")
+        if contract.inputs_optional:
+            for inp in contract.inputs_optional:
+                name = inp.get("name", "?")
+                fmt = inp.get("format", "")
+                desc = inp.get("description", "")
+                parts.append("- **%s** (%s) \u2014 %s" % (name, fmt, desc))
+            parts.append("")
+        else:
+            parts.append("(none extracted)\n")
+
+        # Primary Outputs
+        parts.append("### Primary Outputs\n")
+        if contract.outputs_primary:
+            for out in contract.outputs_primary:
+                name = out.get("name", "?")
+                fmt = out.get("format", "")
+                desc = out.get("description", "")
+                parts.append("- **%s** (%s) \u2014 %s" % (name, fmt, desc))
+            parts.append("")
+        else:
+            parts.append("(none extracted)\n")
+
+        # Quality Gates
+        parts.append("### Quality Gates\n")
+        if contract.quality_gates:
+            for gate_key, gate_val in contract.quality_gates.items():
+                parts.append("- **%s:** %s" % (gate_key, gate_val))
+            parts.append("")
+        else:
+            parts.append("(none extracted)\n")
+
+        # Circuit Breakers
+        parts.append("### Circuit Breakers\n")
+        if contract.circuit_breakers:
+            for cb_key, cb_val in contract.circuit_breakers.items():
+                parts.append("- **%s:** %s" % (cb_key, cb_val))
+            parts.append("")
+        else:
+            parts.append("(none extracted)\n")
+    else:
+        parts.append("(no contract extracted)\n")
+
+    # --- Dependencies ---
+    parts.append("## Dependencies\n")
+    upstream = [e for e in edges if e.direction == "upstream"]
+    downstream = [e for e in edges if e.direction == "downstream"]
+
+    parts.append("### Upstream\n")
+    if upstream:
+        for e in upstream:
+            parts.append("- `%s` \u2014 %s (%s, strength=%s)" % (e.target_id, e.relation, e.priority, e.strength))
+        parts.append("")
+    else:
+        parts.append("(none extracted)\n")
+
+    parts.append("### Downstream\n")
+    if downstream:
+        for e in downstream:
+            parts.append("- `%s` \u2014 %s (%s, strength=%s)" % (e.target_id, e.relation, e.priority, e.strength))
+        parts.append("")
+    else:
+        parts.append("(none extracted)\n")
+
+    # --- Guardrails ---
+    parts.append("## Guardrails\n")
+    if guardrails:
+        for i, g in enumerate(guardrails, 1):
+            parts.append("%d. %s" % (i, g))
+        parts.append("")
+    else:
+        parts.append("(none extracted)\n")
+
+    # --- Graph Edges ---
+    parts.append("## Graph Edges\n")
+    if edges:
+        parts.append("```yaml")
+        parts.append("edges:")
+        for e in edges:
+            parts.append("  - target: %s" % e.target_id)
+            parts.append("    rel: %s" % e.relation)
+            parts.append("    priority: %s" % e.priority)
+            parts.append("    strength: %s" % e.strength)
+        parts.append("```\n")
+    else:
+        parts.append("(no edges extracted)\n")
+
+    return "\n".join(parts)
+
+
 # ============================================================
 # DEFAULT CONFIG
 # ============================================================

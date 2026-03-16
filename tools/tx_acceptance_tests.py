@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Threadex Phase 1B + 2A Acceptance Tests -- TX-01 through TX-22
+Threadex Phase 1B + 2A Acceptance Tests -- TX-01 through TX-23
 Tests verify Threadex file layer is operational.
 Uses temporary .threadex_test/ directory (no real data polluted).
 
@@ -752,6 +752,102 @@ class ThreadexAcceptanceTests:
             if tmp and os.path.exists(tmp.name):
                 os.unlink(tmp.name)
 
+
+    # ------------------------------------------------------------------
+    # TX-23: generate_mastery_doc produces valid frontmatter + sections
+    # ------------------------------------------------------------------
+    def tx_23_generate_mastery_doc(self):
+        """Verify generate_mastery_doc returns Markdown with frontmatter and all sections."""
+        identity = tx.SkillIdentity(
+            skill_id="meta_test",
+            name="Test Skill",
+            version="1.0.0",
+            tier="production",
+            status="active",
+            domain="meta",
+            track="cross",
+            model="sonnet",
+            neurobox_position="CENTER",
+            trigger_commands=["/test", "/demo"],
+            source_xml="test.xml",
+        )
+        layers = [
+            tx.SkillLayer(
+                layer_id="L1",
+                name="Identity & Quick Reference",
+                token_budget=500,
+                load_priority="always",
+                content="First line of L1 content.\nSecond line of L1.",
+                frameworks=[],
+            ),
+            tx.SkillLayer(
+                layer_id="L2",
+                name="Execution Protocols",
+                token_budget=1200,
+                load_priority="on_demand",
+                content="L2 execution details here.",
+                frameworks=[{"name": "AwarenessFramework", "content": "Framework content here"}],
+            ),
+        ]
+        contract = tx.SkillContract(
+            inputs_required=[{"name": "INPUT_NAME", "format": "format_type", "description": "Description here"}],
+            inputs_optional=[{"name": "OPT_INPUT", "format": "format_type", "description": "Optional desc"}],
+            outputs_primary=[{"name": "OUTPUT_NAME", "format": "format_type", "description": "Output desc"}],
+            outputs_secondary=[],
+            quality_gates={"T2": 6.0, "T3": 8.0},
+            circuit_breakers={"max_fix_loops": 3, "on_exhausted": "HALT"},
+        )
+        edges = [
+            tx.SkillEdge(
+                target_id="target_skill",
+                relation="DEPENDS_ON",
+                priority="critical",
+                direction="upstream",
+                strength=1.0,
+            ),
+        ]
+        guardrails = ["First guardrail rule text", "Second guardrail rule text"]
+        result = tx.RefactorResult(
+            identity=identity,
+            layers=layers,
+            contract=contract,
+            edges=edges,
+            guardrails=guardrails,
+            warnings=[],
+        )
+        md = tx.generate_mastery_doc(result, mode="draft")
+        checks = {}
+        # Frontmatter delimiters
+        checks["starts_with_frontmatter"] = md.startswith("---\n")
+        # Key identity fields in frontmatter
+        checks["has_skill_id"] = "skill_id: meta_test" in md
+        checks["has_name"] = "name: Test Skill" in md
+        checks["has_version"] = "version: 1.0.0" in md
+        checks["has_mode"] = "mode: draft" in md
+        # Layer sections
+        checks["has_L1_section"] = "## L1:" in md
+        checks["has_L2_section"] = "## L2:" in md
+        checks["L1_has_content"] = "First line of L1 content" in md
+        checks["L2_has_content"] = "L2 execution details" in md
+        # Frameworks subsection
+        checks["has_frameworks"] = "### Frameworks" in md
+        checks["framework_name"] = "AwarenessFramework" in md
+        # Contract section
+        checks["has_contract"] = "## Contract" in md
+        checks["has_required_inputs"] = "### Required Inputs" in md
+        checks["has_input_name"] = "INPUT_NAME" in md
+        checks["has_quality_gates"] = "### Quality Gates" in md
+        # Dependencies section
+        checks["has_dependencies"] = "## Dependencies" in md
+        checks["has_upstream"] = "target_skill" in md
+        # Guardrails section
+        checks["has_guardrails"] = "## Guardrails" in md
+        checks["guardrail_text"] = "First guardrail rule text" in md
+        failed = [k for k, v in checks.items() if not v]
+        if failed:
+            return False, "Failed checks: %s" % ", ".join(failed)
+        return True, "generate_mastery_doc produces valid frontmatter and all expected sections"
+
     def run_all(self, target=None):
         """Run all (or one) acceptance tests with setup/teardown."""
         tests = [
@@ -777,6 +873,7 @@ class ThreadexAcceptanceTests:
             ("TX-20", "graph broken detects orphans", self.tx_20_graph_broken),
             ("TX-21", "parse_skill_xml extracts identity from well-formed XML", self.tx_21_parse_skill_xml),
             ("TX-22", "extract_layers handles missing layers gracefully", self.tx_22_extract_layers_missing),
+            ("TX-23", "generate_mastery_doc produces valid frontmatter + sections", self.tx_23_generate_mastery_doc),
         ]
         if target:
             tests = [(tid, name, fn) for tid, name, fn in tests if tid == target]
