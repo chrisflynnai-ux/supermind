@@ -490,6 +490,32 @@ def _extract_guardrails(root):
 # MAIN XML PARSING FUNCTION
 # ============================================================
 
+def _sanitize_xml(xml_text):
+    """Sanitize XML text by escaping unescaped < characters in text content.
+
+    Some SkillML files contain Python code with unescaped < and > operators.
+    This wraps text content in implicit CDATA-like escaping.
+    """
+    import html
+    lines = xml_text.splitlines()
+    result = []
+    for line in lines:
+        stripped = line.strip()
+        # Skip actual XML tags and declarations
+        if stripped.startswith("<") and not stripped.startswith("<!") or stripped.startswith("</"):
+            result.append(line)
+        elif "<" in stripped and not stripped.startswith("<"):
+            # Line has < but doesn't start with < -- likely code content
+            # Escape < that aren't part of XML tags
+            import re as _re
+            # Escape < that are NOT followed by a valid XML tag name or /
+            escaped = _re.sub(r"<(?![a-zA-Z/!?])", "&lt;", line)
+            result.append(escaped)
+        else:
+            result.append(line)
+    return "\n".join(result)
+
+
 def parse_skill_xml(xml_path):
     """Parse a SkillML XML file and return a RefactorResult.
 
@@ -502,8 +528,18 @@ def parse_skill_xml(xml_path):
     Raises:
         ValueError: If critical fields (skill_id, name, version) are missing.
     """
-    tree = ET.parse(str(xml_path))
-    root = tree.getroot()
+    xml_text = Path(xml_path).read_text(encoding="utf-8")
+    try:
+        root = ET.fromstring(xml_text)
+    except ET.ParseError:
+        # Fallback: sanitize unescaped < characters and retry
+        sanitized = _sanitize_xml(xml_text)
+        try:
+            root = ET.fromstring(sanitized)
+        except ET.ParseError:
+            # Last resort: try parsing from file
+            tree = ET.parse(str(xml_path))
+            root = tree.getroot()
 
     identity = _extract_identity(root, xml_path)
     layers = _extract_layers(root)
@@ -1184,8 +1220,8 @@ def cmd_refactor(args):
 
         result.records_created = len(records)
 
-        # Shred edges into SQLite
-        conn = get_db()
+        # Shred edges into SQLite (init_db ensures schema migration)
+        conn = init_db()
         edge_count = 0
         for rec in records:
             edges = shred_to_edges(rec)
@@ -1312,8 +1348,8 @@ def cmd_refactor(args):
 
         result.records_created = len(records)
 
-        # Shred edges into SQLite
-        conn = get_db()
+        # Shred edges into SQLite (init_db ensures schema migration)
+        conn = init_db()
         edge_count = 0
         for rec in records:
             edges_data = shred_to_edges(rec)
@@ -1354,7 +1390,7 @@ def cmd_refactor(args):
                     print("    - %s" % w)
     else:
         # Draft mode: mastery doc only
-        conn = get_db()
+        conn = init_db()
         summary = "Draft created for %s" % result.identity.skill_id
         log_refactor_event(conn, "refactor_draft", result.identity.skill_id, summary)
         update_mastery_index(result, mode="draft")
@@ -1789,7 +1825,7 @@ def shred_to_edges(record, source_uri=None):
             "relation_type": rel,
             "weight": float(pointer.get("strength", 1.0)),
             "utility_score": float(record.get("utility_score", 0.5)),
-            "origin_phase": int(pointer.get("phase", 1)),
+            "origin_phase": int(pointer.get("phase") or 1),
             "tags": json.dumps(pointer.get("tags", []))
         })
     return edges
