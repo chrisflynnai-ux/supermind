@@ -619,7 +619,7 @@ def generate_mastery_doc(result, mode="draft"):
     for lid in all_layer_ids:
         if lid in layer_map:
             layer = layer_map[lid]
-            header = "%s: %s" % (lid, layer.name) if layer.name else lid
+            header = "%s: %s" % (lid, layer.name) if layer.name else "%s:" % lid
             parts.append("## %s\n" % header)
             if layer.content:
                 parts.append("%s\n" % layer.content.strip())

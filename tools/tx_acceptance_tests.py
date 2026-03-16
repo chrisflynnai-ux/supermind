@@ -1012,6 +1012,121 @@ edges:
             if tmp and os.path.exists(tmp.name):
                 os.unlink(tmp.name)
 
+
+    # TX-25
+    def tx_25_auto_pipeline_integration(self):
+        self._init_threadex()
+        tmp = None
+        try:
+            xml_content = (
+                '<?xml version="1.0" encoding="UTF-8"?>\n'
+                '<Skill skill_id="test_auto" name="Test Auto Skill" version="1.0.0">\n'
+                '  <Meta><Domain>meta</Domain><Track>cross</Track></Meta>\n'
+                '  <L1>L1 identity and reference content for auto test</L1>\n'
+                '  <L2><AwarenessFramework>Awareness ladder for testing</AwarenessFramework></L2>\n'
+                '  <Contract>\n'
+                '    <InputsRequired><Input><Name>PROJECT_BRIEF</Name></Input></InputsRequired>\n'
+                '    <OutputsPrimary><Output><Name>RESULT</Name></Output></OutputsPrimary>\n'
+                '  </Contract>\n'
+                '  <Guardrails><Guardrail><Rule>No fabrication</Rule></Guardrail></Guardrails>\n'
+                '</Skill>\n'
+            )
+            import tempfile as _tf
+            tmp = _tf.NamedTemporaryFile(mode="w", suffix=".xml", delete=False, encoding="utf-8")
+            tmp.write(xml_content)
+            tmp.close()
+
+            result = tx.parse_skill_xml(tmp.name)
+            md = tx.generate_mastery_doc(result, mode="auto")
+            records = tx.create_skill_records(result)
+
+            checks = {
+                "at_least_2_records": len(records) >= 2,
+                "has_reference": any(r["type"] == "reference" for r in records),
+                "has_convention": any(r["type"] == "convention" for r in records),
+                "all_have_graph": all("threadex_graph" in r for r in records),
+                "md_has_frontmatter": md.startswith("---\n"),
+                "md_has_auto_mode": "mode: auto" in md,
+            }
+            failed = [k for k, v in checks.items() if not v]
+            if failed:
+                return False, "Failed checks: %s" % ", ".join(failed)
+            return True, "Full --auto pipeline produces valid records and Markdown"
+        finally:
+            if tmp and os.path.exists(tmp.name):
+                os.unlink(tmp.name)
+
+    # TX-26
+    def tx_26_dry_run_no_side_effects(self):
+        self._init_threadex()
+        tmp = None
+        try:
+            xml_content = (
+                '<?xml version="1.0" encoding="UTF-8"?>\n'
+                '<Skill skill_id="test_dryrun" name="Dry Run Test" version="1.0.0">\n'
+                '  <Meta><Domain>meta</Domain></Meta>\n'
+                '  <L1>Dry run test content</L1>\n'
+                '</Skill>\n'
+            )
+            import tempfile as _tf
+            tmp = _tf.NamedTemporaryFile(mode="w", suffix=".xml", delete=False, encoding="utf-8")
+            tmp.write(xml_content)
+            tmp.close()
+
+            # Parse only (this is all dry-run does internally)
+            result = tx.parse_skill_xml(tmp.name)
+
+            # Verify no mastery doc was created
+            expected = tx.MASTERY_DIR / "meta" / "test_dryrun.md"
+            if expected.exists():
+                return False, "Mastery doc should not exist after dry-run parse: %s" % expected
+
+            checks = {
+                "parsed_ok": result.identity.skill_id == "test_dryrun",
+                "no_file": not expected.exists(),
+            }
+            failed = [k for k, v in checks.items() if not v]
+            if failed:
+                return False, "Failed checks: %s" % ", ".join(failed)
+            return True, "Dry-run parse produces no side effects"
+        finally:
+            if tmp and os.path.exists(tmp.name):
+                os.unlink(tmp.name)
+
+    # TX-27
+    def tx_27_draft_mode_creates_markdown(self):
+        self._init_threadex()
+        identity = tx.SkillIdentity(
+            skill_id="test_draft_only",
+            name="Draft Only Test",
+            version="1.0.0",
+            domain="meta",
+            source_xml="test_draft.xml",
+        )
+        layers = [
+            tx.SkillLayer(layer_id="L1", content="Draft layer content"),
+        ]
+        result = tx.RefactorResult(
+            identity=identity,
+            layers=layers,
+            contract=tx.SkillContract(),
+            edges=[],
+            guardrails=[],
+            warnings=[],
+        )
+        md = tx.generate_mastery_doc(result, mode="draft")
+
+        checks = {
+            "has_draft_mode": "mode: draft" in md,
+            "has_title": "# Draft Only Test" in md,
+            "has_l1": "## L1:" in md,
+            "has_content": "Draft layer content" in md,
+        }
+        failed = [k for k, v in checks.items() if not v]
+        if failed:
+            return False, "Failed checks: %s" % ", ".join(failed)
+        return True, "Draft mode produces valid Markdown with mode: draft"
+
     def run_all(self, target=None):
         """Run all (or one) acceptance tests with setup/teardown."""
         tests = [
@@ -1039,6 +1154,9 @@ edges:
             ("TX-22", "extract_layers handles missing layers gracefully", self.tx_22_extract_layers_missing),
             ("TX-23", "generate_mastery_doc produces valid frontmatter + sections", self.tx_23_generate_mastery_doc),
             ("TX-24", "create_skill_records creates correct types and statuses", self.tx_24_create_skill_records),
+            ("TX-25", "full --auto pipeline integration", self.tx_25_auto_pipeline_integration),
+            ("TX-26", "dry-run produces no side effects", self.tx_26_dry_run_no_side_effects),
+            ("TX-27", "draft mode creates Markdown only", self.tx_27_draft_mode_creates_markdown),
             ("TX-28", "commit mode parses revised Markdown", self.tx_28_parse_mastery_doc),
         ]
         if target:

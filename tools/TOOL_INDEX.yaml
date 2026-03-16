@@ -121,6 +121,93 @@ harness_tools:
         command: "python tools/scripts/conductor.py teams"
         description: "Show team compositions"
 
+  threadex:
+    name: "Threadex Memory Layer CLI"
+    version: "1.0.0"
+    location: "tools/tx.py"
+    runtime: "python"
+    description: "File-based agentic memory with expertise + production axes. 7-stage SIMS lifecycle."
+    entry_points:
+      init:
+        command: "python tools/tx.py init"
+        args: "[--force]"
+        description: "Create .threadex/ folder structure + config + seed domains"
+      record:
+        command: "python tools/tx.py record"
+        args: "<domain/subdomain> <content> [--type pattern] [--status observed] [--mma-score N] [--tags a,b] [--project ID]"
+        description: "Append a memory record to a domain JSONL file"
+      prime:
+        command: "python tools/tx.py prime"
+        args: "<domain> [--subdomain X] [--format xml|json|text] [--with-guards] [--siblings] [--max-recent N]"
+        description: "Output golden + recent patterns as XML context block for skill priming"
+      status:
+        command: "python tools/tx.py status"
+        description: "Show Threadex health summary across all domains and projects"
+      project:
+        command: "python tools/tx.py project create"
+        args: "<name> [--team writer,researcher]"
+        description: "Create a new production project scaffold with t1-t4 tracks"
+      handoff:
+        command: "python tools/tx.py handoff"
+        args: "<project_id> <from_track> <to_track> [--agent orchestrator]"
+        description: "Create a track handoff record in a project"
+      postmortem:
+        command: "python tools/tx.py postmortem"
+        args: "<project_id> [--agent orchestrator]"
+        description: "Create a project postmortem template"
+      contest:
+        command: "python tools/tx.py contest"
+        args: "<domain/subdomain> --record-id <UUID> --reason <text> [--project ID]"
+        description: "Mark an existing record as contested"
+      deprecate:
+        command: "python tools/tx.py deprecate"
+        args: "<domain/subdomain> --record-id <UUID> --reason <text> [--superseded-by UUID] [--project ID]"
+        description: "Mark an existing record as deprecated"
+      forbid:
+        command: "python tools/tx.py forbid"
+        args: "<domain/subdomain> --record-id <UUID> --reason <text> [--project ID]"
+        description: "Mark an existing record as forbidden"
+      decay:
+        command: "python tools/tx.py decay"
+        args: "[--domain X] [--check] [--apply] [--threshold N]"
+        description: "Check/apply utility decay flags to records below threshold"
+      compact:
+        command: "python tools/tx.py compact"
+        args: "<domain/subdomain> [--dry-run] [--project ID]"
+        description: "Archive deprecated/forbidden records to _compacted/ subdirectory"
+      db_init:
+        command: "python tools/tx.py db init"
+        args: "[--reset]"
+        description: "Initialize or reset the SQLite graph database"
+      graph_sync:
+        command: "python tools/tx.py graph sync"
+        args: "[--domain X] [--project X]"
+        description: "Rebuild SQLite edges + content index from all JSONL records"
+      graph_neighbors:
+        command: "python tools/tx.py graph neighbors"
+        args: "<uri> [--json]"
+        description: "Show incoming/outgoing edges for a node URI"
+      graph_broken:
+        command: "python tools/tx.py graph broken"
+        args: "[--json]"
+        description: "Detect broken/orphan edges in the graph"
+      hubs:
+        command: "python tools/tx.py hubs"
+        args: "[--top N] [--json]"
+        description: "Show top-N hub nodes ranked by PRU score"
+      search:
+        command: "python tools/tx.py search"
+        args: "<query> [--domain X] [--limit N] [--with-graph] [--json]"
+        description: "Full-text search across all records with optional graph enrichment"
+
+  refactor:
+    command: "python tools/tx.py refactor"
+    args: "<xml_path> [--auto] [--draft] [--domain DOMAIN] [--dry-run] [--json] [--force]"
+    description: "Refactor XML skill into Markdown mastery doc + JSONL records"
+  refactor_commit:
+    command: "python tools/tx.py refactor --commit"
+    args: "<mastery_doc.md> [--domain DOMAIN] [--json] [--force]"
+    description: "Commit revised mastery doc into JSONL records + graph edges"
 # ============================================================
 # DESIGN INTELLIGENCE TOOLS
 # ============================================================
