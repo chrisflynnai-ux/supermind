@@ -1133,6 +1133,250 @@ def parse_mastery_doc(md_path):
     )
 
 
+
+# ============================================================
+# REFACTOR COMMAND
+# ============================================================
+
+def cmd_refactor(args):
+    """Execute the tx refactor pipeline.
+
+    Modes:
+      --commit MASTERY_DOC: Ingest revised Markdown into JSONL + graph
+      --auto: Full pipeline (XML -> Markdown + JSONL + graph)
+      (default): Draft mode (XML -> Markdown only)
+    """
+    import xml.etree.ElementTree as _ET
+
+    # === COMMIT MODE ===
+    if hasattr(args, "commit") and args.commit:
+        md_path = Path(args.commit)
+        if not md_path.exists():
+            print("Error: Mastery doc not found: %s" % md_path, file=sys.stderr)
+            sys.exit(1)
+
+        try:
+            result = parse_mastery_doc(str(md_path))
+        except ValueError as e:
+            print("Error parsing mastery doc: %s" % e, file=sys.stderr)
+            sys.exit(1)
+
+        # Apply domain override
+        if hasattr(args, "domain") and args.domain:
+            result.identity.domain = args.domain
+
+        # Create records
+        records = create_skill_records(result)
+
+        # Route and write each record to JSONL
+        routing = DOMAIN_ROUTING.get(result.identity.domain, ("unknown", "unknown", "unknown"))
+        _, expertise_domain, default_subdomain = routing
+
+        for rec in records:
+            domain_parts = rec["domain"].split("/", 1)
+            if len(domain_parts) == 2:
+                rec_domain, rec_sub = domain_parts
+            else:
+                rec_domain = expertise_domain
+                rec_sub = default_subdomain
+            jsonl_path = EXPERTISE_DIR / rec_domain / ("%s.jsonl" % rec_sub)
+            append_record(jsonl_path, rec)
+
+        result.records_created = len(records)
+
+        # Shred edges into SQLite
+        conn = get_db()
+        edge_count = 0
+        for rec in records:
+            edges = shred_to_edges(rec)
+            if edges:
+                insert_edges(conn, edges)
+                edge_count += len(edges)
+            index_record_content(conn, rec)
+
+        result.edges_created = edge_count
+
+        # Log to Hermes L3
+        summary = "Committed %d records, %d edges from %s" % (
+            len(records), edge_count, result.identity.skill_id)
+        log_refactor_event(conn, "refactor_commit", result.identity.skill_id, summary)
+
+        # Update mastery index
+        update_mastery_index(result, mode="committed")
+
+        conn.close()
+
+        if hasattr(args, "json") and args.json:
+            print(json.dumps({
+                "skill_id": result.identity.skill_id,
+                "mode": "commit",
+                "records_created": len(records),
+                "edges_created": edge_count,
+            }))
+        else:
+            print("COMMITTED: %s" % result.identity.name)
+            print("  Records: %d" % len(records))
+            print("  Edges: %d" % edge_count)
+            print("  Source: %s" % md_path)
+        return
+
+    # === EXTRACT MODE (draft or auto) ===
+    xml_path = getattr(args, "xml_path", None)
+    if not xml_path:
+        print("Error: xml_path is required (or use --commit)", file=sys.stderr)
+        sys.exit(1)
+
+    xml_file = Path(xml_path)
+    if not xml_file.exists():
+        print("Error: XML file not found: %s" % xml_file, file=sys.stderr)
+        sys.exit(1)
+
+    # Parse XML
+    try:
+        result = parse_skill_xml(str(xml_file))
+    except ValueError as e:
+        print("Error: %s" % e, file=sys.stderr)
+        sys.exit(1)
+    except _ET.ParseError as e:
+        print("Error: Invalid XML: %s" % e, file=sys.stderr)
+        sys.exit(1)
+
+    # Apply domain override
+    if hasattr(args, "domain") and args.domain:
+        result.identity.domain = args.domain
+
+    # === DRY RUN ===
+    dry_run = hasattr(args, "dry_run") and args.dry_run
+    if dry_run:
+        if hasattr(args, "json") and args.json:
+            print(json.dumps({
+                "skill_id": result.identity.skill_id,
+                "name": result.identity.name,
+                "version": result.identity.version,
+                "domain": result.identity.domain,
+                "layers": len(result.layers),
+                "frameworks": sum(len(l.frameworks) for l in result.layers),
+                "edges": len(result.edges),
+                "guardrails": len(result.guardrails),
+                "warnings": result.warnings,
+                "mode": "dry-run",
+            }, indent=2))
+        else:
+            print("DRY RUN: %s (v%s)" % (result.identity.name, result.identity.version))
+            print("  Skill ID: %s" % result.identity.skill_id)
+            print("  Domain: %s" % result.identity.domain)
+            print("  Layers: %d" % len(result.layers))
+            fw_count = sum(len(l.frameworks) for l in result.layers)
+            print("  Frameworks: %d" % fw_count)
+            print("  Edges: %d" % len(result.edges))
+            print("  Guardrails: %d" % len(result.guardrails))
+            if result.warnings:
+                print("  Warnings:")
+                for w in result.warnings:
+                    print("    - %s" % w)
+        return
+
+    is_auto = hasattr(args, "auto") and args.auto
+    mode = "auto" if is_auto else "draft"
+
+    # Check if mastery doc exists
+    slug = _make_skill_slug(result.identity.skill_id)
+    domain = result.identity.domain or "unknown"
+    mastery_subdir = DOMAIN_ROUTING.get(domain, ("unknown",))[0]
+    expected_path = MASTERY_DIR / mastery_subdir / ("%s.md" % slug)
+    force = hasattr(args, "force") and args.force
+    if expected_path.exists() and not force:
+        print("Error: Mastery doc already exists: %s" % expected_path, file=sys.stderr)
+        print("  Use --force to overwrite", file=sys.stderr)
+        sys.exit(1)
+
+    # Write mastery doc
+    doc_path = write_mastery_doc(result, mode=mode)
+
+    if is_auto:
+        # Full pipeline: create records, write JSONL, shred edges
+        records = create_skill_records(result)
+
+        routing = DOMAIN_ROUTING.get(domain, ("unknown", "unknown", "unknown"))
+        _, expertise_domain, default_subdomain = routing
+
+        for rec in records:
+            domain_parts = rec["domain"].split("/", 1)
+            if len(domain_parts) == 2:
+                rec_domain, rec_sub = domain_parts
+            else:
+                rec_domain = expertise_domain
+                rec_sub = default_subdomain
+            jsonl_path = EXPERTISE_DIR / rec_domain / ("%s.jsonl" % rec_sub)
+            append_record(jsonl_path, rec)
+
+        result.records_created = len(records)
+
+        # Shred edges into SQLite
+        conn = get_db()
+        edge_count = 0
+        for rec in records:
+            edges_data = shred_to_edges(rec)
+            if edges_data:
+                insert_edges(conn, edges_data)
+                edge_count += len(edges_data)
+            index_record_content(conn, rec)
+
+        result.edges_created = edge_count
+
+        # Log to Hermes L3
+        summary = "Auto-refactored %s: %d records, %d edges" % (
+            result.identity.skill_id, len(records), edge_count)
+        log_refactor_event(conn, "refactor_auto", result.identity.skill_id, summary)
+
+        # Update mastery index
+        update_mastery_index(result, mode="auto")
+
+        conn.close()
+
+        if hasattr(args, "json") and args.json:
+            print(json.dumps({
+                "skill_id": result.identity.skill_id,
+                "mode": "auto",
+                "mastery_path": str(doc_path),
+                "records_created": len(records),
+                "edges_created": edge_count,
+                "warnings": result.warnings,
+            }, indent=2))
+        else:
+            print("REFACTORED (auto): %s (v%s)" % (result.identity.name, result.identity.version))
+            print("  Mastery: %s" % doc_path)
+            print("  Records: %d" % len(records))
+            print("  Edges: %d" % edge_count)
+            if result.warnings:
+                print("  Warnings:")
+                for w in result.warnings:
+                    print("    - %s" % w)
+    else:
+        # Draft mode: mastery doc only
+        conn = get_db()
+        summary = "Draft created for %s" % result.identity.skill_id
+        log_refactor_event(conn, "refactor_draft", result.identity.skill_id, summary)
+        update_mastery_index(result, mode="draft")
+        conn.close()
+
+        if hasattr(args, "json") and args.json:
+            print(json.dumps({
+                "skill_id": result.identity.skill_id,
+                "mode": "draft",
+                "mastery_path": str(doc_path),
+                "warnings": result.warnings,
+            }, indent=2))
+        else:
+            print("REFACTORED (draft): %s (v%s)" % (result.identity.name, result.identity.version))
+            print("  Mastery: %s" % doc_path)
+            print("  Mode: draft (review then use --commit to ingest)")
+            if result.warnings:
+                print("  Warnings:")
+                for w in result.warnings:
+                    print("    - %s" % w)
+
+
 # ============================================================
 # DEFAULT CONFIG
 # ============================================================
@@ -3304,6 +3548,16 @@ def main():
     postmortem_parser.add_argument("project_id", help="Project ID")
     postmortem_parser.add_argument("--agent", default="orchestrator", help="Creating agent")
 
+    # refactor
+    refactor_parser = subparsers.add_parser("refactor", help="Refactor XML skill into mastery doc + JSONL records")
+    refactor_parser.add_argument("xml_path", nargs="?", help="Path to SkillML XML file")
+    refactor_parser.add_argument("--auto", action="store_true", help="Full pipeline: Markdown + JSONL + graph")
+    refactor_parser.add_argument("--commit", metavar="MASTERY_DOC", help="Commit revised mastery doc into JSONL + graph")
+    refactor_parser.add_argument("--domain", help="Override domain routing")
+    refactor_parser.add_argument("--dry-run", action="store_true", dest="dry_run", help="Show extraction report without writing files")
+    refactor_parser.add_argument("--json", action="store_true", help="Output in JSON format")
+    refactor_parser.add_argument("--force", action="store_true", help="Overwrite existing mastery doc")
+
     args = parser.parse_args()
 
     commands = {
@@ -3323,6 +3577,7 @@ def main():
         "project": cmd_project_dispatch,
         "handoff": cmd_handoff,
         "postmortem": cmd_postmortem,
+        "refactor": cmd_refactor,
     }
 
     handler = commands.get(args.command)
